@@ -1,312 +1,587 @@
 <title>Police: Life on Duty</title>
-<meta name="description" content="Demo técnica de simulación policial de mundo abierto con gráficos realistas en tiempo real (WebGL)." />
+<meta name="description" content="Simulador policial de mundo abierto en 3D para navegador, móvil y escritorio." />
+<meta name="theme-color" content="#05070b" />
+<meta name="mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="apple-mobile-web-app-title" content="Police LoD" />
+<link rel="apple-touch-icon" href="./assets/icon-192.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;0,800;1,700&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet" />
 <style>
+/* POLICE: LIFE ON DUTY — interfaz
+   Concepto: consola de despacho policial nocturna. Paneles de vidrio ahumado, tipografía condensada
+   de rotulación, azul de baliza como acento y ámbar para avisos. */
 :root {
   color-scheme: dark;
-  --bg: #05070b; --panel: rgba(9, 13, 21, 0.62); --panel-solid: #0c121c; --line: rgba(255,255,255,0.09); --text: #e8edf5; --muted: #93a0b4;
-  --blue: #2f7bff; --blue2: #69a6ff; --amber: #ffb020; --red: #ff4b4b; --green: #35d07f; --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --sans: 'Inter', system-ui, sans-serif;
+  --ink: #04060a; --panel: rgba(8, 12, 20, 0.72); --panel2: rgba(14, 20, 32, 0.86); --line: rgba(160, 190, 255, 0.12); --line2: rgba(160, 190, 255, 0.24);
+  --text: #e9eef6; --muted: #8b97ab; --blue: #2f7bff; --blue2: #7fb0ff; --amber: #ffb020; --red: #ff4b4b; --green: #35d07f;
+  --cond: 'Barlow Condensed', 'Arial Narrow', 'Roboto Condensed', sans-serif; --sans: 'Barlow', 'Segoe UI', Roboto, system-ui, sans-serif;
+  --hud: 1; --ts: 1; --to: 0.85;
+  --sl: env(safe-area-inset-left, 0px); --sr: env(safe-area-inset-right, 0px); --st: env(safe-area-inset-top, 0px); --sb: env(safe-area-inset-bottom, 0px);
 }
-* { box-sizing: border-box; }
-html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; }
+* { box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
+html, body { margin: 0; height: 100%; background: var(--ink); color: var(--text); font-family: var(--sans); overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; overscroll-behavior: none; -webkit-touch-callout: none; }
 canvas#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
 .hidden { display: none !important; }
-button { font-family: var(--cond); cursor: pointer; }
-.glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(10px) saturate(1.2); -webkit-backdrop-filter: blur(10px) saturate(1.2); box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+button { font-family: var(--cond); cursor: pointer; color: inherit; }
+button:focus-visible, .card:focus-visible { outline: 2px solid var(--blue2); outline-offset: 2px; }
+.kbd { display: inline-block; min-width: 22px; padding: 1px 6px; margin: 0 1px; border-radius: 5px; border: 1px solid rgba(255,255,255,.22); border-bottom-width: 2px; font: 600 11px var(--sans); text-align: center; background: rgba(255,255,255,.06); color: #fff; line-height: 1.5; }
+body.touch .kbd { display: none; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 5px 11px; border-radius: 99px; border: 1px solid var(--line2); background: rgba(255,255,255,.04); font: 600 13px var(--sans); color: #d6def0; }
+.chip.amber { color: #ffd27a; } .chip.blue { color: var(--blue2); } .chip.red { color: #ff8b8b; }
+@keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } }
+@keyframes pulse { 50% { opacity: .35; } }
+@keyframes beacon { 0%, 49% { box-shadow: -40px 0 60px -10px rgba(47,123,255,.55); } 50%, 100% { box-shadow: 40px 0 60px -10px rgba(47,123,255,.15); } }
+
+/* ---------- Botones genéricos ---------- */
+.btn { background: var(--blue); border: 0; color: #fff; font-size: 19px; font-weight: 700; padding: 11px 24px; border-radius: 10px; letter-spacing: .06em; text-transform: uppercase; box-shadow: 0 8px 24px rgba(47,123,255,.25); transition: transform .12s, filter .12s; min-height: 46px; }
+.btn:hover { filter: brightness(1.1); } .btn:active { transform: scale(.97); }
+.btn.ghost { background: rgba(255,255,255,.06); border: 1px solid var(--line2); box-shadow: none; }
+.btn.big { width: 100%; font-size: 24px; padding: 16px; }
+.row { display: flex; gap: 10px; justify-content: flex-end; align-items: center; margin-top: 22px; flex-wrap: wrap; }
 
 /* ---------- Carga ---------- */
-#loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #0e1726 0%, #05070b 70%); z-index: 50; transition: opacity .8s; }
-#loading .logo { font-family: var(--cond); font-weight: 800; font-size: clamp(42px, 9vw, 96px); letter-spacing: .06em; line-height: .9; text-align: center; }
-#loading .logo small { display: block; font-size: .32em; letter-spacing: .5em; color: var(--blue2); margin-top: 10px; }
-#loading .bar { width: min(420px, 80vw); height: 4px; background: rgba(255,255,255,.08); border-radius: 4px; margin-top: 42px; overflow: hidden; }
-#loading .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #9fd0ff); transition: width .3s; }
-#loading .lbl { margin-top: 14px; font-size: 13px; color: var(--muted); letter-spacing: .04em; min-height: 1.2em; }
-.beacon { width: 160px; height: 8px; border-radius: 6px; margin-top: 26px; background: linear-gradient(90deg, #1e5bff 0 50%, #ff2a2a 50% 100%); filter: blur(1px); animation: bk .5s steps(2) infinite; box-shadow: 0 0 30px #2f7bff; }
-@keyframes bk { 50% { opacity: .25; box-shadow: 0 0 30px #ff2a2a; } }
+#loading { position: fixed; inset: 0; z-index: 60; display: flex; align-items: center; justify-content: center; background: radial-gradient(ellipse at 50% 40%, #0f1a2e 0%, #04060a 70%); transition: opacity .8s; }
+.ld-center { display: flex; flex-direction: column; align-items: center; }
+.ld-badge { width: 74px; height: 74px; color: var(--blue2); filter: drop-shadow(0 0 24px rgba(47,123,255,.6)); animation: pulse 1.6s ease-in-out infinite; }
+.ld-logo { font: 800 clamp(48px, 9vw, 92px)/.85 var(--cond); letter-spacing: .05em; text-align: center; margin-top: 14px; }
+.ld-logo span { display: block; font-size: .3em; letter-spacing: .55em; color: var(--blue2); margin-top: 10px; padding-left: .55em; }
+.ld-bar { width: min(380px, 70vw); height: 3px; background: rgba(255,255,255,.08); border-radius: 3px; margin-top: 38px; overflow: hidden; }
+.ld-bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #a8d0ff); transition: width .3s; }
+.ld-lbl { margin-top: 12px; font: 500 13px var(--sans); color: var(--muted); letter-spacing: .03em; min-height: 1.2em; }
+.ld-tip { position: absolute; bottom: calc(26px + var(--sb)); left: 50%; transform: translateX(-50%); width: min(560px, 88vw); text-align: center; font-size: 14px; color: #c3cde0; line-height: 1.5; }
+.ld-tip b { display: block; font: 700 12px var(--cond); letter-spacing: .3em; color: var(--amber); text-transform: uppercase; margin-bottom: 4px; }
 
-/* ---------- Menú ---------- */
-#menu { position: fixed; inset: 0; z-index: 30; display: flex; align-items: stretch; background: linear-gradient(90deg, rgba(3,5,9,.92) 0%, rgba(3,5,9,.55) 38%, rgba(3,5,9,0) 70%), linear-gradient(0deg, rgba(3,5,9,.7), rgba(3,5,9,0) 40%); }
-#menu .col { padding: max(5vh, 28px) 0 0 max(6vw, 22px); width: min(560px, 100%); display: flex; flex-direction: column; }
-.title { font-family: var(--cond); font-weight: 800; font-size: clamp(54px, 10vw, 112px); line-height: .82; letter-spacing: .02em; text-shadow: 0 6px 40px rgba(0,0,0,.6); }
-.title span { display: block; font-size: .36em; letter-spacing: .42em; color: var(--blue2); margin-top: 12px; font-weight: 700; }
-.tagline { color: #c7d2e3; margin: 18px 0 30px; font-size: 15px; max-width: 420px; line-height: 1.5; }
-.mbtn { display: flex; flex-direction: column; align-items: flex-start; gap: 0; width: 100%; max-width: 380px; text-align: left; background: transparent; border: 0; color: var(--text); font-size: 26px; font-weight: 700; letter-spacing: .04em; padding: 9px 16px; border-left: 3px solid transparent; transition: all .15s; text-transform: uppercase; }
-.mbtn small { font-family: var(--sans); font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0; text-transform: none; display: block; }
-.mbtn:hover, .mbtn:focus-visible { background: linear-gradient(90deg, rgba(47,123,255,.28), transparent); border-left-color: var(--blue); outline: none; padding-left: 22px; }
-.mbtn[disabled] { opacity: .35; pointer-events: none; }
-.menu-foot { margin-top: auto; padding: 20px 0 22px; font-size: 12px; color: #7d8aa0; max-width: 470px; line-height: 1.5; }
-.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: rgba(255,255,255,.04); font-size: 12px; color: #c9d4e6; }
+/* ---------- Título ---------- */
+#title { position: fixed; inset: 0; z-index: 40; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 max(28px, var(--sl)) calc(26px + var(--sb)) max(28px, var(--sl)); background: linear-gradient(0deg, rgba(3,5,9,.92) 0%, rgba(3,5,9,.2) 45%, rgba(3,5,9,0) 70%), linear-gradient(90deg, rgba(3,5,9,.6), rgba(3,5,9,0) 55%); cursor: pointer; animation: fadeUp .8s ease-out; }
+.tt-logo { display: flex; align-items: center; gap: 22px; }
+.tt-badge { width: clamp(64px, 10vw, 110px); height: clamp(64px, 10vw, 110px); color: var(--blue2); filter: drop-shadow(0 0 30px rgba(47,123,255,.55)); }
+.tt-name { font: 800 clamp(64px, 13vw, 156px)/.78 var(--cond); letter-spacing: .02em; text-shadow: 0 10px 50px rgba(0,0,0,.6); }
+.tt-sub { font: 700 clamp(16px, 2.4vw, 28px) var(--cond); letter-spacing: .62em; color: var(--blue2); margin-top: 12px; }
+.tt-press { margin: 42px 0 32px; font: 600 clamp(16px, 2vw, 21px) var(--cond); letter-spacing: .32em; text-transform: uppercase; color: #f2f5fa; animation: pulse 2s ease-in-out infinite; }
+.tt-foot { display: flex; justify-content: space-between; font: 500 12px var(--sans); color: #7d899e; letter-spacing: .08em; text-transform: uppercase; }
 
-/* ---------- Paneles modales ---------- */
-.modal { position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.55); padding: 16px; }
-.modal .box { width: min(760px, 100%); max-height: calc(100vh - 32px); overflow: auto; padding: 26px 28px; }
-.modal h2 { font-family: var(--cond); font-size: 34px; margin: 0 0 6px; letter-spacing: .03em; text-transform: uppercase; }
-.modal h3 { font-family: var(--cond); font-size: 18px; letter-spacing: .12em; color: var(--blue2); margin: 22px 0 10px; text-transform: uppercase; }
-.modal p { color: #c3cddd; line-height: 1.55; font-size: 14px; }
-.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
-.opt { background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--text); font-size: 18px; font-weight: 700; text-align: left; letter-spacing: .02em; transition: .15s; }
-.opt small { display: block; font-family: var(--sans); font-weight: 500; font-size: 11.5px; color: var(--muted); margin-top: 2px; letter-spacing: 0; }
-.opt:hover { border-color: rgba(105,166,255,.5); }
-.opt.sel { background: rgba(47,123,255,.22); border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
-.row { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; flex-wrap: wrap; }
-.btn { background: var(--blue); border: 0; color: white; font-size: 20px; font-weight: 700; padding: 10px 22px; border-radius: 10px; letter-spacing: .05em; text-transform: uppercase; }
-.btn.ghost { background: rgba(255,255,255,.06); border: 1px solid var(--line); }
-.btn.amber { background: var(--amber); color: #1b1300; }
-.kbd { display: inline-block; min-width: 24px; padding: 2px 7px; border-radius: 6px; border: 1px solid rgba(255,255,255,.22); border-bottom-width: 3px; font: 600 12px var(--sans); text-align: center; background: rgba(255,255,255,.06); color: #fff; }
-.ctrls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; font-size: 13.5px; color: #c8d2e2; }
-.ctrls div { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dashed rgba(255,255,255,.06); padding: 5px 0; }
-label.sl { display: flex; align-items: center; gap: 12px; font-size: 14px; margin: 8px 0; color: #c8d2e2; }
-label.sl input[type=range] { flex: 1; accent-color: var(--blue); }
-label.sl input[type=checkbox] { accent-color: var(--blue); width: 18px; height: 18px; }
+/* ---------- Menú principal ---------- */
+#menu { position: fixed; inset: 0; z-index: 30; display: grid; grid-template-columns: minmax(0, 520px) 1fr minmax(0, 340px); grid-template-rows: auto 1fr auto; gap: 0 24px;
+  padding: calc(22px + var(--st)) max(28px, var(--sr)) calc(18px + var(--sb)) max(28px, var(--sl));
+  background: linear-gradient(90deg, rgba(3,5,9,.94) 0%, rgba(3,5,9,.7) 30%, rgba(3,5,9,0) 62%), linear-gradient(0deg, rgba(3,5,9,.8), rgba(3,5,9,0) 32%); animation: fadeUp .5s ease-out; }
+.mn-top { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
+.mn-brand { display: flex; align-items: center; gap: 12px; }
+.mn-brand svg { width: 46px; height: 46px; color: var(--blue2); }
+.mn-brand b { display: block; font: 800 34px/.85 var(--cond); letter-spacing: .04em; }
+.mn-brand span { font: 700 12px var(--cond); letter-spacing: .5em; color: var(--blue2); }
+.mn-profile { display: flex; gap: 12px; align-items: center; padding: 10px 16px 10px 10px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); min-width: 0; }
+.pf-ins { width: 46px; height: 46px; flex: none; border-radius: 10px; background: linear-gradient(160deg, #183466, #0b1630); display: flex; align-items: center; justify-content: center; border: 1px solid var(--line2); }
+.pf-ins svg { width: 30px; height: 30px; color: #ffd27a; }
+.pf-txt { min-width: 0; display: flex; flex-direction: column; }
+.pf-txt b { font: 700 16px var(--cond); letter-spacing: .04em; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.pf-txt span { font: 600 13px var(--sans); color: var(--blue2); }
+.pf-txt small { font: 500 11.5px var(--sans); color: var(--muted); }
+.pf-bar { height: 3px; background: rgba(255,255,255,.1); border-radius: 3px; margin: 5px 0 3px; width: 170px; overflow: hidden; }
+.pf-bar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), #a8d0ff); width: 0; }
+.mn-nav { grid-column: 1; align-self: center; display: flex; flex-direction: column; gap: 2px; }
+.mn-item { display: flex; align-items: center; gap: 16px; width: 100%; text-align: left; background: transparent; border: 0; padding: 10px 14px; border-radius: 10px; position: relative; transition: background .15s, padding .15s; min-height: 44px; }
+.mn-item .mn-k { font: 600 13px var(--cond); color: #56627a; letter-spacing: .12em; width: 22px; }
+.mn-item .mn-l { font: 700 clamp(22px, 2.6vw, 30px)/1.05 var(--cond); letter-spacing: .05em; text-transform: uppercase; display: flex; flex-direction: column; }
+.mn-item .mn-l small { font: 500 13px var(--sans); color: var(--muted); letter-spacing: 0; text-transform: none; margin-top: 2px; }
+.mn-item::before { content: ''; position: absolute; left: 0; top: 18%; bottom: 18%; width: 3px; border-radius: 3px; background: var(--blue); transform: scaleY(0); transition: transform .15s; }
+.mn-item:hover, .mn-item:focus-visible, .mn-item.hl { background: linear-gradient(90deg, rgba(47,123,255,.22), rgba(47,123,255,0)); padding-left: 22px; outline: none; }
+.mn-item:hover::before, .mn-item:focus-visible::before, .mn-item.hl::before { transform: scaleY(1); }
+.mn-item:hover .mn-k, .mn-item.hl .mn-k { color: var(--blue2); }
+.mn-item[disabled] { opacity: .32; pointer-events: none; }
+.mn-item.danger .mn-l { color: #ff9a9a; }
+.mn-side { grid-column: 3; align-self: end; margin-bottom: 18px; }
+.mn-card { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 16px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.mn-card-h { font: 700 13px var(--cond); letter-spacing: .28em; text-transform: uppercase; color: var(--amber); margin-bottom: 8px; }
+.mn-news p { margin: 0 0 8px; font-size: 13px; line-height: 1.45; color: #c8d1e1; } .mn-news p b { color: #fff; font-weight: 600; margin-right: 4px; }
+.mn-foot { grid-column: 1 / -1; display: flex; gap: 22px; font: 500 12px var(--sans); color: #7d899e; }
+body.touch .mn-foot { display: none; }
+
+/* ---------- Pantallas ---------- */
+.screen { position: fixed; inset: 0; z-index: 45; display: flex; flex-direction: column; background: linear-gradient(160deg, rgba(6,10,18,.985), rgba(3,5,9,.99)); padding: calc(18px + var(--st)) max(24px, var(--sr)) calc(16px + var(--sb)) max(24px, var(--sl)); animation: fadeUp .3s ease-out; }
+.screen.dim { background: rgba(3,5,9,.62); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); align-items: center; justify-content: center; }
+.sc-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
+.sc-eyebrow { font: 700 12px var(--cond); letter-spacing: .32em; text-transform: uppercase; color: var(--blue2); }
+.screen h2 { margin: 0; font: 800 clamp(30px, 4vw, 42px)/1 var(--cond); letter-spacing: .03em; text-transform: uppercase; text-wrap: balance; }
+.screen h3 { margin: 18px 0 10px; font: 700 14px var(--cond); letter-spacing: .26em; text-transform: uppercase; color: var(--muted); }
+.back { width: 44px; height: 44px; border-radius: 12px; border: 1px solid var(--line2); background: rgba(255,255,255,.04); font: 600 30px/1 var(--sans); display: flex; align-items: center; justify-content: center; padding-bottom: 4px; flex: none; }
+.sc-body { flex: 1; overflow: auto; min-height: 0; -webkit-overflow-scrolling: touch; touch-action: pan-y; padding-right: 4px; }
+.sc-foot { display: flex; justify-content: flex-end; padding-top: 12px; }
+.note { font-size: 12.5px; color: var(--muted); }
+.cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(128px, 1fr)); gap: 10px; }
+.cards.two { grid-template-columns: repeat(2, minmax(0, 1fr)); } .cards.four { grid-template-columns: repeat(4, minmax(0, 1fr)); } .cards.list { grid-template-columns: 1fr; }
+.card { text-align: left; background: rgba(255,255,255,.035); border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; min-height: 64px; display: flex; flex-direction: column; justify-content: flex-end; gap: 2px; transition: border-color .15s, background .15s, transform .12s; position: relative; overflow: hidden; }
+.card b { font: 700 19px var(--cond); letter-spacing: .04em; text-transform: uppercase; }
+.card small { font: 500 12px var(--sans); color: var(--muted); }
+.card svg { width: 26px; height: 26px; color: var(--blue2); margin-bottom: auto; }
+.card:hover { border-color: var(--line2); } .card:active { transform: scale(.98); }
+.card.sel { border-color: var(--blue); background: rgba(47,123,255,.16); box-shadow: inset 0 0 0 1px var(--blue); }
+.card.sel::after { content: '✓'; position: absolute; top: 8px; right: 10px; font: 700 14px var(--sans); color: var(--blue2); }
+.card.tod { min-height: 96px; background: linear-gradient(160deg, var(--g1), var(--g2)); border-color: rgba(255,255,255,.08); }
+.card.tod b, .card.tod small { color: #fff; text-shadow: 0 1px 6px rgba(0,0,0,.6); }
+.card.tod.sel { box-shadow: inset 0 0 0 2px #fff, 0 6px 26px rgba(0,0,0,.4); }
+.sh-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 360px); gap: 26px; }
+.sh-sec:first-child h3 { margin-top: 0; }
+.sh-sum { background: var(--panel2); border: 1px solid var(--line); border-radius: 16px; padding: 18px; align-self: start; position: sticky; top: 0; display: flex; flex-direction: column; gap: 12px; }
+.sum-h { display: flex; gap: 12px; align-items: center; } .sum-h svg { width: 40px; height: 40px; color: var(--blue2); }
+.sum-h b { display: block; font: 700 22px var(--cond); letter-spacing: .04em; } .sum-h span { font-size: 12.5px; color: var(--muted); }
+.sum-list { margin: 0; display: grid; gap: 8px; } .sum-list div { display: flex; justify-content: space-between; gap: 12px; border-bottom: 1px dashed var(--line); padding-bottom: 7px; }
+.sum-list dt { font-size: 13px; color: var(--muted); } .sum-list dd { margin: 0; font: 600 14px var(--sans); text-align: right; }
+.sum-note { font-size: 13px; line-height: 1.5; color: #b9c4d8; margin: 0; }
+.tabs { display: flex; gap: 6px; margin-bottom: 12px; overflow-x: auto; }
+.tab { background: transparent; border: 1px solid var(--line); border-radius: 99px; padding: 8px 18px; font: 700 15px var(--cond); letter-spacing: .1em; text-transform: uppercase; color: var(--muted); white-space: nowrap; min-height: 40px; }
+.tab.sel { background: var(--blue); border-color: var(--blue); color: #fff; }
+.row-set { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 2px; border-bottom: 1px solid var(--line); font-size: 15px; max-width: 760px; }
+.row-set span { display: flex; flex-direction: column; } .row-set small { font-size: 12px; color: var(--muted); margin-top: 2px; }
+.row-set input[type=range] { width: min(240px, 42vw); accent-color: var(--blue); }
+.row-set input[type=checkbox] { width: 22px; height: 22px; accent-color: var(--blue); flex: none; }
+.row-set select { background: #101828; color: var(--text); border: 1px solid var(--line2); border-radius: 8px; padding: 8px 10px; font: 500 14px var(--sans); }
+.ctl-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; align-content: start; }
+.ctl { background: var(--panel2); border: 1px solid var(--line); border-radius: 14px; padding: 4px 16px 10px; }
+.ctl div { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 14px; color: #cfd8e8; }
+.ctl div:last-child { border-bottom: 0; }
+.cr { max-width: 760px; } .cr p { line-height: 1.6; color: #c3cde0; }
+.cr-item { display: flex; flex-direction: column; padding: 12px 14px; border: 1px solid var(--line); border-radius: 12px; margin-bottom: 8px; background: rgba(255,255,255,.03); }
+.cr-item b { font: 700 17px var(--cond); letter-spacing: .03em; } .cr-item span { font-size: 13px; color: var(--muted); margin-top: 2px; }
+.ps-box { width: min(460px, 100%); max-height: 100%; overflow: auto; padding: 24px; background: var(--panel2); border: 1px solid var(--line); border-radius: 18px; }
+.ps-box p { color: #b9c4d8; font-size: 13.5px; }
+.ps-nav { display: flex; flex-direction: column; gap: 2px; margin-top: 10px; }
+.ps-nav .mn-l { font-size: 23px !important; }
+.panel { width: min(720px, 100%); max-height: 100%; overflow: auto; padding: 24px 26px; background: var(--panel2); border: 1px solid var(--line); border-radius: 18px; touch-action: pan-y; }
+.panel.wide { width: min(900px, 100%); }
+.rep-head { font-size: 14px; color: #c3cde0; }
+.rep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.ev { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; margin-bottom: 6px; font-size: 14px; background: rgba(255,255,255,.03); cursor: pointer; min-height: 44px; }
+.ev input { accent-color: var(--blue); width: 20px; height: 20px; }
+.fact { font-size: 13.5px; color: #c9d3e3; padding: 4px 0 4px 12px; border-left: 2px solid rgba(127,176,255,.5); margin-bottom: 7px; line-height: 1.45; }
+.fact.obs { border-color: var(--amber); }
+.res-top { display: flex; justify-content: space-between; gap: 16px; align-items: flex-start; } .res-top p { margin: 4px 0 0; color: #b9c4d8; font-size: 14px; }
+.scores { display: grid; gap: 10px; margin-top: 16px; }
+.score { display: grid; grid-template-columns: 120px 1fr 40px; align-items: center; gap: 12px; font: 600 15px var(--cond); letter-spacing: .05em; text-transform: uppercase; }
+.score .b { height: 7px; background: rgba(255,255,255,.08); border-radius: 5px; overflow: hidden; } .score .b i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #a8d0ff); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+.score > b { text-align: right; font-variant-numeric: tabular-nums; }
+.grade { font: 800 92px/1 var(--cond); color: var(--blue2); text-shadow: 0 0 34px rgba(47,123,255,.5); }
+.cons { font-size: 13.5px; color: #c9d3e3; margin: 5px 0; padding-left: 18px; position: relative; line-height: 1.45; } .cons::before { content: '›'; position: absolute; left: 4px; color: var(--amber); font-weight: 700; }
+#bigmap { position: fixed; inset: 0; z-index: 46; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.82); pointer-events: auto; }
+#bigmap canvas { width: min(86vh, 94vw); height: min(86vh, 94vw); border-radius: 14px; border: 1px solid var(--line2); }
+#bigmap .legend { position: absolute; bottom: calc(16px + var(--sb)); left: 50%; transform: translateX(-50%); display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; width: 94vw; }
+#rotate { position: fixed; inset: 0; z-index: 70; background: rgba(3,5,9,.96); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
+#rotate div { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 320px; }
+#rotate svg { width: 64px; height: 64px; color: var(--blue2); animation: rot 2s ease-in-out infinite; }
+#rotate b { font: 800 28px var(--cond); letter-spacing: .04em; text-transform: uppercase; } #rotate span { color: #b9c4d8; font-size: 14px; }
+@keyframes rot { 40%, 60% { transform: rotate(90deg); } }
 
 /* ---------- HUD ---------- */
 #hud { position: fixed; inset: 0; pointer-events: none; z-index: 10; font-family: var(--cond); }
 #hud > * { position: absolute; }
-#mapwrap { left: max(18px, env(safe-area-inset-left)); top: 18px; width: 210px; }
-#minimap { width: 210px; height: 210px; border-radius: 50%; display: block; border: 2px solid rgba(255,255,255,.14); box-shadow: 0 8px 30px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.6); background: #0b1018; }
-#loc { margin-top: 10px; font-family: var(--sans); font-size: 12px; color: #dfe7f3; text-shadow: 0 1px 3px #000; line-height: 1.35; }
-#loc b { font-family: var(--cond); font-size: 16px; letter-spacing: .05em; display: block; text-transform: uppercase; }
-#status { left: 50%; transform: translateX(-50%); top: 14px; display: flex; gap: 10px; align-items: center; padding: 7px 14px; font-size: 18px; font-weight: 600; letter-spacing: .05em; }
-#status .clock { font-size: 26px; font-weight: 700; min-width: 66px; text-align: center; }
-#status .sep { width: 1px; height: 22px; background: var(--line); }
-#status .alert { color: var(--amber); }
-#xpbar { width: 120px; height: 4px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; margin-top: 3px; }
-#xpbar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), #9fd0ff); width: 0; }
-#rank { font-size: 13px; color: #b9c6da; line-height: 1; }
-#radio { right: max(18px, env(safe-area-inset-right)); top: 18px; width: min(340px, 42vw); display: flex; flex-direction: column; gap: 8px; }
-.rmsg { padding: 9px 12px 10px; font-family: var(--sans); font-size: 12.5px; line-height: 1.4; animation: slin .35s ease-out; border-left: 3px solid var(--blue); }
-.rmsg .h { font-family: var(--cond); font-size: 14px; letter-spacing: .1em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; }
-.rmsg.p1 { border-left-color: var(--red); } .rmsg.p1 .h { color: #ff8b8b; }
-.rmsg.p2 { border-left-color: var(--amber); } .rmsg.p2 .h { color: #ffd27a; }
-@keyframes slin { from { transform: translateX(30px); opacity: 0; } }
-#dispatch { right: max(18px, env(safe-area-inset-right)); top: 18px; width: min(360px, 90vw); padding: 14px 16px 14px; pointer-events: auto; border-left: 4px solid var(--amber); animation: slin .4s ease-out; }
-#dispatch .cat { font-size: 13px; letter-spacing: .18em; color: var(--amber); text-transform: uppercase; }
-#dispatch .ttl { font-size: 26px; font-weight: 700; margin: 2px 0 6px; line-height: 1.05; }
-#dispatch .det { font-family: var(--sans); font-size: 12.5px; color: #c9d3e3; line-height: 1.45; }
-#dispatch .act { display: flex; gap: 8px; margin-top: 12px; }
-#dispatch .act button { flex: 1; font-size: 17px; padding: 7px; border-radius: 8px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: var(--text); font-weight: 700; }
-#dispatch .act button.ok { background: var(--green); color: #032312; border: 0; }
-#dispatch .timer { height: 3px; background: rgba(255,255,255,.1); margin-top: 10px; border-radius: 3px; overflow: hidden; } #dispatch .timer i { display: block; height: 100%; background: var(--amber); width: 100%; }
-#objective { left: 50%; transform: translateX(-50%); top: 72px; min-width: 300px; max-width: min(520px, 70vw); padding: 10px 16px; }
-#objective .t { font-size: 14px; letter-spacing: .16em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; gap: 16px; }
-#objective ul { list-style: none; margin: 6px 0 0; padding: 0; font-family: var(--sans); font-size: 13px; }
-#objective li { padding: 2px 0 2px 22px; position: relative; color: #e5ecf6; }
-#objective li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 10px; height: 10px; border: 1.5px solid #8aa0bf; border-radius: 3px; }
+#vignette { inset: 0; transition: box-shadow .2s; }
+#mapwrap { left: max(18px, var(--sl)); bottom: calc(18px + var(--sb)); width: calc(176px * var(--hud)); display: flex; flex-direction: column-reverse; gap: 6px; pointer-events: auto; }
+#minimap { width: 100%; aspect-ratio: 1; border-radius: 50%; display: block; border: 2px solid rgba(255,255,255,.16); box-shadow: 0 8px 30px rgba(0,0,0,.5); background: #0b1018; cursor: pointer; }
+#loc { font: 500 12px var(--sans); color: #dfe7f3; text-shadow: 0 1px 3px #000; line-height: 1.3; }
+#loc b { font: 700 15px var(--cond); letter-spacing: .06em; display: block; text-transform: uppercase; }
+#status { right: max(16px, var(--sr)); top: calc(14px + var(--st)); display: flex; align-items: center; gap: 10px; padding: 5px 12px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); font-size: 15px; font-weight: 600; letter-spacing: .04em; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transform-origin: top right; transform: scale(var(--hud)); }
+#status .clock { font-size: 20px; font-weight: 700; font-variant-numeric: tabular-nums; }
+#status .rk { font-size: 13px; color: #b9c6da; }
+#xpbar { width: 70px; height: 3px; background: rgba(255,255,255,.12); border-radius: 3px; overflow: hidden; } #xpbar i { display: block; height: 100%; background: var(--blue2); width: 0; }
+#objwrap { left: 50%; top: calc(14px + var(--st)); transform: translateX(-50%) scale(var(--hud)); transform-origin: top center; display: flex; flex-direction: column; align-items: center; gap: 6px; max-width: min(560px, 60vw); pointer-events: auto; }
+#objpill { display: flex; align-items: center; gap: 9px; padding: 6px 14px 6px 10px; border-radius: 99px; background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); font: 600 15px var(--sans); white-space: nowrap; max-width: 100%; cursor: pointer; animation: fadeUp .3s ease-out; }
+#objpill span { overflow: hidden; text-overflow: ellipsis; }
+#objpill em { font: 700 14px var(--cond); color: var(--amber); font-style: normal; letter-spacing: .06em; font-variant-numeric: tabular-nums; }
+#objpill .cmp { width: 18px; height: 18px; color: var(--amber); flex: none; transition: transform .15s linear; }
+#objective { padding: 9px 14px; border-radius: 12px; background: var(--panel); border: 1px solid var(--line); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); min-width: 260px; }
+#objective .t { font-size: 12px; letter-spacing: .2em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; gap: 14px; }
+#objective ul { list-style: none; margin: 5px 0 0; padding: 0; font: 500 13px var(--sans); }
+#objective li { padding: 2px 0 2px 20px; position: relative; color: #e5ecf6; }
+#objective li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 9px; height: 9px; border: 1.5px solid #8aa0bf; border-radius: 3px; }
 #objective li.done { color: #7f8ea6; text-decoration: line-through; } #objective li.done::before { background: var(--green); border-color: var(--green); }
 #objective li.optional { color: #b7c3d6; font-style: italic; }
-#prompt { left: 50%; bottom: 120px; transform: translateX(-50%); padding: 9px 16px; font-size: 20px; font-weight: 600; letter-spacing: .03em; display: flex; gap: 10px; align-items: center; white-space: nowrap; }
-#speedo { right: max(26px, env(safe-area-inset-right)); bottom: 24px; width: 190px; height: 190px; }
-#speedo canvas { width: 190px; height: 190px; }
+#radio { right: max(16px, var(--sr)); top: calc(58px + var(--st)); width: min(300px, 34vw); display: flex; flex-direction: column; gap: 6px; transform-origin: top right; transform: scale(var(--hud)); }
+.rmsg { padding: 7px 11px 8px; font: 500 12.5px/1.38 var(--sans); animation: fadeUp .3s ease-out; border-left: 3px solid var(--blue); background: var(--panel); border-radius: 8px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+.rmsg .h { font: 700 12px var(--cond); letter-spacing: .14em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; }
+.rmsg.p1 { border-left-color: var(--red); } .rmsg.p1 .h { color: #ff8b8b; } .rmsg.p2 { border-left-color: var(--amber); } .rmsg.p2 .h { color: #ffd27a; }
+#dispatch { right: max(16px, var(--sr)); top: calc(58px + var(--st)); width: min(340px, 92vw); padding: 12px 14px; pointer-events: auto; border-left: 4px solid var(--amber); animation: fadeUp .35s ease-out; background: var(--panel2); border-radius: 12px; backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); z-index: 3; }
+#dispatch .cat { font-size: 12px; letter-spacing: .2em; color: var(--amber); text-transform: uppercase; }
+#dispatch .ttl { font-size: 23px; font-weight: 700; margin: 2px 0 4px; line-height: 1.05; }
+#dispatch .det { font: 500 12.5px/1.42 var(--sans); color: #c9d3e3; }
+#dispatch .act { display: flex; gap: 8px; margin-top: 10px; }
+#dispatch .act button { flex: 1; font-size: 17px; padding: 9px; border-radius: 9px; border: 1px solid var(--line2); background: rgba(255,255,255,.06); font-weight: 700; min-height: 44px; }
+#dispatch .act button.ok { background: var(--green); color: #032312; border: 0; }
+#dispatch .timer { height: 3px; background: rgba(255,255,255,.1); margin-top: 9px; border-radius: 3px; overflow: hidden; } #dispatch .timer i { display: block; height: 100%; background: var(--amber); width: 100%; }
+#pursuit { left: 50%; transform: translateX(-50%); top: calc(56px + var(--st)); width: min(360px, 70vw); padding: 8px 12px; border-left: 4px solid var(--red); background: var(--panel); border-radius: 10px; }
+#pursuit .t { font-size: 13px; letter-spacing: .18em; color: #ff8b8b; text-transform: uppercase; display: flex; justify-content: space-between; }
+#pursuit .b { height: 5px; background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; margin-top: 5px; } #pursuit .b i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), var(--amber)); width: 50%; transition: width .2s; }
+#prompt { left: 50%; bottom: calc(26px + var(--sb)); transform: translateX(-50%); padding: 7px 14px; font-size: 18px; font-weight: 600; letter-spacing: .03em; display: flex; gap: 8px; align-items: center; white-space: nowrap; background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+#speedo { right: max(20px, var(--sr)); bottom: calc(16px + var(--sb)); width: calc(150px * var(--hud)); aspect-ratio: 1; }
+#speedo canvas { width: 100%; height: 100%; }
 #speedo .num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
-#speedo .num b { font-size: 54px; line-height: .9; font-weight: 700; }
-#speedo .num small { font-size: 13px; letter-spacing: .2em; color: var(--muted); }
-#speedo .ind { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; font-size: 12px; letter-spacing: .1em; }
-#speedo .ind span { padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.06); color: #5d6a7e; }
+#speedo .num b { font-size: calc(42px * var(--hud)); line-height: .9; font-weight: 700; font-variant-numeric: tabular-nums; text-shadow: 0 2px 10px rgba(0,0,0,.6); }
+#speedo .num small { font-size: 11px; letter-spacing: .2em; color: var(--muted); }
+#speedo .ind { position: absolute; bottom: 14%; left: 0; right: 0; display: flex; justify-content: center; gap: 4px; font-size: 10.5px; letter-spacing: .08em; }
+#speedo .ind span { padding: 1px 5px; border-radius: 4px; background: rgba(255,255,255,.06); color: #5d6a7e; }
 #speedo .ind span.on { background: var(--blue); color: #fff; } #speedo .ind span.on.s { background: var(--red); }
-#hints { left: max(18px, env(safe-area-inset-left)); bottom: 18px; font-family: var(--sans); font-size: 12px; color: #cfd8e6; display: flex; flex-direction: column; gap: 5px; text-shadow: 0 1px 3px #000; }
-#toasts { left: 50%; transform: translateX(-50%); top: 40%; display: flex; flex-direction: column; align-items: center; gap: 6px; }
-.toast { padding: 8px 18px; font-size: 22px; font-weight: 700; letter-spacing: .04em; animation: tin .3s ease-out; text-shadow: 0 2px 10px rgba(0,0,0,.7); }
-.toast.good { color: var(--green); } .toast.bad { color: #ff7a7a; } .toast.info { color: #fff; } .toast.xp { color: #9fd0ff; }
-@keyframes tin { from { transform: scale(.8); opacity: 0; } }
-#pursuit { left: 50%; transform: translateX(-50%); top: 72px; width: min(420px, 80vw); padding: 10px 14px; border-left: 4px solid var(--red); }
-#pursuit .t { font-size: 15px; letter-spacing: .16em; color: #ff8b8b; text-transform: uppercase; display: flex; justify-content: space-between; }
-#pursuit .b { height: 6px; background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; margin-top: 6px; } #pursuit .b i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), var(--amber)); width: 50%; transition: width .2s; }
-#dialog { left: 50%; bottom: 40px; transform: translateX(-50%); width: min(760px, 92vw); padding: 14px 18px; pointer-events: auto; }
-#dialog .who { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); display: flex; justify-content: space-between; }
-#dialog .who em { font-style: normal; color: var(--muted); font-size: 12px; }
-#dialog .txt { font-family: var(--sans); font-size: 16px; line-height: 1.5; margin-top: 4px; min-height: 2.6em; }
-#dialog .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
-#dialog .choices button { text-align: left; font-family: var(--sans); font-size: 13.5px; background: rgba(255,255,255,.05); border: 1px solid var(--line); color: var(--text); padding: 8px 10px; border-radius: 8px; display: flex; gap: 8px; align-items: center; }
+#hints { left: max(18px, var(--sl)); top: calc(16px + var(--st)); font: 500 12px var(--sans); color: #cfd8e6; display: flex; flex-direction: column; gap: 4px; text-shadow: 0 1px 3px #000; transition: opacity .6s; }
+#hints.fade { opacity: 0; }
+#toasts { left: 50%; transform: translateX(-50%); top: 30%; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.toast { padding: 4px 14px; font-size: 17px; font-weight: 700; letter-spacing: .04em; animation: fadeUp .25s ease-out; text-shadow: 0 2px 8px rgba(0,0,0,.8); white-space: nowrap; }
+.toast.good { color: var(--green); } .toast.bad { color: #ff8585; } .toast.info { color: #fff; } .toast.xp { color: var(--blue2); font-size: 15px; }
+#dialog { left: 50%; bottom: calc(20px + var(--sb)); transform: translateX(-50%); width: min(660px, 94vw); padding: 11px 15px; pointer-events: auto; background: rgba(6,9,15,.8); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); z-index: 4; }
+#dialog .who { font-size: 14px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); display: flex; justify-content: space-between; }
+#dialog .who em { font-style: normal; color: var(--muted); font-size: 11.5px; }
+#dialog .txt { font: 500 15.5px/1.48 var(--sans); margin-top: 3px; }
+#dialog .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 9px; }
+#dialog .choices button { text-align: left; font: 500 13.5px var(--sans); background: rgba(255,255,255,.05); border: 1px solid var(--line2); padding: 9px 10px; border-radius: 9px; display: flex; gap: 8px; align-items: center; min-height: 44px; }
 #dialog .choices button:hover { border-color: var(--blue); background: rgba(47,123,255,.15); }
 #dialog .choices button.risky { border-color: rgba(255,120,120,.35); }
-#dialog .cont { margin-top: 8px; font-size: 12px; color: var(--muted); font-family: var(--sans); text-align: right; }
-#wheel { left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px; pointer-events: auto; }
-#wheel .hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 17px; padding: 14px; line-height: 1.05; }
-#wheel .it { position: absolute; width: 132px; transform: translate(-50%,-50%); padding: 9px 10px; font-family: var(--sans); font-size: 13px; text-align: center; border-radius: 12px; cursor: pointer; transition: .12s; line-height: 1.25; }
-#wheel .it b { display: block; font-family: var(--cond); font-size: 13px; color: var(--blue2); letter-spacing: .1em; }
-#wheel .it:hover, #wheel .it.hl { background: rgba(47,123,255,.35); border-color: var(--blue); transform: translate(-50%,-50%) scale(1.06); }
-#vignette { inset: 0; box-shadow: inset 0 0 160px rgba(255,30,30,0); transition: box-shadow .2s; }
-#crosshair { left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: rgba(255,255,255,.7); box-shadow: 0 0 4px #000; }
-#fps { right: 10px; bottom: 6px; font: 11px var(--sans); color: #6c7a90; }
-#bigmap { position: fixed; inset: 0; z-index: 35; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.75); pointer-events: auto; }
-#bigmap canvas { width: min(88vh, 92vw); height: min(88vh, 92vw); border-radius: 14px; border: 1px solid var(--line); }
-#bigmap .legend { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; font-size: 12px; }
+#dialog .cont { margin-top: 5px; font: 500 11.5px var(--sans); color: var(--muted); text-align: right; }
+#wheel { left: 50%; top: 50%; transform: translate(-50%, -50%); width: 400px; height: 400px; pointer-events: auto; z-index: 4; }
+#wheel .hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 126px; height: 126px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 15px; padding: 14px; line-height: 1.05; background: var(--panel2); border: 1px solid var(--line2); }
+#wheel .it { position: absolute; width: 128px; transform: translate(-50%,-50%); padding: 8px 10px; font: 500 13px/1.25 var(--sans); text-align: center; border-radius: 12px; cursor: pointer; transition: .12s; background: var(--panel2); border: 1px solid var(--line2); }
+#wheel .it b { display: block; font: 700 12px var(--cond); color: var(--blue2); letter-spacing: .1em; }
+#wheel .it:hover, #wheel .it.hl { background: rgba(47,123,255,.4); border-color: var(--blue); }
+#wheel .close { display: none; }
+#hud-pause { right: max(14px, var(--sr)); top: calc(12px + var(--st)); width: 42px; height: 42px; border-radius: 12px; border: 1px solid var(--line2); background: var(--panel); display: none; align-items: center; justify-content: center; pointer-events: auto; }
+#hud-pause svg { width: 20px; height: 20px; }
+#fps { right: 10px; bottom: 4px; font: 11px var(--sans); color: #6c7a90; }
 
-/* Informe */
-.rep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-.ev { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; font-size: 13px; background: rgba(255,255,255,.03); cursor: pointer; }
-.ev input { accent-color: var(--blue); }
-.fact { font-size: 13px; color: #c9d3e3; padding: 4px 0 4px 14px; border-left: 2px solid rgba(105,166,255,.5); margin-bottom: 6px; }
-.scores { display: grid; gap: 10px; margin-top: 10px; }
-.score { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; font-size: 15px; }
-.score .b { height: 8px; background: rgba(255,255,255,.08); border-radius: 5px; overflow: hidden; } .score .b i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #9fd0ff); transition: width 1s cubic-bezier(.2,.8,.2,1); }
-.grade { font-family: var(--cond); font-size: 84px; font-weight: 800; line-height: 1; color: var(--blue2); text-shadow: 0 0 30px rgba(47,123,255,.5); }
-.cons { font-size: 13px; color: #c9d3e3; margin: 4px 0; padding-left: 18px; position: relative; } .cons::before { content: '›'; position: absolute; left: 4px; color: var(--amber); }
+/* ---------- Controles táctiles ---------- */
+#touch { position: fixed; inset: 0; z-index: 9; display: none; pointer-events: none; }
+body.touch #touch.on { display: block; }
+.tz { position: absolute; top: 0; bottom: 0; pointer-events: auto; }
+.tz-move { left: 0; width: 42%; } .tz-look { right: 0; width: 58%; }
+.joy { position: absolute; width: calc(128px * var(--ts)); height: calc(128px * var(--ts)); border-radius: 50%; border: 2px solid rgba(255,255,255,.22); background: radial-gradient(circle, rgba(255,255,255,.06), rgba(255,255,255,.02)); left: calc(max(26px, var(--sl)) + 10px); bottom: calc(34px + var(--sb)); opacity: .45; transition: opacity .15s; pointer-events: none; }
+.joy.on { opacity: 1; transition: none; }
+.joy .knob { position: absolute; left: 50%; top: 50%; width: 44%; height: 44%; margin: -22% 0 0 -22%; border-radius: 50%; background: rgba(230,238,255,.55); box-shadow: 0 2px 12px rgba(0,0,0,.4); }
+.tb { pointer-events: auto; position: relative; width: calc(58px * var(--ts)); height: calc(58px * var(--ts)); border-radius: 50%; border: 1px solid rgba(255,255,255,.22); background: rgba(8,12,20,.55); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; opacity: var(--to); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); color: #fff; font: 700 12px var(--cond); letter-spacing: .06em; padding: 0; touch-action: none; }
+.tb svg { width: 44%; height: 44%; }
+.tb.down { background: rgba(47,123,255,.6); border-color: var(--blue2); transform: scale(.94); }
+.tb.on { background: rgba(47,123,255,.42); border-color: var(--blue2); }
+.tb.sm { width: calc(46px * var(--ts)); height: calc(46px * var(--ts)); }
+.tbtns, .tbar { position: absolute; display: none; }
+#touch[data-mode=foot] .tbtns.foot, #touch[data-mode=car] .tbtns.car, #touch[data-mode=car] .tbar.car, #touch[data-mode=foot] .tbar.any, #touch[data-mode=car] .tbar.any { display: flex; }
+.tbtns.foot { right: calc(max(22px, var(--sr)) + 6px); bottom: calc(26px + var(--sb)); flex-direction: column-reverse; align-items: flex-end; gap: 12px; }
+.tb.act { width: calc(92px * var(--ts)); height: calc(92px * var(--ts)); background: rgba(255,176,32,.32); border-color: rgba(255,210,122,.8); }
+.tb.act span { max-width: 84px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 11px; }
+.tb.veh { width: calc(64px * var(--ts)); height: calc(64px * var(--ts)); background: rgba(47,123,255,.35); }
+.tbtns.car { right: calc(max(18px, var(--sr)) + 4px); bottom: calc(22px + var(--sb)); gap: 12px; align-items: flex-end; }
+.tb.gas { width: calc(78px * var(--ts)); height: calc(118px * var(--ts)); border-radius: 22px; background: rgba(53,208,127,.25); border-color: rgba(53,208,127,.7); order: 3; }
+.tb.brk { width: calc(72px * var(--ts)); height: calc(84px * var(--ts)); border-radius: 20px; background: rgba(255,75,75,.22); border-color: rgba(255,120,120,.6); order: 2; }
+.tb.hb { width: calc(58px * var(--ts)); height: calc(58px * var(--ts)); order: 1; }
+.steer { display: none; position: fixed; left: calc(max(20px, var(--sl)) + 6px); bottom: calc(26px + var(--sb)); gap: 14px; }
+#touch.steer-buttons[data-mode=car] .steer { display: flex; }
+.tb.st { width: calc(84px * var(--ts)); height: calc(84px * var(--ts)); border-radius: 22px; font: 400 48px/1 var(--sans); padding-bottom: 6px; }
+#touch.steer-buttons[data-mode=car] .joy, #touch.steer-tilt[data-mode=car] .joy { display: none; }
+.tbar.car { right: calc(max(14px, var(--sr)) + 2px); top: 50%; transform: translateY(-62%); flex-direction: column; gap: 10px; }
+.tbar.any { right: calc(max(14px, var(--sr)) + 62px); top: calc(12px + var(--st)); gap: 10px; }
+#touch[data-mode=car] .tbar.any { right: calc(max(14px, var(--sr)) + 62px); }
+#touch.lefty .tz-move { left: auto; right: 0; } #touch.lefty .tz-look { right: auto; left: 0; }
+#touch.lefty .joy { left: auto; right: calc(max(26px, var(--sr)) + 10px); }
+#touch.lefty .tbtns.foot, #touch.lefty .tbtns.car { right: auto; left: calc(max(22px, var(--sl)) + 6px); }
+#touch.lefty .tbtns.car { flex-direction: row-reverse; }
+#touch.lefty .tbar.car { right: auto; left: calc(max(14px, var(--sl)) + 2px); }
+#touch.lefty .steer { left: auto; right: calc(max(20px, var(--sr)) + 6px); }
 
-/* Táctil */
-#touch { position: fixed; inset: 0; z-index: 12; display: none; }
-#touch.on { display: block; }
-#touch .joy { position: absolute; width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(255,255,255,.25); background: rgba(255,255,255,.05); display: none; }
-#touch .joy.show { display: block; }
-#touch .knob { position: absolute; left: 35px; top: 35px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,.35); }
-#touch .btns { position: absolute; right: 14px; bottom: 230px; display: grid; grid-template-columns: repeat(3, 58px); gap: 10px; }
-#touch .btns div { width: 58px; height: 58px; border-radius: 50%; background: rgba(10,14,22,.55); border: 1px solid rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; font: 700 13px var(--cond); color: #fff; letter-spacing: .05em; }
-#touch .btns div.down { background: rgba(47,123,255,.6); }
-#touch .tl { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; gap: 8px; }
-#touch .tl div { padding: 6px 12px; border-radius: 8px; background: rgba(10,14,22,.55); border: 1px solid rgba(255,255,255,.2); font: 700 13px var(--cond); color: #fff; }
+/* ---------- Ajustes para pantallas táctiles ---------- */
+body.touch #hints, body.touch #prompt, body.touch #fps.hidden { display: none !important; }
+body.touch #hud-pause { display: flex; }
+body.touch #mapwrap { left: max(12px, var(--sl)); top: calc(10px + var(--st)); bottom: auto; width: calc(104px * var(--hud)); flex-direction: column; }
+body.touch #loc { display: none; }
+body.touch #status { right: calc(max(14px, var(--sr)) + 52px); top: calc(12px + var(--st)); padding: 4px 9px; font-size: 13px; gap: 7px; }
+body.touch #status .clock { font-size: 16px; } body.touch #status .rk, body.touch #xpbar { display: none; }
+body.touch #radio { top: calc(60px + var(--st)); width: min(250px, 40vw); }
+body.touch .rmsg:nth-child(n+2) { display: none; }
+body.touch #dispatch { top: calc(56px + var(--st)); width: min(290px, 48vw); padding: 9px 11px; }
+body.touch #dispatch .ttl { font-size: 19px; } body.touch #dispatch .det { font-size: 11.5px; max-height: 4.4em; overflow: hidden; } body.touch #dispatch .act button { min-height: 40px; font-size: 15px; }
+body.touch #objective { font-size: 12px; min-width: 0; max-width: 46vw; }
+body.touch #objwrap { max-width: 46vw; } body.touch #objpill { font-size: 13px; padding: 5px 11px 5px 8px; }
+body.touch #speedo { right: auto; left: 50%; transform: translateX(-50%); top: auto; bottom: calc(10px + var(--sb)); width: auto; aspect-ratio: auto; }
+body.touch #speedo canvas, body.touch #speedo .ind { display: none; }
+body.touch #speedo .num { position: static; flex-direction: row; gap: 4px; align-items: baseline; }
+body.touch #speedo .num b { font-size: 26px; }
+body.touch #toasts { top: 26%; } body.touch .toast { font-size: 14px; }
+body.touch #dialog { width: min(560px, 70vw); bottom: calc(12px + var(--sb)); padding: 9px 12px; }
+body.touch #dialog .txt { font-size: 14px; } body.touch #dialog .cont { display: none; }
+body.touch #wheel { left: 50%; top: auto; bottom: calc(10px + var(--sb)); transform: translateX(-50%); width: min(520px, 94vw); height: auto; max-height: 72vh; overflow: auto; display: flex; flex-direction: column; gap: 6px; padding: 12px; background: var(--panel2); border: 1px solid var(--line2); border-radius: 16px; touch-action: pan-y; }
+body.touch #wheel .hub { position: static; transform: none; width: auto; height: auto; border-radius: 0; background: none; border: 0; padding: 2px 4px 6px; font-size: 17px; letter-spacing: .06em; text-transform: uppercase; justify-content: flex-start; text-align: left; color: var(--amber); }
+body.touch #wheel .it { position: static !important; transform: none !important; width: auto; text-align: left; font-size: 15px; padding: 12px 14px; min-height: 48px; display: flex; align-items: center; gap: 10px; }
+body.touch #wheel .it b { display: none; }
+body.touch #wheel .close { display: block; position: static; margin-top: 4px; padding: 10px; border-radius: 10px; border: 1px solid var(--line2); background: rgba(255,255,255,.04); font: 700 16px var(--cond); letter-spacing: .1em; text-transform: uppercase; }
 
-@media (max-width: 760px) {
-  #mapwrap { width: 128px; top: 10px; left: 10px; } #minimap { width: 128px; height: 128px; }
-  #status { top: auto; bottom: 8px; font-size: 14px; padding: 5px 10px; } #status .clock { font-size: 18px; min-width: 44px; } #status .rk { display: none; }
-  #radio { width: 52vw; top: 10px; right: 10px; } .rmsg { font-size: 11px; }
-  #objective { top: auto; bottom: 64px; left: 10px; transform: none; min-width: 0; max-width: 58vw; } #objective ul { font-size: 11.5px; }
-  #speedo { transform: scale(.68); transform-origin: right bottom; right: 6px; bottom: 6px; }
-  #hints { display: none; } #prompt { bottom: 150px; font-size: 16px; }
-  #wheel { transform: translate(-50%,-50%) scale(.78); }
-  .rep-grid { grid-template-columns: 1fr; } .ctrls { grid-template-columns: 1fr; }
-  #dialog .choices { grid-template-columns: 1fr; }
-  .modal .box { padding: 18px; }
+/* ---------- Pantallas pequeñas ---------- */
+@media (max-width: 900px) {
+  #menu { grid-template-columns: minmax(0, 1fr); grid-template-rows: auto 1fr auto; }
+  .mn-side { display: none; }
+  .sh-grid { grid-template-columns: 1fr; } .sh-sum { position: static; }
+  .rep-grid { grid-template-columns: 1fr; }
+  .cards.four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
+@media (max-height: 520px) {
+  #menu { padding-top: calc(10px + var(--st)); }
+  .mn-brand b { font-size: 26px; } .mn-brand svg { width: 34px; height: 34px; }
+  .mn-item { padding: 5px 12px; min-height: 38px; } .mn-item .mn-l { font-size: 21px; } .mn-item .mn-l small { display: none; }
+  .tt-press { margin: 18px 0 16px; } .screen h2 { font-size: 28px; }
+  .card.tod { min-height: 70px; } .card { min-height: 52px; padding: 9px 12px; }
+  .sh-grid { grid-template-columns: minmax(0, 1fr) minmax(220px, 300px); gap: 16px; }
+  .sh-sum { padding: 12px; gap: 8px; } .sum-note { display: none; } .btn.big { font-size: 20px; padding: 12px; }
+  .mn-profile .pf-bar { width: 120px; }
+}
+@media (max-width: 560px) {
+  .mn-profile { padding: 6px 10px 6px 6px; } .pf-ins { width: 36px; height: 36px; } .pf-bar { width: 110px; }
+  .mn-brand div { display: none; }
+  .ps-nav .mn-l { font-size: 20px !important; }
+  .score { grid-template-columns: 96px 1fr 34px; font-size: 13px; }
+  #dialog .choices { grid-template-columns: 1fr; }
+  body.touch #dialog { width: 94vw; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
 </style>
 <script type="importmap">
 { "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }
 </script>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-shield" viewBox="0 0 64 64"><path d="M32 3 8 12v17c0 15 10 27 24 32 14-5 24-17 24-32V12L32 3z" fill="currentColor" opacity=".18"/><path d="M32 3 8 12v17c0 15 10 27 24 32 14-5 24-17 24-32V12L32 3zm0 5.3 19 7.1V29c0 12.3-7.9 22.4-19 27-11.1-4.6-19-14.7-19-27V15.4L32 8.3z" fill="currentColor"/><path d="m32 18 3.9 8 8.8 1.2-6.4 6.1 1.6 8.7L32 37.8 24.1 42l1.6-8.7-6.4-6.1 8.8-1.2z" fill="currentColor"/></symbol>
+  <symbol id="i-hand" viewBox="0 0 24 24"><path d="M9 11V5a1.5 1.5 0 0 1 3 0v5m0-6a1.5 1.5 0 0 1 3 0v6m0-4.5a1.5 1.5 0 0 1 3 0V14a7 7 0 0 1-7 7h-.5a6 6 0 0 1-5-2.7L3 14.5a1.6 1.6 0 0 1 2.6-1.8L9 15V8a1.5 1.5 0 0 1 3 0" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-car" viewBox="0 0 24 24"><path d="M5 16h14M3 16v-3l2-5h14l2 5v3a1 1 0 0 1-1 1h-1a2 2 0 0 1-4 0H9a2 2 0 0 1-4 0H4a1 1 0 0 1-1-1zM6 12h12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-exit" viewBox="0 0 24 24"><path d="M14 4h5v16h-5M10 8l-4 4 4 4M6 12h10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-beacon" viewBox="0 0 24 24"><path d="M6 18h12M8 18v-6a4 4 0 0 1 8 0v6M12 3v2M4.5 6l1.4 1.4M19.5 6l-1.4 1.4M2 12h2m16 0h2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-siren" viewBox="0 0 24 24"><path d="M4 10v4h3l5 4V6L7 10H4zm12-1a4 4 0 0 1 0 6m2-9a8 8 0 0 1 0 12" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-cam" viewBox="0 0 24 24"><path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><path d="M8 3l2 5M6 8h12a1 1 0 0 1 1 1v11a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V9a1 1 0 0 1 1-1zm2 4h3m-3 3h3m3-3a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zm0 0v14m6-12v14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-doc" viewBox="0 0 24 24"><path d="M7 3h7l5 5v13H7zM14 3v5h5M10 13h6M10 17h6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></symbol>
+  <symbol id="i-gas" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" transform="rotate(180 12 12)"/><path d="M6 20h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-brake" viewBox="0 0 24 24"><path d="M12 4v12m-5-5 5 5 5-5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 20h12" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></symbol>
+  <symbol id="i-hb" viewBox="0 0 24 24"><circle cx="12" cy="12" r="8" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 8v8m0-8h2.5a2.5 2.5 0 0 1 0 5H10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-run" viewBox="0 0 24 24"><circle cx="14" cy="4.5" r="2" fill="currentColor"/><path d="m6 20 3-5 3 2 1-5 3 3h3M9 9l3-2 3 1-2 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M4.9 4.9 7 7m10 10 2.1 2.1M4.9 19.1 7 17M17 7l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.5" fill="currentColor"/><path d="M12 1.5v3m0 15v3M1.5 12h3m15 0h3M4.6 4.6l2.1 2.1m10.6 10.6 2.1 2.1M4.6 19.4l2.1-2.1M17.3 6.7l2.1-2.1" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-cloud" viewBox="0 0 24 24"><path d="M7 18h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 9.5 4.3 4.3 0 0 0 7 18z" fill="currentColor"/></symbol>
+  <symbol id="i-rain" viewBox="0 0 24 24"><path d="M7 14h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 5.5 4.3 4.3 0 0 0 7 14z" fill="currentColor"/><path d="m8 17-1 3m5-3-1 3m5-3-1 3" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></symbol>
+  <symbol id="i-storm" viewBox="0 0 24 24"><path d="M7 13h10a4 4 0 0 0 .5-8A6 6 0 0 0 6 4.5 4.3 4.3 0 0 0 7 13z" fill="currentColor"/><path d="m12 14-2 4h3l-2 4" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/></symbol>
+  <symbol id="i-fog" viewBox="0 0 24 24"><path d="M3 8h18M5 12h14M3 16h18M6 20h12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M12 3 20 20l-8-4-8 4z" fill="currentColor"/></symbol>
+</svg>
+
 <canvas id="c"></canvas>
 
+<!-- ===================== CARGA ===================== -->
 <div id="loading">
-  <div class="logo">POLICE<small>LIFE ON DUTY</small></div>
-  <div class="beacon"></div>
-  <div class="bar"><i id="loadbar"></i></div>
-  <div class="lbl" id="loadlbl">Iniciando motor gráfico…</div>
+  <div class="ld-center">
+    <svg class="ld-badge"><use href="#i-shield"/></svg>
+    <div class="ld-logo">POLICE<span>LIFE ON DUTY</span></div>
+    <div class="ld-bar"><i id="loadbar"></i></div>
+    <div class="ld-lbl" id="loadlbl">Iniciando motor gráfico…</div>
+  </div>
+  <div class="ld-tip"><b>Consejo</b><span id="loadtip">Las detenciones necesitan fundamento: comprueba los hechos antes de decidir.</span></div>
 </div>
 
+<!-- ===================== PANTALLA DE TÍTULO ===================== -->
+<div id="title" class="hidden">
+  <div class="tt-logo"><svg class="tt-badge"><use href="#i-shield"/></svg><div><div class="tt-name">POLICE</div><div class="tt-sub">LIFE ON DUTY</div></div></div>
+  <div class="tt-press" id="tt-press">Pulsa cualquier tecla para empezar</div>
+  <div class="tt-foot"><span>Demo técnica · v2.0</span><span>Distrito de Valmora</span></div>
+</div>
+
+<!-- ===================== MENÚ PRINCIPAL ===================== -->
 <div id="menu" class="hidden">
-  <div class="col">
-    <div class="title">POLICE<span>LIFE ON DUTY</span></div>
-    <div class="tagline">Una ciudad viva. Cada aviso importa. Cada decisión deja huella.<br><span class="chip" style="margin-top:10px">Demo técnica · Distrito de Valmora</span></div>
-    <button class="mbtn" id="m-continue" disabled>Continuar carrera<small id="m-continue-sub">Sin partida guardada</small></button>
-    <button class="mbtn" id="m-new">Nueva carrera<small>Empieza como agente en prácticas</small></button>
-    <button class="mbtn" id="m-free">Patrulla libre<small>Elige turno, clima y atiende avisos</small></button>
-    <button class="mbtn" id="m-settings">Ajustes<small>Gráficos, audio, accesibilidad</small></button>
-    <button class="mbtn" id="m-controls">Controles<small>Teclado, mando y táctil</small></button>
-    <div class="menu-foot">Simulación policial ficticia basada en el GDD «Police: Life on Duty». Prioriza la desescalada, la proporcionalidad y la documentación. Gráficos generados 100% de forma procedural en tiempo real.</div>
+  <div class="mn-top">
+    <div class="mn-brand"><svg><use href="#i-shield"/></svg><div><b>POLICE</b><span>LIFE ON DUTY</span></div></div>
+    <div class="mn-profile" id="profile">
+      <div class="pf-ins" id="pf-ins"></div>
+      <div class="pf-txt"><b id="pf-name">Agente R. Vega · U-12</b><span id="pf-rank">Agente en prácticas</span><div class="pf-bar"><i id="pf-bar"></i></div><small id="pf-stats">0 XP · 0 casos</small></div>
+    </div>
+  </div>
+  <nav class="mn-nav" id="mn-nav">
+    <button class="mn-item" id="m-continue" disabled><span class="mn-k">01</span><span class="mn-l">Continuar carrera<small id="m-continue-sub">Sin partida guardada</small></span></button>
+    <button class="mn-item" id="m-new"><span class="mn-k">02</span><span class="mn-l">Nueva carrera<small>Empieza como agente en prácticas</small></span></button>
+    <button class="mn-item" id="m-free"><span class="mn-k">03</span><span class="mn-l">Patrulla libre<small>Elige turno y clima, atiende avisos</small></span></button>
+    <button class="mn-item" id="m-settings"><span class="mn-k">04</span><span class="mn-l">Ajustes<small>Gráficos, controles, accesibilidad</small></span></button>
+    <button class="mn-item" id="m-controls"><span class="mn-k">05</span><span class="mn-l">Controles<small>Teclado, mando y táctil</small></span></button>
+    <button class="mn-item" id="m-credits"><span class="mn-k">06</span><span class="mn-l">Créditos<small>Modelos y licencias</small></span></button>
+  </nav>
+  <div class="mn-side">
+    <div class="mn-card">
+      <div class="mn-card-h">Orden del día</div>
+      <div class="mn-news" id="mn-news">
+        <p><b>Central</b> Refuerzo de patrullas en la Zona de Ocio por la noche.</p>
+        <p><b>Tráfico</b> Lluvia prevista: extremar la precaución en la Av. de la Marina.</p>
+        <p><b>Formación</b> Prioriza la desescalada y documenta cada intervención.</p>
+      </div>
+    </div>
+  </div>
+  <div class="mn-foot" id="mn-foot"><span><span class="kbd">↑↓</span> Navegar</span><span><span class="kbd">Enter</span> Seleccionar</span><span><span class="kbd">Esc</span> Volver</span></div>
+</div>
+
+<!-- ===================== TURNO ===================== -->
+<div id="shift" class="screen hidden">
+  <div class="sc-head"><button class="back" id="shift-back" aria-label="Volver">‹</button><div><div class="sc-eyebrow">Preparación</div><h2>Orden de servicio</h2></div></div>
+  <div class="sc-body sh-grid">
+    <div class="sh-opts">
+      <div class="sh-sec"><h3>Horario</h3>
+        <div class="cards" id="opt-hour">
+          <button class="card tod" data-v="7.5" style="--g1:#f6b46b;--g2:#5c78a8"><b>Amanecer</b><small>07:30</small></button>
+          <button class="card tod" data-v="12" style="--g1:#8fc2ff;--g2:#3c6fb6"><b>Mediodía</b><small>12:00</small></button>
+          <button class="card tod" data-v="19.3" style="--g1:#ff8c5a;--g2:#4a2a5e"><b>Atardecer</b><small>19:20</small></button>
+          <button class="card tod sel" data-v="22.5" style="--g1:#24375e;--g2:#05070f"><b>Noche</b><small>22:30</small></button>
+        </div></div>
+      <div class="sh-sec"><h3>Clima</h3>
+        <div class="cards wx" id="opt-weather">
+          <button class="card" data-v="despejado"><svg><use href="#i-sun"/></svg><b>Despejado</b></button>
+          <button class="card" data-v="nublado"><svg><use href="#i-cloud"/></svg><b>Nublado</b></button>
+          <button class="card sel" data-v="lluvia"><svg><use href="#i-rain"/></svg><b>Lluvia</b></button>
+          <button class="card" data-v="tormenta"><svg><use href="#i-storm"/></svg><b>Tormenta</b></button>
+          <button class="card" data-v="niebla"><svg><use href="#i-fog"/></svg><b>Niebla</b></button>
+        </div></div>
+      <div class="sh-sec"><h3>Conducción</h3>
+        <div class="cards two" id="opt-assist">
+          <button class="card sel" data-v="arcade"><b>Arcade</b><small>Asistencias altas, ideal en móvil</small></button>
+          <button class="card" data-v="sim"><b>Simulación</b><small>Respuesta más exigente</small></button>
+        </div></div>
+    </div>
+    <aside class="sh-sum">
+      <div class="sum-h"><svg><use href="#i-shield"/></svg><div><b>Unidad U-12</b><span>Comisaría Central · Valmora</span></div></div>
+      <dl class="sum-list">
+        <div><dt>Vehículo</dt><dd>Patrulla Z-12 (turismo)</dd></div>
+        <div><dt>Turno</dt><dd id="sum-hour">Noche · 22:30</dd></div>
+        <div><dt>Clima</dt><dd id="sum-wx">Lluvia</dd></div>
+        <div><dt>Conducción</dt><dd id="sum-as">Arcade</dd></div>
+        <div><dt>Equipo</dt><dd>Radio, terminal, etilómetro, cámara</dd></div>
+      </dl>
+      <p class="sum-note">Atiende los avisos de la central, actúa de forma proporcionada y redacta el informe de cada intervención.</p>
+      <button class="btn big" id="shift-go">Iniciar turno</button>
+    </aside>
   </div>
 </div>
 
-<div id="shift" class="modal hidden"><div class="box glass">
-  <h2>Selección de turno</h2>
-  <p>Prepara tu turno de patrulla. El horario y el clima cambian la visibilidad, el tráfico y el tipo de avisos.</p>
-  <h3>Horario</h3>
-  <div class="opts" id="opt-hour">
-    <button class="opt" data-v="7.5">Amanecer<small>07:30 · luz dorada</small></button>
-    <button class="opt" data-v="12">Mañana<small>12:00 · tráfico denso</small></button>
-    <button class="opt" data-v="19.3">Atardecer<small>19:20 · hora mágica</small></button>
-    <button class="opt sel" data-v="22.5">Noche<small>22:30 · ocio nocturno</small></button>
+<!-- ===================== AJUSTES ===================== -->
+<div id="settings" class="screen hidden">
+  <div class="sc-head"><button class="back" id="settings-back" aria-label="Volver">‹</button><div><div class="sc-eyebrow">Configuración</div><h2>Ajustes</h2></div></div>
+  <div class="tabs" id="set-tabs"><button class="tab sel" data-t="g">Gráficos</button><button class="tab" data-t="c">Controles</button><button class="tab" data-t="a">Audio</button><button class="tab" data-t="h">Interfaz</button></div>
+  <div class="sc-body">
+    <section class="tabp" data-t="g">
+      <h3>Calidad</h3>
+      <div class="cards four" id="opt-quality">
+        <button class="card" data-v="bajo"><b>Bajo</b><small>Móviles</small></button>
+        <button class="card" data-v="medio"><b>Medio</b><small>Equilibrado</small></button>
+        <button class="card" data-v="alto"><b>Alto</b><small>GTAO + bloom</small></button>
+        <button class="card" data-v="ultra"><b>Ultra</b><small>Sombras 4K</small></button>
+      </div>
+      <p class="note">Cambiar la calidad recarga el juego.</p>
+      <label class="row-set"><span>Resolución dinámica<small>Ajusta la resolución para mantener la fluidez</small></span><input type="checkbox" id="s-drs" checked></label>
+      <label class="row-set"><span>Grano y aberración cromática</span><input type="checkbox" id="s-grain" checked></label>
+      <label class="row-set"><span>Gotas de lluvia en cámara</span><input type="checkbox" id="s-lens" checked></label>
+      <label class="row-set"><span>Mostrar FPS</span><input type="checkbox" id="s-fps"></label>
+    </section>
+    <section class="tabp hidden" data-t="c">
+      <label class="row-set"><span>Sensibilidad de cámara</span><input type="range" id="s-sens" min="0.3" max="2" step="0.05" value="1"></label>
+      <label class="row-set"><span>Invertir eje vertical</span><input type="checkbox" id="s-invert"></label>
+      <label class="row-set"><span>Vibración de cámara</span><input type="checkbox" id="s-shake" checked></label>
+      <h3>Táctil</h3>
+      <label class="row-set"><span>Dirección en móvil<small>Joystick o botones izquierda/derecha</small></span><select id="s-steer"><option value="joy">Joystick</option><option value="buttons">Botones</option><option value="tilt">Inclinación</option></select></label>
+      <label class="row-set"><span>Tamaño de botones</span><input type="range" id="s-tsize" min="0.75" max="1.4" step="0.05" value="1"></label>
+      <label class="row-set"><span>Opacidad de botones</span><input type="range" id="s-topac" min="0.3" max="1" step="0.05" value="0.85"></label>
+      <label class="row-set"><span>Modo zurdo<small>Invierte los lados de los controles</small></span><input type="checkbox" id="s-lefty"></label>
+      <label class="row-set"><span>Vibración háptica</span><input type="checkbox" id="s-haptic" checked></label>
+    </section>
+    <section class="tabp hidden" data-t="a">
+      <label class="row-set"><span>Volumen general</span><input type="range" id="s-vol" min="0" max="1" step="0.05" value="0.8"></label>
+      <label class="row-set"><span>Voz de la central<small>Síntesis de voz en español</small></span><input type="checkbox" id="s-voice" checked></label>
+    </section>
+    <section class="tabp hidden" data-t="h">
+      <label class="row-set"><span>Escala de la interfaz</span><input type="range" id="s-hud" min="0.8" max="1.25" step="0.05" value="1"></label>
+      <label class="row-set"><span>Ayudas de controles en pantalla</span><input type="checkbox" id="s-hints" checked></label>
+      <label class="row-set"><span>Voz con subtítulos de radio</span><input type="checkbox" id="s-subs" checked></label>
+      <label class="row-set"><span>Luces rojo/azul<small>Por defecto azul, como en España</small></span><input type="checkbox" id="s-redblue"></label>
+      <label class="row-set"><span>Velocidad del reloj<small>Minutos de juego por segundo real</small></span><input type="range" id="s-time" min="0" max="240" step="10" value="60"></label>
+    </section>
   </div>
-  <h3>Clima</h3>
-  <div class="opts" id="opt-weather">
-    <button class="opt" data-v="despejado">Despejado</button>
-    <button class="opt" data-v="nublado">Nublado</button>
-    <button class="opt sel" data-v="lluvia">Lluvia<small>asfalto mojado</small></button>
-    <button class="opt" data-v="tormenta">Tormenta<small>relámpagos</small></button>
-    <button class="opt" data-v="niebla">Niebla</button>
-  </div>
-  <h3>Conducción</h3>
-  <div class="opts" id="opt-assist">
-    <button class="opt sel" data-v="arcade">Arcade<small>asistencias altas</small></button>
-    <button class="opt" data-v="sim">Simulación<small>respuesta exigente</small></button>
-  </div>
-  <div class="row"><button class="btn ghost" id="shift-back">Volver</button><button class="btn" id="shift-go">Comenzar turno</button></div>
-</div></div>
+  <div class="sc-foot"><button class="btn" id="settings-close">Guardar y volver</button></div>
+</div>
 
-<div id="settings" class="modal hidden"><div class="box glass">
-  <h2>Ajustes</h2>
-  <h3>Calidad gráfica</h3>
-  <div class="opts" id="opt-quality">
-    <button class="opt" data-v="bajo">Bajo<small>móviles</small></button>
-    <button class="opt" data-v="medio">Medio</button>
-    <button class="opt" data-v="alto">Alto<small>GTAO + bloom</small></button>
-    <button class="opt" data-v="ultra">Ultra<small>sombras 4K, 2x</small></button>
+<!-- ===================== CONTROLES ===================== -->
+<div id="controls" class="screen hidden">
+  <div class="sc-head"><button class="back" id="controls-back" aria-label="Volver">‹</button><div><div class="sc-eyebrow">Ayuda</div><h2>Controles</h2></div></div>
+  <div class="sc-body ctl-grid">
+    <div class="ctl"><h3>A pie</h3>
+      <div><span>Moverse</span><span><span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span></span></div>
+      <div><span>Correr</span><span class="kbd">Shift</span></div>
+      <div><span>Cámara</span><span>Ratón</span></div>
+      <div><span>Interactuar</span><span class="kbd">E</span></div>
+      <div><span>Subir / bajar</span><span class="kbd">F</span></div>
+    </div>
+    <div class="ctl"><h3>Conducción</h3>
+      <div><span>Acelerar / frenar</span><span><span class="kbd">W</span><span class="kbd">S</span></span></div>
+      <div><span>Dirección</span><span><span class="kbd">A</span><span class="kbd">D</span></span></div>
+      <div><span>Freno de mano</span><span class="kbd">Espacio</span></div>
+      <div><span>Luces · Sirena · Tono</span><span><span class="kbd">Q</span><span class="kbd">H</span><span class="kbd">J</span></span></div>
+      <div><span>Cámara · Claxon · Faros</span><span><span class="kbd">C</span><span class="kbd">G</span><span class="kbd">L</span></span></div>
+    </div>
+    <div class="ctl"><h3>Servicio</h3>
+      <div><span>Aceptar / rechazar aviso</span><span><span class="kbd">Y</span><span class="kbd">N</span></span></div>
+      <div><span>Radio</span><span class="kbd">R</span></div>
+      <div><span>Informe</span><span class="kbd">I</span></div>
+      <div><span>Mapa</span><span class="kbd">M</span></div>
+      <div><span>Objetivos</span><span class="kbd">Tab</span></div>
+      <div><span>Opciones de diálogo</span><span><span class="kbd">1</span>–<span class="kbd">6</span></span></div>
+      <div><span>Pausa · Modo foto</span><span><span class="kbd">Esc</span><span class="kbd">F2</span></span></div>
+    </div>
+    <div class="ctl"><h3>Móvil</h3>
+      <div><span>Moverse / girar</span><span>Joystick izquierdo</span></div>
+      <div><span>Cámara</span><span>Arrastra a la derecha</span></div>
+      <div><span>Correr</span><span>Empuja el joystick al máximo</span></div>
+      <div><span>Acción</span><span>Botón grande contextual</span></div>
+      <div><span>Mapa</span><span>Toca el minimapa</span></div>
+    </div>
   </div>
-  <p style="font-size:12px;color:var(--muted)">El cambio de calidad recarga la página.</p>
-  <h3>Audio</h3>
-  <label class="sl">Volumen <input type="range" id="s-vol" min="0" max="1" step="0.05" value="0.8"></label>
-  <label class="sl"><input type="checkbox" id="s-voice" checked> Voz sintetizada de la central (es-ES)</label>
-  <h3>Presentación y accesibilidad</h3>
-  <label class="sl"><input type="checkbox" id="s-grain" checked> Grano de película y aberración cromática</label>
-  <label class="sl"><input type="checkbox" id="s-shake" checked> Vibración de cámara</label>
-  <label class="sl"><input type="checkbox" id="s-redblue"> Luces de emergencia rojo/azul (por defecto: azul, como en España)</label>
-  <label class="sl">Sensibilidad de cámara <input type="range" id="s-sens" min="0.3" max="2" step="0.05" value="1"></label>
-  <label class="sl">Velocidad del reloj <input type="range" id="s-time" min="0" max="240" step="10" value="60"></label>
-  <label class="sl"><input type="checkbox" id="s-fps"> Mostrar FPS</label>
-  <div class="row"><button class="btn" id="settings-close">Aceptar</button></div>
-</div></div>
+</div>
 
-<div id="controls" class="modal hidden"><div class="box glass">
-  <h2>Controles</h2>
-  <h3>A pie</h3>
-  <div class="ctrls">
-    <div>Moverse <span><span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span></span></div>
-    <div>Correr <span class="kbd">Shift</span></div>
-    <div>Cámara <span>Ratón (clic para capturar)</span></div>
-    <div>Interactuar / hablar <span class="kbd">E</span></div>
-    <div>Subir / bajar del vehículo <span class="kbd">F</span></div>
-    <div>Radio / pedir aviso <span class="kbd">R</span></div>
+<!-- ===================== CRÉDITOS ===================== -->
+<div id="credits" class="screen hidden">
+  <div class="sc-head"><button class="back" id="credits-back" aria-label="Volver">‹</button><div><div class="sc-eyebrow">Licencias</div><h2>Créditos</h2></div></div>
+  <div class="sc-body cr">
+    <p>Diseño basado en el GDD «Police: Life on Duty». Ciudad, texturas PBR, cielo, clima, sonido y efectos generados por código en tiempo real.</p>
+    <h3>Modelos 3D gratuitos</h3>
+    <div class="cr-item"><b>Vehículos · «Car Kit»</b><span>Kenney (kenney.nl) · Licencia CC0 1.0 (dominio público)</span></div>
+    <div class="cr-item"><b>Personas animadas · «Ultimate Animated Character Pack»</b><span>Quaternius (quaternius.com) · Licencia CC0 1.0 (dominio público)</span></div>
+    <h3>Tecnología</h3>
+    <div class="cr-item"><b>Three.js r170</b><span>Licencia MIT · motor WebGL 2</span></div>
+    <p class="note">Todos los nombres, lugares y organizaciones son ficticios.</p>
   </div>
-  <h3>Conducción</h3>
-  <div class="ctrls">
-    <div>Acelerar / frenar <span><span class="kbd">W</span><span class="kbd">S</span></span></div>
-    <div>Dirección <span><span class="kbd">A</span><span class="kbd">D</span></span></div>
-    <div>Freno de mano <span class="kbd">Espacio</span></div>
-    <div>Luces de emergencia <span class="kbd">Q</span></div>
-    <div>Sirena / cambiar tono <span><span class="kbd">H</span> <span class="kbd">J</span></span></div>
-    <div>Claxon <span class="kbd">G</span></div>
-    <div>Cambiar cámara <span class="kbd">C</span></div>
-    <div>Faros <span class="kbd">L</span></div>
-  </div>
-  <h3>General</h3>
-  <div class="ctrls">
-    <div>Aceptar / rechazar aviso <span><span class="kbd">Y</span><span class="kbd">N</span></span></div>
-    <div>Redactar informe <span class="kbd">I</span></div>
-    <div>Mapa táctico <span class="kbd">M</span></div>
-    <div>Opciones de diálogo <span><span class="kbd">1</span>…<span class="kbd">6</span></span></div>
-    <div>Pausa <span><span class="kbd">Esc</span> / <span class="kbd">P</span></span></div>
-    <div>Modo foto (oculta HUD) <span class="kbd">F2</span></div>
-  </div>
-  <p style="font-size:12px;color:var(--muted)">También compatible con mando (gatillos para acelerar/frenar) y controles táctiles en móvil.</p>
-  <div class="row"><button class="btn" id="controls-close">Entendido</button></div>
-</div></div>
+</div>
 
-<div id="pause" class="modal hidden"><div class="box glass" style="width:min(460px,100%)">
-  <h2>Pausa</h2>
-  <p id="pause-info"></p>
-  <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
-    <button class="btn" id="p-resume">Continuar</button>
-    <button class="btn ghost" id="p-settings">Ajustes</button>
-    <button class="btn ghost" id="p-controls">Controles</button>
-    <button class="btn ghost" id="p-weather">Cambiar clima</button>
-    <button class="btn ghost" id="p-time">Avanzar 3 horas</button>
-    <button class="btn ghost" id="p-reset">Volver al vehículo (punto seguro)</button>
-    <button class="btn ghost" id="p-quit">Terminar turno y salir</button>
+<!-- ===================== PAUSA ===================== -->
+<div id="pause" class="screen dim hidden">
+  <div class="ps-box">
+    <div class="sc-eyebrow">Turno en pausa</div><h2>Pausa</h2>
+    <p id="pause-info"></p>
+    <nav class="ps-nav">
+      <button class="mn-item" id="p-resume"><span class="mn-l">Continuar</span></button>
+      <button class="mn-item" id="p-map"><span class="mn-l">Mapa táctico</span></button>
+      <button class="mn-item" id="p-settings"><span class="mn-l">Ajustes</span></button>
+      <button class="mn-item" id="p-controls"><span class="mn-l">Controles</span></button>
+      <button class="mn-item" id="p-weather"><span class="mn-l">Cambiar clima</span></button>
+      <button class="mn-item" id="p-time"><span class="mn-l">Avanzar 3 horas</span></button>
+      <button class="mn-item" id="p-reset"><span class="mn-l">Volver al vehículo</span></button>
+      <button class="mn-item danger" id="p-quit"><span class="mn-l">Terminar turno</span></button>
+    </nav>
   </div>
-</div></div>
+</div>
 
-<div id="report" class="modal hidden"><div class="box glass" style="width:min(860px,100%)">
-  <h2>Informe de intervención</h2>
-  <p id="rep-head"></p>
+<!-- ===================== INFORME / RESULTADOS ===================== -->
+<div id="report" class="screen dim hidden"><div class="panel wide">
+  <div class="sc-eyebrow">Expediente</div><h2>Informe de intervención</h2>
+  <p id="rep-head" class="rep-head"></p>
   <div class="rep-grid">
-    <div><h3>Hechos registrados</h3><div id="rep-facts"></div><h3>Resolución</h3><div class="opts" id="rep-res" style="grid-template-columns:1fr"></div></div>
-    <div><h3>Pruebas y declaraciones adjuntas</h3><div id="rep-ev"></div><h3>Observaciones</h3><div id="rep-obs" class="fact" style="border-color:var(--amber)"></div></div>
+    <div><h3>Hechos registrados</h3><div id="rep-facts"></div><h3>Resolución</h3><div class="cards list" id="rep-res"></div></div>
+    <div><h3>Pruebas y declaraciones</h3><div id="rep-ev"></div><h3>Observaciones</h3><div id="rep-obs" class="fact obs"></div></div>
   </div>
   <div class="row"><button class="btn ghost" id="rep-later">Guardar borrador</button><button class="btn" id="rep-send">Enviar informe</button></div>
 </div></div>
 
-<div id="results" class="modal hidden"><div class="box glass" style="width:min(720px,100%)">
-  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
-    <div><h2 id="res-title">Evaluación</h2><p id="res-sub" style="margin:0"></p></div>
-    <div class="grade" id="res-grade">A</div>
-  </div>
+<div id="results" class="screen dim hidden"><div class="panel">
+  <div class="res-top"><div><div class="sc-eyebrow">Evaluación</div><h2 id="res-title">Evaluación</h2><p id="res-sub"></p></div><div class="grade" id="res-grade">A</div></div>
   <div class="scores" id="res-scores"></div>
   <h3>Consecuencias</h3>
   <div id="res-cons"></div>
@@ -314,33 +589,55 @@ label.sl input[type=checkbox] { accent-color: var(--blue); width: 18px; height: 
 </div></div>
 
 <div id="bigmap" class="hidden"><canvas width="1400" height="1400"></canvas>
-  <div class="legend"><span class="chip">● Tú</span><span class="chip" style="color:#ffb020">◆ Aviso</span><span class="chip" style="color:#69a6ff">■ Comisaría</span><span class="chip" style="color:#ff6b6b">✚ Hospital</span><span class="chip">M · cerrar</span></div>
+  <div class="legend"><span class="chip">▲ Tú</span><span class="chip amber">◆ Aviso</span><span class="chip blue">P Comisaría</span><span class="chip red">+ Hospital</span><button class="chip" id="bm-close">Cerrar</button></div>
 </div>
 
+<div id="rotate" class="hidden"><div><svg><use href="#i-car"/></svg><b>Gira el dispositivo</b><span>El juego está pensado para jugar en horizontal.</span><button class="btn ghost" id="rot-ok">Seguir en vertical</button></div></div>
+
+<!-- ===================== HUD ===================== -->
 <div id="hud" class="hidden">
   <div id="vignette"></div>
-  <div id="mapwrap"><canvas id="minimap" width="420" height="420"></canvas><div id="loc"></div></div>
-  <div id="status" class="glass"><span class="clock" id="clock">22:30</span><span class="sep"></span><span id="shiftlbl">Turno de noche</span><span class="sep"></span><span id="wlbl">Lluvia</span><span class="sep rk"></span><span class="rk"><div id="rank">Agente en prácticas</div><div id="xpbar"><i></i></div></span></div>
+  <div id="mapwrap"><canvas id="minimap" width="360" height="360"></canvas><div id="loc"></div></div>
+  <div id="status"><span class="clock" id="clock">22:30</span><span id="wlbl">Lluvia</span><span class="rk" id="rank">Agente en prácticas</span><div id="xpbar"><i></i></div><span id="shiftlbl" class="hidden"></span></div>
+  <div id="objwrap"><div id="objpill" class="hidden"><svg class="cmp" id="obj-cmp"><use href="#i-arrow"/></svg><span id="obj-txt"></span><em id="obj-dist"></em></div><div id="objective" class="hidden"></div></div>
   <div id="radio"></div>
-  <div id="dispatch" class="glass hidden"></div>
-  <div id="objective" class="glass hidden"></div>
-  <div id="pursuit" class="glass hidden"><div class="t"><span>Persecución en curso</span><span id="pur-d">0 m</span></div><div class="b"><i id="pur-b"></i></div></div>
-  <div id="prompt" class="glass hidden"></div>
-  <div id="speedo" class="hidden"><canvas width="380" height="380"></canvas><div class="num"><b id="spd">0</b><small>KM/H</small></div><div class="ind"><span id="i-gear">1</span><span id="i-lights">LUCES</span><span id="i-siren" class="s">SIRENA</span></div></div>
+  <div id="dispatch" class="hidden"></div>
+  <div id="pursuit" class="hidden"><div class="t"><span>Persecución</span><span id="pur-d">0 m</span></div><div class="b"><i id="pur-b"></i></div></div>
+  <div id="prompt" class="hidden"></div>
+  <div id="speedo" class="hidden"><canvas width="300" height="300"></canvas><div class="num"><b id="spd">0</b><small>KM/H</small></div><div class="ind"><span id="i-gear">1</span><span id="i-lights">LUCES</span><span id="i-siren" class="s">SIRENA</span></div></div>
   <div id="hints"></div>
   <div id="toasts"></div>
-  <div id="dialog" class="glass hidden"></div>
+  <div id="dialog" class="hidden"></div>
   <div id="wheel" class="hidden"></div>
+  <button id="hud-pause" aria-label="Pausa"><svg><use href="#i-pause"/></svg></button>
   <div id="fps" class="hidden"></div>
 </div>
 
+<!-- ===================== CONTROLES TÁCTILES ===================== -->
 <div id="touch">
-  <div class="joy"><div class="knob"></div></div>
-  <div class="tl"><div data-k="KeyM">MAPA</div><div data-k="KeyR">RADIO</div><div data-k="KeyI">INFORME</div><div data-k="Escape">II</div></div>
-  <div class="btns">
-    <div data-k="KeyQ">LUCES</div><div data-k="KeyH">SIRENA</div><div data-k="KeyC">CÁM</div>
-    <div data-k="KeyF">COCHE</div><div data-k="KeyE">ACCIÓN</div><div data-k="Space">FRENO</div>
-    <div data-k="ShiftLeft">CORRER</div><div data-k="KeyY">SÍ</div><div data-k="KeyN">NO</div>
+  <div class="tz tz-move" id="tz-move"></div>
+  <div class="tz tz-look" id="tz-look"></div>
+  <div class="joy" id="joy"><div class="knob"></div></div>
+  <div class="tbtns foot">
+    <button class="tb act hidden" data-k="KeyE" id="tb-act"><svg><use href="#i-hand"/></svg><span id="tb-act-l">Acción</span></button>
+    <button class="tb veh hidden" data-k="KeyF" id="tb-veh"><svg><use href="#i-car"/></svg></button>
+    <button class="tb sm" data-k="ShiftLeft" id="tb-run"><svg><use href="#i-run"/></svg></button>
+  </div>
+  <div class="tbtns car">
+    <button class="tb gas" data-k="KeyW"><svg><use href="#i-gas"/></svg></button>
+    <button class="tb brk" data-k="KeyS"><svg><use href="#i-brake"/></svg></button>
+    <button class="tb hb" data-k="Space"><svg><use href="#i-hb"/></svg></button>
+    <div class="steer"><button class="tb st" data-k="ArrowLeft">‹</button><button class="tb st" data-k="ArrowRight">›</button></div>
+  </div>
+  <div class="tbar car">
+    <button class="tb sm" data-k="KeyQ" id="tb-lights"><svg><use href="#i-beacon"/></svg></button>
+    <button class="tb sm" data-k="KeyH" id="tb-siren"><svg><use href="#i-siren"/></svg></button>
+    <button class="tb sm" data-k="KeyC"><svg><use href="#i-cam"/></svg></button>
+    <button class="tb sm" data-k="KeyF"><svg><use href="#i-exit"/></svg></button>
+  </div>
+  <div class="tbar any">
+    <button class="tb sm" data-k="KeyR"><svg><use href="#i-radio"/></svg></button>
+    <button class="tb sm hidden" data-k="KeyI" id="tb-rep"><svg><use href="#i-doc"/></svg></button>
   </div>
 </div>
 

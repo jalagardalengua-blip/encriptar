@@ -223,7 +223,7 @@ class Game {
   }
 
   startShift() {
-    $('menu').classList.add('hidden');
+    $('menu').classList.add('hidden'); $('title').classList.add('hidden');
     this.env.setHour(this.shiftCfg.hour); this.env.setWeather(this.shiftCfg.weather, true);
     this.assist = this.shiftCfg.assist;
     this.placeAtStation();

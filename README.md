@@ -1,6 +1,6 @@
 # POLICE: LIFE ON DUTY · Demo técnica web
 
-Simulador policial de mundo abierto en 3D que se ejecuta en el navegador (WebGL 2 + Three.js), basado en el GDD «Police: Life on Duty». Todo el contenido (ciudad, texturas PBR, coches, personas, sonido) se genera de forma procedural en tiempo real: no hay modelos ni texturas descargados.
+Simulador policial de mundo abierto en 3D que se ejecuta en el navegador (WebGL 2 + Three.js), basado en el GDD «Police: Life on Duty». Funciona en ordenador, iPhone y Android. La ciudad, las texturas PBR, el cielo, el clima y el sonido se generan por código; los vehículos y las personas usan modelos gratuitos CC0 (ver «Créditos»).
 
 ## Cómo jugar
 
@@ -10,7 +10,14 @@ python3 -m http.server 8080
 # abre http://localhost:8080
 ```
 
-Hace falta un servidor HTTP local (los módulos ES no cargan con `file://`). Funciona en Chrome, Edge, Firefox y Safari recientes, con un ordenador con GPU dedicada o integrada moderna. En móvil se activa el preset gráfico «Bajo» y aparecen controles táctiles.
+Hace falta un servidor HTTP local (los módulos ES no cargan con `file://`). Funciona en Chrome, Edge, Firefox y Safari recientes.
+
+### Móvil (iPhone y Android)
+
+- Juega en horizontal. En móvil se activan el preset gráfico «Bajo», la resolución dinámica y los controles táctiles.
+- Android: al tocar la pantalla de título el juego pasa a pantalla completa y bloquea la orientación horizontal.
+- iPhone: Safari no permite pantalla completa en páginas web; usa **Compartir → Añadir a pantalla de inicio** para abrirlo a pantalla completa como una app.
+- Controles táctiles: joystick izquierdo (aparece donde toques; empujarlo al máximo hace correr), arrastrar a la derecha para la cámara, botón de acción contextual, pedales de acelerador y freno, freno de mano, y botones de luces, sirena, cámara y salir. En Ajustes → Controles puedes elegir dirección por joystick, botones o inclinación, cambiar tamaño y opacidad, y activar el modo zurdo.
 
 Parámetros opcionales en la URL: `?q=bajo|medio|alto|ultra` fuerza la calidad gráfica.
 
@@ -46,6 +53,15 @@ También funciona con mando (gatillos para acelerar y frenar).
 - Evaluación por seguridad, legalidad, resolución, comunicación e informe, con consecuencias, experiencia y rangos. El progreso se guarda en el navegador.
 - Radio con voz sintetizada en español, sirenas europeas bitonales, motor, lluvia y ambiente urbano sintetizados con WebAudio.
 
+## Créditos de modelos 3D
+
+| Elemento | Fuente | Licencia |
+|---|---|---|
+| Vehículos (patrulla, turismo, todoterreno, taxi, furgoneta, pick-up, ambulancia) | Kenney · «Car Kit» (kenney.nl) | CC0 1.0 |
+| Personas animadas (agente, civiles) | Quaternius · «Ultimate Animated Character Pack» (quaternius.com) | CC0 1.0 |
+
+Los modelos se optimizaron con glTF-Transform (cuantización + compresión meshopt) y están en `assets/`. Los vehículos se reescalan a medidas reales y reciben materiales PBR propios; los personajes se recolorean por prenda.
+
 ## Estructura
 
 ```
@@ -61,5 +77,8 @@ src/missions.js     avisos y misiones
 src/hud.js          minimapa, radio, diálogos, informe
 src/audio.js        audio sintetizado
 src/fx.js           partículas, marcas, balizas
+src/assets.js       carga y adaptación de modelos glTF
+src/ui.css          estilos de menús, HUD y controles táctiles
+assets/             modelos .glb e iconos
 vendor/three/       Three.js r170 (licencia MIT)
 ```

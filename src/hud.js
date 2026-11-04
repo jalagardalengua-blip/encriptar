@@ -151,17 +151,18 @@ export class HUD {
     if (this.dispatchOpen.t <= 0) this.closeDispatch(false);
   }
   objectives(title, list, extra = '') {
+    if (list && document.body.classList.contains('touch')) list = list.map((o) => ({ ...o, text: o.text.replace(/\s*\((?:[A-Z]|[A-Z] \/ [A-Z]|Q)\)/g, '').replace(/Pulsa R para solicitar/, 'Usa la radio para solicitar') }));
     if (!list) { this.vis('objective', false); this.vis('objpill', false); this.objKey = null; return; }
     const html = `<div class="t"><span>${esc(title)}</span><span>${extra}</span></div><ul>${list.map((o) => `<li class="${o.done ? 'done' : ''} ${o.optional ? 'optional' : ''}">${esc(o.text)}${o.optional ? ' (opcional)' : ''}</li>`).join('')}</ul>`;
     this.set('objective', html);
     const cur = list.find((o) => !o.done && !o.optional) || list.find((o) => !o.done);
     const done = list.filter((o) => o.done && !o.optional).length, tot = list.filter((o) => !o.optional).length;
     const txt = cur ? cur.text : 'Objetivos completados';
-    this.set('obj-txt', esc(extra && !cur ? 'Pulsa I para redactar el informe' : txt));
+    this.set('obj-txt', esc(extra && !cur ? (document.body.classList.contains('touch') ? 'Toca el botón de informe' : 'Pulsa I para redactar el informe') : txt));
     this.objProgress = tot > 1 ? `${done}/${tot}` : '';
     this.vis('objpill', true);
     const key = title + '|' + list.map((o) => o.text + o.done).join('|');
-    if (key !== this.objKey) { this.objKey = key; this.expandObjectives(4.5); }
+    if (key !== this.objKey) { this.objKey = key; if (!document.body.classList.contains('touch')) this.expandObjectives(4.5); }
   }
   expandObjectives(t = 6) { this.objExpandT = t; this.vis('objective', true); }
   tickObjectives(dt, compass) {
