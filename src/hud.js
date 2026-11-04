@@ -118,7 +118,7 @@ export class HUD {
 
   // ---------- Mensajes ----------
   toast(text, kind = 'info', ms = 2400) {
-    const d = document.createElement('div'); d.className = `toast ${kind}`; d.textContent = text; $('toasts').appendChild(d);
+    const d = document.createElement('div'); d.className = `toast ${kind}`; d.textContent = text; const tb = $('toasts'); tb.appendChild(d); while (tb.children.length > 4) tb.firstChild.remove();
     setTimeout(() => { d.style.transition = 'opacity .4s'; d.style.opacity = 0; setTimeout(() => d.remove(), 450); }, ms);
   }
   radio(from, text, prio = 3, speak = false) {

@@ -87,7 +87,7 @@ export class Beacon {
     this.group.visible = true; this.group.position.set(target.x, 0, target.z);
     const d = Math.hypot(camPos.x - target.x, camPos.z - target.z);
     this.mat.uniforms.uO.value = Math.min(1, Math.max(0, (d - 8) / 25));
-    this.ring.scale.setScalar(1 + Math.sin(this.mat.uniforms.uTime.value * 3) * 0.08);
+    this.ring.scale.setScalar(1 + Math.sin(this.mat.uniforms.uTime.value * 3) * 0.08); this.ring.visible = d > 14;
   }
 }
 
