@@ -154,7 +154,9 @@ export async function loadAssets(onProgress = () => {}, base = './assets/') {
   const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
   const files = [...CAR_FILES.map((n) => ['cars', n]), ...PEOPLE_FILES.map((n) => ['people', n])];
   let done = 0;
-  const load = ([kind, n]) => loader.loadAsync(`${base}${kind}/${n}.glb`).then((g) => {
+  const b64 = !!window.__ASSET_B64;
+  const fetchB64 = async (url) => { const t = await (await fetch(url)).text(); const bin = atob(t.trim()); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return loader.parseAsync(u.buffer, ''); };
+  const load = ([kind, n]) => (b64 ? fetchB64(`${base}${kind}/${n}.glb.txt`) : loader.loadAsync(`${base}${kind}/${n}.glb`)).then((g) => {
     done++; onProgress(done / files.length, `Modelos 3D: ${n.replace('_', ' ')}`);
     if (kind === 'cars') ASSETS.cars[n] = prepareCar(n, g); else { const p = preparePerson(n, g); if (p) ASSETS.people[n] = p; }
   });
