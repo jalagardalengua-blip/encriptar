@@ -3,6 +3,7 @@ import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { CITY, DIRS, rightOf, nodeCoord, clamp, lerp, damp, wrapAngle, mulberry32 } from './config.js';
 import * as T from './textures.js';
+import { ASSETS } from './assets.js';
 
 // ---------------- Definiciones de modelos ----------------
 export const CAR_TYPES = {
@@ -48,9 +49,13 @@ const ni = (g) => (g.index ? g.toNonIndexed() : g);
 const clean = (g) => { const n = ni(g); for (const k of Object.keys(n.attributes)) if (!['position', 'normal', 'uv'].includes(k)) n.deleteAttribute(k); return n; };
 
 const geoCache = {};
+const FALLBACK = { taxi: 'hatch', truck: 'van', police: 'sedan', ambulance: 'van' };
+export const TRAFFIC_TYPES = ['sedan', 'suv', 'taxi', 'van', 'truck', 'police'];
+export function carSpec(type) { return carGeometry(type).spec; }
 export function carGeometry(type) {
   if (geoCache[type]) return geoCache[type];
-  const S = CAR_TYPES[type];
+  if (ASSETS.cars[type]) { geoCache[type] = ASSETS.cars[type]; return geoCache[type]; }
+  const S = { ...CAR_TYPES[FALLBACK[type] || type] }; S.roofY = S.roof[2][1]; S.sideX = S.W / 2;
   const L = S.L, W = S.W, hb = S.wb / 2;
   const body = extrude(shapeFrom(S.body, [-hb, hb], S.r), W, 0.1, 0.05);
   const cabin = extrude(shapeFrom(S.cabin), W * S.cabinW, 0.08, 0.04);
@@ -79,7 +84,8 @@ export function carGeometry(type) {
   rimParts.push(new THREE.CylinderGeometry(r * 0.18, r * 0.18, w * 0.8, 10).rotateZ(Math.PI / 2));
   const rim = merge(rimParts);
   const wheels = [[W / 2 - 0.16, r, hb], [-W / 2 + 0.16, r, hb], [W / 2 - 0.16, r, -hb], [-W / 2 + 0.16, r, -hb]];
-  const g = { paint: merge([body, roof]), glass: merge([cabin]), trim: merge(trim), head: merge(head), tail: merge(tail), plate: merge(plate), tire: clean(tire), rim, wheels, spec: S };
+  const trimG = merge(trim); { const n = trimG.getAttribute('position').count; trimG.setAttribute('color', new THREE.BufferAttribute(new Float32Array(n * 3).fill(0.07), 3)); }
+  const g = { paint: merge([body, roof]), glass: merge([cabin]), trim: trimG, head: merge(head), tail: merge(tail), plate: merge(plate), tire: clean(tire), rim, wheels, spec: S };
   for (const k of ['paint', 'glass', 'trim', 'head', 'tail', 'plate', 'tire', 'rim']) g[k].computeBoundingSphere();
   geoCache[type] = g;
   return g;
@@ -92,7 +98,8 @@ export function carMaterials() {
   MATS = {
     paint: new THREE.MeshPhysicalMaterial({ color: 0xffffff, metalness: 0.5, roughness: 0.3, clearcoat: 1, clearcoatRoughness: 0.03 }),
     glass: new THREE.MeshPhysicalMaterial({ color: 0x07090b, metalness: 0.5, roughness: 0.03, clearcoat: 1, clearcoatRoughness: 0.0, envMapIntensity: 1.6 }),
-    trim: new THREE.MeshStandardMaterial({ color: 0x111213, roughness: 0.55, metalness: 0.2 }),
+    trim: new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.55, metalness: 0.15, vertexColors: true }),
+    beacon: new THREE.MeshBasicMaterial({ color: 0xffffff, vertexColors: true }),
     head: new THREE.MeshBasicMaterial({ color: 0xffffff }),
     tail: new THREE.MeshBasicMaterial({ color: 0xffffff }),
     plate: new THREE.MeshStandardMaterial({ map: T.plateTex(), roughness: 0.4 }),
@@ -114,6 +121,15 @@ export class CarRig {
       const mesh = new THREE.Mesh(G[k], m); mesh.castShadow = k !== 'head' && k !== 'tail'; mesh.receiveShadow = true; this.body.add(mesh);
     }
     this.paintMat = paint;
+    if (G.beacon && (opts.police || opts.ambulance)) {
+      // dividir el puente de luces del modelo en mitad izquierda / derecha
+      const pos = G.beacon.getAttribute('position'); const L = [], R = [];
+      for (let i = 0; i < pos.count; i += 3) { const cx = (pos.getX(i) + pos.getX(i + 1) + pos.getX(i + 2)) / 3; (cx >= 0 ? L : R).push(i); }
+      const sub = (ids) => { const g = new THREE.BufferGeometry(); const P = new Float32Array(ids.length * 9), N = new Float32Array(ids.length * 9); const nor = G.beacon.getAttribute('normal'); ids.forEach((i, k) => { for (let v = 0; v < 3; v++) for (let c = 0; c < 3; c++) { P[k * 9 + v * 3 + c] = pos.getComponent(i + v, c); N[k * 9 + v * 3 + c] = nor.getComponent(i + v, c); } }); g.setAttribute('position', new THREE.BufferAttribute(P, 3)); g.setAttribute('normal', new THREE.BufferAttribute(N, 3)); return g; };
+      this.barMats = [];
+      for (const ids of [L, R]) { const m = new THREE.MeshBasicMaterial({ color: 0x0a1a4a }); const me = new THREE.Mesh(sub(ids), m); this.body.add(me); this.barMats.push(m); }
+      this.glbBar = true;
+    }
     this.wheels = G.wheels.map(([x, y, z]) => {
       const piv = new THREE.Group(); piv.position.set(x, y, z);
       const spin = new THREE.Group(); piv.add(spin);
@@ -127,16 +143,18 @@ export class CarRig {
     this.setLights(0.3, 0.3);
   }
   addPolice() {
-    const S = this.spec; const W = S.W; const roofY = S.roof[2][1] + 0.03; const zc = (S.roof[1][0] + S.roof[2][0]) / 2 + 0.25;
+    const S = this.spec; const W = S.W; const roofY = S.roofY + 0.03; const zc = S.roof ? (S.roof[1][0] + S.roof[2][0]) / 2 + 0.25 : -0.2;
     const liv = T.policeLivery('VALMORA');
     const lm = new THREE.MeshPhysicalMaterial({ map: liv, transparent: true, roughness: 0.3, clearcoat: 1, metalness: 0.1, polygonOffset: true, polygonOffsetFactor: -2 });
     for (const side of [-1, 1]) {
-      const p = new THREE.Mesh(new THREE.PlaneGeometry(S.L * 0.86, 0.42), lm);
-      p.position.set(side * (W / 2 + 0.005), 0.68, -0.05); p.rotation.y = side * Math.PI / 2; this.body.add(p);
+      const p = new THREE.Mesh(new THREE.PlaneGeometry(S.L * 0.7, 0.38), lm);
+      p.position.set(side * (S.sideX + 0.012), S.glb ? S.H * 0.42 : 0.68, -0.05); p.rotation.y = side * Math.PI / 2; this.body.add(p);
     }
+    this.isPolice = true;
+    if (this.glbBar) return;
     const hoodT = T.textPanel('POLICÍA', { w: 512, h: 128, bg: 'rgba(0,0,0,0)', fg: '#0a3fa8', font: 'bold 96px Arial Black, Arial' });
     const hood = new THREE.Mesh(new THREE.PlaneGeometry(1.0, 0.25), new THREE.MeshBasicMaterial({ map: hoodT, transparent: true, polygonOffset: true, polygonOffsetFactor: -2 }));
-    hood.rotation.x = -Math.PI / 2 + 0.12; hood.rotation.z = Math.PI; hood.position.set(0, 0.9, 1.5); this.body.add(hood);
+    hood.rotation.x = -Math.PI / 2 + 0.12; hood.rotation.z = Math.PI; hood.position.set(0, 0.9, 1.5); if (!S.glb) this.body.add(hood);
     // puente de luces
     const bar = new THREE.Group(); bar.position.set(0, roofY, zc);
     const base = new THREE.Mesh(new THREE.BoxGeometry(1.25, 0.08, 0.28), new THREE.MeshStandardMaterial({ color: 0x1a1a1a, roughness: 0.4 })); base.position.y = 0.04; bar.add(base);
@@ -155,6 +173,7 @@ export class CarRig {
     for (const s of [-1, 1]) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.05, 0.02), this.gridMats[s < 0 ? 0 : 1]); m.position.set(s * 0.18, 0.55, S.L / 2 + 0.03); this.body.add(m); }
   }
   addAmbulance() {
+    if (this.glbBar) { this.isAmbulance = true; const S = this.spec; const t = T.textPanel('AMBULANCIA', { w: 1024, h: 160, bg: '#ffffff', fg: '#d0101e', font: 'bold 110px Arial Black, Arial' }); const m = new THREE.MeshStandardMaterial({ map: t, roughness: 0.4, polygonOffset: true, polygonOffsetFactor: -2 }); for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(2.6, 0.42), m); p.position.set(side * (S.sideX + 0.015), S.H * 0.62, -0.7); p.rotation.y = side * Math.PI / 2; this.body.add(p); } return; }
     const t = T.textPanel('AMBULANCIA', { w: 1024, h: 160, bg: '#ffffff', fg: '#d0101e', font: 'bold 110px Arial Black, Arial' });
     const m = new THREE.MeshStandardMaterial({ map: t, roughness: 0.4, polygonOffset: true, polygonOffsetFactor: -2 });
     for (const side of [-1, 1]) { const p = new THREE.Mesh(new THREE.PlaneGeometry(3.6, 0.55), m); p.position.set(side * (this.spec.W / 2 + 0.01), 1.4, -0.6); p.rotation.y = side * Math.PI / 2; this.body.add(p); }
@@ -385,7 +404,7 @@ let AI_ID = 0;
 export class AICar {
   constructor(traffic, type, color, driver, opts = {}) {
     this.id = AI_ID++; this.traffic = traffic; this.type = type; this.color = new THREE.Color(color);
-    const S = CAR_TYPES[type]; this.L = S.L; this.W = S.W; this.spec = S;
+    const S = carSpec(type); this.L = S.L; this.W = S.W; this.spec = S;
     this.driver = driver; this.speed = opts.speed ?? 8; this.cruise = opts.cruise ?? (10 + Math.random() * 4);
     this.lat = 0; this.latTarget = 0; this.state = opts.state || 'drive';
     this.x = 0; this.z = 0; this.heading = 0; this.y = 0; this.pitch = 0; this.roll = 0;
@@ -416,13 +435,15 @@ export class Traffic {
     this.rnd = mulberry32(77);
     const M = carMaterials();
     this.types = {};
-    const cap = { sedan: 70, hatch: 60, suv: 40, van: 30 };
-    for (const t of Object.keys(CAR_TYPES)) {
+    const cap = { sedan: 60, suv: 36, taxi: 28, van: 28, truck: 28, police: 8 };
+    this.partKeys = ['paint', 'glass', 'trim', 'head', 'tail', 'plate', 'beacon'];
+    for (const t of TRAFFIC_TYPES) {
       const G = carGeometry(t); const ms = {};
-      for (const k of ['paint', 'glass', 'trim', 'head', 'tail', 'plate']) {
+      for (const k of this.partKeys) {
+        if (!G[k]) continue;
         const im = new THREE.InstancedMesh(G[k], M[k], cap[t]); im.count = 0; im.frustumCulled = false;
         im.castShadow = k === 'paint' || k === 'glass'; im.receiveShadow = true;
-        if (k === 'paint' || k === 'head' || k === 'tail') im.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(cap[t] * 3), 3);
+        if (k === 'paint' || k === 'head' || k === 'tail' || k === 'beacon') im.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(cap[t] * 3), 3);
         scene.add(im); ms[k] = im;
       }
       ms.tire = new THREE.InstancedMesh(G.tire, M.tire, cap[t] * 4); ms.rim = new THREE.InstancedMesh(G.rim, M.rim, cap[t] * 4);
@@ -442,7 +463,7 @@ export class Traffic {
     this.wm = new THREE.Matrix4(); this.tmp = new THREE.Matrix4(); this.c = new THREE.Color();
     this.extra = []; // vehículos tipo rig (jugador, servicios) para la IA
   }
-  randomType() { const r = this.rnd(); return r < 0.45 ? 'sedan' : r < 0.75 ? 'hatch' : r < 0.92 ? 'suv' : 'van'; }
+  randomType() { const r = this.rnd(); return r < 0.38 ? 'sedan' : r < 0.58 ? 'suv' : r < 0.72 ? 'taxi' : r < 0.86 ? 'van' : 'truck'; }
   randomColor() { return PALETTE[(this.rnd() * PALETTE.length) | 0]; }
 
   spawnParked() {
@@ -460,7 +481,7 @@ export class Traffic {
           let x, z, heading;
           if (s.axis === 'x') { x = s.x + t; z = s.z + side * CITY.PARK; heading = side > 0 ? Math.PI / 2 : -Math.PI / 2; }
           else { x = s.x - side * CITY.PARK; z = s.z + t; heading = side > 0 ? 0 : Math.PI; }
-          const type = this.rnd() < 0.5 ? 'sedan' : this.rnd() < 0.7 ? 'hatch' : 'suv';
+          const r2 = this.rnd(); const type = r2 < 0.5 ? 'sedan' : r2 < 0.75 ? 'suv' : r2 < 0.88 ? 'van' : 'truck';
           const car = new AICar(this, type, this.randomColor(), null, { static: true, pose: { x, z, heading: heading + (this.rnd() - 0.5) * 0.04 }, state: 'parked' });
           car.y = 0; this.parked.push(car);
         }
@@ -479,7 +500,7 @@ export class Traffic {
       const p = drv.pose(0); const dd = Math.hypot(p.x - around.x, p.z - around.z);
       if (dd < minD || dd > maxD) continue;
       if (this.cars.some((c) => Math.hypot(c.x - p.x, c.z - p.z) < 10)) continue;
-      const car = new AICar(this, opts.type || this.randomType(), opts.color ?? this.randomColor(), drv, opts);
+      const ty = opts.type || this.randomType(); const car = new AICar(this, ty, opts.color ?? (ty === 'taxi' ? 0xf4f4f2 : this.randomColor()), drv, opts);
       car.speed = car.cruise * 0.8;
       this.cars.push(car); return car;
     }
@@ -583,7 +604,8 @@ export class Traffic {
       const T = this.types[car.type]; const k = T.n++; if (k >= T.ms.paint.instanceMatrix.count) { T.n--; continue; }
       this.e.set(car.pitch, car.heading, car.roll); this.q4.setFromEuler(this.e);
       this.v3.set(car.x, car.y, car.z); this.m4.compose(this.v3, this.q4, this.s3);
-      for (const key of ['paint', 'glass', 'trim', 'head', 'tail', 'plate']) T.ms[key].setMatrixAt(k, this.m4);
+      for (const key of this.partKeys) if (T.ms[key]) T.ms[key].setMatrixAt(k, this.m4);
+      if (T.ms.beacon) { const on = car.flags.police || car.hazard; const ph = (time * 2.6 + car.id * 0.37) % 1; const v = on ? (ph < 0.5 ? 9 : 0.4) : 0.3; this.c.setRGB(v, v, v); T.ms.beacon.setColorAt(k, this.c); }
       T.ms.paint.setColorAt(k, car.color);
       const moving = car.state !== 'parked';
       const hl = moving ? (night > 0.4 ? 9 : 0.9) : 0.15;
@@ -611,7 +633,7 @@ export class Traffic {
       this.q4.setFromAxisAngle(this.v3.set(0, 1, 0), r.heading); this.m4.compose(this.v3.set(r.x, (r.y || 0) + 0.02, r.z), this.q4, new THREE.Vector3(r.W * 1.25, 1, r.L * 1.08)); this.blobs.setMatrixAt(nb++, this.m4);
     }
     for (const t of Object.values(this.types)) {
-      for (const key of ['paint', 'glass', 'trim', 'head', 'tail', 'plate']) { t.ms[key].count = t.n; t.ms[key].instanceMatrix.needsUpdate = true; if (t.ms[key].instanceColor) t.ms[key].instanceColor.needsUpdate = true; }
+      for (const key of this.partKeys) { if (!t.ms[key]) continue; t.ms[key].count = t.n; t.ms[key].instanceMatrix.needsUpdate = true; if (t.ms[key].instanceColor) t.ms[key].instanceColor.needsUpdate = true; }
       t.ms.tire.count = t.ms.rim.count = t.n * 4; t.ms.tire.instanceMatrix.needsUpdate = t.ms.rim.instanceMatrix.needsUpdate = true;
     }
     this.blobs.count = nb; this.blobs.instanceMatrix.needsUpdate = true;
@@ -630,7 +652,7 @@ export class Traffic {
 export class ServiceCar {
   constructor(scene, city, kind, from, target) {
     this.city = city; this.kind = kind;
-    this.rig = kind === 'ambulance' ? new CarRig('van', 0xf5f5f2, { ambulance: true }) : new CarRig('sedan', 0xf4f6f8, { police: true });
+    this.rig = kind === 'ambulance' ? new CarRig('ambulance', 0xf5f5f2, { ambulance: true }) : new CarRig('police', 0xf4f6f8, { police: true });
     scene.add(this.rig.root);
     this.L = this.rig.spec.L; this.W = this.rig.spec.W; this.speed = 0; this.y = 0;
     const [ti, tj] = city.nearestNode(target.x, target.z);

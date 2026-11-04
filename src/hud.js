@@ -102,23 +102,23 @@ export class HUD {
 
   // ---------- Velocímetro ----------
   drawSpeedo(kmh, rpm) {
-    const c = this.sp, W = 380, R = 170; c.clearRect(0, 0, W, W);
+    const c = this.sp, W = c.canvas.width, R = W * 0.447, C = W / 2; c.clearRect(0, 0, W, W);
     const a0 = Math.PI * 0.75, a1 = Math.PI * 2.25;
     c.lineCap = 'round';
-    c.lineWidth = 14; c.strokeStyle = 'rgba(10,14,22,.65)'; c.beginPath(); c.arc(190, 190, R - 20, a0, a1); c.stroke();
+    c.lineWidth = 14; c.strokeStyle = 'rgba(10,14,22,.65)'; c.beginPath(); c.arc(C, C, R - 20, a0, a1); c.stroke();
     const t = Math.min(1, kmh / 220);
-    const g = c.createLinearGradient(0, 380, 380, 0); g.addColorStop(0, '#2f7bff'); g.addColorStop(1, '#9fd0ff');
-    c.strokeStyle = g; c.beginPath(); c.arc(190, 190, R - 20, a0, a0 + (a1 - a0) * t); c.stroke();
+    const g = c.createLinearGradient(0, W, W, 0); g.addColorStop(0, '#2f7bff'); g.addColorStop(1, '#9fd0ff');
+    c.strokeStyle = g; c.beginPath(); c.arc(C, C, R - 20, a0, a0 + (a1 - a0) * t); c.stroke();
     const rt = Math.min(1, rpm / 7000);
-    c.lineWidth = 6; c.strokeStyle = 'rgba(255,255,255,.08)'; c.beginPath(); c.arc(190, 190, R - 44, a0, a1); c.stroke();
-    c.strokeStyle = rt > 0.85 ? '#ff4b4b' : '#ffb020'; c.beginPath(); c.arc(190, 190, R - 44, a0, a0 + (a1 - a0) * rt); c.stroke();
-    c.fillStyle = 'rgba(255,255,255,.5)'; c.font = '600 18px Barlow Condensed, Arial'; c.textAlign = 'center'; c.textBaseline = 'middle';
-    for (let v = 0; v <= 220; v += 40) { const a = a0 + (a1 - a0) * v / 220; c.fillText(v, 190 + Math.cos(a) * (R + 2), 190 + Math.sin(a) * (R + 2)); }
+    c.lineWidth = 6; c.strokeStyle = 'rgba(255,255,255,.08)'; c.beginPath(); c.arc(C, C, R - 44, a0, a1); c.stroke();
+    c.strokeStyle = rt > 0.85 ? '#ff4b4b' : '#ffb020'; c.beginPath(); c.arc(C, C, R - 44, a0, a0 + (a1 - a0) * rt); c.stroke();
+    c.fillStyle = 'rgba(255,255,255,.5)'; c.font = '600 15px Barlow Condensed, Arial'; c.textAlign = 'center'; c.textBaseline = 'middle';
+    for (let v = 0; v <= 220; v += 40) { const a = a0 + (a1 - a0) * v / 220; c.fillText(v, C + Math.cos(a) * (R + 4), C + Math.sin(a) * (R + 4)); }
   }
 
   // ---------- Mensajes ----------
-  toast(text, kind = 'info', ms = 2400) {
-    const d = document.createElement('div'); d.className = `toast ${kind}`; d.textContent = text; const tb = $('toasts'); tb.appendChild(d); while (tb.children.length > 4) tb.firstChild.remove();
+  toast(text, kind = 'info', ms = 1900) {
+    const d = document.createElement('div'); d.className = `toast ${kind}`; d.textContent = text; const tb = $('toasts'); tb.appendChild(d); while (tb.children.length > 2) tb.firstChild.remove();
     setTimeout(() => { d.style.transition = 'opacity .4s'; d.style.opacity = 0; setTimeout(() => d.remove(), 450); }, ms);
   }
   radio(from, text, prio = 3, speak = false) {
@@ -127,8 +127,8 @@ export class HUD {
     const now = this.clockStr || '';
     d.innerHTML = `<div class="h"><span>${esc(from)}</span><span>${now}</span></div>${esc(text)}`;
     const box = $('radio'); box.prepend(d);
-    while (box.children.length > 3) box.lastChild.remove();
-    setTimeout(() => { d.style.transition = 'opacity 1s'; d.style.opacity = 0; setTimeout(() => d.remove(), 1000); }, 11000);
+    while (box.children.length > 2) box.lastChild.remove();
+    setTimeout(() => { d.style.transition = 'opacity .8s'; d.style.opacity = 0; setTimeout(() => d.remove(), 800); }, 7000);
     if (speak) this.audio.say(text.replace(/\bAv\./g, 'Avenida'));
   }
   dispatch(call, onAccept, onReject) {
@@ -151,26 +151,44 @@ export class HUD {
     if (this.dispatchOpen.t <= 0) this.closeDispatch(false);
   }
   objectives(title, list, extra = '') {
-    if (!list) { this.vis('objective', false); return; }
+    if (!list) { this.vis('objective', false); this.vis('objpill', false); this.objKey = null; return; }
     const html = `<div class="t"><span>${esc(title)}</span><span>${extra}</span></div><ul>${list.map((o) => `<li class="${o.done ? 'done' : ''} ${o.optional ? 'optional' : ''}">${esc(o.text)}${o.optional ? ' (opcional)' : ''}</li>`).join('')}</ul>`;
-    this.set('objective', html); this.vis('objective', true);
+    this.set('objective', html);
+    const cur = list.find((o) => !o.done && !o.optional) || list.find((o) => !o.done);
+    const done = list.filter((o) => o.done && !o.optional).length, tot = list.filter((o) => !o.optional).length;
+    const txt = cur ? cur.text : 'Objetivos completados';
+    this.set('obj-txt', esc(extra && !cur ? 'Pulsa I para redactar el informe' : txt));
+    this.objProgress = tot > 1 ? `${done}/${tot}` : '';
+    this.vis('objpill', true);
+    const key = title + '|' + list.map((o) => o.text + o.done).join('|');
+    if (key !== this.objKey) { this.objKey = key; this.expandObjectives(4.5); }
+  }
+  expandObjectives(t = 6) { this.objExpandT = t; this.vis('objective', true); }
+  tickObjectives(dt, compass) {
+    if (this.objExpandT > 0) { this.objExpandT -= dt; if (this.objExpandT <= 0) this.vis('objective', false); }
+    const cmp = $('obj-cmp');
+    if (compass) { cmp.style.display = ''; cmp.style.transform = `rotate(${compass.angle}rad)`; this.set('obj-dist', compass.dist > 15 ? `${compass.dist < 1000 ? Math.round(compass.dist / 10) * 10 + ' m' : (compass.dist / 1000).toFixed(1) + ' km'}` : (this.objProgress || '')); }
+    else { cmp.style.display = 'none'; this.set('obj-dist', this.objProgress || ''); }
   }
   prompt(text) {
     if (!text) { this.vis('prompt', false); return; }
     this.set('prompt', text); this.vis('prompt', true);
   }
   hints(list) { this.set('hints', list.map((h) => `<div>${h}</div>`).join('')); }
+  fadeHints(on) { $('hints').classList.toggle('fade', on); }
 
   // ---------- Rueda contextual ----------
   openWheel(title, options, cb) {
-    const el = $('wheel'); const n = options.length; const R = 150;
+    const el = $('wheel'); const n = options.length; const R = 142;
     let html = `<div class="hub glass">${esc(title)}</div>`;
     options.forEach((o, i) => {
-      const a = -Math.PI / 2 + (i / n) * Math.PI * 2; const x = 210 + Math.cos(a) * R, y = 210 + Math.sin(a) * R;
+      const a = -Math.PI / 2 + (i / n) * Math.PI * 2; const x = 200 + Math.cos(a) * R, y = 200 + Math.sin(a) * R;
       html += `<div class="it glass" data-i="${i}" style="left:${x}px;top:${y}px"><b>${i + 1}</b>${esc(o.label)}</div>`;
     });
+    html += '<button class="close" id="wh-close">Cerrar</button>';
     el.innerHTML = html; el.classList.remove('hidden'); this.wheelCb = cb; this.wheelOpts = options;
     el.querySelectorAll('.it').forEach((d) => (d.onclick = () => this.pickWheel(+d.dataset.i)));
+    $('wh-close').onclick = () => this.closeWheel();
     if (document.pointerLockElement) document.exitPointerLock();
   }
   pickWheel(i) {
@@ -216,8 +234,8 @@ export class HUD {
     $('rep-head').innerHTML = `<b>${esc(m.code)} · ${esc(m.title)}</b> — ${esc(m.location)}. Agente: ${esc(m.officer)}. Hora: ${esc(m.time)}.`;
     $('rep-facts').innerHTML = m.facts.length ? m.facts.map((f) => `<div class="fact">${esc(f)}</div>`).join('') : '<div class="fact">Sin hechos relevantes registrados.</div>';
     let sel = null;
-    $('rep-res').innerHTML = m.resolutions.map((r, i) => `<button class="opt" data-i="${i}">${esc(r.label)}<small>${esc(r.desc || '')}</small></button>`).join('');
-    $('rep-res').querySelectorAll('.opt').forEach((b) => (b.onclick = () => { $('rep-res').querySelectorAll('.opt').forEach((x) => x.classList.remove('sel')); b.classList.add('sel'); sel = +b.dataset.i; this.audio.click(); }));
+    $('rep-res').innerHTML = m.resolutions.map((r, i) => `<button class="card" data-i="${i}"><b>${esc(r.label)}</b><small>${esc(r.desc || '')}</small></button>`).join('');
+    $('rep-res').querySelectorAll('.card').forEach((b) => (b.onclick = () => { $('rep-res').querySelectorAll('.card').forEach((x) => x.classList.remove('sel')); b.classList.add('sel'); sel = +b.dataset.i; this.audio.click(); }));
     $('rep-ev').innerHTML = m.evidence.length ? m.evidence.map((e, i) => `<label class="ev"><input type="checkbox" data-i="${i}" ${e.preselect ? 'checked' : ''}> ${esc(e.label)}</label>`).join('') : '<div class="fact">No se han recogido pruebas.</div>';
     $('rep-obs').textContent = m.observations || 'Sin incidencias adicionales.';
     $('report').classList.remove('hidden');

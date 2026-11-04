@@ -2,6 +2,66 @@
 import * as THREE from 'three';
 import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
 import { CITY, clamp, damp, lerp, wrapAngle, mulberry32 } from './config.js';
+import { clone as cloneSkinned } from 'three/addons/utils/SkeletonUtils.js';
+import { ASSETS } from './assets.js';
+
+// ---------------- Personajes animados (Quaternius, CC0) ----------------
+const CLIP_FOR = {
+  idle: ['Idle', true, 1], talk: ['Idle', true, 1.35], argue: ['Punch', true, 0.55], phone: ['Idle', true, 0.8], photo: ['Idle', true, 1],
+  walk: ['Walk', true, 1], run: ['Run', true, 1], hurt: ['SitDown', false, 1], cuffed: ['Defeat', false, 1], hands: ['Victory', false, 0.6], down: ['Death', false, 1.4],
+};
+const MODELS_CIVIL = ['Casual_Male', 'Casual_Female', 'Casual2_Male', 'Casual3_Female', 'Suit_Male', 'Casual_Male', 'Casual_Female'];
+export function hasCharacters() { return ASSETS.ok && Object.keys(ASSETS.people).length > 0; }
+
+export class SkinnedChar {
+  constructor(model, colors = {}, scale = 1) {
+    const A = ASSETS.people[model] || ASSETS.people[Object.keys(ASSETS.people)[0]];
+    this.A = A; this.model = model;
+    this.root = new THREE.Group();
+    this.inner = cloneSkinned(A.scene); this.inner.scale.setScalar(A.scale * scale);
+    this.root.add(this.inner);
+    this.inner.traverse((o) => { if (o.isSkinnedMesh) this.body = o; });
+    // geometría propia sólo para los colores
+    const src = this.body.geometry; const g = new THREE.BufferGeometry();
+    for (const [k, v] of Object.entries(src.attributes)) g.setAttribute(k, k === 'color' ? v.clone() : v);
+    g.boundingSphere = src.boundingSphere; this.body.geometry = g;
+    this.setColors(colors);
+    this.mixer = new THREE.AnimationMixer(this.inner);
+    this.actions = {}; for (const [n, c] of Object.entries(A.clips)) this.actions[n] = this.mixer.clipAction(c);
+    this.cur = null; this.state = null; this.acc = 0;
+    this.play('idle');
+  }
+  setColors(map) {
+    const col = this.body.geometry.getAttribute('color'); const a = col.array;
+    for (const seg of this.A.segments) {
+      const c = map[seg.name]; if (!c) continue; const cc = c.isColor ? c : new THREE.Color(c);
+      for (let i = seg.start; i < seg.start + seg.count; i++) { a[i * 3] = cc.r; a[i * 3 + 1] = cc.g; a[i * 3 + 2] = cc.b; }
+    }
+    col.needsUpdate = true;
+  }
+  play(state, speed = 1) {
+    const def = CLIP_FOR[state] || CLIP_FOR.idle;
+    const act = this.actions[def[0]] || this.actions.Idle;
+    if (state === 'walk') act.timeScale = clamp(speed / 1.45, 0.6, 1.6);
+    else if (state === 'run') act.timeScale = clamp(speed / 5.2, 0.75, 1.3);
+    else act.timeScale = def[2];
+    if (this.state === state) return;
+    this.state = state;
+    act.reset(); act.setLoop(def[1] ? THREE.LoopRepeat : THREE.LoopOnce, Infinity); act.clampWhenFinished = !def[1];
+    act.enabled = true; act.setEffectiveWeight(1);
+    if (this.cur && this.cur !== act) { act.crossFadeFrom(this.cur, 0.25, false); }
+    act.play(); this.cur = act;
+  }
+  update(dt) { this.mixer.update(dt); }
+}
+
+function civilColors(rnd, opts = {}) {
+  const c = (arr) => new THREE.Color(arr[(rnd() * arr.length) | 0]);
+  const shirt = opts.shirt !== undefined ? new THREE.Color(opts.shirt) : c(SHIRT);
+  const pants = opts.pants !== undefined ? new THREE.Color(opts.pants) : c(PANTS);
+  return { Shirt: shirt, Pants: pants, Black: pants, Skin: opts.skin !== undefined ? new THREE.Color(opts.skin) : c(SKIN), Hair: opts.hair !== undefined ? new THREE.Color(opts.hair) : c(HAIR), Belt: new THREE.Color(0x1a1410), Vest: shirt, Hat: opts.cap !== undefined ? new THREE.Color(opts.cap) : c(PANTS) };
+}
+
 
 const ni = (g) => { const n = g.index ? g.toNonIndexed() : g; for (const k of Object.keys(n.attributes)) if (!['position', 'normal', 'uv'].includes(k)) n.deleteAttribute(k); return n; };
 
@@ -106,7 +166,7 @@ const SHIRT = [0x2c3e50, 0x8e2b2b, 0xd9d4c7, 0x3d6b4a, 0x1f1f22, 0x6a4c93, 0xc08
 const PANTS = [0x1c2433, 0x2b2b2b, 0x4a4036, 0x30405a, 0x5b5b5b, 0x6b5a45, 0x1a1a1a];
 
 // ---------------- Humanoide individual (jugador y PNJ) ----------------
-export class Humanoid {
+class ProcHumanoid {
   constructor(opts = {}) {
     const G = humanGeometry();
     this.root = new THREE.Group(); this.root.matrixAutoUpdate = true;
@@ -173,10 +233,43 @@ export class Humanoid {
   }
 }
 
+// Humanoide: usa el personaje animado si hay modelos; si no, el procedural
+export class Humanoid {
+  constructor(opts = {}) {
+    if (!hasCharacters()) return new ProcHumanoid(opts);
+    let model, colors;
+    if (opts.officer) {
+      model = 'Worker_Male';
+      colors = { Shirt: new THREE.Color(0x1b2a4a), Pants: new THREE.Color(0x141c2e), Vest: new THREE.Color(0xc9f227), Hat: new THREE.Color(0x0f1626), Skin: new THREE.Color(opts.skin ?? 0xe0ac87) };
+    } else if (opts.cap !== undefined) {
+      model = 'Worker_Male'; colors = civilColors(Math.random, opts); colors.Shirt = new THREE.Color(0x2b2b2b);
+    } else { model = MODELS_CIVIL[(Math.random() * MODELS_CIVIL.length) | 0]; colors = civilColors(Math.random, opts); }
+    this.char = new SkinnedChar(model, colors);
+    this.root = this.char.root; this.root.traverse((o) => { if (o.isMesh) { o.castShadow = true; o.receiveShadow = true; } });
+    this.x = 0; this.z = 0; this.y = 0; this.heading = 0; this.state = 'idle'; this.speed = 0;
+  }
+  update(dt) {
+    this.root.position.set(this.x, this.y, this.z); this.root.rotation.y = this.heading;
+    this.char.play(this.state, this.speed); this.char.update(dt);
+  }
+}
+
 // ---------------- Multitud instanciada ----------------
 export class Crowd {
   constructor(scene, city, count) {
     this.city = city; this.scene = scene; this.count = count; this.rnd = mulberry32(99);
+    this.skinned = hasCharacters();
+    if (this.skinned) {
+      this.peds = []; this.frame = 0;
+      for (let i = 0; i < count; i++) {
+        const ped = this.makePed();
+        const model = MODELS_CIVIL[(this.rnd() * MODELS_CIVIL.length) | 0];
+        ped.char = new SkinnedChar(model, civilColors(this.rnd), ped.scale);
+        ped.char.root.visible = false; scene.add(ped.char.root); ped.lod = i % 3;
+        this.peds.push(ped);
+      }
+      return;
+    }
     const G = humanGeometry();
     const skinM = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.6 });
     const clothM = new THREE.MeshStandardMaterial({ color: 0xffffff, roughness: 0.85 });
@@ -266,9 +359,26 @@ export class Crowd {
         if (d < 0.65 && d > 1e-3) { ped.x += dx / d * (0.65 - d); ped.z += dz / d * (0.65 - d); }
       }
     }
-    this.render(camPos);
+    this.render(camPos, dt);
   }
-  render(camPos) {
+  render(camPos, dt = 0.016) {
+    if (this.skinned) {
+      this.frame++;
+      for (const ped of this.peds) {
+        const ch = ped.char; ped.acc = (ped.acc || 0) + dt;
+        if (!ped.blk) { ch.root.visible = false; continue; }
+        const dx = ped.x - camPos.x, dz = ped.z - camPos.z; const d2 = dx * dx + dz * dz;
+        if (d2 > 150 * 150) { ch.root.visible = false; continue; }
+        ch.root.visible = true;
+        ch.root.position.set(ped.x, this.city.groundY(ped.x, ped.z) > 0 ? CITY.CURB : 0, ped.z); ch.root.rotation.y = ped.heading;
+        const st = ped.state === 'flee' ? 'run' : ped.state === 'return' ? 'walk' : ped.state;
+        ch.play(st, ped.state === 'flee' ? 5.5 : ped.state === 'return' ? 1.6 : ped.speed);
+        const every = d2 < 45 * 45 ? 1 : d2 < 90 * 90 ? 2 : 4;
+        if ((this.frame + ped.lod) % every === 0) { ch.update(ped.acc); ped.acc = 0; }
+        ch.body.castShadow = d2 < 40 * 40;
+      }
+      return;
+    }
     let n = 0;
     const one = new THREE.Vector3(1, 1, 1);
     for (const ped of this.peds) {

@@ -11,6 +11,8 @@ import { Input } from './input.js';
 import { HUD, rankOf } from './hud.js';
 import { makeDispatch } from './missions.js';
 import { Particles, SkidMarks, Beacon, makeCones, makeDebris } from './fx.js';
+import { loadAssets, ASSETS } from './assets.js';
+window.__assets = ASSETS;
 
 const $ = (id) => document.getElementById(id);
 const store = {
@@ -18,7 +20,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin almacenamiento */ } },
 };
 
-const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false }, store.get('pold_settings', {}));
+const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false, drs: true, lens: true, invert: false, steer: 'joy', tsize: 1, topac: 0.85, lefty: false, haptic: true, hud: 1, hints: true, subs: true }, store.get('pold_settings', {}));
 const URLP = new URLSearchParams(location.search);
 if (URLP.get('q') && QUALITY[URLP.get('q')]) settings.quality = URLP.get('q');
 const Q = QUALITY[settings.quality] || QUALITY.alto;
@@ -40,6 +42,8 @@ class Game {
 
   async boot() {
     const prog = (p, l) => { $('loadbar').style.width = `${Math.round(p * 100)}%`; $('loadlbl').textContent = l; };
+    const tips = ['Las detenciones necesitan fundamento: comprueba los hechos antes de decidir.', 'Activa las luces (Q) antes de asegurar la escena de un accidente.', 'Con la sirena encendida, el tráfico se aparta hacia la derecha.', 'Toma declaración a los testigos: cambian el resultado del atestado.', 'En la radio (R) puedes pedir apoyo, ambulancia o un nuevo aviso.', 'Adjunta al informe sólo las pruebas relacionadas con el caso.'];
+    let ti = 0; this.tipTimer = setInterval(() => { const el = $('loadtip'); if (el) el.textContent = tips[ti++ % tips.length]; }, 3200);
     prog(0.02, 'Iniciando WebGL 2…');
     const r = this.renderer = new THREE.WebGLRenderer({ canvas: this.canvas, antialias: false, powerPreference: 'high-performance', stencil: false });
     r.setPixelRatio(Math.min(devicePixelRatio || 1, Q.pixelRatio));
@@ -50,14 +54,15 @@ class Game {
     this.camera = new THREE.PerspectiveCamera(62, innerWidth / innerHeight, 0.1, 6000);
     this.env = new Environment(r, this.scene, Q);
     this.env.timeScale = settings.timeScale;
-    this.city = new City(this.scene, Q, prog);
+    await loadAssets((p, l) => prog(0.03 + p * 0.12, l));
+    this.city = new City(this.scene, Q, (p, l) => prog(0.15 + p * 0.6, l));
     await this.city.build();
     prog(0.78, 'Tráfico y peatones…'); await tick();
     this.traffic = new Traffic(this.scene, this.city, Q);
     this.traffic.spawnParked();
     const sp = this.city.spawn;
     this.traffic.spawnTraffic(Q.traffic, sp);
-    this.crowd = new Crowd(this.scene, this.city, Q.peds);
+    this.crowd = new Crowd(this.scene, this.city, Math.min(Q.peds, this.input.isTouch ? 22 : 44));
     prog(0.84, 'Coche patrulla y agente…'); await tick();
     this.buildPlayer();
     this.fx = { smoke: new Particles(this.scene, 900, { color: new THREE.Color(0.55, 0.55, 0.57) }), tire: new Particles(this.scene, 500, { color: new THREE.Color(0.8, 0.8, 0.82) }), sparks: new Particles(this.scene, 300, { additive: true, color: new THREE.Color(6, 3, 0.8) }), skids: new SkidMarks(this.scene), beacon: new Beacon(this.scene), emitters: [] };
@@ -79,22 +84,23 @@ class Game {
     this.frames = 0; this.fpsT = 0;
     if (!MANUAL) this.renderer.setAnimationLoop(() => this.frame());
     this.step = (n = 1, dt = 1 / 30) => { for (let i = 0; i < n; i++) { this.last = performance.now() - dt * 1000; this.frame(); } };
-    this.ready = true;
-    setTimeout(() => { $('loading').style.opacity = 0; setTimeout(() => $('loading').classList.add('hidden'), 800); this.showMenu(); }, 300);
+    this.ready = true; clearInterval(this.tipTimer);
+    this.applySettings();
+    setTimeout(() => { $('loading').style.opacity = 0; setTimeout(() => $('loading').classList.add('hidden'), 800); this.showTitle(); }, 300);
   }
 
   buildPlayer() {
-    const rig = this.rig = new CarRig('sedan', 0xf4f6f8, { police: true });
+    const rig = this.rig = new CarRig('police', 0xf4f6f8, { police: true });
     this.scene.add(rig.root);
     const s = this.city.spawn.car;
     this.car = new DriveCar(this.city, rig, s.x, s.z, s.heading);
     this.car.isPlayer = true; this.car.W = rig.spec.W;
     // faros
     const head = this.headlight = new THREE.SpotLight(0xfff2dd, 0, 75, 0.55, 0.55, 1.4);
-    head.position.set(0, 0.75, 2.2); head.target.position.set(0, 0, 22); rig.body.add(head, head.target);
+    head.position.set(0, 0.75, rig.spec.L / 2 - 0.1); head.target.position.set(0, 0, 22); rig.body.add(head, head.target);
     if (Q.ao) { head.castShadow = true; head.shadow.mapSize.set(512, 512); head.shadow.bias = -0.0005; head.shadow.camera.near = 0.5; }
     this.beaconL = new THREE.PointLight(0x2050ff, 0, 32, 1.8); this.beaconR = new THREE.PointLight(0x2050ff, 0, 32, 1.8);
-    const by = rig.spec.roof[2][1] + 0.3; this.beaconL.position.set(0.5, by, -0.3); this.beaconR.position.set(-0.5, by, -0.3); rig.body.add(this.beaconL, this.beaconR);
+    const by = rig.spec.roofY + 0.3; this.beaconL.position.set(0.5, by, -0.3); this.beaconR.position.set(-0.5, by, -0.3); rig.body.add(this.beaconL, this.beaconR);
     // conos volumétricos de faros
     const cg = new THREE.ConeGeometry(2.6, 16, 24, 1, true); cg.translate(0, -8, 0); cg.rotateX(-Math.PI / 2 - 0.04);
     this.beamMat = new THREE.ShaderMaterial({
@@ -104,7 +110,7 @@ class Game {
       transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, side: THREE.DoubleSide,
     });
     const beams = [];
-    for (const x of [0.58, -0.58]) { const m = new THREE.Mesh(cg, this.beamMat); m.position.set(x, 0.68, 2.3); m.renderOrder = 3; rig.body.add(m); beams.push(m); }
+    for (const x of [0.58, -0.58]) { const m = new THREE.Mesh(cg, this.beamMat); m.position.set(x, 0.68, rig.spec.L / 2 + 0.05); m.renderOrder = 3; rig.body.add(m); beams.push(m); }
     rig.fxObjs = beams;
     // agente
     this.officer = new Humanoid({ officer: true, skin: 0xe0ac87, hair: 0x2a1d14 });
@@ -124,42 +130,93 @@ class Game {
 
   // ---------- Interfaz ----------
   bindUI() {
-    const sel = (id, v, cb) => { const el = $(id); el.querySelectorAll('.opt').forEach((b) => { b.classList.toggle('sel', b.dataset.v === String(v)); b.onclick = () => { el.querySelectorAll('.opt').forEach((x) => x.classList.remove('sel')); b.classList.add('sel'); this.audio.click(); cb(b.dataset.v); }; }); };
-    this.shiftCfg = { hour: 22.5, weather: 'lluvia', assist: 'arcade' };
-    sel('opt-hour', 22.5, (v) => (this.shiftCfg.hour = +v));
-    sel('opt-weather', 'lluvia', (v) => (this.shiftCfg.weather = v));
-    sel('opt-assist', 'arcade', (v) => (this.shiftCfg.assist = v));
+    const sel = (id, v, cb) => { const el = $(id); el.querySelectorAll('.card').forEach((b) => { b.classList.toggle('sel', b.dataset.v === String(v)); b.onclick = () => { el.querySelectorAll('.card').forEach((x) => x.classList.remove('sel')); b.classList.add('sel'); this.audio.click(); cb(b.dataset.v); }; }); };
+    this.shiftCfg = { hour: 22.5, weather: 'lluvia', assist: this.input.isTouch ? 'arcade' : 'arcade' };
+    const HOURS = { 7.5: 'Amanecer · 07:30', 12: 'Mediodía · 12:00', 19.3: 'Atardecer · 19:20', 22.5: 'Noche · 22:30' };
+    const sum = () => { $('sum-hour').textContent = HOURS[this.shiftCfg.hour] || ''; $('sum-wx').textContent = weatherLabel(this.shiftCfg.weather); $('sum-as').textContent = this.shiftCfg.assist === 'sim' ? 'Simulación' : 'Arcade'; };
+    sel('opt-hour', 22.5, (v) => { this.shiftCfg.hour = +v; sum(); });
+    sel('opt-weather', 'lluvia', (v) => { this.shiftCfg.weather = v; sum(); });
+    sel('opt-assist', 'arcade', (v) => { this.shiftCfg.assist = v; sum(); });
     sel('opt-quality', settings.quality, (v) => { if (v !== settings.quality) { settings.quality = v; store.set('pold_settings', settings); location.reload(); } });
-    const open = (id) => $(id).classList.remove('hidden'); const close = (id) => $(id).classList.add('hidden');
-    $('m-new').onclick = () => { this.audio.init(); this.mode = 'career'; this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
-    $('m-free').onclick = () => { this.audio.init(); this.mode = 'free'; if (!this.save) this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
-    $('m-continue').onclick = () => { this.audio.init(); this.mode = 'career'; open('shift'); };
-    $('m-settings').onclick = () => { this.audio.init(); open('settings'); };
+    sum();
+    const open = (id) => { $(id).classList.remove('hidden'); this.audio.click(); }; const close = (id) => $(id).classList.add('hidden');
+    $('m-new').onclick = () => { this.mode = 'career'; this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
+    $('m-free').onclick = () => { this.mode = 'free'; if (!this.save) this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
+    $('m-continue').onclick = () => { this.mode = 'career'; open('shift'); };
+    $('m-settings').onclick = () => open('settings');
     $('m-controls').onclick = () => open('controls');
+    $('m-credits').onclick = () => open('credits');
     $('shift-back').onclick = () => close('shift');
     $('shift-go').onclick = () => { close('shift'); this.startShift(); };
-    $('settings-close').onclick = () => { close('settings'); store.set('pold_settings', settings); };
-    $('controls-close').onclick = () => close('controls');
+    const saveSet = () => { close('settings'); store.set('pold_settings', settings); this.applySettings(); };
+    $('settings-close').onclick = saveSet; $('settings-back').onclick = saveSet;
+    $('controls-back').onclick = () => close('controls'); $('credits-back').onclick = () => close('credits');
+    $('set-tabs').querySelectorAll('.tab').forEach((t) => (t.onclick = () => { $('set-tabs').querySelectorAll('.tab').forEach((x) => x.classList.toggle('sel', x === t)); document.querySelectorAll('#settings .tabp').forEach((p) => p.classList.toggle('hidden', p.dataset.t !== t.dataset.t)); this.audio.click(); }));
     const vol = $('s-vol'); vol.value = settings.volume; vol.oninput = () => { settings.volume = +vol.value; this.audio.setVolume(settings.volume); };
-    const bind = (id, key, fn) => { const el = $(id); el.checked = settings[key]; el.onchange = () => { settings[key] = el.checked; fn?.(el.checked); }; };
+    const bind = (id, key, fn) => { const el = $(id); el.checked = settings[key]; el.onchange = () => { settings[key] = el.checked; fn?.(el.checked); this.applySettings(); }; };
     bind('s-voice', 'voice', (v) => (this.audio.voice = v));
-    bind('s-grain', 'grain', (v) => { this.post.grade.uniforms.uGrain.value = v ? 0.045 : 0; this.post.grade.uniforms.uCA.value = v ? 0.0018 : 0; });
-    bind('s-shake', 'shake'); bind('s-redblue', 'redblue'); bind('s-fps', 'fps', (v) => $('fps').classList.toggle('hidden', !v));
-    $('fps').classList.toggle('hidden', !settings.fps);
-    const sens = $('s-sens'); sens.value = settings.sens; sens.oninput = () => (settings.sens = +sens.value);
-    const ts = $('s-time'); ts.value = settings.timeScale; ts.oninput = () => { settings.timeScale = +ts.value; this.env.timeScale = settings.timeScale; };
+    bind('s-grain', 'grain'); bind('s-shake', 'shake'); bind('s-redblue', 'redblue'); bind('s-fps', 'fps'); bind('s-drs', 'drs'); bind('s-lens', 'lens');
+    bind('s-invert', 'invert'); bind('s-lefty', 'lefty'); bind('s-haptic', 'haptic'); bind('s-hints', 'hints'); bind('s-subs', 'subs');
+    const range = (id, key) => { const el = $(id); el.value = settings[key]; el.oninput = () => { settings[key] = +el.value; this.applySettings(); }; };
+    range('s-sens', 'sens'); range('s-time', 'timeScale'); range('s-tsize', 'tsize'); range('s-topac', 'topac'); range('s-hud', 'hud');
+    const st = $('s-steer'); st.value = settings.steer; st.onchange = () => { settings.steer = st.value; this.applySettings(); };
     $('p-resume').onclick = () => this.resume();
+    $('p-map').onclick = () => { this.resume(); $('bigmap').classList.remove('hidden'); this.drawBigMap(); };
     $('p-settings').onclick = () => open('settings');
     $('p-controls').onclick = () => open('controls');
     $('p-weather').onclick = () => { const i = (WEATHER_KEYS.indexOf(this.env.weatherKey) + 1) % WEATHER_KEYS.length; this.env.setWeather(WEATHER_KEYS[i]); this.hud.toast(`Clima: ${weatherLabel(WEATHER_KEYS[i])}`); };
     $('p-time').onclick = () => { this.env.setHour(this.env.hour + 3); };
     $('p-reset').onclick = () => { this.resetToCar(); this.resume(); };
     $('p-quit').onclick = () => { $('pause').classList.add('hidden'); this.endShift(); };
-    if (this.save && this.save.xp !== undefined) { $('m-continue').disabled = false; $('m-continue-sub').textContent = `${rankOf(this.save.xp).name} · ${this.save.xp} XP · ${this.save.cases} casos`; }
+    $('hud-pause').onclick = () => this.pause();
+    $('minimap').onclick = () => { if (this.state === 'play') { $('bigmap').classList.remove('hidden'); this.drawBigMap(); } };
+    $('bm-close').onclick = () => $('bigmap').classList.add('hidden');
+    $('objpill').onclick = () => this.hud.expandObjectives(6);
+    $('rot-ok').onclick = () => { this.portraitOk = true; $('rotate').classList.add('hidden'); };
+    const title = $('title');
+    const go = () => { if (this.state !== 'title') return; this.audio.init(); this.enterFullscreen(); title.classList.add('hidden'); this.showMenu(); };
+    title.addEventListener('click', go); title.addEventListener('touchend', (e) => { e.preventDefault(); go(); });
+    this.titleGo = go;
+    document.querySelectorAll('.mn-item, .card, .tab, .btn').forEach((b) => b.addEventListener('pointerenter', () => { if (!this.input.isTouch) this.audio.tone(1400, 0.02, 'sine', 0.025); }));
+    this.updateProfile();
+  }
+
+  applySettings() {
+    const r = document.documentElement.style;
+    r.setProperty('--ts', settings.tsize); r.setProperty('--to', settings.topac); r.setProperty('--hud', settings.hud);
+    this.input.setSteerMode(settings.steer); this.input.haptics = settings.haptic; this.input.invertY = settings.invert;
+    $('touch').classList.toggle('lefty', !!settings.lefty);
+    $('fps').classList.toggle('hidden', !settings.fps);
+    if (this.env) this.env.timeScale = settings.timeScale;
+    if (this.post) { this.post.grade.uniforms.uGrain.value = settings.grain ? 0.04 : 0; this.post.grade.uniforms.uCA.value = settings.grain ? 0.0016 : 0; }
+    this.audio.voice = settings.voice;
+  }
+
+  enterFullscreen() {
+    if (!this.input.isTouch) return;
+    try {
+      const el = document.documentElement; const p = el.requestFullscreen?.({ navigationUI: 'hide' }) || el.webkitRequestFullscreen?.();
+      Promise.resolve(p).then(() => screen.orientation?.lock?.('landscape').catch(() => {})).catch(() => {});
+    } catch { /* no disponible (iOS): usar «Añadir a pantalla de inicio» */ }
+  }
+
+  updateProfile() {
+    const sv = this.save || { xp: 0, cases: 0 }; const r = rankOf(sv.xp || 0);
+    $('pf-rank').textContent = r.name; $('pf-stats').textContent = `${sv.xp || 0} XP · ${sv.cases || 0} casos${r.next ? ' · siguiente: ' + r.next : ''}`;
+    $('pf-bar').style.width = `${Math.round(r.progress * 100)}%`;
+    const chev = Array.from({ length: Math.min(4, r.index + 1) }, (_, i) => `<path d="M8 ${30 - i * 6} 20 ${22 - i * 6} 32 ${30 - i * 6}" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linejoin="round"/>`).join('');
+    $('pf-ins').innerHTML = `<svg viewBox="0 0 40 40">${r.index >= 4 ? '<path d="m20 3 3 6 6.5.9-4.7 4.5 1.1 6.5L20 17.8 14.1 21l1.1-6.5L10.5 9.9 17 9z" fill="currentColor"/>' : ''}${chev}</svg>`;
+    if (sv.xp !== undefined && this.save) { $('m-continue').disabled = false; $('m-continue-sub').textContent = `${r.name} · ${sv.xp} XP · ${sv.cases} casos`; }
+  }
+
+  showTitle() {
+    this.state = 'title'; this.hud.show(false); $('title').classList.remove('hidden');
+    $('tt-press').textContent = this.input.isTouch ? 'Toca la pantalla para empezar' : 'Pulsa cualquier tecla para empezar';
+    this.menuT = 0; this.input.setMode('off'); this.car.lights = true;
   }
 
   showMenu() {
-    this.state = 'menu'; this.hud.show(false); $('menu').classList.remove('hidden');
+    this.state = 'menu'; this.hud.show(false); $('menu').classList.remove('hidden'); this.input.setMode('off'); this.updateProfile();
     this.menuT = 0; this.input.wantLock = false;
     if (document.pointerLockElement) document.exitPointerLock();
     this.car.lights = true; this.car.siren = false;
@@ -172,7 +229,7 @@ class Game {
     this.placeAtStation();
     this.mission = null; this.nextCall = this.mode === 'career' && (this.save.cases || 0) === 0 ? 14 : 10; this.pendingDispatch = null;
     this.shiftStats = { cases: 0, xp: 0, grades: [] };
-    this.state = 'play'; this.hud.show(true); this.input.wantLock = true;
+    this.state = 'play'; this.hud.show(true); this.input.wantLock = true; this.shiftT = 0;
     this.car.lights = false;
     this.tutorial = (this.save.cases || 0) === 0;
     const h = this.env.hour; const turno = h >= 6 && h < 14 ? 'mañana' : h >= 14 && h < 21 ? 'tarde' : 'noche';
@@ -200,9 +257,8 @@ class Game {
     const s = this.shiftStats;
     const avg = s.grades.length ? s.grades.reduce((a, b) => a + b, 0) / s.grades.length : 0;
     this.hud.openResults({ title: 'Fin de turno', sub: `${s.cases} intervenciones cerradas · ${this.officerName}`, grade: !s.cases ? '—' : avg >= 90 ? 'A' : avg >= 75 ? 'B' : avg >= 60 ? 'C' : 'D', scores: [{ label: 'Casos cerrados', value: Math.min(100, s.cases * 20) }, { label: 'Calidad media', value: Math.round(avg) }], consequences: [s.cases ? 'Tu actuación queda registrada en tu expediente profesional.' : 'Turno sin intervenciones registradas.', `Rango actual: ${rankOf(this.save.xp).name}.`], xp: s.xp, rank: rankOf(this.save.xp).name }, () => { this.hud.show(false); this.showMenu(); });
-    store.set('pold_save_v1', this.save);
-    $('m-continue').disabled = false; $('m-continue-sub').textContent = `${rankOf(this.save.xp).name} · ${this.save.xp} XP · ${this.save.cases} casos`;
-    this.state = 'modal';
+    store.set('pold_save_v1', this.save); this.updateProfile();
+    this.state = 'modal'; this.input.setMode('off');
   }
 
   // ---------- API para misiones ----------
@@ -241,18 +297,28 @@ class Game {
       else if (this.state === 'pause') this.resume();
     }
     if (I.hit('F2')) { this.photoMode = !this.photoMode; this.hud.show(!this.photoMode && this.state === 'play'); }
+    if (this.state === 'title' && (I.pressed.size || I.gamepad()?.buttons.some((b) => b.pressed))) this.titleGo();
     if (this.state === 'play') this.updatePlay(dt);
-    else if (this.state === 'menu') this.updateMenu(dt);
+    else if (this.state === 'menu' || this.state === 'title') { this.updateMenu(dt); if (this.state === 'menu') this.menuNav(); }
     else if (this.state === 'modal') this.updateWorldOnly(dt);
     this.render(dt);
     I.endFrame();
+  }
+
+  menuNav() {
+    const I = this.input; const scr = [...document.querySelectorAll('.screen')].find((x) => !x.classList.contains('hidden'));
+    if (scr) { if (I.hit('Escape', 'Backspace')) scr.querySelector('.back')?.click(); return; }
+    const items = [...document.querySelectorAll('#mn-nav .mn-item:not([disabled])')];
+    let i = items.findIndex((b) => b.classList.contains('hl'));
+    if (I.hit('ArrowDown', 'KeyS')) i = (i + 1) % items.length; else if (I.hit('ArrowUp', 'KeyW')) i = (i - 1 + items.length) % items.length; else if (I.hit('Enter', 'Space') && i >= 0) { items[i].click(); return; } else return;
+    items.forEach((b, k) => b.classList.toggle('hl', k === i)); this.audio.tone(1400, 0.02, 'sine', 0.03);
   }
 
   updateMenu(dt) {
     this.menuT += dt;
     this.car.update(dt, { throttle: 0, brake: 0, steer: 0, handbrake: false }, 0, []);
     this.updateCarLights(dt);
-    this.officer.x = this.car.x + 2.2; this.officer.z = this.car.z - 1.5; this.officer.heading = -2.2; this.officer.state = 'idle'; this.officer.update(dt); this.officer.root.visible = true;
+    this.officer.x = this.car.x + 2.6; this.officer.z = this.car.z + 1.2; this.officer.heading = -2.6; this.officer.state = 'idle'; this.officer.update(dt); this.officer.root.visible = true;
     const a = this.menuT * 0.08 + 2.2; const r = 9.5;
     this.camera.position.set(this.car.x + Math.sin(a) * r, 2.2 + Math.sin(this.menuT * 0.2) * 0.4, this.car.z + Math.cos(a) * r);
     this.camera.lookAt(this.car.x, 1.0, this.car.z);
@@ -283,15 +349,21 @@ class Game {
     hud.tickDispatch(dt);
     if (I.hit('KeyM') && !hud.dialogActive) { const bm = $('bigmap'); bm.classList.toggle('hidden'); if (!bm.classList.contains('hidden')) this.drawBigMap(); }
     // entrada de conducción / a pie
-    const [ax, ay] = blocked ? [0, 0] : I.axes();
+    const [ax, ay] = blocked ? [0, 0] : I.axes(this.inCar ? 'car' : 'foot');
+    if (I.hit('Tab')) hud.expandObjectives(6);
     const [lx, ly] = I.look();
     const cs = this.camState; const sens = 0.0028 * settings.sens;
     cs.yaw -= lx * sens; cs.pitch = clamp(cs.pitch + ly * sens, -0.35, 1.1);
+    if (I.wheel) cs.dist = clamp(cs.dist + I.wheel * 0.4, 2.4, 7);
     if (Math.abs(lx) + Math.abs(ly) > 0) cs.idle = 0; else cs.idle += dt;
     let throttle = 0, brake = 0, steer = 0, hb = false;
     if (this.inCar && !blocked) {
       throttle = Math.max(0, ay); brake = Math.max(0, -ay); steer = -ax; hb = I.down('Space');
-      if (this.assist === 'arcade') steer *= 1; else steer *= 0.85;
+      if (this.assist === 'arcade') { // asistencia: dirección más suave a alta velocidad y contravolante automático
+        const sp = car.speed; steer *= lerp(1, 0.55, clamp(sp / 35, 0, 1));
+        const fx = Math.sin(car.h), fz = Math.cos(car.h); const slipAng = sp > 4 ? Math.atan2(car.vx * -fz + car.vz * fx, car.vx * fx + car.vz * fz) : 0;
+        if (!hb) steer = clamp(steer - slipAng * 0.6, -1, 1);
+      } else steer *= 0.85;
       if (I.hit('KeyQ')) { car.lights = !car.lights; this.audio.click(); if (!car.lights) car.siren = false; }
       if (I.hit('KeyH')) { car.siren = !car.siren; if (car.siren) car.lights = true; this.audio.click(); }
       if (I.hit('KeyJ')) { this.audio.sirenMode = (this.audio.sirenMode + 1) % 3; this.hud.toast(['Sirena: bitonal', 'Sirena: wail', 'Sirena: yelp'][this.audio.sirenMode], 'info', 1200); }
@@ -301,9 +373,9 @@ class Game {
     }
     const wet = this.env.cur.wet;
     car.update(dt, { throttle, brake, steer, handbrake: hb, reverseOk: false }, wet * (this.assist === 'sim' ? 1.2 : 0.8), this.inCar || Math.abs(car.vLong) > 0.2 ? this.traffic.cars.concat(this.traffic.parked, this.services) : []);
-    if (car.impact > 2.5) { this.audio.impact(car.impact); cs.shake = Math.min(1, car.impact * 0.06); this.sparkBurst(car); if (this.mission && car.impact > 5) { this.mission.adj('seguridad', -3); } }
+    if (car.impact > 2.5) { this.input.vibrate(Math.min(80, car.impact * 6)); this.audio.impact(car.impact); cs.shake = Math.min(1, car.impact * 0.06); this.sparkBurst(car); if (this.mission && car.impact > 5) { this.mission.adj('seguridad', -3); } }
     // a pie
-    if (this.onFoot) this.updateOfficer(dt, blocked ? [0, 0] : [ax, ay], blocked ? false : I.down('ShiftLeft', 'ShiftRight'));
+    if (this.onFoot) this.updateOfficer(dt, blocked ? [0, 0] : [ax, ay], blocked ? false : I.runHeld());
     else { this.officer.x = car.x; this.officer.z = car.z; }
     // subir / bajar
     if (!blocked && I.hit('KeyF')) this.toggleCar();
@@ -330,6 +402,8 @@ class Game {
     this.updateFx(dt);
     this.updateCamera(dt);
     this.updateHUD(dt);
+    this.updateTouchUI(blocked);
+    this.updateDRS(dt);
     // audio
     let farSiren = 0; for (const s of this.services) { const d = Math.hypot(s.x - this.camera.position.x, s.z - this.camera.position.z); farSiren = Math.max(farSiren, clamp(1 - d / 260, 0, 1)); }
     this.audio.update(dt, { inCar: this.inCar, rpm: car.rpm, throttle, speed: car.speed, slip: car.slip, wet: wet > 0.4, siren: car.siren, farSiren });
@@ -388,7 +462,7 @@ class Game {
   }
 
   updateInteraction(blocked) {
-    this.interact = null;
+    this.interact = null; this.actionLabel = null; this.nearCar = false;
     if (blocked) { this.hud.prompt(null); return; }
     let best = null, bd = 1e9; const p = this.playerPos();
     const list = this.mission ? this.mission.interactables() : [];
@@ -396,12 +470,13 @@ class Game {
       for (const it of list) { const d = Math.hypot(p.x - it.x, p.z - it.z); if (d < (it.r || 2.5) && d < bd) { bd = d; best = it; } }
       const st = this.city.station.door;
       if (!this.mission && Math.hypot(p.x - st.x, p.z - st.z) < 4) best = { label: 'Comisaría: terminar turno', actions: () => [{ label: 'Terminar turno', fn: () => this.endShift() }, { label: 'Seguir patrullando', fn: () => {} }] };
-      const car = this.car; if (!best && Math.hypot(p.x - car.x, p.z - car.z) < 3.2) { this.hud.prompt('<span class="kbd">F</span> Subir al coche patrulla'); return; }
+      const car = this.car; this.nearCar = Math.hypot(p.x - car.x, p.z - car.z) < 3.4; if (!best && this.nearCar) { this.hud.prompt('<span class="kbd">F</span> Subir al coche patrulla'); return; }
     } else {
       for (const it of list) if (it.inCar) { const d = Math.hypot(p.x - it.x, p.z - it.z); if (d < (it.r || 6) && d < bd) { bd = d; best = it; } }
     }
     if (!best) { this.hud.prompt(this.mission?.canReport() ? '<span class="kbd">I</span> Redactar informe' : null); return; }
     this.interact = best;
+    this.actionLabel = best.label.replace(/\s*\(.*\)$/, '');
     this.hud.prompt(`<span class="kbd">E</span> ${best.label}`);
     if (this.input.hit('KeyE')) {
       const acts = best.actions(); if (!acts.length) return;
@@ -409,6 +484,32 @@ class Game {
       if (acts.length === 1) acts[0].fn();
       else this.hud.openWheel(best.label, acts, (o) => o.fn());
     }
+  }
+
+  updateTouchUI(blocked) {
+    if (!this.input.isTouch) return;
+    this.input.setMode(blocked ? 'off' : this.inCar ? 'car' : 'foot');
+    const act = $('tb-act'), veh = $('tb-veh');
+    const showAct = !!this.actionLabel; if (act.classList.contains('hidden') === showAct) act.classList.toggle('hidden', !showAct);
+    if (showAct && this._actL !== this.actionLabel) { this._actL = this.actionLabel; $('tb-act-l').textContent = this.actionLabel.split(' ').slice(0, 2).join(' '); }
+    veh.classList.toggle('hidden', !this.nearCar);
+    $('tb-rep').classList.toggle('hidden', !this.mission?.canReport());
+    $('tb-lights').classList.toggle('on', this.car.lights); $('tb-siren').classList.toggle('on', this.car.siren);
+    // orientación
+    const portrait = innerHeight > innerWidth * 1.15 && Math.min(innerWidth, innerHeight) < 700;
+    $('rotate').classList.toggle('hidden', !portrait || this.portraitOk);
+  }
+
+  updateDRS(dt) {
+    if (!settings.drs) return;
+    this.drs = this.drs || { t: 0, acc: 0, n: 0, ratio: this.renderer.getPixelRatio() };
+    const D = this.drs; D.acc += dt; D.n++; D.t += dt;
+    if (D.t < 2) return;
+    const ft = D.acc / D.n; D.t = 0; D.acc = 0; D.n = 0;
+    const max = Math.min(devicePixelRatio || 1, Q.pixelRatio), min = Math.max(0.5, max * 0.5);
+    let r = D.ratio;
+    if (ft > 1 / 26) r = Math.max(min, r - 0.1); else if (ft < 1 / 50) r = Math.min(max, r + 0.05);
+    if (Math.abs(r - D.ratio) > 0.01) { D.ratio = r; this.renderer.setPixelRatio(r); this.renderer.setSize(innerWidth, innerHeight); this.post.setSize(innerWidth, innerHeight); }
   }
 
   openRadio() {
@@ -469,7 +570,7 @@ class Game {
     const [L, R] = rig.updateBeacons(this.elapsed, car.lights, settings.redblue ? 'rojo-azul' : 'azul');
     const col = settings.redblue ? [new THREE.Color(1, 0.05, 0.03), new THREE.Color(0.1, 0.3, 1)] : [new THREE.Color(0.1, 0.3, 1), new THREE.Color(0.1, 0.3, 1)];
     this.beaconL.color.copy(col[0]); this.beaconR.color.copy(col[1]);
-    const k = lerp(18, 40, night);
+    const k = lerp(12, 22, night);
     this.beaconL.intensity = L * k; this.beaconR.intensity = R * k;
     this.sirenFx = car.lights ? Math.max(L, R) * (this.inCar ? 1 : 0.6) : 0; this.sirenCol = L > R ? col[0] : col[1];
   }
@@ -519,11 +620,11 @@ class Game {
         const fx = Math.sin(car.h), fz = Math.cos(car.h);
         pos.set(car.x + fx * 0.2, car.y + 1.32, car.z + fz * 0.2); look.set(car.x + fx * 20, car.y + 1.1, car.z + fz * 20); fov = 72 + sp * 0.25;
       } else {
-        const dist = cs.carMode === 0 ? 6.4 : 10.5; const h = cs.carMode === 0 ? 2.15 : 3.4;
+        const dist = cs.carMode === 0 ? 6.0 : 10.5; const h = cs.carMode === 0 ? 1.95 : 3.4;
         const fx = Math.sin(yaw), fz = Math.cos(yaw);
         const d = dist + sp * 0.04;
         pos.set(car.x - fx * d, car.y + h + sp * 0.01, car.z - fz * d);
-        look.set(car.x + fx * 3, car.y + 1.0, car.z + fz * 3);
+        look.set(car.x + fx * (3 + sp * 0.12), car.y + 1.0, car.z + fz * (3 + sp * 0.12));
         fov = 60 + Math.min(18, sp * 0.45);
       }
     } else {
@@ -574,6 +675,13 @@ class Game {
       this.route = [[p.x, p.z], ...nodes, [t.x, t.z]];
     }
     if (!t) this.route = null;
+    let compass = null;
+    if (t) {
+      const dx = t.x - p.x, dz = t.z - p.z; const cy = this.inCar ? this.camState.carYaw + (this.camState.yawOff || 0) : this.camState.yaw;
+      const ang = Math.atan2(dx, dz) - cy; compass = { angle: -ang, dist: Math.hypot(dx, dz) };
+    }
+    this.hud.tickObjectives(dt, compass);
+    this.shiftT = (this.shiftT || 0) + dt; this.hud.fadeHints(!settings.hints || this.shiftT > 25);
     const dots = [];
     for (const c of this.traffic.cars) { const d = Math.abs(c.x - p.x) + Math.abs(c.z - p.z); if (d < 220) dots.push({ x: c.x, z: c.z, c: c.flags.police ? '#69a6ff' : c.state === 'flee' ? '#ff4b4b' : 'rgba(255,255,255,.35)', r: c.state === 'flee' ? 4 : 2 }); }
     for (const s of this.services) dots.push({ x: s.x, z: s.z, c: s.kind === 'ambulance' ? '#ff6b6b' : '#69a6ff', r: 3.5 });
@@ -588,7 +696,7 @@ class Game {
   render(dt) {
     const env = this.env;
     this.renderer.toneMappingExposure = (env.exposure || 0.8) * (1 + (this.camFlash || 0) * 0.6);
-    const rain = env.cur.rain; const lensRain = this.inCar && this.camState.carMode === 2 ? rain * 0.5 : rain * 0.85;
+    const rain = settings.lens ? env.cur.rain : 0; const lensRain = this.inCar && this.camState.carMode === 2 ? rain * 0.5 : rain * 0.85;
     this.post.render(dt, env, { lensRain: this.state === 'menu' ? rain * 0.6 : lensRain, damage: this.camState?.shake * 0.4 || 0, siren: this.sirenFx || 0, sirenCol: this.sirenCol });
   }
 

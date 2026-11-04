@@ -5,7 +5,7 @@ import { AICar, LaneDriver } from './vehicles.js';
 
 const pick = (a, r = Math.random) => a[(r() * a.length) | 0];
 const COLOR_NAMES = [[0xb3121b, 'rojo'], [0x1d3a6b, 'azul oscuro'], [0xe8e8e8, 'blanco'], [0x111316, 'negro'], [0x6d7278, 'gris'], [0x2f4a2f, 'verde'], [0xd68910, 'naranja']];
-const MODEL_NAMES = { sedan: 'berlina', hatch: 'compacto', suv: 'todoterreno', van: 'furgoneta' };
+const MODEL_NAMES = { sedan: 'turismo', hatch: 'compacto', suv: 'todoterreno', van: 'furgoneta', truck: 'pick-up', taxi: 'taxi' };
 const FIRST = ['Lucía', 'Javier', 'Marta', 'Andrés', 'Carmen', 'Raúl', 'Elena', 'Sergio', 'Nuria', 'Pablo', 'Irene', 'Hugo', 'Rosa', 'Iván', 'Alba', 'Tomás', 'Sara', 'Diego'];
 const LAST = ['García', 'Moreno', 'Navarro', 'Ruiz', 'Ortega', 'Delgado', 'Castro', 'Vidal', 'Romero', 'Serrano', 'Molina', 'Herrera', 'Prieto', 'Campos'];
 const fullName = () => `${pick(FIRST)} ${pick(LAST)}`;
@@ -102,7 +102,7 @@ export class Accident extends Mission {
     // coches: A golpeado por detrás/lateral, B delante cruzado
     const ax = p.x - rx * 2.2, az = p.z - rz * 2.2;
     const colA = pick(COLOR_NAMES), colB = pick(COLOR_NAMES.filter((c) => c !== colA));
-    this.carA = this.addCar('hatch', colA[0], { x: ax, z: az, heading: p.heading + 0.45 }, { hazardAlways: true });
+    this.carA = this.addCar('suv', colA[0], { x: ax, z: az, heading: p.heading + 0.45 }, { hazardAlways: true });
     this.carB = this.addCar('sedan', colB[0], { x: ax + fx * 4.6 + rx * 0.6, z: az + fz * 4.6 + rz * 0.6, heading: p.heading - 0.25 });
     this.carA.hazard = this.carB.hazard = true; this.carA.blocking = this.carB.blocking = true;
     this.colA = colA[1]; this.colB = colB[1];
@@ -246,7 +246,7 @@ export class TrafficStop extends Mission {
   constructor(G) {
     const from = G.playerPos();
     super(G, { code: 'M-02', title: 'Conducción peligrosa', category: 'Tráfico', priority: 2, pos: { x: from.x + 1, z: from.z + 1 }, details: '' });
-    this.col = pick(COLOR_NAMES); this.type = pick(['sedan', 'hatch', 'suv']); this.plate = plate();
+    this.col = pick(COLOR_NAMES); this.type = pick(['sedan', 'suv', 'truck', 'van']); this.plate = plate();
     this.outcome = pick(['ok', 'ok', 'ok', 'seguro', 'permiso', 'robado']);
     this.flee = Math.random() < 0.22 || this.outcome === 'robado' && Math.random() < 0.5;
     this.driverName = fullName();
@@ -436,7 +436,7 @@ export class TrafficStop extends Mission {
       const x0 = (drv.bi * CITY.PITCH - CITY.HALF) + dx * 40, z0 = (drv.bj * CITY.PITCH - CITY.HALF) + dz * 40;
       const h = Math.atan2(dx, dz) + Math.PI / 2;
       const rx = -dz, rz = dx;
-      for (const o of [-4.5, 0, 4.5]) this.addCar('sedan', 0xf4f6f8, { x: x0 + rx * o, z: z0 + rz * o, heading: h + (Math.random() - 0.5) * 0.2 }, { police: true }).blocking = true;
+      for (const o of [-4.5, 0, 4.5]) this.addCar('police', 0xf4f6f8, { x: x0 + rx * o, z: z0 + rz * o, heading: h + (Math.random() - 0.5) * 0.2 }, { police: true }).blocking = true;
       this.cars.slice(-3).forEach((k) => (k.hazard = true));
       G.radioMsg(`Unidad 23: control establecido en ${G.city.locationName(x0, z0)}.`, 1, true);
       this.fact('Unidades de apoyo establecen un control en la ruta de huida.');

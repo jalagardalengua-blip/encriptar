@@ -27,7 +27,7 @@ export const rightOf = (d) => {
 };
 
 export const QUALITY = {
-  bajo:   { label: 'Bajo',   pixelRatio: 0.7,  shadowSize: 1024, ao: false, smaa: false, bloom: true, traffic: 22, peds: 36, aniso: 2,  rain: 2500, cones: false },
+  bajo:   { label: 'Bajo',   pixelRatio: 1.0,  shadowSize: 1024, ao: false, smaa: false, bloom: true, traffic: 22, peds: 36, aniso: 2,  rain: 2000, cones: false },
   medio:  { label: 'Medio',  pixelRatio: 1.0,  shadowSize: 2048, ao: false, smaa: true,  bloom: true, traffic: 30, peds: 56, aniso: 4,  rain: 5000, cones: true },
   alto:   { label: 'Alto',   pixelRatio: 1.25, shadowSize: 2048, ao: true,  smaa: true,  bloom: true, traffic: 38, peds: 72, aniso: 8,  rain: 8000, cones: true },
   ultra:  { label: 'Ultra',  pixelRatio: 2.0,  shadowSize: 4096, ao: true,  smaa: true,  bloom: true, traffic: 46, peds: 90, aniso: 16, rain: 12000, cones: true },
