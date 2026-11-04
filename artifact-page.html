@@ -1,0 +1,347 @@
+<title>Police: Life on Duty</title>
+<meta name="description" content="Demo técnica de simulación policial de mundo abierto con gráficos realistas en tiempo real (WebGL)." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  color-scheme: dark;
+  --bg: #05070b; --panel: rgba(9, 13, 21, 0.62); --panel-solid: #0c121c; --line: rgba(255,255,255,0.09); --text: #e8edf5; --muted: #93a0b4;
+  --blue: #2f7bff; --blue2: #69a6ff; --amber: #ffb020; --red: #ff4b4b; --green: #35d07f; --cond: 'Barlow Condensed', 'Arial Narrow', sans-serif; --sans: 'Inter', system-ui, sans-serif;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); font-family: var(--sans); overflow: hidden; user-select: none; -webkit-user-select: none; touch-action: none; }
+canvas#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+.hidden { display: none !important; }
+button { font-family: var(--cond); cursor: pointer; }
+.glass { background: var(--panel); border: 1px solid var(--line); border-radius: 12px; backdrop-filter: blur(10px) saturate(1.2); -webkit-backdrop-filter: blur(10px) saturate(1.2); box-shadow: 0 10px 40px rgba(0,0,0,0.35); }
+
+/* ---------- Carga ---------- */
+#loading { position: fixed; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: radial-gradient(ellipse at center, #0e1726 0%, #05070b 70%); z-index: 50; transition: opacity .8s; }
+#loading .logo { font-family: var(--cond); font-weight: 800; font-size: clamp(42px, 9vw, 96px); letter-spacing: .06em; line-height: .9; text-align: center; }
+#loading .logo small { display: block; font-size: .32em; letter-spacing: .5em; color: var(--blue2); margin-top: 10px; }
+#loading .bar { width: min(420px, 80vw); height: 4px; background: rgba(255,255,255,.08); border-radius: 4px; margin-top: 42px; overflow: hidden; }
+#loading .bar i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #9fd0ff); transition: width .3s; }
+#loading .lbl { margin-top: 14px; font-size: 13px; color: var(--muted); letter-spacing: .04em; min-height: 1.2em; }
+.beacon { width: 160px; height: 8px; border-radius: 6px; margin-top: 26px; background: linear-gradient(90deg, #1e5bff 0 50%, #ff2a2a 50% 100%); filter: blur(1px); animation: bk .5s steps(2) infinite; box-shadow: 0 0 30px #2f7bff; }
+@keyframes bk { 50% { opacity: .25; box-shadow: 0 0 30px #ff2a2a; } }
+
+/* ---------- Menú ---------- */
+#menu { position: fixed; inset: 0; z-index: 30; display: flex; align-items: stretch; background: linear-gradient(90deg, rgba(3,5,9,.92) 0%, rgba(3,5,9,.55) 38%, rgba(3,5,9,0) 70%), linear-gradient(0deg, rgba(3,5,9,.7), rgba(3,5,9,0) 40%); }
+#menu .col { padding: max(5vh, 28px) 0 0 max(6vw, 22px); width: min(560px, 100%); display: flex; flex-direction: column; }
+.title { font-family: var(--cond); font-weight: 800; font-size: clamp(54px, 10vw, 112px); line-height: .82; letter-spacing: .02em; text-shadow: 0 6px 40px rgba(0,0,0,.6); }
+.title span { display: block; font-size: .36em; letter-spacing: .42em; color: var(--blue2); margin-top: 12px; font-weight: 700; }
+.tagline { color: #c7d2e3; margin: 18px 0 30px; font-size: 15px; max-width: 420px; line-height: 1.5; }
+.mbtn { display: flex; flex-direction: column; align-items: flex-start; gap: 0; width: 100%; max-width: 380px; text-align: left; background: transparent; border: 0; color: var(--text); font-size: 26px; font-weight: 700; letter-spacing: .04em; padding: 9px 16px; border-left: 3px solid transparent; transition: all .15s; text-transform: uppercase; }
+.mbtn small { font-family: var(--sans); font-size: 12px; color: var(--muted); font-weight: 500; letter-spacing: 0; text-transform: none; display: block; }
+.mbtn:hover, .mbtn:focus-visible { background: linear-gradient(90deg, rgba(47,123,255,.28), transparent); border-left-color: var(--blue); outline: none; padding-left: 22px; }
+.mbtn[disabled] { opacity: .35; pointer-events: none; }
+.menu-foot { margin-top: auto; padding: 20px 0 22px; font-size: 12px; color: #7d8aa0; max-width: 470px; line-height: 1.5; }
+.chip { display: inline-flex; align-items: center; gap: 6px; padding: 4px 10px; border-radius: 99px; border: 1px solid var(--line); background: rgba(255,255,255,.04); font-size: 12px; color: #c9d4e6; }
+
+/* ---------- Paneles modales ---------- */
+.modal { position: fixed; inset: 0; z-index: 40; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.55); padding: 16px; }
+.modal .box { width: min(760px, 100%); max-height: calc(100vh - 32px); overflow: auto; padding: 26px 28px; }
+.modal h2 { font-family: var(--cond); font-size: 34px; margin: 0 0 6px; letter-spacing: .03em; text-transform: uppercase; }
+.modal h3 { font-family: var(--cond); font-size: 18px; letter-spacing: .12em; color: var(--blue2); margin: 22px 0 10px; text-transform: uppercase; }
+.modal p { color: #c3cddd; line-height: 1.55; font-size: 14px; }
+.opts { display: grid; grid-template-columns: repeat(auto-fill, minmax(130px, 1fr)); gap: 8px; }
+.opt { background: rgba(255,255,255,.04); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; color: var(--text); font-size: 18px; font-weight: 700; text-align: left; letter-spacing: .02em; transition: .15s; }
+.opt small { display: block; font-family: var(--sans); font-weight: 500; font-size: 11.5px; color: var(--muted); margin-top: 2px; letter-spacing: 0; }
+.opt:hover { border-color: rgba(105,166,255,.5); }
+.opt.sel { background: rgba(47,123,255,.22); border-color: var(--blue); box-shadow: inset 0 0 0 1px var(--blue); }
+.row { display: flex; gap: 10px; justify-content: flex-end; margin-top: 24px; flex-wrap: wrap; }
+.btn { background: var(--blue); border: 0; color: white; font-size: 20px; font-weight: 700; padding: 10px 22px; border-radius: 10px; letter-spacing: .05em; text-transform: uppercase; }
+.btn.ghost { background: rgba(255,255,255,.06); border: 1px solid var(--line); }
+.btn.amber { background: var(--amber); color: #1b1300; }
+.kbd { display: inline-block; min-width: 24px; padding: 2px 7px; border-radius: 6px; border: 1px solid rgba(255,255,255,.22); border-bottom-width: 3px; font: 600 12px var(--sans); text-align: center; background: rgba(255,255,255,.06); color: #fff; }
+.ctrls { display: grid; grid-template-columns: 1fr 1fr; gap: 6px 26px; font-size: 13.5px; color: #c8d2e2; }
+.ctrls div { display: flex; justify-content: space-between; gap: 10px; border-bottom: 1px dashed rgba(255,255,255,.06); padding: 5px 0; }
+label.sl { display: flex; align-items: center; gap: 12px; font-size: 14px; margin: 8px 0; color: #c8d2e2; }
+label.sl input[type=range] { flex: 1; accent-color: var(--blue); }
+label.sl input[type=checkbox] { accent-color: var(--blue); width: 18px; height: 18px; }
+
+/* ---------- HUD ---------- */
+#hud { position: fixed; inset: 0; pointer-events: none; z-index: 10; font-family: var(--cond); }
+#hud > * { position: absolute; }
+#mapwrap { left: max(18px, env(safe-area-inset-left)); top: 18px; width: 210px; }
+#minimap { width: 210px; height: 210px; border-radius: 50%; display: block; border: 2px solid rgba(255,255,255,.14); box-shadow: 0 8px 30px rgba(0,0,0,.5), inset 0 0 30px rgba(0,0,0,.6); background: #0b1018; }
+#loc { margin-top: 10px; font-family: var(--sans); font-size: 12px; color: #dfe7f3; text-shadow: 0 1px 3px #000; line-height: 1.35; }
+#loc b { font-family: var(--cond); font-size: 16px; letter-spacing: .05em; display: block; text-transform: uppercase; }
+#status { left: 50%; transform: translateX(-50%); top: 14px; display: flex; gap: 10px; align-items: center; padding: 7px 14px; font-size: 18px; font-weight: 600; letter-spacing: .05em; }
+#status .clock { font-size: 26px; font-weight: 700; min-width: 66px; text-align: center; }
+#status .sep { width: 1px; height: 22px; background: var(--line); }
+#status .alert { color: var(--amber); }
+#xpbar { width: 120px; height: 4px; background: rgba(255,255,255,.1); border-radius: 3px; overflow: hidden; margin-top: 3px; }
+#xpbar i { display: block; height: 100%; background: linear-gradient(90deg, var(--blue), #9fd0ff); width: 0; }
+#rank { font-size: 13px; color: #b9c6da; line-height: 1; }
+#radio { right: max(18px, env(safe-area-inset-right)); top: 18px; width: min(340px, 42vw); display: flex; flex-direction: column; gap: 8px; }
+.rmsg { padding: 9px 12px 10px; font-family: var(--sans); font-size: 12.5px; line-height: 1.4; animation: slin .35s ease-out; border-left: 3px solid var(--blue); }
+.rmsg .h { font-family: var(--cond); font-size: 14px; letter-spacing: .1em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; }
+.rmsg.p1 { border-left-color: var(--red); } .rmsg.p1 .h { color: #ff8b8b; }
+.rmsg.p2 { border-left-color: var(--amber); } .rmsg.p2 .h { color: #ffd27a; }
+@keyframes slin { from { transform: translateX(30px); opacity: 0; } }
+#dispatch { right: max(18px, env(safe-area-inset-right)); top: 18px; width: min(360px, 90vw); padding: 14px 16px 14px; pointer-events: auto; border-left: 4px solid var(--amber); animation: slin .4s ease-out; }
+#dispatch .cat { font-size: 13px; letter-spacing: .18em; color: var(--amber); text-transform: uppercase; }
+#dispatch .ttl { font-size: 26px; font-weight: 700; margin: 2px 0 6px; line-height: 1.05; }
+#dispatch .det { font-family: var(--sans); font-size: 12.5px; color: #c9d3e3; line-height: 1.45; }
+#dispatch .act { display: flex; gap: 8px; margin-top: 12px; }
+#dispatch .act button { flex: 1; font-size: 17px; padding: 7px; border-radius: 8px; border: 1px solid var(--line); background: rgba(255,255,255,.06); color: var(--text); font-weight: 700; }
+#dispatch .act button.ok { background: var(--green); color: #032312; border: 0; }
+#dispatch .timer { height: 3px; background: rgba(255,255,255,.1); margin-top: 10px; border-radius: 3px; overflow: hidden; } #dispatch .timer i { display: block; height: 100%; background: var(--amber); width: 100%; }
+#objective { left: 50%; transform: translateX(-50%); top: 72px; min-width: 300px; max-width: min(520px, 70vw); padding: 10px 16px; }
+#objective .t { font-size: 14px; letter-spacing: .16em; color: var(--blue2); text-transform: uppercase; display: flex; justify-content: space-between; gap: 16px; }
+#objective ul { list-style: none; margin: 6px 0 0; padding: 0; font-family: var(--sans); font-size: 13px; }
+#objective li { padding: 2px 0 2px 22px; position: relative; color: #e5ecf6; }
+#objective li::before { content: ''; position: absolute; left: 2px; top: 6px; width: 10px; height: 10px; border: 1.5px solid #8aa0bf; border-radius: 3px; }
+#objective li.done { color: #7f8ea6; text-decoration: line-through; } #objective li.done::before { background: var(--green); border-color: var(--green); }
+#objective li.optional { color: #b7c3d6; font-style: italic; }
+#prompt { left: 50%; bottom: 120px; transform: translateX(-50%); padding: 9px 16px; font-size: 20px; font-weight: 600; letter-spacing: .03em; display: flex; gap: 10px; align-items: center; white-space: nowrap; }
+#speedo { right: max(26px, env(safe-area-inset-right)); bottom: 24px; width: 190px; height: 190px; }
+#speedo canvas { width: 190px; height: 190px; }
+#speedo .num { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+#speedo .num b { font-size: 54px; line-height: .9; font-weight: 700; }
+#speedo .num small { font-size: 13px; letter-spacing: .2em; color: var(--muted); }
+#speedo .ind { position: absolute; bottom: 30px; left: 0; right: 0; display: flex; justify-content: center; gap: 6px; font-size: 12px; letter-spacing: .1em; }
+#speedo .ind span { padding: 1px 6px; border-radius: 4px; background: rgba(255,255,255,.06); color: #5d6a7e; }
+#speedo .ind span.on { background: var(--blue); color: #fff; } #speedo .ind span.on.s { background: var(--red); }
+#hints { left: max(18px, env(safe-area-inset-left)); bottom: 18px; font-family: var(--sans); font-size: 12px; color: #cfd8e6; display: flex; flex-direction: column; gap: 5px; text-shadow: 0 1px 3px #000; }
+#toasts { left: 50%; transform: translateX(-50%); top: 40%; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.toast { padding: 8px 18px; font-size: 22px; font-weight: 700; letter-spacing: .04em; animation: tin .3s ease-out; text-shadow: 0 2px 10px rgba(0,0,0,.7); }
+.toast.good { color: var(--green); } .toast.bad { color: #ff7a7a; } .toast.info { color: #fff; } .toast.xp { color: #9fd0ff; }
+@keyframes tin { from { transform: scale(.8); opacity: 0; } }
+#pursuit { left: 50%; transform: translateX(-50%); top: 72px; width: min(420px, 80vw); padding: 10px 14px; border-left: 4px solid var(--red); }
+#pursuit .t { font-size: 15px; letter-spacing: .16em; color: #ff8b8b; text-transform: uppercase; display: flex; justify-content: space-between; }
+#pursuit .b { height: 6px; background: rgba(255,255,255,.1); border-radius: 4px; overflow: hidden; margin-top: 6px; } #pursuit .b i { display: block; height: 100%; background: linear-gradient(90deg, var(--red), var(--amber)); width: 50%; transition: width .2s; }
+#dialog { left: 50%; bottom: 40px; transform: translateX(-50%); width: min(760px, 92vw); padding: 14px 18px; pointer-events: auto; }
+#dialog .who { font-size: 15px; letter-spacing: .14em; text-transform: uppercase; color: var(--amber); display: flex; justify-content: space-between; }
+#dialog .who em { font-style: normal; color: var(--muted); font-size: 12px; }
+#dialog .txt { font-family: var(--sans); font-size: 16px; line-height: 1.5; margin-top: 4px; min-height: 2.6em; }
+#dialog .choices { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; margin-top: 10px; }
+#dialog .choices button { text-align: left; font-family: var(--sans); font-size: 13.5px; background: rgba(255,255,255,.05); border: 1px solid var(--line); color: var(--text); padding: 8px 10px; border-radius: 8px; display: flex; gap: 8px; align-items: center; }
+#dialog .choices button:hover { border-color: var(--blue); background: rgba(47,123,255,.15); }
+#dialog .choices button.risky { border-color: rgba(255,120,120,.35); }
+#dialog .cont { margin-top: 8px; font-size: 12px; color: var(--muted); font-family: var(--sans); text-align: right; }
+#wheel { left: 50%; top: 50%; transform: translate(-50%, -50%); width: 420px; height: 420px; pointer-events: auto; }
+#wheel .hub { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 140px; height: 140px; border-radius: 50%; display: flex; align-items: center; justify-content: center; text-align: center; font-size: 17px; padding: 14px; line-height: 1.05; }
+#wheel .it { position: absolute; width: 132px; transform: translate(-50%,-50%); padding: 9px 10px; font-family: var(--sans); font-size: 13px; text-align: center; border-radius: 12px; cursor: pointer; transition: .12s; line-height: 1.25; }
+#wheel .it b { display: block; font-family: var(--cond); font-size: 13px; color: var(--blue2); letter-spacing: .1em; }
+#wheel .it:hover, #wheel .it.hl { background: rgba(47,123,255,.35); border-color: var(--blue); transform: translate(-50%,-50%) scale(1.06); }
+#vignette { inset: 0; box-shadow: inset 0 0 160px rgba(255,30,30,0); transition: box-shadow .2s; }
+#crosshair { left: 50%; top: 50%; width: 6px; height: 6px; margin: -3px; border-radius: 50%; background: rgba(255,255,255,.7); box-shadow: 0 0 4px #000; }
+#fps { right: 10px; bottom: 6px; font: 11px var(--sans); color: #6c7a90; }
+#bigmap { position: fixed; inset: 0; z-index: 35; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.75); pointer-events: auto; }
+#bigmap canvas { width: min(88vh, 92vw); height: min(88vh, 92vw); border-radius: 14px; border: 1px solid var(--line); }
+#bigmap .legend { position: absolute; bottom: 20px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; flex-wrap: wrap; justify-content: center; font-size: 12px; }
+
+/* Informe */
+.rep-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+.ev { display: flex; align-items: center; gap: 8px; padding: 7px 10px; border: 1px solid var(--line); border-radius: 8px; margin-bottom: 6px; font-size: 13px; background: rgba(255,255,255,.03); cursor: pointer; }
+.ev input { accent-color: var(--blue); }
+.fact { font-size: 13px; color: #c9d3e3; padding: 4px 0 4px 14px; border-left: 2px solid rgba(105,166,255,.5); margin-bottom: 6px; }
+.scores { display: grid; gap: 10px; margin-top: 10px; }
+.score { display: grid; grid-template-columns: 130px 1fr 44px; align-items: center; gap: 10px; font-size: 15px; }
+.score .b { height: 8px; background: rgba(255,255,255,.08); border-radius: 5px; overflow: hidden; } .score .b i { display: block; height: 100%; width: 0; background: linear-gradient(90deg, var(--blue), #9fd0ff); transition: width 1s cubic-bezier(.2,.8,.2,1); }
+.grade { font-family: var(--cond); font-size: 84px; font-weight: 800; line-height: 1; color: var(--blue2); text-shadow: 0 0 30px rgba(47,123,255,.5); }
+.cons { font-size: 13px; color: #c9d3e3; margin: 4px 0; padding-left: 18px; position: relative; } .cons::before { content: '›'; position: absolute; left: 4px; color: var(--amber); }
+
+/* Táctil */
+#touch { position: fixed; inset: 0; z-index: 12; display: none; }
+#touch.on { display: block; }
+#touch .joy { position: absolute; width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(255,255,255,.25); background: rgba(255,255,255,.05); display: none; }
+#touch .joy.show { display: block; }
+#touch .knob { position: absolute; left: 35px; top: 35px; width: 50px; height: 50px; border-radius: 50%; background: rgba(255,255,255,.35); }
+#touch .btns { position: absolute; right: 14px; bottom: 230px; display: grid; grid-template-columns: repeat(3, 58px); gap: 10px; }
+#touch .btns div { width: 58px; height: 58px; border-radius: 50%; background: rgba(10,14,22,.55); border: 1px solid rgba(255,255,255,.2); display: flex; align-items: center; justify-content: center; font: 700 13px var(--cond); color: #fff; letter-spacing: .05em; }
+#touch .btns div.down { background: rgba(47,123,255,.6); }
+#touch .tl { position: absolute; left: 50%; top: 10px; transform: translateX(-50%); display: flex; gap: 8px; }
+#touch .tl div { padding: 6px 12px; border-radius: 8px; background: rgba(10,14,22,.55); border: 1px solid rgba(255,255,255,.2); font: 700 13px var(--cond); color: #fff; }
+
+@media (max-width: 760px) {
+  #mapwrap { width: 128px; top: 10px; left: 10px; } #minimap { width: 128px; height: 128px; }
+  #status { top: auto; bottom: 8px; font-size: 14px; padding: 5px 10px; } #status .clock { font-size: 18px; min-width: 44px; } #status .rk { display: none; }
+  #radio { width: 52vw; top: 10px; right: 10px; } .rmsg { font-size: 11px; }
+  #objective { top: auto; bottom: 64px; left: 10px; transform: none; min-width: 0; max-width: 58vw; } #objective ul { font-size: 11.5px; }
+  #speedo { transform: scale(.68); transform-origin: right bottom; right: 6px; bottom: 6px; }
+  #hints { display: none; } #prompt { bottom: 150px; font-size: 16px; }
+  #wheel { transform: translate(-50%,-50%) scale(.78); }
+  .rep-grid { grid-template-columns: 1fr; } .ctrls { grid-template-columns: 1fr; }
+  #dialog .choices { grid-template-columns: 1fr; }
+  .modal .box { padding: 18px; }
+}
+</style>
+<script type="importmap">
+{ "imports": { "three": "./vendor/three/three.module.min.js", "three/addons/": "./vendor/three/addons/" } }
+</script>
+<canvas id="c"></canvas>
+
+<div id="loading">
+  <div class="logo">POLICE<small>LIFE ON DUTY</small></div>
+  <div class="beacon"></div>
+  <div class="bar"><i id="loadbar"></i></div>
+  <div class="lbl" id="loadlbl">Iniciando motor gráfico…</div>
+</div>
+
+<div id="menu" class="hidden">
+  <div class="col">
+    <div class="title">POLICE<span>LIFE ON DUTY</span></div>
+    <div class="tagline">Una ciudad viva. Cada aviso importa. Cada decisión deja huella.<br><span class="chip" style="margin-top:10px">Demo técnica · Distrito de Valmora</span></div>
+    <button class="mbtn" id="m-continue" disabled>Continuar carrera<small id="m-continue-sub">Sin partida guardada</small></button>
+    <button class="mbtn" id="m-new">Nueva carrera<small>Empieza como agente en prácticas</small></button>
+    <button class="mbtn" id="m-free">Patrulla libre<small>Elige turno, clima y atiende avisos</small></button>
+    <button class="mbtn" id="m-settings">Ajustes<small>Gráficos, audio, accesibilidad</small></button>
+    <button class="mbtn" id="m-controls">Controles<small>Teclado, mando y táctil</small></button>
+    <div class="menu-foot">Simulación policial ficticia basada en el GDD «Police: Life on Duty». Prioriza la desescalada, la proporcionalidad y la documentación. Gráficos generados 100% de forma procedural en tiempo real.</div>
+  </div>
+</div>
+
+<div id="shift" class="modal hidden"><div class="box glass">
+  <h2>Selección de turno</h2>
+  <p>Prepara tu turno de patrulla. El horario y el clima cambian la visibilidad, el tráfico y el tipo de avisos.</p>
+  <h3>Horario</h3>
+  <div class="opts" id="opt-hour">
+    <button class="opt" data-v="7.5">Amanecer<small>07:30 · luz dorada</small></button>
+    <button class="opt" data-v="12">Mañana<small>12:00 · tráfico denso</small></button>
+    <button class="opt" data-v="19.3">Atardecer<small>19:20 · hora mágica</small></button>
+    <button class="opt sel" data-v="22.5">Noche<small>22:30 · ocio nocturno</small></button>
+  </div>
+  <h3>Clima</h3>
+  <div class="opts" id="opt-weather">
+    <button class="opt" data-v="despejado">Despejado</button>
+    <button class="opt" data-v="nublado">Nublado</button>
+    <button class="opt sel" data-v="lluvia">Lluvia<small>asfalto mojado</small></button>
+    <button class="opt" data-v="tormenta">Tormenta<small>relámpagos</small></button>
+    <button class="opt" data-v="niebla">Niebla</button>
+  </div>
+  <h3>Conducción</h3>
+  <div class="opts" id="opt-assist">
+    <button class="opt sel" data-v="arcade">Arcade<small>asistencias altas</small></button>
+    <button class="opt" data-v="sim">Simulación<small>respuesta exigente</small></button>
+  </div>
+  <div class="row"><button class="btn ghost" id="shift-back">Volver</button><button class="btn" id="shift-go">Comenzar turno</button></div>
+</div></div>
+
+<div id="settings" class="modal hidden"><div class="box glass">
+  <h2>Ajustes</h2>
+  <h3>Calidad gráfica</h3>
+  <div class="opts" id="opt-quality">
+    <button class="opt" data-v="bajo">Bajo<small>móviles</small></button>
+    <button class="opt" data-v="medio">Medio</button>
+    <button class="opt" data-v="alto">Alto<small>GTAO + bloom</small></button>
+    <button class="opt" data-v="ultra">Ultra<small>sombras 4K, 2x</small></button>
+  </div>
+  <p style="font-size:12px;color:var(--muted)">El cambio de calidad recarga la página.</p>
+  <h3>Audio</h3>
+  <label class="sl">Volumen <input type="range" id="s-vol" min="0" max="1" step="0.05" value="0.8"></label>
+  <label class="sl"><input type="checkbox" id="s-voice" checked> Voz sintetizada de la central (es-ES)</label>
+  <h3>Presentación y accesibilidad</h3>
+  <label class="sl"><input type="checkbox" id="s-grain" checked> Grano de película y aberración cromática</label>
+  <label class="sl"><input type="checkbox" id="s-shake" checked> Vibración de cámara</label>
+  <label class="sl"><input type="checkbox" id="s-redblue"> Luces de emergencia rojo/azul (por defecto: azul, como en España)</label>
+  <label class="sl">Sensibilidad de cámara <input type="range" id="s-sens" min="0.3" max="2" step="0.05" value="1"></label>
+  <label class="sl">Velocidad del reloj <input type="range" id="s-time" min="0" max="240" step="10" value="60"></label>
+  <label class="sl"><input type="checkbox" id="s-fps"> Mostrar FPS</label>
+  <div class="row"><button class="btn" id="settings-close">Aceptar</button></div>
+</div></div>
+
+<div id="controls" class="modal hidden"><div class="box glass">
+  <h2>Controles</h2>
+  <h3>A pie</h3>
+  <div class="ctrls">
+    <div>Moverse <span><span class="kbd">W</span><span class="kbd">A</span><span class="kbd">S</span><span class="kbd">D</span></span></div>
+    <div>Correr <span class="kbd">Shift</span></div>
+    <div>Cámara <span>Ratón (clic para capturar)</span></div>
+    <div>Interactuar / hablar <span class="kbd">E</span></div>
+    <div>Subir / bajar del vehículo <span class="kbd">F</span></div>
+    <div>Radio / pedir aviso <span class="kbd">R</span></div>
+  </div>
+  <h3>Conducción</h3>
+  <div class="ctrls">
+    <div>Acelerar / frenar <span><span class="kbd">W</span><span class="kbd">S</span></span></div>
+    <div>Dirección <span><span class="kbd">A</span><span class="kbd">D</span></span></div>
+    <div>Freno de mano <span class="kbd">Espacio</span></div>
+    <div>Luces de emergencia <span class="kbd">Q</span></div>
+    <div>Sirena / cambiar tono <span><span class="kbd">H</span> <span class="kbd">J</span></span></div>
+    <div>Claxon <span class="kbd">G</span></div>
+    <div>Cambiar cámara <span class="kbd">C</span></div>
+    <div>Faros <span class="kbd">L</span></div>
+  </div>
+  <h3>General</h3>
+  <div class="ctrls">
+    <div>Aceptar / rechazar aviso <span><span class="kbd">Y</span><span class="kbd">N</span></span></div>
+    <div>Redactar informe <span class="kbd">I</span></div>
+    <div>Mapa táctico <span class="kbd">M</span></div>
+    <div>Opciones de diálogo <span><span class="kbd">1</span>…<span class="kbd">6</span></span></div>
+    <div>Pausa <span><span class="kbd">Esc</span> / <span class="kbd">P</span></span></div>
+    <div>Modo foto (oculta HUD) <span class="kbd">F2</span></div>
+  </div>
+  <p style="font-size:12px;color:var(--muted)">También compatible con mando (gatillos para acelerar/frenar) y controles táctiles en móvil.</p>
+  <div class="row"><button class="btn" id="controls-close">Entendido</button></div>
+</div></div>
+
+<div id="pause" class="modal hidden"><div class="box glass" style="width:min(460px,100%)">
+  <h2>Pausa</h2>
+  <p id="pause-info"></p>
+  <div style="display:flex;flex-direction:column;gap:8px;margin-top:14px">
+    <button class="btn" id="p-resume">Continuar</button>
+    <button class="btn ghost" id="p-settings">Ajustes</button>
+    <button class="btn ghost" id="p-controls">Controles</button>
+    <button class="btn ghost" id="p-weather">Cambiar clima</button>
+    <button class="btn ghost" id="p-time">Avanzar 3 horas</button>
+    <button class="btn ghost" id="p-reset">Volver al vehículo (punto seguro)</button>
+    <button class="btn ghost" id="p-quit">Terminar turno y salir</button>
+  </div>
+</div></div>
+
+<div id="report" class="modal hidden"><div class="box glass" style="width:min(860px,100%)">
+  <h2>Informe de intervención</h2>
+  <p id="rep-head"></p>
+  <div class="rep-grid">
+    <div><h3>Hechos registrados</h3><div id="rep-facts"></div><h3>Resolución</h3><div class="opts" id="rep-res" style="grid-template-columns:1fr"></div></div>
+    <div><h3>Pruebas y declaraciones adjuntas</h3><div id="rep-ev"></div><h3>Observaciones</h3><div id="rep-obs" class="fact" style="border-color:var(--amber)"></div></div>
+  </div>
+  <div class="row"><button class="btn ghost" id="rep-later">Guardar borrador</button><button class="btn" id="rep-send">Enviar informe</button></div>
+</div></div>
+
+<div id="results" class="modal hidden"><div class="box glass" style="width:min(720px,100%)">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px">
+    <div><h2 id="res-title">Evaluación</h2><p id="res-sub" style="margin:0"></p></div>
+    <div class="grade" id="res-grade">A</div>
+  </div>
+  <div class="scores" id="res-scores"></div>
+  <h3>Consecuencias</h3>
+  <div id="res-cons"></div>
+  <div class="row"><span class="chip" id="res-xp"></span><button class="btn" id="res-ok">Volver a patrullar</button></div>
+</div></div>
+
+<div id="bigmap" class="hidden"><canvas width="1400" height="1400"></canvas>
+  <div class="legend"><span class="chip">● Tú</span><span class="chip" style="color:#ffb020">◆ Aviso</span><span class="chip" style="color:#69a6ff">■ Comisaría</span><span class="chip" style="color:#ff6b6b">✚ Hospital</span><span class="chip">M · cerrar</span></div>
+</div>
+
+<div id="hud" class="hidden">
+  <div id="vignette"></div>
+  <div id="mapwrap"><canvas id="minimap" width="420" height="420"></canvas><div id="loc"></div></div>
+  <div id="status" class="glass"><span class="clock" id="clock">22:30</span><span class="sep"></span><span id="shiftlbl">Turno de noche</span><span class="sep"></span><span id="wlbl">Lluvia</span><span class="sep rk"></span><span class="rk"><div id="rank">Agente en prácticas</div><div id="xpbar"><i></i></div></span></div>
+  <div id="radio"></div>
+  <div id="dispatch" class="glass hidden"></div>
+  <div id="objective" class="glass hidden"></div>
+  <div id="pursuit" class="glass hidden"><div class="t"><span>Persecución en curso</span><span id="pur-d">0 m</span></div><div class="b"><i id="pur-b"></i></div></div>
+  <div id="prompt" class="glass hidden"></div>
+  <div id="speedo" class="hidden"><canvas width="380" height="380"></canvas><div class="num"><b id="spd">0</b><small>KM/H</small></div><div class="ind"><span id="i-gear">1</span><span id="i-lights">LUCES</span><span id="i-siren" class="s">SIRENA</span></div></div>
+  <div id="hints"></div>
+  <div id="toasts"></div>
+  <div id="dialog" class="glass hidden"></div>
+  <div id="wheel" class="hidden"></div>
+  <div id="fps" class="hidden"></div>
+</div>
+
+<div id="touch">
+  <div class="joy"><div class="knob"></div></div>
+  <div class="tl"><div data-k="KeyM">MAPA</div><div data-k="KeyR">RADIO</div><div data-k="KeyI">INFORME</div><div data-k="Escape">II</div></div>
+  <div class="btns">
+    <div data-k="KeyQ">LUCES</div><div data-k="KeyH">SIRENA</div><div data-k="KeyC">CÁM</div>
+    <div data-k="KeyF">COCHE</div><div data-k="KeyE">ACCIÓN</div><div data-k="Space">FRENO</div>
+    <div data-k="ShiftLeft">CORRER</div><div data-k="KeyY">SÍ</div><div data-k="KeyN">NO</div>
+  </div>
+</div>
+
+<script type="module" src="./src/main.js"></script>
