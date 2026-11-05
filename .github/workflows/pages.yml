@@ -20,10 +20,10 @@ jobs:
     name: Comprobar código y recursos
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
         with:
-          node-version: 20
+          node-version: 22
       - run: node tools/check.mjs
 
   build:
@@ -31,20 +31,39 @@ jobs:
     needs: check
     if: github.event_name != 'pull_request'
     runs-on: ubuntu-latest
+    outputs:
+      enabled: ${{ steps.pages.outputs.enabled }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
+      - name: Comprobar si GitHub Pages está activado
+        id: pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          if gh api "repos/${{ github.repository }}/pages" --jq '.build_type' > pages.txt 2>/dev/null; then
+            echo "enabled=true" >> "$GITHUB_OUTPUT"
+            echo "Pages activado (modo: $(cat pages.txt))"
+            if [ "$(cat pages.txt)" != "workflow" ]; then
+              echo "::warning title=Pages::Cambia Settings → Pages → Source a «GitHub Actions» para que este flujo publique el juego."
+            fi
+          else
+            echo "enabled=false" >> "$GITHUB_OUTPUT"
+            echo "::notice title=GitHub Pages no está activado::Activa Settings → Pages → Build and deployment → Source: «GitHub Actions» y vuelve a ejecutar este flujo (Actions → Publicar en GitHub Pages → Run workflow)."
+          fi
       - name: Copiar sólo los archivos del juego
+        if: steps.pages.outputs.enabled == 'true'
         run: |
           mkdir -p _site
           cp -r index.html manifest.webmanifest .nojekyll src vendor assets _site/
-      - uses: actions/configure-pages@v5
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
+        if: steps.pages.outputs.enabled == 'true'
         with:
           path: _site
 
   deploy:
     name: Desplegar
     needs: build
+    if: needs.build.outputs.enabled == 'true'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
