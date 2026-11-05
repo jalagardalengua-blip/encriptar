@@ -78,9 +78,10 @@
     <button class="mn-item" id="m-continue" disabled><span class="mn-k">01</span><span class="mn-l">Continuar carrera<small id="m-continue-sub">Sin partida guardada</small></span></button>
     <button class="mn-item" id="m-new"><span class="mn-k">02</span><span class="mn-l">Nueva carrera<small>Empieza como agente en prácticas</small></span></button>
     <button class="mn-item" id="m-free"><span class="mn-k">03</span><span class="mn-l">Patrulla libre<small>Elige turno y clima, atiende avisos</small></span></button>
-    <button class="mn-item" id="m-settings"><span class="mn-k">04</span><span class="mn-l">Ajustes<small>Gráficos, controles, accesibilidad</small></span></button>
-    <button class="mn-item" id="m-controls"><span class="mn-k">05</span><span class="mn-l">Controles<small>Teclado, mando y táctil</small></span></button>
-    <button class="mn-item" id="m-credits"><span class="mn-k">06</span><span class="mn-l">Créditos<small>Modelos y licencias</small></span></button>
+    <button class="mn-item" id="m-world"><span class="mn-k">04</span><span class="mn-l">Mundo libre<small>Explora Valmora sin avisos automáticos</small></span></button>
+    <button class="mn-item" id="m-settings"><span class="mn-k">05</span><span class="mn-l">Ajustes<small>Gráficos, controles, accesibilidad</small></span></button>
+    <button class="mn-item" id="m-controls"><span class="mn-k">06</span><span class="mn-l">Controles<small>Teclado, mando y táctil</small></span></button>
+    <button class="mn-item" id="m-credits"><span class="mn-k">07</span><span class="mn-l">Créditos<small>Modelos y licencias</small></span></button>
   </nav>
   <div class="mn-side">
     <div class="mn-card">
@@ -157,10 +158,11 @@
     </section>
     <section class="tabp hidden" data-t="c">
       <label class="row-set"><span>Sensibilidad de cámara</span><input type="range" id="s-sens" min="0.3" max="2" step="0.05" value="1"></label>
+      <label class="row-set"><span>Distancia de cámara</span><input type="range" id="s-camd" min="0.8" max="1.7" step="0.05" value="1.15"></label>
       <label class="row-set"><span>Invertir eje vertical</span><input type="checkbox" id="s-invert"></label>
       <label class="row-set"><span>Vibración de cámara</span><input type="checkbox" id="s-shake" checked></label>
       <h3>Táctil</h3>
-      <label class="row-set"><span>Dirección en móvil<small>Joystick o botones izquierda/derecha</small></span><select id="s-steer"><option value="joy">Joystick</option><option value="buttons">Botones</option><option value="tilt">Inclinación</option></select></label>
+      <label class="row-set"><span>Dirección en móvil<small>Volante, joystick, botones o inclinación</small></span><select id="s-steer"><option value="wheel">Volante</option><option value="joy">Joystick</option><option value="buttons">Botones</option><option value="tilt">Inclinación</option></select></label>
       <label class="row-set"><span>Tamaño de botones</span><input type="range" id="s-tsize" min="0.75" max="1.4" step="0.05" value="1"></label>
       <label class="row-set"><span>Opacidad de botones</span><input type="range" id="s-topac" min="0.3" max="1" step="0.05" value="0.85"></label>
       <label class="row-set"><span>Modo zurdo<small>Invierte los lados de los controles</small></span><input type="checkbox" id="s-lefty"></label>
@@ -168,6 +170,7 @@
     </section>
     <section class="tabp hidden" data-t="a">
       <label class="row-set"><span>Volumen general</span><input type="range" id="s-vol" min="0" max="1" step="0.05" value="0.8"></label>
+      <label class="row-set"><span>Música</span><input type="range" id="s-music" min="0" max="1" step="0.05" value="0.55"></label>
       <label class="row-set"><span>Voz de la central<small>Síntesis de voz en español</small></span><input type="checkbox" id="s-voice" checked></label>
     </section>
     <section class="tabp hidden" data-t="h">
@@ -273,6 +276,7 @@
   <div class="legend"><span class="chip">▲ Tú</span><span class="chip amber">◆ Aviso</span><span class="chip blue">P Comisaría</span><span class="chip red">+ Hospital</span><button class="chip" id="bm-close">Cerrar</button></div>
 </div>
 
+<div id="fade"></div>
 <div id="rotate" class="hidden"><div><svg><use href="#i-car"/></svg><b>Gira el dispositivo</b><span>El juego está pensado para jugar en horizontal.</span><button class="btn ghost" id="rot-ok">Seguir en vertical</button></div></div>
 
 <!-- ===================== HUD ===================== -->
@@ -309,6 +313,12 @@
     <button class="tb brk" data-k="KeyS"><svg><use href="#i-brake"/></svg></button>
     <button class="tb hb" data-k="Space"><svg><use href="#i-hb"/></svg></button>
     <div class="steer"><button class="tb st" data-k="ArrowLeft">‹</button><button class="tb st" data-k="ArrowRight">›</button></div>
+  </div>
+  <div class="wheelc" id="wheelc"><svg viewBox="0 0 200 200" id="wheelsvg"><defs><radialGradient id="wg" cx="50%" cy="40%" r="60%"><stop offset="0" stop-color="#3a4252"/><stop offset="1" stop-color="#11151d"/></radialGradient></defs>
+    <circle cx="100" cy="100" r="88" fill="none" stroke="url(#wg)" stroke-width="20"/><circle cx="100" cy="100" r="88" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="2"/>
+    <path d="M100 100 L28 92 M100 100 L172 92 M100 100 L100 178" stroke="#1b2130" stroke-width="18" stroke-linecap="round"/>
+    <circle cx="100" cy="100" r="26" fill="#1b2130" stroke="rgba(255,255,255,.2)" stroke-width="2"/><rect x="94" y="8" width="12" height="16" rx="3" fill="#ffb020"/>
+    <path d="m100 88 4 8 9 1-6.5 6 1.6 9-8.1-4.4-8.1 4.4 1.6-9-6.5-6 9-1z" fill="#7fb0ff"/></svg>
   </div>
   <div class="tbar car">
     <button class="tb sm" data-k="KeyQ" id="tb-lights"><svg><use href="#i-beacon"/></svg></button>

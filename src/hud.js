@@ -253,7 +253,7 @@ export class HUD {
     $('res-grade').style.color = r.grade === 'A' || r.grade === 'S' ? '#69a6ff' : r.grade === 'B' ? '#35d07f' : r.grade === 'C' ? '#ffb020' : '#ff6b6b';
     $('res-scores').innerHTML = r.scores.map((s) => `<div class="score"><span>${esc(s.label)}</span><div class="b"><i data-w="${s.value}"></i></div><b>${s.value}</b></div>`).join('');
     $('res-cons').innerHTML = r.consequences.map((c) => `<div class="cons">${esc(c)}</div>`).join('');
-    $('res-xp').textContent = `+${r.xp} XP · ${r.rank}`;
+    $('res-xp').textContent = r.xp ? `+${r.xp} XP · ${r.rank}` : r.rank;
     $('results').classList.remove('hidden');
     requestAnimationFrame(() => setTimeout(() => $('res-scores').querySelectorAll('i').forEach((i) => (i.style.width = i.dataset.w + '%')), 60));
     $('res-ok').onclick = () => { $('results').classList.add('hidden'); onOk?.(); };

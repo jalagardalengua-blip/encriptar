@@ -155,6 +155,8 @@ body.touch .mn-foot { display: none; }
 #bigmap { position: fixed; inset: 0; z-index: 46; display: flex; align-items: center; justify-content: center; background: rgba(2,4,8,.82); pointer-events: auto; }
 #bigmap canvas { width: min(86vh, 94vw); height: min(86vh, 94vw); border-radius: 14px; border: 1px solid var(--line2); }
 #bigmap .legend { position: absolute; bottom: calc(16px + var(--sb)); left: 50%; transform: translateX(-50%); display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; width: 94vw; }
+#fade { position: fixed; inset: 0; z-index: 55; background: #000; opacity: 0; pointer-events: none; transition: opacity .35s; }
+#fade.on { opacity: 1; }
 #rotate { position: fixed; inset: 0; z-index: 70; background: rgba(3,5,9,.96); display: flex; align-items: center; justify-content: center; text-align: center; padding: 24px; }
 #rotate div { display: flex; flex-direction: column; align-items: center; gap: 10px; max-width: 320px; }
 #rotate svg { width: 64px; height: 64px; color: var(--blue2); animation: rot 2s ease-in-out infinite; }
@@ -259,7 +261,11 @@ body.touch #touch.on { display: block; }
 .steer { display: none; position: fixed; left: calc(max(20px, var(--sl)) + 6px); bottom: calc(26px + var(--sb)); gap: 14px; }
 #touch.steer-buttons[data-mode=car] .steer { display: flex; }
 .tb.st { width: calc(84px * var(--ts)); height: calc(84px * var(--ts)); border-radius: 22px; font: 400 48px/1 var(--sans); padding-bottom: 6px; }
-#touch.steer-buttons[data-mode=car] .joy, #touch.steer-tilt[data-mode=car] .joy { display: none; }
+#touch.steer-buttons[data-mode=car] .joy, #touch.steer-tilt[data-mode=car] .joy, #touch.steer-wheel[data-mode=car] .joy { display: none; }
+.wheelc { display: none; position: absolute; left: calc(max(18px, var(--sl)) + 4px); bottom: calc(16px + var(--sb)); width: calc(176px * var(--ts)); height: calc(176px * var(--ts)); pointer-events: auto; opacity: var(--to); touch-action: none; z-index: 2; }
+.wheelc svg { width: 100%; height: 100%; filter: drop-shadow(0 6px 16px rgba(0,0,0,.5)); }
+#touch.steer-wheel[data-mode=car] .wheelc { display: block; }
+#touch.lefty .wheelc { left: auto; right: calc(max(18px, var(--sr)) + 4px); }
 .tbar.car { right: calc(max(14px, var(--sr)) + 2px); top: 50%; transform: translateY(-62%); flex-direction: column; gap: 10px; }
 .tbar.any { right: calc(max(14px, var(--sr)) + 62px); top: calc(12px + var(--st)); gap: 10px; }
 #touch[data-mode=car] .tbar.any { right: calc(max(14px, var(--sr)) + 62px); }

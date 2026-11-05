@@ -194,6 +194,7 @@ export class City {
         }
       }
     }
+    if (p.x > 1500) return hit; // interior de la comisaría
     // límites del mundo
     const L = CITY.HALF + 26, S = CITY.HALF + 13;
     if (p.x < -L) { p.x = -L; hit = { nx: 1, nz: 0, depth: 0.1 }; }

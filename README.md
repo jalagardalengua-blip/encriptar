@@ -17,6 +17,7 @@ Hace falta un servidor HTTP local (los módulos ES no cargan con `file://`). Fun
 - Juega en horizontal. En móvil se activan el preset gráfico «Bajo», la resolución dinámica y los controles táctiles.
 - Android: al tocar la pantalla de título el juego pasa a pantalla completa y bloquea la orientación horizontal.
 - iPhone: Safari no permite pantalla completa en páginas web; usa **Compartir → Añadir a pantalla de inicio** para abrirlo a pantalla completa como una app.
+- Al conducir en móvil se usa un **volante táctil** (gíralo con el dedo; vuelve solo al centro). También puedes elegir joystick, botones o inclinación.
 - Controles táctiles: joystick izquierdo (aparece donde toques; empujarlo al máximo hace correr), arrastrar a la derecha para la cámara, botón de acción contextual, pedales de acelerador y freno, freno de mano, y botones de luces, sirena, cámara y salir. En Ajustes → Controles puedes elegir dirección por joystick, botones o inclinación, cambiar tamaño y opacidad, y activar el modo zurdo.
 
 Parámetros opcionales en la URL: `?q=bajo|medio|alto|ultra` fuerza la calidad gráfica.
@@ -45,6 +46,15 @@ También funciona con mando (gatillos para acelerar y frenar).
 - Ciudad de 7×7 manzanas con distritos (centro financiero, ensanche residencial, zona de ocio con neones, polígono industrial, puerto con contenedores y grúas, parque, comisaría y hospital).
 - Tráfico con IA: carriles, semáforos sincronizados, distancia de seguridad, cambio de carril, coches que se apartan al oír la sirena y claxon si les bloqueas.
 - Peatones animados que esquivan vehículos.
+
+**Comisaría jugable**
+- Entra por la puerta principal: recepción, calabozos (aparecen tus detenidos), vestuarios para cambiar de uniforme, garaje para elegir turismo, todoterreno o furgón, sala de operaciones con terminal (expediente e informes pendientes) y despacho de la comisaria (valoración y fin de turno).
+
+**Modos**
+- Carrera, Patrulla libre y **Mundo libre** (explora la ciudad sin avisos automáticos; pide uno por radio cuando quieras).
+
+**Audio**
+- Música adaptativa generada en tiempo real (menú, patrulla, persecución e interior), pasos, ruido de rodadura y viento, cambios de marcha, petardeo, lluvia sobre el techo y ambiente urbano (claxon lejano, sirenas, pájaros, perros).
 
 **Juego (del GDD)**
 - Bucle completo: patrulla → aviso de la central → intervención → informe → evaluación.
@@ -78,6 +88,7 @@ src/hud.js          minimapa, radio, diálogos, informe
 src/audio.js        audio sintetizado
 src/fx.js           partículas, marcas, balizas
 src/assets.js       carga y adaptación de modelos glTF
+src/station.js      interior de la comisaría
 src/ui.css          estilos de menús, HUD y controles táctiles
 assets/             modelos .glb e iconos
 vendor/three/       Three.js r170 (licencia MIT)

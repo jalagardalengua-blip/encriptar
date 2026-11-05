@@ -196,6 +196,7 @@ export class Environment {
     this.hemi.color.copy(skyNight).lerp(skyDay, sunUp);
     this.hemi.groundColor.setRGB(0.18, 0.16, 0.14).lerp(new THREE.Color(0.04, 0.035, 0.04), this.night);
     this.hemi.intensity = lerp(0.9, 1.6, this.night) * (1 + this.flash * 3) + C.clouds * 0.3;
+    if (this.indoor) { this.hemi.intensity *= 0.35; this.sun.intensity *= 0.2; }
     // niebla
     const fogDay = new THREE.Color(0.66, 0.74, 0.84).lerp(new THREE.Color(0.55, 0.57, 0.6), C.clouds);
     const fogDusk = new THREE.Color(0.75, 0.55, 0.42);
@@ -203,6 +204,7 @@ export class Environment {
     const dusk = (1 - lowSun) * (1 - this.night);
     const fogC = fogNight.clone().lerp(fogDay, sunUp).lerp(fogDusk, dusk * 0.6 * (1 - C.clouds));
     this.scene.fog.color.copy(fogC); this.scene.fog.density = C.fog * (this.night > 0.5 ? 1.15 : 1);
+    if (this.indoor) this.scene.fog.density = 0.0004;
     this.fogginess = clamp(C.fog / 0.006, 0, 1.5);
     // nubes
     const cu = this.cloudMat.uniforms; cu.uTime.value = this.time; cu.uCover.value = C.clouds; cu.uSunDir.value.copy(L); cu.uFlash.value = this.flash;
@@ -216,7 +218,7 @@ export class Environment {
     this.stars.position.copy(camPos); this.clouds.position.copy(camPos); this.sky.position.copy(camPos);
     // lluvia
     const rainI = C.rain;
-    this.rain.visible = this.splash.visible = rainI > 0.02;
+    this.rain.visible = this.splash.visible = rainI > 0.02 && !this.indoor;
     this.rainMat.uniforms.uTime.value = this.time; this.rainMat.uniforms.uCam.value.copy(camPos); this.rainMat.uniforms.uInt.value = rainI;
     if (camVel) this.rainMat.uniforms.uVel.value.copy(camVel);
     const rc = this.night > 0.5 ? new THREE.Color(0.35, 0.37, 0.42) : new THREE.Color(0.65, 0.7, 0.75); this.rainMat.uniforms.uCol.value.copy(rc);
@@ -234,7 +236,7 @@ export class Environment {
     // entorno IBL
     this.envTimer += dt;
     if (this.envTimer > 2.5) { this.envTimer = 0; this.updateEnv(); }
-    audio?.setRain(rainI);
+    audio?.setRain(this.indoor ? rainI * 0.15 : rainI);
   }
 
   updateEnv() {

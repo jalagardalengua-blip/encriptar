@@ -2,7 +2,7 @@
 export class Input {
   constructor(canvas) {
     this.canvas = canvas; this.keys = new Set(); this.pressed = new Set(); this.mdx = 0; this.mdy = 0; this.wheel = 0;
-    this.locked = false; this.touch = { jx: 0, jy: 0, buttons: new Set(), tilt: 0 };
+    this.locked = false; this.touch = { jx: 0, jy: 0, buttons: new Set(), tilt: 0, wheel: 0, wheelHeld: false };
     this.isTouch = matchMedia('(pointer: coarse)').matches || ('ontouchstart' in window && navigator.maxTouchPoints > 0);
     this.lastDevice = this.isTouch ? 'touch' : 'kb';
     this.steerMode = 'joy'; this.haptics = true; this.invertY = false;
@@ -63,6 +63,17 @@ export class Input {
       }
     };
     for (const el of [move, look]) { el.addEventListener('touchmove', (e) => { onMove(e); e.preventDefault(); }, { passive: false }); el.addEventListener('touchend', onEnd); el.addEventListener('touchcancel', onEnd); }
+    // volante táctil
+    const wc = root.querySelector('#wheelc'), wsvg = root.querySelector('#wheelsvg');
+    if (wc) {
+      let wid = null, lastA = 0, acc = 0;
+      const ang = (t) => { const r = wc.getBoundingClientRect(); return Math.atan2(t.clientY - (r.top + r.height / 2), t.clientX - (r.left + r.width / 2)); };
+      wc.addEventListener('touchstart', (e) => { const t = e.changedTouches[0]; wid = t.identifier; lastA = ang(t); acc = this.touch.wheel * 2.4; this.touch.wheelHeld = true; e.preventDefault(); e.stopPropagation(); }, { passive: false });
+      wc.addEventListener('touchmove', (e) => { for (const t of e.changedTouches) { if (t.identifier !== wid) continue; const a = ang(t); let d = a - lastA; if (d > Math.PI) d -= Math.PI * 2; if (d < -Math.PI) d += Math.PI * 2; lastA = a; acc = Math.max(-2.4, Math.min(2.4, acc + d)); this.touch.wheel = acc / 2.4; } e.preventDefault(); }, { passive: false });
+      const end = (e) => { for (const t of e.changedTouches) if (t.identifier === wid) { wid = null; this.touch.wheelHeld = false; } };
+      wc.addEventListener('touchend', end); wc.addEventListener('touchcancel', end);
+      this.wheelSvg = wsvg;
+    }
     // botones
     root.querySelectorAll('[data-k]').forEach((b) => {
       const k = b.dataset.k;
@@ -74,7 +85,7 @@ export class Input {
   setMode(mode) { if (this.root && this.root.dataset.mode !== mode) { this.root.dataset.mode = mode; this.touch.buttons.clear(); this.root.querySelectorAll('.down').forEach((b) => b.classList.remove('down')); } }
   setSteerMode(m) {
     this.steerMode = m;
-    if (this.root) { this.root.classList.toggle('steer-buttons', m === 'buttons'); this.root.classList.toggle('steer-tilt', m === 'tilt'); }
+    if (this.root) { this.root.classList.toggle('steer-buttons', m === 'buttons'); this.root.classList.toggle('steer-tilt', m === 'tilt'); this.root.classList.toggle('steer-wheel', m === 'wheel'); }
     if (m === 'tilt' && typeof DeviceOrientationEvent !== 'undefined' && DeviceOrientationEvent.requestPermission) DeviceOrientationEvent.requestPermission().catch(() => {});
   }
   down(...codes) { return codes.some((c) => this.keys.has(c) || this.touch.buttons.has(c)); }
@@ -88,6 +99,11 @@ export class Input {
     if (this.touch.jx || this.touch.jy) {
       if (mode === 'car') { if (this.steerMode === 'joy') x = Math.sign(this.touch.jx) * Math.min(1, Math.abs(this.touch.jx) * 1.15) ** 1.3; }
       else { x = this.touch.jx; y = -this.touch.jy; }
+    }
+    if (mode === 'car' && this.steerMode === 'wheel' && this.isTouch) {
+      if (!this.touch.wheelHeld) this.touch.wheel *= 0.82; // retorno al centro
+      if (Math.abs(this.touch.wheel) > 0.02) x = Math.sign(this.touch.wheel) * Math.min(1, Math.abs(this.touch.wheel) * 1.1);
+      if (this.wheelSvg) this.wheelSvg.style.transform = `rotate(${this.touch.wheel * 137}deg)`;
     }
     if (mode === 'car' && this.steerMode === 'tilt' && this.isTouch) x = Math.sign(this.touch.tilt) * Math.max(0, Math.abs(this.touch.tilt) - 0.06) / 0.94;
     const gp = this.gamepad();

@@ -12,6 +12,7 @@ import { HUD, rankOf } from './hud.js';
 import { makeDispatch } from './missions.js';
 import { Particles, SkidMarks, Beacon, makeCones, makeDebris } from './fx.js';
 import { loadAssets, ASSETS } from './assets.js';
+import { StationInterior, IN } from './station.js';
 window.__assets = ASSETS;
 
 const $ = (id) => document.getElementById(id);
@@ -20,7 +21,7 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin almacenamiento */ } },
 };
 
-const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false, drs: true, lens: true, invert: false, steer: 'joy', tsize: 1, topac: 0.85, lefty: false, haptic: true, hud: 1, hints: true, subs: true }, store.get('pold_settings', {}));
+const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false, drs: true, lens: true, invert: false, steer: 'wheel', camDist: 1.15, music: 0.55, tsize: 1, topac: 0.85, lefty: false, haptic: true, hud: 1, hints: true, subs: true }, store.get('pold_settings', {}));
 const URLP = new URLSearchParams(location.search);
 if (URLP.get('q') && QUALITY[URLP.get('q')]) settings.quality = URLP.get('q');
 const Q = QUALITY[settings.quality] || QUALITY.alto;
@@ -71,8 +72,9 @@ class Game {
     this.post.setSize(innerWidth, innerHeight);
     if (!settings.grain) { this.post.grade.uniforms.uGrain.value = 0; this.post.grade.uniforms.uCA.value = 0; }
     this.hud.buildMap(this.city);
+    this.station = new StationInterior(this.scene, this.city, this.hud.mapImg);
     prog(0.9, 'Compilando shaders…'); await tick();
-    this.camState = { mode: 'foot', yaw: Math.PI, pitch: 0.25, dist: 3.8, carYaw: 0, carMode: 0, shake: 0, idle: 0, fov: 62 };
+    this.camState = { mode: 'foot', yaw: Math.PI, pitch: 0.25, dist: 5.4, carYaw: 0, carMode: 0, shake: 0, idle: 0, fov: 62 };
     this.placeAtStation();
     this.env.setHour(22.5); this.env.setWeather('lluvia', true);
     this.env.update(0.01, this.camera.position, null);
@@ -90,9 +92,18 @@ class Game {
   }
 
   buildPlayer() {
-    const rig = this.rig = new CarRig('police', 0xf4f6f8, { police: true });
+    this.makePlayerCar((this.save && this.save.vehicle) || 'police');
+    // agente
+    this.officer = new Humanoid({ officer: true, skin: 0xe0ac87, hair: 0x2a1d14 });
+    this.scene.add(this.officer.root);
+    this.onFoot = true; this.inCar = false;
+  }
+
+  makePlayerCar(type, pose) {
+    if (this.rig) this.scene.remove(this.rig.root);
+    const rig = this.rig = new CarRig(type, 0xf4f6f8, { police: true }); rig.type = type;
     this.scene.add(rig.root);
-    const s = this.city.spawn.car;
+    const s = pose || this.city.spawn.car;
     this.car = new DriveCar(this.city, rig, s.x, s.z, s.heading);
     this.car.isPlayer = true; this.car.W = rig.spec.W;
     // faros
@@ -112,11 +123,8 @@ class Game {
     const beams = [];
     for (const x of [0.58, -0.58]) { const m = new THREE.Mesh(cg, this.beamMat); m.position.set(x, 0.68, rig.spec.L / 2 + 0.05); m.renderOrder = 3; rig.body.add(m); beams.push(m); }
     rig.fxObjs = beams;
-    // agente
-    this.officer = new Humanoid({ officer: true, skin: 0xe0ac87, hair: 0x2a1d14 });
-    this.scene.add(this.officer.root);
-    this.onFoot = true; this.inCar = false;
-    this.traffic.extra = [this.car];
+    if (this.post) this.post.hideForAO(beams);
+    this.traffic.extra = [this.car, ...(this.services || [])];
   }
 
   placeAtStation() {
@@ -143,6 +151,7 @@ class Game {
     $('m-new').onclick = () => { this.mode = 'career'; this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
     $('m-free').onclick = () => { this.mode = 'free'; if (!this.save) this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
     $('m-continue').onclick = () => { this.mode = 'career'; open('shift'); };
+    $('m-world').onclick = () => { this.mode = 'world'; if (!this.save) this.save = { xp: 0, cases: 0, history: [] }; open('shift'); };
     $('m-settings').onclick = () => open('settings');
     $('m-controls').onclick = () => open('controls');
     $('m-credits').onclick = () => open('credits');
@@ -158,7 +167,7 @@ class Game {
     bind('s-grain', 'grain'); bind('s-shake', 'shake'); bind('s-redblue', 'redblue'); bind('s-fps', 'fps'); bind('s-drs', 'drs'); bind('s-lens', 'lens');
     bind('s-invert', 'invert'); bind('s-lefty', 'lefty'); bind('s-haptic', 'haptic'); bind('s-hints', 'hints'); bind('s-subs', 'subs');
     const range = (id, key) => { const el = $(id); el.value = settings[key]; el.oninput = () => { settings[key] = +el.value; this.applySettings(); }; };
-    range('s-sens', 'sens'); range('s-time', 'timeScale'); range('s-tsize', 'tsize'); range('s-topac', 'topac'); range('s-hud', 'hud');
+    range('s-sens', 'sens'); range('s-camd', 'camDist'); range('s-music', 'music'); range('s-time', 'timeScale'); range('s-tsize', 'tsize'); range('s-topac', 'topac'); range('s-hud', 'hud');
     const st = $('s-steer'); st.value = settings.steer; st.onchange = () => { settings.steer = st.value; this.applySettings(); };
     $('p-resume').onclick = () => this.resume();
     $('p-map').onclick = () => { this.resume(); $('bigmap').classList.remove('hidden'); this.drawBigMap(); };
@@ -189,7 +198,7 @@ class Game {
     $('fps').classList.toggle('hidden', !settings.fps);
     if (this.env) this.env.timeScale = settings.timeScale;
     if (this.post) { this.post.grade.uniforms.uGrain.value = settings.grain ? 0.04 : 0; this.post.grade.uniforms.uCA.value = settings.grain ? 0.0016 : 0; }
-    this.audio.voice = settings.voice;
+    this.audio.voice = settings.voice; this.audio.setMusicVolume(settings.music ?? 0.55);
   }
 
   enterFullscreen() {
@@ -227,7 +236,9 @@ class Game {
     this.env.setHour(this.shiftCfg.hour); this.env.setWeather(this.shiftCfg.weather, true);
     this.assist = this.shiftCfg.assist;
     this.placeAtStation();
-    this.mission = null; this.nextCall = this.mode === 'career' && (this.save.cases || 0) === 0 ? 14 : 10; this.pendingDispatch = null;
+    this.mission = null; this.nextCall = this.mode === 'world' ? Infinity : this.mode === 'career' && (this.save.cases || 0) === 0 ? 14 : 10; this.pendingDispatch = null;
+    if (this.indoor) { this.indoor = false; this.station.setInside(false); }
+    this.applyUniform(this.save.uniform || 'invierno');
     this.shiftStats = { cases: 0, xp: 0, grades: [] };
     this.state = 'play'; this.hud.show(true); this.input.wantLock = true; this.shiftT = 0;
     this.car.lights = false;
@@ -243,6 +254,7 @@ class Game {
     const list = [];
     if (this.onFoot) list.push({ text: 'Sube a tu vehículo patrulla (F)', done: false });
     else list.push({ text: 'Sube a tu vehículo patrulla (F)', done: true });
+    if (this.mode === 'world') { list.push({ text: 'Explora Valmora libremente', done: false }); list.push({ text: 'Entra en la comisaría (puerta principal)', done: !!this.visitedStation, optional: true }); list.push({ text: 'Pulsa R para pedir un aviso cuando quieras', done: false, optional: true }); this.hud.objectives('Mundo libre', list); return; }
     list.push({ text: 'Patrulla el distrito y espera avisos de la central', done: false });
     list.push({ text: 'Pulsa R para solicitar un aviso por radio', done: false, optional: true });
     this.hud.objectives('Patrulla preventiva', list);
@@ -335,7 +347,8 @@ class Game {
     for (const s of this.services) s.update(dt, this.elapsed, this.traffic.cars, this.env.night);
     this.updateFx(dt);
     if (!menu) this.updateCarLights(dt);
-    this.audio.update(dt, { inCar: false, rpm: 0, throttle: 0, speed: 0, slip: 0, siren: false, farSiren: 0 });
+    if (this.state === 'menu' || this.state === 'title') this.audio.setMusic('menu');
+    this.audio.update(dt, { inCar: false, rpm: 0, throttle: 0, speed: 0, slip: 0, siren: false, farSiren: 0, rain: this.env.cur.rain, night: this.env.night > 0.5 });
   }
 
   updatePlay(dt) {
@@ -354,7 +367,7 @@ class Game {
     const [lx, ly] = I.look();
     const cs = this.camState; const sens = 0.0028 * settings.sens;
     cs.yaw -= lx * sens; cs.pitch = clamp(cs.pitch + ly * sens, -0.35, 1.1);
-    if (I.wheel) cs.dist = clamp(cs.dist + I.wheel * 0.4, 2.4, 7);
+    if (I.wheel) cs.dist = clamp(cs.dist + I.wheel * 0.4, 2.4, 10);
     if (Math.abs(lx) + Math.abs(ly) > 0) cs.idle = 0; else cs.idle += dt;
     let throttle = 0, brake = 0, steer = 0, hb = false;
     if (this.inCar && !blocked) {
@@ -386,11 +399,14 @@ class Game {
     // informe
     if (!blocked && I.hit('KeyI')) { if (this.mission?.canReport()) this.openReport(); else if (this.mission) hud.toast('Aún no puedes cerrar el informe: completa los objetivos principales', 'bad'); }
     // mundo
+    this.env.indoor = !!this.indoor;
     this.env.update(dt, this.camera.position, this.audio, this.inCar ? new THREE.Vector3(car.vx, 0, car.vz) : null);
     this.city.update(dt, this.elapsed, this.env);
     const events = []; this.traffic.events = events;
     this.traffic.update(dt, this.elapsed, { player: car, sirenOn: car.siren && this.inCar, night: this.env.night, peds: this.npcs.filter((n) => n.visible) });
-    this.crowd.update(dt, { player: this.onFoot ? this.officer : null, playerCar: this.inCar ? car : null, camPos: this.camera.position, events });
+    const ref = this.indoor ? this.city.station.door : this.officer;
+    this.crowd.update(dt, { player: this.onFoot ? ref : null, playerCar: this.inCar ? car : null, camPos: this.indoor ? this.city.station.door : this.camera.position, events });
+    this.station.update(dt);
     for (const n of this.npcs) if (!this.mission || !this.mission.npcs.includes(n)) n.update(dt);
     for (const s of this.services) s.update(dt, this.elapsed, this.traffic.cars.concat([car]), this.env.night);
     this.handleEvents(events);
@@ -403,10 +419,12 @@ class Game {
     this.updateCamera(dt);
     this.updateHUD(dt);
     this.updateTouchUI(blocked);
+    $('mapwrap').style.visibility = this.indoor ? 'hidden' : '';
     this.updateDRS(dt);
     // audio
     let farSiren = 0; for (const s of this.services) { const d = Math.hypot(s.x - this.camera.position.x, s.z - this.camera.position.z); farSiren = Math.max(farSiren, clamp(1 - d / 260, 0, 1)); }
-    this.audio.update(dt, { inCar: this.inCar, rpm: car.rpm, throttle, speed: car.speed, slip: car.slip, wet: wet > 0.4, siren: car.siren, farSiren });
+    this.audio.setMusic(this.indoor ? 'indoor' : this.pursuitInfo ? 'pursuit' : 'patrol');
+    this.audio.update(dt, { inCar: this.inCar, rpm: car.rpm, throttle, speed: car.speed, slip: car.slip, wet: wet > 0.4 && !this.indoor, siren: car.siren, farSiren, gear: car.gear, footSpeed: this.onFoot ? this.officer.speed : 0, rain: this.indoor ? 0 : this.env.cur.rain, night: this.env.night > 0.5, indoor: this.indoor });
   }
 
   updateOfficer(dt, [ax, ay], run) {
@@ -469,7 +487,8 @@ class Game {
     if (this.onFoot) {
       for (const it of list) { const d = Math.hypot(p.x - it.x, p.z - it.z); if (d < (it.r || 2.5) && d < bd) { bd = d; best = it; } }
       const st = this.city.station.door;
-      if (!this.mission && Math.hypot(p.x - st.x, p.z - st.z) < 4) best = { label: 'Comisaría: terminar turno', actions: () => [{ label: 'Terminar turno', fn: () => this.endShift() }, { label: 'Seguir patrullando', fn: () => {} }] };
+      if (!this.indoor && Math.hypot(p.x - st.x, p.z - st.z) < 4) best = { label: 'Entrar en la comisaría', actions: () => [{ label: 'Entrar', fn: () => this.enterStation() }] };
+      if (this.indoor) for (const it of this.stationInteractables()) { const d = Math.hypot(p.x - it.x, p.z - it.z); if (d < it.r && d < bd) { bd = d; best = it; } }
       const car = this.car; this.nearCar = Math.hypot(p.x - car.x, p.z - car.z) < 3.4; if (!best && this.nearCar) { this.hud.prompt('<span class="kbd">F</span> Subir al coche patrulla'); return; }
     } else {
       for (const it of list) if (it.inCar) { const d = Math.hypot(p.x - it.x, p.z - it.z); if (d < (it.r || 6) && d < bd) { bd = d; best = it; } }
@@ -484,6 +503,68 @@ class Game {
       if (acts.length === 1) acts[0].fn();
       else this.hud.openWheel(best.label, acts, (o) => o.fn());
     }
+  }
+
+  // ---------- Comisaría ----------
+  fadeTo(fn) { const f = $('fade'); f.classList.add('on'); setTimeout(() => { fn(); setTimeout(() => f.classList.remove('on'), 120); }, 360); }
+  enterStation() {
+    this.fadeTo(() => {
+      const o = this.officer; const p = this.station.local(0, 1.8); o.x = p.x; o.z = p.z; o.heading = 0; this.camState.yaw = 0; this.camState.pitch = 0.22; this.camInit = false;
+      this.indoor = true; this.station.setInside(true); this.station.setDetainees(this.save.detainees || 0); this.audio.door();
+      if (!this.visitedStation) { this.visitedStation = true; this.tutorialRefresh = null; }
+      this.hud.toast('Comisaría Central', 'info');
+    });
+  }
+  exitStation(instant = false) {
+    const go = () => { const d = this.city.station.door; const o = this.officer; o.x = d.x; o.z = d.z + 2.2; o.heading = 0; this.camState.yaw = 0; this.camInit = false; this.indoor = false; this.station.setInside(false); this.audio.door(); };
+    if (instant) go(); else this.fadeTo(go);
+  }
+  stationInteractables() {
+    const S = this.station; const L = (x, z) => S.local(x, z); const out = [];
+    const at = (x, z, r, label, actions, npc) => { const p = L(x, z); out.push({ x: p.x, z: p.z, r, label, actions, npc }); };
+    at(0, 0.9, 2.2, 'Salir a la calle', () => [{ label: 'Salir', fn: () => this.exitStation() }]);
+    at(0, 5.3, 2.4, `Hablar con ${S.recep.name} (recepción)`, () => [
+      { label: 'Preguntar por la situación del distrito', fn: () => this.hud.say([{ who: S.recep.name, sub: 'recepción', text: ['Hoy hay mucho movimiento en la zona de ocio. Si llueve, ojo con los accidentes en la avenida de la Marina.', 'Ha llamado un vecino por ruidos en el ensanche; la central te lo pasará si estás disponible.', 'Recuerda: antes de detener a alguien, asegúrate de tener fundamento. La comisaria lo revisa todo.'][(Math.random() * 3) | 0] }]) },
+      { label: 'Pedir un aviso a la central', fn: () => { this.nextCall = Math.min(this.nextCall, 2); this.hud.toast('La central te asignará un aviso', 'info'); } },
+    ], S.recep);
+    at(-18.6, 3.6, 2.6, 'Garaje: elegir vehículo', () => [
+      { label: 'Turismo patrulla (equilibrado)', fn: () => this.swapCar('police') },
+      { label: 'Todoterreno patrulla (robusto)', fn: () => this.swapCar('suv') },
+      { label: 'Furgón policial (transporte)', fn: () => this.swapCar('van') },
+    ]);
+    at(-13.5, 23.5, 3, 'Taquillas: uniforme', () => [
+      { label: 'Uniforme de invierno', fn: () => this.applyUniform('invierno', true) },
+      { label: 'Uniforme de verano', fn: () => this.applyUniform('verano', true) },
+      { label: 'Uniforme de tráfico', fn: () => this.applyUniform('trafico', true) },
+      { label: 'Sin chaleco reflectante', fn: () => this.applyUniform('sinchaleco', true) },
+    ]);
+    at(0, 13.2, 2.4, 'Terminal de la sala de operaciones', () => {
+      const a = [{ label: 'Consultar mi expediente', fn: () => this.showRecord() }];
+      if (this.mission?.canReport()) a.unshift({ label: 'Redactar el informe pendiente', fn: () => this.openReport() });
+      return a;
+    });
+    at(13.5, 19, 2.8, `Hablar con la ${S.chief.name}`, () => [
+      { label: 'Pedir valoración de mi trabajo', fn: () => { const r = rankOf(this.save.xp); this.hud.say([{ who: S.chief.name, sub: 'jefatura', text: this.save.cases ? `Llevas ${this.save.cases} casos cerrados. ${r.next ? `Sigue así y pronto serás ${r.next}.` : 'Eres uno de nuestros mejores mandos.'} Prioriza siempre la seguridad y la legalidad.` : 'Aún no tienes casos cerrados. Sal a patrullar y demuéstrame lo que sabes hacer.' }]); } },
+      { label: 'Terminar el turno', fn: () => this.endShift() },
+    ], S.chief);
+    at(13, 5, 3, 'Calabozos', () => [{ label: 'Revisar el libro de custodia', fn: () => this.hud.say([{ who: 'Libro de custodia', text: (this.save.detainees || 0) ? `Detenidos registrados en tu carrera: ${this.save.detainees}. Todos con lectura de derechos y asistencia letrada.` : 'No hay detenidos registrados por ti todavía.' }]) }]);
+    return out;
+  }
+  swapCar(type) {
+    const s = this.city.spawn.car; this.makePlayerCar(type, s); this.save.vehicle = type; store.set('pold_save_v1', this.save);
+    this.hud.toast({ police: 'Turismo patrulla listo en el aparcamiento', suv: 'Todoterreno listo en el aparcamiento', van: 'Furgón listo en el aparcamiento' }[type], 'good', 2400);
+  }
+  applyUniform(kind, announce = false) {
+    const ch = this.officer?.char; if (!ch) return;
+    const U = { invierno: { Shirt: 0x1b2a4a, Pants: 0x141c2e, Vest: 0xc9f227, Hat: 0x0f1626 }, verano: { Shirt: 0x8fb4e3, Pants: 0x141c2e, Vest: 0xc9f227, Hat: 0x0f1626 }, trafico: { Shirt: 0x1b2a4a, Pants: 0x141c2e, Vest: 0xf2f2f2, Hat: 0xffffff }, sinchaleco: { Shirt: 0x1b2a4a, Pants: 0x141c2e, Vest: 0x1b2a4a, Hat: 0x0f1626 } }[kind];
+    if (!U) return; const c = {}; for (const [k, v] of Object.entries(U)) c[k] = new THREE.Color(v); ch.setColors(c);
+    if (this.save) { this.save.uniform = kind; store.set('pold_save_v1', this.save); }
+    if (announce) this.hud.toast('Uniforme cambiado', 'good');
+  }
+  showRecord() {
+    const sv = this.save; const r = rankOf(sv.xp); const h = (sv.history || []).slice(-6).reverse();
+    const avg = h.length ? Math.round(h.reduce((a, b) => a + b.avg, 0) / h.length) : 0;
+    this.hud.openResults({ title: 'Expediente profesional', sub: `${this.officerName} · ${r.name}`, grade: h.length ? (avg >= 84 ? 'A' : avg >= 70 ? 'B' : avg >= 55 ? 'C' : 'D') : '—', scores: [{ label: 'Experiencia', value: Math.round(r.progress * 100) }, { label: 'Calidad media', value: avg }], consequences: h.length ? h.map((x) => `${x.code}: nota ${x.grade} (${x.avg}/100)`) : ['Sin intervenciones registradas todavía.'], xp: 0, rank: `${sv.xp} XP · ${sv.cases || 0} casos · ${sv.detainees || 0} detenidos` }, () => {});
   }
 
   updateTouchUI(blocked) {
@@ -540,6 +621,7 @@ class Game {
     const m = this.mission; const data = m.reportData();
     this.hud.openReport(data, (res, ev) => {
       const r = m.evaluate(res, ev);
+      if (m.prisoner === 'delivered') { this.save.detainees = (this.save.detainees || 0) + 1; this.station.setDetainees(this.save.detainees); }
       this.save.xp += r.xp; this.save.cases = (this.save.cases || 0) + 1; (this.save.history = this.save.history || []).push({ code: m.code, grade: r.grade, avg: Math.round(r.avg) });
       this.shiftStats.cases++; this.shiftStats.xp += r.xp; this.shiftStats.grades.push(r.avg);
       store.set('pold_save_v1', this.save);
@@ -620,7 +702,7 @@ class Game {
         const fx = Math.sin(car.h), fz = Math.cos(car.h);
         pos.set(car.x + fx * 0.2, car.y + 1.32, car.z + fz * 0.2); look.set(car.x + fx * 20, car.y + 1.1, car.z + fz * 20); fov = 72 + sp * 0.25;
       } else {
-        const dist = cs.carMode === 0 ? 6.0 : 10.5; const h = cs.carMode === 0 ? 1.95 : 3.4;
+        const cd = settings.camDist || 1.15; const dist = (cs.carMode === 0 ? 7.4 : 12.5) * cd; const h = (cs.carMode === 0 ? 2.5 : 4.2) * cd;
         const fx = Math.sin(yaw), fz = Math.cos(yaw);
         const d = dist + sp * 0.04;
         pos.set(car.x - fx * d, car.y + h + sp * 0.01, car.z - fz * d);
@@ -630,7 +712,7 @@ class Game {
     } else {
       const o = this.officer; const yaw = cs.yaw; const fx = Math.sin(yaw), fz = Math.cos(yaw); const rx = -fz, rz = fx;
       const tx = o.x + rx * 0.45, tz = o.z + rz * 0.45, ty = o.y + 1.55;
-      const d = cs.dist; const cp = Math.cos(cs.pitch), spp = Math.sin(cs.pitch);
+      const d = cs.dist * (settings.camDist || 1.15); const cp = Math.cos(cs.pitch), spp = Math.sin(cs.pitch);
       let px = tx - fx * d * cp, py = ty + d * spp, pz = tz - fz * d * cp;
       // colisión de cámara
       for (let k = 1; k <= 8; k++) {
@@ -639,6 +721,7 @@ class Game {
         if (hit) { const tt = (k - 1) / 8; px = lerp(tx, px, tt); py = lerp(ty, py, tt); pz = lerp(tz, pz, tt); break; }
       }
       py = Math.max(py, this.city.groundY(px, pz) + 0.25);
+      if (this.indoor) py = Math.min(py, IN.y + this.station.H - 0.35);
       pos.set(px, py, pz); look.set(tx + fx * 2, ty - 0.1 + Math.sin(cs.pitch) * -0.5, tz + fz * 2);
       fov = 58 + (o.state === 'run' ? 6 : 0);
     }
@@ -658,7 +741,7 @@ class Game {
     const h = this.env.hour; const turno = h >= 6 && h < 14 ? 'Turno de mañana' : h >= 14 && h < 22 ? 'Turno de tarde' : 'Turno de noche';
     if (this.hudT > 0.1) {
       this.hudT = 0;
-      this.hud.updateStatus({ clock: this.clock(), shift: turno, weather: weatherLabel(this.env.weatherKey), xp: this.save.xp, district: DISTRICT[blk] || 'Valmora', street: this.city.locationName(p.x, p.z), inCar: this.inCar, kmh: Math.abs(car.vLong) * 3.6, reverse: car.vLong < -0.3, gear: car.vLong < -0.3 ? 'R' : car.gear, rpm: car.rpm, lights: car.lights, siren: car.siren, pursuit: this.pursuitInfo, danger: this.camState.shake });
+      this.hud.updateStatus({ clock: this.clock(), shift: turno, weather: weatherLabel(this.env.weatherKey), xp: this.save.xp, district: this.indoor ? 'Comisaría Central' : DISTRICT[blk] || 'Valmora', street: this.indoor ? 'Interior · planta baja' : this.city.locationName(p.x, p.z), inCar: this.inCar, kmh: Math.abs(car.vLong) * 3.6, reverse: car.vLong < -0.3, gear: car.vLong < -0.3 ? 'R' : car.gear, rpm: car.rpm, lights: car.lights, siren: car.siren, pursuit: this.pursuitInfo, danger: this.camState.shake });
       const hints = this.inCar
         ? ['<span class="kbd">W</span><span class="kbd">S</span> Acelerar/frenar · <span class="kbd">Espacio</span> Freno de mano', '<span class="kbd">Q</span> Luces · <span class="kbd">H</span> Sirena · <span class="kbd">C</span> Cámara · <span class="kbd">F</span> Bajar', '<span class="kbd">R</span> Radio · <span class="kbd">M</span> Mapa · <span class="kbd">Esc</span> Pausa']
         : ['<span class="kbd">WASD</span> Moverse · <span class="kbd">Shift</span> Correr · Ratón: cámara', '<span class="kbd">E</span> Interactuar · <span class="kbd">F</span> Vehículo · <span class="kbd">R</span> Radio', '<span class="kbd">M</span> Mapa · <span class="kbd">I</span> Informe · <span class="kbd">Esc</span> Pausa'];
@@ -695,8 +778,8 @@ class Game {
 
   render(dt) {
     const env = this.env;
-    this.renderer.toneMappingExposure = (env.exposure || 0.8) * (1 + (this.camFlash || 0) * 0.6);
-    const rain = settings.lens ? env.cur.rain : 0; const lensRain = this.inCar && this.camState.carMode === 2 ? rain * 0.5 : rain * 0.85;
+    this.renderer.toneMappingExposure = (this.indoor ? 0.7 : (env.exposure || 0.8)) * (1 + (this.camFlash || 0) * 0.6);
+    const rain = settings.lens && !this.indoor ? env.cur.rain : 0; const lensRain = this.inCar && this.camState.carMode === 2 ? rain * 0.5 : rain * 0.85;
     this.post.render(dt, env, { lensRain: this.state === 'menu' ? rain * 0.6 : lensRain, damage: this.camState?.shake * 0.4 || 0, siren: this.sirenFx || 0, sirenCol: this.sirenCol });
   }
 
