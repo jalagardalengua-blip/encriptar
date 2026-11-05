@@ -64,6 +64,21 @@ También funciona con mando (gatillos para acelerar y frenar).
 - Evaluación por seguridad, legalidad, resolución, comunicación e informe, con consecuencias, experiencia y rangos. El progreso se guarda en el navegador.
 - Radio con voz sintetizada en español, sirenas europeas bitonales, motor, lluvia y ambiente urbano sintetizados con WebAudio.
 
+## Publicar en GitHub Pages
+
+El repositorio incluye el flujo `.github/workflows/pages.yml`, que en cada push comprueba el código (`node tools/check.mjs`) y publica el juego.
+
+1. En GitHub, ve a **Settings → Pages** del repositorio.
+2. En **Build and deployment → Source**, elige **GitHub Actions** (sólo hay que hacerlo una vez).
+3. Ve a la pestaña **Actions**, abre «Publicar en GitHub Pages» y pulsa **Run workflow** (o haz cualquier push).
+4. Al terminar, el juego queda en `https://<usuario>.github.io/<repositorio>/`; en este repositorio: **https://jalagardalengua-blip.github.io/encriptar/**
+
+Comprobación local antes de subir cambios:
+
+```bash
+node tools/check.mjs   # sintaxis de JS, imports, modelos e iconos (rutas sensibles a mayúsculas)
+```
+
 ## Créditos de modelos 3D
 
 | Elemento | Fuente | Licencia |
