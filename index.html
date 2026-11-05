@@ -158,7 +158,7 @@
     </section>
     <section class="tabp hidden" data-t="c">
       <label class="row-set"><span>Sensibilidad de cámara</span><input type="range" id="s-sens" min="0.3" max="2" step="0.05" value="1"></label>
-      <label class="row-set"><span>Distancia de cámara</span><input type="range" id="s-camd" min="0.8" max="1.7" step="0.05" value="1.15"></label>
+      <label class="row-set"><span>Distancia de cámara</span><input type="range" id="s-camd" min="0.8" max="2.2" step="0.05" value="1.35"></label>
       <label class="row-set"><span>Invertir eje vertical</span><input type="checkbox" id="s-invert"></label>
       <label class="row-set"><span>Vibración de cámara</span><input type="checkbox" id="s-shake" checked></label>
       <h3>Táctil</h3>
@@ -175,7 +175,7 @@
     </section>
     <section class="tabp hidden" data-t="h">
       <label class="row-set"><span>Escala de la interfaz</span><input type="range" id="s-hud" min="0.8" max="1.25" step="0.05" value="1"></label>
-      <label class="row-set"><span>Ayudas de controles en pantalla</span><input type="checkbox" id="s-hints" checked></label>
+      <label class="row-set"><span>Ayudas de controles en pantalla<small>Se muestran al empezar y con F1</small></span><input type="checkbox" id="s-hints" checked></label>
       <label class="row-set"><span>Voz con subtítulos de radio</span><input type="checkbox" id="s-subs" checked></label>
       <label class="row-set"><span>Luces rojo/azul<small>Por defecto azul, como en España</small></span><input type="checkbox" id="s-redblue"></label>
       <label class="row-set"><span>Velocidad del reloj<small>Minutos de juego por segundo real</small></span><input type="range" id="s-time" min="0" max="240" step="10" value="60"></label>
@@ -209,7 +209,7 @@
       <div><span>Mapa</span><span class="kbd">M</span></div>
       <div><span>Objetivos</span><span class="kbd">Tab</span></div>
       <div><span>Opciones de diálogo</span><span><span class="kbd">1</span>–<span class="kbd">6</span></span></div>
-      <div><span>Pausa · Modo foto</span><span><span class="kbd">Esc</span><span class="kbd">F2</span></span></div>
+      <div><span>Pausa · Ayudas · Modo foto</span><span><span class="kbd">Esc</span><span class="kbd">F1</span><span class="kbd">F2</span></span></div>
     </div>
     <div class="ctl"><h3>Móvil</h3>
       <div><span>Moverse / girar</span><span>Joystick izquierdo</span></div>
@@ -243,6 +243,7 @@
     <nav class="ps-nav">
       <button class="mn-item" id="p-resume"><span class="mn-l">Continuar</span></button>
       <button class="mn-item" id="p-map"><span class="mn-l">Mapa táctico</span></button>
+      <button class="mn-item" id="p-log"><span class="mn-l">Registro de radio</span></button>
       <button class="mn-item" id="p-settings"><span class="mn-l">Ajustes</span></button>
       <button class="mn-item" id="p-controls"><span class="mn-l">Controles</span></button>
       <button class="mn-item" id="p-weather"><span class="mn-l">Cambiar clima</span></button>
@@ -277,6 +278,7 @@
 </div>
 
 <div id="fade"></div>
+<div id="radiolog" class="screen dim hidden"><div class="panel"><div class="sc-eyebrow">Canal 2</div><h2>Registro de radio</h2><div id="rl-list" class="rl"></div><div class="row"><button class="btn" id="rl-close">Cerrar</button></div></div></div>
 <div id="rotate" class="hidden"><div><svg><use href="#i-car"/></svg><b>Gira el dispositivo</b><span>El juego está pensado para jugar en horizontal.</span><button class="btn ghost" id="rot-ok">Seguir en vertical</button></div></div>
 
 <!-- ===================== HUD ===================== -->

@@ -29,7 +29,7 @@ Parámetros opcionales en la URL: `?q=bajo|medio|alto|ultra` fuerza la calidad g
 | `WASD` moverse, `Shift` correr | `W/S` acelerar / frenar y marcha atrás | `Y/N` aceptar / rechazar aviso |
 | Ratón: cámara (clic para capturar) | `A/D` dirección, `Espacio` freno de mano | `R` radio (pedir aviso, apoyo, ambulancia) |
 | `E` interactuar / hablar | `Q` luces, `H` sirena, `J` tono de sirena | `I` redactar informe · `M` mapa táctico |
-| `F` subir o bajar del coche | `C` cámara, `L` faros, `G` claxon | `1–6` opciones · `Esc` pausa · `F2` modo foto |
+| `F` subir o bajar del coche | `C` cámara, `L` faros, `G` claxon | `1–6` opciones · `Esc` pausa · `F1` ayudas · `F2` modo foto |
 
 También funciona con mando (gatillos para acelerar y frenar).
 
@@ -39,7 +39,8 @@ También funciona con mando (gatillos para acelerar y frenar).
 - Render PBR con mapas de color, rugosidad, metalicidad, normales y emisivos generados en canvas (asfalto con grietas y charcos, aceras, ladrillo, revoco mediterráneo con persianas, muros cortina de vidrio, naves industriales y escaparates).
 - Cielo físico (dispersión de Rayleigh y Mie), ciclo día/noche, luna, estrellas, nubes procedurales e iluminación IBL que se regenera con la hora (incluido el resplandor nocturno de la ciudad).
 - Clima dinámico: despejado, nublado, lluvia, tormenta con relámpagos y niebla. Con lluvia el asfalto se moja, aparecen charcos que reflejan el entorno, salpicaduras y gotas en la lente.
-- Postprocesado: oclusión ambiental GTAO, bloom HDR, tonemapping ACES, SMAA, aberración cromática, viñeta, grano y gradación de color.
+- Postprocesado: oclusión ambiental GTAO, bloom HDR, tonemapping ACES, SMAA, enfoque (sharpen), desenfoque radial por velocidad, aberración cromática, viñeta, grano y gradación de color.
+- Halos en farolas y luces de vehículos, y reflejos alargados de faros, pilotos, balizas y farolas sobre el asfalto mojado (calculados en GPU).
 - Sombras dinámicas del sol y de la luna, faros que proyectan sombra, haces volumétricos de farolas y faros, sombras de contacto, marcas de frenada, humo de neumáticos y chispas.
 
 **Mundo**

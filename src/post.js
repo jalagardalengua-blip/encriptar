@@ -12,11 +12,11 @@ const GradeShader = {
   uniforms: {
     tDiffuse: { value: null }, uTime: { value: 0 }, uRes: { value: new THREE.Vector2(1, 1) },
     uVignette: { value: 0.32 }, uGrain: { value: 0.045 }, uCA: { value: 0.0018 }, uRain: { value: 0 },
-    uDamage: { value: 0 }, uFlash: { value: 0 }, uSat: { value: 1.06 }, uSiren: { value: 0 }, uSirenCol: { value: new THREE.Color() },
+    uDamage: { value: 0 }, uFlash: { value: 0 }, uSat: { value: 1.1 }, uSharp: { value: 0.35 }, uBlur: { value: 0 }, uSiren: { value: 0 }, uSirenCol: { value: new THREE.Color() },
   },
   vertexShader: 'varying vec2 vUv; void main(){ vUv = uv; gl_Position = projectionMatrix*modelViewMatrix*vec4(position,1.0); }',
   fragmentShader: `
-    uniform sampler2D tDiffuse; uniform float uTime; uniform vec2 uRes; uniform float uVignette; uniform float uGrain; uniform float uCA; uniform float uRain; uniform float uDamage; uniform float uFlash; uniform float uSat; uniform float uSiren; uniform vec3 uSirenCol;
+    uniform sampler2D tDiffuse; uniform float uTime; uniform vec2 uRes; uniform float uVignette; uniform float uGrain; uniform float uCA; uniform float uRain; uniform float uDamage; uniform float uFlash; uniform float uSat; uniform float uSiren; uniform vec3 uSirenCol; uniform float uSharp; uniform float uBlur;
     varying vec2 vUv;
     float h21(vec2 p){ p = fract(p*vec2(123.34, 456.21)); p += dot(p, p+45.32); return fract(p.x*p.y); }
     vec2 drops(vec2 uv, float t, float scale){
@@ -38,14 +38,23 @@ const GradeShader = {
       vec2 dc = uv - 0.5; float r2 = dot(dc, dc);
       vec2 off = dc * uCA * (1.0 + r2*4.0);
       vec3 col;
+      // desenfoque radial por velocidad
+      if (uBlur > 0.001) { vec3 acc = vec3(0.0); for (int i = 0; i < 6; i++) { float k = float(i) / 5.0; acc += texture2D(tDiffuse, uv - dc * uBlur * k * 0.06 * smoothstep(0.1, 0.6, length(dc))).rgb; } col = acc / 6.0; }
+      else {
       col.r = texture2D(tDiffuse, uv + off).r;
       col.g = texture2D(tDiffuse, uv).g;
       col.b = texture2D(tDiffuse, uv - off).b;
+      }
+      // enfoque (máscara de desenfoque)
+      vec2 px = 1.0 / uRes;
+      vec3 nb = texture2D(tDiffuse, uv + vec2(px.x, 0.0)).rgb + texture2D(tDiffuse, uv - vec2(px.x, 0.0)).rgb + texture2D(tDiffuse, uv + vec2(0.0, px.y)).rgb + texture2D(tDiffuse, uv - vec2(0.0, px.y)).rgb;
+      col += (col - nb * 0.25) * uSharp;
       // gradación: sombras frías, luces cálidas
       float l = dot(col, vec3(0.2126, 0.7152, 0.0722));
       col = mix(vec3(l), col, uSat);
       col += vec3(-0.008, 0.0, 0.018) * (1.0 - l) + vec3(0.015, 0.006, -0.012) * l;
-      col = mix(col, col*col*(3.0-2.0*col), 0.18);
+      col = mix(col, col*col*(3.0-2.0*col), 0.26);
+      col = pow(max(col, 0.0), vec3(1.03));
       // viñeta
       float v = smoothstep(0.85, 0.15, length(dc*vec2(1.0, 0.85)) * (1.0 + uVignette));
       col *= mix(1.0, v, 0.9);
@@ -102,6 +111,7 @@ export class Post {
     u.uRain.value = fx.lensRain ?? 0;
     u.uDamage.value = fx.damage ?? 0;
     u.uFlash.value = (env.flash || 0) * 0.08;
+    u.uBlur.value = fx.speedBlur ?? 0;
     u.uSiren.value = fx.siren ?? 0; if (fx.sirenCol) u.uSirenCol.value.copy(fx.sirenCol);
     this.bloom.strength = 0.32 + env.night * 0.28 + env.fogginess * 0.1;
     this.bloom.threshold = env.night > 0.5 ? 0.85 : 0.95;

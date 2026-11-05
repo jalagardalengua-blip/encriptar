@@ -10,7 +10,7 @@ import { AudioSys } from './audio.js';
 import { Input } from './input.js';
 import { HUD, rankOf } from './hud.js';
 import { makeDispatch } from './missions.js';
-import { Particles, SkidMarks, Beacon, makeCones, makeDebris } from './fx.js';
+import { Particles, SkidMarks, Beacon, makeCones, makeDebris, LightFX } from './fx.js';
 import { loadAssets, ASSETS } from './assets.js';
 import { StationInterior, IN } from './station.js';
 window.__assets = ASSETS;
@@ -21,7 +21,8 @@ const store = {
   set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch { /* sin almacenamiento */ } },
 };
 
-const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false, drs: true, lens: true, invert: false, steer: 'wheel', camDist: 1.15, music: 0.55, tsize: 1, topac: 0.85, lefty: false, haptic: true, hud: 1, hints: true, subs: true }, store.get('pold_settings', {}));
+const settings = Object.assign({ quality: defaultQuality(), volume: 0.8, voice: true, grain: true, shake: true, redblue: false, sens: 1, timeScale: 60, fps: false, drs: true, lens: true, invert: false, steer: 'wheel', camDist: 1.35, music: 0.55, tsize: 1, topac: 0.85, lefty: false, haptic: true, hud: 1, hints: true, subs: true }, store.get('pold_settings', {}));
+if (!settings.v || settings.v < 2) { settings.camDist = Math.max(settings.camDist || 0, 1.35); settings.v = 2; }
 const URLP = new URLSearchParams(location.search);
 if (URLP.get('q') && QUALITY[URLP.get('q')]) settings.quality = URLP.get('q');
 const Q = QUALITY[settings.quality] || QUALITY.alto;
@@ -67,7 +68,9 @@ class Game {
     prog(0.84, 'Coche patrulla y agente…'); await tick();
     this.buildPlayer();
     this.fx = { smoke: new Particles(this.scene, 900, { color: new THREE.Color(0.55, 0.55, 0.57) }), tire: new Particles(this.scene, 500, { color: new THREE.Color(0.8, 0.8, 0.82) }), sparks: new Particles(this.scene, 300, { additive: true, color: new THREE.Color(6, 3, 0.8) }), skids: new SkidMarks(this.scene), beacon: new Beacon(this.scene), emitters: [] };
+    this.lightfx = new LightFX(this.scene, this.city.lampSpots, this.input.isTouch ? 90 : 180);
     this.post = new Post(r, this.scene, this.camera, Q);
+    this.post.hideForAO(this.lightfx.all);
     this.post.hideForAO([this.env.sky, this.env.clouds, this.env.stars, this.env.moon, this.env.rain, this.env.splash, ...this.city.fxObjects, ...this.traffic.fx, this.fx.smoke.points, this.fx.tire.points, this.fx.sparks.points, this.fx.beacon.group, ...this.rig.fxObjs]);
     this.post.setSize(innerWidth, innerHeight);
     if (!settings.grain) { this.post.grade.uniforms.uGrain.value = 0; this.post.grade.uniforms.uCA.value = 0; }
@@ -170,6 +173,7 @@ class Game {
     range('s-sens', 'sens'); range('s-camd', 'camDist'); range('s-music', 'music'); range('s-time', 'timeScale'); range('s-tsize', 'tsize'); range('s-topac', 'topac'); range('s-hud', 'hud');
     const st = $('s-steer'); st.value = settings.steer; st.onchange = () => { settings.steer = st.value; this.applySettings(); };
     $('p-resume').onclick = () => this.resume();
+    $('p-log').onclick = () => { this.hud.showRadioLog(); };
     $('p-map').onclick = () => { this.resume(); $('bigmap').classList.remove('hidden'); this.drawBigMap(); };
     $('p-settings').onclick = () => open('settings');
     $('p-controls').onclick = () => open('controls');
@@ -261,7 +265,7 @@ class Game {
   }
 
   resume() { $('pause').classList.add('hidden'); this.state = 'play'; this.input.wantLock = true; }
-  pause() { if (this.state !== 'play') return; this.state = 'pause'; $('pause').classList.remove('hidden'); $('pause-info').textContent = `${this.officerName} · ${rankOf(this.save.xp).name} · ${this.save.xp} XP · Casos del turno: ${this.shiftStats.cases}`; if (document.pointerLockElement) document.exitPointerLock(); }
+  pause() { if (this.state !== 'play') return; this.state = 'pause'; $('pause').classList.remove('hidden'); $('pause-info').textContent = `${this.officerName} · ${rankOf(this.save.xp).name} · ${this.save.xp} XP · Casos del turno: ${this.shiftStats.cases} · ${this.clock()} · ${weatherLabel(this.env.weatherKey)}`; if (document.pointerLockElement) document.exitPointerLock(); }
 
   endShift() {
     if (this.mission) { this.mission.cleanup(); this.mission = null; }
@@ -680,6 +684,30 @@ class Game {
     F.smoke.mat.uniforms.uScale.value = F.tire.mat.uniforms.uScale.value = innerHeight * this.renderer.getPixelRatio() * 0.9;
     F.sparks.mat.uniforms.uScale.value = F.smoke.mat.uniforms.uScale.value;
     F.smoke.update(dt, -0.15, 0.4); F.tire.update(dt, -0.1, 0.9); F.sparks.update(dt, 9.8, 0.5);
+    // halos y reflejos de luces de vehículos
+    this.lightT = (this.lightT || 0) + dt;
+    if (this.lightT > 0.033) {
+      this.lightT = 0; const L = []; const cp = this.camera.position; const night = this.env.night > 0.35;
+      const addCar = (x, z, h, len, y, brake, head) => {
+        const fx = Math.sin(h), fz = Math.cos(h); const rx = -fz, rz = fx; const hb = night && head ? 1 : 0.25;
+        const dx = cp.x - x, dz = cp.z - z, dl = Math.hypot(dx, dz) || 1; const face = (dx * fx + dz * fz) / dl; // >0: la cámara está delante
+        const fk = Math.pow(Math.max(0, face), 1.5), bk = Math.pow(Math.max(0, -face), 1.2);
+        for (const s of [-0.55, 0.55]) {
+          if (hb > 0.3 && fk > 0.05) L.push({ x: x + fx * len / 2 + rx * s, y: y + 0.65, z: z + fz * len / 2 + rz * s, r: fk, g: 0.93 * fk, b: 0.8 * fk, size: 1.3 });
+          const tk = Math.max(0.15, bk) * (brake ? 1.6 : 0.7);
+          L.push({ x: x - fx * len / 2 + rx * s, y: y + 0.8, z: z - fz * len / 2 + rz * s, r: tk, g: 0.05 * tk, b: 0.03 * tk, size: brake ? 1.1 : 0.8 });
+        }
+      };
+      for (const c of this.traffic.cars) { if (Math.abs(c.x - cp.x) + Math.abs(c.z - cp.z) > 170) continue; addCar(c.x, c.z, c.heading, c.L, c.y || 0, c.brake && c.state !== 'parked', c.state !== 'parked'); }
+      const car = this.car; addCar(car.x, car.z, car.h, car.L, car.y, car.braking, car.headlights);
+      if (car.lights) { const [bl, br] = [this.beaconL.intensity, this.beaconR.intensity]; const fx = Math.sin(car.h), fz = Math.cos(car.h); const rx = -fz, rz = fx; const by = car.y + this.rig.spec.roofY + 0.15;
+        const cl = this.beaconL.color, cr = this.beaconR.color;
+        if (bl > 1) L.push({ x: car.x + rx * -0.4, y: by, z: car.z + rz * -0.4, r: cl.r * 2, g: cl.g * 2, b: cl.b * 2, size: 2.4 });
+        if (br > 1) L.push({ x: car.x + rx * 0.4, y: by, z: car.z + rz * 0.4, r: cr.r * 2, g: cr.g * 2, b: cr.b * 2, size: 2.4 }); }
+      L.sort((a, b) => (Math.abs(a.x - cp.x) + Math.abs(a.z - cp.z)) - (Math.abs(b.x - cp.x) + Math.abs(b.z - cp.z)));
+      this.lightfx.setDynamic(L);
+    }
+    this.lightfx.update(dt, this.env.night, this.env.cur.wet, this.env.night > 0.35 || this.env.dark > 0.5, this.indoor);
     // objetivo
     let t = this.target; if (t?.follow) t = { x: t.follow.x, z: t.follow.z };
     F.beacon.update(dt, t, this.camera.position);
@@ -702,7 +730,7 @@ class Game {
         const fx = Math.sin(car.h), fz = Math.cos(car.h);
         pos.set(car.x + fx * 0.2, car.y + 1.32, car.z + fz * 0.2); look.set(car.x + fx * 20, car.y + 1.1, car.z + fz * 20); fov = 72 + sp * 0.25;
       } else {
-        const cd = settings.camDist || 1.15; const dist = (cs.carMode === 0 ? 7.4 : 12.5) * cd; const h = (cs.carMode === 0 ? 2.5 : 4.2) * cd;
+        const cd = settings.camDist || 1.35; const dist = (cs.carMode === 0 ? 7.4 : 12.5) * cd; const h = (cs.carMode === 0 ? 2.5 : 4.2) * cd;
         const fx = Math.sin(yaw), fz = Math.cos(yaw);
         const d = dist + sp * 0.04;
         pos.set(car.x - fx * d, car.y + h + sp * 0.01, car.z - fz * d);
@@ -712,7 +740,7 @@ class Game {
     } else {
       const o = this.officer; const yaw = cs.yaw; const fx = Math.sin(yaw), fz = Math.cos(yaw); const rx = -fz, rz = fx;
       const tx = o.x + rx * 0.45, tz = o.z + rz * 0.45, ty = o.y + 1.55;
-      const d = cs.dist * (settings.camDist || 1.15); const cp = Math.cos(cs.pitch), spp = Math.sin(cs.pitch);
+      const d = cs.dist * (settings.camDist || 1.35); const cp = Math.cos(cs.pitch), spp = Math.sin(cs.pitch);
       let px = tx - fx * d * cp, py = ty + d * spp, pz = tz - fz * d * cp;
       // colisión de cámara
       for (let k = 1; k <= 8; k++) {
@@ -764,7 +792,8 @@ class Game {
       const ang = Math.atan2(dx, dz) - cy; compass = { angle: -ang, dist: Math.hypot(dx, dz) };
     }
     this.hud.tickObjectives(dt, compass);
-    this.shiftT = (this.shiftT || 0) + dt; this.hud.fadeHints(!settings.hints || this.shiftT > 25);
+    this.shiftT = (this.shiftT || 0) + dt; if (this.input.hit('F1')) this.hintsUntil = this.shiftT + 10; this.hud.fadeHints(!settings.hints || (this.shiftT > 9 && !(this.hintsUntil > this.shiftT)));
+    const dname = this.indoor ? 'in' : (blk || '') ; if (dname !== this.lastDistrict) { this.lastDistrict = dname; this.hud.flashLocation(); }
     const dots = [];
     for (const c of this.traffic.cars) { const d = Math.abs(c.x - p.x) + Math.abs(c.z - p.z); if (d < 220) dots.push({ x: c.x, z: c.z, c: c.flags.police ? '#69a6ff' : c.state === 'flee' ? '#ff4b4b' : 'rgba(255,255,255,.35)', r: c.state === 'flee' ? 4 : 2 }); }
     for (const s of this.services) dots.push({ x: s.x, z: s.z, c: s.kind === 'ambulance' ? '#ff6b6b' : '#69a6ff', r: 3.5 });
@@ -780,7 +809,8 @@ class Game {
     const env = this.env;
     this.renderer.toneMappingExposure = (this.indoor ? 0.7 : (env.exposure || 0.8)) * (1 + (this.camFlash || 0) * 0.6);
     const rain = settings.lens && !this.indoor ? env.cur.rain : 0; const lensRain = this.inCar && this.camState.carMode === 2 ? rain * 0.5 : rain * 0.85;
-    this.post.render(dt, env, { lensRain: this.state === 'menu' ? rain * 0.6 : lensRain, damage: this.camState?.shake * 0.4 || 0, siren: this.sirenFx || 0, sirenCol: this.sirenCol });
+    const spd = this.inCar && this.camState.carMode !== 2 ? clamp((this.car.speed - 20) / 28, 0, 1) * 0.9 : 0;
+    this.post.render(dt, env, { speedBlur: this.state === 'play' ? spd : 0, lensRain: this.state === 'menu' ? rain * 0.6 : lensRain, damage: this.camState?.shake * 0.4 || 0, siren: this.sirenFx || 0, sirenCol: this.sirenCol });
   }
 
   resize() {

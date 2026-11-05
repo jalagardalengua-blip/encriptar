@@ -127,10 +127,17 @@ export class HUD {
     const now = this.clockStr || '';
     d.innerHTML = `<div class="h"><span>${esc(from)}</span><span>${now}</span></div>${esc(text)}`;
     const box = $('radio'); box.prepend(d);
-    while (box.children.length > 2) box.lastChild.remove();
-    setTimeout(() => { d.style.transition = 'opacity .8s'; d.style.opacity = 0; setTimeout(() => d.remove(), 800); }, 7000);
+    while (box.children.length > 1) box.lastChild.remove();
+    setTimeout(() => { d.style.transition = 'opacity .8s'; d.style.opacity = 0; setTimeout(() => d.remove(), 800); }, 5500);
+    (this.radioLog = this.radioLog || []).unshift({ t: now, from, text, prio }); if (this.radioLog.length > 60) this.radioLog.pop();
     if (speak) this.audio.say(text.replace(/\bAv\./g, 'Avenida'));
   }
+  showRadioLog() {
+    const L = this.radioLog || [];
+    $('rl-list').innerHTML = L.length ? L.map((m) => `<div class="rl-i p${m.prio}"><b>${esc(m.t)} · ${esc(m.from)}</b><span>${esc(m.text)}</span></div>`).join('') : '<p class="note">Sin comunicaciones todavía.</p>';
+    $('radiolog').classList.remove('hidden'); $('rl-close').onclick = () => $('radiolog').classList.add('hidden');
+  }
+  flashLocation() { const el = $('loc'); el.classList.add('show'); clearTimeout(this.locT); this.locT = setTimeout(() => el.classList.remove('show'), 4500); }
   dispatch(call, onAccept, onReject) {
     const el = $('dispatch');
     el.innerHTML = `<div class="cat">${esc(call.category)} · Prioridad ${call.priority}</div><div class="ttl">${esc(call.title)}</div>
@@ -162,7 +169,7 @@ export class HUD {
     this.objProgress = tot > 1 ? `${done}/${tot}` : '';
     this.vis('objpill', true);
     const key = title + '|' + list.map((o) => o.text + o.done).join('|');
-    if (key !== this.objKey) { this.objKey = key; if (!document.body.classList.contains('touch')) this.expandObjectives(4.5); }
+    if (key !== this.objKey) { this.objKey = key; }
   }
   expandObjectives(t = 6) { this.objExpandT = t; this.vis('objective', true); }
   tickObjectives(dt, compass) {

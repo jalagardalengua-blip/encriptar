@@ -329,3 +329,30 @@ body.touch #wheel .close { display: block; position: static; margin-top: 4px; pa
   body.touch #dialog { width: 94vw; }
 }
 @media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } }
+
+/* ---------- HUD minimalista ---------- */
+#mapwrap { width: calc(148px * var(--hud)); }
+#minimap { opacity: .92; border-width: 1.5px; }
+#loc { opacity: 0; transform: translateY(4px); transition: opacity .5s, transform .5s; }
+#loc.show { opacity: 1; transform: none; }
+#status { padding: 4px 10px; gap: 8px; background: rgba(8,12,20,.45); border-color: transparent; }
+#status .rk, #xpbar { display: none; }
+#status .clock { font-size: 17px; }
+#radio { width: min(280px, 30vw); }
+.rmsg { background: rgba(8,12,20,.5); font-size: 12px; padding: 6px 10px 7px; }
+#objpill { background: rgba(8,12,20,.5); border-color: transparent; font-size: 14px; padding: 5px 12px 5px 9px; }
+#speedo { width: calc(124px * var(--hud)); }
+#speedo .num b { font-size: calc(34px * var(--hud)); }
+#prompt { font-size: 16px; padding: 5px 12px; background: rgba(8,12,20,.5); bottom: calc(18px + var(--sb)); }
+#hints { font-size: 11.5px; }
+.toast { font-size: 15px; }
+#dispatch { width: min(310px, 92vw); padding: 10px 12px; }
+#dispatch .ttl { font-size: 20px; } #dispatch .det { font-size: 12px; }
+.rl { max-height: 60vh; overflow: auto; display: flex; flex-direction: column; gap: 6px; margin-top: 10px; touch-action: pan-y; }
+.rl-i { display: flex; flex-direction: column; padding: 8px 12px; border-left: 3px solid var(--blue); background: rgba(255,255,255,.03); border-radius: 8px; font-size: 13.5px; }
+.rl-i b { font: 700 12px var(--cond); letter-spacing: .12em; text-transform: uppercase; color: var(--blue2); }
+.rl-i.p1 { border-color: var(--red); } .rl-i.p2 { border-color: var(--amber); }
+body.touch #tb-run { display: none; }
+body.touch .tb.sm { width: calc(42px * var(--ts)); height: calc(42px * var(--ts)); }
+body.touch #mapwrap { width: calc(96px * var(--hud)); }
+body.touch #radio { width: min(230px, 36vw); }

@@ -129,3 +129,77 @@ export function makeDebris(scene, x, z) {
   sp.position.set(x - 0.6, 0.015, z + 0.4); sp.scale.set(1.3, 1, 0.8); g.add(sp);
   scene.add(g); return g;
 }
+
+// ---------------- Halos de luz y reflejos en asfalto mojado (calculados en GPU) ----------------
+const GLOW_VS = `varying vec2 vUv; varying vec3 vCol; void main(){ vUv = uv;
+  vec3 c = (modelMatrix * instanceMatrix * vec4(0.0,0.0,0.0,1.0)).xyz; float s = length(instanceMatrix[0].xyz);
+  #ifdef USE_INSTANCING_COLOR
+  vCol = instanceColor;
+  #else
+  vCol = vec3(1.0);
+  #endif
+  vec4 mv = viewMatrix * vec4(c, 1.0); mv.xy += position.xy * s; gl_Position = projectionMatrix * mv; }`;
+const GLOW_FS = `uniform vec3 uCol; uniform float uO; varying vec2 vUv; varying vec3 vCol; void main(){ float d = length(vUv - 0.5) * 2.0; float core = pow(max(0.0, 1.0 - d), 3.0); float halo = pow(max(0.0, 1.0 - d), 1.4) * 0.35; float a = (core + halo) * uO; gl_FragColor = vec4(uCol * vCol * a, a); }`;
+const STREAK_VS = `uniform float uTime; varying vec2 vP; varying vec3 vCol; void main(){
+  vec3 c = (modelMatrix * instanceMatrix * vec4(0.0,0.0,0.0,1.0)).xyz; float s = length(instanceMatrix[0].xyz);
+  #ifdef USE_INSTANCING_COLOR
+  vCol = instanceColor;
+  #else
+  vCol = vec3(1.0);
+  #endif
+  vec2 to = cameraPosition.xz - c.xz; float dist = length(to); vec2 dir = to / max(dist, 0.001); vec2 perp = vec2(-dir.y, dir.x);
+  float t = position.y + 0.5; float len = min(dist * 0.85, 16.0 * s); float w = mix(0.35, 1.3, t) * s;
+  vec2 p = c.xz + dir * t * len + perp * position.x * w;
+  vP = vec2(position.x * 2.0, t); gl_Position = projectionMatrix * viewMatrix * vec4(p.x, c.y, p.y, 1.0); }`;
+const STREAK_FS = `uniform vec3 uCol; uniform float uO; uniform float uTime; varying vec2 vP; varying vec3 vCol; void main(){
+  float across = pow(max(0.0, 1.0 - abs(vP.x)), 2.2); float along = pow(1.0 - vP.y, 1.6) * smoothstep(0.0, 0.05, vP.y);
+  float rip = 0.75 + 0.25 * sin(vP.y * 55.0 - uTime * 3.0 + vP.x * 3.0);
+  float a = across * along * rip * uO; gl_FragColor = vec4(uCol * vCol * a, a); }`;
+
+function lightMat(vs, fs, col) {
+  return new THREE.ShaderMaterial({ uniforms: { uCol: { value: new THREE.Color(col) }, uO: { value: 0 }, uTime: { value: 0 } }, vertexShader: vs, fragmentShader: fs, transparent: true, depthWrite: false, blending: THREE.AdditiveBlending, polygonOffset: true, polygonOffsetFactor: -4 });
+}
+
+export class LightFX {
+  constructor(scene, lampSpots, dynCap = 180) {
+    const pg = new THREE.PlaneGeometry(1, 1);
+    const m = new THREE.Matrix4();
+    // farolas: halo en la luminaria y reflejo en el suelo
+    this.glowMat = lightMat(GLOW_VS, GLOW_FS, 0xffd9a8); this.streakMat = lightMat(STREAK_VS, STREAK_FS, 0xffcf96);
+    const n = lampSpots.length;
+    this.glow = new THREE.InstancedMesh(pg, this.glowMat, n); this.streak = new THREE.InstancedMesh(pg, this.streakMat, n);
+    lampSpots.forEach((s, i) => {
+      const hx = s.x + s.ax * 2.1, hz = s.z + s.az * 2.1;
+      m.makeScale(2.6, 2.6, 2.6).setPosition(hx, 8.45, hz); this.glow.setMatrixAt(i, m);
+      m.makeScale(1, 1, 1).setPosition(hx, 0.03, hz); this.streak.setMatrixAt(i, m);
+    });
+    // luces de vehículos (dinámicas, con color por instancia)
+    this.dGlowMat = lightMat(GLOW_VS, GLOW_FS, 0xffffff); this.dStreakMat = lightMat(STREAK_VS, STREAK_FS, 0xffffff);
+    this.dGlow = new THREE.InstancedMesh(pg, this.dGlowMat, dynCap); this.dStreak = new THREE.InstancedMesh(pg, this.dStreakMat, dynCap);
+    for (const im of [this.dGlow, this.dStreak]) { im.instanceColor = new THREE.InstancedBufferAttribute(new Float32Array(dynCap * 3), 3); im.count = 0; }
+    this.cap = dynCap;
+    this.all = [this.glow, this.streak, this.dGlow, this.dStreak];
+    for (const im of this.all) { im.frustumCulled = false; im.renderOrder = 3; scene.add(im); }
+    this.m = m; this.c = new THREE.Color();
+  }
+  // lights: [{x,y,z,r,g,b,size}]
+  setDynamic(lights) {
+    const k = Math.min(this.cap, lights.length);
+    for (let i = 0; i < k; i++) {
+      const L = lights[i];
+      this.m.makeScale(L.size, L.size, L.size).setPosition(L.x, L.y, L.z); this.dGlow.setMatrixAt(i, this.m);
+      this.m.makeScale(L.size * 0.7, L.size * 0.7, L.size * 0.7).setPosition(L.x, 0.035, L.z); this.dStreak.setMatrixAt(i, this.m);
+      this.c.setRGB(L.r, L.g, L.b); this.dGlow.setColorAt(i, this.c); this.dStreak.setColorAt(i, this.c);
+    }
+    for (const im of [this.dGlow, this.dStreak]) { im.count = k; im.instanceMatrix.needsUpdate = true; if (im.instanceColor) im.instanceColor.needsUpdate = true; }
+  }
+  update(dt, night, wet, lampsOn, indoor) {
+    const t = (this.glowMat.uniforms.uTime.value += dt);
+    for (const mm of [this.streakMat, this.dStreakMat]) mm.uniforms.uTime.value = t;
+    const vis = indoor ? 0 : 1;
+    this.glowMat.uniforms.uO.value = lampsOn ? 0.55 * vis : 0;
+    this.streakMat.uniforms.uO.value = lampsOn ? (0.08 + wet * 0.42) * vis : 0;
+    this.dGlowMat.uniforms.uO.value = night > 0.35 ? 0.5 * vis : 0.12 * vis;
+    this.dStreakMat.uniforms.uO.value = night > 0.35 ? (0.08 + wet * 0.8) * vis : wet * 0.15 * vis;
+  }
+}
