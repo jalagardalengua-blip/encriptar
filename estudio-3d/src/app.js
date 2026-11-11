@@ -4,6 +4,7 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { generadores, porId } from './generadores/index.js';
 import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
 import { crearZip } from './core/zip.js';
+import { registrarImagen, obtenerImagen, leerArchivo, paleta } from './core/imagenes.js';
 
 const $ = (id) => document.getElementById(id);
 const guardar = (k, v) => { try { localStorage.setItem('estudio3d:' + k, JSON.stringify(v)); } catch {} };
@@ -172,6 +173,10 @@ function control(d, valor) {
   } else if (d.tipo === 'si') {
     fila.innerHTML = `${lab}<input id="${id}" type="checkbox"${valor ? ' checked' : ''}>`;
     fila.querySelector('input').onchange = (e) => cambiar(d.id, e.target.checked);
+  } else if (d.tipo === 'imagen') {
+    const im = obtenerImagen(valor) || obtenerImagen('ejemplo');
+    fila.innerHTML = `<label for="${id}">${d.nombre}</label><span class="mini"><img alt="" src="${im ? im.toDataURL('image/png') : ''}"><button class="boton" id="${id}" type="button">Cambiar…</button></span>`;
+    fila.querySelector('button').onclick = () => $('foto').click();
   } else if (d.tipo === 'numero') {
     fila.innerHTML = `${lab}<input id="${id}" type="number" value="${valor}" step="1">`;
     fila.querySelector('input').onchange = (e) => cambiar(d.id, Math.round(+e.target.value) || 1);
@@ -284,6 +289,113 @@ $('abrir').onchange = async (e) => {
   } catch (err) { aviso('No se pudo abrir: ' + err.message); }
   e.target.value = '';
 };
+
+// ---------- Desde una imagen ----------
+let foto = null; // canvas de la imagen elegida
+function estadoFoto(t) { $('estadoFoto').textContent = t; }
+function mostrarMiniatura(c) {
+  $('miniatura').src = c.toDataURL('image/png'); $('miniatura').hidden = false;
+  $('zonaTexto').innerHTML = '<b>Imagen lista</b>. Pulsa para cambiarla';
+}
+async function usarFoto(archivo) {
+  if (!archivo || !/^image\//.test(archivo.type)) { estadoFoto('Ese archivo no es una imagen. Usa PNG, JPG, WebP o GIF.'); return; }
+  try {
+    foto = registrarImagen('foto', await leerArchivo(archivo));
+    mostrarMiniatura(foto);
+    try { // se recuerda en este navegador (reducida)
+      const e = Math.min(1, 512 / Math.max(foto.width, foto.height)), c = document.createElement('canvas');
+      c.width = Math.round(foto.width * e); c.height = Math.round(foto.height * e); c.getContext('2d').drawImage(foto, 0, 0, c.width, c.height);
+      localStorage.setItem('estudio3d:foto', c.toDataURL('image/png'));
+    } catch {}
+    aRelieve();
+    estadoFoto(claudeVe ? 'Hecho: tu imagen ya es un relieve 3D. Si es un animal, una persona o un tractor, pulsa «Reconocer con Claude» para obtener un modelo con esqueleto.' : 'Hecho: tu imagen ya es un relieve 3D. Ajusta el volumen y la tolerancia del fondo si el contorno no es correcto.');
+  } catch (e) { estadoFoto('No se pudo abrir la imagen: ' + e.message); }
+}
+function aRelieve() {
+  const yaEra = gen.id === 'relieve';
+  gen = porId('relieve'); preset = yaEra ? preset : 'figura'; cambios = { ...(yaEra ? cambios : {}), imagen: foto ? 'foto' : 'ejemplo' };
+  nombreAnimActiva = null; todo();
+}
+$('foto').onchange = (e) => { usarFoto(e.target.files[0]); e.target.value = ''; };
+$('aRelieve').onclick = () => { aRelieve(); if (!foto) estadoFoto('Mostrando la imagen de ejemplo. Elige una tuya arriba.'); };
+const zona = $('zona');
+zona.ondragover = (e) => { e.preventDefault(); zona.classList.add('encima'); };
+zona.ondragleave = () => zona.classList.remove('encima');
+zona.ondrop = (e) => { e.preventDefault(); zona.classList.remove('encima'); usarFoto(e.dataTransfer.files[0]); };
+window.addEventListener('paste', (e) => { const f = [...(e.clipboardData?.files || [])].find((x) => x.type.startsWith('image/')); if (f) usarFoto(f); });
+
+$('aColores').onclick = () => {
+  const c = foto || obtenerImagen('ejemplo');
+  const params = gen.parametros.filter((d) => d.tipo === 'color');
+  if (gen.id === 'relieve' || !params.length) { estadoFoto('Elige antes un tipo de modelo (por ejemplo «Animal de 4 patas») y vuelve a pulsar «Usar sus colores».'); return; }
+  const cols = paleta(c, params.length, { quitarFondo: true, tolerancia: 0.08 });
+  params.forEach((d, i) => { if (cols[i]) cambios[d.id] = cols[i]; });
+  guardarEstado(); pintarParametros(); reconstruir();
+  estadoFoto(`Colores aplicados en orden de abundancia (${cols.length}). Retoca en «Colores» los que no encajen.`);
+};
+
+// Reconocer con Claude (solo cuando la página se abre dentro de Claude)
+let muestra = null, claudeVe = false, control_ = null;
+(async () => {
+  if (!window.claude?.use) return;
+  muestra = await window.claude.use('sample').catch(() => null);
+  const lim = muestra ? await muestra.limits().catch(() => null) : null;
+  claudeVe = !!lim?.images; $('aClaude').hidden = !claudeVe;
+})();
+
+function catalogo() {
+  return generadores.filter((g) => !g.soloNavegador).map((g) => ({
+    id: g.id, nombre: g.nombre, descripcion: g.descripcion, presets: Object.keys(g.presets || {}),
+    parametros: g.parametros.map((d) => ({ id: d.id, nombre: d.nombre, tipo: d.tipo, ...(d.tipo === 'rango' ? { min: d.min, max: d.max } : {}), ...(d.tipo === 'opcion' ? { opciones: d.opciones.map((o) => o[0]) } : {}) })),
+  }));
+}
+function limpiarCambios(g, cambiosIA = {}) {
+  const r = {};
+  for (const d of g.parametros) {
+    if (!(d.id in cambiosIA)) continue;
+    const v = cambiosIA[d.id];
+    if (d.tipo === 'rango' && Number.isFinite(+v)) r[d.id] = Math.min(d.max, Math.max(d.min, +v));
+    else if (d.tipo === 'color' && /^#[0-9a-f]{6}$/i.test(String(v))) r[d.id] = String(v).toLowerCase();
+    else if (d.tipo === 'opcion' && d.opciones.some((o) => o[0] === v)) r[d.id] = v;
+    else if (d.tipo === 'si') r[d.id] = v === true || v === 'true';
+  }
+  return r;
+}
+$('aClaude').onclick = async () => {
+  const b = $('aClaude');
+  if (control_) { control_.abort(); return; }
+  const c = foto || obtenerImagen('ejemplo');
+  const blob = await new Promise((ok) => c.toBlob(ok, 'image/png'));
+  control_ = new AbortController(); b.textContent = 'Cancelar'; estadoFoto('Claude está mirando la imagen…');
+  const prompt = 'Eres el asistente de un estudio que genera modelos 3D de estilo low-poly con esqueleto y animaciones para videojuegos.\n' +
+    'Mira la imagen adjunta (una foto o dibujo que el usuario quiere convertir en modelo 3D) y elige del catálogo el generador que mejor la reproduce. ' +
+    'Ajusta el preset, las proporciones, las opciones y TODOS los colores (formato #rrggbb) para que el modelo se parezca lo más posible a la imagen. ' +
+    'Si lo que aparece no encaja con ningún generador del catálogo (un objeto, un edificio, un logotipo, un dibujo plano...), responde con "generador": "relieve" y "cambios": {}.\n' +
+    'Responde SOLO con un objeto JSON con esta forma: {"generador": "id", "preset": "nombre del preset o null", "cambios": {"idParametro": valor}, "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has ajustado"}\n\n' +
+    'Catálogo:\n' + JSON.stringify(catalogo());
+  try {
+    const r = await muestra.json(prompt, { images: [blob], signal: control_.signal });
+    const g = porId(String(r?.generador || ''));
+    if (!g || g.id === 'relieve') { aRelieve(); estadoFoto((r?.explicacion ? r.explicacion + ' ' : '') + 'He creado un relieve 3D a partir de la silueta.'); }
+    else {
+      gen = g; preset = g.presets?.[r.preset] ? r.preset : (g.presets ? Object.keys(g.presets)[0] : null);
+      cambios = limpiarCambios(g, r.cambios); nombreAnimActiva = null; todo();
+      estadoFoto((r.explicacion || `Reconocido como ${g.nombre}.`) + ' Puedes retocarlo abajo antes de descargarlo.');
+    }
+  } catch (e) {
+    const t = { cancelled: '', not_granted: 'No has dado permiso para usar Claude en esta página.', rate_limited: 'Has hecho muchas peticiones seguidas. Espera un poco y vuelve a probar.', image_rejected: 'Claude no puede leer esa imagen. Prueba con otro archivo.', invalid_json: 'La respuesta no se pudo interpretar. Vuelve a pulsar «Reconocer con Claude».', refused: 'Claude no ha querido analizar esta imagen.' };
+    estadoFoto(t[e?.code] ?? 'No se pudo analizar la imagen. Inténtalo de nuevo.');
+    if (['not_granted', 'sampling_disabled', 'images_unavailable'].includes(e?.code)) b.hidden = true;
+  }
+  control_ = null; b.textContent = 'Reconocer con Claude';
+};
+
+// Recuperar la última imagen usada en este navegador
+try {
+  const guardada = localStorage.getItem('estudio3d:foto');
+  if (guardada) { const im = new Image(); im.src = guardada; await im.decode(); foto = registrarImagen('foto', im); mostrarMiniatura(foto); }
+} catch {}
+if (!foto && cambios.imagen === 'foto') cambios.imagen = 'ejemplo';
 
 todo();
 window.__estudio = { pose(i, t) { activar(i); const a = acciones[i]; a.time = t * a.getClip().duration; a.paused = true; mezclador.update(0); }, elegir(id, pr, cb = {}) { gen = porId(id); preset = pr; cambios = cb; todo(); }, escena, camara, mandos, get actual() { return actual; }, activar };

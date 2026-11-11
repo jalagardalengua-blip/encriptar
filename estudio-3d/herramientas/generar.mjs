@@ -49,7 +49,7 @@ async function generar(gen, preset, cambios, salida) {
 
 if (opciones.lista || (!sueltos.length && !opciones.todos)) {
   for (const g of generadores) {
-    console.log(`\n${g.icono}  ${g.id} — ${g.nombre}\n   ${g.descripcion}`);
+    console.log(`\n${g.icono}  ${g.id} — ${g.nombre}${g.soloNavegador ? '  (solo en la app web)' : ''}\n   ${g.descripcion}`);
     if (g.presets) console.log(`   presets: ${Object.keys(g.presets).join(', ')}`);
     for (const d of g.parametros) {
       const extra = d.tipo === 'rango' ? `${d.min}…${d.max}` : d.tipo === 'opcion' ? d.opciones.map((o) => o[0]).join(' | ') : d.tipo === 'si' ? 'true | false' : 'color #rrggbb';
@@ -63,7 +63,7 @@ if (opciones.lista || (!sueltos.length && !opciones.todos)) {
 
 if (opciones.todos) {
   const dir = typeof opciones.todos === 'string' ? opciones.todos : 'modelos';
-  for (const g of generadores) for (const pr of Object.keys(g.presets || { base: {} })) await generar(g, pr, {}, path.join(dir, g.id, `${pr}.glb`));
+  for (const g of generadores.filter((x) => !x.soloNavegador)) for (const pr of Object.keys(g.presets || { base: {} })) await generar(g, pr, {}, path.join(dir, g.id, `${pr}.glb`));
   process.exit(0);
 }
 

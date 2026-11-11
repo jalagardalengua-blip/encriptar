@@ -72,6 +72,14 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .colores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
 .colores .param { grid-template-columns: 1fr auto; }
 
+.zona { display: flex; gap: 12px; align-items: center; border: 1.5px dashed var(--linea); border-radius: 10px; padding: 12px; cursor: pointer; background: var(--campo); min-height: 64px; font-size: 13px; color: var(--tinta-2); }
+.zona b { color: var(--tinta); font-weight: 600; }
+.zona:hover, .zona.encima { border-color: var(--acento); }
+.zona img { width: 56px; height: 56px; object-fit: contain; border-radius: 6px; background: var(--suelo); flex: none; }
+.acciones-foto { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.acciones-foto .boton { font-size: 12.5px; padding: 6px 10px; }
+.param .mini { display: flex; gap: 8px; align-items: center; }
+.param .mini img { width: 34px; height: 34px; object-fit: contain; border-radius: 4px; background: var(--suelo); border: 1px solid var(--linea); }
 details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
 .cmd pre { margin: 8px 0 0; padding: 10px; background: var(--campo); border: 1px solid var(--linea); border-radius: 6px; font: 11.5px/1.5 var(--f-datos); white-space: pre-wrap; word-break: break-all; }
 .cmd .fila { display: flex; gap: 6px; margin-top: 6px; }
@@ -134,6 +142,20 @@ details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
       <p>Modelos con esqueleto y animaciones, listos para exportar a GLB.</p>
     </header>
     <div class="desplazable">
+      <section class="foto">
+        <p class="etiqueta">Desde una foto o dibujo</p>
+        <label class="zona" id="zona" for="foto">
+          <img id="miniatura" alt="Imagen elegida" hidden>
+          <span id="zonaTexto"><b>Elige una imagen</b>, arrástrala aquí o pégala</span>
+        </label>
+        <input id="foto" type="file" accept="image/png,image/jpeg,image/webp,image/gif" hidden>
+        <div class="acciones-foto">
+          <button class="boton" id="aRelieve" type="button">Convertir en relieve 3D</button>
+          <button class="boton" id="aClaude" type="button" hidden>Reconocer con Claude</button>
+          <button class="boton" id="aColores" type="button">Usar sus colores</button>
+        </div>
+        <p class="desc" id="estadoFoto" aria-live="polite"></p>
+      </section>
       <section>
         <p class="etiqueta">Qué quieres crear</p>
         <div class="generadores" id="generadores"></div>

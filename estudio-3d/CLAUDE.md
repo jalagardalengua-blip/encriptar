@@ -11,6 +11,12 @@ Herramienta para crear modelos 3D con esqueleto y animaciones y exportarlos a GL
    - `node herramientas/generar.mjs --todos modelos` y `node herramientas/validar.mjs modelos` (0 errores; el aviso `NODE_SKINNED_MESH_NON_ROOT` es esperado e inofensivo).
    - Una captura en la app (`python3 -m http.server`, Playwright con `window.__estudio.elegir(id, preset)` y `window.__estudio.pose(indiceAnimacion, fraccion)`) para revisar la forma y las animaciones.
 
+## Cuando el usuario manda una foto
+
+- Si la foto se parece a algo que cubre un generador (animal, persona, tractor...), elige preset, opciones y colores mirándola y genera el GLB por terminal.
+- Si es algo nuevo con forma propia (un personaje concreto, un vehículo...), escribe un generador con esqueleto inspirado en la foto: así tendrá animaciones.
+- Para una figura plana con la imagen como textura, el generador `relieve` funciona en la app web (no por terminal).
+
 ## Convenciones
 
 - Metros, Y arriba, el modelo mira a +Z, apoya en y = 0. Lado `_L` = +X.

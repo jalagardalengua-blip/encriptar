@@ -7,6 +7,16 @@ Hay dos formas de usarlo:
 1. **App web**: eliges qué crear, ajustas forma y colores con deslizadores, ves el modelo animado y descargas el `.glb`.
 2. **Terminal**: un comando genera el `.glb`. Claude lo usa para crearte los modelos que pidas mientras programa tus juegos.
 
+## Crear desde una foto o un dibujo
+
+Arriba del todo en la app está **«Desde una foto o dibujo»**: elige una imagen, arrástrala o pégala (Ctrl+V). Hay tres caminos:
+
+- **Convertir en relieve 3D** (funciona siempre, sin conexión): separa el objeto del fondo, lo «infla» para darle volumen y usa la propia imagen como textura, por delante y por detrás. Va muy bien con dibujos, objetos, escudos, carteles, plantas, logotipos y personajes 2D. Puedes ajustar el volumen, el detalle, la tolerancia del fondo y añadir una peana. Animaciones: Balanceo, Girar, Flotar y Rebotar. Funciona mejor con fondo liso o PNG transparente.
+- **Reconocer con Claude** (aparece al abrir la app dentro de Claude): Claude mira la foto y elige el modelo que mejor encaja (por ejemplo «vaca marrón de cara blanca»), con forma, opciones y colores parecidos. Así el resultado **conserva el esqueleto y todas las animaciones**. Si no encaja con nada, hace un relieve.
+- **Usar sus colores**: copia los colores principales de la foto al modelo que tengas elegido.
+
+Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D completa por todos sus lados. Para eso hacen falta modelos de IA que necesitan tarjeta gráfica (por ejemplo TRELLIS o Hunyuan3D, gratuitos en Hugging Face) y sus mallas no traen esqueleto.
+
 ## Qué puede crear ahora
 
 | Generador | Presets | Esqueleto | Animaciones |
@@ -15,6 +25,7 @@ Hay dos formas de usarlo:
 | `cuadrupedo` Animal de 4 patas | vaca, toro, ternero, cerdo, oveja, carnero, cabra, caballo, burro, perro, gato | 22 huesos | Reposo, Caminar, Trotar, Galopar, Comer, Tumbado (+ Sentado en perro y gato) |
 | `ave` Ave de corral | gallina, gallo, pollito, pato, pato_real, oca | 13 huesos | Reposo, Caminar, Correr, Picotear, Aletear, Echada |
 | `tractor` Tractor | rojo, verde, azul, pequeno, con_pala | nodos | Avanzar, Girar, Ralenti, Subir_pala |
+| `relieve` Desde una imagen | figura, plano, globo, con_peana (solo en la app) | nodos | Balanceo, Girar, Flotar, Rebotar |
 | `granja` Objetos de granja | arbol, pino, valla, granero, molino, fardo, abrevadero, comedero, roca | nodos | Viento, Abrir_puertas, Girar |
 
 Cada preset es solo un punto de partida: todos los parámetros (tamaños, proporciones, cuernos, orejas, cola, pelaje, ropa, colores…) se pueden cambiar. La **semilla** cambia los detalles aleatorios (manchas, lana, copa de los árboles) para que no haya dos animales iguales.
