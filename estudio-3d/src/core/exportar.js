@@ -15,6 +15,7 @@ export function resolverParametros(gen, preset, cambios = {}) {
 export function construir(gen, params) {
   const azar = crearAzar(params.semilla ?? 1);
   const r = gen.construir(params, azar);
+  delete r.objeto.userData.centros;
   r.objeto.userData.generador = gen.id;
   r.objeto.userData.parametros = { ...params };
   return r;

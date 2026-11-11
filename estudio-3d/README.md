@@ -15,7 +15,22 @@ Arriba del todo en la app está **«Desde una foto o dibujo»**: elige una image
 - **Reconocer con Claude** (aparece al abrir la app dentro de Claude): Claude mira la foto y elige el modelo que mejor encaja (por ejemplo «vaca marrón de cara blanca»), con forma, opciones y colores parecidos. Así el resultado **conserva el esqueleto y todas las animaciones**. Si no encaja con nada, hace un relieve.
 - **Usar sus colores**: copia los colores principales de la foto al modelo que tengas elegido.
 
-Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D completa por todos sus lados. Para eso hacen falta modelos de IA que necesitan tarjeta gráfica (por ejemplo TRELLIS o Hunyuan3D, gratuitos en Hugging Face) y sus mallas no traen esqueleto.
+Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D completa por todos sus lados.
+
+## Modelos realistas: IA + esqueleto automático
+
+Para el máximo realismo el modelo tiene que salir de una foto con IA (o de un escaneo). Las formas generadas por código no pueden llegar a ese nivel. El flujo gratuito es:
+
+1. **Foto → modelo 3D realista con IA.** Sube tu foto a [Hunyuan3D](https://huggingface.co/spaces?search=Hunyuan3D) o [TRELLIS](https://huggingface.co/spaces?search=TRELLIS) en Hugging Face (gratis, en el navegador) y descarga el `.glb` con textura. Sale mejor con una foto del animal o persona entero, de lado o de tres cuartos, con fondo limpio. También valen escaneos con apps de fotogrametría (KIRI Engine, RealityScan, Polycam) o modelos CC0 descargados.
+2. **Esqueleto automático en el estudio.** En «Modelo realista (GLB)» abre ese `.glb` y pulsa **«Ponerle esqueleto y animaciones»**. El estudio:
+   - detecta hacia dónde mira y lo pone de pie, a su tamaño real;
+   - mide patas, tronco, cabeza, entrepierna y brazos, y encaja el esqueleto del animal, la persona o el ave;
+   - calcula cómo se deforma cada vértice con cada hueso (pesos de piel) y los suaviza;
+   - si la persona está con los brazos en cruz (pose T o A), los baja a la pose de reposo;
+   - conserva las texturas y materiales originales y añade todas las animaciones del generador (caminar, trotar, galopar, comer, tumbarse… o caminar, correr, saltar, saludar, sentarse…).
+3. **Descargar .glb**: el modelo realista sale con esqueleto y animaciones.
+
+Si algo se deforma raro, ajusta «Hacia dónde mira», el ajuste de cadera/patas y el de cabeza. Mallas de 600.000 triángulos tardan unos segundos. No lee GLB con compresión Draco (expórtalo sin compresión).
 
 ## Qué puede crear ahora
 
@@ -25,6 +40,7 @@ Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D 
 | `cuadrupedo` Animal de 4 patas | vaca, toro, ternero, cerdo, oveja, carnero, cabra, caballo, burro, perro, gato | 22 huesos | Reposo, Caminar, Trotar, Galopar, Comer, Tumbado (+ Sentado en perro y gato) |
 | `ave` Ave de corral | gallina, gallo, pollito, pato, pato_real, oca | 13 huesos | Reposo, Caminar, Correr, Picotear, Aletear, Echada |
 | `tractor` Tractor | rojo, verde, azul, pequeno, con_pala | nodos | Avanzar, Girar, Ralenti, Subir_pala |
+| `esqueleto` Esqueleto para tu GLB | animal, persona, ave (solo en la app) | el del generador | las del generador |
 | `relieve` Desde una imagen | figura, plano, globo, con_peana (solo en la app) | nodos | Balanceo, Girar, Flotar, Rebotar |
 | `granja` Objetos de granja | arbol, pino, valla, granero, molino, fardo, abrevadero, comedero, roca | nodos | Viento, Abrir_puertas, Girar |
 

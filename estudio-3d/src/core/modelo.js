@@ -173,6 +173,14 @@ export class Modelo {
 
   construir({ facetado = false } = {}) {
     const g = fusionar(this.piezas, this.materiales, { facetado, piel: true });
+    // Centro de las piezas de cada hueso (lo usa el auto-rig para saber qué zona cubre cada hueso)
+    const sumas = this.orden.map(() => [0, 0, 0, 0]), P = g.attributes.position, SI = g.attributes.skinIndex, SW = g.attributes.skinWeight;
+    for (let i = 0; i < P.count; i++) {
+      let mejor = 0; for (let k = 1; k < 4; k++) if (SW.getComponent(i, k) > SW.getComponent(i, mejor)) mejor = k;
+      const s = sumas[SI.getComponent(i, mejor)]; s[0] += P.getX(i); s[1] += P.getY(i); s[2] += P.getZ(i); s[3]++;
+    }
+    const centros = {};
+    this.orden.forEach((h, i) => { const s = sumas[i]; if (s[3]) centros[h.name] = [s[0] / s[3], s[1] / s[3], s[2] / s[3]]; });
     const grupo = new THREE.Group(); grupo.name = this.nombre;
     const raiz = this.orden[0];
     grupo.add(raiz);
@@ -186,6 +194,7 @@ export class Modelo {
     const esqueleto = new THREE.Skeleton(this.orden);
     malla.bind(esqueleto);
     grupo.userData.huesos = this.orden.length;
+    grupo.userData.centros = centros;
     return grupo;
   }
 }

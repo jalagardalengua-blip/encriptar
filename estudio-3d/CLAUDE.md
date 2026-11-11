@@ -16,6 +16,7 @@ Herramienta para crear modelos 3D con esqueleto y animaciones y exportarlos a GL
 - Si la foto se parece a algo que cubre un generador (animal, persona, tractor...), elige preset, opciones y colores mirándola y genera el GLB por terminal.
 - Si es algo nuevo con forma propia (un personaje concreto, un vehículo...), escribe un generador con esqueleto inspirado en la foto: así tendrá animaciones.
 - Para una figura plana con la imagen como textura, el generador `relieve` funciona en la app web (no por terminal).
+- Si quiere realismo: modelo por IA (Hunyuan3D/TRELLIS) o escaneo → generador `esqueleto` (auto-rig en `src/core/autorig.js`), que usa los esqueletos y animaciones de `cuadrupedo`, `humanoide` y `ave`. Si añades huesos a esos generadores, el auto-rig los aprovecha solo.
 
 ## Convenciones
 

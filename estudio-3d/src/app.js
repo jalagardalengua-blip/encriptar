@@ -1,6 +1,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { registrarMalla, nombreMalla } from './generadores/esqueleto.js';
 import { generadores, porId } from './generadores/index.js';
 import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
 import { crearZip } from './core/zip.js';
@@ -23,7 +26,9 @@ const camara = new THREE.PerspectiveCamera(35, 1, 0.01, 500);
 const mandos = new OrbitControls(camara, render.domElement);
 mandos.enableDamping = true; mandos.dampingFactor = 0.08;
 
-escena.add(new THREE.HemisphereLight(0xf2f5ff, 0x8a7a5c, 1.35));
+escena.environment = new THREE.PMREMGenerator(render).fromScene(new RoomEnvironment(), 0.04).texture;
+escena.environmentIntensity = 0.55;
+escena.add(new THREE.HemisphereLight(0xf2f5ff, 0x8a7a5c, 0.9));
 const sol = new THREE.DirectionalLight(0xfff1dc, 2.6);
 sol.castShadow = true; sol.shadow.mapSize.set(2048, 2048); sol.shadow.bias = -0.0004; sol.shadow.normalBias = 0.02;
 escena.add(sol, sol.target);
@@ -177,6 +182,9 @@ function control(d, valor) {
     const im = obtenerImagen(valor) || obtenerImagen('ejemplo');
     fila.innerHTML = `<label for="${id}">${d.nombre}</label><span class="mini"><img alt="" src="${im ? im.toDataURL('image/png') : ''}"><button class="boton" id="${id}" type="button">Cambiar…</button></span>`;
     fila.querySelector('button').onclick = () => $('foto').click();
+  } else if (d.tipo === 'malla') {
+    fila.innerHTML = `<label for="${id}">${d.nombre}</label><span class="mini"><span class="desc" style="margin:0">${nombreMalla(valor)}</span><button class="boton" id="${id}" type="button">Elegir .glb…</button></span>`;
+    fila.querySelector('button').onclick = () => { paraEsqueleto = true; $('abrir').click(); };
   } else if (d.tipo === 'numero') {
     fila.innerHTML = `${lab}<input id="${id}" type="number" value="${valor}" step="1">`;
     fila.querySelector('input').onchange = (e) => cambiar(d.id, Math.round(+e.target.value) || 1);
@@ -196,7 +204,9 @@ function pintarParametros() {
 let pendiente = 0;
 function cambiar(k, v) {
   cambios[k] = v; guardarEstado();
-  cancelAnimationFrame(pendiente); pendiente = requestAnimationFrame(reconstruir);
+  cancelAnimationFrame(pendiente); clearTimeout(pendiente);
+  if (gen.id === 'esqueleto') { aviso('Calculando el esqueleto…'); pendiente = setTimeout(reconstruir, 250); } // es más lento: espera a soltar el control
+  else pendiente = requestAnimationFrame(reconstruir);
 }
 function guardarEstado() { guardar('estado', { gen: gen.id, preset, cambios }); }
 
@@ -280,15 +290,32 @@ $('exportar').onclick = async () => {
   b.disabled = false; b.textContent = 'Descargar .glb';
 };
 
+let paraEsqueleto = false, ultimoGLB = null;
+const cargador = new GLTFLoader().setMeshoptDecoder(MeshoptDecoder);
 $('abrir').onchange = async (e) => {
-  const f = e.target.files[0]; if (!f) return;
+  const f = e.target.files[0]; e.target.value = ''; if (!f) return;
   try {
-    const gltf = await new GLTFLoader().parseAsync(await f.arrayBuffer(), '');
+    const gltf = await cargador.parseAsync(await f.arrayBuffer(), '');
+    ultimoGLB = { escena: gltf.scene, nombre: f.name };
+    $('aEsqueleto').hidden = false;
+    if (paraEsqueleto) { paraEsqueleto = false; ponerEsqueleto(); return; }
     poner(gltf.scene, gltf.animations, f.name); encuadrar(gltf.scene);
     aviso('Archivo abierto: ' + f.name);
-  } catch (err) { aviso('No se pudo abrir: ' + err.message); }
-  e.target.value = '';
+  } catch (err) {
+    paraEsqueleto = false;
+    aviso(/DRACO|KHR_draco/i.test(err.message) ? 'Este GLB usa compresión Draco, que el estudio no lee. Expórtalo sin compresión.' : 'No se pudo abrir: ' + err.message);
+  }
 };
+function ponerEsqueleto() {
+  if (!ultimoGLB) { paraEsqueleto = true; $('abrir').click(); return; }
+  const clave = 'glb:' + ultimoGLB.nombre;
+  registrarMalla(clave, ultimoGLB.escena, ultimoGLB.nombre);
+  const t = new THREE.Box3().setFromObject(ultimoGLB.escena).getSize(new THREE.Vector3());
+  const persona = t.y > 1.3 * Math.max(t.x, t.z);
+  gen = porId('esqueleto'); preset = persona ? 'persona' : 'animal'; cambios = { malla: clave }; nombreAnimActiva = null; todo();
+  aviso('Esqueleto puesto. Si algo se deforma mal, ajusta «Hacia dónde mira» y la cadera.');
+}
+$('aEsqueleto').onclick = ponerEsqueleto;
 
 // ---------- Desde una imagen ----------
 let foto = null; // canvas de la imagen elegida

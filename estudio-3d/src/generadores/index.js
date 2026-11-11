@@ -6,6 +6,7 @@ import ave from './ave.js';
 import tractor from './tractor.js';
 import granja from './granja.js';
 import relieve from './relieve.js';
+import esqueleto from './esqueleto.js';
 
-export const generadores = [relieve, humanoide, cuadrupedo, ave, tractor, granja];
+export const generadores = [relieve, esqueleto, humanoide, cuadrupedo, ave, tractor, granja];
 export const porId = (id) => generadores.find((g) => g.id === id);
