@@ -3,6 +3,7 @@ import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { generadores, porId } from './generadores/index.js';
 import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
+import { crearZip } from './core/zip.js';
 
 const $ = (id) => document.getElementById(id);
 const guardar = (k, v) => { try { localStorage.setItem('estudio3d:' + k, JSON.stringify(v)); } catch {} };
@@ -237,21 +238,28 @@ $('copiar').onclick = async () => {
   catch { const r = document.createRange(); r.selectNodeContents($('cmd')); getSelection().removeAllRanges(); getSelection().addRange(r); aviso('Selecciona y copia el comando'); }
 };
 
-/** Guardar el archivo: usa la capacidad de descarga del visor si existe, si no un enlace normal */
+/**
+ * Guardar el archivo. Dentro de claude.ai se usa la capacidad «downloads» del visor, que no admite
+ * .glb, así que el modelo va dentro de un .zip. En local o en GitHub Pages se descarga el .glb tal cual.
+ */
+let descargasVisor;
+const visorDescargas = () => {
+  if (!window.claude?.use) return Promise.resolve(null);
+  return (descargasVisor ??= window.claude.use('downloads').catch(() => null));
+};
+visorDescargas();
 async function descargar(nombre, datos) {
-  const blob = new Blob([datos], { type: 'model/gltf-binary' });
-  const claude = window.claude;
-  if (claude?.use) {
-    try {
-      const desc = await claude.use('download');
-      if (desc?.save) { await desc.save({ filename: nombre, data: blob, mimeType: 'model/gltf-binary' }); return true; }
-    } catch (e) { console.warn('Descarga del visor no disponible', e); }
+  const visor = await visorDescargas();
+  if (visor) {
+    const zip = crearZip([{ nombre, datos: new Uint8Array(datos) }]);
+    try { await visor.save({ filename: nombre.replace(/\.glb$/, '.zip'), data: zip }); return 'zip'; }
+    catch (e) { if (e?.code === 'declined') return 'cancelado'; throw new Error(e?.message || 'descarga no disponible'); }
   }
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob); a.download = nombre;
+  a.href = URL.createObjectURL(new Blob([datos], { type: 'model/gltf-binary' })); a.download = nombre;
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-  return true;
+  return 'glb';
 }
 
 $('exportar').onclick = async () => {
@@ -261,8 +269,8 @@ $('exportar').onclick = async () => {
     const { objeto, animaciones } = construir(gen, p); // modelo limpio, en pose de reposo
     const glb = await exportarGLB(objeto, animaciones);
     const nombre = `${(preset || gen.id).replace(/[^a-z0-9_-]/gi, '_')}_${p.semilla}.glb`;
-    await descargar(nombre, glb);
-    aviso(`${nombre} · ${(glb.byteLength / 1024).toFixed(0)} KB`);
+    const r = await descargar(nombre, glb);
+    if (r !== 'cancelado') aviso(r === 'zip' ? `${nombre} guardado dentro de un .zip` : `${nombre} · ${(glb.byteLength / 1024).toFixed(0)} KB`);
   } catch (e) { console.error(e); aviso('No se pudo exportar: ' + e.message); }
   b.disabled = false; b.textContent = 'Descargar .glb';
 };
