@@ -1,0 +1,20 @@
+{
+  "name": "estudio-3d",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador de modelos 3D con esqueleto y animaciones, exportados a GLB.",
+  "type": "module",
+  "scripts": {
+    "app": "python3 -m http.server 8080",
+    "generar": "node herramientas/generar.mjs",
+    "todos": "node herramientas/generar.mjs --todos modelos",
+    "validar": "node herramientas/validar.mjs modelos"
+  },
+  "dependencies": {
+    "three": "0.170.0"
+  },
+  "devDependencies": {
+    "gltf-validator": "2.0.0-dev.3.10"
+  },
+  "license": "MIT"
+}

@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Estudio de Modelos 3D</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Taller: barra lateral de mandos a la izquierda, mesa de trabajo 3D a la derecha; en móvil, la mesa arriba y los mandos debajo. */
+:root {
+  --suelo: #e9ece4;      /* fondo general, gris verdoso de establo */
+  --panel: #f7f8f4;
+  --tinta: #1f2a1f;
+  --tinta-2: #5d6a5b;
+  --linea: #d3d9cc;
+  --acento: #d9822b;     /* naranja tractor */
+  --acento-tinta: #1b1406;
+  --campo: #ffffff;
+  --mesa-a: #cfd8c8;     /* degradado de la mesa 3D */
+  --mesa-b: #eef1ea;
+  --ok: #3f8a4a;
+  --f-titulo: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --f-texto: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-datos: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --suelo: #151a15; --panel: #1c221c; --tinta: #e6ebe2; --tinta-2: #9aa696; --linea: #2f382e;
+  --acento: #f0a04b; --acento-tinta: #1b1406; --campo: #242b23; --mesa-a: #1d241d; --mesa-b: #2e382d; --ok: #74c27f;
+  color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --suelo: #151a15; --panel: #1c221c; --tinta: #e6ebe2; --tinta-2: #9aa696; --linea: #2f382e;
+  --acento: #f0a04b; --acento-tinta: #1b1406; --campo: #242b23; --mesa-a: #1d241d; --mesa-b: #2e382d; --ok: #74c27f;
+  color-scheme: dark; }
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html, body { height: 100%; }
+body { margin: 0; background: var(--suelo); color: var(--tinta); font: 14px/1.45 var(--f-texto); }
+button, input, select { font: inherit; color: inherit; }
+button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-visible { outline: 2px solid var(--acento); outline-offset: 2px; }
+
+.app { height: 100%; display: grid; grid-template-columns: minmax(300px, 360px) 1fr; }
+.lateral { background: var(--panel); border-right: 1px solid var(--linea); display: flex; flex-direction: column; min-height: 0; }
+.cabecera { padding: 16px max(16px, env(safe-area-inset-left, 0px)) 12px; border-bottom: 1px solid var(--linea); display: grid; gap: 2px; }
+.cabecera h1 { margin: 0; font: 800 22px/1.1 var(--f-titulo); letter-spacing: -0.01em; }
+.cabecera p { margin: 0; color: var(--tinta-2); font-size: 12.5px; }
+.desplazable { overflow-y: auto; padding: 14px max(16px, env(safe-area-inset-left, 0px)) 24px; display: grid; gap: 18px; align-content: start; flex: 1; min-height: 0; }
+
+.etiqueta { font: 600 11px/1 var(--f-texto); text-transform: uppercase; letter-spacing: 0.08em; color: var(--tinta-2); margin: 0 0 8px; }
+.generadores { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: 6px; }
+.gen { border: 1px solid var(--linea); background: var(--campo); border-radius: 8px; padding: 8px 6px; cursor: pointer; display: grid; gap: 2px; justify-items: center; text-align: center; }
+.gen .ico { font-size: 22px; line-height: 1.1; }
+.gen .nom { font-size: 12px; font-weight: 600; line-height: 1.15; }
+.gen[aria-pressed="true"] { border-color: var(--acento); box-shadow: inset 0 0 0 1px var(--acento); }
+.desc { color: var(--tinta-2); font-size: 12.5px; margin: 8px 0 0; }
+
+.presets { display: flex; flex-wrap: wrap; gap: 6px; }
+.chip { border: 1px solid var(--linea); background: var(--campo); border-radius: 999px; padding: 4px 11px; cursor: pointer; font-size: 12.5px; }
+.chip[aria-pressed="true"] { background: var(--tinta); color: var(--panel); border-color: var(--tinta); }
+
+.param { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 4px 10px; padding: 7px 0; border-bottom: 1px dashed var(--linea); }
+.param label { font-size: 13px; }
+.param output { font: 12px var(--f-datos); color: var(--tinta-2); font-variant-numeric: tabular-nums; }
+.param input[type="range"] { grid-column: 1 / -1; width: 100%; accent-color: var(--acento); margin: 0; }
+.param select { background: var(--campo); border: 1px solid var(--linea); border-radius: 6px; padding: 3px 6px; max-width: 170px; }
+.param input[type="color"] { width: 40px; height: 26px; border: 1px solid var(--linea); border-radius: 6px; padding: 1px; background: var(--campo); cursor: pointer; }
+.param input[type="checkbox"] { width: 18px; height: 18px; accent-color: var(--acento); }
+.param input[type="number"] { width: 84px; background: var(--campo); border: 1px solid var(--linea); border-radius: 6px; padding: 3px 6px; font-family: var(--f-datos); }
+.colores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
+.colores .param { grid-template-columns: 1fr auto; }
+
+details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
+.cmd pre { margin: 8px 0 0; padding: 10px; background: var(--campo); border: 1px solid var(--linea); border-radius: 6px; font: 11.5px/1.5 var(--f-datos); white-space: pre-wrap; word-break: break-all; }
+.cmd .fila { display: flex; gap: 6px; margin-top: 6px; }
+
+.boton { border: 1px solid var(--linea); background: var(--campo); border-radius: 8px; padding: 8px 12px; cursor: pointer; font-weight: 600; font-size: 13px; }
+.boton:hover { border-color: var(--tinta-2); }
+.boton.principal { background: var(--acento); border-color: var(--acento); color: var(--acento-tinta); }
+.boton.principal:hover { filter: brightness(1.05); }
+.pie { padding: 12px max(16px, env(safe-area-inset-left, 0px)) calc(12px + env(safe-area-inset-bottom, 0px)); border-top: 1px solid var(--linea); display: flex; gap: 8px; flex-wrap: wrap; }
+.pie .principal { flex: 1; }
+
+.mesa { position: relative; min-width: 0; min-height: 0; background: radial-gradient(120% 90% at 50% 30%, var(--mesa-b), var(--mesa-a)); }
+.mesa canvas { display: block; width: 100%; height: 100%; touch-action: none; }
+.capa { position: absolute; display: flex; gap: 6px; flex-wrap: wrap; pointer-events: none; }
+.capa > * { pointer-events: auto; }
+.arriba { top: calc(12px + env(safe-area-inset-top, 0px)); left: 12px; right: calc(12px + env(safe-area-inset-right, 0px)); justify-content: space-between; align-items: flex-start; }
+.ficha { background: color-mix(in srgb, var(--panel) 88%, transparent); border: 1px solid var(--linea); border-radius: 8px; padding: 8px 10px; font: 11.5px/1.55 var(--f-datos); font-variant-numeric: tabular-nums; backdrop-filter: blur(6px); }
+.ficha b { font-weight: 600; color: var(--tinta); }
+.ficha span { color: var(--tinta-2); }
+.vista { display: flex; gap: 4px; }
+.vista .chip { background: color-mix(in srgb, var(--panel) 88%, transparent); }
+.abajo { bottom: calc(12px + env(safe-area-inset-bottom, 0px)); left: 12px; right: calc(12px + env(safe-area-inset-right, 0px)); justify-content: center; }
+.anims { background: color-mix(in srgb, var(--panel) 92%, transparent); border: 1px solid var(--linea); border-radius: 12px; padding: 8px; display: flex; flex-wrap: wrap; gap: 6px; align-items: center; justify-content: center; max-width: 760px; backdrop-filter: blur(6px); }
+.anims .chip.activa { background: var(--acento); border-color: var(--acento); color: var(--acento-tinta); }
+.anims label { display: flex; gap: 6px; align-items: center; font: 11.5px var(--f-datos); color: var(--tinta-2); padding: 0 6px; }
+.anims input { width: 80px; accent-color: var(--acento); }
+.aviso { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: var(--panel); border: 1px solid var(--linea); padding: 12px 16px; border-radius: 8px; max-width: min(420px, 90%); }
+.toast { position: absolute; left: 50%; bottom: calc(80px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--tinta); color: var(--panel); padding: 8px 14px; border-radius: 8px; font-size: 13px; opacity: 0; transition: opacity .2s; pointer-events: none; }
+.toast.ver { opacity: 1; }
+.error { color: #b3261e; font-size: 12.5px; }
+
+@media (max-width: 760px) {
+  .app { grid-template-columns: 1fr; grid-template-rows: 52vh 1fr; height: auto; min-height: 100%; }
+  .mesa { order: -1; height: 52vh; }
+  .lateral { border-right: 0; border-top: 1px solid var(--linea); }
+  .desplazable { overflow: visible; }
+  .cabecera, .desplazable, .pie { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+  .app { grid-template-rows: 60vh 1fr; } .mesa { height: 60vh; }
+  .abajo { left: 0; right: 0; justify-content: flex-start; }
+  .anims { padding: 6px max(12px, env(safe-area-inset-left, 0px)); flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; border-radius: 0; border-left: 0; border-right: 0; max-width: 100%; width: 100%; scrollbar-width: none; }
+  .anims .chip { flex: none; } .anims label { display: none; }
+  .ficha { display: none; }
+  .pie { position: sticky; bottom: 0; background: var(--panel); z-index: 2; }
+  .arriba { justify-content: flex-end; }
+}
+@media (prefers-reduced-motion: reduce) { .toast { transition: none; } }
+</style>
+<script type="importmap">
+{ "imports": {
+  "three": "./lib/three.module.min.js",
+  "three/addons/": "./lib/addons/"
+} }
+</script>
+</head>
+<body>
+<div class="app">
+  <aside class="lateral">
+    <header class="cabecera">
+      <h1>Estudio de Modelos 3D</h1>
+      <p>Modelos con esqueleto y animaciones, listos para exportar a GLB.</p>
+    </header>
+    <div class="desplazable">
+      <section>
+        <p class="etiqueta">Qué quieres crear</p>
+        <div class="generadores" id="generadores"></div>
+        <p class="desc" id="desc"></p>
+      </section>
+      <section id="secPresets">
+        <p class="etiqueta">Punto de partida</p>
+        <div class="presets" id="presets"></div>
+      </section>
+      <section>
+        <p class="etiqueta">Forma</p>
+        <div id="params"></div>
+      </section>
+      <section>
+        <p class="etiqueta">Colores</p>
+        <div class="colores" id="colores"></div>
+      </section>
+      <section>
+        <p class="etiqueta">Acabado</p>
+        <div id="comunes"></div>
+      </section>
+      <section>
+        <details class="cmd" id="cmdBox">
+          <summary>Generarlo desde la terminal o con Claude</summary>
+          <pre id="cmd"></pre>
+          <div class="fila"><button class="boton" id="copiar" type="button">Copiar comando</button></div>
+        </details>
+      </section>
+      <section>
+        <p class="etiqueta">Revisar un GLB</p>
+        <label class="boton" for="abrir" style="display:inline-block">Abrir archivo .glb…</label>
+        <input id="abrir" type="file" accept=".glb,.gltf,model/gltf-binary" hidden>
+      </section>
+    </div>
+    <footer class="pie">
+      <button class="boton" id="semilla" type="button" title="Misma forma, otra variación al azar">Variar</button>
+      <button class="boton principal" id="exportar" type="button">Descargar .glb</button>
+    </footer>
+  </aside>
+  <main class="mesa" id="mesa">
+    <div class="capa arriba">
+      <div class="ficha" id="ficha"></div>
+      <div class="vista">
+        <button class="chip" id="verHuesos" type="button" aria-pressed="false">Esqueleto</button>
+        <button class="chip" id="verMalla" type="button" aria-pressed="false">Malla</button>
+        <button class="chip" id="centrar" type="button">Centrar</button>
+      </div>
+    </div>
+    <div class="capa abajo"><div class="anims" id="anims"></div></div>
+    <div class="toast" id="toast"></div>
+  </main>
+</div>
+<script type="module" src="./src/app.js"></script>
+</body>
+</html>

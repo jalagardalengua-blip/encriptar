@@ -2,6 +2,10 @@
 
 Simulador policial de mundo abierto en 3D que se ejecuta en el navegador (WebGL 2 + Three.js), basado en el GDD «Police: Life on Duty». Funciona en ordenador, iPhone y Android. La ciudad, las texturas PBR, el cielo, el clima y el sonido se generan por código; los vehículos y las personas usan modelos gratuitos CC0 (ver «Créditos»).
 
+## Estudio de Modelos 3D
+
+En la carpeta [`estudio-3d/`](estudio-3d/README.md) hay una herramienta independiente para crear modelos 3D con esqueleto y animaciones (personas, ganado, aves, tractor y objetos de granja) y exportarlos a GLB para cualquier juego. Tiene app web y comando de terminal.
+
 ## Cómo jugar
 
 ```bash
