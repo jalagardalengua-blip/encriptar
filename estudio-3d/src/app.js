@@ -9,7 +9,7 @@ import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
 import { crearZip } from './core/zip.js';
 import { preparar, medir, veredicto, leeme, NIVELES_LOD, PLATAFORMAS, CARGADOR_THREE } from './core/juego.js';
 import { registrarImagen, obtenerImagen, leerArchivo, paleta } from './core/imagenes.js';
-import { prepararFoto, proyectar } from './core/proyeccion.js';
+import { prepararFoto, proyectar, ajustarSilueta } from './core/proyeccion.js';
 
 const $ = (id) => document.getElementById(id);
 const guardar = (k, v) => { try { localStorage.setItem('estudio3d:' + k, JSON.stringify(v)); } catch {} };
@@ -101,7 +101,9 @@ function aplicarPiel(objeto) {
   if (!piel.activa || !foto || !PIEL_GENERADORES[gen.id]) return;
   try {
     pielPreparada ??= prepararFoto(foto, { caja: piel.caja });
-    proyectar(objeto, pielPreparada.canvas, { vista: PIEL_GENERADORES[gen.id], cabeza: piel.cabeza || pielPreparada.cabeza });
+    const vista = PIEL_GENERADORES[gen.id], cabeza = piel.cabeza || pielPreparada.cabeza;
+    if (vista === 'lateral') ajustarSilueta(objeto, pielPreparada, { cabeza });
+    proyectar(objeto, pielPreparada.canvas, { vista, cabeza });
   } catch (e) { console.warn('No se pudo usar la foto como piel', e); }
 }
 
@@ -229,7 +231,7 @@ function pintarParametros() {
   const p = resolverParametros(gen, preset, cambios);
   const forma = $('params'), colores = $('colores'), comunes = $('comunes');
   forma.innerHTML = colores.innerHTML = comunes.innerHTML = '';
-  for (const d of gen.parametros) (d.tipo === 'color' ? colores : forma).append(control(d, p[d.id]));
+  for (const d of gen.parametros) if (d.tipo !== 'oculto') (d.tipo === 'color' ? colores : forma).append(control(d, p[d.id]));
   comunes.append(control({ id: 'facetado', nombre: 'Estilo facetado (low poly)', tipo: 'si' }, p.facetado));
   comunes.append(control({ id: 'semilla', nombre: 'Semilla de variación', tipo: 'numero' }, p.semilla));
 }
@@ -263,7 +265,7 @@ let encuadrarSiguiente = false;
 
 function pintarComando(p) {
   const base = resolverParametros(gen, preset, {});
-  const extra = Object.entries(p).filter(([k, v]) => base[k] !== v).map(([k, v]) => ` --${k} ${typeof v === 'string' && /[\s#]/.test(v) ? `"${v}"` : v}`).join('');
+  const extra = Object.entries(p).filter(([k, v]) => base[k] !== v && !['esqueleto', 'imagen'].includes(k)).map(([k, v]) => ` --${k} ${typeof v === 'string' && /[\s#]/.test(v) ? `"${v}"` : v}`).join('');
   const nombre = (preset || gen.id).replace(/[^a-z0-9_-]/gi, '_');
   $('cmd').textContent = `node herramientas/generar.mjs ${gen.id}${preset ? ' --preset ' + preset : ''}${extra} --salida modelos/${nombre}.glb`;
 }
@@ -392,7 +394,7 @@ async function usarFoto(archivo) {
       localStorage.setItem('estudio3d:foto', c.toDataURL('image/png'));
     } catch {}
     aRelieve();
-    estadoFoto(claudeVe ? 'Hecho: tu imagen ya es un relieve 3D. Si es un animal, una persona o un tractor, pulsa «Reconocer con Claude» para obtener un modelo con esqueleto.' : 'Hecho: tu imagen ya es un relieve 3D. Ajusta el volumen y la tolerancia del fondo si el contorno no es correcto.');
+    estadoFoto(claudeVe ? 'Hecho: tu imagen ya es un relieve 3D. Pulsa «Crear con Claude» para que lo reconozca y le ponga esqueleto y animaciones.' : 'Hecho: tu imagen ya es un relieve 3D. Ajusta el volumen y la tolerancia del fondo si el contorno no es correcto.');
   } catch (e) { estadoFoto('No se pudo abrir la imagen: ' + e.message); }
 }
 function aRelieve() {
@@ -445,25 +447,46 @@ function limpiarCambios(g, cambiosIA = {}) {
   }
   return r;
 }
+const MOVIMIENTOS = ['balanceo', 'ondular', 'aletear', 'girar', 'asentir', 'fijo'];
+function limpiarEsqueleto(lista) {
+  if (!Array.isArray(lista)) return null;
+  const vistos = new Set(), r = [];
+  for (const h of lista.slice(0, 30)) {
+    if (!h || !Number.isFinite(+h.x) || !Number.isFinite(+h.y)) continue;
+    let n = String(h.nombre || 'Hueso').normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w]+/g, '_').replace(/^(\d)/, 'H_$1').slice(0, 40) || 'Hueso';
+    if (n === 'Root') n = 'Base';
+    while (vistos.has(n)) n += '_b';
+    vistos.add(n);
+    r.push({ nombre: n, padre: h.padre ? String(h.padre).normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[^\w]+/g, '_') : null, x: Math.min(1, Math.max(0, +h.x)), y: Math.min(1, Math.max(0, +h.y)), movimiento: MOVIMIENTOS.includes(h.movimiento) ? h.movimiento : 'balanceo', fuerza: Math.min(1, Math.max(0, Number.isFinite(+h.fuerza) ? +h.fuerza : 0.5)) });
+  }
+  for (const h of r) if (h.padre && !vistos.has(h.padre)) h.padre = null;
+  return r.length ? r : null;
+}
 $('aClaude').onclick = async () => {
   const b = $('aClaude');
   if (control_) { control_.abort(); return; }
   const c = foto || obtenerImagen('ejemplo');
   const blob = await new Promise((ok) => c.toBlob(ok, 'image/png'));
   control_ = new AbortController(); b.textContent = 'Cancelar'; estadoFoto('Claude está mirando la imagen…');
-  const prompt = 'Eres el asistente de un estudio que genera modelos 3D con esqueleto y animaciones para videojuegos realistas.\n' +
-    'Mira la imagen adjunta (la foto que el usuario quiere convertir en modelo 3D) y elige del catálogo el generador que mejor la reproduce. ' +
-    'Ajusta el preset y las medidas y proporciones REALES del animal o persona (en metros: largo, altura de patas, cuello, cabeza...; en personas usa "proporcion" cercana a 0, realista), sus opciones y TODOS los colores (#rrggbb). ' +
-    'La propia foto se proyectará después como textura sobre el modelo, así que lo más importante es que la forma y las proporciones coincidan con la foto.\n' +
-    'Indica también: "caja": [x0, y0, x1, y1], el rectángulo que ocupa el animal o persona en la foto en fracciones de 0 a 1 (origen arriba a la izquierda); ' +
-    '"vista": "lateral" si se ve de lado, "frontal" si se ve de frente, u "otra"; y "cabeza": "izquierda" o "derecha" según en qué lado de la foto esté la cabeza (solo en vista lateral).\n' +
-    'Si lo que aparece no encaja con ningún generador del catálogo (un objeto, un edificio, un logotipo, un dibujo plano...), responde con "generador": "relieve" y "cambios": {}.\n' +
-    'Responde SOLO con un objeto JSON con esta forma: {"generador": "id", "preset": "nombre del preset o null", "cambios": {"idParametro": valor}, "caja": [0.1, 0.2, 0.9, 0.95], "vista": "lateral", "cabeza": "derecha", "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has ajustado"}\n\n' +
+  const prompt = 'Eres el motor de un estudio que convierte una foto en un modelo 3D realista, con esqueleto y animaciones, para videojuegos.\n' +
+    'Mira la imagen adjunta e identifica el sujeto principal (animal, ave, persona u objeto) e ignora el fondo.\n' +
+    'A) Si es un animal de cuatro patas, un ave o una persona, elige ese generador del catálogo y ajusta preset, medidas y proporciones REALES (en metros; en personas "proporcion" cercana a 0), opciones y TODOS los colores (#rrggbb). La foto se proyectará como piel y la silueta se ajustará a la foto.\n' +
+    'B) Si es cualquier otra cosa (objeto, planta, vehículo, criatura fantástica, personaje dibujado...), usa "generador": "relieve" y diseña su esqueleto en "esqueleto": una lista de huesos {"nombre", "padre" (nombre de otro hueso o null para la base), "x", "y" (posición de la articulación en la foto, fracciones 0-1 desde arriba a la izquierda), "movimiento" ("balanceo", "ondular", "aletear", "girar", "asentir" o "fijo"), "fuerza" (0-1)}. ' +
+    'Pon los huesos en las partes que se moverían de verdad: base y tronco de un árbol y sus ramas principales; mástil y tela de una bandera (ondular); cuerpo, cuello, cabeza, alas y cola de una criatura; hélices o ruedas (girar). Entre 3 y 20 huesos, cada cadena de la base hacia la punta. En "cambios" indica "altura" (altura real en metros) y "grosor" (volumen de 0.05 plano a 0.8 muy redondeado).\n' +
+    'Indica siempre "caja": [x0, y0, x1, y1] (el rectángulo del sujeto en fracciones de la foto), "vista" ("lateral", "frontal" u "otra") y "cabeza" ("izquierda" o "derecha", en vista lateral).\n' +
+    'Responde SOLO con un objeto JSON: {"generador": "id", "preset": "nombre o null", "cambios": {"idParametro": valor}, "esqueleto": [ ... ] o null, "caja": [x0, y0, x1, y1], "vista": "lateral", "cabeza": "derecha", "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has hecho"}\n\n' +
     'Catálogo:\n' + JSON.stringify(catalogo());
   try {
     const r = await muestra.json(prompt, { images: [blob], signal: control_.signal });
     const g = porId(String(r?.generador || ''));
-    if (!g || g.id === 'relieve') { aRelieve(); estadoFoto((r?.explicacion ? r.explicacion + ' ' : '') + 'He creado un relieve 3D a partir de la silueta.'); }
+    if (!g || g.id === 'relieve') {
+      const huesos = limpiarEsqueleto(r?.esqueleto);
+      aRelieve();
+      const rel = porId('relieve');
+      cambios = { ...cambios, ...limpiarCambios(rel, r?.cambios), imagen: foto ? 'foto' : 'ejemplo', esqueleto: huesos ? JSON.stringify(huesos) : '' };
+      nombreAnimActiva = null; todo();
+      estadoFoto((r?.explicacion ? r.explicacion + ' ' : '') + (huesos ? `Le he puesto un esqueleto a medida de ${huesos.length} huesos («Animar»).` : 'He creado la figura 3D a partir de la silueta.'));
+    }
     else {
       gen = g; preset = g.presets?.[r.preset] ? r.preset : (g.presets ? Object.keys(g.presets)[0] : null);
       const caja = Array.isArray(r.caja) && r.caja.length === 4 && r.caja.every((x) => Number.isFinite(+x)) ? r.caja.map((x) => Math.min(1, Math.max(0, +x))) : null;
@@ -473,11 +496,11 @@ $('aClaude').onclick = async () => {
       estadoFoto((r.explicacion || `Reconocido como ${g.nombre}.`) + (piel.activa ? ' Lo he pintado con tu foto para que tenga su pelaje real.' : '') + ' Puedes retocarlo abajo antes de descargarlo.');
     }
   } catch (e) {
-    const t = { cancelled: '', not_granted: 'No has dado permiso para usar Claude en esta página.', rate_limited: 'Has hecho muchas peticiones seguidas. Espera un poco y vuelve a probar.', image_rejected: 'Claude no puede leer esa imagen. Prueba con otro archivo.', invalid_json: 'La respuesta no se pudo interpretar. Vuelve a pulsar «Reconocer con Claude».', refused: 'Claude no ha querido analizar esta imagen.' };
+    const t = { cancelled: '', not_granted: 'No has dado permiso para usar Claude en esta página.', rate_limited: 'Has hecho muchas peticiones seguidas. Espera un poco y vuelve a probar.', image_rejected: 'Claude no puede leer esa imagen. Prueba con otro archivo.', invalid_json: 'La respuesta no se pudo interpretar. Vuelve a pulsar «Crear con Claude».', refused: 'Claude no ha querido analizar esta imagen.' };
     estadoFoto(t[e?.code] ?? 'No se pudo analizar la imagen. Inténtalo de nuevo.');
     if (['not_granted', 'sampling_disabled', 'images_unavailable'].includes(e?.code)) b.hidden = true;
   }
-  control_ = null; b.textContent = 'Reconocer con Claude';
+  control_ = null; b.textContent = 'Crear con Claude';
 };
 
 // Recuperar la última imagen usada en este navegador
@@ -489,7 +512,7 @@ if (!foto && cambios.imagen === 'foto') cambios.imagen = 'ejemplo';
 $('pielFoto').disabled = !foto;
 $('pielFoto').onchange = (e) => {
   piel.activa = e.target.checked;
-  if (piel.activa && !PIEL_GENERADORES[gen.id]) estadoFoto('Elige un animal, un ave o una persona (o pulsa «Reconocer con Claude») para pintarlo con la foto.');
+  if (piel.activa && !PIEL_GENERADORES[gen.id]) estadoFoto('Elige un animal, un ave o una persona (o pulsa «Crear con Claude») para pintarlo con la foto.');
   reconstruir();
 };
 

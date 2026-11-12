@@ -81,7 +81,7 @@ export function prepararFoto(foto, { caja = null, tolerancia = 0.08 } = {}) {
   og.putImageData(od, 0, 0);
   g.clearRect(0, 0, out.width, out.height);
   g.imageSmoothingEnabled = true; g.drawImage(sc, 0, 0, out.width, out.height); g.drawImage(objeto, 0, 0);
-  return { canvas: out, cabeza };
+  return { canvas: out, cabeza, mascara: original, mw: sw, mh: sh };
 }
 
 /**
@@ -107,6 +107,54 @@ export function proyectar(objeto, foto, { vista = 'lateral', cabeza = 'derecha' 
     g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
     g.clearGroups();
     o.material = mat;
+  }
+  return objeto;
+}
+
+/**
+ * Ajusta la silueta del modelo (vista lateral) a la de la foto: el lomo, el cuello, la cabeza y la cola
+ * suben o bajan para seguir el contorno superior real. Se hace en la pose de reposo, antes de animar.
+ */
+export function ajustarSilueta(objeto, prep, { cabeza = 'derecha', fuerza = 1 } = {}) {
+  objeto.updateMatrixWorld(true);
+  const mallas = []; objeto.traverse((o) => { if (o.isMesh) mallas.push(o); });
+  const caja = new THREE.Box3(), v = new THREE.Vector3();
+  for (const o of mallas) { const p = o.geometry.attributes.position; for (let i = 0; i < p.count; i++) caja.expandByPoint(v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld)); }
+  const t = caja.getSize(new THREE.Vector3()), B = 48;
+  const uDe = (z) => { const u = (z - caja.min.z) / (t.z || 1); return cabeza === 'izquierda' ? 1 - u : u; };
+  // Contorno superior de la foto (en metros del modelo) por columnas
+  const { mascara: m, mw, mh } = prep, fotoTop = new Float32Array(B).fill(NaN);
+  for (let b = 0; b < B; b++) {
+    const x0 = Math.floor((b / B) * mw), x1 = Math.max(x0 + 1, Math.floor(((b + 1) / B) * mw));
+    let top = mh;
+    for (let x = x0; x < x1; x++) for (let y = 0; y < mh; y++) if (m[y * mw + x]) { top = Math.min(top, y); break; }
+    if (top < mh) fotoTop[b] = caja.min.y + (1 - top / mh) * t.y;
+  }
+  // Contorno superior del modelo y centro de cada columna
+  const modTop = new Float32Array(B).fill(-Infinity), modBot = new Float32Array(B).fill(Infinity);
+  for (const o of mallas) { const p = o.geometry.attributes.position; for (let i = 0; i < p.count; i++) { v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld); const b = Math.min(B - 1, Math.max(0, Math.floor(uDe(v.z) * B))); modTop[b] = Math.max(modTop[b], v.y); modBot[b] = Math.min(modBot[b], v.y); } }
+  const yc = caja.min.y + t.y * 0.45;
+  let esc = new Float32Array(B).fill(1);
+  for (let b = 0; b < B; b++) {
+    if (!Number.isFinite(fotoTop[b]) || !Number.isFinite(modTop[b]) || modTop[b] - yc < t.y * 0.04) continue;
+    esc[b] = Math.min(1.6, Math.max(0.55, (fotoTop[b] - yc) / (modTop[b] - yc)));
+  }
+  // Suavizado entre columnas vecinas
+  for (let it = 0; it < 3; it++) { const e = esc.slice(); for (let b = 0; b < B; b++) e[b] = (esc[Math.max(0, b - 1)] + 2 * esc[b] + esc[Math.min(B - 1, b + 1)]) / 4; esc = e; }
+  const inv = new THREE.Matrix4();
+  for (const o of mallas) {
+    const p = o.geometry.attributes.position; inv.copy(o.matrixWorld).invert();
+    for (let i = 0; i < p.count; i++) {
+      v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld);
+      if (v.y <= yc) continue;
+      const f = uDe(v.z) * B - 0.5, b0 = Math.min(B - 1, Math.max(0, Math.floor(f))), b1 = Math.min(B - 1, b0 + 1), w = Math.min(1, Math.max(0, f - b0));
+      const s = 1 + ((esc[b0] * (1 - w) + esc[b1] * w) - 1) * fuerza;
+      v.y = yc + (v.y - yc) * s;
+      v.applyMatrix4(inv); p.setXYZ(i, v.x, v.y, v.z);
+    }
+    p.needsUpdate = true; o.geometry.computeVertexNormals(); o.geometry.computeBoundingSphere();
+    const nor = o.geometry.attributes.normal;
+    for (let i = 0; i < nor.count; i++) { v.fromBufferAttribute(nor, i); if (v.lengthSq() < 1e-12) v.set(0, 1, 0); else v.normalize(); nor.setXYZ(i, v.x, v.y, v.z); }
   }
   return objeto;
 }

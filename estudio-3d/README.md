@@ -12,16 +12,21 @@ Hay dos formas de usarlo:
 Arriba del todo en la app está **«Desde una foto o dibujo»**: elige una imagen, arrástrala o pégala (Ctrl+V). Hay tres caminos:
 
 - **Convertir en relieve 3D** (funciona siempre, sin conexión): separa el objeto del fondo, lo «infla» para darle volumen y usa la propia imagen como textura, por delante y por detrás. Va muy bien con dibujos, objetos, escudos, carteles, plantas, logotipos y personajes 2D. Puedes ajustar el volumen, el detalle, la tolerancia del fondo y añadir una peana. Animaciones: Balanceo, Girar, Flotar y Rebotar. Funciona mejor con fondo liso o PNG transparente.
-- **Reconocer con Claude** (aparece al abrir la app dentro de Claude): Claude mira la foto y elige el modelo que mejor encaja (por ejemplo «vaca marrón de cara blanca»), con forma, opciones y colores parecidos. Así el resultado **conserva el esqueleto y todas las animaciones**. Si no encaja con nada, hace un relieve.
+- **Crear con Claude** (aparece al abrir la app dentro de Claude): ver el apartado siguiente.
 - **Usar sus colores**: copia los colores principales de la foto al modelo que tengas elegido.
 
 Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D completa por todos sus lados.
 
-## La foto como piel del modelo (con Claude)
+## Crear con Claude: de una foto a un modelo con esqueleto
 
-Al pulsar **«Reconocer con Claude»**, Claude mira tu foto y devuelve el tipo de modelo con sus medidas reales, dónde está el animal en la foto y desde qué lado está hecha. El estudio crea el modelo con esqueleto y **lo pinta con tu propia foto** (casilla «Pintar el modelo con la foto»): el pelaje, las manchas y los colores son los de la foto. El fondo se separa solo (aunque tenga varios colores, como cielo y prado) y se rellena con colores del propio animal para que no se cuele en los bordes.
+Elige una foto y pulsa **«Crear con Claude»** (dentro de claude.ai). Claude reconoce el sujeto, sea lo que sea, y el estudio lo separa del fondo (aunque el fondo tenga varios colores) y lo construye:
 
-Funciona mejor con fotos de lado para animales y aves, y de frente para personas. La forma sigue siendo la del generador, así que el realismo está en la piel. Para que la forma también sea fotográfica hace falta una malla de IA (siguiente apartado).
+- **Animal de cuatro patas, ave o persona** → modelo con su esqueleto completo y todas sus animaciones, con las medidas reales que calcula Claude. Además **se pinta con tu foto** (pelaje, manchas y colores reales) y, en animales y aves, **la silueta se ajusta a la de la foto** (lomo, cuello, cabeza).
+- **Cualquier otra cosa** (objeto, planta, vehículo, criatura fantástica, personaje dibujado...) → figura 3D con la foto como textura y un **esqueleto a medida diseñado por Claude**: coloca los huesos donde algo se movería de verdad (tronco y ramas, mástil y tela, cuello y alas, hélices...) y elige el movimiento de cada parte (balancearse, ondular, aletear, girar, asentir o quedarse fijo). Animaciones «Animar» y «Animar_rapido», más balanceo, giro, flotar y rebote.
+
+Funciona mejor con fotos de lado para animales y aves, y de frente para personas y objetos.
+
+**Límite honesto:** el realismo está en la piel (la foto) y en la silueta. La forma sigue construyéndose con piezas, y la cara oculta de la foto se rellena por simetría. Para mallas esculpidas de calidad fotográfica por todos los lados hacen falta modelos de IA 3D especializados (siguiente apartado).
 
 ## Modelos realistas: IA + esqueleto automático
 

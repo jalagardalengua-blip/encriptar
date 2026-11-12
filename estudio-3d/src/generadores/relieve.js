@@ -26,6 +26,8 @@ export default {
     { id: 'trasera', nombre: 'Parte de atrás', tipo: 'opcion', opciones: [['espejo', 'La misma imagen'], ['color', 'Un solo color']], def: 'espejo' },
     { id: 'peana', nombre: 'Peana para que se sostenga', tipo: 'si', def: false },
     { id: 'colorTrasero', nombre: 'Atrás y peana', tipo: 'color', def: '#6b5a48' },
+    // Esqueleto a medida (lo diseña Claude): JSON [{nombre, padre, x, y, movimiento, fuerza}] con x, y en fracciones de la foto
+    { id: 'esqueleto', nombre: 'Esqueleto a medida', tipo: 'oculto', def: '' },
   ],
 
   construir(p) {
@@ -144,8 +146,57 @@ export default {
     tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4; tex.name = 'Imagen';
     const frente = new THREE.MeshStandardMaterial({ name: 'imagen', map: tex, roughness: 0.75, metalness: 0 });
     const M = crearMateriales({ trasera: { color: p.colorTrasero, rugosidad: 0.8 } });
-    const malla = new THREE.Mesh(g, color ? [frente, M.lista[0]] : frente);
-    malla.name = 'Relieve_Malla'; malla.castShadow = malla.receiveShadow = true;
+    // Esqueleto a medida (si Claude lo ha diseñado)
+    let def = null;
+    if (p.esqueleto) { try { def = JSON.parse(p.esqueleto); } catch { def = null; } }
+    if (!Array.isArray(def) || !def.length) def = null;
+    const materiales = color ? [frente, M.lista[0]] : frente;
+    const malla = def ? new THREE.SkinnedMesh(g, materiales) : new THREE.Mesh(g, materiales);
+    malla.name = 'Relieve_Malla'; malla.castShadow = malla.receiveShadow = true; malla.frustumCulled = false;
+    let huesos = null;
+    if (def) {
+      const aModelo = (fx, fy) => new THREE.Vector3((fx * W - cx) * s, (by1 - fy * H) * s, 0);
+      const raizH = new THREE.Bone(); raizH.name = 'Root';
+      const info = new Map([['Root', { hueso: raizH, pos: new THREE.Vector3(), prof: 0, hijos: [] }]]);
+      let pendientes = def.slice(), vueltas = 0;
+      while (pendientes.length && vueltas++ < 50) {
+        pendientes = pendientes.filter((h) => {
+          const padre = info.get(h.padre) || (!h.padre || !def.some((x) => x.nombre === h.padre) ? info.get('Root') : null);
+          if (!padre) return true;
+          const b = new THREE.Bone(); b.name = h.nombre;
+          const pos = aModelo(h.x, h.y); b.position.copy(pos).sub(padre.pos); padre.hueso.add(b);
+          const reg = { hueso: b, pos, prof: padre.prof + 1, hijos: [], def: h, padre }; padre.hijos.push(reg); info.set(h.nombre, reg);
+          return false;
+        });
+      }
+      huesos = [...info.values()];
+      // Pesos: cada vértice sigue a los huesos más cercanos (en el plano de la imagen)
+      const seg = huesos.map((r) => {
+        if (r.hueso === raizH) return null;
+        let b;
+        if (r.hijos.length === 1) b = r.hijos[0].pos.clone();
+        else if (r.hijos.length > 1) b = r.pos.clone().add(r.hijos.reduce((acc, h) => acc.add(h.pos), new THREE.Vector3()).divideScalar(r.hijos.length).sub(r.pos).multiplyScalar(0.5));
+        else b = r.pos.clone().add(r.pos.clone().sub(r.padre.pos).multiplyScalar(r.padre.hueso === raizH ? 0.3 : 0.6));
+        return [r.pos, b];
+      });
+      const n = g.attributes.position.count, SI = new Uint16Array(n * 4), SW = new Float32Array(n * 4);
+      const eps2 = (p.altura * 0.01) ** 2, a2 = new THREE.Vector2(), b2 = new THREE.Vector2(), q = new THREE.Vector2(), d = new THREE.Vector2();
+      for (let i = 0; i < n; i++) {
+        q.set(g.attributes.position.getX(i), g.attributes.position.getY(i));
+        const w = seg.map((sg, k) => {
+          if (!sg) return [k, 0];
+          a2.set(sg[0].x, sg[0].y); b2.set(sg[1].x, sg[1].y); d.subVectors(b2, a2);
+          const L2 = d.lengthSq(), t = L2 ? Math.max(0, Math.min(1, q.clone().sub(a2).dot(d) / L2)) : 0;
+          const d2 = q.distanceToSquared(a2.clone().addScaledVector(d, t));
+          return [k, 1 / (d2 + eps2) ** 3];
+        }).sort((x, y) => y[1] - x[1]).slice(0, 4);
+        const tot = w.reduce((acc, x) => acc + x[1], 0) || 1;
+        w.forEach(([k, x], j) => { SI[i * 4 + j] = k; SW[i * 4 + j] = x / tot; });
+      }
+      g.setAttribute('skinIndex', new THREE.Uint16BufferAttribute(SI, 4));
+      g.setAttribute('skinWeight', new THREE.Float32BufferAttribute(SW, 4));
+      malla.userData.raizHuesos = raizH;
+    }
 
     const raiz = new THREE.Group(); raiz.name = 'Relieve';
     const figura = pivote('Figura'); raiz.add(figura);
@@ -158,6 +209,11 @@ export default {
       figura.position.y = alto * 0.6;
     }
     figura.add(malla);
+    if (huesos) {
+      figura.add(malla.userData.raizHuesos); delete malla.userData.raizHuesos;
+      raiz.updateMatrixWorld(true);
+      malla.bind(new THREE.Skeleton(huesos.map((r) => r.hueso)));
+    }
 
     const animaciones = [
       clip('Balanceo', 2.4, raiz, (f, P2) => { P2.rot('Figura', 0.03 * onda(f, 1, 0.25), 0.15 * onda(f, 1, 0.1), 0.06 * onda(f)); }),
@@ -170,6 +226,21 @@ export default {
         P2.esc('Figura', 1 + 0.12 * aplasta, 1 - 0.15 * aplasta + 0.05 * salto, 1 + 0.12 * aplasta);
       }),
     ];
+    if (huesos) {
+      // Movimiento de cada parte según lo que decidió Claude
+      const mover = (f, P2, amp) => {
+        for (const r of huesos) {
+          const h = r.def; if (!h) continue;
+          const a = amp * Math.min(1, Math.max(0, +h.fuerza || 0.5));
+          if (h.movimiento === 'balanceo') P2.rot(h.nombre, 0, 0, a * 0.5 * onda(f));
+          else if (h.movimiento === 'ondular') P2.rot(h.nombre, 0, 0, a * 0.45 * onda(f, 1, -0.13 * r.prof));
+          else if (h.movimiento === 'aletear') P2.rot(h.nombre, 0, a * 1.1 * onda(f, 2) * (r.pos.x >= 0 ? 1 : -1), 0);
+          else if (h.movimiento === 'girar') P2.rot(h.nombre, 0, 0, -TAU * f);
+          else if (h.movimiento === 'asentir') P2.rot(h.nombre, a * 0.35 * onda(f, 2), 0, 0);
+        }
+      };
+      animaciones.unshift(clip('Animar', 3, raiz, (f, P2) => mover(f, P2, 1)), clip('Animar_rapido', 1.2, raiz, (f, P2) => mover(f, P2, 1.4)));
+    }
     return { objeto: raiz, animaciones };
   },
 };
