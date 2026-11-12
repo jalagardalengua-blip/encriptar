@@ -72,6 +72,15 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .colores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 14px; }
 .colores .param { grid-template-columns: 1fr auto; }
 
+.juego { padding: 12px max(16px, env(safe-area-inset-left, 0px)) 4px; border-top: 1px solid var(--linea); background: var(--panel); }
+.filas-juego { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 6px 10px; align-items: center; font-size: 13px; }
+.filas-juego select { background: var(--campo); border: 1px solid var(--linea); border-radius: 6px; padding: 3px 6px; min-width: 0; width: 100%; }
+.filas-juego input { justify-self: end; width: 18px; height: 18px; accent-color: var(--acento); }
+#estadoJuego { margin-top: 8px; font-size: 12px; }
+.pill { display: inline-block; padding: 1px 8px; border-radius: 999px; font-weight: 600; font-size: 11.5px; }
+.pill.ok { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
+.pill.atencion { background: color-mix(in srgb, var(--acento) 22%, transparent); color: var(--tinta); }
+.mut { color: var(--tinta-2); }
 .zona { display: flex; gap: 12px; align-items: center; border: 1.5px dashed var(--linea); border-radius: 10px; padding: 12px; cursor: pointer; background: var(--campo); min-height: 64px; font-size: 13px; color: var(--tinta-2); }
 .zona b { color: var(--tinta); font-weight: 600; }
 .zona:hover, .zona.encima { border-color: var(--acento); }
@@ -197,6 +206,18 @@ details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
       </section>
 
     </div>
+    <section class="juego">
+      <p class="etiqueta">Para tu juego</p>
+      <div class="filas-juego">
+        <label for="plataforma">Plataforma</label>
+        <select id="plataforma"><option value="movil">Móvil</option><option value="pc">PC / consola</option><option value="original">Sin reducir</option></select>
+        <label for="motor">Motor</label>
+        <select id="motor"><option value="godot">Godot 4</option><option value="unity">Unity</option><option value="unreal">Unreal Engine</option><option value="web">Three.js / web</option></select>
+        <label for="lods">Niveles de detalle (LOD) y guía</label>
+        <input id="lods" type="checkbox">
+      </div>
+      <p class="desc" id="estadoJuego"></p>
+    </section>
     <footer class="pie">
       <button class="boton" id="semilla" type="button" title="Misma forma, otra variación al azar">Variar</button>
       <button class="boton principal" id="exportar" type="button">Descargar .glb</button>

@@ -18,6 +18,10 @@ Herramienta para crear modelos 3D con esqueleto y animaciones y exportarlos a GL
 - Para una figura plana con la imagen como textura, el generador `relieve` funciona en la app web (no por terminal).
 - Si quiere realismo: modelo por IA (Hunyuan3D/TRELLIS) o escaneo → generador `esqueleto` (auto-rig en `src/core/autorig.js`), que usa los esqueletos y animaciones de `cuadrupedo`, `humanoide` y `ave`. Si añades huesos a esos generadores, el auto-rig los aprovecha solo.
 
+## Modelos para los juegos del usuario
+
+Genera siempre con las opciones de juego: `--plataforma movil|pc --motor <el del juego> --lods`, y copia los archivos y el LEEME a la carpeta de modelos del juego. Para móvil, menos de 8.000 triángulos y una sola llamada de dibujo (paleta).
+
 ## Convenciones
 
 - Metros, Y arriba, el modelo mira a +Z, apoya en y = 0. Lado `_L` = +X.

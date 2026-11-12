@@ -32,6 +32,19 @@ Para el máximo realismo el modelo tiene que salir de una foto con IA (o de un e
 
 Si algo se deforma raro, ajusta «Hacia dónde mira», el ajuste de cadera/patas y el de cabeza. Mallas de 600.000 triángulos tardan unos segundos. No lee GLB con compresión Draco (expórtalo sin compresión).
 
+## Listo para videojuegos
+
+En la app, la sección **«Para tu juego»** (encima del botón de descarga) prepara el modelo que estés viendo, incluido cualquier `.glb` que abras:
+
+- **Plataforma**: *Móvil* (máx. 8.000 triángulos y texturas de 1024 px), *PC / consola* (40.000 y 2048 px) o *Sin reducir*. Los modelos de IA de cientos de miles de triángulos se reducen con meshoptimizer sin perder la silueta, y conservan UV, texturas y pesos del esqueleto.
+- **Un solo material**: los modelos de colores lisos juntan todos sus materiales en una **paleta** (una textura diminuta). Una vaca pasa de 11 llamadas de dibujo a 1, clave para rebaños grandes.
+- **Texturas** a su tamaño máximo y en JPEG cuando no necesitan transparencia.
+- **Animaciones aligeradas**: se quitan los fotogramas clave redundantes.
+- **Motor**: *Godot 4* (las animaciones de bucle terminan en `-loop` y Godot las importa en bucle), *Unity*, *Unreal* o *Three.js*.
+- **Niveles de detalle (LOD)**: paquete `.zip` con el modelo (LOD0), `_LOD1` (40 %), `_LOD2` (15 %) y un `LEEME.txt` con datos de rendimiento y los pasos para importarlo en el motor elegido.
+
+Desde la terminal: `node herramientas/generar.mjs cuadrupedo --preset vaca --plataforma movil --motor godot --lods --salida juego/vaca.glb`
+
 ## Qué puede crear ahora
 
 | Generador | Presets | Esqueleto | Animaciones |

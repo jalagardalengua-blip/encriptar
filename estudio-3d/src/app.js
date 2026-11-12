@@ -7,6 +7,7 @@ import { registrarMalla, nombreMalla } from './generadores/esqueleto.js';
 import { generadores, porId } from './generadores/index.js';
 import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
 import { crearZip } from './core/zip.js';
+import { preparar, medir, veredicto, leeme, NIVELES_LOD, PLATAFORMAS } from './core/juego.js';
 import { registrarImagen, obtenerImagen, leerArchivo, paleta } from './core/imagenes.js';
 
 const $ = (id) => document.getElementById(id);
@@ -39,7 +40,7 @@ suelo.rotation.x = -Math.PI / 2; suelo.receiveShadow = true; escena.add(suelo);
 const rejilla = new THREE.GridHelper(1, 10, 0x000000, 0x000000);
 rejilla.material.transparent = true; rejilla.material.opacity = 0.08; escena.add(rejilla);
 
-let actual = null, mezclador = null, acciones = [], ayudaHuesos = null, verHuesos = false, verMalla = false;
+let actual = null, animacionesActuales = [], nombreActual = null, mezclador = null, acciones = [], ayudaHuesos = null, verHuesos = false, verMalla = false;
 const reloj = new THREE.Clock();
 
 function encuadrar(obj) {
@@ -61,7 +62,7 @@ function encuadrar(obj) {
 function poner(obj, animaciones, info) {
   if (actual) { escena.remove(actual); actual.traverse((o) => { o.geometry?.dispose(); }); }
   if (ayudaHuesos) { escena.remove(ayudaHuesos); ayudaHuesos = null; }
-  actual = obj; escena.add(obj);
+  actual = obj; animacionesActuales = animaciones; nombreActual = info || null; escena.add(obj);
   obj.traverse((o) => { if (o.isMesh) { o.castShadow = o.receiveShadow = true; } });
   mezclador = new THREE.AnimationMixer(obj);
   acciones = animaciones.map((c) => mezclador.clipAction(c));
@@ -89,7 +90,27 @@ function pintarFicha(obj, animaciones, info = '') {
     `<span>Huesos</span> <b>${huesos}</b> · <span>Materiales</span> <b>${mats.size}</b><br>` +
     `<span>Animaciones</span> <b>${animaciones.length}</b><br>` +
     `<span>Tamaño</span> <b>${t.x.toFixed(2)} × ${t.y.toFixed(2)} × ${t.z.toFixed(2)} m</b>`;
+  pintarJuego();
 }
+
+// ---------- Para tu juego ----------
+const opcJuego = leer('juego', { plataforma: 'pc', motor: 'godot', lods: true });
+function pintarJuego() {
+  if (!actual) return;
+  const m = medir(actual), av = veredicto(m, opcJuego.plataforma);
+  const p = PLATAFORMAS[opcJuego.plataforma];
+  $('estadoJuego').innerHTML = (av.length
+    ? `<span class="pill atencion">Se optimiza al exportar</span> ${av.map((x) => `<br>· ${x}`).join('')}`
+    : `<span class="pill ok">Listo para ${p.nombre}</span>`) +
+    `<br><span class="mut">Límite: ${Number.isFinite(p.tris) ? p.tris.toLocaleString('es') + ' triángulos, texturas ' + p.tex + ' px' : 'ninguno'} · ahora ${m.dibujos} ${m.dibujos === 1 ? 'llamada' : 'llamadas'} de dibujo, ${m.huesos} huesos</span>`;
+}
+for (const id of ['plataforma', 'motor']) {
+  $(id).value = opcJuego[id];
+  $(id).onchange = (e) => { opcJuego[id] = e.target.value; guardar('juego', opcJuego); pintarJuego(); };
+}
+$('lods').checked = opcJuego.lods;
+$('lods').onchange = (e) => { opcJuego.lods = e.target.checked; guardar('juego', opcJuego); $('exportar').textContent = textoExportar(); };
+const textoExportar = () => (opcJuego.lods ? 'Descargar paquete (.zip)' : 'Descargar .glb');
 
 let animActiva = -1, velocidad = 1;
 function pintarAnims(animaciones) {
@@ -263,31 +284,52 @@ const visorDescargas = () => {
   return (descargasVisor ??= window.claude.use('downloads').catch(() => null));
 };
 visorDescargas();
-async function descargar(nombre, datos) {
+/** archivos: [{ nombre, datos: ArrayBuffer|Uint8Array|string }]. Uno solo .glb sin visor → se baja tal cual; si no, en .zip */
+async function descargar(nombreZip, archivos) {
+  const bytes = (d) => (typeof d === 'string' ? new TextEncoder().encode(d) : new Uint8Array(d));
   const visor = await visorDescargas();
+  const uno = archivos.length === 1;
+  const blob = uno && !visor ? new Blob([archivos[0].datos], { type: 'model/gltf-binary' }) : crearZip(archivos.map((a) => ({ nombre: a.nombre, datos: bytes(a.datos) })));
+  const nombre = uno && !visor ? archivos[0].nombre : nombreZip;
   if (visor) {
-    const zip = crearZip([{ nombre, datos: new Uint8Array(datos) }]);
-    try { await visor.save({ filename: nombre.replace(/\.glb$/, '.zip'), data: zip }); return 'zip'; }
+    try { await visor.save({ filename: nombre, data: blob }); return 'zip'; }
     catch (e) { if (e?.code === 'declined') return 'cancelado'; throw new Error(e?.message || 'descarga no disponible'); }
   }
   const a = document.createElement('a');
-  a.href = URL.createObjectURL(new Blob([datos], { type: 'model/gltf-binary' })); a.download = nombre;
+  a.href = URL.createObjectURL(blob); a.download = nombre;
   document.body.append(a); a.click(); a.remove();
   setTimeout(() => URL.revokeObjectURL(a.href), 4000);
-  return 'glb';
+  return uno ? 'glb' : 'zip';
 }
 
+$('exportar').textContent = textoExportar();
 $('exportar').onclick = async () => {
-  const b = $('exportar'); b.disabled = true; b.textContent = 'Exportando…';
+  if (!actual) return;
+  const b = $('exportar'); b.disabled = true; b.textContent = 'Optimizando…';
+  // El modelo vuelve a su pose de reposo mientras se copia
+  const anim = animActiva; mezclador?.stopAllAction();
+  actual.traverse((o) => { if (o.isSkinnedMesh) o.skeleton.pose(); }); actual.updateMatrixWorld(true);
   try {
     const p = parametrosActuales();
-    const { objeto, animaciones } = construir(gen, p); // modelo limpio, en pose de reposo
-    const glb = await exportarGLB(objeto, animaciones);
-    const nombre = `${(preset || gen.id).replace(/[^a-z0-9_-]/gi, '_')}_${p.semilla}.glb`;
-    const r = await descargar(nombre, glb);
-    if (r !== 'cancelado') aviso(r === 'zip' ? `${nombre} guardado dentro de un .zip` : `${nombre} · ${(glb.byteLength / 1024).toFixed(0)} KB`);
+    const base = (nombreActual ? nombreActual.replace(/\.[^.]+$/, '') : gen.id === 'esqueleto' ? actual.name : `${preset || gen.id}_${p.semilla}`).replace(/[^\w-]+/g, '_');
+    const niveles = opcJuego.lods ? NIVELES_LOD : [1];
+    const archivos = [], datos = [];
+    let animsLod0 = animacionesActuales;
+    for (let i = 0; i < niveles.length; i++) {
+      const r = await preparar(actual, animacionesActuales, { plataforma: opcJuego.plataforma, motor: opcJuego.motor, nivel: niveles[i] });
+      if (i === 0) animsLod0 = r.animaciones;
+      const glb = await exportarGLB(r.objeto, r.animaciones);
+      const archivo = i ? `${base}_LOD${i}.glb` : `${base}.glb`;
+      archivos.push({ nombre: archivo, datos: glb });
+      datos.push({ archivo, bytes: glb.byteLength, ...medir(r.objeto) });
+    }
+    if (opcJuego.lods) archivos.push({ nombre: 'LEEME.txt', datos: leeme(base, datos, { ...opcJuego, animaciones: animsLod0 }) });
+    const r = await descargar(`${base}.zip`, archivos);
+    const t = datos[0];
+    if (r !== 'cancelado') aviso(`${archivos.length > 1 ? base + '.zip' : archivos[0].nombre}: ${t.tris.toLocaleString('es')} triángulos, ${(t.bytes / 1024).toFixed(0)} KB`);
   } catch (e) { console.error(e); aviso('No se pudo exportar: ' + e.message); }
-  b.disabled = false; b.textContent = 'Descargar .glb';
+  if (anim >= 0) activar(anim);
+  b.disabled = false; b.textContent = textoExportar();
 };
 
 let paraEsqueleto = false, ultimoGLB = null;
