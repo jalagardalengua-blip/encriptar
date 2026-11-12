@@ -3,6 +3,7 @@
 // Sirve para objetos, dibujos, logotipos, cartas, personajes 2D, plantas, señales...
 import * as THREE from 'three';
 import { obtenerImagen, mascara } from '../core/imagenes.js';
+import { mapaNormales } from '../core/proyeccion.js';
 import { crearMateriales, pivote } from '../core/modelo.js';
 import * as F from '../core/formas.js';
 import { clip, onda, tramo, TAU } from '../core/animacion.js';
@@ -145,6 +146,8 @@ export default {
     const tex = new THREE.CanvasTexture(img);
     tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4; tex.name = 'Imagen';
     const frente = new THREE.MeshStandardMaterial({ name: 'imagen', map: tex, roughness: 0.75, metalness: 0 });
+    const rel = new THREE.CanvasTexture(mapaNormales(img, 1.6)); rel.name = 'relieve'; rel.colorSpace = THREE.NoColorSpace;
+    frente.normalMap = rel; frente.normalScale.set(0.6, 0.6);
     const M = crearMateriales({ trasera: { color: p.colorTrasero, rugosidad: 0.8 } });
     // Esqueleto a medida (si Claude lo ha diseñado)
     let def = null;

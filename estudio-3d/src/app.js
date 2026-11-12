@@ -100,10 +100,10 @@ const PIEL_GENERADORES = { cuadrupedo: 'lateral', ave: 'lateral', humanoide: 'fr
 function aplicarPiel(objeto) {
   if (!piel.activa || !foto || !PIEL_GENERADORES[gen.id]) return;
   try {
-    pielPreparada ??= prepararFoto(foto, { caja: piel.caja });
+    pielPreparada ??= prepararFoto(foto, { caja: piel.caja, cajaCabeza: piel.cajaCabeza });
     const vista = PIEL_GENERADORES[gen.id], cabeza = piel.cabeza || pielPreparada.cabeza;
     if (vista === 'lateral') ajustarSilueta(objeto, pielPreparada, { cabeza });
-    proyectar(objeto, pielPreparada.canvas, { vista, cabeza });
+    proyectar(objeto, pielPreparada, { vista, cabeza, pelaje: gen.id !== 'humanoide' });
   } catch (e) { console.warn('No se pudo usar la foto como piel', e); }
 }
 
@@ -473,8 +473,8 @@ $('aClaude').onclick = async () => {
     'A) Si es un animal de cuatro patas, un ave o una persona, elige ese generador del catálogo y ajusta preset, medidas y proporciones REALES (en metros; en personas "proporcion" cercana a 0), opciones y TODOS los colores (#rrggbb). La foto se proyectará como piel y la silueta se ajustará a la foto.\n' +
     'B) Si es cualquier otra cosa (objeto, planta, vehículo, criatura fantástica, personaje dibujado...), usa "generador": "relieve" y diseña su esqueleto en "esqueleto": una lista de huesos {"nombre", "padre" (nombre de otro hueso o null para la base), "x", "y" (posición de la articulación en la foto, fracciones 0-1 desde arriba a la izquierda), "movimiento" ("balanceo", "ondular", "aletear", "girar", "asentir" o "fijo"), "fuerza" (0-1)}. ' +
     'Pon los huesos en las partes que se moverían de verdad: base y tronco de un árbol y sus ramas principales; mástil y tela de una bandera (ondular); cuerpo, cuello, cabeza, alas y cola de una criatura; hélices o ruedas (girar). Entre 3 y 20 huesos, cada cadena de la base hacia la punta. En "cambios" indica "altura" (altura real en metros) y "grosor" (volumen de 0.05 plano a 0.8 muy redondeado).\n' +
-    'Indica siempre "caja": [x0, y0, x1, y1] (el rectángulo del sujeto en fracciones de la foto), "vista" ("lateral", "frontal" u "otra") y "cabeza" ("izquierda" o "derecha", en vista lateral).\n' +
-    'Responde SOLO con un objeto JSON: {"generador": "id", "preset": "nombre o null", "cambios": {"idParametro": valor}, "esqueleto": [ ... ] o null, "caja": [x0, y0, x1, y1], "vista": "lateral", "cabeza": "derecha", "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has hecho"}\n\n' +
+    'Indica siempre "caja": [x0, y0, x1, y1] (el rectángulo del sujeto en fracciones de la foto), "cajaCabeza": [x0, y0, x1, y1] (el rectángulo de la cabeza, sin el cuello, si tiene), "vista" ("lateral", "frontal" u "otra") y "cabeza" ("izquierda" o "derecha", en vista lateral).\n' +
+    'Responde SOLO con un objeto JSON: {"generador": "id", "preset": "nombre o null", "cambios": {"idParametro": valor}, "esqueleto": [ ... ] o null, "caja": [x0, y0, x1, y1], "cajaCabeza": [x0, y0, x1, y1], "vista": "lateral", "cabeza": "derecha", "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has hecho"}\n\n' +
     'Catálogo:\n' + JSON.stringify(catalogo());
   try {
     const r = await muestra.json(prompt, { images: [blob], signal: control_.signal });
@@ -490,7 +490,8 @@ $('aClaude').onclick = async () => {
     else {
       gen = g; preset = g.presets?.[r.preset] ? r.preset : (g.presets ? Object.keys(g.presets)[0] : null);
       const caja = Array.isArray(r.caja) && r.caja.length === 4 && r.caja.every((x) => Number.isFinite(+x)) ? r.caja.map((x) => Math.min(1, Math.max(0, +x))) : null;
-      piel = { activa: r.vista !== 'otra' && !!foto, caja, cabeza: ['izquierda', 'derecha'].includes(r.cabeza) ? r.cabeza : null };
+      const cajaCabeza = Array.isArray(r.cajaCabeza) && r.cajaCabeza.length === 4 && r.cajaCabeza.every((x) => Number.isFinite(+x)) ? r.cajaCabeza.map((x) => Math.min(1, Math.max(0, +x))) : null;
+      piel = { activa: r.vista !== 'otra' && !!foto, caja, cajaCabeza, cabeza: ['izquierda', 'derecha'].includes(r.cabeza) ? r.cabeza : null };
       $('pielFoto').checked = piel.activa; pielPreparada = null;
       cambios = limpiarCambios(g, r.cambios); nombreAnimActiva = null; todo();
       estadoFoto((r.explicacion || `Reconocido como ${g.nombre}.`) + (piel.activa ? ' Lo he pintado con tu foto para que tenga su pelaje real.' : '') + ' Puedes retocarlo abajo antes de descargarlo.');

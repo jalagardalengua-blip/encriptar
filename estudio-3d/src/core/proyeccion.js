@@ -8,7 +8,7 @@ import { mascara } from './imagenes.js';
  * (así el fondo no se cuela en los bordes del modelo). Devuelve { canvas, cabeza }.
  * caja: [x0, y0, x1, y1] en fracciones (opcional, p. ej. la que da Claude) si no se puede quitar el fondo.
  */
-export function prepararFoto(foto, { caja = null, tolerancia = 0.08 } = {}) {
+export function prepararFoto(foto, { caja = null, cajaCabeza = null, tolerancia = 0.08 } = {}) {
   const esc = Math.min(1, 360 / Math.max(foto.width, foto.height));
   const pc = document.createElement('canvas');
   pc.width = Math.max(8, Math.round(foto.width * esc)); pc.height = Math.max(8, Math.round(foto.height * esc));
@@ -81,32 +81,87 @@ export function prepararFoto(foto, { caja = null, tolerancia = 0.08 } = {}) {
   og.putImageData(od, 0, 0);
   g.clearRect(0, 0, out.width, out.height);
   g.imageSmoothingEnabled = true; g.drawImage(sc, 0, 0, out.width, out.height); g.drawImage(objeto, 0, 0);
-  return { canvas: out, cabeza, mascara: original, mw: sw, mh: sh };
+  // Recuadro de la cabeza dentro del recorte (fracciones, y desde arriba): el de Claude o uno estimado
+  let cab;
+  if (cajaCabeza && cajaCabeza.length === 4) {
+    const fx = (v) => Math.min(1, Math.max(0, (v * W - x0) / (x1 - x0 + 1))), fy = (v) => Math.min(1, Math.max(0, (v * H - y0) / (y1 - y0 + 1)));
+    cab = [fx(cajaCabeza[0]), fy(cajaCabeza[1]), fx(cajaCabeza[2]), fy(cajaCabeza[3])];
+  } else {
+    let arriba = 1; const tira = cabeza === 'izquierda' ? [0, 0.28] : [0.72, 1];
+    for (let y = 0; y < sh && arriba === 1; y++) for (let x = Math.floor(tira[0] * sw); x < Math.ceil(tira[1] * sw); x++) if (original[y * sw + x]) { arriba = y / sh; break; }
+    cab = [tira[0], arriba, tira[1], Math.min(1, arriba + 0.5)];
+  }
+  return { canvas: out, relieve: mapaNormales(out, 2.2), cabeza, mascara: original, mw: sw, mh: sh, cajaCabeza: cab };
+}
+
+/** Mapa de normales a partir de la luminosidad de la imagen: da relieve fino (pelo, arrugas, vetas) */
+export function mapaNormales(img, fuerza = 2) {
+  const w = img.width, h = img.height;
+  const datos = img.getContext('2d').getImageData(0, 0, w, h).data;
+  const L = new Float32Array(w * h);
+  for (let i = 0; i < w * h; i++) L[i] = (0.299 * datos[i * 4] + 0.587 * datos[i * 4 + 1] + 0.114 * datos[i * 4 + 2]) / 255;
+  const c = document.createElement('canvas'); c.width = w; c.height = h;
+  const g = c.getContext('2d'), out = g.createImageData(w, h);
+  const at = (x, y) => L[Math.min(h - 1, Math.max(0, y)) * w + Math.min(w - 1, Math.max(0, x))];
+  for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+    const dx = (at(x + 1, y - 1) + 2 * at(x + 1, y) + at(x + 1, y + 1) - at(x - 1, y - 1) - 2 * at(x - 1, y) - at(x - 1, y + 1)) * fuerza;
+    const dy = (at(x - 1, y + 1) + 2 * at(x, y + 1) + at(x + 1, y + 1) - at(x - 1, y - 1) - 2 * at(x, y - 1) - at(x + 1, y - 1)) * fuerza;
+    const n = Math.hypot(dx, dy, 1), k = (y * w + x) * 4;
+    out.data[k] = (-dx / n * 0.5 + 0.5) * 255; out.data[k + 1] = (dy / n * 0.5 + 0.5) * 255; out.data[k + 2] = (1 / n * 0.5 + 0.5) * 255; out.data[k + 3] = 255;
+  }
+  g.putImageData(out, 0, 0);
+  return c;
 }
 
 /**
  * Proyecta la foto sobre el modelo. vista: 'lateral' (animales, aves) o 'frontal' (personas).
  * cabeza: en qué lado de la foto está la cabeza ('izquierda' | 'derecha'), solo en vista lateral.
  */
-export function proyectar(objeto, foto, { vista = 'lateral', cabeza = 'derecha' } = {}) {
+export function proyectar(objeto, prep, { vista = 'lateral', cabeza = 'derecha', pelaje = true } = {}) {
+  const foto = prep.canvas || prep;
   objeto.updateMatrixWorld(true);
   const caja = new THREE.Box3(), v = new THREE.Vector3();
   const mallas = []; objeto.traverse((o) => { if (o.isMesh) mallas.push(o); });
   for (const o of mallas) { const p = o.geometry.attributes.position; for (let i = 0; i < p.count; i++) caja.expandByPoint(v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld)); }
   const t = caja.getSize(new THREE.Vector3());
-  const tex = new THREE.CanvasTexture(foto); tex.colorSpace = THREE.SRGBColorSpace; tex.name = 'foto'; tex.anisotropy = 4;
-  const mat = new THREE.MeshStandardMaterial({ name: 'piel_foto', map: tex, roughness: 0.82, metalness: 0 });
+  const tex = new THREE.CanvasTexture(foto); tex.colorSpace = THREE.SRGBColorSpace; tex.name = 'foto'; tex.anisotropy = 8;
+  const mat = new THREE.MeshPhysicalMaterial({ name: 'piel_foto', map: tex, roughness: 0.86, metalness: 0 });
+  if (prep.relieve) { const n = new THREE.CanvasTexture(prep.relieve); n.name = 'relieve'; n.colorSpace = THREE.NoColorSpace; mat.normalMap = n; mat.normalScale.set(0.42, 0.42); }
+  if (pelaje) { mat.sheen = 0.35; mat.sheenRoughness = 0.6; mat.sheenColor.setRGB(0.35, 0.33, 0.3); }
+
+  // Peso de «cabeza» de cada vértice (huesos de la cabeza y orejas) y zona de la cabeza del modelo
+  const esCabeza = (n) => n === 'Head' || /^Ear_/.test(n);
+  const pesoCab = new Map(), cajaCab = new THREE.Box3();
   for (const o of mallas) {
-    const g = o.geometry, p = g.attributes.position, uv = new Float32Array(p.count * 2);
+    if (!o.isSkinnedMesh || vista !== 'lateral' || !prep.cajaCabeza) continue;
+    const g = o.geometry, SI = g.attributes.skinIndex, SW = g.attributes.skinWeight, nombres = o.skeleton.bones.map((b) => b.name);
+    const w = new Float32Array(g.attributes.position.count);
+    for (let i = 0; i < w.length; i++) { let s = 0; for (let k = 0; k < 4; k++) if (esCabeza(nombres[SI.getComponent(i, k)])) s += SW.getComponent(i, k); w[i] = s; if (s > 0.6) cajaCab.expandByPoint(v.fromBufferAttribute(g.attributes.position, i).applyMatrix4(o.matrixWorld)); }
+    pesoCab.set(o, w);
+  }
+  const tc = cajaCab.getSize(new THREE.Vector3()), [c0, r0, c1, r1] = prep.cajaCabeza || [0, 0, 1, 1];
+  for (const o of mallas) {
+    const g = o.geometry, p = g.attributes.position, uv = new Float32Array(p.count * 2), w = pesoCab.get(o);
     for (let i = 0; i < p.count; i++) {
       v.fromBufferAttribute(p, i).applyMatrix4(o.matrixWorld);
       let u = vista === 'frontal' ? (v.x - caja.min.x) / (t.x || 1) : (v.z - caja.min.z) / (t.z || 1);
       if (vista !== 'frontal' && cabeza === 'izquierda') u = 1 - u;
-      uv[i * 2] = Math.min(1, Math.max(0, u)); uv[i * 2 + 1] = Math.min(1, Math.max(0, (v.y - caja.min.y) / (t.y || 1)));
+      let vv = (v.y - caja.min.y) / (t.y || 1);
+      if (w && w[i] > 0 && !cajaCab.isEmpty()) {
+        // La cara de la foto sobre la cabeza del modelo
+        const tz = (v.z - cajaCab.min.z) / (tc.z || 1), ty = (v.y - cajaCab.min.y) / (tc.y || 1);
+        const uc = cabeza === 'izquierda' ? c1 - tz * (c1 - c0) : c0 + tz * (c1 - c0);
+        const vc = 1 - (r1 - ty * (r1 - r0));
+        const k = Math.min(1, w[i] * 1.15);
+        u = u * (1 - k) + uc * k; vv = vv * (1 - k) + vc * k;
+      }
+      uv[i * 2] = Math.min(1, Math.max(0, u)); uv[i * 2 + 1] = Math.min(1, Math.max(0, vv));
     }
     g.setAttribute('uv', new THREE.BufferAttribute(uv, 2));
-    g.clearGroups();
-    o.material = mat;
+    // Ojos, ollares, pezuñas y cuernos conservan su material (brillo y color propios)
+    const propio = (m) => ['ojo', 'brillo', 'nariz', 'pezuna', 'cuerno', 'ojoBlanco', 'boca'].includes(m?.name);
+    if (Array.isArray(o.material) && o.material.some(propio)) o.material = o.material.map((m) => (propio(m) ? m : mat));
+    else { g.clearGroups(); o.material = mat; }
   }
   return objeto;
 }

@@ -163,8 +163,28 @@ export default {
     m.parte(F.barra(baseCuello.clone().add(V(0, -T * 0.12, -T * 0.1)).toArray(), finCuello.toArray(), rCuello * 1.3, rCuello * 0.85, 12), zona('cuello'), 'Neck', { suave: Math.min(T * 0.3, Nl) });
     m.parte(F.esfera(rCuello * 0.86, { p: finCuello.toArray() }, 12), zona('cuello'), 'Neck');
     const rotCab = [inc, 0, 0];
-    m.parte(F.esfera(1, { p: centroCab.toArray(), r: rotCab, s: [hw, hh, hl] }, 16), zona('cabeza'), 'Head');
     const sl = p.largoHocico * k, punta = centroCab.clone().add(dir.clone().multiplyScalar(hl * 0.75 + sl * 0.5));
+    // Cabeza de una pieza (cráneo → frente → mejillas → hocico), sin costuras entre bolas
+    const Lh = hl * 1.9 + sl, inicio = centroCab.clone().add(dir.clone().multiplyScalar(-hl * 0.95));
+    const tCab = (c) => c.clone().sub(inicio).dot(dir) / Lh;
+    const anchoEn = (t) => hw * (1 - 0.36 * suave(Math.min(1, Math.max(0, (t - 0.25) / 0.6))));
+    if (p.hocico === 'ancho') {
+      const cab = F.deformar(F.capsula(hh, Math.max(0.01, Lh - 2 * hh), {}, 28), (v) => {
+        const t = (v.y + Lh / 2) / Lh;                         // 0 nuca … 1 punta del hocico
+        let x = v.x * (anchoEn(t) / hh), y = -v.z, z = v.y;   // giro de 90° (la cápsula va en Y y pasa a ir en Z)
+        const alto = 1 - 0.24 * suave((t - 0.35) / 0.55);
+        y *= alto;
+        if (y > 0 && t > 0.12 && t < 0.5) y *= 1 + 0.1 * Math.sin(Math.PI * (t - 0.12) / 0.38);   // frente
+        if (y < 0 && t > 0.25 && t < 0.85) y *= 1 + 0.16 * Math.sin(Math.PI * (t - 0.25) / 0.6);  // mandíbula y mejillas
+        if (t > 0.88) z -= (t - 0.88) * Lh * 0.25;            // punta del hocico más roma
+        v.set(x, y, z);
+      });
+      cab.applyMatrix4(new THREE.Matrix4().compose(inicio.clone().add(dir.clone().multiplyScalar(Lh / 2)).add(V(0, -hh * 0.05, 0)), new THREE.Quaternion().setFromEuler(new THREE.Euler(inc, 0, 0)), V(1, 1, 1)));
+      cab.computeVertexNormals();
+      m.parte(cab, (c) => (tCab(c) > 0.84 ? 'hocico' : zona('cabeza')(c)), 'Head');
+    } else {
+      m.parte(F.esfera(1, { p: centroCab.toArray(), r: rotCab, s: [hw, hh, hl] }, 22), zona('cabeza'), 'Head');
+    }
     if (p.hocico === 'disco') {
       const c = centroCab.clone().add(dir.clone().multiplyScalar(hl * 0.85 + sl * 0.5)).add(V(0, -hh * 0.15, 0));
       const rs = hw * 0.62;
@@ -176,17 +196,21 @@ export default {
       m.parte(F.capsula(hh * 0.42, sl, { p: c.toArray(), r: [inc + Math.PI / 2, 0, 0], s: [1.1, 1, 0.85] }, 12), zona('cabeza'), 'Head');
       m.parte(F.esfera(hh * 0.2, { p: c.clone().add(dir.clone().multiplyScalar(sl * 0.5 + hh * 0.36)).add(V(0, hh * 0.12, 0)).toArray(), s: [1.2, 0.85, 0.9] }, 10), p.colorHocico.toLowerCase() === p.colorBase.toLowerCase() ? 'nariz' : 'hocico', 'Head');
     } else {
-      const c = centroCab.clone().add(dir.clone().multiplyScalar(hl * 0.62 + sl * 0.35)).add(V(0, -hh * 0.12, 0));
-      m.parte(F.esfera(1, { p: c.toArray(), r: rotCab, s: [hw * 0.9, hh * 0.72, sl * 0.7 + hl * 0.2] }, 14), 'hocico', 'Head');
-      const nar = c.clone().add(dir.clone().multiplyScalar(sl * 0.6 + hl * 0.15)).add(V(0, hh * 0.15, 0));
-      m.simetrico((S, x) => m.parte(F.esfera(hh * 0.11, { p: nar.clone().add(V(x * hw * 0.42, 0, 0)).toArray(), r: rotCab, s: [1, 0.7, 0.5] }, 8), 'nariz', 'Head'));
+      // Ollares en la punta del hocico
+      const nar = inicio.clone().add(dir.clone().multiplyScalar(Lh * 0.97)).add(V(0, hh * 0.08, 0));
+      m.simetrico((S, x) => m.parte(F.esfera(hh * 0.1, { p: nar.clone().add(V(x * anchoEn(0.97) * 0.45, 0, 0)).toArray(), r: rotCab, s: [0.9, 0.65, 0.45] }, 10), 'nariz', 'Head'));
     }
     if (p.perilla) m.parte(F.cono(hw * 0.25, hh * 0.9, { p: punta.clone().add(V(0, -hh * 0.75, -sl * 0.4)).toArray(), r: [Math.PI, 0, 0] }, 7), 'crin', 'Head');
     // Ojos a los lados de la cabeza
     m.simetrico((S, x) => {
-      const ojo = centroCab.clone().add(V(x * hw * 0.82, hh * 0.32, 0)).add(dir.clone().multiplyScalar(hl * 0.2));
-      m.parte(F.esfera(hh * 0.15, { p: ojo.toArray(), s: [0.6, 1, 1] }, 10), 'ojo', 'Head');
-      m.parte(F.esfera(hh * 0.045, { p: ojo.clone().add(V(x * hh * 0.08, hh * 0.06, hh * 0.06)).toArray() }, 6), 'brillo', 'Head');
+      // Ojo sobre la superficie de la cabeza, con párpado/ceja por encima
+      const tOjo = p.hocico === 'ancho' ? 0.3 : 0.45;
+      const ojo = p.hocico === 'ancho'
+        ? inicio.clone().add(dir.clone().multiplyScalar(Lh * tOjo)).add(V(x * anchoEn(tOjo) * 0.9, hh * 0.3, 0))
+        : centroCab.clone().add(V(x * hw * 0.82, hh * 0.32, 0)).add(dir.clone().multiplyScalar(hl * 0.2));
+      m.parte(F.esfera(hh * 0.14, { p: ojo.toArray(), s: [0.55, 0.85, 1.05] }, 14), 'ojo', 'Head');
+      m.parte(F.esfera(hh * 0.04, { p: ojo.clone().add(V(x * hh * 0.07, hh * 0.05, hh * 0.06)).toArray() }, 8), 'brillo', 'Head');
+      m.parte(F.esfera(1, { p: ojo.clone().add(V(-x * hh * 0.02, hh * 0.1, 0)).toArray(), r: [inc, 0, 0], s: [hh * 0.1, hh * 0.08, hh * 0.2] }, 12), zona('cabeza'), 'Head');
     });
     // Orejas
     const eo = p.tamOrejas * k;
