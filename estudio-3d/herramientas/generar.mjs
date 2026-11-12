@@ -34,7 +34,7 @@ if (typeof OffscreenCanvas === 'undefined') {
 
 const { generadores, porId } = await import('../src/generadores/index.js');
 const { resolverParametros, construir, exportarGLB } = await import('../src/core/exportar.js');
-const { preparar, medir, leeme, NIVELES_LOD, PLATAFORMAS, MOTORES } = await import('../src/core/juego.js');
+const { preparar, medir, leeme, NIVELES_LOD, PLATAFORMAS, MOTORES, CARGADOR_THREE } = await import('../src/core/juego.js');
 
 const args = process.argv.slice(2);
 const opciones = {}; const sueltos = [];
@@ -87,6 +87,7 @@ async function generar(gen, preset, cambios, salida) {
     const leer = path.join(path.dirname(salida), 'LEEME_' + path.basename(salida, '.glb') + '.txt');
     fs.writeFileSync(leer, leeme(path.basename(salida, '.glb'), datos, { ...juego, animaciones: anims0 }));
     console.log(`✓ ${leer}`);
+    if (juego.motor === 'web') { const c = path.join(path.dirname(salida), 'cargar-modelo.js'); fs.writeFileSync(c, CARGADOR_THREE); console.log(`✓ ${c}`); }
   }
 }
 
@@ -101,7 +102,7 @@ if (opciones.lista || (!sueltos.length && !opciones.todos)) {
     console.log('   --semilla N  --facetado true');
   }
   console.log('\nUso: node herramientas/generar.mjs <generador> [--preset nombre] [--parametro valor ...] [--salida archivo.glb]');
-  console.log('Para juegos: --plataforma movil|pc|original  --motor godot|unity|unreal|web  --lods (añade _LOD1, _LOD2 y una guía)');
+  console.log('Para juegos: --plataforma movil|pc|original  --motor web|godot|unity|unreal  --lods (añade _LOD1, _LOD2 y una guía)');
   process.exit(0);
 }
 

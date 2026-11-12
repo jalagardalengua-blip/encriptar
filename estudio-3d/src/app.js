@@ -7,8 +7,9 @@ import { registrarMalla, nombreMalla } from './generadores/esqueleto.js';
 import { generadores, porId } from './generadores/index.js';
 import { resolverParametros, construir, exportarGLB } from './core/exportar.js';
 import { crearZip } from './core/zip.js';
-import { preparar, medir, veredicto, leeme, NIVELES_LOD, PLATAFORMAS } from './core/juego.js';
+import { preparar, medir, veredicto, leeme, NIVELES_LOD, PLATAFORMAS, CARGADOR_THREE } from './core/juego.js';
 import { registrarImagen, obtenerImagen, leerArchivo, paleta } from './core/imagenes.js';
+import { prepararFoto, proyectar } from './core/proyeccion.js';
 
 const $ = (id) => document.getElementById(id);
 const guardar = (k, v) => { try { localStorage.setItem('estudio3d:' + k, JSON.stringify(v)); } catch {} };
@@ -93,8 +94,19 @@ function pintarFicha(obj, animaciones, info = '') {
   pintarJuego();
 }
 
+// ---------- Piel de la foto ----------
+let piel = { activa: false, caja: null, cabeza: null }, pielPreparada = null;
+const PIEL_GENERADORES = { cuadrupedo: 'lateral', ave: 'lateral', humanoide: 'frontal' };
+function aplicarPiel(objeto) {
+  if (!piel.activa || !foto || !PIEL_GENERADORES[gen.id]) return;
+  try {
+    pielPreparada ??= prepararFoto(foto, { caja: piel.caja });
+    proyectar(objeto, pielPreparada.canvas, { vista: PIEL_GENERADORES[gen.id], cabeza: piel.cabeza || pielPreparada.cabeza });
+  } catch (e) { console.warn('No se pudo usar la foto como piel', e); }
+}
+
 // ---------- Para tu juego ----------
-const opcJuego = leer('juego', { plataforma: 'pc', motor: 'godot', lods: true });
+const opcJuego = leer('juego', { plataforma: 'pc', motor: 'web', lods: true });
 function pintarJuego() {
   if (!actual) return;
   const m = medir(actual), av = veredicto(m, opcJuego.plataforma);
@@ -238,6 +250,7 @@ function reconstruir() {
   try {
     const p = parametrosActuales();
     const { objeto, animaciones } = construir(gen, p);
+    aplicarPiel(objeto);
     poner(objeto, animaciones);
     if (primera || encuadrarSiguiente) { encuadrar(objeto); primera = false; encuadrarSiguiente = false; }
     pintarComando(p);
@@ -324,6 +337,7 @@ $('exportar').onclick = async () => {
       datos.push({ archivo, bytes: glb.byteLength, ...medir(r.objeto) });
     }
     if (opcJuego.lods) archivos.push({ nombre: 'LEEME.txt', datos: leeme(base, datos, { ...opcJuego, animaciones: animsLod0 }) });
+    if (opcJuego.lods && opcJuego.motor === 'web') archivos.push({ nombre: 'cargar-modelo.js', datos: CARGADOR_THREE });
     const r = await descargar(`${base}.zip`, archivos);
     const t = datos[0];
     if (r !== 'cancelado') aviso(`${archivos.length > 1 ? base + '.zip' : archivos[0].nombre}: ${t.tris.toLocaleString('es')} triángulos, ${(t.bytes / 1024).toFixed(0)} KB`);
@@ -370,6 +384,7 @@ async function usarFoto(archivo) {
   if (!archivo || !/^image\//.test(archivo.type)) { estadoFoto('Ese archivo no es una imagen. Usa PNG, JPG, WebP o GIF.'); return; }
   try {
     foto = registrarImagen('foto', await leerArchivo(archivo));
+    pielPreparada = null; piel = { activa: false, caja: null, cabeza: null }; $('pielFoto').checked = false; $('pielFoto').disabled = false;
     mostrarMiniatura(foto);
     try { // se recuerda en este navegador (reducida)
       const e = Math.min(1, 512 / Math.max(foto.width, foto.height)), c = document.createElement('canvas');
@@ -436,11 +451,14 @@ $('aClaude').onclick = async () => {
   const c = foto || obtenerImagen('ejemplo');
   const blob = await new Promise((ok) => c.toBlob(ok, 'image/png'));
   control_ = new AbortController(); b.textContent = 'Cancelar'; estadoFoto('Claude está mirando la imagen…');
-  const prompt = 'Eres el asistente de un estudio que genera modelos 3D de estilo low-poly con esqueleto y animaciones para videojuegos.\n' +
-    'Mira la imagen adjunta (una foto o dibujo que el usuario quiere convertir en modelo 3D) y elige del catálogo el generador que mejor la reproduce. ' +
-    'Ajusta el preset, las proporciones, las opciones y TODOS los colores (formato #rrggbb) para que el modelo se parezca lo más posible a la imagen. ' +
+  const prompt = 'Eres el asistente de un estudio que genera modelos 3D con esqueleto y animaciones para videojuegos realistas.\n' +
+    'Mira la imagen adjunta (la foto que el usuario quiere convertir en modelo 3D) y elige del catálogo el generador que mejor la reproduce. ' +
+    'Ajusta el preset y las medidas y proporciones REALES del animal o persona (en metros: largo, altura de patas, cuello, cabeza...; en personas usa "proporcion" cercana a 0, realista), sus opciones y TODOS los colores (#rrggbb). ' +
+    'La propia foto se proyectará después como textura sobre el modelo, así que lo más importante es que la forma y las proporciones coincidan con la foto.\n' +
+    'Indica también: "caja": [x0, y0, x1, y1], el rectángulo que ocupa el animal o persona en la foto en fracciones de 0 a 1 (origen arriba a la izquierda); ' +
+    '"vista": "lateral" si se ve de lado, "frontal" si se ve de frente, u "otra"; y "cabeza": "izquierda" o "derecha" según en qué lado de la foto esté la cabeza (solo en vista lateral).\n' +
     'Si lo que aparece no encaja con ningún generador del catálogo (un objeto, un edificio, un logotipo, un dibujo plano...), responde con "generador": "relieve" y "cambios": {}.\n' +
-    'Responde SOLO con un objeto JSON con esta forma: {"generador": "id", "preset": "nombre del preset o null", "cambios": {"idParametro": valor}, "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has ajustado"}\n\n' +
+    'Responde SOLO con un objeto JSON con esta forma: {"generador": "id", "preset": "nombre del preset o null", "cambios": {"idParametro": valor}, "caja": [0.1, 0.2, 0.9, 0.95], "vista": "lateral", "cabeza": "derecha", "explicacion": "una o dos frases en español para el usuario: qué has reconocido y qué has ajustado"}\n\n' +
     'Catálogo:\n' + JSON.stringify(catalogo());
   try {
     const r = await muestra.json(prompt, { images: [blob], signal: control_.signal });
@@ -448,8 +466,11 @@ $('aClaude').onclick = async () => {
     if (!g || g.id === 'relieve') { aRelieve(); estadoFoto((r?.explicacion ? r.explicacion + ' ' : '') + 'He creado un relieve 3D a partir de la silueta.'); }
     else {
       gen = g; preset = g.presets?.[r.preset] ? r.preset : (g.presets ? Object.keys(g.presets)[0] : null);
+      const caja = Array.isArray(r.caja) && r.caja.length === 4 && r.caja.every((x) => Number.isFinite(+x)) ? r.caja.map((x) => Math.min(1, Math.max(0, +x))) : null;
+      piel = { activa: r.vista !== 'otra' && !!foto, caja, cabeza: ['izquierda', 'derecha'].includes(r.cabeza) ? r.cabeza : null };
+      $('pielFoto').checked = piel.activa; pielPreparada = null;
       cambios = limpiarCambios(g, r.cambios); nombreAnimActiva = null; todo();
-      estadoFoto((r.explicacion || `Reconocido como ${g.nombre}.`) + ' Puedes retocarlo abajo antes de descargarlo.');
+      estadoFoto((r.explicacion || `Reconocido como ${g.nombre}.`) + (piel.activa ? ' Lo he pintado con tu foto para que tenga su pelaje real.' : '') + ' Puedes retocarlo abajo antes de descargarlo.');
     }
   } catch (e) {
     const t = { cancelled: '', not_granted: 'No has dado permiso para usar Claude en esta página.', rate_limited: 'Has hecho muchas peticiones seguidas. Espera un poco y vuelve a probar.', image_rejected: 'Claude no puede leer esa imagen. Prueba con otro archivo.', invalid_json: 'La respuesta no se pudo interpretar. Vuelve a pulsar «Reconocer con Claude».', refused: 'Claude no ha querido analizar esta imagen.' };
@@ -465,6 +486,12 @@ try {
   if (guardada) { const im = new Image(); im.src = guardada; await im.decode(); foto = registrarImagen('foto', im); mostrarMiniatura(foto); }
 } catch {}
 if (!foto && cambios.imagen === 'foto') cambios.imagen = 'ejemplo';
+$('pielFoto').disabled = !foto;
+$('pielFoto').onchange = (e) => {
+  piel.activa = e.target.checked;
+  if (piel.activa && !PIEL_GENERADORES[gen.id]) estadoFoto('Elige un animal, un ave o una persona (o pulsa «Reconocer con Claude») para pintarlo con la foto.');
+  reconstruir();
+};
 
 todo();
 window.__estudio = { pose(i, t) { activar(i); const a = acciones[i]; a.time = t * a.getClip().duration; a.paused = true; mezclador.update(0); }, elegir(id, pr, cb = {}) { gen = porId(id); preset = pr; cambios = cb; todo(); }, escena, camara, mandos, get actual() { return actual; }, activar };

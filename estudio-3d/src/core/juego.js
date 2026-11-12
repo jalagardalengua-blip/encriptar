@@ -10,7 +10,7 @@ export const PLATAFORMAS = {
   pc: { nombre: 'PC / consola', tris: 40000, tex: 2048 },
   original: { nombre: 'Sin reducir', tris: Infinity, tex: Infinity },
 };
-export const MOTORES = { godot: 'Godot 4', unity: 'Unity', unreal: 'Unreal Engine', web: 'Three.js / web' };
+export const MOTORES = { web: 'Three.js (juegos con Claude)', godot: 'Godot 4', unity: 'Unity', unreal: 'Unreal Engine' };
 /** Proporción de triángulos de cada nivel de detalle (LOD0 = el modelo para jugar) */
 export const NIVELES_LOD = [1, 0.4, 0.15];
 const SIN_BUCLE = /^(Abrir_puertas|Subir_pala)$/;
@@ -239,7 +239,12 @@ export function leeme(nombre, datos, { plataforma, motor, lods, animaciones }) {
      Unreal pasa de metros a centímetros solo.
   3. LODs: abre el Skeletal Mesh > LOD Settings > Import LOD y elige _LOD1 y _LOD2.
   4. Marca «Loop» en las animaciones de caminar, correr, reposo... al usarlas en el Animation Blueprint.`,
-    web: `THREE.JS / WEB
+    web: `THREE.JS (el motor de los juegos que hace Claude)
+  Usa cargar-modelo.js (incluido en el paquete):
+    import { cargarModelo } from './cargar-modelo.js';
+    const vaca = await cargarModelo('${nombre}', { escena });   // carga LOD0/1/2, sombras y animaciones
+    vaca.animar('Caminar');                                     // en el bucle del juego: vaca.update(delta)
+  O a mano:
   const gltf = await new GLTFLoader().loadAsync('${nombre}.glb');
   const mixer = new THREE.AnimationMixer(gltf.scene);
   mixer.clipAction(THREE.AnimationClip.findByName(gltf.animations, 'Caminar')).play();
@@ -266,3 +271,39 @@ ${usos[motor]}
 ${lods ? '' : '\n(Paquete sin LODs.)'}
 `;
 }
+
+/** Cargador para juegos con Three.js: LODs, sombras, animaciones con fundido y varias copias del mismo modelo */
+export const CARGADOR_THREE = `// cargar-modelo.js — generado por el Estudio de Modelos 3D (Three.js r150 o superior)
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { clone } from 'three/addons/utils/SkeletonUtils.js';
+
+const cargador = new GLTFLoader();
+const cache = new Map();
+const leer = (url) => { if (!cache.has(url)) cache.set(url, cargador.loadAsync(url).catch(() => null)); return cache.get(url); };
+
+/**
+ * Carga «nombre.glb» (y, si existen, «nombre_LOD1.glb» y «nombre_LOD2.glb»).
+ * Devuelve { objeto, animar(nombre, fundido), update(delta), mixer }. Llamar varias veces da copias independientes.
+ */
+export async function cargarModelo(base, { escena = null, ruta = './', distancias = [0, 15, 40], sombras = true } = {}) {
+  const [l0, l1, l2] = await Promise.all([leer(ruta + base + '.glb'), leer(ruta + base + '_LOD1.glb'), leer(ruta + base + '_LOD2.glb')]);
+  if (!l0) throw new Error('No se encontró ' + ruta + base + '.glb');
+  const niveles = [l0, l1, l2].filter(Boolean).map((g) => clone(g.scene));
+  for (const n of niveles) n.traverse((o) => { if (o.isMesh) { o.castShadow = sombras; o.receiveShadow = sombras; } });
+  const objeto = niveles.length > 1 ? new THREE.LOD() : niveles[0];
+  if (niveles.length > 1) niveles.forEach((n, i) => objeto.addLevel(n, distancias[i] ?? i * 20));
+  const mixers = niveles.map((n) => new THREE.AnimationMixer(n));
+  const clips = l0.animations;
+  let actuales = [];
+  const animar = (nombre, fundido = 0.25) => {
+    const clip = clips.find((c) => c.name === nombre || c.name === nombre + '-loop');
+    if (!clip) { console.warn('Animación desconocida:', nombre, clips.map((c) => c.name)); return; }
+    const nuevas = mixers.map((m) => m.clipAction(clip));
+    nuevas.forEach((a, i) => { a.reset().play(); if (actuales[i] && actuales[i] !== a) actuales[i].crossFadeTo(a, fundido, false); });
+    actuales = nuevas;
+  };
+  if (escena) escena.add(objeto);
+  return { objeto, animar, update: (dt) => mixers.forEach((m) => m.update(dt)), mixer: mixers[0], animaciones: clips.map((c) => c.name) };
+}
+`;

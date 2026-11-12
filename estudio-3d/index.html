@@ -81,6 +81,9 @@ button:focus-visible, input:focus-visible, select:focus-visible, summary:focus-v
 .pill.ok { background: color-mix(in srgb, var(--ok) 18%, transparent); color: var(--ok); }
 .pill.atencion { background: color-mix(in srgb, var(--acento) 22%, transparent); color: var(--tinta); }
 .mut { color: var(--tinta-2); }
+.casilla { display: flex; gap: 8px; align-items: center; margin-top: 8px; font-size: 13px; cursor: pointer; }
+.casilla input { width: 18px; height: 18px; accent-color: var(--acento); }
+.casilla:has(input:disabled) { opacity: 0.55; cursor: default; }
 .zona { display: flex; gap: 12px; align-items: center; border: 1.5px dashed var(--linea); border-radius: 10px; padding: 12px; cursor: pointer; background: var(--campo); min-height: 64px; font-size: 13px; color: var(--tinta-2); }
 .zona b { color: var(--tinta); font-weight: 600; }
 .zona:hover, .zona.encima { border-color: var(--acento); }
@@ -165,6 +168,7 @@ details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
           <button class="boton" id="aClaude" type="button" hidden>Reconocer con Claude</button>
           <button class="boton" id="aColores" type="button">Usar sus colores</button>
         </div>
+        <label class="casilla" for="pielFoto"><input id="pielFoto" type="checkbox" disabled> Pintar el modelo con la foto (pelaje real)</label>
         <p class="desc" id="estadoFoto" aria-live="polite"></p>
       </section>
       <section>
@@ -212,7 +216,7 @@ details.cmd summary { cursor: pointer; font-weight: 600; font-size: 13px; }
         <label for="plataforma">Plataforma</label>
         <select id="plataforma"><option value="movil">Móvil</option><option value="pc">PC / consola</option><option value="original">Sin reducir</option></select>
         <label for="motor">Motor</label>
-        <select id="motor"><option value="godot">Godot 4</option><option value="unity">Unity</option><option value="unreal">Unreal Engine</option><option value="web">Three.js / web</option></select>
+        <select id="motor"><option value="web">Three.js (juegos con Claude)</option><option value="godot">Godot 4</option><option value="unity">Unity</option><option value="unreal">Unreal Engine</option></select>
         <label for="lods">Niveles de detalle (LOD) y guía</label>
         <input id="lods" type="checkbox">
       </div>

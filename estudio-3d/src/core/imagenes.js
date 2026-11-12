@@ -62,14 +62,32 @@ export function mascara(canvas, { quitarFondo = true, tolerancia = 0.25 } = {}) 
     return limpiar(m, w, h);
   }
   if (!quitarFondo) return m.fill(1);
-  // Color de fondo: mediana de los píxeles del borde
+  // Colores del fondo: hasta 4 grupos de los píxeles del borde (cielo y prado, pared y suelo...)
   const borde = [];
   for (let x = 0; x < w; x++) borde.push(x, (h - 1) * w + x);
   for (let y = 0; y < h; y++) borde.push(y * w, y * w + w - 1);
-  const med = [0, 1, 2].map((k) => { const v = borde.map((i) => px[i * 4 + k]).sort((a, b) => a - b); return v[v.length >> 1]; });
-  // Un píxel es fondo si ningún canal se aleja del color del fondo más que la tolerancia
+  // Inicio tipo k-means++: cada centro nuevo es el color del borde más distinto a los ya elegidos
+  const col = (i) => [px[i * 4], px[i * 4 + 1], px[i * 4 + 2]];
+  let centros = [col(borde[0])];
+  while (centros.length < 4) {
+    let lejos = -1, dl = -1;
+    for (let k = 0; k < borde.length; k += 3) { const c = col(borde[k]); const d = Math.min(...centros.map((q) => (q[0] - c[0]) ** 2 + (q[1] - c[1]) ** 2 + (q[2] - c[2]) ** 2)); if (d > dl) { dl = d; lejos = borde[k]; } }
+    if (dl < 100) break;
+    centros.push(col(lejos));
+  }
+  for (let it = 0; it < 8; it++) {
+    const s = centros.map(() => [0, 0, 0, 0]);
+    for (const i of borde) {
+      let mejor = 0, dm = 1e9;
+      centros.forEach((c, k) => { const d = (px[i * 4] - c[0]) ** 2 + (px[i * 4 + 1] - c[1]) ** 2 + (px[i * 4 + 2] - c[2]) ** 2; if (d < dm) { dm = d; mejor = k; } });
+      const t = s[mejor]; t[0] += px[i * 4]; t[1] += px[i * 4 + 1]; t[2] += px[i * 4 + 2]; t[3]++;
+    }
+    centros = s.filter((t) => t[3] > borde.length * 0.04).map((t) => [t[0] / t[3], t[1] / t[3], t[2] / t[3]]);
+    if (!centros.length) centros = [[px[0], px[1], px[2]]];
+  }
+  // Un píxel es fondo si ningún canal se aleja de alguno de esos colores más que la tolerancia
   const lim = tolerancia * 255;
-  const fondo = (i) => Math.abs(px[i * 4] - med[0]) < lim && Math.abs(px[i * 4 + 1] - med[1]) < lim && Math.abs(px[i * 4 + 2] - med[2]) < lim;
+  const fondo = (i) => centros.some((c) => Math.abs(px[i * 4] - c[0]) < lim && Math.abs(px[i * 4 + 1] - c[1]) < lim && Math.abs(px[i * 4 + 2] - c[2]) < lim);
   const visto = new Uint8Array(w * h), cola = [];
   for (const i of borde) if (!visto[i] && fondo(i)) { visto[i] = 1; cola.push(i); }
   while (cola.length) {

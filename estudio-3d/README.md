@@ -17,6 +17,12 @@ Arriba del todo en la app está **«Desde una foto o dibujo»**: elige una image
 
 Un relieve es una figura con volumen vista de frente, no una reconstrucción 3D completa por todos sus lados.
 
+## La foto como piel del modelo (con Claude)
+
+Al pulsar **«Reconocer con Claude»**, Claude mira tu foto y devuelve el tipo de modelo con sus medidas reales, dónde está el animal en la foto y desde qué lado está hecha. El estudio crea el modelo con esqueleto y **lo pinta con tu propia foto** (casilla «Pintar el modelo con la foto»): el pelaje, las manchas y los colores son los de la foto. El fondo se separa solo (aunque tenga varios colores, como cielo y prado) y se rellena con colores del propio animal para que no se cuele en los bordes.
+
+Funciona mejor con fotos de lado para animales y aves, y de frente para personas. La forma sigue siendo la del generador, así que el realismo está en la piel. Para que la forma también sea fotográfica hace falta una malla de IA (siguiente apartado).
+
 ## Modelos realistas: IA + esqueleto automático
 
 Para el máximo realismo el modelo tiene que salir de una foto con IA (o de un escaneo). Las formas generadas por código no pueden llegar a ese nivel. El flujo gratuito es:
@@ -40,7 +46,7 @@ En la app, la sección **«Para tu juego»** (encima del botón de descarga) pre
 - **Un solo material**: los modelos de colores lisos juntan todos sus materiales en una **paleta** (una textura diminuta). Una vaca pasa de 11 llamadas de dibujo a 1, clave para rebaños grandes.
 - **Texturas** a su tamaño máximo y en JPEG cuando no necesitan transparencia.
 - **Animaciones aligeradas**: se quitan los fotogramas clave redundantes.
-- **Motor**: *Godot 4* (las animaciones de bucle terminan en `-loop` y Godot las importa en bucle), *Unity*, *Unreal* o *Three.js*.
+- **Motor**: *Three.js* (el de los juegos que hace Claude; el paquete incluye `cargar-modelo.js` con LODs, sombras y fundido de animaciones), *Godot 4* (las animaciones de bucle terminan en `-loop` y Godot las importa en bucle), *Unity*, *Unreal* 
 - **Niveles de detalle (LOD)**: paquete `.zip` con el modelo (LOD0), `_LOD1` (40 %), `_LOD2` (15 %) y un `LEEME.txt` con datos de rendimiento y los pasos para importarlo en el motor elegido.
 
 Desde la terminal: `node herramientas/generar.mjs cuadrupedo --preset vaca --plataforma movil --motor godot --lods --salida juego/vaca.glb`
