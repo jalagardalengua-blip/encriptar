@@ -27,7 +27,7 @@ export class HUD {
     // calles
     x.fillStyle = '#2a3140'; x.fillRect(tx(-CITY.HALF - 8), tx(-CITY.HALF - 8), (CITY.HALF * 2 + 16) * S, (CITY.HALF * 2 + 16) * S);
     // manzanas
-    const col = { residencial: '#3b4352', ocio: '#4a3d55', centro: '#404c60', industrial: '#3d4040', puerto: '#36424a', parque: '#25402a', comisaria: '#24427a', hospital: '#5a2f36' };
+    const col = { residencial: '#3b4352', ocio: '#4a3d55', centro: '#404c60', industrial: '#3d4040', puerto: '#36424a', parque: '#25402a', comisaria: '#24427a', hospital: '#5a2f36', plaza: '#6b5636' };
     for (const b of city.blocks) {
       x.fillStyle = '#5a6272'; x.fillRect(tx(b.cx - 36), tx(b.cz - 36), 72 * S, 72 * S);
       x.fillStyle = col[b.type] || '#3b4352'; x.fillRect(tx(b.cx - 32), tx(b.cz - 32), 64 * S, 64 * S);
@@ -41,6 +41,7 @@ export class HUD {
     const icon = (px, pz, ch, bg) => { x.fillStyle = bg; x.beginPath(); x.arc(tx(px), tx(pz), 9, 0, 7); x.fill(); x.fillStyle = '#fff'; x.font = 'bold 12px Arial'; x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(ch, tx(px), tx(pz) + 1); };
     if (city.station) icon(city.station.x, city.station.z, 'P', '#2f7bff');
     if (city.hospital) icon(city.hospital.x, city.hospital.z, '+', '#d33');
+    if (city.plazaMayor) icon(city.plazaMayor.x, city.plazaMayor.z, '★', '#c9902a');
     this.mapImg = c;
   }
   drawMinimap(view) {

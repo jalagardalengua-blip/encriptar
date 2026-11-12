@@ -28,7 +28,7 @@ if (URLP.get('q') && QUALITY[URLP.get('q')]) settings.quality = URLP.get('q');
 const Q = QUALITY[settings.quality] || QUALITY.alto;
 const MANUAL = URLP.has('manual');
 
-const DISTRICT = { residencial: 'Barrio de San Telmo', ocio: 'Zona de Ocio · La Ribera', centro: 'Centro Financiero', industrial: 'Polígono Industrial', puerto: 'Puerto de Valmora', parque: 'Parque de la Alameda', comisaria: 'Comisaría Central', hospital: 'Hospital de Valmora' };
+const DISTRICT = { residencial: 'Barrio de San Telmo', ocio: 'Zona de Ocio · La Ribera', centro: 'Centro Financiero', industrial: 'Polígono Industrial', puerto: 'Puerto de Valmora', parque: 'Parque de la Alameda', comisaria: 'Comisaría Central', hospital: 'Hospital de Valmora', plaza: 'Plaza Mayor · Bous al carrer' };
 
 class Game {
   constructor() {
@@ -345,6 +345,7 @@ class Game {
   updateWorldOnly(dt, menu = false) {
     this.env.update(dt, this.camera.position, this.audio, null);
     this.city.update(dt, this.elapsed, this.env);
+    this.updatePlaza(dt, false);
     this.traffic.update(dt, this.elapsed, { player: this.car, sirenOn: false, night: this.env.night, peds: null });
     this.crowd.update(dt, { player: this.officer, playerCar: null, camPos: this.camera.position, events: [] });
     for (const n of this.npcs) n.update(dt);
@@ -406,6 +407,7 @@ class Game {
     this.env.indoor = !!this.indoor;
     this.env.update(dt, this.camera.position, this.audio, this.inCar ? new THREE.Vector3(car.vx, 0, car.vz) : null);
     this.city.update(dt, this.elapsed, this.env);
+    this.updatePlaza(dt, true);
     const events = []; this.traffic.events = events;
     this.traffic.update(dt, this.elapsed, { player: car, sirenOn: car.siren && this.inCar, night: this.env.night, peds: this.npcs.filter((n) => n.visible) });
     const ref = this.indoor ? this.city.station.door : this.officer;
@@ -429,6 +431,24 @@ class Game {
     let farSiren = 0; for (const s of this.services) { const d = Math.hypot(s.x - this.camera.position.x, s.z - this.camera.position.z); farSiren = Math.max(farSiren, clamp(1 - d / 260, 0, 1)); }
     this.audio.setMusic(this.indoor ? 'indoor' : this.pursuitInfo ? 'pursuit' : 'patrol');
     this.audio.update(dt, { inCar: this.inCar, rpm: car.rpm, throttle, speed: car.speed, slip: car.slip, wet: wet > 0.4 && !this.indoor, siren: car.siren, farSiren, gear: car.gear, footSpeed: this.onFoot ? this.officer.speed : 0, rain: this.indoor ? 0 : this.env.cur.rain, night: this.env.night > 0.5, indoor: this.indoor });
+  }
+
+  // Plaza Mayor: toro, mozos y público; el toro puede revolcar al agente si está en la arena
+  updatePlaza(dt, playing) {
+    const pz = this.city.plazaMayor; if (!pz) return;
+    pz.update(dt, {
+      cam: this.indoor ? this.city.station.door : this.camera.position, night: this.env.night, audio: this.audio,
+      player: playing && this.onFoot && !this.indoor ? this.officer : null,
+      onPlayerHit: (dx, dz) => {
+        const o = this.officer; const p = { x: o.x + dx * 2.4, z: o.z + dz * 2.4 }; this.city.resolveCircle(p, 0.32); o.x = p.x; o.z = p.z; o.speed = 0;
+        this.camState.shake = 1; this.audio.impact(7); this.input.vibrate(140);
+        this.hud.toast('¡Revolcón! El toro te ha alcanzado. Ponte a salvo tras la barrera o en el refugio', 'bad', 2600);
+      },
+      onBullBump: () => { if (this.audio.ctx) this.audio.impact(4); },
+    });
+    if (playing && !this.plazaHint && this.onFoot && Math.hypot(this.officer.x - pz.x, this.officer.z - pz.z) < 24) {
+      this.plazaHint = true; this.hud.toast('Plaza Mayor: bous al carrer. Cuidado con el toro: refúgiate tras los cadafales o en el refugio central', 'info', 4200);
+    }
   }
 
   updateOfficer(dt, [ax, ay], run) {

@@ -12,7 +12,7 @@ function mk(w, h) {
 }
 
 // ---------- Ruido periódico (tileable) ----------
-function makeNoise(seed) {
+export function makeNoise(seed) {
   const r = mulberry32(seed);
   const P = 256;
   const g = new Float32Array(P * P);

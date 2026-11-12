@@ -41,6 +41,7 @@ while (queue.length) {
 const assetsSrc = fs.readFileSync(path.join(root, 'src/assets.js'), 'utf8');
 const list = (name) => JSON.parse(assetsSrc.match(new RegExp(`const ${name} = (\\[[^\\]]*\\])`))[1].replace(/'/g, '"'));
 for (const n of list('CAR_FILES')) if (!exists(path.join(root, 'assets/cars', n + '.glb'))) fail(`falta assets/cars/${n}.glb`);
+for (const n of list('ANIMAL_FILES')) if (!exists(path.join(root, 'assets/animals', n + '.glb'))) fail(`falta assets/animals/${n}.glb`);
 for (const n of list('PEOPLE_FILES')) if (!exists(path.join(root, 'assets/people', n + '.glb'))) fail(`falta assets/people/${n}.glb`);
 // 4. manifiesto
 const man = JSON.parse(fs.readFileSync(path.join(root, 'manifest.webmanifest'), 'utf8'));

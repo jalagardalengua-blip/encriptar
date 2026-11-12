@@ -2,9 +2,10 @@
 import * as THREE from 'three';
 import { CITY, nodeCoord, DIRS, rightOf, mulberry32, STREETS_X, STREETS_Z, clamp } from './config.js';
 import * as T from './textures.js';
+import { buildPlazaMayor } from './plaza.js';
 
 // ---------------- Constructor de geometría ----------------
-class Geo {
+export class Geo {
   constructor() { this.pos = []; this.nor = []; this.uv = []; this.col = []; this.idx = []; this.n = 0; }
   quad(a, b, c, d, uv, color = [1, 1, 1]) {
     // a,b,c,d en sentido antihorario visto desde el exterior
@@ -51,7 +52,7 @@ class Geo {
 
 // Modificación de materiales del suelo para mojado y charcos
 export const wetUniform = { value: 0 };
-function makeWet(mat) {
+export function makeWet(mat) {
   mat.onBeforeCompile = (sh) => {
     sh.uniforms.uWet = wetUniform;
     sh.fragmentShader = 'uniform float uWet;\n' + sh.fragmentShader.replace('#include <roughnessmap_fragment>', `
@@ -205,6 +206,7 @@ export class City {
   }
   groundY(x, z) {
     const H = CITY.HALF, C = CITY.CURB;
+    if (this.plazaMayor) { const y = this.plazaMayor.groundAt(x, z); if (y !== null) return y; }
     if (x > -H && x < H && z > -H && z < H) {
       const lx = (x + H) % CITY.PITCH, lz = (z + H) % CITY.PITCH;
       return lx > 8 && lx < 80 && lz > 8 && lz < 80 ? C : 0;
@@ -274,6 +276,7 @@ export class City {
     if (bi === 1 && bj === 3) return 'comisaria';
     if (bi === 5 && bj === 3) return 'hospital';
     if (bi === 3 && bj === 1) return 'parque';
+    if (bi === 1 && bj === 2) return 'plaza';
     if (bj === N1 - 1) return 'puerto';
     if (bi === N1 - 1) return 'industrial';
     if (Math.abs(bi - 3) <= 1 && Math.abs(bj - 3) <= 1) return 'centro';
@@ -303,6 +306,7 @@ export class City {
         case 'parque': this.parkBlock(blk); break;
         case 'comisaria': this.stationBlock(blk); break;
         case 'hospital': this.hospitalBlock(blk); break;
+        case 'plaza': this.plazaMayor = buildPlazaMayor(this, blk); break;
       }
     }
   }
@@ -593,7 +597,7 @@ export class City {
     const dm = new THREE.InstancedMesh(dg, this.lampDecalMat, decals.length);
     decals.forEach((d, i) => { m4.compose(new THREE.Vector3(d.x, 0.03, d.z), new THREE.Quaternion(), new THREE.Vector3(16, 1, 16)); dm.setMatrixAt(i, m4); });
     dm.renderOrder = 2; this.group.add(dm);
-    this.fxObjects = [dm];
+    this.fxObjects = [dm, ...(this.plazaMayor?.fxObjects || [])];
     // conos volumétricos
     if (this.q.cones) {
       const cg = new THREE.ConeGeometry(3.4, 8.2, 24, 1, true); cg.translate(0, -4.1, 0);

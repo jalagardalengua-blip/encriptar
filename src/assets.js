@@ -1,15 +1,17 @@
 // Carga y preparación de modelos 3D externos gratuitos (CC0):
 //  · Vehículos: Kenney «Car Kit» (kenney.nl, CC0 1.0)
 //  · Personas: Quaternius «Ultimate Animated Character Pack» (quaternius.com, CC0 1.0)
+//  · Toro: Quaternius «Ultimate Animated Animal Pack» (quaternius.com, CC0 1.0)
 import * as THREE from 'three';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 import { MeshoptDecoder } from 'three/addons/libs/meshopt_decoder.module.js';
-import { mergeGeometries } from 'three/addons/utils/BufferGeometryUtils.js';
+import { mergeGeometries, mergeVertices } from 'three/addons/utils/BufferGeometryUtils.js';
 
-export const ASSETS = { cars: {}, people: {}, ok: false };
+export const ASSETS = { cars: {}, people: {}, animals: {}, ok: false };
 
 const CAR_FILES = ['police', 'sedan', 'suv', 'taxi', 'van', 'truck', 'ambulance'];
 const PEOPLE_FILES = ['Worker_Male', 'Casual_Male', 'Casual_Female', 'Casual2_Male', 'Casual3_Female', 'Suit_Male'];
+const ANIMAL_FILES = ['bull'];
 
 // Convierte atributos cuantizados a Float32 y deja sólo los pedidos
 function toFloat(g, keep) {
@@ -121,6 +123,38 @@ function prepareCar(name, gltf) {
   return out;
 }
 
+// ---------------- Animales ----------------
+// Toro de lidia: se escala a 1,52 m de altura a la cruz (con la cabeza alta) y se le dan materiales PBR
+function prepareAnimal(name, gltf) {
+  const scene = gltf.scene; scene.updateMatrixWorld(true);
+  const box = new THREE.Box3().setFromObject(scene);
+  const h = box.max.y - box.min.y; const k = 1.52 / (h || 1);
+  const mats = {
+    Main: { color: 0x0b0a09, roughness: 0.58, sheen: true }, Main_Light: { color: 0x2a2620, roughness: 0.62 }, Muzzle: { color: 0x1a1512, roughness: 0.4 },
+    Hooves: { color: 0x2a2018, roughness: 0.5 }, Horns: { color: 0xd8c9a2, roughness: 0.38 }, Eye_Black: { color: 0x050505, roughness: 0.1 }, Eye_White: { color: 0xb8b0a0, roughness: 0.2 },
+  };
+  scene.traverse((o) => {
+    if (!o.isMesh) return;
+    o.castShadow = true; o.receiveShadow = true; o.frustumCulled = false;
+    // normales suavizadas (el modelo original es de sombreado plano)
+    try {
+      const g = toFloat(o.geometry, ['position', 'skinIndex', 'skinWeight']);
+      const sm = mergeVertices(g, 1e-4); sm.computeVertexNormals();
+      for (const gr of o.geometry.groups) sm.addGroup(gr.start, gr.count, gr.materialIndex);
+      o.geometry = sm;
+    } catch (e) { /* se conserva la geometría original */ }
+    const conv = (m) => {
+      const d = mats[m.name] || { color: m.color?.getHex() ?? 0x111111, roughness: 0.6 };
+      const nm = d.sheen ? new THREE.MeshPhysicalMaterial({ color: d.color, roughness: d.roughness, metalness: 0, sheen: 0.6, sheenRoughness: 0.5, sheenColor: new THREE.Color(0x3a332c) })
+        : new THREE.MeshStandardMaterial({ color: d.color, roughness: d.roughness, metalness: 0 });
+      nm.name = m.name; return nm;
+    };
+    o.material = Array.isArray(o.material) ? o.material.map(conv) : conv(o.material);
+  });
+  const clips = {}; for (const a of gltf.animations) clips[a.name.split('|').pop()] = a;
+  return { scene, scale: k, clips, name, footY: box.min.y };
+}
+
 // ---------------- Personas ----------------
 function preparePerson(name, gltf) {
   const scene = gltf.scene; scene.updateMatrixWorld(true);
@@ -152,13 +186,13 @@ function preparePerson(name, gltf) {
 
 export async function loadAssets(onProgress = () => {}, base = './assets/') {
   const loader = new GLTFLoader(); loader.setMeshoptDecoder(MeshoptDecoder);
-  const files = [...CAR_FILES.map((n) => ['cars', n]), ...PEOPLE_FILES.map((n) => ['people', n])];
+  const files = [...CAR_FILES.map((n) => ['cars', n]), ...PEOPLE_FILES.map((n) => ['people', n]), ...ANIMAL_FILES.map((n) => ['animals', n])];
   let done = 0;
   const b64 = !!window.__ASSET_B64;
   const fetchB64 = async (url) => { const t = await (await fetch(url)).text(); const bin = atob(t.trim()); const u = new Uint8Array(bin.length); for (let i = 0; i < bin.length; i++) u[i] = bin.charCodeAt(i); return loader.parseAsync(u.buffer, ''); };
   const load = ([kind, n]) => (b64 ? fetchB64(`${base}${kind}/${n}.glb.txt`) : loader.loadAsync(`${base}${kind}/${n}.glb`)).then((g) => {
     done++; onProgress(done / files.length, `Modelos 3D: ${n.replace('_', ' ')}`);
-    if (kind === 'cars') ASSETS.cars[n] = prepareCar(n, g); else { const p = preparePerson(n, g); if (p) ASSETS.people[n] = p; }
+    if (kind === 'cars') ASSETS.cars[n] = prepareCar(n, g); else if (kind === 'animals') ASSETS.animals[n] = prepareAnimal(n, g); else { const p = preparePerson(n, g); if (p) ASSETS.people[n] = p; }
   });
   try {
     await Promise.all(files.map(load));

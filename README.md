@@ -48,6 +48,11 @@ También funciona con mando (gatillos para acelerar y frenar).
 - Tráfico con IA: carriles, semáforos sincronizados, distancia de seguridad, cambio de carril, coches que se apartan al oír la sirena y claxon si les bloqueas.
 - Peatones animados que esquivan vehículos.
 
+**Plaza Mayor · Bous al carrer** (manzana al norte de la comisaría, ★ en el mapa)
+- Plaza de pueblo cubierta de arena con huellas de pezuñas, pisadas y zonas mojadas; casas tradicionales con planta baja de sillería de granito, fachadas encaladas o de entramado de madera, balcones de forja con geranios, galerías corridas, soportales con columnas de piedra y terraza de café, tejados de teja árabe con aleros y chimeneas, y faroles de pared.
+- Cadafales de tubo pintado (azul, verde, rojo, amarillo…) con jaula inferior, tablado, rótulos de peñas, toldos de lona y público animado; escaleras de acero azules hasta los tablados; barrera con huecos de escape; refugio central amarillo con gradas, torre y farol; fuente de granito con caños y agua animada; banderines de colores.
+- Toro bravo animado (embiste, escarba, cabecea y choca contra la barrera) y mozos con faja roja que lo citan y se refugian. Si entras a pie en la arena, el toro puede revolcarte: ponte a salvo tras los cadafales o subiendo al refugio.
+
 **Comisaría jugable**
 - Entra por la puerta principal: recepción, calabozos (aparecen tus detenidos), vestuarios para cambiar de uniforme, garaje para elegir turismo, todoterreno o furgón, sala de operaciones con terminal (expediente e informes pendientes) y despacho de la comisaria (valoración y fin de turno).
 
@@ -85,6 +90,7 @@ node tools/check.mjs   # sintaxis de JS, imports, modelos e iconos (rutas sensib
 |---|---|---|
 | Vehículos (patrulla, turismo, todoterreno, taxi, furgoneta, pick-up, ambulancia) | Kenney · «Car Kit» (kenney.nl) | CC0 1.0 |
 | Personas animadas (agente, civiles) | Quaternius · «Ultimate Animated Character Pack» (quaternius.com) | CC0 1.0 |
+| Toro animado (Plaza Mayor) | Quaternius · «Ultimate Animated Animal Pack», modelo «Bull» (quaternius.com) | CC0 1.0 |
 
 Los modelos se optimizaron con glTF-Transform (cuantización + compresión meshopt) y están en `assets/`. Los vehículos se reescalan a medidas reales y reciben materiales PBR propios; los personajes se recolorean por prenda.
 
@@ -105,6 +111,7 @@ src/audio.js        audio sintetizado
 src/fx.js           partículas, marcas, balizas
 src/assets.js       carga y adaptación de modelos glTF
 src/station.js      interior de la comisaría
+src/plaza.js        Plaza Mayor de fiestas: casas, cadafales, refugio, fuente, toro y mozos
 src/ui.css          estilos de menús, HUD y controles táctiles
 assets/             modelos .glb e iconos
 vendor/three/       Three.js r170 (licencia MIT)
