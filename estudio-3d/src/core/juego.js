@@ -181,6 +181,22 @@ export async function preparar(objeto, animaciones, { plataforma = 'pc', motor =
       cache.set(m, c); return c;
     });
     if (o.material.length === 1) o.material = o.material[0];
+    // Con relieve (mapa de normales) se exportan las tangentes para que todos los motores lo pinten igual
+    const g = o.geometry;
+    if ([o.material].flat().some((m) => m.normalMap) && g.index && g.attributes.uv && g.attributes.normal && !g.attributes.tangent) {
+      try {
+        g.computeTangents();
+        // Vértices sin superficie de textura dan tangente nula: se usa cualquier perpendicular a la normal
+        const T = g.attributes.tangent, N = g.attributes.normal, t = new THREE.Vector3(), n = new THREE.Vector3(), eje = new THREE.Vector3();
+        for (let i = 0; i < T.count; i++) {
+          t.fromBufferAttribute(T, i); n.fromBufferAttribute(N, i).normalize();
+          t.addScaledVector(n, -t.dot(n));
+          if (t.lengthSq() < 1e-10 || !Number.isFinite(t.x)) { eje.set(Math.abs(n.x) < 0.9 ? 1 : 0, Math.abs(n.x) < 0.9 ? 0 : 1, 0); t.crossVectors(eje, n); }
+          t.normalize(); const w = T.getW(i);
+          T.setXYZW(i, t.x, t.y, t.z, w < 0 ? -1 : 1);
+        }
+      } catch (e) { console.warn('Sin tangentes:', e.message); }
+    }
   });
   if (paleta) unificarMateriales(copia);
   let anims = animaciones.map((c) => reducirClaves(c));
