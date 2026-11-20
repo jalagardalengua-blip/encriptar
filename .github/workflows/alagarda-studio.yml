@@ -1,0 +1,37 @@
+name: ALAGARDA 3D STUDIO
+
+on:
+  push:
+    paths:
+      - "ALAGARDA-3D-STUDIO/**"
+      - ".github/workflows/alagarda-studio.yml"
+  pull_request:
+    paths:
+      - "ALAGARDA-3D-STUDIO/**"
+      - ".github/workflows/alagarda-studio.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Tipos, lint, pruebas y compilación
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ALAGARDA-3D-STUDIO
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-node@v5
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: ALAGARDA-3D-STUDIO/package-lock.json
+      - run: npm ci
+      - run: npm run check
+      - uses: actions/upload-artifact@v4
+        with:
+          name: alagarda-3d-studio-dist
+          path: ALAGARDA-3D-STUDIO/dist
+          retention-days: 7
