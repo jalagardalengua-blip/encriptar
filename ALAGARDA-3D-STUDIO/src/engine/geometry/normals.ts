@@ -74,3 +74,28 @@ export function computeWeldedNormals(geometry: THREE.BufferGeometry, precision =
   }
   nrm.needsUpdate = true;
 }
+
+/**
+ * Calcula tangentes (necesarias para mapas normales portables en glTF) y corrige las
+ * degeneradas que aparecen donde las UV colapsan (polos, tapas): longitud unitaria,
+ * perpendiculares a la normal y signo de bitangente exactamente ±1, como exige glTF 2.0.
+ */
+export function computeSafeTangents(geometry: THREE.BufferGeometry): void {
+  geometry.computeTangents();
+  const tan = geometry.getAttribute('tangent') as THREE.BufferAttribute;
+  const nrm = geometry.getAttribute('normal');
+  const t = new THREE.Vector3(), n = new THREE.Vector3(), alt = new THREE.Vector3();
+  for (let i = 0; i < tan.count; i++) {
+    n.fromBufferAttribute(nrm, i);
+    t.set(tan.getX(i), tan.getY(i), tan.getZ(i));
+    t.addScaledVector(n, -n.dot(t));
+    if (!Number.isFinite(t.x + t.y + t.z) || t.lengthSq() < 1e-12) {
+      alt.set(Math.abs(n.x) < 0.9 ? 1 : 0, Math.abs(n.x) < 0.9 ? 0 : 1, 0);
+      t.crossVectors(alt, n);
+    }
+    t.normalize();
+    const w = tan.getW(i);
+    tan.setXYZW(i, t.x, t.y, t.z, w < 0 ? -1 : 1);
+  }
+  tan.needsUpdate = true;
+}

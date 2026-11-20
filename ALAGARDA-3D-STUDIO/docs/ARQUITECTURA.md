@@ -8,7 +8,8 @@ src/
 │   ├── math/               RNG determinista, ruido Perlin/fBm, curvas por tramos, Catmull-Rom
 │   ├── geometry/           Primitivas → THREE.BufferGeometry (blob, lathe, tube, loft) y validación
 │   ├── procedural/         Contratos: parámetros, generador, registro, especificaciones de dominio
-│   └── generators/         Implementaciones registradas (Fase 0: muestrario de primitivas)
+│   ├── texture/            Atlas UV, rasterizado en UV y horneado de pelo → DataTexture
+│   └── generators/         Implementaciones registradas: toro/ (Fase 1) y muestrario de primitivas
 ├── viewer/Viewer.ts        Visor Three.js independiente de React (render bajo demanda)
 ├── io/gltf.ts              Exportación GLB/glTF (GLTFExporter) e importación (GLTFLoader)
 ├── storage/projectsDb.ts   Proyectos en IndexedDB (idb)

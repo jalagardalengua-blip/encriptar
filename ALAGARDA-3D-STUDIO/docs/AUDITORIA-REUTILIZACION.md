@@ -34,7 +34,7 @@ Todas tienen pruebas en `tests/geometry.test.ts` y `tests/math.test.ts` (volumen
 
 ## 3. Funciones reutilizables en fases siguientes
 
-### 3.1 Toro (Fase 1)
+### 3.1 Toro (Fase 1, **ya implementado**: ver `ESTADO-FASE-1.md`)
 
 | Original | Ubicación | Qué aporta | Cómo se adaptará |
 |---|---|---|---|

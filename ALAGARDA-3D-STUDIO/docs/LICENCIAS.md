@@ -16,10 +16,13 @@ Todas son de código abierto y gratuitas. Ninguna API externa de pago.
 | eslint, typescript-eslint | 10.15.0 / 8.73.0 | MIT | Lint (desarrollo) |
 | vitest, jsdom | 5.1.1 / 31.0.1 | MIT | Pruebas (desarrollo) |
 | fake-indexeddb | 6.2.8 | Apache-2.0 | Pruebas (desarrollo) |
+| gltf-validator | (Khronos) | Apache-2.0 | Validación de GLB (desarrollo) |
 
 Recuento de licencias en `node_modules` (todas permisivas): MIT, Apache-2.0, ISC, BSD-2/3, BlueOak-1.0.0, 0BSD; MPL-2.0 (`lightningcss`, sólo compilación) y CC-BY-4.0 (`caniuse-lite`, datos de compatibilidad, sólo compilación). Nada de esto se distribuye como recurso propio.
 
 `RoomEnvironment` (iluminación del visor) se genera por código: no hay HDRI ni imágenes externas.
+
+Las texturas del toro (color de pelo y mapa normal) se generan por código en cada exportación: no contienen imágenes de terceros, así que el GLB resultante no arrastra licencias externas.
 
 ## Código de TORERO y GANADERIA-27
 

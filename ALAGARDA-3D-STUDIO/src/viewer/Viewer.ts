@@ -42,8 +42,9 @@ export class Viewer {
     this.scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
     pmrem.dispose();
     this.scene.background = new THREE.Color('#15181d');
+    this.scene.environmentIntensity = 0.7;
 
-    this.scene.add(new THREE.HemisphereLight('#dfe8ff', '#3a2e22', 0.6));
+    this.scene.add(new THREE.HemisphereLight('#dfe8ff', '#3a2e22', 0.35));
     this.sun = new THREE.DirectionalLight('#fff4e0', 2.2);
     this.sun.position.set(4, 7, 5);
     this.sun.castShadow = true;

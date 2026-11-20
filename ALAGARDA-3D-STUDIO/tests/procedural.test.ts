@@ -31,10 +31,11 @@ describe('registro', () => {
     r.register(primitivasGenerator);
     expect(() => r.register(primitivasGenerator)).toThrow();
   });
-  it('el registro por defecto incluye el muestrario', () => {
+  it('el registro por defecto incluye el toro (primero) y el muestrario', () => {
     expect(registry.get('utilidad.primitivas')).toBe(primitivasGenerator);
     expect(registry.list('utilidad')).toHaveLength(1);
-    expect(registry.list('toro')).toHaveLength(0);
+    expect(registry.list('toro')).toHaveLength(1);
+    expect(registry.list()[0]!.id).toBe('toro.bravo');
   });
 });
 

@@ -12,7 +12,8 @@
     "lint": "eslint .",
     "test": "vitest run",
     "test:watch": "vitest",
-    "check": "npm run typecheck && npm run lint && npm run test && npm run build"
+    "check": "npm run typecheck && npm run lint && npm run test && npm run build",
+    "validate:glb": "node tools/validate-glb.mjs"
   },
   "dependencies": {
     "idb": "^8.0.4",
@@ -34,6 +35,7 @@
     "eslint-plugin-react-refresh": "^0.5.8",
     "fake-indexeddb": "^6.2.8",
     "globals": "^17.14.0",
+    "gltf-validator": "^2.0.0-dev.3.10",
     "jsdom": "^31.0.1",
     "tailwindcss": "^4.3.5",
     "typescript": "^6.0.3",

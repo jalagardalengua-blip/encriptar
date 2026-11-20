@@ -48,15 +48,24 @@ export default function App() {
   const s = useStudio();
   const generator = registry.get(s.generatorId);
 
+  // Los cambios de parámetros se aplican 250 ms después del último, para que arrastrar
+  // un deslizador no regenere el modelo en cada paso.
+  const [committed, setCommitted] = useState({ values: s.values, detail: s.detail });
+  useEffect(() => {
+    const t = setTimeout(() => setCommitted({ values: s.values, detail: s.detail }), 250);
+    return () => clearTimeout(t);
+  }, [s.values, s.detail]);
+  const pending = committed.values !== s.values || committed.detail !== s.detail;
+
   // Generación: mismos parámetros ⇒ mismo modelo (función pura del motor).
   const output = useMemo(() => {
     if (!generator) return null;
     try {
-      return { ok: true as const, out: runGenerator(generator, s.values, s.detail) };
+      return { ok: true as const, out: runGenerator(generator, committed.values, committed.detail) };
     } catch (e) {
       return { ok: false as const, error: e instanceof Error ? e.message : String(e) };
     }
-  }, [generator, s.values, s.detail]);
+  }, [generator, committed]);
 
   const generated = output?.ok ? output.out : null;
   const generatedInfo = useMemo(() => (generated ? infoOf(generated.root) : null), [generated]);
@@ -75,7 +84,11 @@ export default function App() {
   useEffect(() => viewer?.setWireframe(s.wireframe), [viewer, s.wireframe, generated, imported]);
   useEffect(() => viewer?.setGridVisible(s.showGrid), [viewer, s.showGrid]);
 
-  const onReady = useCallback((v: Viewer | null) => setViewer(v), []);
+  const onReady = useCallback((v: Viewer | null) => {
+    // acceso para pruebas visuales automatizadas, sólo en desarrollo
+    if (import.meta.env.DEV) (window as unknown as { __viewer?: Viewer | null }).__viewer = v;
+    setViewer(v);
+  }, []);
 
   const onExport = async () => {
     const model = viewer?.getModel();
@@ -83,7 +96,12 @@ export default function App() {
     setBusy(true);
     try {
       const glb = await exportGLB(model);
-      const name = s.source === 'imported' ? (s.importedName ?? 'importado') : s.projectName;
+      const seed = s.values.seed;
+      const name = s.source === 'imported'
+        ? (s.importedName ?? 'importado').replace(/\.(glb|gltf)$/i, '')
+        : s.projectId || s.projectName !== 'Sin título'
+          ? s.projectName
+          : `${generator?.name ?? 'modelo'}-${String(s.values.capa ?? '')}-${String(seed ?? '')}`;
       downloadFile(glb, safeFilename(name, 'glb'), 'model/gltf-binary');
       s.setStatus('info', `GLB exportado (${(glb.byteLength / 1024).toFixed(1)} KB)`);
     } catch (e) {
@@ -173,6 +191,9 @@ export default function App() {
           )}
           {output && !output.ok && s.source === 'generator' && (
             <p className="absolute left-3 top-3 rounded bg-red-900/80 px-3 py-2 text-sm">Error del generador: {output.error}</p>
+          )}
+          {pending && s.source === 'generator' && (
+            <p className="pointer-events-none absolute right-3 top-3 rounded bg-black/60 px-2 py-1 text-xs text-gold">Generando…</p>
           )}
           {info && (
             <p className="pointer-events-none absolute bottom-2 left-3 rounded bg-black/50 px-2 py-1 font-mono text-[11px] text-neutral-300">
