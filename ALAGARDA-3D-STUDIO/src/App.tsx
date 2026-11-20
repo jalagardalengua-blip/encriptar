@@ -4,6 +4,8 @@ import { registry } from './engine/generators';
 import { disposeObject, runGenerator } from './engine/procedural/registry';
 import type { DetailLevel } from './engine/procedural/types';
 import { downloadFile, exportGLB, importGLTFFile, safeFilename } from './io/gltf';
+import { describeSaveError, hostDownloads } from './io/hostDownloads';
+import { createZip } from './io/zip';
 import { useStudio } from './state/studioStore';
 import { saveProject, type StoredProject } from './storage/projectsDb';
 import { ParamPanel } from './ui/ParamPanel';
@@ -39,6 +41,7 @@ const btnOn = 'border-gold text-gold';
 
 export default function App() {
   const [webgl] = useState(isWebGL2Available);
+  useEffect(() => void hostDownloads(), []);
   const [viewer, setViewer] = useState<Viewer | null>(null);
   const [tab, setTab] = useState<'params' | 'projects'>('params');
   const [imported, setImportedModel] = useState<{ group: THREE.Group; info: ModelInfo } | null>(null);
@@ -102,8 +105,20 @@ export default function App() {
         : s.projectId || s.projectName !== 'Sin título'
           ? s.projectName
           : `${generator?.name ?? 'modelo'}-${String(s.values.capa ?? '')}-${String(seed ?? '')}`;
-      downloadFile(glb, safeFilename(name, 'glb'), 'model/gltf-binary');
-      s.setStatus('info', `GLB exportado (${(glb.byteLength / 1024).toFixed(1)} KB)`);
+      const filename = safeFilename(name, 'glb');
+      const host = await hostDownloads();
+      if (host) {
+        const zip = createZip([{ name: filename, data: new Uint8Array(glb) }]);
+        try {
+          await host.save({ filename: filename.replace(/\.glb$/, '.zip'), data: new Blob([zip as BlobPart], { type: 'application/zip' }) });
+          s.setStatus('info', `GLB exportado dentro de ${filename.replace(/\.glb$/, '.zip')} (${(glb.byteLength / 1048576).toFixed(1)} MB)`);
+        } catch (e) {
+          s.setStatus('error', describeSaveError(e));
+        }
+      } else {
+        downloadFile(glb, filename, 'model/gltf-binary');
+        s.setStatus('info', `GLB exportado (${(glb.byteLength / 1048576).toFixed(1)} MB)`);
+      }
     } catch (e) {
       s.setStatus('error', `Error al exportar: ${e instanceof Error ? e.message : String(e)}`);
     } finally {

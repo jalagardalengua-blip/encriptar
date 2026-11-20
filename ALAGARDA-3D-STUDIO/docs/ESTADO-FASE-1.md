@@ -31,6 +31,10 @@ Generador `toro.bravo` (`src/engine/generators/toro/`), primero en el selector d
   - Detalle alto: ~40 000 vértices, texturas de 2048 px, 12,6 MB, se genera en ~4,5 s.
 - Probado en escritorio (1280×800) y en iPhone 13 emulado, sin errores en consola.
 
+## Uso como página publicada en claude.ai
+
+La aplicación compilada también funciona como página de claude.ai. Allí las descargas pasan por la capacidad `downloads` del visor, que no admite la extensión `.glb`: el botón «Exportar GLB» entrega el mismo GLB dentro de un `.zip` (`src/io/zip.ts`, sin dependencias). Fuera de claude.ai se descarga el `.glb` directamente. El borrado de proyectos pide confirmación dentro de la página porque esos visores no muestran `confirm()`.
+
 ## Límites honestos
 
 - Es un modelo **procedural** de buena calidad para tiempo real, no un escaneo fotográfico: el pelo es textura y relieve (no hay pelos 3D salvo en la borla), y las uniones entre cuerpo, cuello y patas son mallas que se intersecan, no una única malla continua. Por eso de cerca se aprecian las costuras de sombreado en hombros y muslos.
