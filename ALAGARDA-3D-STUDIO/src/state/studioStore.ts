@@ -2,6 +2,17 @@ import { create } from 'zustand';
 import { registry } from '../engine/generators';
 import { defaultValues, sanitizeValue, sanitizeValues, type ParamValue, type ParamValues } from '../engine/procedural/params';
 import type { DetailLevel } from '../engine/procedural/types';
+import type { Mask, PhotoView, RGBAImage } from '../engine/photo/types';
+
+/** Foto de referencia de la sesión (no se guarda en los proyectos). */
+export interface PhotoState {
+  name: string;
+  image: RGBAImage;
+  mask: Mask | null;
+  /** Vista ajustada; mientras sea null la foto no se proyecta. */
+  view: PhotoView | null;
+  iou: number | null;
+}
 
 export type SourceMode = 'generator' | 'imported';
 
@@ -17,6 +28,7 @@ export interface StudioState {
   projectId: string | null;
   projectName: string;
   status: { kind: 'info' | 'error'; text: string } | null;
+  photo: PhotoState | null;
 
   selectGenerator(id: string): void;
   setParam(key: string, value: unknown): void;
@@ -31,6 +43,10 @@ export interface StudioState {
   setProject(id: string | null, name: string): void;
   setStatus(kind: 'info' | 'error', text: string): void;
   clearStatus(): void;
+  setPhoto(name: string, image: RGBAImage): void;
+  setPhotoMask(mask: Mask): void;
+  setPhotoFit(view: PhotoView, iou: number): void;
+  clearPhoto(): void;
 }
 
 function requireGenerator(id: string) {
@@ -53,6 +69,7 @@ export const useStudio = create<StudioState>((set, get) => ({
   projectId: null,
   projectName: 'Sin título',
   status: null,
+  photo: null,
 
   selectGenerator(id) {
     const g = requireGenerator(id);
@@ -86,4 +103,9 @@ export const useStudio = create<StudioState>((set, get) => ({
   setProject: (projectId, projectName) => set({ projectId, projectName }),
   setStatus: (kind, text) => set({ status: { kind, text } }),
   clearStatus: () => set({ status: null }),
+  setPhoto: (name, image) => set({ photo: { name, image, mask: null, view: null, iou: null } }),
+  // un recorte nuevo invalida el ajuste anterior
+  setPhotoMask: (mask) => { const p = get().photo; if (p) set({ photo: { ...p, mask, view: null, iou: null } }); },
+  setPhotoFit: (view, iou) => { const p = get().photo; if (p) set({ photo: { ...p, view, iou } }); },
+  clearPhoto: () => set({ photo: null }),
 }));

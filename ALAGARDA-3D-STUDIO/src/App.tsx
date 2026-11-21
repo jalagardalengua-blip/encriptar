@@ -9,6 +9,7 @@ import { createZip } from './io/zip';
 import { useStudio } from './state/studioStore';
 import { saveProject, type StoredProject } from './storage/projectsDb';
 import { ParamPanel } from './ui/ParamPanel';
+import { PhotoPanel } from './ui/PhotoPanel';
 import { ProjectsPanel } from './ui/ProjectsPanel';
 import { ViewerCanvas } from './ui/ViewerCanvas';
 import { isWebGL2Available, type Viewer } from './viewer/Viewer';
@@ -43,7 +44,7 @@ export default function App() {
   const [webgl] = useState(isWebGL2Available);
   useEffect(() => void hostDownloads(), []);
   const [viewer, setViewer] = useState<Viewer | null>(null);
-  const [tab, setTab] = useState<'params' | 'projects'>('params');
+  const [tab, setTab] = useState<'params' | 'photo' | 'projects'>('params');
   const [imported, setImportedModel] = useState<{ group: THREE.Group; info: ModelInfo } | null>(null);
   const [revision, setRevision] = useState(0);
   const [busy, setBusy] = useState(false);
@@ -53,18 +54,22 @@ export default function App() {
 
   // Los cambios de parámetros se aplican 250 ms después del último, para que arrastrar
   // un deslizador no regenere el modelo en cada paso.
-  const [committed, setCommitted] = useState({ values: s.values, detail: s.detail });
+  const photoInput = useMemo(
+    () => (s.photo?.view && s.photo.mask ? { photo: { image: s.photo.image, mask: s.photo.mask, view: s.photo.view } } : undefined),
+    [s.photo],
+  );
+  const [committed, setCommitted] = useState({ values: s.values, detail: s.detail, inputs: photoInput });
   useEffect(() => {
-    const t = setTimeout(() => setCommitted({ values: s.values, detail: s.detail }), 250);
+    const t = setTimeout(() => setCommitted({ values: s.values, detail: s.detail, inputs: photoInput }), 250);
     return () => clearTimeout(t);
-  }, [s.values, s.detail]);
-  const pending = committed.values !== s.values || committed.detail !== s.detail;
+  }, [s.values, s.detail, photoInput]);
+  const pending = committed.values !== s.values || committed.detail !== s.detail || committed.inputs !== photoInput;
 
   // Generación: mismos parámetros ⇒ mismo modelo (función pura del motor).
   const output = useMemo(() => {
     if (!generator) return null;
     try {
-      return { ok: true as const, out: runGenerator(generator, committed.values, committed.detail) };
+      return { ok: true as const, out: runGenerator(generator, committed.values, committed.detail, committed.inputs) };
     } catch (e) {
       return { ok: false as const, error: e instanceof Error ? e.message : String(e) };
     }
@@ -219,15 +224,15 @@ export default function App() {
 
         <aside className="flex min-h-0 flex-1 flex-col border-t border-edge bg-panel md:w-80 md:flex-none md:border-l md:border-t-0">
           <div className="flex border-b border-edge" role="tablist">
-            {(['params', 'projects'] as const).map((t) => (
+            {(['params', 'photo', 'projects'] as const).map((t) => (
               <button key={t} type="button" role="tab" aria-selected={tab === t} onClick={() => setTab(t)}
                 className={`flex-1 py-2 text-sm ${tab === t ? 'border-b-2 border-gold text-gold' : 'text-neutral-400'}`}>
-                {t === 'params' ? 'Parámetros' : 'Proyectos'}
+                {t === 'params' ? 'Parámetros' : t === 'photo' ? 'Foto' : 'Proyectos'}
               </button>
             ))}
           </div>
           <div className="min-h-0 flex-1 space-y-4 overflow-y-auto p-3">
-            {tab === 'params' ? (
+            {tab === 'photo' ? <PhotoPanel /> : tab === 'params' ? (
               <>
                 {s.source === 'imported' && (
                   <div className="rounded-md border border-gold/40 bg-gold/10 p-2 text-sm">

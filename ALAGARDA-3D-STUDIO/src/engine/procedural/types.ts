@@ -1,6 +1,7 @@
 import type * as THREE from 'three';
 import type { Noise3 } from '../math/noise';
 import type { Rng } from '../math/random';
+import type { PhotoInput } from '../photo/types';
 import type { ParamDef, ParamValues } from './params';
 
 /** Familias de generadores previstas. `utilidad` agrupa muestrarios y pruebas. */
@@ -15,6 +16,12 @@ export interface GeneratorContext {
   /** Ruido 3D sembrado con la misma semilla. */
   noise: Noise3;
   detail: DetailLevel;
+  /** Entradas externas opcionales (p. ej. una foto ajustada para proyectarla como textura). */
+  inputs?: GeneratorInputs;
+}
+
+export interface GeneratorInputs {
+  photo?: PhotoInput;
 }
 
 /** Pieza con nombre del modelo generado (se conserva en el nodo glTF). */

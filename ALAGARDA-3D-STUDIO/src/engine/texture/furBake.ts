@@ -18,7 +18,7 @@ export interface FurBakeOptions<R extends string> {
   /** Longitud media del pelo en metros. */
   hairLength: number;
   /** Color lineal del pelo en un punto. */
-  color: (x: number, y: number, z: number, region: R) => readonly [number, number, number];
+  color: (x: number, y: number, z: number, region: R, nx: number, ny: number, nz: number) => readonly [number, number, number];
 }
 
 export interface FurBakeResult {
@@ -48,8 +48,12 @@ export function bakeFur<R extends string>(o: FurBakeOptions<R>): FurBakeResult {
   const mask = new Uint8Array(N);
   const owner = new Int16Array(N).fill(-1);
   const posBuf = new Float32Array(N * 3);
+  const nrmBuf = new Float32Array(N * 3);
   pieces.forEach((p, i) => {
-    rasterizeUV(p.mesh.geometry, mats[i]!, size, (t, x, y, z) => {
+    rasterizeUV(p.mesh.geometry, mats[i]!, size, (t, x, y, z, nx, ny, nz) => {
+      nrmBuf[t * 3] = nx;
+      nrmBuf[t * 3 + 1] = ny;
+      nrmBuf[t * 3 + 2] = nz;
       mask[t] = 1;
       owner[t] = i;
       posBuf[t * 3] = x;
@@ -87,7 +91,7 @@ export function bakeFur<R extends string>(o: FurBakeOptions<R>): FurBakeResult {
   for (let t = 0; t < N; t++) {
     if (!mask[t]) continue;
     covered++;
-    const c = o.color(posBuf[t * 3]!, posBuf[t * 3 + 1]!, posBuf[t * 3 + 2]!, pieces[owner[t]!]!.region);
+    const c = o.color(posBuf[t * 3]!, posBuf[t * 3 + 1]!, posBuf[t * 3 + 2]!, pieces[owner[t]!]!.region, nrmBuf[t * 3]!, nrmBuf[t * 3 + 1]!, nrmBuf[t * 3 + 2]!);
     const v = 0.86 + 0.28 * height[t]!;
     albedo[t * 4] = linearToSrgbByte(c[0] * v);
     albedo[t * 4 + 1] = linearToSrgbByte(c[1] * v);

@@ -24,6 +24,7 @@ npm run validate:glb -- modelo.glb   # valida un GLB con el validador oficial de
 
 - Visor 3D con órbita táctil y de ratón, sombras, rejilla, modo alambre y encuadre.
 - **Generador de toro de lidia**: toro, vaca, becerro o cabestro; 12 capas, particularidades, 10 encornaduras, morfología por encaste, posturas y divisa; texturas de pelo horneadas y materiales PBR. Descarga GLB validado con el validador de Khronos.
+- **De foto a toro**: subes una foto, se recorta el toro, el generador se ajusta a su silueta (proporciones, astas, postura, cámara), detecta la capa y proyecta la foto como textura. Ver [`docs/FOTO-A-3D.md`](docs/FOTO-A-3D.md).
 - Generador «Muestrario de primitivas»: esfera deformable, sólido de revolución, tubo de radio variable y barrido de secciones.
 - Exportación GLB e importación de `.glb`/`.gltf`.
 - Proyectos guardados en el navegador (IndexedDB).

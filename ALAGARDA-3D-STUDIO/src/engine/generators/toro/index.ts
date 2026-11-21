@@ -2,13 +2,16 @@ import * as THREE from 'three';
 import { createRng } from '../../math/random';
 import { lerp, smoothstep } from '../../math/scalar';
 import type { CapaToro, Encornadura, TipoBovino } from '../../procedural/domain';
-import { read, type ParamDef } from '../../procedural/params';
+import type { Noise3 } from '../../math/noise';
+import type { Rng } from '../../math/random';
+import { read, type ParamDef, type ParamValues } from '../../procedural/params';
 import { computeStats } from '../../procedural/registry';
 import type { DetailLevel, GeneratedPart, ProceduralGenerator } from '../../procedural/types';
 import { computeSafeTangents } from '../../geometry/normals';
 import { bakeFur } from '../../texture/furBake';
 import { buildAnatomy, type Anatomy } from './anatomy';
 import { createCoat } from './coat';
+import { createPhotoProjector } from '../../photo/projector';
 import { CAPAS, COLOR_ASTA, ENCASTES, ENCORNADURAS, TIPOS } from './data';
 
 const RES: Record<DetailLevel, number> = { bajo: 0.5, medio: 1, alto: 1.5 };
@@ -45,6 +48,7 @@ const params: readonly ParamDef[] = [
   { key: 'divisa', label: 'Divisa', type: 'boolean', default: true, group: 'Divisa' },
   { key: 'divisa1', label: 'Color 1', type: 'color', default: '#1d6b3a', group: 'Divisa' },
   { key: 'divisa2', label: 'Color 2', type: 'color', default: '#c8102e', group: 'Divisa' },
+  { key: 'texturaFoto', label: 'Usar la foto como textura', type: 'boolean', default: true, group: 'Foto', description: 'Sólo tiene efecto cuando hay una foto ajustada (pestaña Foto).' },
   { key: 'seed', label: 'Semilla', type: 'seed', default: 7 },
 ];
 
@@ -110,6 +114,45 @@ function applyPose(a: Anatomy, postura: string): void {
 }
 
 /**
+ * Construye la anatomía en postura neutra con las pezuñas en el suelo, sin materiales ni texturas.
+ * Es la parte barata del generador: el ajuste a una foto la llama cientos de veces.
+ */
+export function buildToroShape(values: ParamValues, noise: Noise3, rng: Rng, res: number): Anatomy {
+  const num = (k: string) => read.number(values, k);
+  const enc = ENCASTES[read.string(values, 'encaste')] ?? ENCASTES.Domecq!;
+  const a = buildAnatomy({
+    tipo: read.string(values, 'tipo') as TipoBovino,
+    morf: {
+      longitud: num('longitud') * enc[0],
+      alzada: num('alzada') * enc[1],
+      morrillo: num('morrillo') * enc[2],
+      perimetro: num('perimetro'),
+      papada: num('papada'),
+      patas: num('patas') * enc[3],
+    },
+    encornadura: read.string(values, 'encornadura') as Encornadura,
+    largoAsta: num('largoAsta'),
+    grosorAsta: num('grosorAsta'),
+    divisa: read.boolean(values, 'divisa'),
+    noise,
+    rng,
+    res,
+  });
+  a.root.updateMatrixWorld(true);
+  a.body.position.y -= groundY(a.hooves);
+  a.root.updateMatrixWorld(true);
+  return a;
+}
+
+/** Aplica la postura y vuelve a apoyar las pezuñas en el suelo. */
+export function poseToro(a: Anatomy, postura: string): void {
+  applyPose(a, postura);
+  a.root.updateMatrixWorld(true);
+  a.body.position.y -= groundY(a.hooves);
+  a.root.updateMatrixWorld(true);
+}
+
+/**
  * Generador de toro de lidia (y vaca, becerro y cabestro).
  * Geometría: `buildBull` de TORERO. Morfología, encastes y particularidades: GANADERIA-27.
  * Texturas: atlas de pelaje horneado (color por capa en 3D + mechones + mapa normal).
@@ -135,31 +178,11 @@ export const toroGenerator: ProceduralGenerator = {
     const num = (k: string) => read.number(values, k);
     const tipo = read.string(values, 'tipo') as TipoBovino;
     const capa = read.string(values, 'capa') as CapaToro;
-    const enc = ENCASTES[read.string(values, 'encaste')] ?? ENCASTES.Domecq!;
     const T = TIPOS[tipo];
-    const a = buildAnatomy({
-      tipo,
-      morf: {
-        longitud: num('longitud') * enc[0],
-        alzada: num('alzada') * enc[1],
-        morrillo: num('morrillo') * enc[2],
-        perimetro: num('perimetro'),
-        papada: num('papada'),
-        patas: num('patas') * enc[3],
-      },
-      encornadura: read.string(values, 'encornadura') as Encornadura,
-      largoAsta: num('largoAsta'),
-      grosorAsta: num('grosorAsta'),
-      divisa: read.boolean(values, 'divisa'),
-      noise: ctx.noise,
-      rng: ctx.rng,
-      res: RES[ctx.detail],
-    });
-
-    // apoyar las pezuñas en el suelo (y = 0)
-    a.root.updateMatrixWorld(true);
-    a.body.position.y -= groundY(a.hooves);
-    a.root.updateMatrixWorld(true);
+    const a = buildToroShape(values, ctx.noise, ctx.rng, RES[ctx.detail]);
+    const photo = read.boolean(values, 'texturaFoto') ? ctx.inputs?.photo : undefined;
+    // con foto, el pelaje se hornea ya en la postura final para que coincida con la imagen
+    if (photo) poseToro(a, read.string(values, 'postura'));
 
     const particularidades = {
       lucero: read.boolean(values, 'lucero'),
@@ -181,6 +204,8 @@ export const toroGenerator: ProceduralGenerator = {
       },
     });
 
+    const photoSampler = photo ? createPhotoProjector(photo, a.root) : null;
+
     // ---------- pelaje horneado ----------
     const bake = bakeFur({
       pieces: a.fur,
@@ -188,7 +213,14 @@ export const toroGenerator: ProceduralGenerator = {
       size: ATLAS[ctx.detail],
       rng: createRng((ctx.rng.seed ^ 0x9e3779b9) >>> 0),
       hairLength: num('pelo') / 100,
-      color: coat,
+      color: photoSampler
+        ? (x, y, z, region, nx, ny, nz) => {
+          const c = coat(x, y, z, region);
+          const p = photoSampler(x, y, z, nx, ny, nz);
+          if (!p) return c;
+          return [lerp(c[0], p.rgb[0], p.weight), lerp(c[1], p.rgb[1], p.weight), lerp(c[2], p.rgb[2], p.weight)] as const;
+        }
+        : coat,
     });
     const brillo = num('brillo');
     const sh = CAPAS[capa].sheen;
@@ -269,9 +301,7 @@ export const toroGenerator: ProceduralGenerator = {
     }
 
     // ---------- postura y escala ----------
-    applyPose(a, read.string(values, 'postura'));
-    a.root.updateMatrixWorld(true);
-    a.body.position.y -= groundY(a.hooves);
+    if (!photo) poseToro(a, read.string(values, 'postura'));
     a.root.scale.setScalar(num('tamano') * T.escala);
     a.root.updateMatrixWorld(true);
 

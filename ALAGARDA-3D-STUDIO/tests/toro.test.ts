@@ -4,6 +4,7 @@ import { toroGenerator } from '../src/engine/generators';
 import { inspectGeometry } from '../src/engine/geometry';
 import { defaultValues } from '../src/engine/procedural/params';
 import { disposeObject, runGenerator } from '../src/engine/procedural/registry';
+import { syntheticPhoto } from './photoHelpers';
 
 const base = defaultValues(toroGenerator.params);
 const gen = (v: Record<string, unknown> = {}) => runGenerator(toroGenerator, { ...base, ...v }, 'bajo');
@@ -129,6 +130,15 @@ describe('generador de toro', () => {
         case 'color': changed = '#123456'; break;
         case 'seed': changed = def.default + 1; break;
         case 'boolean': changed = !def.default; break;
+      }
+      // «texturaFoto» sólo actúa con una foto ajustada: se compara con y sin ella
+      if (def.key === 'texturaFoto') {
+        const view = { yaw: 0, pitch: 0.1, mirror: false };
+        const photo = { ...syntheticPhoto({}, view), view };
+        const on = runGenerator(toroGenerator, base, 'bajo', { photo });
+        const off = runGenerator(toroGenerator, { ...base, texturaFoto: false }, 'bajo', { photo });
+        expect(fingerprint(on.root), 'texturaFoto no tiene efecto').not.toBe(fingerprint(off.root));
+        continue;
       }
       const out = gen({ [def.key]: changed });
       expect(fingerprint(out.root), `el parámetro «${def.key}» no tiene efecto`).not.toBe(ref);

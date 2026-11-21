@@ -2,7 +2,7 @@ import * as THREE from 'three';
 import { createNoise3 } from '../math/noise';
 import { createRng } from '../math/random';
 import { sanitizeValues } from './params';
-import type { DetailLevel, GeneratorCategory, GeneratorOutput, GeneratorStats, ProceduralGenerator } from './types';
+import type { DetailLevel, GeneratorCategory, GeneratorInputs, GeneratorOutput, GeneratorStats, ProceduralGenerator } from './types';
 
 /** Registro de generadores disponibles. Las fases siguientes añaden toro, torero, caballo, plaza y escenarios. */
 export class GeneratorRegistry {
@@ -42,11 +42,16 @@ export function computeStats(root: THREE.Object3D): GeneratorStats {
 }
 
 /** Ejecuta un generador saneando parámetros y creando el contexto determinista. */
-export function runGenerator(gen: ProceduralGenerator, raw: Partial<Record<string, unknown>>, detail: DetailLevel = 'medio'): GeneratorOutput {
+export function runGenerator(
+  gen: ProceduralGenerator,
+  raw: Partial<Record<string, unknown>>,
+  detail: DetailLevel = 'medio',
+  inputs?: GeneratorInputs,
+): GeneratorOutput {
   const values = sanitizeValues(gen.params, raw);
   const seedValue = values.seed;
   const seed = typeof seedValue === 'number' ? seedValue : 1;
-  const out = gen.generate(values, { rng: createRng(seed), noise: createNoise3(seed), detail });
+  const out = gen.generate(values, { rng: createRng(seed), noise: createNoise3(seed), detail, ...(inputs ? { inputs } : {}) });
   out.root.name ||= gen.id;
   out.root.userData.generator = { id: gen.id, version: gen.version, values };
   return out;

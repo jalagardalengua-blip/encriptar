@@ -117,9 +117,12 @@ export function rasterizeUV(
   g: THREE.BufferGeometry,
   matrix: THREE.Matrix4,
   size: number,
-  texel: (index: number, x: number, y: number, z: number) => void,
+  texel: (index: number, x: number, y: number, z: number, nx: number, ny: number, nz: number) => void,
 ): void {
   const pos = g.getAttribute('position');
+  const nrm = g.getAttribute('normal');
+  const nmat = new THREE.Matrix3().getNormalMatrix(matrix);
+  const Nn = [new THREE.Vector3(), new THREE.Vector3(), new THREE.Vector3()] as const;
   const uv = g.getAttribute('uv');
   const idx = g.getIndex();
   if (!idx) throw new Error('rasterizeUV(): geometría no indexada');
@@ -129,6 +132,7 @@ export function rasterizeUV(
     for (let j = 0; j < 3; j++) {
       const vi = idx.getX(k + j);
       P[j]!.fromBufferAttribute(pos, vi).applyMatrix4(matrix);
+      if (nrm) Nn[j]!.fromBufferAttribute(nrm, vi).applyMatrix3(nmat).normalize();
       U[j] = uv.getX(vi) * size;
       V[j] = uv.getY(vi) * size;
     }
@@ -152,6 +156,9 @@ export function rasterizeUV(
           P[0].x * w0 + P[1].x * w1 + P[2].x * w2,
           P[0].y * w0 + P[1].y * w1 + P[2].y * w2,
           P[0].z * w0 + P[1].z * w1 + P[2].z * w2,
+          Nn[0].x * w0 + Nn[1].x * w1 + Nn[2].x * w2,
+          Nn[0].y * w0 + Nn[1].y * w1 + Nn[2].y * w2,
+          Nn[0].z * w0 + Nn[1].z * w1 + Nn[2].z * w2,
         );
       }
     }
