@@ -1,0 +1,37 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · CARMEN
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 3
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/CARMEN.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E008_L014
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: CARMEN
+Acotación: mensaje de buzón; ruido de estación de tren de fondo, megafonía lejana ininteligible
+Emoción: pésame profesional sincero
+Intención: abrir con respeto
+Ritmo: rápido, articulado
+Pausas: tras el nombre
+FX / procesado: teléfono, buzón de voz, estación
+Texto: Alejandro, buenas tardes, soy Carmen Olmedo. [short pause] Siento muchísimo lo de tu padre. De verdad. Ernesto y yo trabajamos juntos doce años y era de lo poco serio que queda en este negocio.
+------------------------------------------------------------------------
+[002] C01_E008_L015
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: CARMEN
+Emoción: firmeza
+Intención: poner el plazo
+Ritmo: rápido, sin titubeos
+Pausas: la marcada
+FX / procesado: teléfono, buzón de voz, estación
+Texto: Te voy a ser muy clara, porque no tengo otra forma de hacerlo. Tenía apalabrada con tu padre una corrida para septiembre. Seis toros. [short pause] Necesito saber en quince días si la ganadería sigue en pie o si busco otro hierro.
+------------------------------------------------------------------------
+[003] C01_E008_L016
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: CARMEN
+Emoción: calidez breve
+Intención: cerrar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: teléfono, buzón de voz, estación
+Texto: Llámame a este número. Un abrazo fuerte.
+------------------------------------------------------------------------

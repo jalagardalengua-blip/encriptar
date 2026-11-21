@@ -1,0 +1,49 @@
+ID: C01_E006_IMAGE
+ESCENA: C01_E006 · PATATAS MENEÁS
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_006.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_006_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M3)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A2)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E006
+ 2. Localización ............ Cocina grande de La Encomienda, extremo de la mesa de roble
+ 3. Hora y meteorología ..... Sábado 8 de marzo, 22:30. Noche; fuego bajo en la chimenea y lámpara colgante cálida. Fuera, helada.
+ 4. Personajes visibles ..... Manuel (de pie, sirviendo) y Alejandro (sentado).
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Manuel: WARDROBE M3 (camisa de cuadros remangada, sin sombrero, zapatillas). Alejandro: WARDROBE A2 (con la chaqueta verde puesta).
+ 7. Expresión facial ........ Manuel: concentrado en servir, ternura que no enseña. Alejandro: cansado, mira el plato.
+ 8. Posición corporal ....... Manuel inclinado sobre la mesa con la sartén en la mano izquierda y la espumadera en la derecha. Alejandro sentado, antebrazos en la mesa.
+ 9. Acción congelada ........ La espumadera deja caer patatas con pimentón en el plato de Alejandro; vapor subiendo.
+10. Composición ............. Plano en eje de la mesa larga: los dos en el extremo cercano bajo la lámpara; la mesa vacía se alarga hacia el fondo oscuro con diez sillas sin nadie; la chimenea encendida a la derecha.
+11. Tipo de plano ........... Plano medio largo con profundidad.
+12. Distancia focal ......... 40 mm spherical lens
+13. Iluminación ............. Lámpara colgante cálida cenital sobre los dos (3200 K), fuego naranja lateral desde la derecha; fondo de la mesa cayendo a negro.
+14. Profundidad de campo .... focus on the two men, the far table softly out of focus
+15. Texturas y materiales ... Roble con vetas y marcas, loza blanca desportillada, hierro de la sartén, pimentón rojo, torreznos, hogaza, vino tinto en vasos gruesos, cobre de las cazuelas colgadas.
+16. Ambiente ................ Hogar a medias; dos hombres solos en una mesa para doce.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Botella sin etiqueta. Comida realista, sin estilismo publicitario.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium-long shot down the axis of a very long farmhouse table. Late at night, an old foreman serves fried paprika potatoes from a cast-iron pan onto the plate of a young man sitting at the end of a long oak table set for only two; steam rises.
+Standing, serving: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt with sleeves rolled up, brown corduroy trousers, no hat, grey wool socks and old leather slippers, leaning over the table holding a cast-iron pan in his left hand and a skimmer in his right, focused on serving, hidden tenderness.
+Seated: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing black suit trousers, white shirt with sleeves rolled to the forearm and top button undone, and his late father's faded olive-green waxed cotton field jacket, too wide in the shoulders, corduroy collar worn brown, black leather shoes muddy, sitting with forearms on the table, tired, looking down at his plate.
+Setting: a large farmhouse kitchen, granite walls partly whitewashed, a huge hooded fireplace with a low fire, a long oak table for twelve with only two places set at one end, copper pans hanging, a single warm pendant lamp, a window showing the dark night. On the table: chipped white plates, a pan of potatoes with red paprika and crispy pork belly, a round country loaf, an unlabeled bottle of red wine, two thick glasses. Ten empty chairs recede into darkness.
+Time and weather: 10:30 pm, night, a low fire in the hooded fireplace and one warm pendant lamp, frost outside.
+Composition: the two men at the near end under the lamp, the empty table stretching into the dark background with ten empty chairs, the lit fireplace on the right.
+Lighting: warm overhead pendant lamp at 3200 K on the two men, orange firelight from the right side, the far end of the table falling to black.
+Camera: 40 mm spherical lens, focus on the two men, the far table softly out of focus.
+Textures: grained oak with marks, chipped white crockery, cast iron, red paprika, crisp pork, rustic bread, red wine in thick glasses, hanging copper pans.
+Mood: half a home, two lonely men at a table for twelve.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, wine label, glossy food styling

@@ -1,0 +1,46 @@
+ID: C01_E006_VIDEO
+ESCENA: C01_E006 · PATATAS MENEÁS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_006_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_006.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E006
+ 2. Imagen de referencia .... C01_E006_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: patatas cayendo en el plato.
+ 5. Desarrollo .............. Manuel termina de servir (mucho para Alejandro), se sirve poco a sí mismo, deja la sartén sobre un salvamanteles y se sienta. Habla. Alejandro mira el plato y contesta.
+ 6. Movimiento de personajes  Manuel: servir, dejar la sartén, retirar la silla, sentarse. Alejandro: coge el tenedor.
+ 7. Expresiones faciales .... Manuel: neutro con ternura en los ojos. Alejandro: un recuerdo que le cruza la cara.
+ 8. Gestos .................. Alejandro remueve una patata con el tenedor antes de hablar.
+ 9. Movimiento corporal ..... Movimientos lentos de final de día.
+10. Movimiento de cámara .... Cámara fija con micro-desplazamiento de deslizador hacia delante (20 cm en 8 s).
+11. Movimiento ambiental .... Vapor de la comida; llamas de la chimenea; reflejos en el cobre.
+12. Iluminación ............. Cálida, con parpadeo suave del fuego.
+13. Continuidad ............. Solo dos platos. Alejandro con la chaqueta verde. Manuel sin sombrero (el sombrero está colgado en el gancho junto a la puerta, fuera de plano).
+14. Acción final ............ Los dos sentados, uno frente al otro en la esquina de la mesa; Alejandro a punto de comer.
+15. Transición .............. Corte a plano corto de Alejandro (réplica «Mi madre las hacía con chorizo»).
+16. Restricciones ........... Sincronía labial suave o nula; preferible generar sin voz.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  4.5 s – MANUEL: «Patatas meneás. Como las hacía tu madre.» (C01_E006_L001)
+  7.0 s – ALEJANDRO: «Mi madre las hacía con chorizo.» (C01_E006_L002) — puede quedar fuera del clip
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E006_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame, potatoes falling from the skimmer onto the plate, steam rising.
+0-3s: the old man finishes serving a generous portion to the young man and a small one for himself. 3-5s: he sets the pan on a trivet, pulls out his chair and sits down at the corner of the table. 5-8s: the young man picks up his fork, stirs a potato, and looks at it as a memory crosses his face.
+Characters: slow end-of-day movements, natural weight, no exaggerated expressions.
+Camera: locked shot with a very slow slider push-in of twenty centimetres over the whole clip.
+Environment motion: steam rising from the food, flames moving in the fireplace, flickering reflections on the copper pans.
+Lighting stays warm, with a gentle firelight flicker.
+Final moment: both seated at the corner of the long table, the young man about to eat.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

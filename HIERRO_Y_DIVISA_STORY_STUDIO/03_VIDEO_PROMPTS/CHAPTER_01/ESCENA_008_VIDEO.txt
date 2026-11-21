@@ -1,0 +1,46 @@
+ID: C01_E008_VIDEO
+ESCENA: C01_E008 · LO QUE VALE UN HIERRO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_008_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_008.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E008
+ 2. Imagen de referencia .... C01_E008_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: hombre y toro se miran.
+ 5. Desarrollo .............. El toro rumia; da dos pasos hacia la encina apoyando mal la mano izquierda (cojera mínima, apenas perceptible) y se para. Alejandro frunce el ceño al notarlo. Entra por la izquierda, a pie, Manuel, que se apoya en el muro a dos metros.
+ 6. Movimiento de personajes  Lucero: dos pasos lentos y parada. Alejandro: inclina la cabeza un poco al notar la cojera. Manuel: entra andando, sombrero en la mano, se apoya en el muro.
+ 7. Expresiones faciales .... Alejandro: ceño fruncido, atención. Manuel (de perfil): pena seca.
+ 8. Gestos .................. Manuel apoya los antebrazos en el muro igual que Alejandro; no se miran.
+ 9. Movimiento corporal ..... Quietud general; respiración visible.
+10. Movimiento de cámara .... Cámara fija sobre el hombro; a los 6 s, reencuadre lento (panorámica de 6° a la izquierda) para incluir a Manuel sin perder al toro.
+11. Movimiento ambiental .... Grajos volviendo a la encina; vaho del toro; hierba quieta.
+12. Iluminación ............. La luz dorada se debilita ligeramente durante el plano (el sol se pone).
+13. Continuidad ............. Manuel con WARDROBE M2, sombrero en la mano. Grabadora en la mano de Alejandro. Toro con dos lunares claros en la frente. Puerta verde a la izquierda.
+14. Acción final ............ Los dos hombres apoyados en el muro, separados dos metros, mirando al toro, que está parado bajo la encina.
+15. Transición .............. Corte a plano corto de Manuel: «Cuarenta años. Y no me lo contó.»
+16. Restricciones ........... Cojera muy sutil, nada de animal herido evidente. El toro no se acerca a cámara. Sin diálogo en el plano.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  Sin diálogo en este plano.
+AUDIO: Sin voz. Ambiente: rumia y resoplido del toro, grajos, pasos de Manuel en la tierra.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E008_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame, man and bull holding each other's gaze.
+0-3s: the bull chews, breath steaming. 3-6s: it takes two slow steps toward the oak, placing its left foreleg slightly unevenly — an almost imperceptible limp — and stops. The young man tilts his head a little and frowns, noticing it. 6-10s: an older stocky man with a grey moustache walks in from the left holding his hat and leans his forearms on the wall two metres away; neither looks at the other.
+Characters: stillness, slow breathing, natural walking for the older man, correct bull locomotion.
+Character entering the shot (not in the first frame): a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, no hat on his head, holding his short-brim brown felt hat in his right hand, walking in from frame left, dry grief, eyes on the bull.
+Camera: locked over-the-shoulder shot; from six seconds a slow six-degree pan to the left to include the older man without losing the bull.
+Environment motion: jackdaws settling into the oak, the bull's breath steaming, the grass still.
+Lighting stays golden, slowly weakening as the sun sets.
+Final moment: the two men leaning on the wall two metres apart, watching the bull standing still under the oak.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

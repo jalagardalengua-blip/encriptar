@@ -1,0 +1,48 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · DON ERNESTO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 4
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/DON_ERNESTO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E004_L001
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: DON ERNESTO
+Acotación: grabación; voz al aire libre, el viento roza el micrófono
+Emoción: concentración técnica, autoironía al final
+Intención: nota de trabajo
+Ritmo: pausado, como dictando
+Pausas: tras la hora
+FX / procesado: grabadora digital, exterior, viento
+Texto: Miércoles, cinco. Cercado del semental, las cinco y media de la tarde. [short pause] Lucero, número veintisiete. Come, pero poco. Se echa más de lo normal. Cojea un poco de la mano izquierda, o eso me parece a mí, que a lo mejor el que cojea soy yo.
+------------------------------------------------------------------------
+[002] C01_E004_L002
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: DON ERNESTO
+Emoción: preocupación contenida
+Intención: dejar constancia
+Ritmo: pausado
+Pausas: tras «viernes»
+FX / procesado: grabadora digital, exterior
+Texto: He llamado a Lucía. Viene el viernes. [short pause] Hay que mirarle esa mano antes de que se le meta algo.
+------------------------------------------------------------------------
+[003] C01_E004_L003
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: DON ERNESTO
+Acotación: otro tono: más bajo, más cerca del micro, como si se hubiera dado la vuelta para que nadie le oyera
+Emoción: ternura avergonzada
+Intención: hablar consigo mismo, no para el archivo
+Ritmo: lento
+Pausas: tras «tres veces», risa breve antes de la segunda frase
+FX / procesado: grabadora digital, voz más cercana
+Texto: [sighs] He llamado al chico. Tres veces… [chuckles] Ha salido a mí, el cabrón. No coge el teléfono cuando sabe que le van a decir algo que no quiere oír.
+------------------------------------------------------------------------
+[004] C01_E004_L004
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: DON ERNESTO
+Emoción: resignación
+Intención: cerrar el tema
+Ritmo: lento
+Pausas: tras «Bueno»
+FX / procesado: grabadora digital
+Texto: Bueno. Mañana lo intento otra vez.
+------------------------------------------------------------------------

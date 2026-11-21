@@ -1,0 +1,282 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 27
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E002_L012
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Emoción: cordialidad medida
+Intención: presentarse como alguien importante sin decirlo
+Ritmo: pausado
+Pausas: breve tras el nombre de Alejandro
+FX / procesado: exterior
+Texto: Alejandro. Ricardo Valcárcel. No sé si te acuerdas de mí.
+------------------------------------------------------------------------
+[002] C01_E002_L014
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Acotación: sonríe con los labios cerrados
+Emoción: nostalgia calculada
+Intención: crear intimidad, mostrar que lo sabe todo
+Ritmo: pausado, con placer en contar
+Pausas: tras «años» y antes de la última frase
+FX / procesado: exterior
+Texto: Eso es. Tendrías… ¿catorce años? Viniste con tu padre a una tienta en mi casa. Te volteó una becerra y no lloraste. [short pause] Me acuerdo porque tu padre estaba más orgulloso de eso que de la becerra.
+------------------------------------------------------------------------
+[003] C01_E002_L016
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Emoción: pésame sincero en apariencia
+Intención: halagar al muerto para ganarse al vivo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Normal. Eras un crío. [short pause] Lo siento mucho. Tu padre era un hombre difícil, y en este oficio eso es casi un elogio.
+------------------------------------------------------------------------
+[004] C01_E002_L018
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Emoción: cortesía fría
+Intención: reconocerle sin concederle nada
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Manuel.
+------------------------------------------------------------------------
+[005] C01_E002_L019
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Emoción: discreción calculada
+Intención: plantar la semilla
+Ritmo: pausado, más bajo
+Pausas: tras «ya lo sé»
+FX / procesado: exterior, voz baja
+Texto: No es el momento, ya lo sé. Pero tu padre y yo dejamos algunas cosas a medias. Me pasaré por la finca. Cuando tú me digas.
+------------------------------------------------------------------------
+[006] C01_E002_L021
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: RICARDO
+Emoción: falsa ternura
+Intención: cerrar la puerta en su cara con elegancia
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Entierra a tu padre. Lo demás puede esperar.
+------------------------------------------------------------------------
+[007] C01_E007_L004
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: cordialidad impecable
+Intención: parecer considerado
+Ritmo: pausado
+Pausas: breve tras «sin avisar»
+FX / procesado: exterior
+Texto: Buenos días. Perdonad que me presente así, sin avisar. Voy a misa a Peñacorva y he pensado que mejor quitarnos esto de en medio cuanto antes.
+------------------------------------------------------------------------
+[008] C01_E007_L006
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: humor elegante
+Intención: no darse por aludido
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Por eso. Voy con tiempo.
+------------------------------------------------------------------------
+[009] C01_E007_L008
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: ligereza
+Intención: medir hasta dónde llega
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Me invitas a un café o lo hacemos de pie?
+------------------------------------------------------------------------
+[010] C01_E007_L010
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Acotación: sonríe con los labios cerrados
+Emoción: diversión
+Intención: pinchar con nostalgia
+Ritmo: lento
+Pausas: breve tras «De pie»
+FX / procesado: exterior
+Texto: De pie. Igualito que tu padre.
+------------------------------------------------------------------------
+[011] C01_E007_L011
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: neutralidad de negociador
+Intención: exponer los hechos como un favor
+Ritmo: pausado, preciso
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Hace un año el banco le pidió a tu padre que devolviera un préstamo. Uno grande. Tu padre no podía, y el banco iba a ejecutar. [short pause] Así que compré yo la deuda.
+------------------------------------------------------------------------
+[012] C01_E007_L013
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: paciencia didáctica
+Intención: hacerle sentir ingenuo
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Los bancos venden deudas, Alejandro. Igual que vosotros vendéis toros. Más baratas de lo que valen, porque prefieren cobrar algo hoy que esperar a cobrarlo todo nunca.
+------------------------------------------------------------------------
+[013] C01_E007_L015
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: calma absoluta
+Intención: dejar caer el peso
+Ritmo: lento, cada palabra separada
+Pausas: 1 s antes de empezar (en montaje) y suspensión tras «millón»
+FX / procesado: exterior
+Texto: Un millón… ciento cuarenta mil euros.
+------------------------------------------------------------------------
+[014] C01_E007_L018
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: falsa pena
+Intención: avanzar
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Y no es lo único.
+------------------------------------------------------------------------
+[015] C01_E007_L019
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: precisión
+Intención: enunciar el contrato
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: En octubre tu padre y yo firmamos esto. Una opción de compra. Sobre La Encomienda, el ganado y el hierro. [short pause] Con su antigüedad.
+------------------------------------------------------------------------
+[016] C01_E007_L021
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: cortesía implacable
+Intención: cerrar la duda
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Lleva su firma, Manuel. Notaría de Vitigudino, tres de octubre. Puede mirarla usted mismo.
+------------------------------------------------------------------------
+[017] C01_E007_L023
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: compasión de superficie
+Intención: hurgar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: ¿No se lo contó? [short pause] Vaya. Lo siento, Manuel. De verdad.
+------------------------------------------------------------------------
+[018] C01_E007_L025
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: generosidad estudiada
+Intención: presentar la trampa como regalo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Significa que si el veintiuno de septiembre la deuda no está pagada, la finca pasa a ser mía. Toda. [short pause] Y yo te pago a ti trescientos mil euros. Limpios. Sin una sola deuda detrás.
+------------------------------------------------------------------------
+[019] C01_E007_L027
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: frialdad envuelta en afecto
+Intención: rematar
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Trescientos mil más un millón que te quito de encima. Tu padre lo entendió muy bien. [short pause] Te lo digo con todo el cariño: es una salida digna. Más digna que la que tuvo él.
+------------------------------------------------------------------------
+[020] C01_E007_L029
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: disculpa táctica
+Intención: dividir
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Tiene razón. Me he pasado. [short pause] Manuel, que conste: en Los Arenales tiene usted trabajo mientras quiera. Mismo sueldo. También eso lo hablé con Ernesto.
+------------------------------------------------------------------------
+[021] C01_E007_L031
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: admiración verdadera, casi codicia
+Intención: se le escapa algo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: ¿Sabes lo que tiene esta finca, Alejandro? [short pause] Luz. Mira eso. Tu padre nunca lo vio.
+------------------------------------------------------------------------
+[022] C01_E007_L033
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Acotación: se vuelve, sonríe
+Emoción: cierre elegante
+Intención: tapar lo que ha dicho
+Ritmo: ligero
+Pausas: breve tras «Nada»
+FX / procesado: exterior
+Texto: Nada. Que hace una mañana preciosa.
+------------------------------------------------------------------------
+[023] C01_E007_L035
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: diversión sincera, luego cortesía
+Intención: humillar y disculparse en el mismo gesto
+Ritmo: rápido, luego lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: ¿Con qué? [short pause] Perdona. Eso ha sido feo.
+------------------------------------------------------------------------
+[024] C01_E007_L036
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Emoción: deportividad
+Intención: dejar la puerta abierta sabiendo que no la cruzará
+Ritmo: pausado
+Pausas: breve tras «delante de ti»
+FX / procesado: exterior
+Texto: Si me pagas antes del veintiuno de septiembre, rompo este papel delante de ti y te invito a comer. Donde tú quieras.
+------------------------------------------------------------------------
+[025] C01_E007_L038
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Rama de elección: A
+Emoción: diversión contenida
+Intención: recordarle que tiene fecha
+Ritmo: pausado
+Pausas: tras «Técnicamente…»
+FX / procesado: exterior
+Texto: Técnicamente… [short pause] No. Tienes razón. Hoy es tu casa.
+------------------------------------------------------------------------
+[026] C01_E007_L040
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Rama de elección: B
+Emoción: satisfacción
+Intención: elogiar al hijo a costa del padre
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Es lo más sensato que he oído en esta casa en muchos años.
+------------------------------------------------------------------------
+[027] C01_E007_L041
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: RICARDO
+Acotación: sin volverse, levantando la mano
+Emoción: cortesía
+Intención: última palabra
+Ritmo: ligero
+Pausas: ninguna
+FX / procesado: exterior, alejándose
+Texto: El original lo tiene mi abogado. Esa copia es para ti.
+------------------------------------------------------------------------

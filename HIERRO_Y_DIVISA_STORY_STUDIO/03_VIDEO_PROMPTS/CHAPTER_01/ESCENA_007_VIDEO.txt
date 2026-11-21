@@ -1,0 +1,47 @@
+ID: C01_E007_VIDEO
+ESCENA: C01_E007 · LA LUZ DE LOS LLANOS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_007_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_007.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E007
+ 2. Imagen de referencia .... C01_E007_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Manuel mirando al coche lejano.
+ 5. Desarrollo .............. Manuel habla sin apartar la vista; Alejandro levanta la mirada y ve el coche; el todoterreno se acerca y frena en la grava a diez metros; se abre la puerta del conductor.
+ 6. Movimiento de personajes  El coche avanza de 150 m a 10 m y se detiene. Alejandro baja la taza a la rodilla. Manuel no se mueve.
+ 7. Expresiones faciales .... Manuel: fastidio. Alejandro: ironía que se convierte en tensión.
+ 8. Gestos .................. Alejandro deja la taza en el banco a los 7 s.
+ 9. Movimiento corporal ..... Alejandro se incorpora levemente de la pared.
+10. Movimiento de cámara .... Cámara fija; a partir de los 6 s, ligero reencuadre (panorámica de 5°) a la derecha para recibir el coche.
+11. Movimiento ambiental .... Polvo del coche suspendido al sol; gorriones levantando el vuelo de la parra; gotas cayendo del tejado.
+12. Iluminación ............. Sol de mañana constante.
+13. Continuidad ............. Ricardo solo en el coche (conduce él). Al abrir la puerta se ve su pie con botín de ante marrón; el plano termina antes de que baje del todo.
+14. Acción final ............ Coche detenido; la puerta del conductor abierta; un pie con botín marrón sobre la grava.
+15. Transición .............. Corte a plano medio de Ricardo saliendo y mirando hacia el sur (los llanos).
+16. Restricciones ........... Velocidad del coche realista (unos 20 km/h). Sin logotipos ni matrícula.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  1.0 s – MANUEL: «Mira quién viene.» (C01_E007_L001)
+  3.5 s – ALEJANDRO: «¿Ese no era el de ‹lo demás puede esperar›?» (C01_E007_L002)
+  6.5 s – MANUEL: «Ha esperado una noche. Para lo que es él, es mucho.» (C01_E007_L003)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E007_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame, the older man looking at the distant SUV.
+0-3s: the older man says a short line without taking his eyes off the track. 3-5s: the young man looks up and sees the car. 5-9s: the black SUV comes up the track at about 20 km/h and stops on the gravel ten metres from the porch; the young man sets his mug down on the bench and sits up slightly. 9-10s: the driver's door opens and a brown suede ankle boot touches the gravel.
+Characters: natural, minimal movements; the older man stays still.
+Camera: locked shot with a slight five-degree pan to the right from six seconds to receive the car.
+Environment motion: the car's dust hangs in the sunlight, sparrows fly off the bare vine, water drips from the roof edge.
+Lighting stays constant clear morning sun.
+Final moment: the SUV stopped, driver door open, one brown suede boot on the gravel.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

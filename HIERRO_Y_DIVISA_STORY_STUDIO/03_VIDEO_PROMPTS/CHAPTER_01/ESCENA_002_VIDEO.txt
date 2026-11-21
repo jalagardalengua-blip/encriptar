@@ -1,0 +1,45 @@
+ID: C01_E002_VIDEO
+ESCENA: C01_E002 · TIERRA DE PEÑACORVA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_002.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E002
+ 2. Imagen de referencia .... C01_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Alejandro a mitad de paso tras la verja.
+ 5. Desarrollo .............. Alejandro avanza por el pasillo de grava hacia el grupo; varias personas se vuelven y se apartan sin hablar para dejarle pasar; una mujer da un codazo discreto a otra.
+ 6. Movimiento de personajes  Alejandro camina recto a ritmo lento-normal (unos 8 pasos). Vecinos: giros de cabeza, dos o tres se apartan medio paso. Manuel no se mueve.
+ 7. Expresiones faciales .... Vecinos: curiosidad, reproche, pena. No se ve la cara de Alejandro.
+ 8. Gestos .................. Codazo discreto entre dos mujeres a la derecha; un hombre mayor se quita la gorra.
+ 9. Movimiento corporal ..... Alejandro con los hombros cerrados, manos a los lados.
+10. Movimiento de cámara .... Steadicam siguiendo a Alejandro a dos metros por detrás, a la altura del hombro, avance suave y constante; sin giros.
+11. Movimiento ambiental .... Cipreses balanceándose con el viento flojo; dos cigüeñas cruzan muy lejos sobre la espadaña.
+12. Iluminación ............. Cubierto, difuso, constante.
+13. Continuidad ............. Alejandro sin corbata. Manuel en primera fila con el sombrero en las manos. El féretro sigue en la plataforma (aún no se introduce). Ricardo no aparece en este plano.
+14. Acción final ............ Alejandro llega junto a Manuel y se detiene a su lado; Manuel sigue mirando al frente.
+15. Transición .............. Corte a plano medio de perfil de los dos ante el nicho (Padre Julián: «Concédele, Señor, el descanso eterno»).
+16. Restricciones ........... Nadie habla en este plano. Nadie mira a cámara. Sin multiplicación de figurantes ni caras repetidas.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  Sin diálogo en este plano.
+AUDIO: Sin voz. Ambiente: grava, viento en cipreses, murmullo apagado de la gente (walla), cigüeñas lejanas.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: the young man in the black suit is mid-stride on the gravel just past the open gate, seen from behind.
+0-7s: he walks slowly and steadily down the gravel path toward the mourners, about eight steps; several villagers turn their heads and silently step half a pace aside to let him through; on the right, a woman discreetly nudges another with her elbow; an old man takes off his cap. 7-10s: he reaches the front row and stops beside the stocky grey-moustached man holding a hat, who keeps looking straight ahead at the niche.
+Characters: real walking gait, no exaggerated reactions, faces turning naturally, the foreman does not move.
+Camera: smooth steadicam following two metres behind him at shoulder height, constant slow forward travel, no pans or rotations.
+Environment motion: cypresses swaying gently in the light wind, two storks crossing far away above the church bell gable.
+Lighting stays soft, diffuse overcast light, unchanged.
+Final moment: he stands beside the older man in the front row, both facing the niche wall.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

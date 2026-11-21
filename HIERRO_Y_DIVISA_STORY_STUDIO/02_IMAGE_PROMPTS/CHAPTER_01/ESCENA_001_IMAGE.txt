@@ -1,0 +1,48 @@
+ID: C01_E001_IMAGE
+ESCENA: C01_E001 · LLAMADAS PERDIDAS
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_001.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_001_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A1)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E001
+ 2. Localización ............ Interior del coche de Alejandro en marcha, carretera comarcal entre dehesa (Salamanca)
+ 3. Hora y meteorología ..... Sábado 8 de marzo, 9:40. Sol bajo de invierno a la derecha del coche, niebla baja levantándose entre las encinas, 6 °C.
+ 4. Personajes visibles ..... Alejandro (conductor). Manuel no aparece (solo voz).
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Alejandro: WARDROBE A1 (traje negro algo grande, camisa blanca sin corbata). Corbata negra sin anudar sobre una bolsa de deporte negra en el asiento del copiloto.
+ 7. Expresión facial ........ Mirada fija en la carretera, mandíbula apretada, ojeras; los ojos se desvían un instante hacia el móvil.
+ 8. Posición corporal ....... Sentado al volante, mano izquierda en la parte alta del volante, mano derecha bajando hacia el móvil del soporte de rejilla.
+ 9. Acción congelada ........ El móvil acaba de empezar a vibrar con la pantalla encendida (contenido ilegible); Alejandro lo mira de reojo sin girar la cabeza.
+10. Composición ............. Plano desde el asiento del copiloto: Alejandro de perfil tres cuartos en el tercio izquierdo, parabrisas y carretera en el centro y derecha, móvil iluminado en primer término desenfocado abajo a la derecha.
+11. Tipo de plano ........... Plano medio corto interior de vehículo.
+12. Distancia focal ......... 35 mm spherical lens
+13. Iluminación ............. Luz natural de mañana entrando por la ventanilla derecha, rasante y cálida sobre el rostro; interior en sombra; leve resplandor frío de la pantalla del móvil en la barbilla.
+14. Profundidad de campo .... shallow depth of field focused on his eyes, road softly visible, foreground phone blurred
+15. Texturas y materiales ... Lana negra barata con brillo, plástico gris del salpicadero, polvo en el salpicadero, vaho en las esquinas del cristal, café de papel en el posavasos.
+16. Ambiente ................ Cansancio, culpa, viaje sin ganas.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Pantalla del móvil ilegible. Sin logotipos en volante ni salpicadero. Volante a la izquierda (España). Sin matrícula.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium close-up shot inside a moving car taken from the passenger seat. A young man drives alone on a foggy rural road; his phone, clipped to the air vent, has just lit up and started vibrating, and he glances at it from the corner of his eye without turning his head.
+The driver: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing a slightly oversized cheap black suit, white shirt with the top button undone, no tie, black leather shoes dusty at the toes, seated at the wheel of a left-hand-drive car, left hand at the top of the steering wheel, right hand starting to move toward the phone in the vent holder, eyes fixed on the road with a sideways glance at the phone, jaw clenched, exhausted.
+Vehicle: a 2012 dark grey five-door compact hatchback, generic design with no badges, a small dent on the rear left wing, dusty, cheap phone holder on the dashboard vent.
+Setting: a narrow two-lane rural road in western Salamanca, Spain, worn asphalt with faded white edge lines, granite drystone walls on both sides, holm oak dehesa stretching to the horizon, patches of low fog between the trees, wooden electricity poles. Seen through the windshield. On the passenger seat lies an untied black tie on top of a black sports bag; a paper coffee cup sits in the cup holder.
+Time and weather: 9:40 am on a cold late-winter morning, low sun from the right side of the car, low fog lifting between the holm oaks, 6 °C, condensation at the corners of the windshield.
+Composition: driver in three-quarter profile on the left third, windshield and road filling the centre and right, the glowing phone out of focus in the lower right foreground, horizon line on the upper third.
+Lighting: natural low morning sunlight raking through the right side window onto his face, warm and soft, the car interior in shadow, faint cool glow from the phone screen under his chin.
+Camera: 35 mm spherical lens, shallow depth of field focused on his eyes, road softly visible, foreground phone blurred.
+Textures: cheap black wool suit with a slight sheen, grey plastic dashboard with dust, condensation at the windshield corners, paper coffee cup.
+Mood: tired, guilty, a journey he does not want to make.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable phone screen, steering wheel logo

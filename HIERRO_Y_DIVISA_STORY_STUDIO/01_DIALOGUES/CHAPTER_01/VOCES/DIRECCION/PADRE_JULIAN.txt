@@ -1,0 +1,26 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · PADRE JULIÁN
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 2
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/PADRE_JULIAN.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E002_L001
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: PADRE JULIÁN
+Emoción: pena serena
+Intención: rito, y despedida de un amigo
+Ritmo: lento, litúrgico
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Concédele, Señor, el descanso eterno.
+------------------------------------------------------------------------
+[002] C01_E002_L002
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: PADRE JULIÁN
+Emoción: pena serena
+Intención: cerrar el rito
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Descanse en paz.
+------------------------------------------------------------------------

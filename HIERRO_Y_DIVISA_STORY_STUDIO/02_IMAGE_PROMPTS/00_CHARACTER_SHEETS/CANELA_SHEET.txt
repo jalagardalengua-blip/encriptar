@@ -1,0 +1,13 @@
+ID: SHEET_CANELA
+TIPO: Ficha maestra visual de animal
+FUENTE: 00_BIBLE/VISUAL_CONTINUITY_BIBLE.md · ANIMAL LOCK — CANELA
+ESTADO: PENDIENTE DE GENERAR
+
+=== PROMPT 1 · LATERAL COMPLETO (copiar) ===
+Wildlife-style cinematic photograph, an old chestnut mare, 17 years old, white star on the forehead, white sock on the left hind leg, slightly sway-backed, standing in full left side view on a green winter pasture of a holm oak dehesa in Salamanca, Spain, whole body visible with hooves, soft low morning sunlight, background of dark holm oaks and a granite drystone wall out of focus, 135 mm lens, f/4, anatomically correct, realistic coat texture and musculature, natural colors, fine film grain. Aspect ratio 16:9.
+
+=== PROMPT 2 · TRES CUARTOS FRONTAL (copiar) ===
+Cinematic photograph, an old chestnut mare, 17 years old, white star on the forehead, white sock on the left hind leg, slightly sway-backed, three-quarter front view, head slightly raised looking toward the camera from 25 metres away, breath steaming in cold air, golden late afternoon side light, 200 mm lens, shallow depth of field, anatomically correct, realistic, natural colors. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, extra legs, extra horns, fused limbs, wrong number of hooves, cartoon animal

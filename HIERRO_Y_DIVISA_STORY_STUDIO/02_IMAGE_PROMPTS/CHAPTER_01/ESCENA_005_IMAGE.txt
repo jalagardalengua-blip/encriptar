@@ -1,0 +1,54 @@
+ID: C01_E005_IMAGE
+ESCENA: C01_E005 · LA TÓRTOLA
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_005.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_005_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A2)
+  - MORO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MORO_SHEET.txt
+  - CANELA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/CANELA_SHEET.txt
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E005
+ 2. Localización ............ Prado Alto, ladera ascendente con granito y charca
+ 3. Hora y meteorología ..... Sábado 8 de marzo, 18:20. Hora dorada, sol bajo al oeste (de cara a la cámara, tras la ladera), sin viento, 9 °C, vaho en los animales.
+ 4. Personajes visibles ..... Manuel a caballo (Moro), Alejandro a caballo (Canela), tres cabestros con cencerros delante, unas 30 vacas bravas subiendo la ladera.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Manuel: WARDROBE M2 con zahones, garrocha cruzada sobre la silla. Alejandro: WARDROBE A2 (pantalón de traje, camisa blanca, chaqueta verde de su padre, zapatos negros embarrados).
+ 7. Expresión facial ........ Manuel: relajado, oficio. Alejandro: tenso, inseguro sobre la yegua.
+ 8. Posición corporal ....... Manuel erguido y suelto en la silla vaquera, garrocha en diagonal. Alejandro algo rígido, riendas cortas.
+ 9. Acción congelada ........ La vacada sube detrás de los cabestros; Manuel tiene el brazo izquierdo medio levantado señalando a una vaca negra que se abre por la izquierda.
+10. Composición ............. Contraluz dorado: cabestros y vacas en la mitad del encuadre subiendo en diagonal de izquierda a derecha; los dos jinetes detrás, Manuel más cerca de cámara a la derecha, Alejandro a la izquierda algo retrasado; charca reflejando el cielo en primer término inferior; encinas en la cresta.
+11. Tipo de plano ........... Gran plano general de campo.
+12. Distancia focal ......... 75 mm anamorphic lens
+13. Iluminación ............. Contraluz dorado bajo; bordes de luz en los lomos de los animales y en los jinetes; vaho iluminado; sombras largas hacia cámara.
+14. Profundidad de campo .... deep focus, slight atmospheric haze in the distance
+15. Texturas y materiales ... Hierba de invierno húmeda, granito con líquenes, agua quieta, pelo cárdeno y negro de las vacas, cuero de las sillas, cera de la chaqueta.
+16. Ambiente ................ Belleza del oficio; un hombre que vuelve a un mundo que es suyo y no sabe si lo es.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Anatomía correcta de vacas, bueyes y caballos. Cuernos en lira finos en las vacas; cuernos largos en los cabestros. Sin la pick-up de Lucía todavía.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, extreme wide landscape shot at golden hour. Two riders drive a herd of Spanish fighting cows up a gentle slope behind three tame belled oxen; the older rider raises his left arm to point at a black cow breaking away on the left.
+Rider nearer camera, frame right: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing a short-brim brown felt hat and worn brown leather chaps (zahones) over his trousers, riding the dapple-grey horse upright and relaxed on a vaquera saddle, a long wooden garrocha pole resting diagonally across the saddle, left arm half raised pointing at a straying cow, relaxed, focused, professional.
+Second rider, frame left and slightly behind: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing black suit trousers, white shirt with sleeves rolled to the forearm and top button undone, and his late father's faded olive-green waxed cotton field jacket, too wide in the shoulders, corduroy collar worn brown, black leather shoes muddy, riding the old chestnut mare stiffly with short reins, black dress shoes in the stirrups, tense, unsure, concentrating.
+Animal: a dapple-grey Spanish horse (PRE cross), 1.60 m, black leather headstall, Spanish vaquera saddle with box stirrups.
+Animal: an old chestnut mare, 17 years old, white star on the forehead, white sock on the left hind leg, slightly sway-backed.
+Animal: large tame oxen, red-and-white and black-and-white pied coats, long horns, large iron cowbells on wide leather collars.
+Animal: Spanish fighting cows, mostly cárdeno grey-flecked and some black, lyre-shaped thin horns, lean bodies, alert heads.
+Setting: a gentle slope of green winter pasture in a holm oak dehesa, granite boulders breaking the grass, a large shallow pond reflecting the sky, low drystone walls, cows grazing in the distance. About thirty cows climb the slope in a loose line behind the oxen; one black cow is breaking away to the left toward the holm oaks.
+Time and weather: 6:20 pm, golden hour, low sun in the west just above the ridge ahead, no wind, 9 °C, breath steaming from the animals.
+Composition: the herd climbing diagonally from left to right across the middle of the frame, the two riders behind, a still pond reflecting the golden sky in the lower foreground, holm oaks along the ridge.
+Lighting: low golden backlight, rim light on the animals' backs and on the riders, glowing breath vapour, long shadows toward camera.
+Camera: 75 mm anamorphic lens, deep focus, slight atmospheric haze in the distance.
+Textures: wet winter grass, lichen-covered granite, still water, flecked grey and black cow coats, saddle leather, waxed cotton jacket.
+Mood: the beauty of the craft; a man returning to a world that is his and not sure it is.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, pickup truck, modern fences, cows with straight horns, horses with wrong anatomy

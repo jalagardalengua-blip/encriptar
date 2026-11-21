@@ -1,0 +1,815 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 80
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E001_L002
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Acotación: sin quitar los ojos de la carretera
+Emoción: neutra, a la defensiva
+Intención: dar lo mínimo
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: —
+Texto: Acabo de dejar la autovía.
+------------------------------------------------------------------------
+[002] C01_E001_L004
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: impaciencia
+Intención: cerrar el tema
+Ritmo: rápido
+Pausas: corta antes de «Menos»
+FX / procesado: —
+Texto: Pues a una hora. Menos.
+------------------------------------------------------------------------
+[003] C01_E001_L006
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Acotación: aprieta el volante
+Emoción: irritación
+Intención: marcar distancia
+Ritmo: normal, cortante
+Pausas: ninguna
+FX / procesado: —
+Texto: Ya sé a qué hora es, Manuel.
+------------------------------------------------------------------------
+[004] C01_E001_L008
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: falsa indiferencia
+Intención: no entrar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: —
+Texto: ¿Y?
+------------------------------------------------------------------------
+[005] C01_E001_L010
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: curiosidad que no quiere mostrar
+Intención: saber qué piensan de él
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: —
+Texto: ¿Y qué les dices?
+------------------------------------------------------------------------
+[006] C01_E001_L012
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: rabia defensiva
+Intención: contraatacar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: —
+Texto: Me enteré el jueves por la noche. ¿Qué querías, que viniera andando?
+------------------------------------------------------------------------
+[007] C01_E001_L014
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: excusa que sabe débil
+Intención: defenderse
+Ritmo: normal, baja al final
+Pausas: ninguna
+FX / procesado: —
+Texto: Estaba trabajando.
+------------------------------------------------------------------------
+[008] C01_E001_L016
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Acotación: muy bajo
+Emoción: miedo
+Intención: preguntar lo que no quiere saber
+Ritmo: lento, casi susurrado
+Pausas: precedida de 4 s de silencio
+FX / procesado: —
+Texto: ¿Cómo fue?
+------------------------------------------------------------------------
+[009] C01_E001_L018
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Emoción: súplica dura
+Intención: exigir
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: —
+Texto: Manuel.
+------------------------------------------------------------------------
+[010] C01_E001_L020
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: ALEJANDRO
+Acotación: para sí, sin voz casi
+Emoción: culpa
+Intención: ninguna, se le escapa
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: —
+Texto: Joder, papá.
+------------------------------------------------------------------------
+[011] C01_E002_L004
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Acotación: igual de bajo
+Emoción: desafío
+Intención: no ceder
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: En el coche.
+------------------------------------------------------------------------
+[012] C01_E002_L006
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: incomodidad
+Intención: hablar de otra cosa
+Ritmo: normal, bajo
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: ¿Quién es toda esta gente?
+------------------------------------------------------------------------
+[013] C01_E002_L011
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: educación cansada
+Intención: despedirla
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Gracias, Remedios.
+------------------------------------------------------------------------
+[014] C01_E002_L013
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: desconfianza
+Intención: dejar claro que sabe quién es
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Los Arenales.
+------------------------------------------------------------------------
+[015] C01_E002_L015
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: frialdad
+Intención: negarle la intimidad
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No me acuerdo.
+------------------------------------------------------------------------
+[016] C01_E002_L020
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: alarma
+Intención: exigir
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué cosas?
+------------------------------------------------------------------------
+[017] C01_E002_L022
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: inquietud con rabia
+Intención: obtener respuesta ya
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué dejó mi padre a medias con ese?
+------------------------------------------------------------------------
+[018] C01_E002_L024
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: ALEJANDRO
+Emoción: frustración
+Intención: acorralarle
+Ritmo: rápido, imitándole en las citas
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Todo es «aquí no» contigo. «Por teléfono no». «Aquí no».
+------------------------------------------------------------------------
+[019] C01_E003_L001
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: sorpresa leve
+Intención: romper el silencio
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Lo han arreglado.
+------------------------------------------------------------------------
+[020] C01_E003_L003
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: nostalgia que no admite
+Intención: hablar de cosas
+Ritmo: normal
+Pausas: breve tras «camino»
+FX / procesado: interior vehículo
+Texto: El camino. Antes, en el último kilómetro, te dejabas los bajos.
+------------------------------------------------------------------------
+[021] C01_E003_L005
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: decisión
+Intención: exigir lo que le debe
+Ritmo: lento, firme
+Pausas: tras «Manuel»
+FX / procesado: interior vehículo
+Texto: Ahora no hay nadie, Manuel. Ni teléfono, ni cementerio.
+------------------------------------------------------------------------
+[022] C01_E003_L007
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: incredulidad
+Intención: entender
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Con el toro?
+------------------------------------------------------------------------
+[023] C01_E003_L009
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: angustia que se vuelve enfado
+Intención: buscar culpable
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Y qué hacía de noche metido con el semental?
+------------------------------------------------------------------------
+[024] C01_E003_L012
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: oír la verdad de Manuel
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Y tú qué dices?
+------------------------------------------------------------------------
+[025] C01_E003_L015
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: sarcasmo
+Intención: rechazar el elogio
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Abrir una puerta. Qué mérito.
+------------------------------------------------------------------------
+[026] C01_E003_L017
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: frialdad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Y el toro?
+------------------------------------------------------------------------
+[027] C01_E003_L019
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: rabia fría
+Intención: castigar a alguien
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Pues habrá que matarlo.
+------------------------------------------------------------------------
+[028] C01_E003_L021
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: dolor que se vuelve grito sin gritar
+Intención: justificarse
+Ritmo: normal, se quiebra al final
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Ha matado a mi padre, Manuel.
+------------------------------------------------------------------------
+[029] C01_E003_L023
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: alarma
+Intención: agarrarse al dato
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Qué deudas?
+------------------------------------------------------------------------
+[030] C01_E003_L025
+Escena: C01_E003 · LA PORTADA
+Personaje: ALEJANDRO
+Emoción: exasperación
+Intención: reprochar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Otra vez.
+------------------------------------------------------------------------
+[031] C01_E004_L006
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: ALEJANDRO
+Emoción: emoción contenida que suena a acusación
+Intención: compartir y reprochar a la vez
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Has oído esto?
+------------------------------------------------------------------------
+[032] C01_E004_L008
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: ALEJANDRO
+Emoción: urgencia
+Intención: atar cabos
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: Dice que Lucero cojeaba.
+------------------------------------------------------------------------
+[033] C01_E005_L003
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: agobio
+Intención: pedir ayuda sin admitirlo
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cuál es la Gitanilla?
+------------------------------------------------------------------------
+[034] C01_E005_L008
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: impulso de actuar
+Intención: hacer algo
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y qué hacemos?
+------------------------------------------------------------------------
+[035] C01_E005_L010
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Quién es Lucía?
+------------------------------------------------------------------------
+[036] C01_E005_L015
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: neutra
+Intención: responder
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Alejandro.
+------------------------------------------------------------------------
+[037] C01_E005_L017
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: cortesía
+Intención: quitar importancia
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No pasa nada.
+------------------------------------------------------------------------
+[038] C01_E005_L022
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: sorpresa
+Intención: confirmar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Yo?
+------------------------------------------------------------------------
+[039] C01_E005_L027
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: confusión
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Por qué?
+------------------------------------------------------------------------
+[040] C01_E005_L030
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: adrenalina, risa nerviosa
+Intención: preguntar de verdad
+Ritmo: entrecortado
+Pausas: ninguna
+FX / procesado: exterior, respiración
+Texto: [exhales] ¿Siempre es así?
+------------------------------------------------------------------------
+[041] C01_E005_L034
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: urgencia
+Intención: saber
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Raro cómo?
+------------------------------------------------------------------------
+[042] C01_E005_L039
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: ALEJANDRO
+Emoción: desconcierto
+Intención: aceptar el papel sin entenderlo del todo
+Ritmo: titubeante
+Pausas: entre palabras
+FX / procesado: exterior
+Texto: Ah. Sí. [short pause] Claro.
+------------------------------------------------------------------------
+[043] C01_E006_L002
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Acotación: mira el plato
+Emoción: nostalgia que corrige
+Intención: marcar que se acuerda
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: Mi madre las hacía con chorizo.
+------------------------------------------------------------------------
+[044] C01_E006_L004
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: reconciliación mínima
+Intención: dar las gracias sin decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Están buenas.
+------------------------------------------------------------------------
+[045] C01_E006_L006
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: curiosidad que disimula
+Intención: hablar de algo que no duela
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: La Lucía esa. ¿Desde cuándo viene?
+------------------------------------------------------------------------
+[046] C01_E006_L008
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: interés
+Intención: que siga
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Y?
+------------------------------------------------------------------------
+[047] C01_E006_L010
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: melancolía que suena a queja
+Intención: decir algo de la ausencia sin decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Esta mesa es ridícula para dos.
+------------------------------------------------------------------------
+[048] C01_E006_L012
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: culpa que asoma
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Cenaba aquí solo?
+------------------------------------------------------------------------
+[049] C01_E006_L014
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: herida antigua
+Intención: defenderse antes de que le acusen
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Él me dijo que no volviera.
+------------------------------------------------------------------------
+[050] C01_E006_L016
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: desafío
+Intención: dar por zanjado
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: Pues entonces.
+------------------------------------------------------------------------
+[051] C01_E006_L018
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: rencor de adolescente
+Intención: herir
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: Tú siempre estabas de su parte.
+------------------------------------------------------------------------
+[052] C01_E006_L020
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: herida verdadera
+Intención: reprochar lo que de verdad le duele
+Ritmo: normal, se acelera
+Pausas: breve tras «nunca»
+FX / procesado: interior
+Texto: ¿Y por qué no me llamaste nunca? En cuatro años. Ni una vez.
+------------------------------------------------------------------------
+[053] C01_E006_L022
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Acotación: muy bajo
+Emoción: culpa absoluta
+Intención: ninguna, constatar
+Ritmo: muy lento
+Pausas: precedida de 5 s de silencio
+FX / procesado: —
+Texto: Y llamó.
+------------------------------------------------------------------------
+[054] C01_E006_L025
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: aceptar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: Sí.
+------------------------------------------------------------------------
+[055] C01_E006_L028
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: algo parecido al cariño
+Intención: retenerle un segundo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Manuel.
+------------------------------------------------------------------------
+[056] C01_E006_L029
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: ALEJANDRO
+Emoción: ternura torpe
+Intención: lo que no sabe decir de otra manera
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Gracias por la cena.
+------------------------------------------------------------------------
+[057] C01_E007_L002
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: sarcasmo
+Intención: burlarse
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Ese no era el de «lo demás puede esperar»?
+------------------------------------------------------------------------
+[058] C01_E007_L007
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: tensión
+Intención: ir al grano
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Quitarnos qué de en medio?
+------------------------------------------------------------------------
+[059] C01_E007_L009
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: hostilidad
+Intención: negarle hospitalidad
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: De pie.
+------------------------------------------------------------------------
+[060] C01_E007_L012
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: incredulidad
+Intención: entender
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Que la compraste?
+------------------------------------------------------------------------
+[061] C01_E007_L014
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: miedo contenido
+Intención: la cifra
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cuánto?
+------------------------------------------------------------------------
+[062] C01_E007_L016
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: traición
+Intención: acusar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Tú lo sabías?
+------------------------------------------------------------------------
+[063] C01_E007_L024
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: angustia
+Intención: entender ya
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y eso qué significa?
+------------------------------------------------------------------------
+[064] C01_E007_L026
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: desprecio
+Intención: devolverle la cifra
+Ritmo: lento
+Pausas: entre frases
+FX / procesado: exterior
+Texto: Trescientos mil euros. Por todo esto.
+------------------------------------------------------------------------
+[065] C01_E007_L032
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: desconcierto
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué quieres decir?
+------------------------------------------------------------------------
+[066] C01_E007_L034
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: orgullo
+Intención: desafiar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y si pago?
+------------------------------------------------------------------------
+[067] C01_E007_L037
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: orgullo
+Intención: echarle
+Ritmo: lento, firme
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Fuera de mi casa.
+------------------------------------------------------------------------
+[068] C01_E007_L039
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: cálculo
+Intención: ganar tiempo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Lo pensaré.
+------------------------------------------------------------------------
+[069] C01_E007_L042
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: que no se vaya
+Ritmo: alto
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¡Manuel!
+------------------------------------------------------------------------
+[070] C01_E008_L002
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: solidaridad torpe
+Intención: acompañarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: A mí tampoco me contó nada.
+------------------------------------------------------------------------
+[071] C01_E008_L004
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: incomprensión
+Intención: buscar una explicación
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Por qué lo hizo?
+------------------------------------------------------------------------
+[072] C01_E008_L006
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: cálculo
+Intención: empezar a pensar en voz alta
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Seis meses.
+------------------------------------------------------------------------
+[073] C01_E008_L008
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: determinación incipiente
+Intención: saber con qué cuenta
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cuánto vale una corrida?
+------------------------------------------------------------------------
+[074] C01_E008_L010
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: impaciencia
+Intención: exigir la cifra
+Ritmo: seco
+Pausas: tras «Manuel»
+FX / procesado: exterior
+Texto: Manuel. ¿Cuánto?
+------------------------------------------------------------------------
+[075] C01_E008_L012
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: desánimo
+Intención: constatar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No da.
+------------------------------------------------------------------------
+[076] C01_E008_L017
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber con quién trata
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Carmen Olmedo?
+------------------------------------------------------------------------
+[077] C01_E008_L019
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: interés creciente
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y por qué llama?
+------------------------------------------------------------------------
+[078] C01_E008_L021
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: decisión
+Intención: dar el primer paso
+Ritmo: lento, firme
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pues tenemos toros.
+------------------------------------------------------------------------
+[079] C01_E008_L022
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: determinación
+Intención: declarar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No se vende.
+------------------------------------------------------------------------
+[080] C01_E008_L024
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: ALEJANDRO
+Emoción: orgullo, desafío, algo de miedo
+Intención: hacerse cargo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pues ahora lo digo yo.
+------------------------------------------------------------------------

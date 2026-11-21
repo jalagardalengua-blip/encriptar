@@ -1,0 +1,844 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 83
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E001_L001
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Acotación: teléfono, voz por el altavoz del coche; de fondo, cucharillas y murmullo de gente
+Emoción: cansancio contenido
+Intención: tantear sin presionar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: ¿Por dónde vas?
+------------------------------------------------------------------------
+[002] C01_E001_L003
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: ironía seca
+Intención: hacerle ver que se escaquea
+Ritmo: lento
+Pausas: breve antes de hablar
+FX / procesado: teléfono
+Texto: [exhales] Eso no es un sitio.
+------------------------------------------------------------------------
+[003] C01_E001_L005
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: firmeza
+Intención: recordarle la obligación
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: El entierro es a las doce.
+------------------------------------------------------------------------
+[004] C01_E001_L007
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: tristeza tranquila
+Intención: informar, y que le pese
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: teléfono
+Texto: Ha venido medio pueblo a casa a velarle. Esta noche no se ha ido nadie.
+------------------------------------------------------------------------
+[005] C01_E001_L009
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: neutra
+Intención: dejar caer el peso
+Ritmo: lento
+Pausas: tras «nada»
+FX / procesado: teléfono
+Texto: Y nada. Que preguntan por ti.
+------------------------------------------------------------------------
+[006] C01_E001_L011
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: reproche contenido
+Intención: herir un poco
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Que estás de camino. [short pause] Llevo dos días diciéndolo.
+------------------------------------------------------------------------
+[007] C01_E001_L013
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: calma dura
+Intención: corregirle con un hecho
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: Te llamé el jueves a las siete de la mañana.
+------------------------------------------------------------------------
+[008] C01_E001_L015
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: dolor convertido en reproche
+Intención: decir lo que lleva dos días callando
+Ritmo: lento
+Pausas: silencio de 2 s antes de empezar (en montaje); suspensión tras «miércoles»
+FX / procesado: teléfono
+Texto: Y tu padre te llamó el miércoles… ¿También estabas trabajando?
+------------------------------------------------------------------------
+[009] C01_E001_L017
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: ternura áspera
+Intención: protegerle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: Eso no se cuenta por teléfono.
+------------------------------------------------------------------------
+[010] C01_E001_L019
+Escena: C01_E001 · LLAMADAS PERDIDAS
+Personaje: MANUEL
+Emoción: cariño escondido en una orden
+Intención: cerrar y cuidarle
+Ritmo: lento, se suaviza al final
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Que no, chaval. Tú conduce. [short pause] Y ponte la corbata antes de llegar, que te conozco.
+------------------------------------------------------------------------
+[011] C01_E002_L003
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Acotación: muy bajo
+Emoción: reproche mínimo
+Intención: hacerle saber que le ha visto
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: La corbata.
+------------------------------------------------------------------------
+[012] C01_E002_L005
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Emoción: ironía cansada
+Intención: dar por perdida la batalla
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: Claro.
+------------------------------------------------------------------------
+[013] C01_E002_L007
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Emoción: ironía
+Intención: aliviar sin sonreír
+Ritmo: lento
+Pausas: breve tras cada frase
+FX / procesado: exterior, voz baja
+Texto: Unos le debían algo a tu padre. A otros les debía él. Están mezclados, no te esfuerces.
+------------------------------------------------------------------------
+[014] C01_E002_L009
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Emoción: humor seco
+Intención: pinchar a Alejandro
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Más quisiera.
+------------------------------------------------------------------------
+[015] C01_E002_L017
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Emoción: desprecio educado
+Intención: cumplir y nada más
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Gracias por venir, don Ricardo.
+------------------------------------------------------------------------
+[016] C01_E002_L023
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Emoción: firmeza
+Intención: aplazar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Aquí no.
+------------------------------------------------------------------------
+[017] C01_E002_L025
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: MANUEL
+Acotación: enciende el cigarro, suelta el humo
+Emoción: humor seco y cansancio
+Intención: ganar la discusión sin pelearla
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: [exhales] Es que eliges fatal los sitios. [short pause] Vámonos a casa.
+------------------------------------------------------------------------
+[018] C01_E003_L002
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: neutra
+Intención: obligarle a hablar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿El qué?
+------------------------------------------------------------------------
+[019] C01_E003_L004
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: ironía
+Intención: comentar el mundo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Lo arregló la Diputación. Por las elecciones. [short pause] Dentro de dos años estará igual.
+------------------------------------------------------------------------
+[020] C01_E003_L006
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: dolor seco, sin dramatismo
+Intención: decirlo de una vez, como un parte
+Ritmo: lento, uniforme
+Pausas: breve entre frases
+FX / procesado: interior vehículo
+Texto: Le encontré yo. El jueves, a las siete menos veinte. En el cercado de Lucero, al lado del pilón.
+------------------------------------------------------------------------
+[021] C01_E003_L008
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: cansancio
+Intención: confirmar sin añadir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Con el toro.
+------------------------------------------------------------------------
+[022] C01_E003_L010
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: culpa escondida
+Intención: no mentir del todo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Eso me pregunto yo cada vez que cierro los ojos.
+------------------------------------------------------------------------
+[023] C01_E003_L011
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: neutralidad forzada
+Intención: dar la versión oficial
+Ritmo: lento
+Pausas: breve antes de «y ya está»
+FX / procesado: interior vehículo
+Texto: La Guardia Civil dice que fue un accidente. El forense, también. Que se cayó, que el toro se arrancó, y ya está.
+------------------------------------------------------------------------
+[024] C01_E003_L013
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: orgullo y pena
+Intención: honrarle y esquivar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Yo digo que tu padre llevaba cuarenta años entrando en ese cercado sin pedirle permiso a nadie. [short pause] Ni al toro.
+------------------------------------------------------------------------
+[025] C01_E003_L014
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: ternura escondida
+Intención: darle algo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Mira, eso no se te ha olvidado.
+------------------------------------------------------------------------
+[026] C01_E003_L016
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: humor de campo
+Intención: insistir sin insistir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: No sabes la de gente que no sabe.
+------------------------------------------------------------------------
+[027] C01_E003_L018
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: algo parecido al rencor
+Intención: informar
+Ritmo: lento
+Pausas: breves entre frases
+FX / procesado: interior vehículo
+Texto: Ahí está. Comiendo. Como si nada.
+------------------------------------------------------------------------
+[028] C01_E003_L020
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: indignación controlada
+Intención: darle la oportunidad de retirarlo
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Repite eso.
+------------------------------------------------------------------------
+[029] C01_E003_L022
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: dureza
+Intención: poner los pies en la tierra, y se le escapa el dato
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Ese toro es lo único que tenía tu padre que valiera más que sus deudas. [short pause] Y mira que eso ya es decir.
+------------------------------------------------------------------------
+[030] C01_E003_L024
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: cansancio
+Intención: aplazar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Mañana.
+------------------------------------------------------------------------
+[031] C01_E003_L026
+Escena: C01_E003 · LA PORTADA
+Personaje: MANUEL
+Emoción: ternura dura
+Intención: proteger, y pedirle algo por primera vez
+Ritmo: lento
+Pausas: breve tras «Un día»
+FX / procesado: interior vehículo
+Texto: Hoy has enterrado a tu padre, Alejandro. Un día. [short pause] Dale un día.
+------------------------------------------------------------------------
+[032] C01_E004_L005
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: MANUEL
+Emoción: pudor
+Intención: dársela sin ceremonia
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Tu padre la dejó en la cuadra. Colgada en el clavo de siempre.
+------------------------------------------------------------------------
+[033] C01_E004_L007
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: MANUEL
+Emoción: incomodidad
+Intención: no entrar
+Ritmo: lento
+Pausas: tras «chisme»
+FX / procesado: interior
+Texto: Tu padre se pasaba el día hablando con ese chisme. Yo no escucho las conversaciones de nadie.
+------------------------------------------------------------------------
+[034] C01_E004_L009
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: MANUEL
+Emoción: evasión
+Intención: cerrar la puerta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Tu padre decía muchas cosas. [short pause] Y el toro, que yo vea, anda bien.
+------------------------------------------------------------------------
+[035] C01_E004_L010
+Escena: C01_E004 · NOTAS DE CAMPO
+Personaje: MANUEL
+Emoción: invitación disfrazada de indiferencia
+Intención: sacarle de esa habitación
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Voy a subir las vacas del Prado Alto, que esta noche hiela y abajo no tienen abrigo. Canela está ensillada. [short pause] Si quieres venir, vienes. Si no, también.
+------------------------------------------------------------------------
+[036] C01_E005_L001
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Acotación: a voz en grito, al ganado
+Emoción: oficio
+Intención: mover el ganado
+Ritmo: largo, cantado
+Pausas: ninguna
+FX / procesado: exterior, distancia media
+Texto: [shouting] ¡Eeeh, vaca! ¡Vamos, vamos!
+------------------------------------------------------------------------
+[037] C01_E005_L002
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: urgencia práctica
+Intención: corregir a Alejandro
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, distancia media
+Texto: ¡Por la izquierda, que se te va la Gitanilla!
+------------------------------------------------------------------------
+[038] C01_E005_L004
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: humor exasperado
+Intención: obvio
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, distancia media
+Texto: ¡La que se te está yendo!
+------------------------------------------------------------------------
+[039] C01_E005_L005
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: aprobación mínima
+Intención: no regalar nada
+Ritmo: lento
+Pausas: tras «Mira tú»
+FX / procesado: exterior
+Texto: Mira tú. Eso no ha estado mal del todo.
+------------------------------------------------------------------------
+[040] C01_E005_L006
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: ironía con dardo
+Intención: pinchar
+Ritmo: lento
+Pausas: antes de «Como otros»
+FX / procesado: exterior
+Texto: Déjala. Ya volverá cuando tenga hambre. Como otros.
+------------------------------------------------------------------------
+[041] C01_E005_L007
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: preocupación
+Intención: informar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: La Tórtola. Parió de madrugada y desde el mediodía no se levanta.
+------------------------------------------------------------------------
+[042] C01_E005_L009
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: calma
+Intención: frenarle
+Ritmo: lento
+Pausas: tras «Nada»
+FX / procesado: exterior
+Texto: Nada. He llamado a Lucía.
+------------------------------------------------------------------------
+[043] C01_E005_L011
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: advertencia con guasa
+Intención: prevenirle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: La veterinaria. [short pause] Y cuando llegue, tú calladito.
+------------------------------------------------------------------------
+[044] C01_E005_L013
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Acotación: desmontando
+Emoción: respeto profesional
+Intención: datos
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Desde el mediodía, por lo menos. Ha parido sobre las cuatro.
+------------------------------------------------------------------------
+[045] C01_E005_L020
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: extrañeza
+Intención: cuestionar con respeto
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: En bravo no se ve casi.
+------------------------------------------------------------------------
+[046] C01_E005_L036
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Acotación: desde el caballo, sin acercarse
+Emoción: lealtad
+Intención: defender al muerto
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, distancia media
+Texto: Explicaba lo justo.
+------------------------------------------------------------------------
+[047] C01_E005_L040
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: MANUEL
+Emoción: satisfacción que no enseña
+Intención: volver
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Venga. Que esta noche hiela.
+------------------------------------------------------------------------
+[048] C01_E006_L001
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: ternura disimulada
+Intención: ofrecer algo de hogar
+Ritmo: lento
+Pausas: breve tras «meneás»
+FX / procesado: interior, cocina con reverberación de piedra
+Texto: Patatas meneás. Como las hacía tu madre.
+------------------------------------------------------------------------
+[049] C01_E006_L003
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: humor tierno
+Intención: hacerle sonreír
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Tu madre las hacía mal. [short pause] Pero no se lo digas.
+------------------------------------------------------------------------
+[050] C01_E006_L005
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: orgullo seco
+Intención: aceptar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Ya.
+------------------------------------------------------------------------
+[051] C01_E006_L007
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: diversión recordando
+Intención: contar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Tres años. Al principio tu padre no la quería. Decía que era una niña de ciudad.
+------------------------------------------------------------------------
+[052] C01_E006_L009
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: admiración divertida
+Intención: dar el retrato
+Ritmo: normal, acelera en la anécdota
+Pausas: la marcada
+FX / procesado: interior
+Texto: Y en el primer saneamiento le sacó un ternero atravesado a la vaca favorita de tu padre a las tres de la mañana, con un brazo metido hasta el hombro. [short pause] Al día siguiente ya era «la Lucía».
+------------------------------------------------------------------------
+[053] C01_E006_L011
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: tristeza seca
+Intención: hacerle ver cómo vivía su padre
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Para uno era peor.
+------------------------------------------------------------------------
+[054] C01_E006_L013
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: pena
+Intención: contar la verdad sin cargar las tintas
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Cuando yo me iba a mi casa, sí. Con la radio. [short pause] Ponía el fútbol aunque no le gustaba. Para que hubiera ruido.
+------------------------------------------------------------------------
+[055] C01_E006_L015
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: firmeza
+Intención: no dejarle reescribir la historia
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Ya lo sé. Estaba yo delante.
+------------------------------------------------------------------------
+[056] C01_E006_L017
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: dolor convertido en ironía
+Intención: decirle la verdad
+Ritmo: lento, más firme al final
+Pausas: la marcada
+FX / procesado: interior
+Texto: Pues entonces, ¿qué? [short pause] Te dijo que no volvieras y le hiciste caso. Es la única vez en tu vida que le has hecho caso a tu padre.
+------------------------------------------------------------------------
+[057] C01_E006_L019
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: cansancio, humor triste
+Intención: corregirle sin pelear
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Yo estaba en medio, que es distinto. [short pause] Y en medio te dan por los dos lados.
+------------------------------------------------------------------------
+[058] C01_E006_L021
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: culpa y razón a la vez
+Intención: explicarse por primera vez
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Porque si te llamaba yo, tu padre no te iba a llamar nunca. [short pause] Y pensé que tenía que ser él.
+------------------------------------------------------------------------
+[059] C01_E006_L023
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: pena compartida
+Intención: acompañar
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Y llamó.
+------------------------------------------------------------------------
+[060] C01_E006_L024
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: duda
+Intención: ofrecer algo que no quiere dar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, de espaldas
+Texto: ¿Quieres saber qué pasó esa noche?
+------------------------------------------------------------------------
+[061] C01_E006_L026
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: mentira a medias
+Intención: protegerse
+Ritmo: lento, uniforme
+Pausas: la marcada
+FX / procesado: interior, de espaldas, agua corriendo
+Texto: Pues no lo sé. [short pause] Me fui a dormir pronto. Por la mañana estaba en el cercado.
+------------------------------------------------------------------------
+[062] C01_E006_L027
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Emoción: retirada
+Intención: irse antes de decir más
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: A las siete hay que echar de comer. Si estás, bien.
+------------------------------------------------------------------------
+[063] C01_E006_L030
+Escena: C01_E006 · PATATAS MENEÁS
+Personaje: MANUEL
+Acotación: sin volverse
+Emoción: cariño seco
+Intención: responder a su manera
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Friega tú.
+------------------------------------------------------------------------
+[064] C01_E007_L001
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: fastidio
+Intención: avisar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Mira quién viene.
+------------------------------------------------------------------------
+[065] C01_E007_L003
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: ironía
+Intención: describirle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Ha esperado una noche. [short pause] Para lo que es él, es mucho.
+------------------------------------------------------------------------
+[066] C01_E007_L005
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: desconfianza
+Intención: desenmascararle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: La misa es a las doce.
+------------------------------------------------------------------------
+[067] C01_E007_L017
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: vergüenza y rabia
+Intención: decir la verdad exacta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Lo del banco, sí. [short pause] Lo de este, no.
+------------------------------------------------------------------------
+[068] C01_E007_L020
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: negación
+Intención: rechazar la realidad
+Ritmo: seco, bajo
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso no.
+------------------------------------------------------------------------
+[069] C01_E007_L022
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: herida profunda
+Intención: casi para sí
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: ¿Ernesto firmó esto?
+------------------------------------------------------------------------
+[070] C01_E007_L028
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: amenaza tranquila
+Intención: poner un límite
+Ritmo: muy lento, bajo
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Cuidado.
+------------------------------------------------------------------------
+[071] C01_E007_L030
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Emoción: rabia contenida
+Intención: cortar
+Ritmo: lento, cada palabra con peso
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No me hable usted de lo que habló con Ernesto.
+------------------------------------------------------------------------
+[072] C01_E007_L043
+Escena: C01_E007 · LA LUZ DE LOS LLANOS
+Personaje: MANUEL
+Acotación: sin pararse
+Emoción: dolor
+Intención: estar solo
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, distancia media
+Texto: Ahora no.
+------------------------------------------------------------------------
+[073] C01_E008_L001
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: herida profunda, sin autocompasión
+Intención: decir lo único que tiene dentro
+Ritmo: muy lento
+Pausas: tras «Cuarenta años»
+FX / procesado: exterior, campo abierto
+Texto: Cuarenta años. [short pause] Y no me lo contó.
+------------------------------------------------------------------------
+[074] C01_E008_L003
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: dolor, no reproche
+Intención: constatar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Tú no estabas.
+------------------------------------------------------------------------
+[075] C01_E008_L005
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: sinceridad
+Intención: admitir
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No lo sé. [short pause] Esta vez no lo sé.
+------------------------------------------------------------------------
+[076] C01_E008_L007
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: precisión de campo
+Intención: corregir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Seis meses y doce días.
+------------------------------------------------------------------------
+[077] C01_E008_L009
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: cautela
+Intención: no darle falsas esperanzas
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Depende de quién te la compre. Y de cómo embistan.
+------------------------------------------------------------------------
+[078] C01_E008_L011
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: realismo
+Intención: dar la cifra y el aviso
+Ritmo: lento
+Pausas: suspensión y la marcada
+FX / procesado: exterior
+Texto: En una plaza buena, con un empresario serio… sesenta, ochenta mil. [short pause] Si te la pagan.
+------------------------------------------------------------------------
+[079] C01_E008_L013
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: acompañamiento
+Intención: no mentirle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No da.
+------------------------------------------------------------------------
+[080] C01_E008_L018
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: respeto receloso
+Intención: advertir
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Empresaria. De las buenas. [short pause] Esa no llama por pena.
+------------------------------------------------------------------------
+[081] C01_E008_L020
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: obviedad
+Intención: lo que hay
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Por toros.
+------------------------------------------------------------------------
+[082] C01_E008_L023
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: ironía triste
+Intención: probarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso decía tu padre.
+------------------------------------------------------------------------
+[083] C01_E008_L025
+Escena: C01_E008 · LO QUE VALE UN HIERRO
+Personaje: MANUEL
+Emoción: cariño, aprobación disfrazada
+Intención: aceptarle como jefe a su manera
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, alejándose
+Texto: Mañana a las siete. [short pause] Y en punto, no a las siete y cuatro.
+------------------------------------------------------------------------

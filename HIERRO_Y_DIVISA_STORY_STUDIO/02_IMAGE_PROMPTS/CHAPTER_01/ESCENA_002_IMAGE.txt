@@ -1,0 +1,49 @@
+ID: C01_E002_IMAGE
+ESCENA: C01_E002 · TIERRA DE PEÑACORVA
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_002.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_002_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A1)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M1)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E002
+ 2. Localización ............ Cementerio de Peñacorva, desde la verja de entrada hacia el muro de nichos del norte
+ 3. Hora y meteorología ..... Sábado 8 de marzo, 13:05. Cielo cubierto alto, luz blanca y difusa sin sombras duras, viento flojo en los cipreses, 11 °C.
+ 4. Personajes visibles ..... Alejandro (de espaldas, primer término), unos 45 vecinos de luto al fondo ante el muro de nichos; entre ellos, Manuel en primera fila y el Padre Julián con estola morada. Ricardo NO está visible todavía.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Alejandro: WARDROBE A1. Manuel: WARDROBE M1 (sombrero en las manos). Vecinos: abrigos negros, grises y marrones, ropa de pueblo de luto. Padre Julián: abrigo negro y estola morada.
+ 7. Expresión facial ........ Alejandro no se le ve la cara; en el fondo, varias caras giradas hacia él con curiosidad y juicio.
+ 8. Posición corporal ....... Alejandro a mitad de paso sobre la grava, recién cruzada la verja, hombros cerrados, manos vacías.
+ 9. Acción congelada ........ Primer paso de Alejandro dentro del cementerio; tres o cuatro personas del grupo empiezan a volver la cabeza.
+10. Composición ............. Plano sobre el hombro: Alejandro de espaldas en el tercio izquierdo, la verja oxidada abierta enmarcando, el pasillo de grava en diagonal hacia el grupo y el muro blanco de nichos; cipreses verticales a ambos lados.
+11. Tipo de plano ........... Plano general medio, a la altura del hombro.
+12. Distancia focal ......... 50 mm anamorphic lens
+13. Iluminación ............. Luz cenital difusa de cielo cubierto; los nichos blancos actúan como rebote; contraste bajo.
+14. Profundidad de campo .... deep focus from the young man to the crowd, slight softness on the far cypresses
+15. Texturas y materiales ... Grava gris, cal de los nichos con desconchones, mármol de lápidas, hierro oxidado de la verja, lana de abrigos, flores de crisantemo blancas.
+16. Ambiente ................ Juicio silencioso del pueblo, llegada tarde, duelo contenido.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Sin texto legible en lápidas ni nichos. Sin cruces ni símbolos sobredimensionados. Nadie mira a cámara.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium-wide over-the-shoulder shot at shoulder height. A young man in a black suit has just walked through the rusted cemetery gate, late to his father's burial; at the far end of the gravel path a crowd of about forty-five villagers in mourning stands before a wall of white burial niches, and a few heads are starting to turn toward him.
+Foreground, seen from behind: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing a slightly oversized cheap black suit, white shirt with the top button undone, no tie, black leather shoes dusty at the toes, seen from behind on the left third, mid-stride on the gravel, shoulders hunched, empty hands, face not visible.
+In the front row of the crowd, small in frame: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing an old dark grey wool suit shiny at the elbows, white shirt, thin black tie loosened, black shoes, a brown felt short-brim hat in his hands, standing still with his hat held in both hands in front of him, facing the niches, not turning around.
+Setting: a small Castilian village cemetery on a hill, whitewashed inner walls of granite rubble masonry, rows of white burial niches (nichos) four high, dark tall cypress trees, gravel path, rusted iron gate, granite church bell gable with stork nests visible in the distance. An elderly priest in a black coat with a purple stole stands by a coffin on a lifting platform in front of an open niche. Villagers in black, grey and brown coats; white chrysanthemums; two cemetery workers in grey overalls with a bucket of mortar.
+Time and weather: 1 pm under a high white overcast sky, soft shadowless light, a light wind moving the cypresses, 11 °C.
+Composition: the open rusted gate frames the shot, the gravel path leads diagonally from the young man to the crowd and the white niche wall, tall dark cypresses as vertical lines on both sides.
+Lighting: soft diffuse overhead light from a white overcast sky, the white niches bouncing light, low contrast.
+Camera: 50 mm anamorphic lens, deep focus from the young man to the crowd, slight softness on the far cypresses.
+Textures: grey gravel, flaking whitewash and lime on the niches, marble plaques, rusted iron gate, wool coats, white chrysanthemums.
+Mood: silent judgement of a village, a son arriving too late, restrained grief.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable names on tombstones, oversized crosses, people looking at camera

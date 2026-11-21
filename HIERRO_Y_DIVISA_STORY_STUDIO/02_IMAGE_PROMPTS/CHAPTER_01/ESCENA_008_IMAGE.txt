@@ -1,0 +1,48 @@
+ID: C01_E008_IMAGE
+ESCENA: C01_E008 · LO QUE VALE UN HIERRO
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_008.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_008_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A3)
+  - LUCERO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCERO_SHEET.txt
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E008
+ 2. Localización ............ Exterior del cercado de Lucero, junto al muro de piedra y la puerta verde
+ 3. Hora y meteorología ..... Domingo 9 de marzo, 18:50. Último sol rasante desde el oeste, a la espalda de Alejandro; hacia el este, cielo rosa y violeta. Sin viento, 8 °C.
+ 4. Personajes visibles ..... Alejandro apoyado en el muro (primer término, de espaldas/tres cuartos); Lucero bajo la encina a 30 m. Manuel todavía no ha llegado.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Alejandro: WARDROBE A3, con la grabadora plateada en la mano derecha.
+ 7. Expresión facial ........ Alejandro: mirada fija al toro, sin parpadear; rostro en sombra con luz de borde.
+ 8. Posición corporal ....... Antebrazos apoyados en el borde del muro de piedra, bajo los hilos de alambre; la grabadora entre los dedos.
+ 9. Acción congelada ........ Alejandro y el toro se sostienen la mirada. Lucero rumia, con la cabeza alta.
+10. Composición ............. Plano sobre el hombro izquierdo de Alejandro: su perfil y los antebrazos sobre el muro en el tercio izquierdo, desenfocados parcialmente; el toro y la encina en el tercio derecho, iluminados de frente por el sol dorado; cielo rosa-violeta detrás.
+11. Tipo de plano ........... Plano sobre el hombro, de medio a largo.
+12. Distancia focal ......... 85 mm anamorphic lens
+13. Iluminación ............. Sol rasante dorado desde detrás de cámara sobre el toro y la encina; Alejandro con luz de borde en pelo y hombros; cielo rosa y violeta al fondo.
+14. Profundidad de campo .... focus on the bull, the foreground man slightly soft
+15. Texturas y materiales ... Granito con líquenes, alambre oxidado, pelo cárdeno del toro con reflejos, corteza de encina, cera gastada de la chaqueta, plástico plateado de la grabadora.
+16. Ambiente ................ Duelo frente a frente; respeto, rabia y destino.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Anatomía del toro perfecta (dos cuernos, cuatro patas). El toro no embiste ni se mueve hacia cámara. Manuel no aparece todavía.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, over-the-shoulder medium-long shot. At dusk a young man leans on a granite drystone wall topped with wire, holding a small silver voice recorder, and stares at a huge dark seed bull standing thirty metres away under a lone holm oak; the bull, head high, chewing, stares back.
+Foreground, frame left: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, forearms resting on top of the stone wall under the wire strands, a small silver voice recorder between the fingers of his right hand, seen over his left shoulder, unblinking stare at the bull, face in shadow with a rim of light.
+Animal: a massive Spanish fighting bull (toro bravo) seed bull, 560 kg, dark cárdeno coat (charcoal black with fine grey-white flecking), two small pale spots on the forehead, thick forward-curving horns that are pale ivory at the base and dark at the tips, deep chest, powerful neck hump (morrillo), calm fixed stare.
+Setting: a six-hectare bull paddock enclosed by a 1.60 m granite drystone wall topped with three strands of wire, a bottle-green metal gate, a granite water trough, a single huge holm oak in the centre of the pasture. The bottle-green metal gate is visible at the left edge. The bull stands in front of the lone huge holm oak in the centre of the paddock, beside the granite water trough.
+Time and weather: 6:50 pm, the last raking sunlight from the west behind the camera, the eastern sky pink and violet, no wind, 8 °C.
+Composition: his shoulder, profile and forearms on the wall in the left third, slightly soft; the bull and the holm oak in the right third lit frontally by gold sun; pink and violet sky behind.
+Lighting: raking golden sunlight from behind the camera falling on the bull and the oak, rim light on the young man's hair and shoulders, a pink-violet eastern sky.
+Camera: 85 mm anamorphic lens, focus on the bull, the foreground man slightly soft.
+Textures: lichen on granite, rusted wire, the bull's flecked coat catching the light, holm oak bark, worn waxed cotton, silver plastic.
+Mood: a face-to-face standoff of grief; respect, anger and fate.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, bull charging, bull with more than two horns, second person

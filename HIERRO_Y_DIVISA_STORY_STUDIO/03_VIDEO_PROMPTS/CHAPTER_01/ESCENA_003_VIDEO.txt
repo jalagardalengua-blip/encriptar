@@ -1,0 +1,46 @@
+ID: C01_E003_VIDEO
+ESCENA: C01_E003 · LA PORTADA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_003.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E003
+ 2. Imagen de referencia .... C01_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia, con el cencerro en mitad del balanceo.
+ 5. Desarrollo .............. El coche sigue dando tumbos suaves. Alejandro mira el camino y dice «Lo han arreglado»; Manuel responde sin apartar la vista; Alejandro vuelve a mirar por la ventanilla.
+ 6. Movimiento de personajes  Balanceo de ambos cuerpos con los baches. Manuel corrige el volante. Alejandro gira la cabeza al frente y luego otra vez a la ventanilla.
+ 7. Expresiones faciales .... Alejandro: un asomo de nostalgia que reprime. Manuel: ironía mínima en la comisura bajo el bigote.
+ 8. Gestos .................. Manuel cambia de marcha con la mano derecha a los 5 s.
+ 9. Movimiento corporal ..... Natural, relajado, sin gestos amplios.
+10. Movimiento de cámara .... Cámara fija sobre el capó, solidaria con el vehículo; vibración real.
+11. Movimiento ambiental .... Encinas, paredes de piedra y unos cerdos negros pasando por las ventanillas laterales; reflejo del cielo en el cristal.
+12. Iluminación ............. Cubierto; la franja de sol desaparece a los 6 s (pasa una nube).
+13. Continuidad ............. Manuel con sombrero y sin corbata. Alejandro sin corbata. Cencerro en el retrovisor. Garrocha en el asiento trasero.
+14. Acción final ............ Los dos miran al frente en silencio; el cencerro vuelve a balancearse tras un bache.
+15. Transición .............. Corte a plano lateral exterior del todoterreno en el camino.
+16. Restricciones ........... Movimiento de labios discreto. Sin cambios en el paisaje imposibles para un camino recto.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  1.5 s – ALEJANDRO: «Lo han arreglado.» (C01_E003_L001)
+  3.5 s – MANUEL: «¿El qué?» (C01_E003_L002)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame, the cowbell mid-swing between the two men.
+0-3s: the car rocks gently over the ruts; the young passenger turns his head forward and says one short sentence. 3-5s: the old driver answers briefly without taking his eyes off the track, a trace of irony under his moustache. 5s: the driver shifts gear with his right hand. 5-8s: the young man looks back out of his window.
+Characters: both bodies sway naturally with the bumps, small contained movements, discreet lip movement only when speaking.
+Camera: locked bonnet-mounted camera moving with the vehicle, real mild vibration, no camera moves.
+Environment motion: holm oaks, drystone walls and a few black pigs pass by the side windows; sky reflections slide on the glass.
+Lighting stays overcast, with the warm stripe of sun fading out at 6 seconds as a cloud passes.
+Final moment: both men looking forward in silence, the cowbell swinging again after a bump.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

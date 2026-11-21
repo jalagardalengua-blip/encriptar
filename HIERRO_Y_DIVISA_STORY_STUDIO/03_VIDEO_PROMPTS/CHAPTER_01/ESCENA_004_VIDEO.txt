@@ -1,0 +1,45 @@
+ID: C01_E004_VIDEO
+ESCENA: C01_E004 · NOTAS DE CAMPO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_004_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_004.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E004
+ 2. Imagen de referencia .... C01_E004_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: contraventana abierta un palmo.
+ 5. Desarrollo .............. Alejandro termina de abrir las dos contraventanas; la luz inunda el cuarto en diagonal; se queda un segundo quieto y luego se gira despacio hacia el escritorio.
+ 6. Movimiento de personajes  Brazos que terminan de empujar; giro lento del cuerpo hacia la habitación; un paso hacia el escritorio.
+ 7. Expresiones faciales .... Al girarse: rostro en luz lateral fría, mirada que recorre la habitación y se detiene en el sillón.
+ 8. Gestos .................. Se pasa una mano por la nuca al ver el sillón.
+ 9. Movimiento corporal ..... Contenido, sin prisa.
+10. Movimiento de cámara .... Cámara fija; a partir de los 4 s, panorámica lenta de 10° a la izquierda siguiendo su mirada hacia el escritorio.
+11. Movimiento ambiental .... Polvo flotando en el haz de luz; una hoja de papel tiembla en el escritorio por el aire que entra.
+12. Iluminación ............. La luz crece al abrirse la segunda hoja y se estabiliza: fría, lateral.
+13. Continuidad ............. Alejandro sin chaqueta. La chaqueta verde NO está en la habitación (llega después con Manuel). La grabadora permanece en el escritorio.
+14. Acción final ............ Alejandro, de pie a un paso del escritorio, mira el sillón vacío de su padre.
+15. Transición .............. Corte a plano detalle de la grabadora (insertado en el juego, exploración libre).
+16. Restricciones ........... Sin diálogo. No mover objetos que no se tocan. No cambiar la decoración.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  Sin diálogo en este plano.
+AUDIO: Sin voz. Ambiente: bisagras de madera, reloj de pared lejano, crujido de suelo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E004_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame, the shutter open a hand's width.
+0-3s: he pushes both wooden shutters fully open; grey daylight floods diagonally into the room. 3-4s: he stays still for a second. 4-8s: he turns slowly toward the room, takes one step toward the desk, and rubs the back of his neck with one hand as his eyes stop on the empty leather armchair.
+Characters: slow, contained movement, no hurry.
+Camera: locked shot; from 4 seconds a slow 10-degree pan to the left following his gaze toward the desk.
+Environment motion: dust floating in the light beam, a loose sheet of paper trembling on the desk in the draught.
+Lighting stays cold side window light, growing as the second shutter opens and then stabilising.
+Final moment: he stands one step from the desk looking at his father's empty armchair.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

@@ -1,0 +1,46 @@
+ID: C01_E001_VIDEO
+ESCENA: C01_E001 · LLAMADAS PERDIDAS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_001.md
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E001
+ 2. Imagen de referencia .... C01_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... Exactamente el fotograma de referencia: el móvil vibrando y Alejandro mirándolo de reojo.
+ 5. Desarrollo .............. Deja vibrar el móvil dos segundos; descuelga con el pulgar sin apartar la vista de la carretera; vuelve la mano al volante y escucha.
+ 6. Movimiento de personajes  Solo el brazo derecho: baja al móvil, toca la pantalla, vuelve al volante.
+ 7. Expresiones faciales .... Fastidio al ver quién llama; al escuchar, la mandíbula se tensa; parpadeo lento de cansancio.
+ 8. Gestos .................. Pulgar que toca la pantalla; dedos que aprietan el volante.
+ 9. Movimiento corporal ..... Balanceo leve del cuerpo por el movimiento del coche.
+10. Movimiento de cámara .... Cámara fija en el habitáculo, acoplada al coche (vibración real de carretera mínima); ligero empuje de 5 cm hacia el rostro en los últimos 3 s.
+11. Movimiento ambiental .... Encinas y niebla desplazándose por el parabrisas a 70 km/h; luz que parpadea al pasar entre árboles.
+12. Iluminación ............. Igual que la imagen: sol bajo por la derecha, parpadeo de sombras de árboles sobre la cara.
+13. Continuidad ............. Corbata y bolsa en el asiento del copiloto todo el plano. Reloj negro en la muñeca izquierda. Sin corbata puesta.
+14. Acción final ............ Alejandro con las dos manos en el volante, mirando al frente, escuchando; mandíbula apretada.
+15. Transición .............. Corte a plano exterior frontal del coche por la carretera (siguiente plano del montaje).
+16. Restricciones ........... No mostrar texto en el móvil. No mover los labios de forma marcada (habla poco al principio). Sin cambios de carril bruscos.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  4.5 s – MANUEL (fuera de plano, por el altavoz): «¿Por dónde vas?» (C01_E001_L001)
+  6.5 s – ALEJANDRO: «Acabo de dejar la autovía.» (C01_E001_L002) — movimiento de labios leve
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C01_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: the phone in the vent holder vibrates with its screen lit; the young driver glances at it sideways without turning his head.
+1-3s: he lets it vibrate, annoyed. 3-4s: he taps the screen once with his right thumb to answer, eyes back on the road. 4-8s: right hand returns to the steering wheel; he listens, jaw tightening, a slow tired blink.
+Characters: only his right arm moves; the body sways slightly with the car; fingers tighten on the wheel.
+Camera: locked car-mounted camera from the passenger side with minimal natural road vibration, a very slow 5 cm push-in toward his face during the last three seconds.
+Environment motion: holm oaks and fog slide past the windshield at around 70 km/h, tree shadows flicker across his face.
+Lighting stays low morning sun from the right side window with flickering tree shadows.
+Final moment: both hands on the wheel, eyes forward, listening, jaw clenched.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

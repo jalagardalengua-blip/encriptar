@@ -1,0 +1,191 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 18
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E005_L012
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: concentración
+Intención: diagnóstico
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Desde cuándo está así?
+------------------------------------------------------------------------
+[002] C01_E005_L014
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: neutralidad
+Intención: identificar
+Ritmo: normal
+Pausas: suspensión final
+FX / procesado: exterior
+Texto: ¿Y tú eres…?
+------------------------------------------------------------------------
+[003] C01_E005_L016
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: incomodidad sincera
+Intención: dar el pésame sin teatro
+Ritmo: normal, más bajo
+Pausas: tras «Ah»
+FX / procesado: exterior
+Texto: Ah. [short pause] Lo siento. No he podido ir al entierro, tenía un parto complicado en Lumbrales.
+------------------------------------------------------------------------
+[004] C01_E005_L018
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: sequedad franca
+Intención: ponerle a trabajar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Sí pasa, pero es lo que hay. [short pause] Bájate, que te necesito.
+------------------------------------------------------------------------
+[005] C01_E005_L019
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: concentración
+Intención: diagnosticar en voz alta (para Manuel)
+Ritmo: rápido, entrecortado
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Está fría y tiene el corazón flojo. Hipocalcemia. Fiebre de la leche. Se ha quedado sin calcio al parir.
+------------------------------------------------------------------------
+[006] C01_E005_L021
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: humor seco
+Intención: zanjar y ordenar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Casi. [short pause] Tú sujétame la cola.
+------------------------------------------------------------------------
+[007] C01_E005_L023
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: paciencia mínima
+Intención: explicar lo obvio
+Ritmo: rápido, separando las partes
+Pausas: breve tras «La cola»
+FX / procesado: exterior
+Texto: La cola. De la vaca. Que no me dé con ella en la cara mientras le pincho la vena.
+------------------------------------------------------------------------
+[008] C01_E005_L024
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Acotación: si el jugador aguanta bien
+Emoción: aprobación profesional
+Intención: guiar
+Ritmo: tranquilo
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Así. Muy bien. No tires, solo sujeta.
+------------------------------------------------------------------------
+[009] C01_E005_L025
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Acotación: si el jugador suelta
+Emoción: irritación breve
+Intención: corregir
+Ritmo: rápido
+Pausas: tras la exclamación
+FX / procesado: exterior
+Texto: ¡Que no la sueltes! [exhales] Venga, otra vez.
+------------------------------------------------------------------------
+[010] C01_E005_L026
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Acotación: sin cambiar el tono
+Emoción: calma deliberada
+Intención: evitar el pánico
+Ritmo: lento, muy controlado
+Pausas: tras «becerro»
+FX / procesado: exterior
+Texto: Manuel, coge al becerro. Y tú, suelta la cola despacio y vete andando hacia la camioneta.
+------------------------------------------------------------------------
+[011] C01_E005_L028
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: urgencia contenida
+Intención: que obedezca ya
+Ritmo: rápido, voz baja
+Pausas: tras «levantar»
+FX / procesado: exterior
+Texto: Porque es brava. Y se va a levantar. [short pause] Andando he dicho, no corriendo.
+------------------------------------------------------------------------
+[012] C01_E005_L029
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Acotación: recuperando el aliento
+Emoción: alivio y humor negro
+Intención: quitar hierro
+Ritmo: lento, jadeando
+Pausas: tras «Bueno»
+FX / procesado: exterior, respiración
+Texto: Bueno. [short pause] Pues ya está curada.
+------------------------------------------------------------------------
+[013] C01_E005_L031
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: humor seco
+Intención: pinchar
+Ritmo: normal
+Pausas: tras «No»
+FX / procesado: exterior
+Texto: No. A veces se mueren.
+------------------------------------------------------------------------
+[014] C01_E005_L032
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: duda
+Intención: contarlo, aunque no sabe si debe
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Tu padre me llamó el miércoles.
+------------------------------------------------------------------------
+[015] C01_E005_L033
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: culpa contenida
+Intención: confesar sin dramatizar
+Ritmo: normal, se apaga al final
+Pausas: la marcada, y la frase queda en suspenso
+FX / procesado: exterior
+Texto: Quería que viniera a ver al semental. Decía que lo veía raro. Le dije que el viernes, que antes no podía. [short pause] Y el viernes ya…
+------------------------------------------------------------------------
+[016] C01_E005_L035
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: cariño irónico
+Intención: ser honesta
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: No me lo explicó. Tu padre explicaba las cosas regular.
+------------------------------------------------------------------------
+[017] C01_E005_L037
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Acotación: sin volverse
+Emoción: ironía afectuosa
+Intención: rematar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Lo justo para que tuvieras que venir a verlo tú.
+------------------------------------------------------------------------
+[018] C01_E005_L038
+Escena: C01_E005 · LA TÓRTOLA
+Personaje: LUCÍA
+Emoción: profesionalidad
+Intención: comprometerse y pedir permiso al nuevo dueño sin decirlo
+Ritmo: normal
+Pausas: breve tras «Lucero»
+FX / procesado: exterior
+Texto: El lunes me paso a ver a Lucero. Si a alguien le parece bien.
+------------------------------------------------------------------------

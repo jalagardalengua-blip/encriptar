@@ -1,0 +1,50 @@
+ID: C01_E007_IMAGE
+ESCENA: C01_E007 · LA LUZ DE LOS LLANOS
+GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_007.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_007_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A3)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C01_E007
+ 2. Localización ............ Porche y patio de grava del caserío, mirando al camino del encinar
+ 3. Hora y meteorología ..... Domingo 9 de marzo, 10:00. Sol limpio de mañana, sombras largas, escarcha fundiéndose a la sombra, vaho al respirar, 7 °C.
+ 4. Personajes visibles ..... Manuel y Alejandro sentados en el banco corrido del porche; al fondo, por el camino, el todoterreno negro de Ricardo acercándose con polvo.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ Alejandro: WARDROBE A3 (vaqueros, jersey gris, chaqueta verde, botas). Manuel: WARDROBE M2. Ricardo no es distinguible todavía (dentro del coche).
+ 7. Expresión facial ........ Manuel: ojos entornados hacia el camino, recelo. Alejandro: sopla el café, todavía sin ver el coche.
+ 8. Posición corporal ....... Ambos sentados en el banco de piedra, separados por un metro; tazas de metal esmaltado en las manos; polvo de pienso en la ropa.
+ 9. Acción congelada ........ Manuel acaba de levantar la vista hacia el coche lejano; Alejandro sopla el vaho de la taza.
+10. Composición ............. Plano desde el lateral del porche: columnas de granito enmarcando; los dos hombres en el banco en primer término a la izquierda; el patio de grava y el camino del encinar en profundidad a la derecha, con el todoterreno negro pequeño y su estela de polvo iluminada.
+11. Tipo de plano ........... Plano medio general con profundidad.
+12. Distancia focal ......... 35 mm anamorphic lens
+13. Iluminación ............. Sol bajo de mañana lateral desde la derecha, sombras largas de las columnas; escarcha brillando en la sombra; vaho y polvo retroiluminados.
+14. Profundidad de campo .... deep focus from the bench to the SUV
+15. Texturas y materiales ... Granito con líquenes, escarcha, esmalte desconchado de las tazas, lana del jersey, cera de la chaqueta, piel de oveja del chaleco, polvo de pienso.
+16. Ambiente ................ Calma de domingo a punto de romperse.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Todoterreno sin logotipos, sin matrícula legible. Nada de personas extra.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium-wide shot with deep perspective from the side of a stone porch. On a cold sunny morning two men sit on a long granite bench under a stone porch holding steaming enamel mugs; far down the oak-lined dirt track a black SUV approaches with a trail of sunlit dust, and the older man has just lifted his eyes toward it.
+On the bench, nearer camera: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing a short-brim brown felt hat, sitting on the stone bench, elbows on knees, enamel mug in both hands, head raised toward the track, eyes narrowed, wary.
+On the bench, one metre further: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, sitting back against the wall, blowing on the steam of his enamel mug, feed dust on his clothes, unaware yet, tired calm.
+Vehicle: a large black luxury SUV with tinted rear windows, spotless, no badges.
+Setting: a two-storey granite farmhouse with a Spanish clay tile roof, a front porch with four rough granite columns and a long stone bench, a bare grapevine pergola, a gravel yard, whitewashed stables to the left, holm oak dehesa behind. The SUV is small in the distance at the end of the oak-lined track, about 150 m away, raising a trail of backlit dust.
+Time and weather: 10 am, clear cold morning sun, long shadows, frost melting in the shade of the porch, breath visible, 7 °C.
+Composition: rough granite columns framing the left, the two men on the bench in the left foreground, the gravel yard and the oak-lined track receding to the right with the small black SUV and its dust trail.
+Lighting: low morning sun from the right, long column shadows across the porch floor, frost glinting in the shade, backlit breath and dust.
+Camera: 35 mm anamorphic lens, deep focus from the bench to the SUV.
+Textures: lichen on granite, frost, chipped enamel mugs, wool sweater, waxed cotton, sheepskin, feed dust.
+Mood: Sunday calm about to break.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, car badge, readable license plate

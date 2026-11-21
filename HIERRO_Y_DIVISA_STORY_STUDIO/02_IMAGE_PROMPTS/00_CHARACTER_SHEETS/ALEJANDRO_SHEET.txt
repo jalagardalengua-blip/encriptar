@@ -1,0 +1,23 @@
+ID: SHEET_ALEJANDRO
+TIPO: Ficha maestra visual de personaje (referencia de identidad)
+FUENTE: 00_BIBLE/VISUAL_CONTINUITY_BIBLE.md · CHARACTER LOCK — ALEJANDRO
+USO: Generar primero estas tres imágenes, elegir la mejor y fijarla como imagen de referencia
+     (character reference / identity reference / image prompt) para TODAS las escenas en las que aparezca ALEJANDRO.
+     Anotar la imagen aprobada en 04_PRODUCTION_TRACKER/PROGRESS.md.
+ESTADO: PENDIENTE DE GENERAR
+
+=== PROMPT 1 · RETRATO FRONTAL (copiar) ===
+Cinematic reference portrait, a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater and an old olive-green waxed cotton field jacket slightly too wide in the shoulders, brown leather work boots, facing the camera straight on, head and shoulders, neutral expression held still, soft overcast daylight from a large window at 45 degrees camera left, plain mid-grey textured studio backdrop, 85 mm lens, f/4, sharp focus on the eyes, true-to-life skin texture with pores and fine wrinkles, natural color, fine film grain, photographed like a casting reference still for a feature film. Aspect ratio 4:5.
+
+=== PROMPT 2 · TRES CUARTOS Y PERFIL (copiar) ===
+Character turnaround reference sheet on a single plain mid-grey backdrop, the same person shown three times side by side at equal scale: full body front view, three-quarter view, and left profile view, a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater and an old olive-green waxed cotton field jacket slightly too wide in the shoulders, brown leather work boots, standing relaxed with arms down, consistent identical face, hair and clothing in all three views, soft even studio light, 50 mm lens, f/8, realistic photographic detail, natural colors. Aspect ratio 16:9.
+
+=== PROMPT 3 · EN SITUACIÓN (copiar) ===
+Cinematic medium close-up film still, a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater and an old olive-green waxed cotton field jacket slightly too wide in the shoulders, brown leather work boots, guarded, tired, a flicker of pride; jaw slightly clenched, standing in a holm oak dehesa in western Salamanca, Spain, on a cold late-winter afternoon, low warm side light, background softly out of focus with granite drystone wall and dark holm oaks, 50 mm anamorphic lens, shallow depth of field, real skin texture, subtle film grain, color grade of ochres, olive greens and granite greys. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion
+
+=== CONTROL DE IDENTIDAD ===
+Comprobar en la imagen aprobada: edad aparente, complexión, peinado, vello facial, color de ojos y todas las marcas distintivas del CHARACTER LOCK.
+Si una escena posterior se aleja de esta referencia, se regenera la escena, nunca la referencia.

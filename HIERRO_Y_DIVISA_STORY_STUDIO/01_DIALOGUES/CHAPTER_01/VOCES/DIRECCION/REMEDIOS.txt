@@ -1,0 +1,27 @@
+HIERRO Y DIVISA · CAPÍTULO 01 · REMEDIOS
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 2
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/REMEDIOS.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C01_E002_L008
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: REMEDIOS
+Emoción: cariño invasivo
+Intención: consolar y opinar
+Ritmo: rápido
+Pausas: tras «hijo»
+FX / procesado: exterior
+Texto: Ay, hijo. [short pause] Lo siento mucho, de verdad. Es que estás igualito a él, ¿eh, Manuel? Igualito.
+------------------------------------------------------------------------
+[002] C01_E002_L010
+Escena: C01_E002 · TIERRA DE PEÑACORVA
+Personaje: REMEDIOS
+Acotación: dándole dos palmadas en el brazo
+Emoción: ternura mandona
+Intención: cuidarle a su manera
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pásate por el bar, que no vas a comer de lata. ¿Me oyes? Que te conozco desde que llevabas pañales.
+------------------------------------------------------------------------
