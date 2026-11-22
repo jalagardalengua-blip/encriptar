@@ -215,7 +215,7 @@ La chaqueta verde de Ernesto es el **objeto de continuidad principal**: Alejandr
 | `WARDROBE A5` | C06–C09 (verano) | `wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist` |
 | `WARDROBE A6` | C04 E001–E002 (ciudad), C10, C11 E002, C12 E001 | `wearing dark blue jeans, a pressed white shirt open at the collar, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, clean brown leather boots` |
 | `WARDROBE A7` | C12 E004 (final C) | `wearing a tailored navy blazer, an open-collar light blue shirt, dark jeans and brown suede ankle boots, hair cut shorter and neatly styled, clean-shaven` |
-| `WARDROBE A8` | C12 E002 (final A) | `wearing a dark grey wool coat over a white shirt, a black tie, dark trousers` |
+| `WARDROBE A8` | C12 E002 (final A) | `wearing a dark grey wool coat over a white shirt open at the collar, dark trousers` |
 | `WARDROBE M4` | C06–C09 (verano) | `wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots` |
 | `WARDROBE M5` | C12 E002 (final A, solo voz) / C12 E003 | `wearing a dark brown sheepskin-lined leather vest over a checked flannel shirt, brown corduroy trousers, brown leather boots` |
 | `WARDROBE L2` | C06–C09 trabajo de verano | `wearing a short-sleeved dark green technical work t-shirt, navy cargo work trousers, black rubber boots` |

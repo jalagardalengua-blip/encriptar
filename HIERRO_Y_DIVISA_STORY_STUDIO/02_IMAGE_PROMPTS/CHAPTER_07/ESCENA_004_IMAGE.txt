@@ -1,0 +1,49 @@
+ID: C07_E004_IMAGE
+ESCENA: C07_E004 · MANDAR
+GUION: 01_DIALOGUES/CHAPTER_07/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_07/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A6)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C07_E004
+ 2. Localización ............ Patio del hostal de Villaseca, de noche
+ 3. Hora y meteorología ..... Domingo 20 de julio, 23:00. Noche de verano, farolillos.
+ 4. Personajes visibles ..... Alejandro sentado con un cheque y la montera sobre la mesa; Manuel levantándose; patio con gente al fondo.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ALEJANDRO: WARDROBE A6; MANUEL: WARDROBE M4
+ 7. Expresión facial ........ Alejandro soberbio; Manuel herido y digno.
+ 8. Posición corporal ....... Manuel se levanta despacio de la silla.
+ 9. Acción congelada ........ Manuel se levanta despacio tras oír «Aquí ahora mando yo».
+10. Composición ............. Mesa de forja en primer término: cheque y montera; Alejandro sentado a la izquierda; Manuel de pie a la derecha; higuera y gente al fondo.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Farolillos cálidos, sombras de la higuera.
+14. Profundidad de campo .... focus on both men
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ La caída que aún no se siente.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot. At a wrought-iron table in a lantern-lit patio, a young rancher sits with a cheque and a bullfighter's montera in front of him while his old foreman rises slowly from his chair; people celebrate under a fig tree behind them.
+Seated, frame left: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing dark blue jeans, a pressed white shirt open at the collar, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, clean brown leather boots, seated, a cheque in his hand, a glass of wine, proud, slightly drunk.
+Rising, frame right: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots, rising slowly, hat in hand, hurt, dignified.
+Setting: an inner patio of a rural hostal with wrought-iron tables, a large fig tree, strings of small lanterns, whitewashed walls. A black bullfighter's montera and a folded napkin on the table; celebrating people in the background.
+Time and weather: 11 pm, summer night, lanterns, 25 °C.
+Composition: the table in the foreground, the seated young man left, the standing foreman right, the fig tree and people behind.
+Lighting: warm lanterns, fig leaf shadows.
+Camera: 50 mm spherical lens, focus on both men.
+Textures: wrought iron, paper cheque, wine glass, fig leaves.
+Mood: a fall not yet felt.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable cheque

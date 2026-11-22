@@ -1,0 +1,13 @@
+ID: SHEET_BECERROS
+TIPO: Ficha maestra visual de animal
+FUENTE: 00_BIBLE/VISUAL_CONTINUITY_BIBLE.md · ANIMAL LOCK — BECERROS
+ESTADO: PENDIENTE DE GENERAR
+
+=== PROMPT 1 · LATERAL COMPLETO (copiar) ===
+Wildlife-style cinematic photograph, Spanish fighting calves around eight months old, cárdeno and black coats, small horn buds, standing in full left side view on a holm oak dehesa pasture in Salamanca, Spain, whole body visible with hooves, soft low morning sunlight, background of dark holm oaks and a granite drystone wall out of focus, 135 mm lens, f/4, anatomically correct, realistic coat and musculature, natural colors, fine film grain. Aspect ratio 16:9.
+
+=== PROMPT 2 · TRES CUARTOS FRONTAL (copiar) ===
+Cinematic photograph, Spanish fighting calves around eight months old, cárdeno and black coats, small horn buds, three-quarter front view, head raised looking toward the camera from 25 metres, golden late afternoon side light, 200 mm lens, shallow depth of field, anatomically correct, realistic, natural colors. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, extra legs, extra horns, fused limbs, wrong number of hooves, cartoon animal

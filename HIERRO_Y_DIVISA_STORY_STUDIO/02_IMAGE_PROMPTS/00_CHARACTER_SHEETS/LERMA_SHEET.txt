@@ -1,0 +1,14 @@
+ID: SHEET_LERMA
+TIPO: Ficha maestra visual de personaje secundario
+FUENTE: 00_BIBLE/VISUAL_CONTINUITY_BIBLE.md · CHARACTER LOCK — LERMA
+USO: generar, aprobar una imagen y usarla como referencia de identidad en todas sus escenas.
+ESTADO: PENDIENTE DE GENERAR
+
+=== PROMPT 1 · RETRATO FRONTAL (copiar) ===
+Cinematic reference portrait, a 58-year-old Spanish bullfighting manager, heavy, jowly, grey stubble, wearing a wrinkled white linen shirt, an old flat cap, an unlit cigar in his hand, facing the camera straight on, head and shoulders, neutral expression held still, soft overcast daylight from a large window at 45 degrees camera left, plain mid-grey textured backdrop, 85 mm lens, f/4, sharp focus on the eyes, true-to-life skin texture, natural color, fine film grain. Aspect ratio 4:5.
+
+=== PROMPT 2 · TRES VISTAS (copiar) ===
+Character turnaround reference sheet on a plain mid-grey backdrop, the same person shown three times at equal scale: full body front view, three-quarter view and left profile, a 58-year-old Spanish bullfighting manager, heavy, jowly, grey stubble, wearing a wrinkled white linen shirt, an old flat cap, an unlit cigar in his hand, standing relaxed, identical face, hair and clothing in all three views, soft even light, 50 mm lens, f/8, photographic realism. Aspect ratio 16:9.
+
+=== NEGATIVE PROMPT ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

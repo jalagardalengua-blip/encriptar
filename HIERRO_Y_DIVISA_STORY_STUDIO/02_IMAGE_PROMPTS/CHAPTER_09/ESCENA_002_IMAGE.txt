@@ -1,0 +1,49 @@
+ID: C09_E002_IMAGE
+ESCENA: C09_E002 · LE DEJÉ SOLO
+GUION: 01_DIALOGUES/CHAPTER_09/ESCENA_002.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_09/ESCENA_002_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A5)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C09_E002
+ 2. Localización ............ Casa del mayoral: sala
+ 3. Hora y meteorología ..... Lunes 25 de agosto, 10:20.
+ 4. Personajes visibles ..... Manuel en el umbral con el sombrero en la mano; Alejandro de pie junto a la mesa con el sobre y la grabadora.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ALEJANDRO: WARDROBE A5; MANUEL: WARDROBE M4
+ 7. Expresión facial ........ Manuel sin defensa; Alejandro helado.
+ 8. Posición corporal ....... Manuel cuelga el sombrero; Alejandro con la grabadora en la mano.
+ 9. Acción congelada ........ Manuel, en el umbral, ve el sobre abierto y la grabadora en la mano de Alejandro.
+10. Composición ............. Plano a dos en profundidad: Alejandro en primer término a la izquierda, Manuel a contraluz en la puerta abierta al fondo.
+11. Tipo de plano ........... Plano medio con profundidad.
+12. Distancia focal ......... 35 mm spherical lens
+13. Iluminación ............. Contraluz de la puerta abierta al sol; interior en penumbra.
+14. Profundidad de campo .... deep focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ La confesión llega.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot with depth. An old foreman stands in the bright open doorway of his cottage, hat in hand, and sees the young man inside holding a voice recorder next to an opened envelope on the table.
+Foreground, frame left: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist, standing by the table, holding the silver recorder, frozen, accusing.
+In the doorway, backlit: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots, holding his hat, sweaty from the field, defenceless, expecting this.
+Setting: a small whitewashed one-storey cottage with a green door, inside a table with a brazier cloth (mesa camilla), an old sideboard with family photos, blinds half down.
+Time and weather: 10:20 am, same dim cottage interior.
+Composition: the young man in the left foreground, the foreman silhouetted in the open door behind.
+Lighting: strong backlight from the sunny doorway, dim interior.
+Camera: 35 mm spherical lens, deep focus.
+Textures: whitewash, tablecloth, paper.
+Mood: the confession arrives.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

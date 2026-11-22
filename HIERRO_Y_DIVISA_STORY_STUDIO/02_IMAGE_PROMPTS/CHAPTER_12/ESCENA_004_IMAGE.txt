@@ -1,0 +1,49 @@
+ID: C12_E004_IMAGE
+ESCENA: C12_E004 · FINAL C · LA DIVISA
+GUION: 01_DIALOGUES/CHAPTER_12/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_12/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO_FINAL_C: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_FINAL_C_SHEET.txt (vestuario A7)
+  - RICARDO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/RICARDO_SHEET.txt (vestuario R4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C12_E004
+ 2. Localización ............ Despacho de Ricardo en Los Arenales
+ 3. Hora y meteorología ..... Un lunes de marzo del año siguiente, 11:00. Luz clara de invierno.
+ 4. Personajes visibles ..... Ricardo y Alejandro de pie estrechándose la mano sobre la mesa de cristal; por el ventanal, a lo lejos, las placas y el tejado de La Encomienda.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ALEJANDRO_FINAL_C: WARDROBE A7; RICARDO: WARDROBE R4
+ 7. Expresión facial ........ La misma sonrisa de labios cerrados en las dos caras.
+ 8. Posición corporal ....... Apretón de manos de exactamente un segundo.
+ 9. Acción congelada ........ Ricardo y Alejandro se dan la mano con la misma sonrisa de labios cerrados.
+10. Composición ............. Plano simétrico de perfil de los dos sobre la mesa; ventanal al fondo con la dehesa, las placas y la casa lejana.
+11. Tipo de plano ........... Plano medio simétrico.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Luz fría y limpia de ventanal.
+14. Profundidad de campo .... deep focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Ganar parecido.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, symmetrical medium profile shot. In a modern ranch office, two men in navy blazers shake hands across a glass desk, both with the same thin closed-lip smile; through the large window behind, far away, solar panels glitter and the clay roof of an old farmhouse stands among holm oaks.
+Frame left: a 24-year-old Spanish man, lean athletic build, 1.80 m, light olive skin, dark brown hair cut short and neatly styled, clean-shaven, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, defined jaw, rested composed face, a thin closed-lip smile, steel dress watch on his left wrist, wearing a tailored navy blazer, an open-collar light blue shirt, dark jeans and brown suede ankle boots, hair cut shorter and neatly styled, clean-shaven, shaking hands across the desk, thin closed-lip smile, cold.
+Frame right: a 52-year-old elegant Spanish businessman, tall and slim, 1.85 m, upright posture, cared-for golf tan, thick silver-grey hair combed back, perfectly clean-shaven, grey-green eyes, dark eyebrows, thin closed-lip smile, steel dress watch with white dial and brown leather strap, white gold wedding band, wearing a navy blazer, an open-collar light blue shirt, beige chinos and brown suede ankle boots, shaking hands across the desk, thin closed-lip smile, satisfied.
+Setting: a modern office inside a rich ranch house, a large window over the dehesa, a glass desk, a mounted head of a black bull, a modern abstract painting. Signed documents on the glass desk; a mounted head of a black bull on the wall.
+Time and weather: 11 am on a clear winter morning a year later, cool white light.
+Composition: the two men in symmetrical profile, the large window centred behind them with the distant panels and farmhouse.
+Lighting: cool clean window light.
+Camera: 50 mm spherical lens, deep focus.
+Textures: glass, steel, wool blazers, paper.
+Mood: winning by resemblance.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable documents, olive field jacket

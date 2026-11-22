@@ -1,0 +1,51 @@
+ID: C09_E004_IMAGE
+ESCENA: C09_E004 · CARPETA B
+GUION: 01_DIALOGUES/CHAPTER_09/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_09/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A5)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M4)
+  - MORO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MORO_SHEET.txt
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C09_E004
+ 2. Localización ............ Puerta de la casa del mayoral al amanecer, todoterreno cargado
+ 3. Hora y meteorología ..... Martes 26 de agosto, 6:40. Amanecer rosa, 16 °C.
+ 4. Personajes visibles ..... Manuel junto al maletero abierto con una caja; Alejandro delante, tendiéndole la grabadora; Moro atado a la reja.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ALEJANDRO: WARDROBE A5; MANUEL: WARDROBE M4
+ 7. Expresión facial ........ Manuel orgulloso y roto; Alejandro suplicante.
+ 8. Posición corporal ....... Alejandro sostiene la grabadora entre los dos.
+ 9. Acción congelada ........ Alejandro levanta la grabadora entre ambos: «Escucha esto antes».
+10. Composición ............. Plano a dos de perfil; el todoterreno con el maletero abierto detrás; Moro a la derecha; cielo rosa.
+11. Tipo de plano ........... Plano medio de perfil.
+12. Distancia focal ......... 85 mm anamorphic lens
+13. Iluminación ............. Luz rosada del amanecer, suave.
+14. Profundidad de campo .... shallow, both faces sharp
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Perdón.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium profile two-shot. At pink dawn outside a whitewashed cottage, a young man holds up a small silver voice recorder between himself and an old foreman who is loading boxes into an off-road vehicle; a grey horse is tied to the window grille.
+Frame left: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist, holding the recorder up between them, pleading, sleepless.
+Frame right: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots, holding a cardboard box, hat on, proud, broken.
+Animal: a dapple-grey Spanish horse (PRE cross), 1.60 m, black leather headstall, Spanish vaquera saddle with box stirrups.
+Vehicle: a boxy 1990s short-wheelbase off-road vehicle, faded olive-green paint, white steel roof, spare wheel on the rear door, mud on the lower panels, no badges.
+Setting: a small whitewashed one-storey cottage with a green door, inside a table with a brazier cloth (mesa camilla), an old sideboard with family photos, blinds half down. The vehicle's tailgate is open with two suitcases inside; the cottage has a green door.
+Time and weather: 6:40 am, pink dawn, dew, 16 °C.
+Composition: the two in profile, the vehicle with open boot behind, the grey horse on the right, pink sky.
+Lighting: soft pink dawn light.
+Camera: 85 mm anamorphic lens, shallow, both faces sharp.
+Textures: dew, cardboard, suitcases, whitewash.
+Mood: forgiveness.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

@@ -104,7 +104,7 @@ def char_block(c: dict) -> str:
         parts.append(w)
     parts.append(c["pose"])
     parts.append(c["expression"])
-    return ", ".join(parts)
+    return ", ".join(x for x in parts if x)
 
 
 def image_prompt(s: dict) -> str:

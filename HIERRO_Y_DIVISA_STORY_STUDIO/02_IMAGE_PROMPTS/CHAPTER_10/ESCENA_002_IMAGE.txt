@@ -1,0 +1,51 @@
+ID: C10_E002_IMAGE
+ESCENA: C10_E002 · LOS PAPELES
+GUION: 01_DIALOGUES/CHAPTER_10/ESCENA_002.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_10/ESCENA_002_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - RICARDO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/RICARDO_SHEET.txt (vestuario R3)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A6)
+  - JAVIER: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/JAVIER_SHEET.txt (vestuario J1)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C10_E002
+ 2. Localización ............ Bar de un hotel clásico de Salamanca
+ 3. Hora y meteorología ..... Sábado 13 de septiembre, 23:30. Luz baja cálida.
+ 4. Personajes visibles ..... Ricardo en la barra con un whisky; Alejandro en el taburete de al lado; Javier al fondo con un agua.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ RICARDO: WARDROBE R3; ALEJANDRO: WARDROBE A6; JAVIER: WARDROBE J1
+ 7. Expresión facial ........ Ricardo herido y elegante; Alejandro atento.
+ 8. Posición corporal ....... Ricardo gira el vaso.
+ 9. Acción congelada ........ Ricardo, con el vaso en la mano, dice «A mí me dan de comer los papeles».
+10. Composición ............. Plano a dos en la barra, Ricardo en primer término; Javier desenfocado al fondo de la barra.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Lámparas bajas de bar, madera oscura.
+14. Profundidad de campo .... shallow, bullfighter out of focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Grieta en el poderoso.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium two-shot at a bar counter. At the long wooden counter of a classic hotel bar, a silver-haired businessman turns his whisky glass slowly while talking to the young rancher beside him; at the far end of the bar a young bullfighter with a glass of sparkling water watches them.
+Foreground at the bar: a 52-year-old elegant Spanish businessman, tall and slim, 1.85 m, upright posture, cared-for golf tan, thick silver-grey hair combed back, perfectly clean-shaven, grey-green eyes, dark eyebrows, thin closed-lip smile, steel dress watch with white dial and brown leather strap, white gold wedding band, wearing a beige linen blazer, an open-collar white shirt, light grey trousers, brown suede loafers, turning a whisky glass slowly, wounded but elegant.
+On the next stool: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing dark blue jeans, a pressed white shirt open at the collar, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, clean brown leather boots, seated, not drinking, attentive.
+Far end of the bar: a 26-year-old Andalusian bullfighter, wiry slim build, 1.74 m, narrow waist, long neck, olive-tan skin, short tight black curly hair, clean-shaven, large black eyes, wide smile with one slightly overlapping front tooth, wearing a white shirt with rolled sleeves, faded jeans, white sneakers, dark sunglasses pushed up on his head, holding a glass of water, watchful.
+Setting: a classic hotel bar with dark wood panelling, vintage bullfight posters with unreadable text, a long counter, leather armchairs, warm low light.
+Time and weather: 11:30 pm, low warm bar light.
+Composition: the two men at the bar, the businessman in the foreground, the bullfighter soft at the far end.
+Lighting: low warm bar lamps, dark wood.
+Camera: 50 mm spherical lens, shallow, bullfighter out of focus.
+Textures: dark wood, crystal, leather, vintage posters.
+Mood: a crack in the powerful man.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable posters, bottle labels

@@ -1,0 +1,56 @@
+ID: C12_E003_IMAGE
+ESCENA: C12_E003 · FINAL B · EL HIERRO
+GUION: 01_DIALOGUES/CHAPTER_12/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_12/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M5)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - TONO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/TONO_SHEET.txt (vestuario del LOCK)
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L3)
+  - JAVIER: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/JAVIER_SHEET.txt (vestuario J4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C12_E003
+ 2. Localización ............ Herradero en los corrales de La Encomienda
+ 3. Hora y meteorología ..... Domingo 2 de noviembre, 12:00. Cielo azul de otoño, humo de lumbre.
+ 4. Personajes visibles ..... Manuel tendiendo a Alejandro un hierro al rojo por el mango; Toño y dos mozos sujetando un becerro en la paja; Lucía con espray; Javier con bastón; vecinos en los muros.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ MANUEL: WARDROBE M5; ALEJANDRO: WARDROBE A4; TONO: vestuario del LOCK; LUCIA: WARDROBE L3; JAVIER: WARDROBE J4
+ 7. Expresión facial ........ Manuel solemne; Alejandro con miedo y emoción.
+ 8. Posición corporal ....... Manuel ofrece el hierro por el mango.
+ 9. Acción congelada ........ Manuel le tiende el hierro al rojo a Alejandro: «El primero lo pones tú».
+10. Composición ............. Plano medio: el hierro incandescente en el centro entre las dos manos; becerro y mozos abajo; gente en el muro al fondo.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm anamorphic lens
+13. Iluminación ............. Sol de otoño y resplandor naranja del hierro y la lumbre.
+14. Profundidad de campo .... focus on the iron and both faces
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Herencia elegida.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot. At a calf branding in stone pens, an old foreman hands a glowing red branding iron, handle first, to the young rancher; below them a farmhand and two lads hold a calf down on the straw; a veterinarian with a spray can, a young man leaning on a cane and villagers on the walls watch.
+Offering the iron: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a dark brown sheepskin-lined leather vest over a checked flannel shirt, brown corduroy trousers, brown leather boots, wearing his hat, holding out a glowing branding iron handle-first, solemn, proud.
+Receiving it: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, reaching for the iron handle, afraid and moved.
+Holding the calf: a 19-year-old Spanish farmhand, tall and heavy-set, broad shoulders, round boyish face, short buzzed brown hair, shy brown eyes, wearing a black padded vest over a grey t-shirt, work trousers and boots, kneeling on the straw holding a calf, focused.
+Watching: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a simple light cotton blouse, dark jeans and white canvas sneakers, hair in her usual low ponytail, holding a blue disinfectant spray can, proud.
+Watching: a 26-year-old Andalusian bullfighter, wiry slim build, 1.74 m, narrow waist, long neck, olive-tan skin, short tight black curly hair, clean-shaven, large black eyes, wide smile with one slightly overlapping front tooth, wearing a dark green quilted jacket, jeans, leaning on a wooden walking cane, leaning on a cane, delighted.
+Animal: Spanish fighting calves around eight months old, cárdeno and black coats, small horn buds.
+Setting: the stone pens of La Encomienda during the calf branding, a wood fire with branding irons glowing red, straw on the ground, villagers watching from the walls. The branding iron shows the intertwined letters E and G above an upward crescent, glowing red. A wood fire with more irons; villagers lining the stone walls.
+Time and weather: noon on a clear November Sunday, 14 °C, wood smoke.
+Composition: the glowing iron centred between the two hands, the calf and lads below, people on the wall behind.
+Lighting: autumn sun and orange glow of the iron and fire.
+Camera: 50 mm anamorphic lens, focus on the iron and both faces.
+Textures: hot iron, smoke, straw, calf hair.
+Mood: an inheritance chosen.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, burn wound close-up

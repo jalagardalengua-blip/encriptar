@@ -1,0 +1,49 @@
+ID: C08_E003_IMAGE
+ESCENA: C08_E003 · EL FRÍO
+GUION: 01_DIALOGUES/CHAPTER_08/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_08/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L3)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A5)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C08_E003
+ 2. Localización ............ Balcón del piso de Lucía en Salamanca, de noche
+ 3. Hora y meteorología ..... Sábado 9 de agosto, 23:30. Noche de verano, catedral iluminada.
+ 4. Personajes visibles ..... Lucía de espaldas apoyada en la barandilla mirando la catedral; Alejandro sentado a la mesita.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ LUCIA: WARDROBE L3; ALEJANDRO: WARDROBE A5
+ 7. Expresión facial ........ Lucía dolida y pensativa; Alejandro culpable.
+ 8. Posición corporal ....... Lucía se vuelve despacio al recordar algo.
+ 9. Acción congelada ........ Lucía, en la barandilla, se vuelve despacio hacia Alejandro.
+10. Composición ............. Lucía en primer término a la derecha, de perfil; Alejandro sentado a la izquierda junto a la vela; torres doradas al fondo.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Vela, luz de la ciudad y torres doradas.
+14. Profundidad de campo .... shallow, towers soft
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ El recuerdo que lo cambia todo.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot. On a small iron balcony at night, a barefoot woman leaning on the rail turns slowly back toward the young man sitting at a little candlelit table; behind them the golden-lit towers of Salamanca cathedral.
+At the rail, frame right: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a simple light cotton blouse, dark jeans and white canvas sneakers, hair in her usual low ponytail, barefoot, turning from the rail, hurt, a memory surfacing.
+Seated, frame left: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist, sitting at the small table, hands around a wine glass, guilty.
+Setting: a small wrought-iron balcony of an old flat in central Salamanca at night, golden-lit cathedral towers in the background, a little table with two plates and a candle.
+Time and weather: 11:30 pm, summer night, the illuminated cathedral towers of Salamanca.
+Composition: the woman in profile in the right foreground, the man seated left by the candle, golden towers behind.
+Lighting: candlelight, city glow, illuminated towers.
+Camera: 50 mm spherical lens, shallow, towers soft.
+Textures: wrought iron, candle, wine glass.
+Mood: the memory that changes everything.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion
