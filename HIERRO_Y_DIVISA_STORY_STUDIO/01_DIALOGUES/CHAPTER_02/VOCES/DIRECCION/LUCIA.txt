@@ -1,0 +1,384 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 37
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E001_L001
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: eficiencia
+Intención: ir al trabajo sin preámbulos
+Ritmo: rápido
+Pausas: breve tras el saludo
+FX / procesado: exterior
+Texto: Buenos días. ¿Ha comido?
+------------------------------------------------------------------------
+[002] C02_E001_L003
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: paciencia irónica
+Intención: pedir precisión
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso no me dice nada, Manuel.
+------------------------------------------------------------------------
+[003] C02_E001_L005
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: decisión
+Intención: organizar
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Sube. Delante. Manuel, ¿vienes?
+------------------------------------------------------------------------
+[004] C02_E001_L007
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Acotación: conduciendo, en voz baja
+Emoción: calma profesional
+Intención: prevenir
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Si se arranca, no te muevas y no abras la puerta. Esto es más fuerte que él. [short pause] Casi siempre.
+------------------------------------------------------------------------
+[005] C02_E001_L009
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: sequedad
+Intención: ser honesta
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: No pretendía tranquilizarte.
+------------------------------------------------------------------------
+[006] C02_E001_L012
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: delicadeza
+Intención: no añadir nada
+Ritmo: lento, suave
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Eso me dijo Manuel.
+------------------------------------------------------------------------
+[007] C02_E001_L014
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Acotación: exhala
+Emoción: alivio y concentración
+Intención: enseñar a mirar
+Ritmo: normal
+Pausas: tras la exhalación
+FX / procesado: interior vehículo
+Texto: [exhales] Vale. Míralo andar. Fíjate en la mano izquierda cuando apoya.
+------------------------------------------------------------------------
+[008] C02_E001_L016
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: neutralidad técnica
+Intención: diagnóstico
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: interior vehículo
+Texto: Anda bien. Hoy no cojea.
+------------------------------------------------------------------------
+[009] C02_E001_L018
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: cariño irónico
+Intención: relativizar sin despreciar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Tu padre también decía todos los años que dejaba de fumar en Reyes.
+------------------------------------------------------------------------
+[010] C02_E001_L020
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: firmeza dolida
+Intención: poner un límite sin crueldad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Le dije que el viernes. Y ya te dije que lo siento. [short pause] No te lo voy a decir todos los días, que no te hace falta.
+------------------------------------------------------------------------
+[011] C02_E001_L022
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: seriedad
+Intención: que entienda el riesgo
+Ritmo: lento, preciso
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Puedo. Con un dardo, a esta distancia. [short pause] Y si se me queda en la anestesia, te quedas sin semental y con un toro de quinientos sesenta kilos muerto debajo de una encina.
+------------------------------------------------------------------------
+[012] C02_E001_L024
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: compromiso
+Intención: dar una salida, y un mea culpa
+Ritmo: normal, más lento al final
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Un semental no se duerme por una sospecha. Si le ves cojear otra vez, me grabas un vídeo con el móvil y vengo ese mismo día. [short pause] Ese mismo, no el viernes.
+------------------------------------------------------------------------
+[013] C02_E001_L025
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: practicidad
+Intención: avisar de lo importante
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Otra cosa. El lunes que viene es la campaña. Tuberculosis. Toda la ganadería por la manga.
+------------------------------------------------------------------------
+[014] C02_E001_L027
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: gravedad sin dramatismo
+Intención: que lo entienda de verdad
+Ritmo: normal, enumerando
+Pausas: breves entre frases
+FX / procesado: exterior
+Texto: Y si sale un positivo, la Junta inmoviliza la explotación. No sale ni una res de aquí en meses. Ni a la plaza, ni al matadero, ni a ningún sitio.
+------------------------------------------------------------------------
+[015] C02_E001_L029
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: sorpresa
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué corrida?
+------------------------------------------------------------------------
+[016] C02_E001_L031
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Acotación: silba bajito
+Emoción: humor negro
+Intención: desear suerte a su manera
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pues reza.
+------------------------------------------------------------------------
+[017] C02_E001_L033
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: LUCÍA
+Emoción: autoridad con guasa
+Intención: dar instrucciones
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Pues limpia los bebederos, que sirve más. [short pause] Lunes a las ocho. Os quiero con todo el ganado encerrado.
+------------------------------------------------------------------------
+[018] C02_E005_L001
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: concentración rutinaria
+Intención: arrancar la cadena
+Ritmo: rápido, numérico
+Pausas: breve antes de la pregunta
+FX / procesado: exterior, corrales
+Texto: Cuatro, cuatro, nueve, uno. Siete milímetros. [short pause] ¿Quién apunta?
+------------------------------------------------------------------------
+[019] C02_E005_L002
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: exigencia
+Intención: dejar claro el listón
+Ritmo: rápido
+Pausas: breves entre frases
+FX / procesado: exterior, corrales
+Texto: Crotal y milímetros. En ese orden. Si te equivocas en uno, repetimos la vaca, y la vaca no quiere repetir.
+------------------------------------------------------------------------
+[020] C02_E005_L004
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Acotación: si el jugador anota bien diez seguidas
+Emoción: sorpresa sincera
+Intención: reconocer
+Ritmo: normal
+Pausas: breve tras «Oye»
+FX / procesado: exterior, corrales
+Texto: Oye. Pues vas rápido.
+------------------------------------------------------------------------
+[021] C02_E005_L006
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Acotación: si el jugador se equivoca de crotal
+Emoción: corrección sin enfado
+Intención: enseñar
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior, corrales
+Texto: Ese no es. Mira bien el último número, que el barro engaña.
+------------------------------------------------------------------------
+[022] C02_E005_L010
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: humor seco
+Intención: devolverla
+Ritmo: normal
+Pausas: tras «No»
+FX / procesado: exterior
+Texto: No. Normalmente llueve.
+------------------------------------------------------------------------
+[023] C02_E005_L011
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: curiosidad real
+Intención: conocerle
+Ritmo: normal
+Pausas: breve tras «Madrid»
+FX / procesado: exterior
+Texto: ¿Y qué hacías en Madrid? Aparte de apuntar paquetes.
+------------------------------------------------------------------------
+[024] C02_E005_L013
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: interés
+Intención: ir más allá
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y te gustaba?
+------------------------------------------------------------------------
+[025] C02_E005_L015
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: firmeza tranquila
+Intención: no dejarle escapar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso no es lo que te he preguntado.
+------------------------------------------------------------------------
+[026] C02_E005_L018
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: ironía divertida
+Intención: pillarle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: «Con todo el respeto» es lo que dice la gente justo antes de faltarte al respeto.
+------------------------------------------------------------------------
+[027] C02_E005_L020
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: recuerdo luminoso
+Intención: contar algo verdadero
+Ritmo: normal, se ralentiza al final
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Porque en cuarto de carrera me tocaron prácticas en una ganadería de Ciudad Rodrigo y el primer día me metieron en un cajón con una vaca brava para sacarle un ternero. [short pause] Y me gustó. Me gustó tanto que me asusté.
+------------------------------------------------------------------------
+[028] C02_E005_L022
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: humor con cansancio
+Intención: reírse de su situación
+Ritmo: normal, imitando a la madre en la cita
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Mi madre todavía me pregunta cuándo voy a buscar «algo de clínica pequeña, con perritos».
+------------------------------------------------------------------------
+[029] C02_E005_L023
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: delicadeza
+Intención: darle algo que no sabe si quiere
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Tu padre hablaba de ti.
+------------------------------------------------------------------------
+[030] C02_E005_L025
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Acotación: piensa la respuesta
+Emoción: honestidad cuidadosa
+Intención: no mentir ni herir
+Ritmo: lento
+Pausas: 1 s antes de hablar (en montaje)
+FX / procesado: exterior
+Texto: Mucho.
+------------------------------------------------------------------------
+[031] C02_E005_L027
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: satisfacción
+Intención: reconocerle
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Ciento ochenta. Sin un solo error de crotal. [short pause] Eso no lo hacía ni tu padre.
+------------------------------------------------------------------------
+[032] C02_E005_L030
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Emoción: seriedad práctica
+Intención: explicar el procedimiento
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Ahora esperamos. Setenta y dos horas. El jueves a las nueve vuelvo, palpo los cuellos y medimos otra vez. [short pause] Si alguno ha engordado más de la cuenta, tenemos un problema.
+------------------------------------------------------------------------
+[033] C02_E005_L032
+Escena: C02_E005 · LA PRUEBA
+Personaje: LUCÍA
+Acotación: subiendo a la pick-up
+Emoción: coqueteo involuntario corregido sobre la marcha
+Intención: animarle, y no pasarse
+Ritmo: normal, lo segundo más rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Si no, te invito a una caña. [short pause] Pequeña.
+------------------------------------------------------------------------
+[034] C02_E006_L001
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: LUCÍA
+Emoción: incomodidad profesional
+Intención: presentar y avisar a la vez
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Elena Arranz, veterinaria de la Junta. Alejandro Galván. [short pause] La lectura la hace ella.
+------------------------------------------------------------------------
+[035] C02_E006_L014
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: LUCÍA
+Acotación: muy baja
+Emoción: desánimo profesional
+Intención: confirmar el dato
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Tres milímetros más.
+------------------------------------------------------------------------
+[036] C02_E006_L023
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: LUCÍA
+Emoción: honestidad dividida
+Intención: darle los dos datos sin decidir por él
+Ritmo: normal, más lento en la segunda parte
+Pausas: la marcada y una suspensión
+FX / procesado: exterior
+Texto: Como veterinaria, te digo que la vaca casi seguro está sana. Es una reacción de piel, pasa. [short pause] Como persona que sabe que tienes una reunión con la Olmedo el veintidós de abril… te digo que cuarenta y dos días son el uno de mayo.
+------------------------------------------------------------------------
+[037] C02_E006_L037
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: LUCÍA
+Emoción: pesar con un punto de ternura
+Intención: acompañar sin consolar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: La caña, la dejamos para otro día.
+------------------------------------------------------------------------

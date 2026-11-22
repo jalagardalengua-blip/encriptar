@@ -1,0 +1,120 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · BENÍTEZ
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 11
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/BENITEZ.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E003_L004
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: flema irónica
+Intención: saludar sin dramatizar
+Ritmo: lento, acento andaluz oriental
+Pausas: breve tras «Manuel»
+FX / procesado: exterior, noche
+Texto: Buenos días, Manuel. Bueno, días.
+------------------------------------------------------------------------
+[002] C02_E003_L006
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: humor seco
+Intención: tranquilizar con datos
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: El chófer, un susto y un faro. La vaca, que yo vea, ni se ha enterado. [short pause] Esa de ahí, la negra.
+------------------------------------------------------------------------
+[003] C02_E003_L009
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: pésame sincero
+Intención: reconocerle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Tú eres el hijo de don Ernesto. [short pause] Lo siento, chiquillo. Era un hombre cabal.
+------------------------------------------------------------------------
+[004] C02_E003_L011
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: deber sin hostilidad
+Intención: informar de la sanción
+Ritmo: lento, oficial
+Pausas: breve tras «decir»
+FX / procesado: exterior, noche
+Texto: Y ahora, como es mi trabajo, te lo tengo que decir: reses sueltas en vía pública. Eso es una infracción, y con un vehículo de por medio, un atestado.
+------------------------------------------------------------------------
+[005] C02_E003_L013
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: autoridad tranquila
+Intención: priorizar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Eso lo decide otro, no yo. [short pause] Lo que decido yo es que antes de que amanezca y pase el autobús del instituto, aquí no quede ni una vaca.
+------------------------------------------------------------------------
+[006] C02_E003_L022
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Acotación: si una vaca se acerca al coche patrulla
+Emoción: guasa con alarma
+Intención: pedir ayuda sin perder la flema
+Ritmo: normal, sube al final
+Pausas: ninguna
+FX / procesado: exterior, noche, distancia media
+Texto: Esta va a querer que le enseñe el carné. ¡Manuel!
+------------------------------------------------------------------------
+[007] C02_E003_L024
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Rama de elección: QTE quieto
+Emoción: aprobación flemática
+Intención: reconocer
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: No has corrido.
+------------------------------------------------------------------------
+[008] C02_E003_L026
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Rama de elección: QTE quieto
+Emoción: guasa amable
+Intención: dar ánimo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Así empiezan todos los valientes. [short pause] Por no darles tiempo.
+------------------------------------------------------------------------
+[009] C02_E003_L027
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Rama de elección: QTE salto
+Emoción: guasa amable
+Intención: quitarle la vergüenza
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Bien saltado. [short pause] Para ser de Madrid.
+------------------------------------------------------------------------
+[010] C02_E003_L028
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: sospecha discreta
+Intención: dejar caer algo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Esa pared la teníais bien.
+------------------------------------------------------------------------
+[011] C02_E003_L030
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: BENÍTEZ
+Emoción: deber y consejo
+Intención: cerrar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: Mañana os paso el atestado. Y arregladla, que la próxima vez a lo mejor no es una furgoneta.
+------------------------------------------------------------------------

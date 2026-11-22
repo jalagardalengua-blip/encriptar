@@ -120,6 +120,8 @@ Cada ficha incluye la descripción para *Voice Design* (en inglés, que es el id
 |---|---|---|
 | PADRE JULIÁN (70) | *"Elderly Spanish priest from Salamanca, 70, grave tired baritone, warm and slow, Peninsular Spanish, outdoor funeral."* | Stab 0.60 · Style 0.15 |
 | REMEDIOS (66) | *"Spanish woman aged 66 from a village in Salamanca, sharp and quick, affectionate, rural Castilian accent, slightly nasal."* | Stab 0.45 · Style 0.35 |
+| SARGENTO BENÍTEZ (45) | *"Spanish Civil Guard sergeant aged 45 from Jaén, Andalusia, phlegmatic mid baritone, slow eastern Andalusian accent, calm authority, dry humour."* | Stab 0.60 · Style 0.20 |
+| INSPECTORA ARRANZ (52) | *"Spanish woman aged 52 from Valladolid, official veterinarian, dry and precise mezzo, tired bureaucratic tone, standard Castilian Peninsular accent."* | Stab 0.65 · Style 0.15 |
 | TOÑO (19) | *"Shy 19-year-old farm worker from rural Salamanca, soft low voice, few words."* | Stab 0.50 · Style 0.20 |
 
 ## 5. Diccionario de pronunciación

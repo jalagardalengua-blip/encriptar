@@ -1,6 +1,6 @@
 # HIERRO Y DIVISA · PROGRESS
 
-Última actualización: lote 1 (biblias + capítulo 01, piloto vertical).
+Última actualización: lote 2 (capítulo 02, guion y voces).
 
 > Todo lo que figura como «OK» existe como **texto** en este repositorio (guiones, archivos de voz preparados, prompts). **No se ha generado ningún audio, imagen ni vídeo.** Las columnas `imagen_generada` y `video_generado` de `SCENE_INDEX.csv` y la columna `estado` de `VOICE_RECORDING_TRACKER.csv` lo reflejan.
 
@@ -9,8 +9,8 @@
 | Paso | Contenido | Estado |
 |---|---|---|
 | 1 | Biblias (story, character, voice, visual continuity, world) | **OK** |
-| 2 | Guiones y diálogos de los 12 capítulos | **1 / 12** (C01) |
-| 3 | Voces separadas para ElevenLabs | **1 / 12** (C01) |
+| 2 | Guiones y diálogos de los 12 capítulos | **2 / 12** (C01, C02) |
+| 3 | Voces separadas para ElevenLabs | **2 / 12** (C01, C02) |
 | 4 | Prompts de imagen | Fichas maestras OK · **C01 (piloto)** |
 | 5 | Prompts de vídeo | **C01 (piloto)** |
 | 6 | Auditoría de continuidad y paquete final | Pendiente |
@@ -20,8 +20,8 @@
 | Cap. | Título | Escenas | Guion | Voces | Imagen | Vídeo | Notas |
 |---|---|---|---|---|---|---|---|
 | 01 | La Encomienda | 8 | OK | OK (219 intervenciones, 8 voces) | OK · PILOTO | OK · PILOTO | Ver control de calidad |
-| 02 | Saneamiento | — | pendiente | pendiente | bloqueado (fase 2) | bloqueado (fase 3) | **Siguiente lote** |
-| 03 | La tienta | — | pendiente | pendiente | bloqueado | bloqueado | |
+| 02 | Saneamiento | 7 | OK | OK (246 intervenciones, 9 voces) | bloqueado (fase 2) | bloqueado (fase 3) | Ver control de calidad |
+| 03 | La tienta | — | pendiente | pendiente | bloqueado | bloqueado | **Siguiente lote** |
 | 04 | Números rojos | — | pendiente | pendiente | bloqueado | bloqueado | |
 | 05 | La cinta | — | pendiente | pendiente | bloqueado | bloqueado | |
 | 06 | Encierro | — | pendiente | pendiente | bloqueado | bloqueado | |
@@ -57,6 +57,20 @@
 - E008: el toro estaba «recortado contra el cielo naranja» mirando al este → cielo rosa-violeta, coherente con la orientación del cercado.
 - Biblia visual: añadidos `WARDROBE A1B`, `WARDROBE M1B` y `LOCATION LOCK — CAMINO ENCOMIENDA`; el sombrero y los zahones de Manuel pasan a indicarse por plano.
 
+## Control de calidad · Capítulo 02
+
+| Comprobación | Resultado |
+|---|---|
+| Todas las escenas tienen guion | Sí (7/7) |
+| Diálogos completos, sin escenas resumidas | Sí. 246 intervenciones. Ramas completas: QTE de E003 (quieto/salto) con eco en E004, elección A/B de E006, variante de E007 según la rama de C01 |
+| Intervenciones identificadas y validadas | Sí. `tools/build_production.py`: 0 errores (se añade la regla «ninguna toma empieza con pausa») |
+| Archivos de voz separados | Sí: ALEJANDRO, MANUEL, LUCIA, CARMEN, RICARDO, REMEDIOS, TONO, BENITEZ, ARRANZ |
+| Voces nuevas documentadas | Sargento Benítez e Inspectora Arranz añadidos a VOICE_BIBLE §4; Arranz y el Rubio a CHARACTER_BIBLE |
+| Prompts de imagen y vídeo | No procede todavía (fase 2 y 3 bloqueadas hasta cerrar los 12 guiones) |
+| Continuidad narrativa | Revisada: calendario ajustado a lunes 10 – jueves 20 de marzo (Lucía prometió volver «el lunes» en C01 E005); 42 días desde el 20 de marzo = 1 de mayo; 12 días desde la llegada de Alejandro (Remedios, E007); 3.000 visitas × 60 € = 180.000 € (E002); censo de 180 reses coherente con WORLD_BIBLE |
+| Recursos repetidos a propósito | «Esto es Peñacorva…» (Remedios en E007 L005, Ricardo en E007 L023): eco deliberado; la frase de Ricardo es la que delata que la información sale del pueblo |
+| Contradicciones | Ninguna abierta. Corregido durante la revisión: Lucero no pasa por el cajón en E005 (si lo hiciera, Lucía le habría visto la mano y se resolvería antes de tiempo el misterio n.º 1) |
+
 ## Imágenes de referencia aprobadas
 
 | Ficha | Imagen aprobada | Herramienta | Fecha |
@@ -76,8 +90,8 @@ Se rellenan en `00_BIBLE/VOICE_BIBLE.md` §4 y en la columna `voice_id` del trac
 
 ## Siguiente lote
 
-1. Capítulo 02 «Saneamiento» completo (guion y voces): M04 Cerca rota · M05 La prueba · M06 Denuncia anónima.
-2. Seguir con los capítulos 03–12, solo guion y voces.
+1. Capítulo 03 «La tienta» (guion y voces): M07 Preparativos · M08 La tienta · M09 Noche en la placita. Entra Javier Romero.
+2. Seguir con los capítulos 04–12, solo guion y voces.
 3. Con los 12 guiones cerrados: prompts de imagen C02–C12, después vídeo, después auditoría (incluida la revisión del piloto C01).
 
 ## Cómo continuar desde aquí

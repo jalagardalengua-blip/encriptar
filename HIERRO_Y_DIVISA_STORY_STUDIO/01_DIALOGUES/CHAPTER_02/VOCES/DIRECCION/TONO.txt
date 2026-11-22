@@ -1,0 +1,78 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · TOÑO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 7
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/TONO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E003_L015
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: TOÑO
+Emoción: obediencia
+Intención: confirmar
+Ritmo: bajo, rápido
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Vale.
+------------------------------------------------------------------------
+[002] C02_E003_L032
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: TOÑO
+Acotación: se encoge de hombros
+Emoción: timidez
+Intención: responder lo justo
+Ritmo: bajo
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Cuando hay que hablar.
+------------------------------------------------------------------------
+[003] C02_E004_L021
+Escena: C02_E004 · EL REGATO
+Personaje: TOÑO
+Emoción: timidez
+Intención: aportar algo importante
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Yo vi un coche anoche.
+------------------------------------------------------------------------
+[004] C02_E004_L023
+Escena: C02_E004 · EL REGATO
+Personaje: TOÑO
+Emoción: nervios
+Intención: contarlo exacto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Un todoterreno. Por el camino de Los Arenales, a eso de las tres. [short pause] Sin luces.
+------------------------------------------------------------------------
+[005] C02_E004_L025
+Escena: C02_E004 · EL REGATO
+Personaje: TOÑO
+Emoción: vergüenza
+Intención: confesar
+Ritmo: titubeante
+Pausas: la interrupción tras «de…»
+FX / procesado: exterior
+Texto: Volvía de… de casa de una chica de Los Arenales.
+------------------------------------------------------------------------
+[006] C02_E004_L028
+Escena: C02_E004 · EL REGATO
+Personaje: TOÑO
+Emoción: honestidad
+Intención: no inventar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No. Iba sin luces. [short pause] Pero era grande. Y blanco, me parece.
+------------------------------------------------------------------------
+[007] C02_E005_L008
+Escena: C02_E005 · LA PRUEBA
+Personaje: TOÑO
+Acotación: empujando
+Emoción: esfuerzo
+Intención: confirmar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, corrales, distancia media
+Texto: ¡Ya va!
+------------------------------------------------------------------------

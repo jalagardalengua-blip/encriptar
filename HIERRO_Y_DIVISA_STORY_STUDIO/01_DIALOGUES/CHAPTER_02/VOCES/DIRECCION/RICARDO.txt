@@ -1,0 +1,81 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 7
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E007_L019
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Acotación: teléfono
+Emoción: cortesía impecable
+Intención: abrir
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: teléfono, interior silencioso
+Texto: Alejandro, buenas noches. Ricardo. ¿Te pillo bien?
+------------------------------------------------------------------------
+[002] C02_E007_L021
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Emoción: falsa solidaridad
+Intención: mostrar que lo sabe todo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Entonces no te entretengo. Me he enterado de lo de la vaca y quería decirte que lo siento. [short pause] Una dudosa en plena campaña es una faena.
+------------------------------------------------------------------------
+[003] C02_E007_L023
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Emoción: diversión
+Intención: no contestar contestando
+Ritmo: pausado
+Pausas: breve tras el nombre
+FX / procesado: teléfono
+Texto: Esto es Peñacorva, Alejandro. Aquí te enteras de las cosas antes de que pasen.
+------------------------------------------------------------------------
+[004] C02_E007_L024
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Acotación: si en C01 el jugador eligió «Fuera de mi casa»
+Rama de elección: C01-A
+Emoción: elegancia venenosa
+Intención: recordarle quién manda
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: Y no te guardo rencor por lo del domingo. A tu edad yo también echaba a la gente de casas que no eran mías.
+------------------------------------------------------------------------
+[005] C02_E007_L025
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Acotación: si en C01 el jugador eligió «Lo pensaré»
+Rama de elección: C01-B
+Emoción: amabilidad con prisa escondida
+Intención: presionar sonriendo
+Ritmo: pausado, se acelera en la corrección
+Pausas: breve tras «¿eh?»
+FX / procesado: teléfono
+Texto: Y lo otro, ¿lo has pensado? No hay prisa, ¿eh? Bueno, sí que la hay. Hasta septiembre.
+------------------------------------------------------------------------
+[006] C02_E007_L026
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Emoción: oferta envenenada
+Intención: tender la trampa del favor
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: teléfono
+Texto: Si necesitas algo con la Junta, conozco a gente. Lo digo de verdad.
+------------------------------------------------------------------------
+[007] C02_E007_L028
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: RICARDO
+Emoción: cálculo, una grieta mínima
+Intención: no morder el anzuelo y cerrar
+Ritmo: más lento de lo normal
+Pausas: 2 s de silencio antes de hablar (en montaje) y la marcada
+FX / procesado: teléfono
+Texto: A Ramiro le conozco desde hace veinte años. Es un hombre de campo, con sus cosas. [short pause] Buenas noches, Alejandro. Que aproveche.
+------------------------------------------------------------------------

@@ -1,0 +1,128 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · REMEDIOS
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 12
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/REMEDIOS.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E007_L001
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: alegría mandona
+Intención: acogerle y alimentarle
+Ritmo: rápido, encadenado
+Pausas: breve antes de la pregunta
+FX / procesado: interior, bar
+Texto: ¡Hombre! Ya era hora, que llevas doce días aquí y no has pisado el bar. [short pause] ¿Has cenado? No has cenado. Se te ve en la cara.
+------------------------------------------------------------------------
+[002] C02_E007_L003
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: complicidad
+Intención: ahorrarle contarlo
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Hola, hola. Come. [short pause] Y no me digas lo de la vaca, que ya lo sé.
+------------------------------------------------------------------------
+[003] C02_E007_L005
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: humor de pueblo
+Intención: explicar el mundo
+Ritmo: rápido
+Pausas: breve tras «Peñacorva»
+FX / procesado: interior, bar
+Texto: Hijo, esto es Peñacorva. Aquí te enteras de que te has muerto antes que el difunto.
+------------------------------------------------------------------------
+[004] C02_E007_L007
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Acotación: limpiando la barra, bajando la voz
+Emoción: cambio a confidencia
+Intención: preparar algo importante
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: interior, bar, voz baja
+Texto: Eso da igual. [short pause] Lo que no da igual es otra cosa.
+------------------------------------------------------------------------
+[005] C02_E007_L008
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: gravedad de chismosa con causa
+Intención: dar el dato
+Ritmo: normal, bajo
+Pausas: la marcada
+FX / procesado: interior, bar, voz baja
+Texto: El martes por la noche estuvo aquí el Rubio. El capataz de Valcárcel. Tres copas de orujo, que ese no bebe nunca entre semana. [short pause] Y preguntando por las vacas del Regato. Que si eran muchas, que si la pared era vieja.
+------------------------------------------------------------------------
+[006] C02_E007_L010
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: prudencia teatral
+Intención: no comprometerse
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: interior, bar, voz baja
+Texto: Yo no digo nada. Yo pongo cañas.
+------------------------------------------------------------------------
+[007] C02_E007_L012
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: nostalgia
+Intención: recordarle
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, bar
+Texto: Tu padre se sentaba ahí. En ese mismo taburete. Los jueves, después del médico.
+------------------------------------------------------------------------
+[008] C02_E007_L014
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: ternura burlona
+Intención: contarlo como anécdota sin saber lo que cuenta
+Ritmo: normal, se anima con la risa
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: El de Salamanca. Iba todos los meses, desde el verano. [short pause] Él decía que iba a por recambios para el tractor. [laughs] ¡Recambios! Para un tractor de cuarenta años, recambios todos los meses.
+------------------------------------------------------------------------
+[009] C02_E007_L016
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Acotación: se encoge de hombros
+Emoción: resignación cariñosa
+Intención: quitarle importancia
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Lo que tenemos todos a esa edad, hijo. Años. [short pause] A mí no me lo contó, y mira que a mí me lo cuenta todo el mundo.
+------------------------------------------------------------------------
+[010] C02_E007_L018
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: indiscreción y apuro
+Intención: contar y arrepentirse
+Ritmo: normal, se atropella al final
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Manuel le llevaba en coche. [short pause] Pero Manuel es una tumba, ya lo sabes. Bueno, perdona, hijo. Qué cosas digo.
+------------------------------------------------------------------------
+[011] C02_E007_L029
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: curiosidad preocupada
+Intención: confirmar
+Ritmo: bajo
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Era quien yo creo?
+------------------------------------------------------------------------
+[012] C02_E007_L031
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: REMEDIOS
+Emoción: cariño y miedo
+Intención: advertirle
+Ritmo: lento, bajo
+Pausas: breve entre frases
+FX / procesado: interior, bar, voz baja
+Texto: Ten cuidado, hijo. Que ese, cuando sonríe, es que ya ha hecho la cuenta.
+------------------------------------------------------------------------

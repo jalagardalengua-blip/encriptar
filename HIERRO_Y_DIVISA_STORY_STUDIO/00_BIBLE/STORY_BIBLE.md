@@ -41,7 +41,7 @@ Drama contemporáneo con humor seco. Referencia de calidad: superproducción de 
 | Capítulo | Fechas en el juego | Estación |
 |---|---|---|
 | 01 | sábado 8 – domingo 9 de marzo | final de invierno |
-| 02 | 12 – 20 de marzo | primavera temprana |
+| 02 | lunes 10 – jueves 20 de marzo | primavera temprana |
 | 03 | 4 – 6 de abril | primavera |
 | 04 | 22 – 30 de abril | primavera |
 | 05 | 10 – 18 de mayo | primavera |

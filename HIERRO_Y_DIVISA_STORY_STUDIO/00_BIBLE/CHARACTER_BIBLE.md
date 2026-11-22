@@ -147,6 +147,8 @@ Identidades fijas. No se cambian edad, aspecto, relaciones ni rasgos vocales sin
 | **Remedios Sánchez** | 66 | Dueña del bar de la plaza. Sabe todo de todos. | Charra, aguda, rápida, cariñosa. |
 | **Íñigo Salazar** | 38 | Abogado de Ricardo. | Madrileño, neutro, frío. |
 | **Sargento Benítez** | 45 | Guardia Civil del puesto de Peñacorva. | Andaluz de Jaén, flemático. |
+| **Inspectora Elena Arranz** | 52 | Veterinaria oficial de la Junta (Servicio Territorial de Agricultura y Ganadería). Rigurosa, cansada, justa. Conocía a Ernesto y no le caía bien. | Castellana de Valladolid, seca, administrativa. |
+| **Ramiro Sanz, «el Rubio»** | 44 | Capataz de Los Arenales. Lealtad a Ricardo por encima de todo; hace lo que cree que su jefe quiere sin que se lo pida. | Charro, bronco (aparece en voz a partir de C08). |
 | **Paco Lerma** | 58 | Apoderado de Javier. Viejo zorro. | Madrileño castizo, ronco. |
 
 ---

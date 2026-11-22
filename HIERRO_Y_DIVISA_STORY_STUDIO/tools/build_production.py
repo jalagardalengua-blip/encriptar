@@ -113,6 +113,8 @@ def validate_scene(sc: dict) -> None:
         for tag in TAG_RE.findall(txt):
             if tag not in ALLOWED_TAGS:
                 errors.append(f"{iv['id']}: etiqueta de audio no permitida {tag}")
+        if re.match(r"\[(short|long) pause\]", txt):
+            errors.append(f"{iv['id']}: empieza con una pausa (la pausa inicial va en montaje)")
         if len(TAG_RE.findall(txt)) > 2:
             errors.append(f"{iv['id']}: más de dos etiquetas de audio")
         if re.search(r"\([^)]*\)|\*|^[A-ZÁÉÍÓÚÑ ]{3,}:", txt):

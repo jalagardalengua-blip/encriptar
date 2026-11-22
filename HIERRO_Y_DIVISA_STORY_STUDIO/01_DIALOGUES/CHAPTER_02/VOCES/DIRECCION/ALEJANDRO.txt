@@ -1,0 +1,964 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 95
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E001_L008
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: ironía nerviosa
+Intención: descargar tensión
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: «Casi siempre» es tranquilizador.
+------------------------------------------------------------------------
+[002] C02_E001_L010
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: urgencia contenida
+Intención: detenerse ahí
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Para.
+------------------------------------------------------------------------
+[003] C02_E001_L011
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Acotación: sin apartar la vista
+Emoción: dolor contenido
+Intención: saber sin preguntar demasiado
+Ritmo: muy lento
+Pausas: precedida de 5 s de silencio
+FX / procesado: interior vehículo
+Texto: ¿Fue aquí?
+------------------------------------------------------------------------
+[004] C02_E001_L013
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: recomposición
+Intención: no romperse delante de ella
+Ritmo: seco
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Vale. [short pause] Sigue.
+------------------------------------------------------------------------
+[005] C02_E001_L015
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: decepción extraña
+Intención: decir lo que ve
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: A mí me parece que anda bien.
+------------------------------------------------------------------------
+[006] C02_E001_L017
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: terquedad
+Intención: defender la palabra del padre
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Mi padre dijo que sí.
+------------------------------------------------------------------------
+[007] C02_E001_L019
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: reproche que no se atreve a ser reproche
+Intención: buscar culpa
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Y no le hiciste caso?
+------------------------------------------------------------------------
+[008] C02_E001_L021
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: insistencia
+Intención: actuar
+Ritmo: rápido
+Pausas: breve tras «pata»
+FX / procesado: interior vehículo
+Texto: ¿Y no le puedes mirar la pata? Dormirle, o lo que se haga.
+------------------------------------------------------------------------
+[009] C02_E001_L023
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: aceptación a regañadientes
+Intención: ceder
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Ya.
+------------------------------------------------------------------------
+[010] C02_E001_L026
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: desconocimiento
+Intención: entender
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y?
+------------------------------------------------------------------------
+[011] C02_E001_L028
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: alarma
+Intención: calcular
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y la corrida de septiembre?
+------------------------------------------------------------------------
+[012] C02_E001_L032
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: sinceridad seca
+Intención: devolver la pelota
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No sé rezar.
+------------------------------------------------------------------------
+[013] C02_E001_L034
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: curiosidad punzante
+Intención: pillarle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Por qué no has entrado?
+------------------------------------------------------------------------
+[014] C02_E001_L036
+Escena: C02_E001 · LA MANO IZQUIERDA
+Personaje: ALEJANDRO
+Emoción: insistencia
+Intención: no dejarle escapar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Manuel.
+------------------------------------------------------------------------
+[015] C02_E002_L002
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: sequedad
+Intención: impresionar sin querer
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: La ganadería.
+------------------------------------------------------------------------
+[016] C02_E002_L004
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: autoridad incipiente
+Intención: ponerle delante los números
+Ritmo: normal
+Pausas: breve antes de «Siéntate»
+FX / procesado: interior
+Texto: Lo que cuesta la ganadería está aquí dentro. Siéntate.
+------------------------------------------------------------------------
+[017] C02_E002_L005
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: neutra, forzada
+Intención: empezar por lo concreto
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: En la cuenta hay dieciocho mil cuatrocientos euros.
+------------------------------------------------------------------------
+[018] C02_E002_L007
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: angustia que se ordena
+Intención: hacer la cuenta en voz alta
+Ritmo: rápido, enumerando, frena al final
+Pausas: la marcada antes de la cifra
+FX / procesado: interior
+Texto: Pienso, siete mil al mes. Tu sueldo y tu Seguridad Social, dos mil seiscientos. Toño, setecientos. Gasóleo, luz, seguros, el veterinario… [short pause] Once mil. Al mes. Sin vender nada.
+------------------------------------------------------------------------
+[019] C02_E002_L008
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: vértigo
+Intención: dimensionar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Me dan para seis semanas. Y en septiembre hay que tener un millón y pico.
+------------------------------------------------------------------------
+[020] C02_E002_L010
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: rabia triste
+Intención: decir la verdad aunque duela
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior
+Texto: Mi padre llegaba pidiendo prestado. [short pause] Y mira dónde ha llegado.
+------------------------------------------------------------------------
+[021] C02_E002_L011
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: urgencia
+Intención: pasar a la acción
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: ¿Qué podemos vender ya? Hoy. Esta semana.
+------------------------------------------------------------------------
+[022] C02_E002_L013
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: esperanza
+Intención: cifra
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Cuánto?
+------------------------------------------------------------------------
+[023] C02_E002_L015
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: idea súbita
+Intención: proponer
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Y visitas?
+------------------------------------------------------------------------
+[024] C02_E002_L017
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: entusiasmo creciente
+Intención: vender la idea
+Ritmo: rápido, cada vez más
+Pausas: breve tras «De gente»
+FX / procesado: interior
+Texto: De gente. Que paga por venir a ver toros en el campo. Un remolque con bancos, un almuerzo, una foto con un cabestro. Hay ganaderías en Cádiz que hacen tres mil visitas al año a sesenta euros.
+------------------------------------------------------------------------
+[025] C02_E002_L019
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: desafío
+Intención: ganar con la cifra
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Ciento ochenta mil euros, Manuel.
+------------------------------------------------------------------------
+[026] C02_E002_L021
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: humor negro
+Intención: zanjar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: Pues que se levante y me deje un millón.
+------------------------------------------------------------------------
+[027] C02_E002_L023
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: determinación
+Intención: actuar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: A quien sí puede pagar.
+------------------------------------------------------------------------
+[028] C02_E002_L025
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: formalidad nerviosa
+Intención: presentarse
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Buenas tardes. Soy Alejandro Galván. Me dejó un mensaje el domingo.
+------------------------------------------------------------------------
+[029] C02_E002_L027
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: sinceridad torpe
+Intención: no mentir del todo
+Ritmo: titubeante
+Pausas: entre palabras
+FX / procesado: interior
+Texto: Bien. [short pause] Bueno. Ahí.
+------------------------------------------------------------------------
+[030] C02_E002_L029
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: decisión
+Intención: comprometerse
+Ritmo: firme
+Pausas: ninguna
+FX / procesado: interior
+Texto: Sigue.
+------------------------------------------------------------------------
+[031] C02_E002_L031
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: orgullo
+Intención: desafiar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: Pues conózcame.
+------------------------------------------------------------------------
+[032] C02_E002_L033
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: seriedad
+Intención: aceptar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: Le entiendo.
+------------------------------------------------------------------------
+[033] C02_E002_L036
+Escena: C02_E002 · PAPELES
+Personaje: ALEJANDRO
+Emoción: defensiva
+Intención: saber si lo ha hecho mal
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué pasa?
+------------------------------------------------------------------------
+[034] C02_E003_L002
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Acotación: con la voz pegada
+Emoción: desorientación
+Intención: ubicarse
+Ritmo: lento, ronco
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué hora es?
+------------------------------------------------------------------------
+[035] C02_E003_L008
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: fastidio
+Intención: comentario
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Cómo no.
+------------------------------------------------------------------------
+[036] C02_E003_L010
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: incomodidad
+Intención: responder
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Gracias.
+------------------------------------------------------------------------
+[037] C02_E003_L012
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: alarma económica
+Intención: saber
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Y eso cuánto es?
+------------------------------------------------------------------------
+[038] C02_E003_L016
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: desconcierto
+Intención: saber qué hacer
+Ritmo: rápido, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Sin voces? ¿Y cómo las muevo?
+------------------------------------------------------------------------
+[039] C02_E003_L018
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: miedo
+Intención: saber
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Y qué hago?
+------------------------------------------------------------------------
+[040] C02_E003_L025
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Rama de elección: QTE quieto
+Emoción: honestidad nerviosa
+Intención: quitarse mérito
+Ritmo: rápido, entrecortado
+Pausas: ninguna
+FX / procesado: exterior, noche, respiración
+Texto: No me ha dado tiempo.
+------------------------------------------------------------------------
+[041] C02_E003_L031
+Escena: C02_E003 · RESES EN LA VÍA
+Personaje: ALEJANDRO
+Emoción: humor cansado
+Intención: romper el hielo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Siempre hablas tanto?
+------------------------------------------------------------------------
+[042] C02_E004_L002
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: ganas de entender
+Intención: comparar con lo que sabe
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Como los ladrillos.
+------------------------------------------------------------------------
+[043] C02_E004_L006
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: alarma contenida
+Intención: llamarle
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Manuel.
+------------------------------------------------------------------------
+[044] C02_E004_L007
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: certeza indignada
+Intención: decir lo evidente
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Esto no se ha roto.
+------------------------------------------------------------------------
+[045] C02_E004_L009
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: rabia creciente
+Intención: nombrarlo
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Esto lo han cortado con una tenaza.
+------------------------------------------------------------------------
+[046] C02_E004_L011
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: deducción excitada
+Intención: demostrar
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Las piedras están hacia fuera. Si la hubieran tirado las vacas, estarían hacia dentro.
+------------------------------------------------------------------------
+[047] C02_E004_L013
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: furia
+Intención: acusar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Ha sido él.
+------------------------------------------------------------------------
+[048] C02_E004_L015
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: incredulidad irritada
+Intención: imponer la evidencia
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cómo que quién? Valcárcel.
+------------------------------------------------------------------------
+[049] C02_E004_L017
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: terquedad
+Intención: insistir
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pues que pague a quien lo corte.
+------------------------------------------------------------------------
+[050] C02_E004_L019
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: frustración
+Intención: buscar salida
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y eso cómo se demuestra?
+------------------------------------------------------------------------
+[051] C02_E004_L024
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: curiosidad punzante
+Intención: pillarle
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y qué hacías tú a las tres de la mañana por el camino de Los Arenales?
+------------------------------------------------------------------------
+[052] C02_E004_L027
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: ansiedad
+Intención: concretar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Viste la matrícula? ¿Quién iba?
+------------------------------------------------------------------------
+[053] C02_E004_L029
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: decepción
+Intención: descartar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: El de Ricardo es negro.
+------------------------------------------------------------------------
+[054] C02_E004_L031
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Emoción: concentración
+Intención: tomar nota
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Quién es su capataz?
+------------------------------------------------------------------------
+[055] C02_E004_L034
+Escena: C02_E004 · EL REGATO
+Personaje: ALEJANDRO
+Rama de elección: QTE quieto (C02_E003)
+Emoción: modestia irónica
+Intención: repetir la broma
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No me dio tiempo.
+------------------------------------------------------------------------
+[056] C02_E005_L003
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: concentración
+Intención: confirmar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Crotal y milímetros.
+------------------------------------------------------------------------
+[057] C02_E005_L005
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Acotación: respuesta automática a la anterior
+Emoción: ironía modesta
+Intención: quitarse mérito
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Cuatro años apuntando paquetes.
+------------------------------------------------------------------------
+[058] C02_E005_L009
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: cansancio con humor
+Intención: conversar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Siempre es así de divertido?
+------------------------------------------------------------------------
+[059] C02_E005_L012
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: neutralidad
+Intención: informar sin adornar
+Ritmo: normal
+Pausas: breves entre frases
+FX / procesado: exterior
+Texto: Jefe de turno en un almacén de reparto. En Getafe. Del turno de noche.
+------------------------------------------------------------------------
+[060] C02_E005_L014
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: evasión
+Intención: no contestar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Me pagaban.
+------------------------------------------------------------------------
+[061] C02_E005_L016
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: sinceridad inesperada
+Intención: decir la verdad por primera vez
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No. [short pause] Pero era mío.
+------------------------------------------------------------------------
+[062] C02_E005_L017
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: curiosidad con guasa
+Intención: devolver la pregunta
+Ritmo: normal
+Pausas: breve entre preguntas
+FX / procesado: exterior
+Texto: ¿Y tú? ¿Por qué vacas? Con todo el respeto, no tienes pinta de ser de pueblo.
+------------------------------------------------------------------------
+[063] C02_E005_L019
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: humor
+Intención: insistir con gracia
+Ritmo: rápido
+Pausas: breve tras «respeto»
+FX / procesado: exterior
+Texto: Vale. Sin respeto: ¿por qué vacas?
+------------------------------------------------------------------------
+[064] C02_E005_L021
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: interés
+Intención: conocerla
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y tus padres?
+------------------------------------------------------------------------
+[065] C02_E005_L024
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: miedo disfrazado de ironía
+Intención: protegerse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Bien o mal?
+------------------------------------------------------------------------
+[066] C02_E005_L029
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: impaciencia
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y ahora qué?
+------------------------------------------------------------------------
+[067] C02_E005_L031
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: esperanza
+Intención: querer oír lo bueno
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y si no?
+------------------------------------------------------------------------
+[068] C02_E005_L034
+Escena: C02_E005 · LA PRUEBA
+Personaje: ALEJANDRO
+Emoción: vergüenza divertida
+Intención: cortar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Cállate, Manuel.
+------------------------------------------------------------------------
+[069] C02_E006_L002
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: desconfianza
+Intención: entender
+Ritmo: rápido
+Pausas: breve entre preguntas
+FX / procesado: exterior
+Texto: ¿Por qué? ¿No la hacías tú?
+------------------------------------------------------------------------
+[070] C02_E006_L004
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: alarma
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Una denuncia de qué?
+------------------------------------------------------------------------
+[071] C02_E006_L006
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: indignación
+Intención: negar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso es mentira.
+------------------------------------------------------------------------
+[072] C02_E006_L011
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: curiosidad tensa
+Intención: tantearla
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y había sido sin querer?
+------------------------------------------------------------------------
+[073] C02_E006_L016
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: angustia
+Intención: entender
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Qué quiere decir «dudosa»?
+------------------------------------------------------------------------
+[074] C02_E006_L018
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: vértigo
+Intención: calcular
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Suspendida cuánto?
+------------------------------------------------------------------------
+[075] C02_E006_L020
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: miedo
+Intención: ver el peor caso
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y si hay lesiones?
+------------------------------------------------------------------------
+[076] C02_E006_L022
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: apoyarse en ella
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Tú qué harías?
+------------------------------------------------------------------------
+[077] C02_E006_L024
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: oír al que sabe
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y tú, Manuel?
+------------------------------------------------------------------------
+[078] C02_E006_L026
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: frustración
+Intención: exigir
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso no es una respuesta.
+------------------------------------------------------------------------
+[079] C02_E006_L028
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: dolor y responsabilidad
+Intención: decidir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Sacrificadla.
+------------------------------------------------------------------------
+[080] C02_E006_L031
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: obstinación
+Intención: decidir
+Ritmo: lento, firme
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Esperamos.
+------------------------------------------------------------------------
+[081] C02_E006_L033
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: seriedad
+Intención: aceptar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Entendido.
+------------------------------------------------------------------------
+[082] C02_E006_L035
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: sorpresa agradecida
+Intención: reconocerla
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Gracias.
+------------------------------------------------------------------------
+[083] C02_E006_L038
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ALEJANDRO
+Emoción: humor triste
+Intención: devolverle la broma para no hundirse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Era pequeña.
+------------------------------------------------------------------------
+[084] C02_E007_L002
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: cansancio con cariño
+Intención: saludar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Hola, Remedios.
+------------------------------------------------------------------------
+[085] C02_E007_L004
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: sorpresa alarmada
+Intención: saber
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: interior, bar
+Texto: ¿Cómo lo sabes? Ha sido esta mañana.
+------------------------------------------------------------------------
+[086] C02_E007_L006
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: insistencia
+Intención: rastrear la fuente
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Y quién te lo ha dicho?
+------------------------------------------------------------------------
+[087] C02_E007_L009
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: certeza fría
+Intención: atar cabos
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, bar, voz baja
+Texto: El martes. [short pause] Y el miércoles de madrugada se salen.
+------------------------------------------------------------------------
+[088] C02_E007_L011
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: comprensión irónica
+Intención: aceptar el juego
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Ya.
+------------------------------------------------------------------------
+[089] C02_E007_L013
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: extrañeza
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Qué médico?
+------------------------------------------------------------------------
+[090] C02_E007_L015
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: inquietud
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Y qué tenía?
+------------------------------------------------------------------------
+[091] C02_E007_L017
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: sospecha naciente
+Intención: saber si lo sabía
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Y Manuel?
+------------------------------------------------------------------------
+[092] C02_E007_L020
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: hostilidad seca
+Intención: cortar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Estoy cenando.
+------------------------------------------------------------------------
+[093] C02_E007_L022
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: alarma fría
+Intención: desenmascararle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Cómo te has enterado?
+------------------------------------------------------------------------
+[094] C02_E007_L027
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: desafío
+Intención: lanzar la sospecha
+Ritmo: lento, firme
+Pausas: breve entre preguntas
+FX / procesado: interior, bar
+Texto: ¿Y a tu capataz? ¿También le conoces?
+------------------------------------------------------------------------
+[095] C02_E007_L030
+Escena: C02_E007 · RECAMBIOS PARA EL TRACTOR
+Personaje: ALEJANDRO
+Emoción: tensión
+Intención: confirmar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Sí.
+------------------------------------------------------------------------

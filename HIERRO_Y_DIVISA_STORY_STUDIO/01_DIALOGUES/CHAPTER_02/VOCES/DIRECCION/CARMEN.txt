@@ -1,0 +1,67 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · CARMEN
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 6
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/CARMEN.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E002_L024
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Acotación: teléfono
+Emoción: prisa educada
+Intención: contestar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: teléfono, oficina
+Texto: ¿Sí? Carmen Olmedo.
+------------------------------------------------------------------------
+[002] C02_E002_L026
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Emoción: calidez profesional
+Intención: crear confianza
+Ritmo: rápido, baja en la pregunta
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: Alejandro, claro. Gracias por llamar tan pronto, que esto no lo hace nadie. [short pause] ¿Cómo estás?
+------------------------------------------------------------------------
+[003] C02_E002_L028
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Emoción: aprecio rápido
+Intención: ir al grano
+Ritmo: rápido
+Pausas: breve tras «honrada»
+FX / procesado: teléfono, oficina
+Texto: «Ahí» es una respuesta muy honrada. Vamos a ver: ¿la ganadería sigue?
+------------------------------------------------------------------------
+[004] C02_E002_L030
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Emoción: franqueza firme
+Intención: poner las cartas sobre la mesa
+Ritmo: rápido, articulado
+Pausas: breves entre frases
+FX / procesado: teléfono, oficina
+Texto: Me alegro. Te voy a ser muy clara: tu padre y yo teníamos seis toros apalabrados para septiembre, de palabra, sin papel. Sin tu padre, la palabra vale lo que valga la tuya. Y a ti no te conozco.
+------------------------------------------------------------------------
+[005] C02_E002_L032
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Emoción: aprobación con condiciones
+Intención: fijar la cita y el listón
+Ritmo: rápido, el final más lento
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: Eso me gusta más. El martes veintidós de abril, en Madrid, en mi oficina. Me traes la reseña de los toros, fotos buenas y los papeles. [short pause] Y el saneamiento en regla. Sin saneamiento no hay corrida, ¿me entiendes?
+------------------------------------------------------------------------
+[006] C02_E002_L034
+Escena: C02_E002 · PAPELES
+Personaje: CARMEN
+Emoción: simpatía
+Intención: cerrar con cercanía
+Ritmo: rápido
+Pausas: breve tras «mayor»
+FX / procesado: teléfono, oficina
+Texto: Y tutéame, que me haces mayor. Un abrazo, Alejandro.
+------------------------------------------------------------------------

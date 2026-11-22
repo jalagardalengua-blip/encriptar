@@ -1,0 +1,160 @@
+HIERRO Y DIVISA · CAPÍTULO 02 · ARRANZ
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 15
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ARRANZ.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C02_E006_L003
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: sequedad administrativa
+Intención: informar sin adornos
+Ritmo: lento, preciso
+Pausas: breve tras «hacía»
+FX / procesado: exterior
+Texto: La hacía. Hasta que ha entrado una denuncia contra esta explotación.
+------------------------------------------------------------------------
+[002] C02_E006_L005
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Acotación: abre la carpeta, lee
+Emoción: neutralidad con un punto de hastío
+Intención: leer el texto oficial
+Ritmo: lento, leyendo
+Pausas: la marcada antes de «Anónima»
+FX / procesado: exterior
+Texto: «Reses sueltas en vía pública por mal estado de los cerramientos. Animales con síntomas compatibles con enfermedad infecciosa. Posibles movimientos de ganado sin guía.» [short pause] Anónima, claro.
+------------------------------------------------------------------------
+[003] C02_E006_L007
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: firmeza tranquila
+Intención: no entrar en discusiones
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Lo de las reses sueltas consta en un atestado de la Guardia Civil del día doce. [short pause] Lo demás lo vamos a ver ahora.
+------------------------------------------------------------------------
+[004] C02_E006_L009
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: cansancio
+Intención: delimitar su papel
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Pues que lo investigue quien tenga que investigarlo. Yo vengo a mirar cuellos, Manuel.
+------------------------------------------------------------------------
+[005] C02_E006_L010
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Acotación: a Alejandro, sin cambiar el tono
+Emoción: ironía amarga
+Intención: avisar de que no viene a hacer favores
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Tu padre una vez me echó un cubo de agua por encima en este mismo corral. Dijo que había sido sin querer.
+------------------------------------------------------------------------
+[006] C02_E006_L012
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: integridad seca
+Intención: dejar claro que es justa
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No. [short pause] Pero la prueba salió limpia, y la firmé igual. Que quede claro cómo trabajo.
+------------------------------------------------------------------------
+[007] C02_E006_L013
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: concentración súbita
+Intención: detener la cadena
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Ocho, ocho. [short pause] Para.
+------------------------------------------------------------------------
+[008] C02_E006_L015
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: objetividad
+Intención: dictar el resultado
+Ritmo: lento, oficial
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Sin signos clínicos. Sin dolor, sin calor. [short pause] Dudosa.
+------------------------------------------------------------------------
+[009] C02_E006_L017
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: neutralidad
+Intención: explicar la norma
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, corrales
+Texto: Que no es positiva y no es negativa. Y que mientras no sepamos lo que es, la explotación queda suspendida.
+------------------------------------------------------------------------
+[010] C02_E006_L019
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: claridad institucional
+Intención: exponer las opciones sin inclinar
+Ritmo: lento, ordenado
+Pausas: breves entre opciones
+FX / procesado: exterior
+Texto: Tienes dos caminos. O esperamos cuarenta y dos días y repetimos la prueba a toda la ganadería. O sacrificas a esta vaca, analizamos los tejidos y, si no hay lesiones, te levanto la suspensión en diez días.
+------------------------------------------------------------------------
+[011] C02_E006_L021
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: gravedad
+Intención: no endulzar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Entonces da igual el camino. [short pause] Entonces tienes un problema de verdad.
+------------------------------------------------------------------------
+[012] C02_E006_L029
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Rama de elección: A
+Emoción: aprobación sobria
+Intención: cerrar el trámite
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: El camión del matadero vendrá el lunes. Te mando la guía hoy. [short pause] Has hecho lo sensato.
+------------------------------------------------------------------------
+[013] C02_E006_L032
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Rama de elección: B
+Emoción: neutralidad
+Intención: dejar clara la consecuencia
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Como quieras. Suspendida hasta el uno de mayo. Ni una res fuera de la finca, ni a matadero, ¿entendido?
+------------------------------------------------------------------------
+[014] C02_E006_L034
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: justicia seca
+Intención: desmontar la denuncia en lo que le toca
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Las cercas están bien, por cierto. Lo pondré. [short pause] Y lo de los síntomas, también. No he visto ni uno.
+------------------------------------------------------------------------
+[015] C02_E006_L036
+Escena: C02_E006 · SETENTA Y DOS HORAS
+Personaje: ARRANZ
+Emoción: honradez cansada
+Intención: dejar claro su sitio, y dar un dato
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No me des las gracias, que no es un favor. [short pause] Y si quieres saber quién ha puesto la denuncia, no me lo preguntes, que no lo sé. Llegó por registro, sin firma, con letra de ordenador.
+------------------------------------------------------------------------
