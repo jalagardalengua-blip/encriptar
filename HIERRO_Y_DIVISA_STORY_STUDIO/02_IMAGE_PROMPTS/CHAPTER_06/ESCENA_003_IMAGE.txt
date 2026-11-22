@@ -1,0 +1,53 @@
+ID: C06_E003_IMAGE
+ESCENA: C06_E003 · EL ENCIERRO
+GUION: 01_DIALOGUES/CHAPTER_06/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_06/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M4)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A5)
+  - MORO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MORO_SHEET.txt
+  - CANELA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/CANELA_SHEET.txt
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C06_E003
+ 2. Localización ............ Entrada del pueblo y plaza de Moraleja durante el encierro
+ 3. Hora y meteorología ..... Lunes 23 de junio, 8:30. Mañana limpia, polvo dorado.
+ 4. Personajes visibles ..... Caballistas en la loma; Manuel sobre Moro y Alejandro sobre Canela delante; el pueblo al fondo.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ MANUEL: WARDROBE M4; ALEJANDRO: WARDROBE A5
+ 7. Expresión facial ........ Manuel sereno; Alejandro concentrado.
+ 8. Posición corporal ....... Los dos jinetes al paso, cabestros delante.
+ 9. Acción congelada ........ Los caballistas esperan en la loma a que se abra la portera.
+10. Composición ............. Plano general: doce caballistas en una loma, Manuel y Alejandro en primer término; el pueblo con la torre al fondo.
+11. Tipo de plano ........... Gran plano general.
+12. Distancia focal ......... 75 mm anamorphic lens
+13. Iluminación ............. Sol bajo de mañana a contraluz.
+14. Profundidad de campo .... deep focus with haze
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Fiesta a punto de empezar.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, extreme wide shot. Twelve horse riders wait on a low hill in golden morning dust before a bull run; in the foreground an old foreman on a grey horse and a young man on a chestnut mare; a village with a church tower in the distance.
+Foreground rider on the grey: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots, wearing his hat and leather chaps, riding the dapple-grey horse, holding a long garrocha pole, serene.
+Foreground rider on the chestnut mare: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist, riding the old chestnut mare, focused.
+Animal: a dapple-grey Spanish horse (PRE cross), 1.60 m, black leather headstall, Spanish vaquera saddle with box stirrups.
+Animal: an old chestnut mare, 17 years old, white star on the forehead, white sock on the left hind leg, slightly sway-backed.
+Animal: large tame oxen, red-and-white and black-and-white pied coats, long horns, large iron cowbells on wide leather collars.
+Setting: a Castilian village main square with stone arcades, the streets closed with wooden barriers and farm carts for a bull run, bunting overhead, a church tower. Ten other riders from the village behind them; the church tower of the village in the distance.
+Time and weather: 8:30 am, clear summer morning, golden dust.
+Composition: the riders on the hill, the two leading riders in the foreground, the village far behind.
+Lighting: low backlit morning sun, golden dust.
+Camera: 75 mm anamorphic lens, deep focus with haze.
+Textures: dust, horse sweat, leather tack.
+Mood: a festival about to begin.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

@@ -40,8 +40,10 @@ def expand(c: dict) -> dict:
     """Convierte el formato compacto (capítulos 02-12) al esquema completo."""
     chars = [dict(role=r, lock=l, wardrobe=w, pose=po, expression=ex) for (r, l, w, po, ex) in c.get("chars", [])]
     wardrobe_es = "; ".join(f"{x['lock']}: WARDROBE {x['wardrobe']}" if x["wardrobe"] else f"{x['lock']}: vestuario del LOCK" for x in chars) or "—"
-    v = c["v"]
-    enter = [dict(role="", lock=l, wardrobe=w, pose=po, expression=ex) for (l, w, po, ex) in v.get("enter", [])]
+    v = c.get("v")
+    if v is None:
+        base = {k: c[k] for k in ("id", "title")}
+    enter = [dict(role="", lock=l, wardrobe=w, pose=po, expression=ex) for (l, w, po, ex) in (v or {}).get("enter", [])]
     return {
         "id": c["id"], "title": c["title"], "status": c.get("status", "PENDIENTE DE GENERAR"),
         "location_lock": c["loc"], "location_es": c["loc_es"],
@@ -56,7 +58,7 @@ def expand(c: dict) -> dict:
         "setting_extra": c.get("extra", ""), "composition": c["comp"], "lighting": c["light"],
         "lens": c["lens"], "dof": c["dof"], "textures": c["tex"], "mood": c["mood"],
         "aspect": c.get("aspect", "2.39:1"), "negative_extra": c.get("neg", ""),
-        "video": {
+        "video": None if v is None else {
             "duration": v["dur"],
             "start_es": "El fotograma de referencia: " + c["frozen_es"],
             "development_es": v["dev_es"], "movement_es": v.get("move_es", "Ver desarrollo."),
@@ -83,7 +85,15 @@ def load(chap: str):
     spec = importlib.util.spec_from_file_location(f"ch{chap}", path)
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
-    return [expand(s) if "loc" in s else s for s in mod.SCENES]
+    video = getattr(mod, "VIDEO", {})
+    out = []
+    for s in mod.SCENES:
+        if "loc" in s:
+            if "v" not in s and s["id"] in video:
+                s = {**s, "v": video[s["id"]]}
+            s = expand(s)
+        out.append(s)
+    return out
 
 
 def char_block(c: dict) -> str:
@@ -174,6 +184,8 @@ FICHA DE PLANO
 def write_video(chap: str, s: dict) -> Path:
     num = s["id"].split("_E")[1]
     v = s["video"]
+    if v is None:
+        raise SystemExit(f"{s['id']}: faltan los datos de vídeo (VIDEO en visual_data)")
     out = ROOT / "03_VIDEO_PROMPTS" / f"CHAPTER_{chap}" / f"ESCENA_{num}_VIDEO.txt"
     out.parent.mkdir(parents=True, exist_ok=True)
     img = ROOT / "02_IMAGE_PROMPTS" / f"CHAPTER_{chap}" / f"ESCENA_{num}_IMAGE.txt"

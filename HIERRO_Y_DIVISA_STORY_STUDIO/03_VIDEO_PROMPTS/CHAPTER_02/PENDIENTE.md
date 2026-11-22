@@ -1,3 +1,3 @@
 PENDIENTE
 
-Este capítulo todavía no tiene contenido en esta fase. Ver 04_PRODUCTION_TRACKER/PROGRESS.md.
+Los prompts de vídeo se generan en la fase 3, cuando estén todos los prompts de imagen.

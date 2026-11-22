@@ -1,0 +1,52 @@
+ID: C03_E002_IMAGE
+ESCENA: C03_E002 · COSAS DE VETERINARIA
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_002.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_03/ESCENA_002_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L1)
+  - JAVIER: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/JAVIER_SHEET.txt (vestuario J1)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E002
+ 2. Localización ............ Corrales de las becerras
+ 3. Hora y meteorología ..... Viernes 4 de abril, 17:30. Tarde templada.
+ 4. Personajes visibles ..... Lucía dentro del corral de manejo con una linterna pequeña; Javier y Alejandro sentados en lo alto del muro; la becerra 31 en el rincón.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ LUCIA: WARDROBE L1; JAVIER: WARDROBE J1; ALEJANDRO: WARDROBE A4
+ 7. Expresión facial ........ Lucía seria; Javier coqueto; Alejandro divertido.
+ 8. Posición corporal ....... Javier con la mano en el pecho haciéndose el herido.
+ 9. Acción congelada ........ Lucía examina a la becerra con la linterna sin volverse; Javier, en el muro, se lleva la mano al pecho.
+10. Composición ............. Lucía en primer término a la derecha con la becerra; los dos chicos en el muro arriba a la izquierda.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Sol bajo cálido, contraluz.
+14. Profundidad de campo .... focus on the vet, men slightly soft
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Comedia ligera.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot. A veterinarian checks a dark heifer through steel bars with a small torch, ignoring the two young men sitting on top of the stone corral wall; one of them, a bullfighter, clutches his chest in mock heartbreak.
+Frame right, in the pen: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a dark navy work coverall with sleeves pushed up, a dark green softshell vest over it, black rubber knee boots, long blue disposable veterinary gloves to the shoulder when working, holding a small penlight toward the heifer, back half turned to the wall, serious, unimpressed.
+On the wall, frame left: a 26-year-old Andalusian bullfighter, wiry slim build, 1.74 m, narrow waist, long neck, olive-tan skin, short tight black curly hair, clean-shaven, large black eyes, wide smile with one slightly overlapping front tooth, wearing a white shirt with rolled sleeves, faded jeans, white sneakers, dark sunglasses pushed up on his head, sitting on the wall top, one hand on his chest, mock-wounded, flirty.
+On the wall beside him: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, sitting, legs dangling, amused.
+Animal: a two-year-old Spanish fighting heifer, dark cárdeno almost black coat with two small pale spots on the forehead, short sharp horns, compact athletic body, fixed stare.
+Setting: old granite stone cattle pens with green guillotine gates, a narrow handling chute (manga) ending in a steel squeeze crate, a loading ramp for trucks, mud and straw.
+Time and weather: 5:30 pm, warm low spring sun, 18 °C.
+Composition: the vet and the heifer in the right foreground, the two men up on the wall at upper left.
+Lighting: low warm backlight.
+Camera: 50 mm spherical lens, focus on the vet, men slightly soft.
+Textures: stone wall, steel bars, heifer coat, nitrile gloves.
+Mood: light comedy.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

@@ -1,0 +1,51 @@
+ID: C06_E004_IMAGE
+ESCENA: C06_E004 · LA HOGUERA
+GUION: 01_DIALOGUES/CHAPTER_06/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_06/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L3)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A5)
+  - JAVIER: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/JAVIER_SHEET.txt (vestuario J1)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C06_E004
+ 2. Localización ............ Plaza de Moraleja de noche, hoguera de San Juan
+ 3. Hora y meteorología ..... Lunes 23 de junio, 23:55. Noche cálida, chispas.
+ 4. Personajes visibles ..... Lucía y Alejandro apoyados en una pared con cañas; la hoguera y la gente al fondo; Javier saltando la hoguera.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ LUCIA: WARDROBE L3; ALEJANDRO: WARDROBE A5; JAVIER: WARDROBE J1
+ 7. Expresión facial ........ Complicidad, cansancio feliz.
+ 8. Posición corporal ....... Lucía deja la caña en un alféizar y se pone delante de él.
+ 9. Acción congelada ........ Lucía se coloca frente a Alejandro, a punto de besarle, con la hoguera detrás.
+10. Composición ............. Plano medio a dos en primer término; la hoguera desenfocada con chispas al fondo; siluetas de gente.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 85 mm anamorphic lens
+13. Iluminación ............. Hoguera naranja como contraluz, bombillas de guirnalda.
+14. Profundidad de campo .... shallow, bonfire bokeh
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Ahora sí.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium two-shot. At a village festival at midnight, a woman puts down her drink on a windowsill and steps in front of a young man leaning on a stone wall; behind them a huge bonfire throws sparks into the sky and a young man leaps over the flames.
+Frame left: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a simple light cotton blouse, dark jeans and white canvas sneakers, hair in her usual low ponytail, stepping close in front of him, decided, tender.
+Frame right, leaning on the wall: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist, leaning back against the wall, happy, surprised.
+Background, jumping the bonfire: a 26-year-old Andalusian bullfighter, wiry slim build, 1.74 m, narrow waist, long neck, olive-tan skin, short tight black curly hair, clean-shaven, large black eyes, wide smile with one slightly overlapping front tooth, wearing a white shirt with rolled sleeves, faded jeans, white sneakers, dark sunglasses pushed up on his head, mid-air over the fire, exultant.
+Setting: a Castilian village main square with stone arcades, the streets closed with wooden barriers and farm carts for a bull run, bunting overhead, a church tower. Villagers silhouetted around the bonfire; strings of bulb lights.
+Time and weather: 11:55 pm, warm night, a big bonfire, sparks rising, string lights.
+Composition: the two in the foreground, the bonfire soft behind with sparks, silhouettes of people.
+Lighting: orange bonfire backlight, warm bulb strings.
+Camera: 85 mm anamorphic lens, shallow, bonfire bokeh.
+Textures: stone wall, sparks, cotton blouse.
+Mood: now, yes.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

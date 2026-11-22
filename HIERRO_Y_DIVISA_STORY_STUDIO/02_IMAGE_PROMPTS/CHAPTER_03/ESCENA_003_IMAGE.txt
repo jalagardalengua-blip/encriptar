@@ -1,0 +1,52 @@
+ID: C03_E003_IMAGE
+ESCENA: C03_E003 · LA TREINTA Y UNO
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_03/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - JAVIER: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/JAVIER_SHEET.txt (vestuario J1)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E003
+ 2. Localización ............ Placita de tientas
+ 3. Hora y meteorología ..... Sábado 5 de abril, 10:30. Sol de mañana, sin viento.
+ 4. Personajes visibles ..... La becerra 31 empujando al caballo de picar; Javier con el capote; Manuel y Alejandro en el palco.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ALEJANDRO: WARDROBE A4; MANUEL: WARDROBE M2; JAVIER: WARDROBE J1
+ 7. Expresión facial ........ Alejandro de pie, entusiasmado; Manuel serio.
+ 8. Posición corporal ....... Alejandro levantándose en el palco.
+ 9. Acción congelada ........ La becerra empuja con los riñones contra el peto del caballo; en el palco, Alejandro se pone de pie.
+10. Composición ............. Plano desde detrás del palco: siluetas de Manuel y Alejandro en primer término; abajo, la becerra contra el caballo de picar y Javier con el capote.
+11. Tipo de plano ........... Plano general desde el palco.
+12. Distancia focal ......... 35 mm anamorphic lens
+13. Iluminación ............. Sol de mañana lateral, arena dorada.
+14. Profundidad de campo .... deep focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Descubrir que se tiene ojo.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, wide shot from behind the stone viewing box. From a stone viewing box, two men watch a dark heifer below push hard into the padded armour of a picador's horse; the young man has just jumped to his feet.
+Foreground, in the box, standing: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, standing up suddenly, hands on the stone parapet, thrilled.
+Foreground, in the box, seated: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing his hat, an old notebook open on his knee, serious, intent.
+Below, in the ring: a 26-year-old Andalusian bullfighter, wiry slim build, 1.74 m, narrow waist, long neck, olive-tan skin, short tight black curly hair, clean-shaven, large black eyes, wide smile with one slightly overlapping front tooth, wearing a white shirt with rolled sleeves, faded jeans, white sneakers, dark sunglasses pushed up on his head, holding a pink-and-yellow cape, stepping toward the heifer, focused.
+Animal: a two-year-old Spanish fighting heifer, dark cárdeno almost black coat with two small pale spots on the forehead, short sharp horns, compact athletic body, fixed stare.
+Setting: a small private bullring 25 metres across with whitewashed walls, faded red wooden barriers (burladeros), raked sand, a stone viewing box (palco) above one side, holm oaks beyond the wall. A picador on a horse with a protective padded armour (peto) and a long lance stands by the wall; the heifer pushes against the peto with her head low.
+Time and weather: 10:30 am, morning sun, no wind, 20 °C.
+Composition: the two men's backs and the parapet in the foreground, the ring below with the heifer, the horse and the bullfighter.
+Lighting: side morning sun, golden sand.
+Camera: 35 mm anamorphic lens, deep focus.
+Textures: raked sand, faded red wood, padded horse armour, old notebook.
+Mood: discovering he has an eye.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, blood, injured horse

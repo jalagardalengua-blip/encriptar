@@ -1,0 +1,52 @@
+ID: C05_E004_IMAGE
+ESCENA: C05_E004 · CAMPANERO
+GUION: 01_DIALOGUES/CHAPTER_05/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_05/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L1)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C05_E004
+ 2. Localización ............ Cercado del Regato bajo, junto a la charca, de noche
+ 3. Hora y meteorología ..... Jueves 15 de mayo, 23:40. Luna casi llena, 15 °C.
+ 4. Personajes visibles ..... Campanero echado junto a la charca; Lucía arrodillada auscultándole; Manuel agachado junto a la cabeza; Alejandro de pie con una linterna.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ LUCIA: WARDROBE L1; MANUEL: WARDROBE M2; ALEJANDRO: WARDROBE A4
+ 7. Expresión facial ........ Lucía grave; Manuel roto por dentro; Alejandro triste.
+ 8. Posición corporal ....... Lucía con el fonendo estirado; Manuel con la mano cerca de la frente del toro.
+ 9. Acción congelada ........ Lucía ausculta al toro viejo tumbado mientras Manuel le mira la cara.
+10. Composición ............. Plano bajo: el toro tumbado ocupa el primer término; los tres alrededor; la charca y la luna al fondo.
+11. Tipo de plano ........... Plano medio bajo nocturno.
+12. Distancia focal ......... 35 mm anamorphic lens
+13. Iluminación ............. Luna fría y haces de linterna cálidos.
+14. Profundidad de campo .... focus on the bull's head and the foreman
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Despedida.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, low medium night shot. Under a nearly full moon, a very old pale bull lies dying beside a pond; a veterinarian kneels listening to his chest with a stethoscope while an old foreman crouches near the bull's head and a young man stands holding a torch.
+Kneeling by the chest: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a dark navy work coverall with sleeves pushed up, a dark green softshell vest over it, black rubber knee boots, long blue disposable veterinary gloves to the shoulder when working, kneeling with a stethoscope stretched toward the bull's side, grave.
+Crouched by the head: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing his hat, a switched-off torch in one hand, the other hand near the bull's forehead, quietly devastated.
+Standing: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, holding a torch pointed down, sad.
+Animal: a very old Spanish fighting seed bull, light cárdeno (pale grey flecked) coat, thin and bony, long wide horns with worn tips, white muzzle hairs, tired eyes.
+Setting: a holm oak pasture crossed by a dry seasonal stream, a long granite drystone wall bordering a narrow rural road, a gap in the wall with fallen stones, wire strands above.
+Time and weather: 11:40 pm, nearly full moon, warm night, 15 °C.
+Composition: the lying bull filling the foreground, the three people around, the pond and the moon behind.
+Lighting: cold moonlight with warm torch beams.
+Camera: 35 mm anamorphic lens, focus on the bull's head and the foreman.
+Textures: moonlit water, dry grass, old bull hide.
+Mood: farewell.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, blood, gore

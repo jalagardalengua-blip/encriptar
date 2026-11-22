@@ -1,0 +1,49 @@
+ID: C05_E003_IMAGE
+ESCENA: C05_E003 · PAPELES DE LA MUTUA
+GUION: 01_DIALOGUES/CHAPTER_05/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_05/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C05_E003
+ 2. Localización ............ Despacho de Ernesto
+ 3. Hora y meteorología ..... Lunes 12 de mayo, 8:15. Luz limpia de mañana.
+ 4. Personajes visibles ..... Manuel junto al cajón abierto del escritorio guardándose un sobre en el chaleco; Alejandro en la puerta.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ MANUEL: WARDROBE M2; ALEJANDRO: WARDROBE A4
+ 7. Expresión facial ........ Manuel sorprendido, culpable; Alejandro sospecha.
+ 8. Posición corporal ....... Manuel con el sobre a medio meter en el chaleco.
+ 9. Acción congelada ........ Manuel se gira con el sobre blanco a medio guardar en el chaleco.
+10. Composición ............. Manuel a la derecha junto al escritorio; Alejandro en el marco de la puerta, a la izquierda, en primer término.
+11. Tipo de plano ........... Plano medio sobre el hombro.
+12. Distancia focal ......... 40 mm spherical lens
+13. Iluminación ............. Luz lateral de ventana.
+14. Profundidad de campo .... focus on the foreman and the envelope
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Una mentira pillada.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium over-the-shoulder shot from the doorway. An old foreman by an open bottom desk drawer turns around, caught tucking a large white window envelope into his leather vest; the young man watches from the doorway.
+By the desk: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, no hat, half-turned, tucking a white window envelope into his vest, startled, guilty.
+Doorway, foreground: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, standing in the doorway, suspicious.
+Setting: a cluttered rural office in a granite farmhouse, thick walls, one deep window with wooden shutters, a heavy dark oak desk covered in unopened envelopes and old ledgers, a mounted head of a grey bull above a stone fireplace, framed black-and-white photographs of bulls and men on horseback, a worn leather armchair, a cork board with veterinary papers, a small silver handheld digital voice recorder on the desk.
+Time and weather: 8:15 am, clean morning window light.
+Composition: the foreman at right by the desk, the young man in the left foreground in the door frame.
+Lighting: side window light.
+Camera: 40 mm spherical lens, focus on the foreman and the envelope.
+Textures: oak drawer, paper envelope, sheepskin vest.
+Mood: a lie caught.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, hospital logo, readable envelope
