@@ -1,0 +1,179 @@
+HIERRO Y DIVISA · CAPÍTULO 12 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 17
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C12_E001_L021
+Escena: C12_E001 · LA FIRMA
+Personaje: MANUEL
+Rama de elección: C
+Emoción: incredulidad dolida
+Intención: darle una última oportunidad
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, notaría
+Texto: ¿La casa también?
+------------------------------------------------------------------------
+[002] C12_E001_L023
+Escena: C12_E001 · LA FIRMA
+Personaje: MANUEL
+Rama de elección: C
+Emoción: tristeza absoluta
+Intención: decirle en qué se ha convertido
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Eso mismo pensaba él. [short pause] Ricardo.
+------------------------------------------------------------------------
+[003] C12_E002_L001
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Acotación: teléfono; de fondo, una cocina, una tele, una ciudad
+Emoción: sorpresa tranquila
+Intención: contestar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono, interior urbano
+Texto: ¿Sí?
+------------------------------------------------------------------------
+[004] C12_E002_L003
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: guasa cariñosa
+Intención: eco de C01_E001
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Ya sé que eres tú. Me sale tu nombre. [short pause] ¿Por dónde vas?
+------------------------------------------------------------------------
+[005] C12_E002_L005
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: ironía triste
+Intención: eco de C01_E001
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: Eso ya no es un sitio.
+------------------------------------------------------------------------
+[006] C12_E002_L007
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: humor resignado
+Intención: contar su vida sin quejarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Llueve. [short pause] La chica me ha apuntado a un huerto del ayuntamiento. Tengo tomates. Muy malos.
+------------------------------------------------------------------------
+[007] C12_E002_L008
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: ternura
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: ¿Vas al cementerio?
+------------------------------------------------------------------------
+[008] C12_E002_L010
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: cariño profundo
+Intención: mandarle un recado al muerto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Dile que los tomates son peores que sus cuentas. [short pause] Que se ría un poco.
+------------------------------------------------------------------------
+[009] C12_E002_L013
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: honestidad tierna
+Intención: ni absolver ni condenar
+Ritmo: lento
+Pausas: 4 s antes (en montaje) y la marcada
+FX / procesado: teléfono
+Texto: Hiciste lo que te dejó hacer tu padre. [short pause] Que ya es más de lo que hizo él.
+------------------------------------------------------------------------
+[010] C12_E002_L014
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: MANUEL
+Emoción: cariño escondido en una orden
+Intención: eco de C01_E001
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Conduce. [short pause] Y ponte la corbata antes de llegar, que te conozco.
+------------------------------------------------------------------------
+[011] C12_E003_L001
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: solemnidad contenida
+Intención: traspasar el oficio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, herradero
+Texto: El primero lo pones tú. [short pause] Es tu camada.
+------------------------------------------------------------------------
+[012] C12_E003_L003
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: guasa tierna
+Intención: quitarle el miedo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, herradero
+Texto: Lo harás mal. Todos lo hacemos mal el primero. [short pause] Tu padre le puso el hierro boca abajo al suyo. Hay una vaca por ahí con la luna del revés.
+------------------------------------------------------------------------
+[013] C12_E003_L007
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: cariño enorme
+Intención: celebrarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, herradero
+Texto: Pues ya eres mayor. [short pause] Felicidades, chaval.
+------------------------------------------------------------------------
+[014] C12_E003_L009
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: confesión tierna
+Intención: decirle que nunca le olvidó
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, herradero
+Texto: Me acuerdo de todos. [short pause] De los veintitrés. Los cuatro de Madrid también.
+------------------------------------------------------------------------
+[015] C12_E003_L011
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: satisfacción tranquila
+Intención: eco de C11_E003
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, porche, atardecer
+Texto: ¿Ves? Desde este banco no se ven las placas.
+------------------------------------------------------------------------
+[016] C12_E003_L013
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: sabiduría
+Intención: corregirle con cariño
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, porche
+Texto: Tu padre era más listo de lo que decía él. [short pause] Que no es lo mismo.
+------------------------------------------------------------------------
+[017] C12_E003_L015
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: MANUEL
+Emoción: guasa cariñosa
+Intención: prometer que no se va
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, porche
+Texto: En enero me jubilo. [short pause] Y en febrero vengo a ver cómo lo haces mal.
+------------------------------------------------------------------------

@@ -1,0 +1,246 @@
+HIERRO Y DIVISA · CAPÍTULO 12 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 23
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C12_E001_L005
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: derrota serena
+Intención: rendirse con dignidad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: No hace falta esperar al lunes. [short pause] Firmo la venta hoy.
+------------------------------------------------------------------------
+[002] C12_E001_L007
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: dolor digno
+Intención: dar sentido a la derrota
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Lo hizo por mí. [short pause] Yo lo hago por él. Para que no le haya salido mal lo único que hizo pensando en mí.
+------------------------------------------------------------------------
+[003] C12_E001_L008
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: calma absoluta
+Intención: dar el golpe
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Consigno la deuda. [short pause] Un millón ciento cuarenta mil euros. Hoy, aquí.
+------------------------------------------------------------------------
+[004] C12_E001_L015
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: victoria con humor
+Intención: rematar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: En el bar de Remedios. [short pause] Que ahí se enteran de todo.
+------------------------------------------------------------------------
+[005] C12_E001_L016
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: C
+Emoción: control frío
+Intención: llevar la negociación a su terreno
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Antes, hablemos tú y yo. [short pause] Solos.
+------------------------------------------------------------------------
+[006] C12_E001_L018
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: C
+Emoción: frialdad aprendida
+Intención: apretar
+Ritmo: lento, preciso, a lo Ricardo
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Una opción firmada por un enfermo de Parkinson sin abogado, sobre un suelo que ya habías vendido en junio a una energética. Una pared cortada por tu capataz y una denuncia anónima a la Junta. [short pause] Si voy a juicio, no gano. Pero tardo dos años. Y tu planta pierde el punto de conexión en diciembre.
+------------------------------------------------------------------------
+[007] C12_E001_L020
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Rama de elección: C
+Emoción: ambición tranquila
+Intención: poner precio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: La deuda, a cero. El hierro, la divisa y el ganado, míos. La finca, tuya: casa, llanos, todo. [short pause] Y seiscientos mil para arrendar pastos donde yo diga.
+------------------------------------------------------------------------
+[008] C12_E001_L022
+Escena: C12_E001 · LA FIRMA
+Personaje: ALEJANDRO
+Acotación: sin mirarle
+Rama de elección: C
+Emoción: dureza
+Intención: justificarse
+Ritmo: seco
+Pausas: breve entre frases
+FX / procesado: interior, notaría
+Texto: La casa es piedra, Manuel. El hierro es lo que importa.
+------------------------------------------------------------------------
+[009] C12_E002_L002
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: cariño contenido
+Intención: saludar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior vehículo
+Texto: Manuel. Soy yo.
+------------------------------------------------------------------------
+[010] C12_E002_L004
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: melancolía serena
+Intención: contestar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Pasando por los llanos.
+------------------------------------------------------------------------
+[011] C12_E002_L006
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: interés
+Intención: conversar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Qué tal Bilbao?
+------------------------------------------------------------------------
+[012] C12_E002_L009
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: costumbre
+Intención: responder
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Como cada mes.
+------------------------------------------------------------------------
+[013] C12_E002_L011
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: emoción contenida
+Intención: prometer
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Se lo digo.
+------------------------------------------------------------------------
+[014] C12_E002_L012
+Escena: C12_E002 · FINAL A · EL PRECIO
+Personaje: ALEJANDRO
+Emoción: duda que lleva un año dentro
+Intención: preguntar de verdad
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Manuel. [short pause] ¿Hice bien?
+------------------------------------------------------------------------
+[015] C12_E003_L002
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: ALEJANDRO
+Emoción: miedo sincero
+Intención: confesarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, herradero
+Texto: ¿Y si lo hago mal?
+------------------------------------------------------------------------
+[016] C12_E003_L006
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: ALEJANDRO
+Acotación: bajo, casi para sí
+Emoción: emoción íntima
+Intención: recordar la cinta
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: exterior, herradero, voz baja
+Texto: «Cuando seas mayor, lo pones tú».
+------------------------------------------------------------------------
+[017] C12_E003_L008
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: ALEJANDRO
+Emoción: sorpresa feliz
+Intención: comprobarlo
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, herradero
+Texto: ¿Te acuerdas de que es mi cumpleaños?
+------------------------------------------------------------------------
+[018] C12_E003_L012
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: ALEJANDRO
+Emoción: ternura
+Intención: reconciliarse con el padre
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, porche
+Texto: Ya. [short pause] Mi padre era más listo de lo que decías.
+------------------------------------------------------------------------
+[019] C12_E003_L014
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: ALEJANDRO
+Emoción: pena anticipada
+Intención: decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, porche
+Texto: En enero te jubilas.
+------------------------------------------------------------------------
+[020] C12_E004_L002
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: ALEJANDRO
+Emoción: frialdad tranquila
+Intención: marcar distancia
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, despacho
+Texto: Mi padre no tenía socios.
+------------------------------------------------------------------------
+[021] C12_E004_L004
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: ALEJANDRO
+Emoción: algo que se le escapa
+Intención: preguntar sin querer
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, despacho
+Texto: ¿Sabes algo de Manuel?
+------------------------------------------------------------------------
+[022] C12_E004_L006
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: ALEJANDRO
+Emoción: dolor seco
+Intención: saberlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, despacho
+Texto: ¿El Rubio duerme en mi cuarto?
+------------------------------------------------------------------------
+[023] C12_E004_L009
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: ALEJANDRO
+Emoción: control frío
+Intención: dejar claro que es igual a él
+Ritmo: lento, pausado, a lo Ricardo
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: No me des la bienvenida, Ricardo. [short pause] Dame los papeles.
+------------------------------------------------------------------------

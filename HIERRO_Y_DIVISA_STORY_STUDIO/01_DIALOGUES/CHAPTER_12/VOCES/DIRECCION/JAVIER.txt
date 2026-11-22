@@ -1,0 +1,26 @@
+HIERRO Y DIVISA · CAPÍTULO 12 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 2
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C12_E003_L004
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: JAVIER
+Emoción: alegría
+Intención: animarle
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior, herradero
+Texto: ¡Venga, ganadero, que se enfría! ¡Y yo tengo hambre!
+------------------------------------------------------------------------
+[002] C12_E003_L010
+Escena: C12_E003 · FINAL B · EL HIERRO
+Personaje: JAVIER
+Emoción: euforia y cariño
+Intención: eco del brindis de Villaseca
+Ritmo: rápido, alto
+Pausas: la marcada y una suspensión
+FX / procesado: exterior, placita, mesa con gente
+Texto: ¡Un brindis! [short pause] Por don Ernesto, que lo crio todo. Por Manuel, que lo cuidó. Y por este, que todavía no sabe lo que tiene… ¡pero ya lo tiene!
+------------------------------------------------------------------------

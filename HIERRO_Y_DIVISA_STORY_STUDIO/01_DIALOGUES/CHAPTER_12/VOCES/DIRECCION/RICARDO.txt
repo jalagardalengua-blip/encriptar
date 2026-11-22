@@ -1,0 +1,144 @@
+HIERRO Y DIVISA · CAPÍTULO 12 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 13
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C12_E001_L003
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Emoción: cordialidad victoriosa
+Intención: suavizar sabiéndose ganador
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Íñigo es muy formal. [short pause] Lo que quiere decir es que me alegro de verte, Alejandro. Y que lo de la feria fue precioso. De verdad.
+------------------------------------------------------------------------
+[002] C12_E001_L006
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: A
+Emoción: satisfacción casi sincera
+Intención: elogiarle
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Es una decisión muy sensata. [short pause] Te lo digo sin ironía, Alejandro: tu padre habría hecho lo mismo. De hecho, lo hizo.
+------------------------------------------------------------------------
+[003] C12_E001_L009
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: B
+Emoción: incredulidad divertida
+Intención: eco de C01
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, notaría
+Texto: ¿Con qué?
+------------------------------------------------------------------------
+[004] C12_E001_L011
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: B
+Emoción: comprensión fría
+Intención: reconocer la jugada
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, notaría
+Texto: Marta.
+------------------------------------------------------------------------
+[005] C12_E001_L014
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: B
+Emoción: derrota elegante, admiración real
+Intención: cumplir su palabra
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Te dije que lo rompería delante de ti. [short pause] Y que te invitaría a comer. Donde tú quieras.
+------------------------------------------------------------------------
+[006] C12_E001_L017
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: C
+Emoción: alerta controlada
+Intención: aislar la negociación
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: interior, notaría
+Texto: Notario, ¿nos permite cinco minutos?
+------------------------------------------------------------------------
+[007] C12_E001_L019
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Rama de elección: C
+Emoción: admiración de igual
+Intención: negociar
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Te ha salido muy bien. [short pause] ¿Qué quieres?
+------------------------------------------------------------------------
+[008] C12_E001_L024
+Escena: C12_E001 · LA FIRMA
+Personaje: RICARDO
+Acotación: cuando la puerta se cierra
+Rama de elección: C
+Emoción: satisfacción de maestro
+Intención: cerrar el trato
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, notaría
+Texto: Hecho. [short pause] Te lo digo con todo el cariño: tienes madera.
+------------------------------------------------------------------------
+[009] C12_E004_L001
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: RICARDO
+Emoción: aprobación de maestro
+Intención: elogiarle
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Lees los papeles dos veces. [short pause] Eso no lo hacía tu padre.
+------------------------------------------------------------------------
+[010] C12_E004_L003
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: RICARDO
+Emoción: convicción
+Intención: justificar el mundo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Tu padre no tenía nada, Alejandro. Tenía un hierro y una deuda. [short pause] Tú tienes un hierro, un socio y ninguna deuda. Eso es progreso.
+------------------------------------------------------------------------
+[011] C12_E004_L005
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: RICARDO
+Emoción: respeto cínico
+Intención: cerrar el tema
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Bilbao, me dicen. Con su hija. [short pause] No ha querido el puesto que le ofrecí. Hombres así ya no quedan. Por suerte para nosotros.
+------------------------------------------------------------------------
+[012] C12_E004_L007
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: RICARDO
+Emoción: ligereza cruel sin querer serlo
+Intención: informar
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: En el del mayoral. [short pause] El tuyo lo usamos para guardar papeles.
+------------------------------------------------------------------------
+[013] C12_E004_L008
+Escena: C12_E004 · FINAL C · LA DIVISA
+Personaje: RICARDO
+Emoción: satisfacción completa
+Intención: sellar
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Bienvenido, Alejandro. [short pause] Te lo digo con todo el cariño.
+------------------------------------------------------------------------

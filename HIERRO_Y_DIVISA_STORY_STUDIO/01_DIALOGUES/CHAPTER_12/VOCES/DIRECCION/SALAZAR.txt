@@ -1,0 +1,16 @@
+HIERRO Y DIVISA · CAPÍTULO 12 · SALAZAR
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 1
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/SALAZAR.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C12_E001_L002
+Escena: C12_E001 · LA FIRMA
+Personaje: SALAZAR
+Emoción: frialdad técnica
+Intención: fijar la posición legal
+Ritmo: rápido, exacto
+Pausas: ninguna
+FX / procesado: interior, notaría
+Texto: Venimos únicamente a dejar constancia de que el plazo vence el domingo veintiuno, a las veinticuatro horas, y de que, a falta de pago, mi cliente ejercitará la opción el lunes a primera hora.
+------------------------------------------------------------------------
