@@ -1,0 +1,87 @@
+HIERRO Y DIVISA · CAPÍTULO 03 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 8
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C03_E002_L002
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Acotación: sin volverse
+Emoción: sequedad divertida
+Intención: pararle
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Yo veo bovinos. Si te salen cuernos, me avisas.
+------------------------------------------------------------------------
+[002] C03_E002_L005
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: humor seco
+Intención: devolverla y ponerle a trabajar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Y tú eres de Madrid desde hace cuatro años, que es peor todavía. [short pause] Bájate y sujétame la puerta.
+------------------------------------------------------------------------
+[003] C03_E002_L006
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: interés profesional
+Intención: enseñarle algo
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Esta es la treinta y uno. Hija de Lucero. [short pause] Mira cómo te mira.
+------------------------------------------------------------------------
+[004] C03_E002_L009
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: curiosidad sincera
+Intención: aprender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y eso es bueno o es malo?
+------------------------------------------------------------------------
+[005] C03_E002_L011
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: profesionalidad
+Intención: informar y pedir cuidado
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Las seis están bien. La veintiocho tiene un ojo un poco irritado, nada. [short pause] Mañana, que no se hagan daño, ¿vale?
+------------------------------------------------------------------------
+[006] C03_E002_L013
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: ironía
+Intención: rematar
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Ellas. Tú estás asegurado.
+------------------------------------------------------------------------
+[007] C03_E002_L015
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: curiosidad
+Intención: obligarle a decirlo
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Tengo campaña en Aldehuela hasta las dos. [short pause] ¿Por qué?
+------------------------------------------------------------------------
+[008] C03_E002_L017
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: LUCÍA
+Emoción: diversión contenida
+Intención: dejarle claro que le ha pillado
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Ya. Las becerras. [short pause] Si se hace daño alguna, me llamas.
+------------------------------------------------------------------------

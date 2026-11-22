@@ -1,0 +1,98 @@
+HIERRO Y DIVISA · CAPÍTULO 03 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 9
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C03_E004_L001
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: cordialidad nostálgica
+Intención: justificar su presencia
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Perdonad la intromisión. He visto los coches desde la carretera y no me he podido resistir. [short pause] En esta placita aprendí yo lo poco que sé de esto.
+------------------------------------------------------------------------
+[002] C03_E004_L003
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: humildad estudiada
+Intención: desarmar
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: No, y tiene usted toda la razón. Me quedo dos minutos y me voy.
+------------------------------------------------------------------------
+[003] C03_E004_L004
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: halago preciso
+Intención: seducir con conocimiento
+Ritmo: pausado
+Pausas: breve tras el nombre
+FX / procesado: exterior
+Texto: Javier Romero. Te vi en Valdemorillo en febrero. El segundo toro no te lo merecías, y aun así le diste tres series que no se las ha dado nadie esta temporada.
+------------------------------------------------------------------------
+[004] C03_E004_L006
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: generosidad calculada
+Intención: robarle el torero
+Ritmo: pausado
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Hago tienta en Los Arenales el día veinte. Si quieres venir, tienes sitio. Y se paga mejor que aquí, me temo.
+------------------------------------------------------------------------
+[005] C03_E004_L008
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: interés genuino
+Intención: confirmar lo que ya sabe
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: La treinta y uno. [short pause] ¿Es de Lucero?
+------------------------------------------------------------------------
+[006] C03_E004_L010
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: oferta limpia
+Intención: tentar con dinero inmediato
+Ritmo: pausado, preciso
+Pausas: las marcadas
+FX / procesado: exterior
+Texto: Bonito nombre. [short pause] Te voy a hacer una propuesta y no te ofendas: te compro diez vacas de vientre. Las que tú elijas, menos esa. Veinticinco mil euros. Hoy.
+------------------------------------------------------------------------
+[007] C03_E004_L012
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Emoción: honestidad brutal
+Intención: poner el dedo en la herida
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Para cruzar. Para probar. [short pause] Y porque te hacen falta veinticinco mil euros, Alejandro. No me hace falta mirar tus cuentas para saberlo.
+------------------------------------------------------------------------
+[008] C03_E004_L014
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Rama de elección: A
+Emoción: satisfacción discreta
+Intención: cerrar
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Por supuesto. El lunes te mando el camión y la transferencia.
+------------------------------------------------------------------------
+[009] C03_E004_L016
+Escena: C03_E004 · INVITADOS
+Personaje: RICARDO
+Rama de elección: B
+Emoción: ironía elegante
+Intención: recordar el plazo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Como quieras. La oferta no caduca. [short pause] Bueno, sí. Caduca en septiembre, como todo.
+------------------------------------------------------------------------

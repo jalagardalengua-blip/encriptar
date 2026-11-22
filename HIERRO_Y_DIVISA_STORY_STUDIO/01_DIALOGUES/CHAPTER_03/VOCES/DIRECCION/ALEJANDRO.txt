@@ -1,0 +1,312 @@
+HIERRO Y DIVISA · CAPÍTULO 03 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 30
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C03_E001_L002
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: fastidio
+Intención: cuestionar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y para qué hay que pintarlos? Las becerras no distinguen colores.
+------------------------------------------------------------------------
+[002] C03_E001_L004
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y quién viene?
+------------------------------------------------------------------------
+[003] C03_E001_L006
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: duda
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y eso es bueno?
+------------------------------------------------------------------------
+[004] C03_E001_L013
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: curiosidad divertida
+Intención: tantearle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y aun así vienes?
+------------------------------------------------------------------------
+[005] C03_E001_L017
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: decisión
+Intención: cerrar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Doscientos euros, cama y comida.
+------------------------------------------------------------------------
+[006] C03_E001_L020
+Escena: C03_E001 · EL TRIANERO
+Personaje: ALEJANDRO
+Emoción: recelo con humor
+Intención: no dejarse ganar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: Ese sabe caer bien.
+------------------------------------------------------------------------
+[007] C03_E002_L004
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: ALEJANDRO
+Emoción: complicidad maliciosa
+Intención: pinchar a Lucía
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Ella es de capital. Es peor.
+------------------------------------------------------------------------
+[008] C03_E002_L007
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: ALEJANDRO
+Emoción: reconocimiento inquietante
+Intención: constatar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Como él.
+------------------------------------------------------------------------
+[009] C03_E002_L014
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: ALEJANDRO
+Emoción: esperanza disimulada
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Vienes mañana?
+------------------------------------------------------------------------
+[010] C03_E002_L016
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: ALEJANDRO
+Emoción: torpeza
+Intención: disimular
+Ritmo: titubeante
+Pausas: breve antes de «Las becerras»
+FX / procesado: exterior
+Texto: Por si se hace daño alguna. Las becerras.
+------------------------------------------------------------------------
+[011] C03_E002_L019
+Escena: C03_E002 · COSAS DE VETERINARIA
+Personaje: ALEJANDRO
+Emoción: vergüenza
+Intención: cortar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Ni una palabra.
+------------------------------------------------------------------------
+[012] C03_E003_L004
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: ALEJANDRO
+Acotación: respuesta a la anterior
+Emoción: orgullo
+Intención: reclamar su mérito
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, palco
+Texto: Tú no has dicho nada hasta que he apuntado yo.
+------------------------------------------------------------------------
+[013] C03_E003_L005
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: ALEJANDRO
+Acotación: de pie sin darse cuenta
+Emoción: emoción súbita
+Intención: decirlo antes que nadie
+Ritmo: rápido, sube
+Pausas: la marcada
+FX / procesado: exterior, palco
+Texto: Esa. [short pause] Esa es la buena.
+------------------------------------------------------------------------
+[014] C03_E003_L008
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: ALEJANDRO
+Emoción: miedo cubierto de risa
+Intención: negarse
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, palco
+Texto: ¿Yo? Ni loco.
+------------------------------------------------------------------------
+[015] C03_E003_L014
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: orgullo defensivo
+Intención: no exponerse
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, palco
+Texto: Torea tú, que para eso te pago.
+------------------------------------------------------------------------
+[016] C03_E003_L016
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, palco
+Texto: ¿Qué has puesto?
+------------------------------------------------------------------------
+[017] C03_E004_L009
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Emoción: orgullo defensivo
+Intención: marcar propiedad
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Se llama Lucerita.
+------------------------------------------------------------------------
+[018] C03_E004_L011
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Emoción: desconfianza lúcida
+Intención: descubrir la intención
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Para qué quieres tú vacas de Vega-Villar, si lo tuyo es Domecq?
+------------------------------------------------------------------------
+[019] C03_E004_L013
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: pragmatismo amargo
+Intención: aceptar con condiciones
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Vendidas. Las elijo yo.
+------------------------------------------------------------------------
+[020] C03_E004_L015
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: orgullo
+Intención: rechazar
+Ritmo: firme
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No vendo.
+------------------------------------------------------------------------
+[021] C03_E004_L017
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Acotación: cuando se han ido
+Emoción: tensión
+Intención: confirmar
+Ritmo: bajo
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Ese era el Rubio?
+------------------------------------------------------------------------
+[022] C03_E004_L019
+Escena: C03_E004 · INVITADOS
+Personaje: ALEJANDRO
+Emoción: celos profesionales
+Intención: saber dónde está
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Vas a ir?
+------------------------------------------------------------------------
+[023] C03_E005_L002
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: guasa
+Intención: pincharle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿El vino gratis?
+------------------------------------------------------------------------
+[024] C03_E005_L004
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: curiosidad seria
+Intención: saber de verdad
+Ritmo: lento
+Pausas: breve antes de «En la plaza»
+FX / procesado: exterior, noche
+Texto: ¿Tienes miedo? En la plaza.
+------------------------------------------------------------------------
+[025] C03_E005_L006
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: necesidad propia
+Intención: aprender para sí
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Y cómo se quita?
+------------------------------------------------------------------------
+[026] C03_E005_L008
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: melancolía
+Intención: hablar del padre por primera vez con alguien de fuera
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Mi padre nunca me dijo que tuviera miedo de nada.
+------------------------------------------------------------------------
+[027] C03_E005_L010
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: ternura torpe
+Intención: acompañar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Lo siento.
+------------------------------------------------------------------------
+[028] C03_E005_L012
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: decisión impulsiva
+Intención: pedírselo
+Ritmo: lento, firme
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: En septiembre tengo una corrida. Si llego a septiembre. [short pause] Quiero que la mates tú.
+------------------------------------------------------------------------
+[029] C03_E005_L014
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: aceptación con desafío
+Intención: convertirlo en meta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Vale. [short pause] Pues tendré que llamarte antes.
+------------------------------------------------------------------------
+[030] C03_E005_L020
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: ALEJANDRO
+Emoción: cansancio, sospecha
+Intención: admitir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Ese hombre sabe muchas cosas que yo no sé.
+------------------------------------------------------------------------

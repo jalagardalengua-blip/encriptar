@@ -1,0 +1,192 @@
+HIERRO Y DIVISA · CAPÍTULO 03 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 18
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C03_E001_L001
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: paciencia irónica
+Intención: corregir
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Con la brocha de arriba abajo. Que no estás pintando un coche.
+------------------------------------------------------------------------
+[002] C03_E001_L003
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: sabiduría práctica
+Intención: enseñarle el negocio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Las becerras no. El torero sí. [short pause] Y el torero cobra según lo que ve.
+------------------------------------------------------------------------
+[003] C03_E001_L005
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: escepticismo
+Intención: informar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Uno de Sevilla. Lo ha mandado la Olmedo. Dice que es barato y que tiene hambre.
+------------------------------------------------------------------------
+[004] C03_E001_L007
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: humor seco
+Intención: dejar caer la duda
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Lo de barato, sí.
+------------------------------------------------------------------------
+[005] C03_E001_L009
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: sequedad
+Intención: contestar lo justo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Es aquí.
+------------------------------------------------------------------------
+[006] C03_E001_L015
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: pragmatismo
+Intención: lo importante
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cuánto cobras?
+------------------------------------------------------------------------
+[007] C03_E001_L019
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Acotación: a Alejandro, bajo
+Emoción: aprobación reticente
+Intención: pinchar a Alejandro
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: Ese sabe coger una brocha.
+------------------------------------------------------------------------
+[008] C03_E001_L021
+Escena: C03_E001 · EL TRIANERO
+Personaje: MANUEL
+Emoción: ironía
+Intención: zanjar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: También es un oficio.
+------------------------------------------------------------------------
+[009] C03_E003_L001
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Acotación: tras la primera becerra
+Emoción: juicio de oficio
+Intención: enseñarle a mirar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, palco
+Texto: Se ha dolido en el caballo. Al segundo puyazo ya se iba. Esa, a matadero.
+------------------------------------------------------------------------
+[010] C03_E003_L002
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Acotación: tras la tercera
+Emoción: matiz
+Intención: enseñar que no todo es blanco o negro
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, palco
+Texto: Noble, pero se para. Una madre para dar toros de pueblo. [short pause] Que también hacen falta.
+------------------------------------------------------------------------
+[011] C03_E003_L003
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Acotación: si el jugador ha coincidido con él en las anteriores
+Emoción: sorpresa con guasa
+Intención: reconocerle sin decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, palco
+Texto: ¿Lo has visto tú solo o me lo has copiado?
+------------------------------------------------------------------------
+[012] C03_E003_L010
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Emoción: provocación cariñosa
+Intención: empujarle sin empujar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, palco
+Texto: A tu padre le voltearon en esta placita más veces que a ningún torero. [short pause] Y aquí sigue la placita.
+------------------------------------------------------------------------
+[013] C03_E003_L013
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Acotación: para sí
+Rama de elección: A
+Emoción: emoción contenida
+Intención: ninguna, se le escapa
+Ritmo: muy lento, casi inaudible
+Pausas: ninguna
+FX / procesado: exterior, palco, voz muy baja
+Texto: Tampoco ha llorado.
+------------------------------------------------------------------------
+[014] C03_E003_L017
+Escena: C03_E003 · LA TREINTA Y UNO
+Personaje: MANUEL
+Emoción: solemnidad sin solemnidad
+Intención: darle el lugar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, palco
+Texto: Ponle tú el nombre. Es tuya.
+------------------------------------------------------------------------
+[015] C03_E004_L002
+Escena: C03_E004 · INVITADOS
+Personaje: MANUEL
+Emoción: hostilidad seca
+Intención: marcar el territorio
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Aquí no se le ha invitado.
+------------------------------------------------------------------------
+[016] C03_E004_L018
+Escena: C03_E004 · INVITADOS
+Personaje: MANUEL
+Emoción: rabia contenida
+Intención: confirmar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Ese era.
+------------------------------------------------------------------------
+[017] C03_E005_L016
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: MANUEL
+Emoción: cariño seco
+Intención: recogerles
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: A dormir. Que mañana no hay tienta, pero hay vacas.
+------------------------------------------------------------------------
+[018] C03_E005_L018
+Escena: C03_E005 · LO QUE SE LLEVA PUESTO
+Personaje: MANUEL
+Emoción: dolor escondido
+Intención: decir la verdad sin explicarla
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Una vez. [short pause] Y no fue de un toro.
+------------------------------------------------------------------------

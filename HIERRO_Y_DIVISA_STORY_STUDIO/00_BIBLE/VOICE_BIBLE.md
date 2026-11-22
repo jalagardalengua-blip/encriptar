@@ -122,6 +122,14 @@ Cada ficha incluye la descripción para *Voice Design* (en inglés, que es el id
 | REMEDIOS (66) | *"Spanish woman aged 66 from a village in Salamanca, sharp and quick, affectionate, rural Castilian accent, slightly nasal."* | Stab 0.45 · Style 0.35 |
 | SARGENTO BENÍTEZ (45) | *"Spanish Civil Guard sergeant aged 45 from Jaén, Andalusia, phlegmatic mid baritone, slow eastern Andalusian accent, calm authority, dry humour."* | Stab 0.60 · Style 0.20 |
 | INSPECTORA ARRANZ (52) | *"Spanish woman aged 52 from Valladolid, official veterinarian, dry and precise mezzo, tired bureaucratic tone, standard Castilian Peninsular accent."* | Stab 0.65 · Style 0.15 |
+| PACO LERMA (58) | *"Old Madrid bullfighting manager, 58, raspy smoker's baritone, castizo Madrid accent, sly and warm."* | Stab 0.50 · Style 0.30 |
+| EL RUBIO (44) | *"Rural Salamanca ranch foreman, 44, rough low baritone, terse and defensive, Castilian accent."* | Stab 0.55 · Style 0.25 |
+| ÍÑIGO SALAZAR (38) | *"Madrid corporate lawyer, 38, neutral clipped tenor, cold and exact."* | Stab 0.70 · Style 0.10 |
+| PILAR (31) | *"Young Spanish mother from Salamanca, 31, bright clear soprano, laughing easily, home video recording from the early 2000s."* · FX: cinta VHS | Stab 0.40 · Style 0.40 |
+| ORTEGA (50) | *"Spanish bank branch manager, 50, soft uneasy tenor, polite office voice, standard Peninsular accent."* | Stab 0.60 · Style 0.15 |
+| DANI (24) | *"Young Madrid delivery rider, 24, fast casual baritone, working-class Madrid slang, friendly."* | Stab 0.40 · Style 0.40 |
+| ALCALDE GASPAR (63) | *"Village mayor from rural Salamanca, 63, booming jovial baritone, speech-making tone."* | Stab 0.50 · Style 0.35 |
+| NOTARIO BENAVIDES (60) | *"Spanish notary, 60, monotone formal baritone, slow and precise reading voice."* | Stab 0.75 · Style 0.05 |
 | TOÑO (19) | *"Shy 19-year-old farm worker from rural Salamanca, soft low voice, few words."* | Stab 0.50 · Style 0.20 |
 
 ## 5. Diccionario de pronunciación

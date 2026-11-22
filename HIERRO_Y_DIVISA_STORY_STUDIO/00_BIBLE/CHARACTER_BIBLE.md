@@ -150,6 +150,12 @@ Identidades fijas. No se cambian edad, aspecto, relaciones ni rasgos vocales sin
 | **Inspectora Elena Arranz** | 52 | Veterinaria oficial de la Junta (Servicio Territorial de Agricultura y Ganadería). Rigurosa, cansada, justa. Conocía a Ernesto y no le caía bien. | Castellana de Valladolid, seca, administrativa. |
 | **Ramiro Sanz, «el Rubio»** | 44 | Capataz de Los Arenales. Lealtad a Ricardo por encima de todo; hace lo que cree que su jefe quiere sin que se lo pida. | Charro, bronco (aparece en voz a partir de C08). |
 | **Paco Lerma** | 58 | Apoderado de Javier. Viejo zorro. | Madrileño castizo, ronco. |
+| **Pilar Ruiz** | 31 (en las cintas) | Madre de Alejandro, fallecida hace 17 años. Solo aparece en cintas de vídeo domésticas (C05). Risueña, mandona, la única que se reía de Ernesto en su cara. | Salmantina, clara, risa fácil. |
+| **Alberto Ortega** | 50 | Director de la sucursal bancaria de Salamanca que llevaba los préstamos de Ernesto. Amable, incómodo, cobarde. | Castellano neutro, de oficina. |
+| **Dani Muñoz** | 24 | Compañero de piso de Alejandro en Usera. Repartidor y músico aficionado. | Madrileño joven, rápido, de barrio. |
+| **Gaspar Hernández** | 63 | Alcalde de Moraleja de Yeltes (ficticio), pueblo de las fiestas de San Juan. Campechano, regateador. | Charro, sonoro, de discurso. |
+| **Notario Benavides** | 60 | Notario de Vitigudino. Ante él se firmó la opción y se resuelve en C12. | Castellano formal, monocorde. |
+
 
 ---
 
