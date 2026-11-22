@@ -1,0 +1,30 @@
+HIERRO Y DIVISA · CAPÍTULO 08 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 2
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C08_E003_L001
+Escena: C08_E003 · EL FRÍO
+Personaje: JAVIER
+Acotación: teléfono, rama C07-A
+Rama de elección: C07-A
+Emoción: dolor convertido en rabia fría
+Intención: enfrentarle
+Ritmo: lento, sin una sola broma
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Me lo ha contado Lerma. Borracho, anoche, en Sevilla, riéndose. [short pause] El pitón del catorce. El toro que me brindaste.
+------------------------------------------------------------------------
+[002] C08_E003_L003
+Escena: C08_E003 · EL FRÍO
+Personaje: JAVIER
+Acotación: rama C07-A
+Rama de elección: C07-A
+Emoción: herida profunda
+Intención: marcar la distancia
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Te brindé ese toro, illo. A ti. [short pause] Y me lo diste arreglado, como si yo fuera un niño al que hay que proteger. En septiembre toreo porque tengo palabra. Pero no me llames hasta entonces.
+------------------------------------------------------------------------

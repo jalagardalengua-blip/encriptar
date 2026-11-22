@@ -1,0 +1,122 @@
+HIERRO Y DIVISA · CAPÍTULO 08 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 11
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C08_E002_L001
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: admiración calculada
+Intención: abrir con elogio
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior, mediodía
+Texto: Me he enterado de lo del toro. [short pause] Una operación en el campo, con este calor. Tu veterinaria es muy valiente.
+------------------------------------------------------------------------
+[002] C08_E002_L003
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: precisión fría
+Intención: tentar con la lógica
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Directo. Me gusta. [short pause] Quiero a Lucero. Cuarenta mil euros, hoy. Un semental de tres pezuñas que puede no pasar de la semana que viene. Es una oferta muy por encima de lo que vale ahora mismo.
+------------------------------------------------------------------------
+[003] C08_E002_L005
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: honestidad de jugador
+Intención: explicar su lógica
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Porque si no se muere, es la mejor sangre de la provincia. Y porque, si se muere, me habrá costado lo que me cuesta una cena de empresa al año. [short pause] El riesgo es mío, Alejandro. Eso es lo que te estoy comprando: el riesgo.
+------------------------------------------------------------------------
+[004] C08_E002_L006
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Acotación: rama C06-A: aceptó el camión en junio
+Rama de elección: C06-A
+Emoción: cobro elegante
+Intención: cobrar el favor
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Y, de paso, me acordaría con cariño de aquel camión de San Juan. [short pause] Con la treinta y uno incluida.
+------------------------------------------------------------------------
+[005] C08_E002_L007
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Acotación: rama C07-A: afeitado
+Rama de elección: C07-A
+Emoción: hipocresía perfecta
+Intención: humillar con la moral
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Y me he enterado de lo de Villaseca. El análisis del pitón. Seis mil de multa. [short pause] Esas cosas no se hacen, Alejandro. Te lo digo con todo el cariño.
+------------------------------------------------------------------------
+[006] C08_E002_L013
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: autoridad sin esfuerzo
+Intención: retirarle
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Ramiro. Al coche.
+------------------------------------------------------------------------
+[007] C08_E002_L015
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: honestidad cínica
+Intención: decir la verdad exacta
+Ritmo: muy pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Yo no le dije que lo hiciera. [short pause] Tampoco le dije que no.
+------------------------------------------------------------------------
+[008] C08_E002_L017
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: ironía hiriente
+Intención: devolverle «Aquí ahora mando yo»
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Eso es mandar, Alejandro. [short pause] Ya lo irás aprendiendo. Por lo que me cuentan, ya has empezado.
+------------------------------------------------------------------------
+[009] C08_E002_L018
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Emoción: paciencia
+Intención: volver al negocio
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Lucero?
+------------------------------------------------------------------------
+[010] C08_E002_L020
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Rama de elección: A
+Emoción: victoria discreta
+Intención: recordar el plazo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Hasta septiembre. [short pause] Que es pronto.
+------------------------------------------------------------------------
+[011] C08_E002_L022
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: RICARDO
+Rama de elección: B
+Emoción: ironía
+Intención: tener la última palabra
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Con cuatro pezuñas menos una, para ser exactos. [short pause] Como quieras. Que se mejore.
+------------------------------------------------------------------------

@@ -1,0 +1,181 @@
+HIERRO Y DIVISA · CAPÍTULO 08 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 17
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C08_E001_L001
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Emoción: impresión profesional
+Intención: pedir ayuda
+Ritmo: lento, luego rápido
+Pausas: la marcada
+FX / procesado: exterior, mañana
+Texto: Dios mío. [short pause] Alejandro, trae la luz.
+------------------------------------------------------------------------
+[002] C08_E001_L002
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Emoción: diagnóstico grave
+Intención: decir la verdad entera
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Flemón interdigital. Muy profundo. Le ha llegado al hueso. [short pause] Esto no es de esta semana. Esto tiene meses.
+------------------------------------------------------------------------
+[003] C08_E001_L004
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Emoción: culpa que asoma
+Intención: explicar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Desde la primavera, como poco. Se le cerraba por fuera y por dentro seguía. [short pause] Por eso unos días cojeaba y otros no.
+------------------------------------------------------------------------
+[004] C08_E001_L005
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Acotación: sin mirarle
+Emoción: culpa honda
+Intención: reconocerlo
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: Tu padre tenía razón.
+------------------------------------------------------------------------
+[005] C08_E001_L007
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Acotación: recomponiéndose
+Emoción: urgencia profesional
+Intención: actuar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Hay que operar. Aquí y ahora. Quitarle la pezuña de fuera y limpiar el hueso. [short pause] Si no, en tres días está muerto. Necesito a alguien que le sujete la cabeza, por si se despierta a medias.
+------------------------------------------------------------------------
+[006] C08_E001_L012
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Acotación: durante la cirugía
+Emoción: concentración máxima
+Intención: dirigir
+Ritmo: seco, entrecortado
+Pausas: breves
+FX / procesado: exterior
+Texto: Sierra. [short pause] Gasa. Más. Así.
+------------------------------------------------------------------------
+[007] C08_E001_L013
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: LUCÍA
+Emoción: agotamiento sereno
+Intención: pronóstico honesto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Ya está. Si aguanta la semana con antibiótico, se queda con tres pezuñas y vuelve a cubrir en otoño. [short pause] Si no aguanta, por lo menos no le hemos dejado sufrir.
+------------------------------------------------------------------------
+[008] C08_E003_L004
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: ternura impaciente
+Intención: abrirle la puerta
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, noche, balcón
+Texto: Llevas toda la cena con cara de ir a decirme algo. [short pause] O me lo dices, o te tomas el postre, pero algo.
+------------------------------------------------------------------------
+[009] C08_E003_L007
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: incredulidad que se vuelve enfado
+Intención: medir la mentira
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Desde cuándo lo sabes?
+------------------------------------------------------------------------
+[010] C08_E003_L009
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: enfado dolido
+Intención: reprocharle
+Ritmo: normal, sube
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Cinco meses. [short pause] Llevo cinco meses metiendo los brazos hasta el codo en tus vacas, operando a tu toro en el suelo, y me entero ahora. En mi balcón. Con el postre.
+------------------------------------------------------------------------
+[011] C08_E003_L011
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Rama de elección: A
+Emoción: ternura enfadada
+Intención: perdonar a medias
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Eso es lo más tonto y lo más sincero que me has dicho nunca.
+------------------------------------------------------------------------
+[012] C08_E003_L013
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Rama de elección: B
+Emoción: dolor frío
+Intención: dejarle claro que se ha equivocado
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Ya. [short pause] Pues ahora ya lo es, mira tú.
+------------------------------------------------------------------------
+[013] C08_E003_L014
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: desconcierto genuino
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Por qué lo firmó? Tu padre no vendía ni una vaca vieja sin pelearse tres días.
+------------------------------------------------------------------------
+[014] C08_E003_L016
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: recuerdo que cobra sentido
+Intención: contar algo que había olvidado
+Ritmo: lento
+Pausas: suspensión y la marcada
+FX / procesado: exterior, noche
+Texto: En la campaña de otoño… [short pause] A tu padre le temblaba la mano. La derecha. Se le cayó la jeringa dos veces en la misma mañana.
+------------------------------------------------------------------------
+[015] C08_E003_L018
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: certeza triste
+Intención: dejar caer la verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Que era el frío. [short pause] Era octubre y hacía veinte grados.
+------------------------------------------------------------------------
+[016] C08_E003_L020
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: preocupación
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Qué sabe?
+------------------------------------------------------------------------
+[017] C08_E003_L022
+Escena: C08_E003 · EL FRÍO
+Personaje: LUCÍA
+Emoción: ternura firme
+Intención: protegerle de sí mismo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Mañana. [short pause] Esta noche no conduces. Y esta noche no le preguntas nada a nadie.
+------------------------------------------------------------------------

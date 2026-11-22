@@ -1,0 +1,264 @@
+HIERRO Y DIVISA · CAPÍTULO 08 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 25
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C08_E001_L003
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: ALEJANDRO
+Emoción: presentimiento
+Intención: confirmar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Meses?
+------------------------------------------------------------------------
+[002] C08_E001_L006
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: ALEJANDRO
+Emoción: comprensión que duele
+Intención: decirlo en voz alta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Vino a mirarle la mano. [short pause] Esa noche. Vino solo, de noche, a mirarle la mano.
+------------------------------------------------------------------------
+[003] C08_E001_L008
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: ALEJANDRO
+Acotación: alzando la voz hacia la puerta
+Emoción: necesidad
+Intención: llamarle
+Ritmo: alto
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¡Manuel!
+------------------------------------------------------------------------
+[004] C08_E001_L009
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: ALEJANDRO
+Emoción: súplica sin orgullo
+Intención: hacerle entrar
+Ritmo: lento, firme
+Pausas: la marcada
+FX / procesado: exterior, voz proyectada
+Texto: Te necesito. [short pause] Lo que pasara aquí en marzo, ahora te necesito aquí.
+------------------------------------------------------------------------
+[005] C08_E001_L015
+Escena: C08_E001 · LA MANO IZQUIERDA (II)
+Personaje: ALEJANDRO
+Acotación: cuando está lejos, para sí
+Emoción: sospecha que crece
+Intención: preguntarse
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, voz baja
+Texto: ¿Si hubieras venido con él, qué?
+------------------------------------------------------------------------
+[006] C08_E002_L002
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: cansancio hostil
+Intención: ir al grano
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué quieres, Ricardo?
+------------------------------------------------------------------------
+[007] C08_E002_L004
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: desconfianza
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y para qué quieres un toro que puede morirse?
+------------------------------------------------------------------------
+[008] C08_E002_L008
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: provocación
+Intención: sacarle de la sombra
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Y tú? ¿Tú qué quieres?
+------------------------------------------------------------------------
+[009] C08_E002_L010
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: acusación fría
+Intención: enfrentarle
+Ritmo: lento, cada frase con peso
+Pausas: la marcada
+FX / procesado: exterior
+Texto: También venías con el jefe en marzo, a las tres de la mañana, por el camino de Los Arenales. Sin luces. [short pause] Con una tenaza buena.
+------------------------------------------------------------------------
+[010] C08_E002_L012
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: desafío
+Intención: acorralarle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cortar una pared y llamar a la Junta es lo que hay que hacer?
+------------------------------------------------------------------------
+[011] C08_E002_L014
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: necesidad de verdad
+Intención: preguntar sin rodeos
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Se lo dijiste tú?
+------------------------------------------------------------------------
+[012] C08_E002_L016
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: desprecio
+Intención: juzgarle
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Eso es peor.
+------------------------------------------------------------------------
+[013] C08_E002_L019
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: derrota pragmática
+Intención: aceptar y echarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Llévatelo cuando pueda andar. [short pause] Y no vuelvas por aquí hasta septiembre.
+------------------------------------------------------------------------
+[014] C08_E002_L021
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: obstinación orgullosa
+Intención: rechazar
+Ritmo: firme
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Lucero se queda. Con tres patas o con dos.
+------------------------------------------------------------------------
+[015] C08_E002_L024
+Escena: C08_E002 · TAMPOCO LE DIJE QUE NO
+Personaje: ALEJANDRO
+Emoción: vergüenza defensiva
+Intención: cortar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No empieces, Manuel.
+------------------------------------------------------------------------
+[016] C08_E003_L002
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Acotación: rama C07-A
+Rama de elección: C07-A
+Emoción: culpa
+Intención: explicarse
+Ritmo: titubeante
+Pausas: suspensión
+FX / procesado: exterior, noche
+Texto: Javier, yo…
+------------------------------------------------------------------------
+[017] C08_E003_L005
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: confesión tensa
+Intención: decirlo de una vez
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: La finca puede no ser mía en septiembre.
+------------------------------------------------------------------------
+[018] C08_E003_L006
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: vergüenza
+Intención: contarlo todo
+Ritmo: normal, se acelera
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: Mi padre le firmó a Valcárcel una opción de compra. La finca, el ganado y el hierro. Si el veintiuno de septiembre no he pagado un millón ciento cuarenta mil euros, todo es suyo.
+------------------------------------------------------------------------
+[019] C08_E003_L008
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: culpa
+Intención: no mentir más
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Desde el día después del entierro.
+------------------------------------------------------------------------
+[020] C08_E003_L010
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: honestidad desnuda
+Intención: explicarse de verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Tenía vergüenza. [short pause] De que pensaras que había vuelto por la herencia. Y de que no hubiera herencia.
+------------------------------------------------------------------------
+[021] C08_E003_L012
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: orgullo defensivo
+Intención: protegerse
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: No era asunto tuyo.
+------------------------------------------------------------------------
+[022] C08_E003_L015
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: amargura
+Intención: compartir la sospecha
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: No lo sé. Nadie lo sabe. [short pause] O alguien lo sabe y no me lo dice.
+------------------------------------------------------------------------
+[023] C08_E003_L017
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: tensión máxima
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Y qué te dijo?
+------------------------------------------------------------------------
+[024] C08_E003_L019
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: certeza fría
+Intención: decidir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Manuel lo sabe.
+------------------------------------------------------------------------
+[025] C08_E003_L021
+Escena: C08_E003 · EL FRÍO
+Personaje: ALEJANDRO
+Emoción: determinación herida
+Intención: anunciar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Lo que tenía mi padre. [short pause] Y por qué firmó.
+------------------------------------------------------------------------
