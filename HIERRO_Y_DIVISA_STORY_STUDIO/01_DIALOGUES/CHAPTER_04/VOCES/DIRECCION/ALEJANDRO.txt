@@ -1,0 +1,393 @@
+HIERRO Y DIVISA · CAPÍTULO 04 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 38
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C04_E001_L002
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: impaciencia
+Intención: ir al grano
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿Pero?
+------------------------------------------------------------------------
+[002] C04_E001_L004
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: orgullo amargo
+Intención: adelantarse
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Ya no tengo nómina de Madrid.
+------------------------------------------------------------------------
+[003] C04_E001_L006
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: rabia contenida
+Intención: pedir cuentas
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿Por qué vendisteis la deuda de mi padre?
+------------------------------------------------------------------------
+[004] C04_E001_L008
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: firmeza
+Intención: no dejarle escapar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Es vender.
+------------------------------------------------------------------------
+[005] C04_E001_L010
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: alerta
+Intención: fijar el dato
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿En agosto?
+------------------------------------------------------------------------
+[006] C04_E001_L012
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: sospecha creciente
+Intención: contrastar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Me dijo que fue el banco el que iba a ejecutar. Que él compró para ayudar.
+------------------------------------------------------------------------
+[007] C04_E001_L014
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: urgencia
+Intención: llegar al fondo
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿Y cómo sabía la cifra?
+------------------------------------------------------------------------
+[008] C04_E001_L017
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ALEJANDRO
+Emoción: ironía cansada
+Intención: devolverle la frase
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Algo pequeño.
+------------------------------------------------------------------------
+[009] C04_E002_L002
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: incomodidad
+Intención: corregir
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Tenía catorce años la última vez que me vio usted.
+------------------------------------------------------------------------
+[010] C04_E002_L006
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Acotación: respuesta a la anterior
+Rama de elección: C02-B
+Emoción: obstinación
+Intención: defender su decisión
+Ritmo: firme
+Pausas: breve entre frases
+FX / procesado: interior, oficina
+Texto: El uno de mayo estará limpia. La vaca está sana.
+------------------------------------------------------------------------
+[011] C04_E002_L008
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: esperanza
+Intención: cerrar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Entonces septiembre sigue.
+------------------------------------------------------------------------
+[012] C04_E002_L010
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: rabia
+Intención: reprochar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Entonces, ¿para qué me haces venir?
+------------------------------------------------------------------------
+[013] C04_E002_L012
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: ansiedad
+Intención: lo que importa
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿Y septiembre?
+------------------------------------------------------------------------
+[014] C04_E002_L014
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Acotación: si el jugador intenta subir el precio
+Emoción: audacia
+Intención: regatear
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Cuarenta mil.
+------------------------------------------------------------------------
+[015] C04_E002_L016
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Acotación: petición del torero
+Emoción: determinación
+Intención: cumplir lo que prometió
+Ritmo: lento, firme
+Pausas: breve tras «condición»
+FX / procesado: interior, oficina
+Texto: Una condición. En el cartel de julio, Javier Romero.
+------------------------------------------------------------------------
+[016] C04_E002_L018
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: decisión
+Intención: dejar claro que sabe lo que pasa
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: interior, oficina
+Texto: Ese. Antes de que lo llame otro.
+------------------------------------------------------------------------
+[017] C04_E002_L020
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: tantear aliados
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: ¿Tú le conoces bien?
+------------------------------------------------------------------------
+[018] C04_E002_L024
+Escena: C04_E002 · TE VOY A SER MUY CLARA
+Personaje: ALEJANDRO
+Emoción: complicidad dura
+Intención: estar a la altura
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Yo tampoco.
+------------------------------------------------------------------------
+[019] C04_E003_L002
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: corrección orgullosa
+Intención: precisar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: Ganadero.
+------------------------------------------------------------------------
+[020] C04_E003_L004
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: humor negro
+Intención: rematar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: Más o menos un millón de euros de deuda.
+------------------------------------------------------------------------
+[021] C04_E003_L006
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: cansancio
+Intención: no entrar en detalles
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, piso
+Texto: En serio. Hasta septiembre.
+------------------------------------------------------------------------
+[022] C04_E003_L008
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: ironía
+Intención: contar la red de seguridad sin quererla
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Llamé el lunes. Me dieron de baja. [short pause] El jefe me dijo que si quería volver en octubre, que me guardaba el turno de noche.
+------------------------------------------------------------------------
+[023] C04_E003_L011
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: desconfianza burlona
+Intención: quitar hierro
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: ¿Qué has roto?
+------------------------------------------------------------------------
+[024] C04_E003_L013
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: incredulidad
+Intención: que lo repita
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: ¿Qué?
+------------------------------------------------------------------------
+[025] C04_E003_L016
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: dolor incrédulo
+Intención: constatar el absurdo
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, piso
+Texto: Desde Salamanca. Pasaba por aquí.
+------------------------------------------------------------------------
+[026] C04_E003_L018
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: rabia contenida
+Intención: pedir cuentas
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: ¿Y por qué me lo cuentas ahora?
+------------------------------------------------------------------------
+[027] C04_E003_L020
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Acotación: muy bajo
+Emoción: certeza dolorosa
+Intención: entender
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: Vino a decirme algo.
+------------------------------------------------------------------------
+[028] C04_E003_L023
+Escena: C04_E003 · EL PORTAL
+Personaje: ALEJANDRO
+Emoción: gratitud con humor
+Intención: cerrar con un compromiso
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: Si me sale bien, te invito a dos.
+------------------------------------------------------------------------
+[029] C04_E004_L002
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: determinación
+Intención: llevarle al proyecto
+Ritmo: normal
+Pausas: breve antes de «Mira»
+FX / procesado: interior
+Texto: Por eso hay que meter dinero por otro lado. Mira.
+------------------------------------------------------------------------
+[030] C04_E004_L004
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: entusiasmo
+Intención: venderlo
+Ritmo: rápido, enumerando
+Pausas: la marcada
+FX / procesado: interior
+Texto: Un remolque con bancos y toldo, detrás del tractor. Treinta personas. Salen de la portada, pasan por el Prado Alto, ven las vacas, ven a los toros del Regato desde la pared, y terminan en la placita con un almuerzo. [short pause] Y una foto con un cabestro.
+------------------------------------------------------------------------
+[031] C04_E004_L006
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: convicción
+Intención: argumentar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior
+Texto: Es lo que más gusta, Manuel. Lo he mirado. [short pause] La gente de ciudad no ha tocado una vaca en su vida.
+------------------------------------------------------------------------
+[032] C04_E004_L008
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: alegría contenida
+Intención: sellar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: Con Capitán.
+------------------------------------------------------------------------
+[033] C04_E004_L012
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: alerta
+Intención: el dato
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué obra?
+------------------------------------------------------------------------
+[034] C04_E004_L016
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: seriedad
+Intención: dejarle hablar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Y tú qué quieres hacer?
+------------------------------------------------------------------------
+[035] C04_E004_L018
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: generosidad consciente
+Intención: retenerle
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Te subo trescientos cincuenta al mes. No es el doble. Pero es lo que hay, y aquí sabes lo que haces.
+------------------------------------------------------------------------
+[036] C04_E004_L021
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: honestidad dura
+Intención: no prometer lo que no tiene
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: No puedo pagarte más, Toño. No te voy a mentir.
+------------------------------------------------------------------------
+[037] C04_E004_L024
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: comprensión a medias
+Intención: unir piezas
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Luz.
+------------------------------------------------------------------------
+[038] C04_E004_L026
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: ALEJANDRO
+Emoción: inquietud
+Intención: compartir
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Algo que dijo Ricardo. [short pause] Que esta finca tenía luz.
+------------------------------------------------------------------------

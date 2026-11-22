@@ -1,0 +1,98 @@
+HIERRO Y DIVISA · CAPÍTULO 04 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 9
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C04_E004_L001
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: indignación seca
+Intención: quejarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Mil quinientos euros por nueve vacas en una carretera. [short pause] Con eso se paga el pienso de una semana.
+------------------------------------------------------------------------
+[002] C04_E004_L003
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: incredulidad
+Intención: burlarse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Esto qué es, un autobús?
+------------------------------------------------------------------------
+[003] C04_E004_L005
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: guasa resignada
+Intención: pincharle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Otra vez el cabestro.
+------------------------------------------------------------------------
+[004] C04_E004_L007
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: rendición con dignidad
+Intención: aceptar sin decir que acepta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Con Capitán. [short pause] Si hay que hacerse fotos, que sea con Capitán, que es el más guapo y el que menos patea.
+------------------------------------------------------------------------
+[005] C04_E004_L009
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: humor
+Intención: poner su condición
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Y el almuerzo lo hace Remedios. Que si lo haces tú, no vuelve nadie.
+------------------------------------------------------------------------
+[006] C04_E004_L014
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: sospecha
+Intención: precisar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Los llanos de ellos o los nuestros?
+------------------------------------------------------------------------
+[007] C04_E004_L020
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Acotación: a Alejandro, bajo, cuando Toño ya ha vuelto a comer
+Rama de elección: A
+Emoción: aprobación disfrazada de crítica
+Intención: elogiarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, voz baja
+Texto: Eso es tirar el dinero. [short pause] Y eso es lo que habría hecho tu padre.
+------------------------------------------------------------------------
+[008] C04_E004_L023
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: sospecha profunda
+Intención: pensar en voz alta
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Los llanos.
+------------------------------------------------------------------------
+[009] C04_E004_L025
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: MANUEL
+Emoción: desconcierto
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué?
+------------------------------------------------------------------------

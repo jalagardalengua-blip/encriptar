@@ -1,0 +1,106 @@
+HIERRO Y DIVISA · CAPÍTULO 04 · ORTEGA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 10
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ORTEGA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C04_E001_L001
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: amabilidad incómoda
+Intención: suavizar lo que viene
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, oficina
+Texto: Está muy bien hecho. De verdad. Mejor que lo que me traía tu padre, que era un papel de cuadros con números a lápiz.
+------------------------------------------------------------------------
+[002] C04_E001_L003
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: pena profesional
+Intención: explicar el no
+Ritmo: lento
+Pausas: suspensión inicial y final
+FX / procesado: interior, oficina
+Texto: Pero… [sighs] Alejandro, tú no tienes nada que pueda garantizar un préstamo. La finca está comprometida por la opción. El ganado, también. Y tu nómina de Madrid…
+------------------------------------------------------------------------
+[003] C04_E001_L005
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: resignación
+Intención: cerrar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Pues eso.
+------------------------------------------------------------------------
+[004] C04_E001_L007
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: defensiva técnica
+Intención: esconderse en el lenguaje
+Ritmo: rápido
+Pausas: interrupción al final
+FX / procesado: interior, oficina
+Texto: No es «vendimos». Es una cesión de crédito. Es una operación habitual cuando un préstamo…
+------------------------------------------------------------------------
+[005] C04_E001_L009
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: culpa sincera
+Intención: justificarse
+Ritmo: normal, se acelera
+Pausas: la marcada y breve tras «perdona»
+FX / procesado: interior, oficina
+Texto: Es vender, vale. [short pause] Mira, yo a tu padre le aprecio. Le aprecié, perdona. Veinte años llevándole las cuentas. Y cuando don Ricardo vino en agosto a preguntar por su deuda, yo le dije a mis jefes que esperáramos. Que Ernesto siempre acababa pagando.
+------------------------------------------------------------------------
+[006] C04_E001_L011
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: apuro
+Intención: rebajar
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: interior, oficina
+Texto: Bueno. A finales de agosto. Más o menos.
+------------------------------------------------------------------------
+[007] C04_E001_L013
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: honestidad culpable
+Intención: soltar lo que le pesa
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, oficina
+Texto: El banco iba a ejecutar. En algún momento. [short pause] Pero el que vino a preguntar primero fue él. Y vino sabiendo la cifra exacta.
+------------------------------------------------------------------------
+[008] C04_E001_L015
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: miedo
+Intención: protegerse
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: interior, oficina
+Texto: Eso no lo sé. [short pause] Aquí no se la dio nadie, te lo juro.
+------------------------------------------------------------------------
+[009] C04_E001_L016
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: deseo de redimirse
+Intención: dejar una puerta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, oficina
+Texto: Alejandro. [short pause] Si consigues la corrida de septiembre… con un contrato firmado, vuelve. Algo se podrá hacer. Algo pequeño.
+------------------------------------------------------------------------
+[010] C04_E001_L018
+Escena: C04_E001 · LA SUCURSAL
+Personaje: ORTEGA
+Emoción: vergüenza
+Intención: despedirse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, oficina
+Texto: Es lo que hay.
+------------------------------------------------------------------------

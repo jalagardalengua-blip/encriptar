@@ -1,0 +1,136 @@
+HIERRO Y DIVISA · CAPÍTULO 04 · DANI
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 13
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/DANI.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C04_E003_L001
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: guasa cariñosa
+Intención: pincharle
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: O sea, que te vas a hacer vaquero.
+------------------------------------------------------------------------
+[002] C04_E003_L003
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: curiosidad burlona
+Intención: seguir la broma
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: ¿Y qué diferencia hay?
+------------------------------------------------------------------------
+[003] C04_E003_L005
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: sorpresa
+Intención: confirmar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: Hostia. ¿En serio?
+------------------------------------------------------------------------
+[004] C04_E003_L007
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: preocupación práctica
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, piso
+Texto: ¿Y el curro?
+------------------------------------------------------------------------
+[005] C04_E003_L009
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: sarcasmo amable
+Intención: hacerle reír
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Qué detalle. El turno de noche. [short pause] Ese hombre te quiere.
+------------------------------------------------------------------------
+[006] C04_E003_L010
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: nerviosismo
+Intención: preparar la confesión
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Oye, Álex. [short pause] Te tengo que contar una cosa. Y no te va a hacer gracia.
+------------------------------------------------------------------------
+[007] C04_E003_L012
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: culpa
+Intención: soltarlo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Nada. [short pause] Tu padre vino aquí.
+------------------------------------------------------------------------
+[008] C04_E003_L014
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: recuerdo nítido
+Intención: contar con exactitud
+Ritmo: normal, se frena al reconocer la chaqueta
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: En noviembre. Un sábado por la tarde. Yo bajaba con la moto y había un señor grande en el portal, con una chaqueta verde como esa. [short pause] Como esa no. Esa.
+------------------------------------------------------------------------
+[009] C04_E003_L015
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: pena
+Intención: contar todo
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Me preguntó si vivía aquí Alejandro Galván. Le dije que sí, que estabas en el turno. [short pause] Le dije que subiera a esperarte, que volvías a las seis de la mañana. Y me dijo que no. Que no hacía falta. Que pasaba por aquí.
+------------------------------------------------------------------------
+[010] C04_E003_L017
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: culpa
+Intención: terminar de contarlo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Me pidió que no te dijera nada. [short pause] Se quedó un rato mirando el telefonillo. Y se fue andando hacia el metro.
+------------------------------------------------------------------------
+[011] C04_E003_L019
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: sinceridad torpe
+Intención: justificarse con el corazón
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Porque me lo pidió un tío vivo. [short pause] Y ahora está muerto, y tú te vas a ir a vivir a su casa. Y me parecía que tenías que saberlo antes de entrar.
+------------------------------------------------------------------------
+[012] C04_E003_L021
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: ternura
+Intención: consolar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, piso
+Texto: O a verte. Que a veces es lo mismo.
+------------------------------------------------------------------------
+[013] C04_E003_L022
+Escena: C04_E003 · EL PORTAL
+Personaje: DANI
+Emoción: cariño
+Intención: devolverle al presente
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, piso
+Texto: Oye. [short pause] Si te sale bien lo de los toros, me invitas a una corrida. Que no he ido nunca.
+------------------------------------------------------------------------

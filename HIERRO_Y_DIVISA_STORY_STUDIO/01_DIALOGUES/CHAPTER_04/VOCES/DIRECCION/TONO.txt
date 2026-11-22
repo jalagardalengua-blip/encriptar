@@ -1,0 +1,78 @@
+HIERRO Y DIVISA · CAPÍTULO 04 · TOÑO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 7
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/TONO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C04_E004_L010
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Emoción: nerviosismo
+Intención: atreverse
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: interior
+Texto: Manuel. Alejandro. [short pause] Os tengo que decir una cosa.
+------------------------------------------------------------------------
+[002] C04_E004_L011
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Emoción: culpa
+Intención: contarlo de una vez
+Ritmo: rápido, baja al final
+Pausas: la marcada
+FX / procesado: interior
+Texto: El Rubio me ha ofrecido trabajo en Los Arenales. El doble de lo que gano aquí. [short pause] Dice que necesitan gente para una obra que empiezan en otoño.
+------------------------------------------------------------------------
+[003] C04_E004_L013
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Emoción: honestidad
+Intención: contar lo que sabe
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: No me lo ha dicho. Algo de máquinas, de mover tierra. Por los llanos.
+------------------------------------------------------------------------
+[004] C04_E004_L015
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Emoción: duda
+Intención: no inventar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Dijo «los llanos». [short pause] No dijo de quién.
+------------------------------------------------------------------------
+[005] C04_E004_L017
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Emoción: conflicto sincero
+Intención: explicarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Yo quiero quedarme. [short pause] Pero mi madre está sin trabajo y mi hermano empieza la universidad en Salamanca en octubre.
+------------------------------------------------------------------------
+[006] C04_E004_L019
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Rama de elección: A
+Emoción: alivio
+Intención: aceptar
+Ritmo: rápido, atropellado
+Pausas: la marcada
+FX / procesado: interior
+Texto: ¿De verdad? [short pause] Vale. Vale, sí. Gracias.
+------------------------------------------------------------------------
+[007] C04_E004_L022
+Escena: C04_E004 · UNA FOTO CON UN CABESTRO
+Personaje: TOÑO
+Rama de elección: B
+Emoción: lealtad dolida
+Intención: dejar claro por quién se queda
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Me quedo hasta septiembre. [short pause] Por Manuel.
+------------------------------------------------------------------------
