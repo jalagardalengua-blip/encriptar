@@ -1,0 +1,36 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · ALCALDE GASPAR
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 3
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALCALDE_GASPAR.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E003_L006
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALCALDE GASPAR
+Emoción: euforia de fiesta
+Intención: celebrar en público
+Ritmo: rápido, sonoro
+Pausas: breve entre exclamaciones
+FX / procesado: exterior, plaza, multitud
+Texto: ¡Galván! ¡Eso es un encierro! ¡Eso, eso es un encierro, y no lo del año pasado, que nos trajeron unos bueyes con cuernos!
+------------------------------------------------------------------------
+[002] C06_E003_L008
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALCALDE GASPAR
+Emoción: regateo festivo
+Intención: amarrar el trato
+Ritmo: rápido
+Pausas: tras la risa
+FX / procesado: exterior, plaza, multitud
+Texto: ¡Nada de gracias! El año que viene, otra vez. Y al mismo precio, ¿eh? [laughs] Que te conozco, que eres de los que suben.
+------------------------------------------------------------------------
+[003] C06_E003_L010
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALCALDE GASPAR
+Emoción: falsa ofensa
+Intención: seguir el regateo
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, plaza, multitud
+Texto: ¡Manuel, hombre, que estamos de fiesta!
+------------------------------------------------------------------------

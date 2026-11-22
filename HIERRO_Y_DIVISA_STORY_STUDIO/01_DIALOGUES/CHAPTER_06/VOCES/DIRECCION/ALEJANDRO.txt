@@ -1,0 +1,160 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 15
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E001_L005
+Escena: C06_E001 · EMBARQUE
+Personaje: ALEJANDRO
+Emoción: nervios
+Intención: aprender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Y cómo sé cuándo?
+------------------------------------------------------------------------
+[002] C06_E001_L013
+Escena: C06_E001 · EMBARQUE
+Personaje: ALEJANDRO
+Emoción: duda modesta
+Intención: confirmar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Eso es bueno?
+------------------------------------------------------------------------
+[003] C06_E002_L005
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: ALEJANDRO
+Emoción: desconfianza
+Intención: incomodarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Cómo sabes dónde estamos?
+------------------------------------------------------------------------
+[004] C06_E002_L007
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: pragmatismo con orgullo herido
+Intención: aceptar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Mándalo. [short pause] Gracias.
+------------------------------------------------------------------------
+[005] C06_E002_L009
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: defensiva
+Intención: justificarse
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Qué querías que hiciera? Hace treinta y cuatro grados.
+------------------------------------------------------------------------
+[006] C06_E002_L011
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: orgullo
+Intención: rechazar
+Ritmo: firme
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: No hace falta. Ya viene el taller.
+------------------------------------------------------------------------
+[007] C06_E003_L002
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALEJANDRO
+Emoción: nervios
+Intención: prever
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, campo
+Texto: ¿Y si se da la vuelta?
+------------------------------------------------------------------------
+[008] C06_E003_L007
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALEJANDRO
+Acotación: desde el caballo, sin aliento
+Emoción: alegría agotada
+Intención: responder
+Ritmo: entrecortado
+Pausas: ninguna
+FX / procesado: exterior, plaza
+Texto: Gracias, alcalde.
+------------------------------------------------------------------------
+[009] C06_E003_L013
+Escena: C06_E003 · EL ENCIERRO
+Personaje: ALEJANDRO
+Emoción: coqueteo cansado
+Intención: buscar su atención
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, plaza
+Texto: ¿Y yo?
+------------------------------------------------------------------------
+[010] C06_E004_L002
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: cansancio feliz
+Intención: escaquearse con gracia
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: Ya he tenido bastante riesgo por hoy.
+------------------------------------------------------------------------
+[011] C06_E004_L004
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: ¿Y tú qué has pedido?
+------------------------------------------------------------------------
+[012] C06_E004_L006
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: asombro tranquilo
+Intención: compartir lo que siente
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche, verbena
+Texto: Hace tres meses estaba en un almacén de Getafe a las cuatro de la mañana. [short pause] Y ahora estoy aquí. Con una veterinaria. En una plaza de pueblo.
+------------------------------------------------------------------------
+[013] C06_E004_L008
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: sinceridad
+Intención: decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: Y no me quiero ir.
+------------------------------------------------------------------------
+[014] C06_E004_L010
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: comprensión
+Intención: confirmar
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: No.
+------------------------------------------------------------------------
+[015] C06_E004_L014
+Escena: C06_E004 · LA HOGUERA
+Personaje: ALEJANDRO
+Emoción: guasa
+Intención: recuperar la broma
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: Está asegurado.
+------------------------------------------------------------------------

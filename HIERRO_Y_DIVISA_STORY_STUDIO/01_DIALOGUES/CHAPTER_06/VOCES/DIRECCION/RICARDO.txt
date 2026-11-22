@@ -1,0 +1,49 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 4
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E002_L004
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: RICARDO
+Acotación: teléfono
+Emoción: amabilidad servicial
+Intención: ofrecer el favor
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Alejandro, buenas tardes. Me cuentan que estáis parados en la carretera de Vitigudino con un camión. [short pause] Tengo uno vacío a quince minutos. Si quieres, te lo mando.
+------------------------------------------------------------------------
+[002] C06_E002_L006
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: RICARDO
+Emoción: diversión paciente
+Intención: desactivar la sospecha
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: Porque acaba de pasar por tu lado mi capataz con un tractor. [short pause] No es espionaje, Alejandro. Es que aquí nos conocemos todos los coches.
+------------------------------------------------------------------------
+[003] C06_E002_L008
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: RICARDO
+Rama de elección: A
+Emoción: satisfacción discreta
+Intención: anotar el favor
+Ritmo: pausado
+Pausas: ninguna
+FX / procesado: teléfono
+Texto: No hay de qué. Entre vecinos.
+------------------------------------------------------------------------
+[004] C06_E002_L012
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: RICARDO
+Rama de elección: B
+Emoción: ironía fría
+Intención: mostrar que lo sabe todo
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: teléfono
+Texto: A las dos de la mañana, me han dicho. [short pause] Como quieras. Cuida de esos toros.
+------------------------------------------------------------------------

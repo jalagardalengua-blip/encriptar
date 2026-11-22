@@ -1,0 +1,267 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 25
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E001_L001
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: autoridad tranquila
+Intención: marcar la importancia
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, corrales
+Texto: Escuchadme bien, que esto se hace una vez y se hace bien. Un toro que se lastima embarcando no corre el encierro. Y si no corre, no cobramos.
+------------------------------------------------------------------------
+[002] C06_E001_L003
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: humor seco
+Intención: devolverla
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, corrales
+Texto: Tú estás asegurado. Me lo dijo la veterinaria.
+------------------------------------------------------------------------
+[003] C06_E001_L004
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: enseñanza precisa
+Intención: asignar el puesto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Alejandro, tú en la tercera puerta. Cuando yo diga, subes. Ni antes ni después. [short pause] Si la subes antes, el toro se para. Si la subes después, se te mete en el corral que no es.
+------------------------------------------------------------------------
+[004] C06_E001_L006
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: sabiduría práctica
+Intención: dar la clave
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Cuando te mire el toro a ti y no a la puerta.
+------------------------------------------------------------------------
+[005] C06_E001_L007
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Acotación: momento correcto
+Emoción: urgencia
+Intención: dar la orden
+Ritmo: seco, alto
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¡Ahora!
+------------------------------------------------------------------------
+[006] C06_E001_L008
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Acotación: si el jugador falla
+Emoción: paciencia
+Intención: calmar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, corrales
+Texto: Tranquilo. Que vuelva. Que vuelve.
+------------------------------------------------------------------------
+[007] C06_E001_L011
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Acotación: rama C02-B
+Rama de elección: C02-B
+Emoción: resignación divertida
+Intención: resolver
+Ritmo: normal, luego alto
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Esa vaca se ha enterado de que hay verbena. [short pause] ¡Sácala, Toño, antes de que se suba al camión!
+------------------------------------------------------------------------
+[008] C06_E001_L012
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: satisfacción contenida
+Intención: reconocer
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Cuatro de cuatro. Sin una raspadura.
+------------------------------------------------------------------------
+[009] C06_E001_L014
+Escena: C06_E001 · EMBARQUE
+Personaje: MANUEL
+Emoción: orgullo
+Intención: elogiar matizando
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Eso es lo que hacía tu padre. [short pause] Los días buenos.
+------------------------------------------------------------------------
+[010] C06_E002_L001
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: preocupación controlada
+Intención: diagnosticar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, atardecer
+Texto: Están bien. Nerviosos, pero bien. [short pause] Lo malo no es esperar. Lo malo es el calor.
+------------------------------------------------------------------------
+[011] C06_E002_L003
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: aprobación
+Intención: dar instrucciones
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: Por las rejillas de arriba, poco a poco. Que no se asusten.
+------------------------------------------------------------------------
+[012] C06_E002_L010
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Acotación: sin volverse
+Rama de elección: A
+Emoción: realismo amargo
+Intención: avisarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Lo que has hecho. [short pause] Pero apúntalo, que él ya lo ha apuntado.
+------------------------------------------------------------------------
+[013] C06_E002_L013
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Rama de elección: B
+Emoción: aprobación con exigencia
+Intención: asumir la consecuencia juntos
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Hay que tener a los toros fresquitos hasta las dos. [short pause] Y luego no dormir. Tú lo has elegido.
+------------------------------------------------------------------------
+[014] C06_E002_L015
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: humor seco y cariño
+Intención: acercarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Treinta y tantos. [short pause] Y de usted nada, que me haces viejo.
+------------------------------------------------------------------------
+[015] C06_E002_L017
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: guasa cariñosa
+Intención: pincharle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Ninguno a pie. A pie corren los tontos y los toreros. [short pause] Y tú eres las dos cosas.
+------------------------------------------------------------------------
+[016] C06_E002_L019
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: curiosidad seria
+Intención: conocerle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Tu padre?
+------------------------------------------------------------------------
+[017] C06_E002_L021
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Emoción: ternura enorme dicha como un dato
+Intención: ofrecerle un hogar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Pues mira. Aquí sobra un sitio en la mesa. [short pause] Es una mesa muy grande.
+------------------------------------------------------------------------
+[018] C06_E002_L023
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: MANUEL
+Acotación: levantándose, a lo práctico
+Emoción: pudor
+Intención: salir del momento
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: Agua a los toros. Que esto no es una novela.
+------------------------------------------------------------------------
+[019] C06_E003_L001
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Emoción: concentración
+Intención: última lección
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, campo
+Texto: No se corre detrás del toro. Se corre al lado. Si vas detrás, le empujas. Si vas al lado, le acompañas.
+------------------------------------------------------------------------
+[020] C06_E003_L003
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Emoción: confianza en el animal
+Intención: tranquilizarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, campo
+Texto: Entonces Canela sabe más que tú. [short pause] Déjala.
+------------------------------------------------------------------------
+[021] C06_E003_L004
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Acotación: si un toro se abre
+Emoción: urgencia
+Intención: corregir
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: exterior, galope
+Texto: ¡Ciérrale, Alejandro! ¡Por fuera!
+------------------------------------------------------------------------
+[022] C06_E003_L005
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Acotación: si el jugador lo consigue
+Emoción: júbilo contenido
+Intención: celebrar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, galope
+Texto: ¡Eso es!
+------------------------------------------------------------------------
+[023] C06_E003_L009
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Acotación: seco
+Emoción: humor duro
+Intención: defender el negocio
+Ritmo: lento
+Pausas: breve tras «no»
+FX / procesado: exterior, plaza
+Texto: Al mismo precio no, Gaspar.
+------------------------------------------------------------------------
+[024] C06_E003_L011
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Emoción: guasa
+Intención: rematar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza
+Texto: Por eso. [short pause] En fiestas se paga más.
+------------------------------------------------------------------------
+[025] C06_E003_L016
+Escena: C06_E003 · EL ENCIERRO
+Personaje: MANUEL
+Emoción: cariño seco
+Intención: pincharle con la broma de la noche
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza
+Texto: Te he visto. Tonto y torero. [short pause] Lo que te dije.
+------------------------------------------------------------------------

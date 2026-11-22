@@ -1,0 +1,120 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 11
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E001_L002
+Escena: C06_E001 · EMBARQUE
+Personaje: JAVIER
+Emoción: guasa
+Intención: aliviar la tensión
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Y si me lastimo yo?
+------------------------------------------------------------------------
+[002] C06_E001_L009
+Escena: C06_E001 · EMBARQUE
+Personaje: JAVIER
+Acotación: desde la pasarela, cuando entra el último toro
+Emoción: euforia
+Intención: celebrar
+Ritmo: rápido, alto
+Pausas: ninguna
+FX / procesado: exterior, corrales, distancia media
+Texto: ¡Ole! ¡Ole tú, ganadero!
+------------------------------------------------------------------------
+[003] C06_E001_L015
+Escena: C06_E001 · EMBARQUE
+Personaje: JAVIER
+Acotación: bajando de la pasarela, sudando
+Emoción: energía
+Intención: poner en marcha
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior
+Texto: ¡Venga, que hay sesenta kilómetros y yo tengo que correr mañana! ¡Y antes, cenar!
+------------------------------------------------------------------------
+[004] C06_E002_L002
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Emoción: voluntad
+Intención: ayudar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior
+Texto: ¿Les echamos agua?
+------------------------------------------------------------------------
+[005] C06_E002_L014
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Emoción: curiosidad respetuosa
+Intención: conversar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Manuel, ¿usted cuántos encierros ha llevado?
+------------------------------------------------------------------------
+[006] C06_E002_L016
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Emoción: alegría
+Intención: aceptar la confianza
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Vale. ¿Y tú cuántos has corrido, Manuel?
+------------------------------------------------------------------------
+[007] C06_E002_L018
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Emoción: diversión
+Intención: devolverla
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Mi madre dice lo mismo. Pero en sevillano, que suena peor.
+------------------------------------------------------------------------
+[008] C06_E002_L020
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Emoción: herida con chiste
+Intención: no dramatizar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Se fue a por tabaco. [short pause] Hace veintidós años. Debe de fumar mucho.
+------------------------------------------------------------------------
+[009] C06_E002_L022
+Escena: C06_E002 · TREINTA Y CUATRO GRADOS
+Personaje: JAVIER
+Acotación: bajo
+Emoción: emoción sincera
+Intención: agradecer
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Gracias, Manuel.
+------------------------------------------------------------------------
+[010] C06_E003_L015
+Escena: C06_E003 · EL ENCIERRO
+Personaje: JAVIER
+Emoción: euforia
+Intención: presumir
+Ritmo: rápido, alto
+Pausas: ninguna
+FX / procesado: exterior, plaza, multitud
+Texto: ¡Illo! ¿Me has visto? ¡Iba con el cárdeno así, así, a un palmo! ¡A un palmo!
+------------------------------------------------------------------------
+[011] C06_E004_L012
+Escena: C06_E004 · LA HOGUERA
+Personaje: JAVIER
+Acotación: gritando, desde lejos
+Emoción: alegría escandalosa
+Intención: celebrarles
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena, distancia
+Texto: ¡Eso! ¡Eso es un deseo bien pedido!
+------------------------------------------------------------------------

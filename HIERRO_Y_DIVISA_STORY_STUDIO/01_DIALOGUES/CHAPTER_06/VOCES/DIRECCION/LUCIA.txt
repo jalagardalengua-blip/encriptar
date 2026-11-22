@@ -1,0 +1,107 @@
+HIERRO Y DIVISA · CAPÍTULO 06 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 10
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C06_E003_L012
+Escena: C06_E003 · EL ENCIERRO
+Personaje: LUCÍA
+Emoción: profesionalidad alegre
+Intención: informar con gracia
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, plaza
+Texto: Los cuatro perfectos. Ni una raspadura. [short pause] Y el mozo, un esguince y mucho cuento.
+------------------------------------------------------------------------
+[002] C06_E003_L014
+Escena: C06_E003 · EL ENCIERRO
+Personaje: LUCÍA
+Emoción: ternura disimulada
+Intención: elogiarle sin regalarle
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, plaza
+Texto: Tú estás hecho un asco. [short pause] Pero has cabalgado bien.
+------------------------------------------------------------------------
+[003] C06_E004_L001
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: picardía
+Intención: provocarle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: ¿No la saltas?
+------------------------------------------------------------------------
+[004] C06_E004_L003
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: juego
+Intención: insistir
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior, noche, verbena
+Texto: Hay que pedir un deseo. Es obligatorio.
+------------------------------------------------------------------------
+[005] C06_E004_L005
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: humor
+Intención: no contestar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, noche, verbena
+Texto: Si lo digo, no se cumple. [short pause] Es veterinaria básica.
+------------------------------------------------------------------------
+[006] C06_E004_L007
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: espera
+Intención: que termine la frase
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: ¿Y?
+------------------------------------------------------------------------
+[007] C06_E004_L009
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: decisión tierna
+Intención: decirle que ahora sí
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: exterior, noche, verbena
+Texto: Esta vez no hay toro muerto. [short pause] Ni padre.
+------------------------------------------------------------------------
+[008] C06_E004_L011
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: deseo
+Intención: dar el paso
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: Pues ahora sí.
+------------------------------------------------------------------------
+[009] C06_E004_L013
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Acotación: sin apartar la mano de la cara
+Emoción: vergüenza divertida
+Intención: amenazar en broma
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, noche, verbena
+Texto: Le voy a poner una inyección a ese.
+------------------------------------------------------------------------
+[010] C06_E004_L015
+Escena: C06_E004 · LA HOGUERA
+Personaje: LUCÍA
+Emoción: alegría
+Intención: llevarle
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior, noche, verbena
+Texto: Venga. Salta. Que ahora ya sabes qué pedir.
+------------------------------------------------------------------------
