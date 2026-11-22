@@ -1,0 +1,109 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · LERMA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 10
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LERMA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E001_L001
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: campechanía calculada
+Intención: abrir con halago
+Ritmo: lento, ronco
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Bonita corrida, Galván. Seria. [short pause] El cincuenta y dos era el más bonito, para mi gusto. Pero los veterinarios de aquí son muy de capital.
+------------------------------------------------------------------------
+[002] C07_E001_L003
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: simpatía
+Intención: ganarse la confianza
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Paco Lerma. Treinta y cinco años en esto. [short pause] Le apodero porque me recuerda a mí de joven. Que yo también quise ser torero, ¿eh? Hasta que vi el primero de cerca.
+------------------------------------------------------------------------
+[003] C07_E001_L004
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: confidencia
+Intención: preparar la propuesta
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Mira, te voy a hablar como le hablaba a tu padre, que nos conocíamos de muchas ferias. [short pause] El chico mío es valiente. Demasiado. Y mañana se juega mucho: si corta, le llaman de Salamanca.
+------------------------------------------------------------------------
+[004] C07_E001_L006
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: naturalidad de quien lo ha hecho mil veces
+Intención: proponer el fraude
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Y que esos pitones son muy serios. [short pause] Dos centímetros, Galván. Al que le toque a mi chico. Lo hace un hombre que conozco esta noche, en el cajón, y mañana nadie lo ve.
+------------------------------------------------------------------------
+[005] C07_E001_L008
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: cinismo amable
+Intención: normalizar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: «Arreglarlo». Afeitar es una palabra muy fea. [short pause] Y no me mires así, que esto lo hace media España.
+------------------------------------------------------------------------
+[006] C07_E001_L010
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: paternalismo
+Intención: dejar claro que es cosa de adultos
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Javier no sabe ni lo que come. Javier torea. [short pause] De estas cosas me ocupo yo. Para eso estoy.
+------------------------------------------------------------------------
+[007] C07_E001_L011
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Emoción: presión suave
+Intención: cerrar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Y para ti también es bueno: si mi chico corta, se habla de tus toros. [short pause] Piénsalo un minuto. No más, que el hombre tiene que saberlo hoy.
+------------------------------------------------------------------------
+[008] C07_E001_L013
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Rama de elección: A
+Emoción: satisfacción
+Intención: sellar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Aquí nadie se entera de nada, chaval. [short pause] Por eso seguimos todos vivos.
+------------------------------------------------------------------------
+[009] C07_E001_L015
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: LERMA
+Rama de elección: B
+Emoción: desprecio con algo de respeto
+Intención: herir
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Eres como tu padre. [short pause] Que tampoco ganó nunca un duro.
+------------------------------------------------------------------------
+[010] C07_E002_L004
+Escena: C07_E002 · EL SORTEO
+Personaje: LERMA
+Acotación: dando palmadas
+Emoción: optimismo de oficio
+Intención: animar
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: exterior, pasarela
+Texto: Buen lote, buen lote. Mañana, a hombros.
+------------------------------------------------------------------------

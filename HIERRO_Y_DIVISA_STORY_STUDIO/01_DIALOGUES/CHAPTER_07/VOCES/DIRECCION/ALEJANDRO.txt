@@ -1,0 +1,209 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 20
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E001_L002
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: cautela
+Intención: situarle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Usted es el apoderado de Javier.
+------------------------------------------------------------------------
+[002] C07_E001_L005
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: desconfianza
+Intención: que lo diga
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Y?
+------------------------------------------------------------------------
+[003] C07_E001_L007
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: incredulidad
+Intención: nombrarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Afeitarlo.
+------------------------------------------------------------------------
+[004] C07_E001_L009
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: preocupación
+Intención: saber hasta dónde
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, corrales, voz baja
+Texto: ¿Javier lo sabe?
+------------------------------------------------------------------------
+[005] C07_E001_L012
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Rama de elección: A
+Emoción: ambición culpable
+Intención: aceptar
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: exterior, corrales, voz baja
+Texto: Hágalo. [short pause] Y que no se entere nadie.
+------------------------------------------------------------------------
+[006] C07_E001_L014
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: firmeza
+Intención: rechazar y advertir
+Ritmo: lento, firme
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Ni un milímetro. [short pause] Y si alguien toca un toro mío esta noche, le denuncio yo mismo.
+------------------------------------------------------------------------
+[007] C07_E001_L016
+Escena: C07_E001 · DOS CENTÍMETROS
+Personaje: ALEJANDRO
+Rama de elección: B
+Emoción: orgullo
+Intención: tener la última palabra
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Pero dormía.
+------------------------------------------------------------------------
+[008] C07_E002_L002
+Escena: C07_E002 · EL SORTEO
+Personaje: ALEJANDRO
+Emoción: orgullo
+Intención: presentarle el toro
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior, pasarela
+Texto: El cárdeno claro del rincón. Farolero. Hijo de Campanero.
+------------------------------------------------------------------------
+[009] C07_E002_L006
+Escena: C07_E002 · EL SORTEO
+Personaje: ALEJANDRO
+Emoción: alerta
+Intención: saber
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: ¿Qué?
+------------------------------------------------------------------------
+[010] C07_E002_L008
+Escena: C07_E002 · EL SORTEO
+Personaje: ALEJANDRO
+Emoción: miedo disimulado
+Intención: la respuesta
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: ¿Y?
+------------------------------------------------------------------------
+[011] C07_E002_L010
+Escena: C07_E002 · EL SORTEO
+Personaje: ALEJANDRO
+Emoción: gratitud que no sabe decir
+Intención: medir lo que ha hecho
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: El triple.
+------------------------------------------------------------------------
+[012] C07_E002_L014
+Escena: C07_E002 · EL SORTEO
+Personaje: ALEJANDRO
+Emoción: emoción sincera
+Intención: agradecer de verdad
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: Gracias, Javier.
+------------------------------------------------------------------------
+[013] C07_E003_L002
+Escena: C07_E003 · EL CUARTO
+Personaje: ALEJANDRO
+Emoción: ansiedad y esperanza
+Intención: confirmación
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Manuel. [short pause] Es bueno, ¿verdad? Dime que es bueno.
+------------------------------------------------------------------------
+[014] C07_E003_L006
+Escena: C07_E003 · EL CUARTO
+Personaje: ALEJANDRO
+Emoción: desconcierto eufórico
+Intención: entender
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, plaza, callejón, ovación
+Texto: ¿Qué es el azul? ¿Qué es el azul, Manuel?
+------------------------------------------------------------------------
+[015] C07_E004_L003
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: gratitud agotada
+Intención: agradecer
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: Gracias, Carmen.
+------------------------------------------------------------------------
+[016] C07_E004_L008
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: rabia contenida
+Intención: desafiar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: ¿Has venido a eso?
+------------------------------------------------------------------------
+[017] C07_E004_L012
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: soberbia nueva
+Intención: imponerse
+Ritmo: firme
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: El cuarenta y cuatro va a ir. Lo he visto yo.
+------------------------------------------------------------------------
+[018] C07_E004_L014
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: euforia convertida en orgullo
+Intención: marcar territorio
+Ritmo: normal, sube
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Y hoy he elegido yo el orden, y ha salido bien. [short pause] Manuel, te lo agradezco todo. De verdad. Pero esto ahora lo llevo yo.
+------------------------------------------------------------------------
+[019] C07_E004_L016
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: soberbia
+Intención: zanjar
+Ritmo: lento, firme
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: Aquí ahora mando yo.
+------------------------------------------------------------------------
+[020] C07_E004_L018
+Escena: C07_E004 · MANDAR
+Personaje: ALEJANDRO
+Emoción: desafío
+Intención: no ceder
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: ¿Y qué te contestó?
+------------------------------------------------------------------------

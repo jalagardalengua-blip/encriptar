@@ -1,0 +1,56 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · CARMEN
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 5
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/CARMEN.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E004_L001
+Escena: C07_E004 · MANDAR
+Personaje: CARMEN
+Emoción: satisfacción profesional
+Intención: dar el veredicto
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, patio, walla
+Texto: Vamos a ver. Dos toros buenos, uno de ellos de vuelta al ruedo. Dos que se dejaron. Y dos de misa de doce. [short pause] Para ser la primera, me vale.
+------------------------------------------------------------------------
+[002] C07_E004_L002
+Escena: C07_E004 · MANDAR
+Personaje: CARMEN
+Emoción: generosidad cumplida
+Intención: cerrar el trato
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Lo de hoy. Y el lunes que viene te hago la transferencia del adelanto de septiembre. Treinta y cinco mil. [short pause] Septiembre es tuyo, Alejandro.
+------------------------------------------------------------------------
+[003] C07_E004_L004
+Escena: C07_E004 · MANDAR
+Personaje: CARMEN
+Emoción: cariño
+Intención: darle a su padre
+Ritmo: normal, se suaviza
+Pausas: la marcada y una suspensión
+FX / procesado: exterior, patio
+Texto: No me des las gracias, que te lo has ganado. [short pause] Y tu padre estaría… bueno. Tu padre no habría dicho nada, que era muy suyo. Pero se habría quedado toda la noche en la barra.
+------------------------------------------------------------------------
+[004] C07_E004_L006
+Escena: C07_E004 · MANDAR
+Personaje: CARMEN
+Emoción: ironía fría
+Intención: marcarle
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior, patio
+Texto: Ricardo. No sabía que te gustaban las plazas de tercera.
+------------------------------------------------------------------------
+[005] C07_E004_L010
+Escena: C07_E004 · MANDAR
+Personaje: CARMEN
+Emoción: complicidad
+Intención: animarle con la verdad
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: No le hagas caso. Viene porque le has hecho daño. [short pause] Un ganadero no se molesta en venir a una plaza de tercera para nada.
+------------------------------------------------------------------------

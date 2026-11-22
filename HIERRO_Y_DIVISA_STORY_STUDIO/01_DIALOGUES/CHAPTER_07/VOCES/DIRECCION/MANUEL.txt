@@ -1,0 +1,98 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 9
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E003_L001
+Escena: C07_E003 · EL CUARTO
+Personaje: MANUEL
+Acotación: bajo, sin quitarle ojo
+Emoción: emoción contenida
+Intención: compartir
+Ritmo: lento, bajo
+Pausas: breve entre frases
+FX / procesado: exterior, plaza, callejón
+Texto: Mira cómo mira. Igual que su padre.
+------------------------------------------------------------------------
+[002] C07_E003_L003
+Escena: C07_E003 · EL CUARTO
+Personaje: MANUEL
+Emoción: devoción
+Intención: que lo viva
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, plaza, callejón
+Texto: Calla y mira. Que esto no se repite.
+------------------------------------------------------------------------
+[003] C07_E003_L005
+Escena: C07_E003 · EL CUARTO
+Personaje: MANUEL
+Acotación: sin voz casi, emocionado
+Emoción: emoción desbordada
+Intención: hablarle al muerto
+Ritmo: muy lento, casi inaudible
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón, voz muy baja
+Texto: Ernesto… [short pause] Mira lo que has hecho.
+------------------------------------------------------------------------
+[004] C07_E003_L007
+Escena: C07_E003 · EL CUARTO
+Personaje: MANUEL
+Emoción: orgullo inmenso
+Intención: decirle lo que significa
+Ritmo: lento, se quiebra
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón, ovación
+Texto: Vuelta al ruedo. [short pause] Al toro. Le dan la vuelta al toro.
+------------------------------------------------------------------------
+[005] C07_E004_L011
+Escena: C07_E004 · MANDAR
+Personaje: MANUEL
+Emoción: oficio, prudencia
+Intención: aconsejar con la cabeza fría
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Para septiembre, los seis del Regato no. [short pause] El cuarenta y cuatro y el cincuenta y siete se paran. Hay que meter dos del lote de abajo.
+------------------------------------------------------------------------
+[006] C07_E004_L013
+Escena: C07_E004 · MANDAR
+Personaje: MANUEL
+Emoción: paciencia que se gasta
+Intención: corregirle
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, patio
+Texto: Lo has visto una tarde. Yo le llevo viendo cuatro años.
+------------------------------------------------------------------------
+[007] C07_E004_L015
+Escena: C07_E004 · MANDAR
+Personaje: MANUEL
+Emoción: herida
+Intención: darle una oportunidad de retirarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: ¿Lo llevas tú?
+------------------------------------------------------------------------
+[008] C07_E004_L017
+Escena: C07_E004 · MANDAR
+Personaje: MANUEL
+Emoción: dolor digno
+Intención: dejarle la frase y no pelear
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Mandar no es lo mismo que saber. [short pause] Eso también se lo dije a tu padre una vez.
+------------------------------------------------------------------------
+[009] C07_E004_L019
+Escena: C07_E004 · MANDAR
+Personaje: MANUEL
+Emoción: tristeza
+Intención: cerrar
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: exterior, patio
+Texto: Lo mismo que tú.
+------------------------------------------------------------------------

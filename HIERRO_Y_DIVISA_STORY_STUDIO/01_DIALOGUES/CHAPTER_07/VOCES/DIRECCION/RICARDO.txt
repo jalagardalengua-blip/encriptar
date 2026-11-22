@@ -1,0 +1,36 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · RICARDO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 3
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/RICARDO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E004_L005
+Escena: C07_E004 · MANDAR
+Personaje: RICARDO
+Emoción: cortesía perfecta
+Intención: estar presente en la victoria ajena
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Enhorabuena. [short pause] El cuarto ha sido un toro muy serio. Carmen, qué gusto.
+------------------------------------------------------------------------
+[002] C07_E004_L007
+Escena: C07_E004 · MANDAR
+Personaje: RICARDO
+Emoción: veneno elegante
+Intención: robarle el mérito
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: Me gustan los toros buenos, estén donde estén. [short pause] Alejandro, un consejo, y te lo digo con todo el cariño: lo que ha embestido hoy es la sangre de tu padre. Lo que no ha embestido es tu manejo.
+------------------------------------------------------------------------
+[003] C07_E004_L009
+Escena: C07_E004 · MANDAR
+Personaje: RICARDO
+Emoción: elegancia
+Intención: irse ganando
+Ritmo: pausado
+Pausas: la marcada
+FX / procesado: exterior, patio
+Texto: He venido a felicitarte. Lo otro es gratis. [short pause] Buenas noches.
+------------------------------------------------------------------------

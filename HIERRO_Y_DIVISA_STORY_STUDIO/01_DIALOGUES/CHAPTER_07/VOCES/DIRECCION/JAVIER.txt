@@ -1,0 +1,122 @@
+HIERRO Y DIVISA · CAPÍTULO 07 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 11
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C07_E002_L001
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: nervios alegres
+Intención: saber qué le ha tocado
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: Catorce y treinta y nueve. [short pause] ¿Cuál es el catorce?
+------------------------------------------------------------------------
+[002] C07_E002_L003
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: respeto y miedo con humor
+Intención: decir lo que ve
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: Illo. [short pause] Ese tiene cara de saber latín.
+------------------------------------------------------------------------
+[003] C07_E002_L005
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: incomodidad
+Intención: ser leal
+Ritmo: normal
+Pausas: breve tras «Oye»
+FX / procesado: exterior, pasarela
+Texto: Oye. Te tengo que contar una cosa, que me la estoy guardando desde el martes.
+------------------------------------------------------------------------
+[004] C07_E002_L007
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: honestidad tensa
+Intención: contarlo todo
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: Me llamó Valcárcel. Para septiembre. Su corrida de Los Arenales va el día antes que la tuya en la feria. [short pause] Me ofreció el triple de lo que cobro mañana.
+------------------------------------------------------------------------
+[005] C07_E002_L009
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: lealtad orgullosa
+Intención: cumplir lo que dijo en la tienta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: Y le dije que no. [short pause] Que ya me había llamado otro antes.
+------------------------------------------------------------------------
+[006] C07_E002_L011
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: guasa para salir del momento
+Intención: quitar hierro
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: El triple. [short pause] Así que mañana, como ese toro no embista, te cobro la diferencia.
+------------------------------------------------------------------------
+[007] C07_E002_L012
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Acotación: si en C03_E003 Alejandro no bajó al ruedo
+Rama de elección: C03-B
+Emoción: pique cariñoso
+Intención: recordarle
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: Y eso que no bajaste a la placita, cobarde.
+------------------------------------------------------------------------
+[008] C07_E002_L013
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Acotación: si en C03_E003 bajó
+Rama de elección: C03-A
+Emoción: complicidad
+Intención: recordar la tienta
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, pasarela
+Texto: Que tú y yo ya hemos comido arena juntos.
+------------------------------------------------------------------------
+[009] C07_E002_L015
+Escena: C07_E002 · EL SORTEO
+Personaje: JAVIER
+Emoción: valentía con miedo debajo
+Intención: emplazarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, pasarela
+Texto: No me las des. [short pause] Dámelas mañana a las ocho, cuando salga el catorce.
+------------------------------------------------------------------------
+[010] C07_E003_L004
+Escena: C07_E003 · EL CUARTO
+Personaje: JAVIER
+Acotación: brindis
+Emoción: solemnidad verdadera
+Intención: brindar
+Ritmo: lento, firme, voz que llega al tendido
+Pausas: la marcada
+FX / procesado: exterior, plaza, sin público (silencio)
+Texto: Este toro va por tu padre, que lo crio. [short pause] Y por ti, que todavía no sabes lo que tienes.
+------------------------------------------------------------------------
+[011] C07_E003_L008
+Escena: C07_E003 · EL CUARTO
+Personaje: JAVIER
+Acotación: gritando por encima de la ovación
+Emoción: euforia total
+Intención: compartir el triunfo
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: exterior, plaza, ovación
+Texto: ¡Esto es tuyo, illo! ¡Tuyo!
+------------------------------------------------------------------------
