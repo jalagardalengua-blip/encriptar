@@ -127,7 +127,7 @@ Identidades fijas. No se cambian edad, aspecto, relaciones ni rasgos vocales sin
 
 | Campo | Valor |
 |---|---|
-| Edad | 64 al morir (5–6 de marzo). En flashbacks: 45 (cintas de vídeo, C05) y 63 (flashback jugable, C09). |
+| Edad | 64 al morir (5–6 de marzo). En cintas de vídeo: 41 (C05). En el flashback jugable: 64 (C09, noche del 5 de marzo). |
 | Muerte | Madrugada del jueves 6 de marzo, cercado de Lucero. Lesiones compatibles con una caída y un golpe del toro. Lo encuentra Manuel a las 6:40. |
 | Presencia | Grabaciones de voz (notas de campo dictadas a una grabadora digital), cintas de vídeo antiguas, fotografías, el recuerdo de los demás y un flashback jugable. |
 

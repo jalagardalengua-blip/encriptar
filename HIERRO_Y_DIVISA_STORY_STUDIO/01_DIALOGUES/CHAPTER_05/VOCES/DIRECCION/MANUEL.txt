@@ -1,0 +1,229 @@
+HIERRO Y DIVISA · CAPÍTULO 05 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 22
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C05_E001_L001
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: costumbre
+Intención: avisar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: Cuidado con la tercera viga, que está podrida desde que tú ibas en pañales.
+------------------------------------------------------------------------
+[002] C05_E001_L003
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: lógica de campo
+Intención: zanjar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, desván
+Texto: No se ha caído en veinte años. [short pause] Eso es una viga buena.
+------------------------------------------------------------------------
+[003] C05_E001_L005
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: emoción repentina, contenida
+Intención: decirlo sin más
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: Eso lo grabó tu madre.
+------------------------------------------------------------------------
+[004] C05_E001_L007
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: pena antigua
+Intención: explicar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, desván
+Texto: Tu padre los subió aquí cuando ella murió. [short pause] Dijo que no los quería ver. Y no los vio.
+------------------------------------------------------------------------
+[005] C05_E001_L009
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: ternura que le pilla por sorpresa
+Intención: contar algo que nunca ha contado
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, desván
+Texto: La misma. Tu madre la crio a biberón porque su madre no la quería. [short pause] Cuando la Paloma parió a Moro, tu padre me lo regaló a mí. Dijo que tu madre lo habría querido así. Que yo le hacía falta a alguien.
+------------------------------------------------------------------------
+[006] C05_E001_L011
+Escena: C05_E001 · EL DESVÁN
+Personaje: MANUEL
+Emoción: humor seco que le salva
+Intención: recuperar el control
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, desván
+Texto: Debajo de esa sábana. [short pause] Si funciona, es un milagro. Y en esta casa milagros, pocos.
+------------------------------------------------------------------------
+[007] C05_E002_L004
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: MANUEL
+Acotación: en la cinta, 38 años
+Emoción: guasa joven
+Intención: cumplir la orden
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: cinta VHS, exterior
+Texto: Trae p'acá, que vas a marcar al chico.
+------------------------------------------------------------------------
+[008] C05_E002_L011
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: MANUEL
+Emoción: nostalgia honda
+Intención: darle algo de su madre
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, salón
+Texto: Se reía así. Por todo. [short pause] Tu padre era otro hombre cuando ella estaba.
+------------------------------------------------------------------------
+[009] C05_E002_L013
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: MANUEL
+Emoción: pena
+Intención: explicarle a su padre
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, salón
+Texto: Se reía. [short pause] Cuando ella murió, dejó de reírse. Y lo que no sabía decir con risa, ya no lo supo decir de ninguna manera.
+------------------------------------------------------------------------
+[010] C05_E002_L015
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: MANUEL
+Emoción: dolor sereno
+Intención: decir la verdad
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: interior, salón
+Texto: Desde ese día. [short pause] Ella me dejó en medio. Y nunca me supe salir.
+------------------------------------------------------------------------
+[011] C05_E003_L002
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: nerviosismo contenido
+Intención: justificarse
+Ritmo: demasiado rápido para él
+Pausas: la marcada
+FX / procesado: interior
+Texto: Buenos días. [short pause] Buscaba las llaves del remolque.
+------------------------------------------------------------------------
+[012] C05_E003_L004
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: evasión
+Intención: salir del paso
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Tu padre guardaba ahí cosas de todo tipo.
+------------------------------------------------------------------------
+[013] C05_E003_L006
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: orgullo herido
+Intención: marcar su lugar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Y yo sé dónde estaba la llave.
+------------------------------------------------------------------------
+[014] C05_E003_L008
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: mentira
+Intención: cerrar el tema
+Ritmo: lento, uniforme
+Pausas: la marcada
+FX / procesado: interior
+Texto: Papeles de la mutua. Del seguro del tractor. [short pause] Los necesito para el remolque.
+------------------------------------------------------------------------
+[015] C05_E003_L010
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: duda
+Intención: casi contarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Alejandro.
+------------------------------------------------------------------------
+[016] C05_E003_L012
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: MANUEL
+Emoción: retirada
+Intención: no decir lo que iba a decir
+Ritmo: lento
+Pausas: 2 s antes (en montaje)
+FX / procesado: interior
+Texto: La libreta está en la repisa de la chimenea. La dejaste ahí el sábado.
+------------------------------------------------------------------------
+[017] C05_E004_L004
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Emoción: recuerdo íntimo
+Intención: despedirle contándolo
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Le vi nacer. [short pause] Ahí, en esa ladera. Era una noche como esta. La vaca le dejó solo y tu padre y yo le estuvimos frotando con paja hasta que se levantó.
+------------------------------------------------------------------------
+[018] C05_E004_L005
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Emoción: orgullo triste
+Intención: honrar a Ernesto y al toro
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Tu padre dijo: «Este va a ser semental». Y yo le dije que estaba loco, que era el más canijo de la camada. [short pause] Y mira.
+------------------------------------------------------------------------
+[019] C05_E004_L007
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Emoción: humildad dolida
+Intención: devolverle la decisión
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Lo que diga el dueño.
+------------------------------------------------------------------------
+[020] C05_E004_L010
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Acotación: al toro, casi un susurro
+Emoción: despedida
+Intención: hablarle al toro
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: exterior, noche, voz muy baja
+Texto: Hala, Campanero. [short pause] Dale recuerdos.
+------------------------------------------------------------------------
+[021] C05_E004_L012
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Emoción: emoción a punto de romper
+Intención: no decirlo en voz alta
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Tú ya lo sabes.
+------------------------------------------------------------------------
+[022] C05_E004_L013
+Escena: C05_E004 · CAMPANERO
+Personaje: MANUEL
+Acotación: de espaldas
+Emoción: recomposición
+Intención: volver a lo práctico para no romperse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche, alejándose
+Texto: Mañana llamo al camión. [short pause] Esta noche, que se quede aquí, al lado de su charca.
+------------------------------------------------------------------------

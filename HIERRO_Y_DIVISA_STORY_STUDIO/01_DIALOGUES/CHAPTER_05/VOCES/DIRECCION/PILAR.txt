@@ -1,0 +1,61 @@
+HIERRO Y DIVISA · CAPÍTULO 05 · PILAR
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 5
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/PILAR.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C05_E002_L001
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: PILAR
+Acotación: en la cinta, detrás de la cámara
+Emoción: alarma risueña
+Intención: regañar riéndose
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: cinta VHS, exterior, distancia
+Texto: ¡Ernesto! ¡Que tienes al niño en brazos y un hierro al rojo en la otra mano!
+------------------------------------------------------------------------
+[002] C05_E002_L003
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: PILAR
+Acotación: en la cinta
+Emoción: mando cariñoso
+Intención: organizar el caos
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: cinta VHS, exterior
+Texto: Lo que tiene que ver es una siesta. ¡Manuel, quítale el hierro, que yo no puedo, que estoy grabando!
+------------------------------------------------------------------------
+[003] C05_E002_L006
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: PILAR
+Acotación: en la cinta, riéndose
+Emoción: ternura burlona
+Intención: bajarle de la nube
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: cinta VHS, cerca
+Texto: Ernesto, que tiene seis meses.
+------------------------------------------------------------------------
+[004] C05_E002_L008
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: PILAR
+Acotación: en la cinta
+Emoción: risa
+Intención: ganarle
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: cinta VHS, cerca
+Texto: Tú a los seis meses no sabías ni dónde tenías los pies. Me lo ha contado tu madre.
+------------------------------------------------------------------------
+[005] C05_E002_L009
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: PILAR
+Acotación: en la cinta, a cámara
+Emoción: humor luminoso
+Intención: dejar testimonio
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: cinta VHS, muy cerca
+Texto: Para que conste. Este es el día que mi marido quiso herrar a mi hijo.
+------------------------------------------------------------------------

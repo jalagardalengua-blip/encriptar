@@ -1,0 +1,117 @@
+HIERRO Y DIVISA · CAPÍTULO 05 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 11
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C05_E004_L001
+Escena: C05_E004 · CAMPANERO
+Personaje: LUCÍA
+Emoción: delicadeza profesional
+Intención: dar el diagnóstico sin rodeos y con cuidado
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Tiene el corazón muy cansado, Manuel. Y no le entra aire en el pulmón derecho. [short pause] Puedo ponerle algo para que aguante hasta mañana. Pero va a sufrir.
+------------------------------------------------------------------------
+[002] C05_E004_L003
+Escena: C05_E004 · CAMPANERO
+Personaje: LUCÍA
+Emoción: honestidad tierna
+Intención: que lo entienda
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: No va a aguantar. [short pause] Tiene quince años, Alejandro. Para un toro, eso es más que cien.
+------------------------------------------------------------------------
+[003] C05_E004_L009
+Escena: C05_E004 · CAMPANERO
+Personaje: LUCÍA
+Acotación: antes de inyectar, bajo
+Emoción: ternura profesional
+Intención: tranquilizar a Manuel
+Ritmo: lento, bajo
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: Primero le duermo. No se va a enterar de nada.
+------------------------------------------------------------------------
+[004] C05_E005_L001
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: cansancio sincero
+Intención: desahogarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Nunca me acostumbro. [short pause] Dicen que con los años te acostumbras. Mentira.
+------------------------------------------------------------------------
+[005] C05_E005_L003
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: humildad
+Intención: devolver el mérito
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: exterior, noche
+Texto: Lo ha hecho bien Manuel. Yo solo he puesto la aguja.
+------------------------------------------------------------------------
+[006] C05_E005_L006
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: cuidado
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Cómo lo sabes?
+------------------------------------------------------------------------
+[007] C05_E005_L008
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: ternura irónica
+Intención: entenderle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Desde Peñacorva.
+------------------------------------------------------------------------
+[008] C05_E005_L010
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: comprensión honda
+Intención: darle algo verdadero
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Porque llegar ya era mucho. [short pause] Algunas personas solo pueden hacer la mitad de las cosas. La otra mitad la tienen que hacer los demás.
+------------------------------------------------------------------------
+[009] C05_E005_L011
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: deseo frenado
+Intención: parar
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche, voz baja
+Texto: Ahora no.
+------------------------------------------------------------------------
+[010] C05_E005_L013
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: claridad tierna
+Intención: proteger lo que puede haber
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, noche, voz baja
+Texto: Porque acabamos de matar a un toro y tú estás hablando de tu padre. [short pause] Así no. No quiero ser lo que te consuela esta noche.
+------------------------------------------------------------------------
+[011] C05_E005_L015
+Escena: C05_E005 · ASÍ NO
+Personaje: LUCÍA
+Emoción: ternura con guasa
+Intención: dejarle la puerta abierta
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Ahora no no es nunca, ¿eh? [short pause] Que tampoco eres tan listo.
+------------------------------------------------------------------------

@@ -1,0 +1,258 @@
+HIERRO Y DIVISA · CAPÍTULO 05 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 25
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C05_E001_L002
+Escena: C05_E001 · EL DESVÁN
+Personaje: ALEJANDRO
+Emoción: incredulidad divertida
+Intención: pinchar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: ¿Y no la habéis cambiado en veinte años?
+------------------------------------------------------------------------
+[002] C05_E001_L004
+Escena: C05_E001 · EL DESVÁN
+Personaje: ALEJANDRO
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: ¿Esto qué es?
+------------------------------------------------------------------------
+[003] C05_E001_L006
+Escena: C05_E001 · EL DESVÁN
+Personaje: ALEJANDRO
+Emoción: asombro
+Intención: constatar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: No sabía que hubiera vídeos.
+------------------------------------------------------------------------
+[004] C05_E001_L008
+Escena: C05_E001 · EL DESVÁN
+Personaje: ALEJANDRO
+Emoción: sorpresa
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: ¿La Paloma? ¿La madre de Moro?
+------------------------------------------------------------------------
+[005] C05_E001_L010
+Escena: C05_E001 · EL DESVÁN
+Personaje: ALEJANDRO
+Emoción: urgencia
+Intención: actuar
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior, desván
+Texto: ¿Hay vídeo para ver esto?
+------------------------------------------------------------------------
+[006] C05_E002_L010
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: ALEJANDRO
+Acotación: sin volverse
+Emoción: dolor y asombro
+Intención: confesar
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior, salón
+Texto: No me acordaba de su voz.
+------------------------------------------------------------------------
+[007] C05_E002_L012
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, salón
+Texto: ¿Otro cómo?
+------------------------------------------------------------------------
+[008] C05_E002_L014
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: ALEJANDRO
+Emoción: comprensión
+Intención: entender el pasado
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, salón
+Texto: Me dijiste que tú estabas en medio.
+------------------------------------------------------------------------
+[009] C05_E003_L001
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: sorpresa neutra
+Intención: saludar y observar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: Buenos días.
+------------------------------------------------------------------------
+[010] C05_E003_L003
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: sospecha suave
+Intención: pillarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿En el cajón de abajo?
+------------------------------------------------------------------------
+[011] C05_E003_L005
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: firmeza
+Intención: acorralarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Ese cajón tenía llave.
+------------------------------------------------------------------------
+[012] C05_E003_L007
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: directa
+Intención: preguntar sin rodeos
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué es eso?
+------------------------------------------------------------------------
+[013] C05_E003_L009
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: decepción fría
+Intención: no pelear hoy
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Vale.
+------------------------------------------------------------------------
+[014] C05_E003_L011
+Escena: C05_E003 · PAPELES DE LA MUTUA
+Personaje: ALEJANDRO
+Emoción: espera
+Intención: dejarle hablar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué?
+------------------------------------------------------------------------
+[015] C05_E004_L002
+Escena: C05_E004 · CAMPANERO
+Personaje: ALEJANDRO
+Emoción: esperanza ingenua
+Intención: buscar otra salida
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Y si aguanta?
+------------------------------------------------------------------------
+[016] C05_E004_L006
+Escena: C05_E004 · CAMPANERO
+Personaje: ALEJANDRO
+Emoción: respeto
+Intención: dejarle decidir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿Qué hacemos, Manuel?
+------------------------------------------------------------------------
+[017] C05_E004_L008
+Escena: C05_E004 · CAMPANERO
+Personaje: ALEJANDRO
+Emoción: dolor y responsabilidad
+Intención: decidir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Que no sufra.
+------------------------------------------------------------------------
+[018] C05_E004_L011
+Escena: C05_E004 · CAMPANERO
+Personaje: ALEJANDRO
+Acotación: después de un rato
+Emoción: ternura
+Intención: acompañarle
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: ¿A quién le tiene que dar recuerdos?
+------------------------------------------------------------------------
+[019] C05_E005_L002
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: gratitud
+Intención: reconocerla
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Lo has hecho bien.
+------------------------------------------------------------------------
+[020] C05_E005_L004
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: necesidad de contarlo
+Intención: confiar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Mi padre fue a Madrid en noviembre.
+------------------------------------------------------------------------
+[021] C05_E005_L005
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: dolor que por fin sale
+Intención: decirlo en voz alta por primera vez
+Ritmo: lento, entrecortado
+Pausas: breves y la marcada
+FX / procesado: exterior, noche
+Texto: A mi piso. Estuvo en el portal. Preguntó por mí. [short pause] No subió.
+------------------------------------------------------------------------
+[022] C05_E005_L007
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: amargura
+Intención: completar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Me lo contó mi compañero de piso. Hace tres semanas. Mi padre le pidió que no me dijera nada. [short pause] Que pasaba por allí.
+------------------------------------------------------------------------
+[023] C05_E005_L009
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: incomprensión desesperada
+Intención: pedirle una respuesta
+Ritmo: normal, se acelera
+Pausas: la marcada
+FX / procesado: exterior, noche
+Texto: Desde Peñacorva. [short pause] ¿Por qué hace alguien eso? Coger un tren, cruzar Madrid, llegar al portal y darse la vuelta.
+------------------------------------------------------------------------
+[024] C05_E005_L012
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: desconcierto herido
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche, voz baja
+Texto: ¿Por qué?
+------------------------------------------------------------------------
+[025] C05_E005_L014
+Escena: C05_E005 · ASÍ NO
+Personaje: ALEJANDRO
+Emoción: aceptación
+Intención: respetarla
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, noche
+Texto: Vale.
+------------------------------------------------------------------------

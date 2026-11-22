@@ -1,0 +1,39 @@
+HIERRO Y DIVISA · CAPÍTULO 05 · DON ERNESTO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 3
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/DON_ERNESTO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C05_E002_L002
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: DON ERNESTO
+Acotación: en la cinta, 41 años
+Emoción: orgullo juvenil
+Intención: defenderse con gracia
+Ritmo: normal, más ágil que en las grabaciones de marzo
+Pausas: tras «mujer»
+FX / procesado: cinta VHS, exterior
+Texto: Que lo vea desde pequeño, mujer. [laughs] Así no se asusta luego.
+------------------------------------------------------------------------
+[002] C05_E002_L005
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: DON ERNESTO
+Acotación: en la cinta, al bebé, en voz más baja
+Emoción: solemnidad tierna
+Intención: hablarle a su hijo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: cinta VHS, cerca del micrófono de cámara
+Texto: Mira, chaval. Esto es el hierro. [short pause] Cuando seas mayor, lo pones tú.
+------------------------------------------------------------------------
+[003] C05_E002_L007
+Escena: C05_E002 · HERRADERO DE MAYO
+Personaje: DON ERNESTO
+Acotación: en la cinta
+Emoción: fanfarronería feliz
+Intención: hacerla reír
+Ritmo: normal
+Pausas: breve entre frases
+FX / procesado: cinta VHS, cerca
+Texto: Pues ya va tarde. Yo a los seis meses ya sabía qué vaca era cada una.
+------------------------------------------------------------------------
