@@ -154,6 +154,7 @@ Identidades fijas. No se cambian edad, aspecto, relaciones ni rasgos vocales sin
 | **Alberto Ortega** | 50 | Director de la sucursal bancaria de Salamanca que llevaba los préstamos de Ernesto. Amable, incómodo, cobarde. | Castellano neutro, de oficina. |
 | **Dani Muñoz** | 24 | Compañero de piso de Alejandro en Usera. Repartidor y músico aficionado. | Madrileño joven, rápido, de barrio. |
 | **Gaspar Hernández** | 63 | Alcalde de Moraleja de Yeltes (ficticio), pueblo de las fiestas de San Juan. Campechano, regateador. | Charro, sonoro, de discurso. |
+| **Marta Ibarra** | 41 | Directora de suelo de Meseta Renovables, la energética que desarrolla la planta solar de Los Llanos. Pragmática, rápida, sin interés en toros ni en lealtades: compra suelo. | Bilbaína, directa, rápida. |
 | **Notario Benavides** | 60 | Notario de Vitigudino. Ante él se firmó la opción y se resuelve en C12. | Castellano formal, monocorde. |
 
 

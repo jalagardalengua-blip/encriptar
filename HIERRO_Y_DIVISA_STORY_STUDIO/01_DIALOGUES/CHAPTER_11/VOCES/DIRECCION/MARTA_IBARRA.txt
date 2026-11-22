@@ -1,0 +1,47 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · MARTA IBARRA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 4
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MARTA_IBARRA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E003_L010
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MARTA IBARRA
+Acotación: teléfono
+Emoción: eficiencia directa
+Intención: presentarse y acelerar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: ¿Alejandro Galván? Marta Ibarra, de Meseta Renovables. Perdona la hora. [short pause] Me pasaron tu llamada del lunes y llevo tres días con los abogados. Voy a ir al grano, que tenemos poco tiempo los dos.
+------------------------------------------------------------------------
+[002] C11_E003_L012
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MARTA IBARRA
+Emoción: pragmatismo absoluto
+Intención: hacer la oferta
+Ritmo: rápido, preciso
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: A nosotros nos da igual quién nos venda el suelo. Nos importa que el suelo exista, que esté libre y que se firme antes de que se nos caiga el punto de conexión en diciembre. [short pause] Un millón cien mil euros por las ciento ochenta hectáreas. Mañana a las diez, en la notaría de Vitigudino, si en ese mismo acto puedes liberarlas de la opción.
+------------------------------------------------------------------------
+[003] C11_E003_L014
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MARTA IBARRA
+Emoción: frialdad sin malicia
+Intención: dejar claro que no tiene bandos
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: Valcárcel es un socio que nos prometió un suelo que no tenía. [short pause] Si el dueño eres tú, el socio eres tú. Esto no es personal, Alejandro. Es una red eléctrica.
+------------------------------------------------------------------------
+[004] C11_E003_L016
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MARTA IBARRA
+Emoción: cierre eficaz
+Intención: colgar
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: teléfono, oficina
+Texto: A las diez. Con el notario avisado. [short pause] Buenas noches.
+------------------------------------------------------------------------

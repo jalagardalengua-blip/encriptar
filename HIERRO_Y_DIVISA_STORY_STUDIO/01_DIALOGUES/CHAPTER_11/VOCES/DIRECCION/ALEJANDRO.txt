@@ -1,0 +1,226 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 21
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E001_L003
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Emoción: comprensión fría
+Intención: constatar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: En junio. [short pause] Antes de que fueran suyos.
+------------------------------------------------------------------------
+[002] C11_E001_L006
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Emoción: rabia con admiración involuntaria
+Intención: reconocer la jugada
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: «Lo que tiene esta finca es luz». [short pause] Me lo dijo el primer día, Manuel. A la cara.
+------------------------------------------------------------------------
+[003] C11_E001_L008
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Emoción: calma peligrosa
+Intención: marcar territorio
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, llanos, viento suave
+Texto: Estás en mi finca.
+------------------------------------------------------------------------
+[004] C11_E001_L012
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Acotación: bajo
+Emoción: tentación justificada
+Intención: defender la idea
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, llanos, voz baja
+Texto: Tampoco eran suyos mis llanos.
+------------------------------------------------------------------------
+[005] C11_E001_L014
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Acotación: rama A
+Rama de elección: A
+Emoción: dureza nueva
+Intención: cerrar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: Yo dormiré.
+------------------------------------------------------------------------
+[006] C11_E001_L015
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Acotación: rama B
+Rama de elección: B
+Emoción: determinación limpia
+Intención: elegir el camino recto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: El anuncio del boletín trae un teléfono. El de la energética. [short pause] Es público. Voy a llamar.
+------------------------------------------------------------------------
+[007] C11_E001_L017
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: ALEJANDRO
+Acotación: rama B
+Rama de elección: B
+Emoción: astucia nueva
+Intención: explicar la jugada
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Que el dueño de los llanos soy yo. [short pause] Y que con el dueño se negocia mejor que con el que espera serlo.
+------------------------------------------------------------------------
+[008] C11_E002_L004
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: preocupación
+Intención: saber la gravedad
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: ¿Cuánto?
+------------------------------------------------------------------------
+[009] C11_E002_L009
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: cansancio
+Intención: resumir
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: Lo mío tiene tres salidas. Y ninguna buena.
+------------------------------------------------------------------------
+[010] C11_E002_L011
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: claridad cansada
+Intención: exponerlas
+Ritmo: lento, enumerando
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Vender a Valcárcel y llevarme trescientos mil. Vender los llanos a la energética, pagar y quedarme con la mitad de la finca. [short pause] O apretarle con lo que sé hasta que negocie.
+------------------------------------------------------------------------
+[011] C11_E002_L013
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: ALEJANDRO
+Emoción: necesidad
+Intención: pedir consejo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: ¿Y qué hago?
+------------------------------------------------------------------------
+[012] C11_E003_L002
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: humor cansado
+Intención: medir el camino
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: En marzo no sabía ni abrir una puerta.
+------------------------------------------------------------------------
+[013] C11_E003_L004
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: lucidez dolorosa
+Intención: decir el primer camino en voz alta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Si vendo a Ricardo, me voy con trescientos mil. Tú te quedas en Los Arenales con tu sueldo. Toño también. [short pause] Y no vuelvo a ver esta encina.
+------------------------------------------------------------------------
+[014] C11_E003_L006
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: ambivalencia
+Intención: decir el segundo camino
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: exterior, anochecer
+Texto: Si vendo los llanos a la energética, pago, y nos quedamos con la casa, el ganado y el hierro. Y con unas placas al sur que vamos a ver desde el porche toda la vida.
+------------------------------------------------------------------------
+[015] C11_E003_L008
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Acotación: si tiene la carpeta — C11_E001-A
+Rama de elección: C11-A
+Emoción: tentación lúcida
+Intención: decir el tercer camino
+Ritmo: normal, se acelera
+Pausas: suspensión y la marcada
+FX / procesado: exterior, anochecer
+Texto: Y si le enseño a Ricardo la carpeta, y le digo que le llevo a juicio por la opción, que mi padre firmó enfermo y sin abogado, y que se le cae la planta si se retrasa… [short pause] Negocia. Seguro que negocia.
+------------------------------------------------------------------------
+[016] C11_E003_L011
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: atención
+Intención: dejarla hablar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: Al grano.
+------------------------------------------------------------------------
+[017] C11_E003_L013
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: cautela
+Intención: medir la lealtad de ella
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: ¿Y Arenales Solar? ¿Y Valcárcel?
+------------------------------------------------------------------------
+[018] C11_E003_L015
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: decisión abierta
+Intención: no comprometerse del todo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: Mañana a las diez.
+------------------------------------------------------------------------
+[019] C11_E003_L018
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: incredulidad que se convierte en certeza
+Intención: hacer la cuenta
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Más los doscientos de la feria. Más el aval de Carmen, si hace falta. [short pause] Da.
+------------------------------------------------------------------------
+[020] C11_E003_L020
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Acotación: bajo
+Emoción: recogimiento
+Intención: repetirse la frase del padre
+Ritmo: muy lento
+Pausas: breve tras la primera frase
+FX / procesado: exterior, anochecer, voz baja
+Texto: «Si quieres el hierro, no lo guardes por mí. Guárdalo por ti.»
+------------------------------------------------------------------------
+[021] C11_E003_L022
+Escena: C11_E003 · TRES CAMINOS
+Personaje: ALEJANDRO
+Emoción: misterio sereno
+Intención: guardar la decisión para la notaría (decisión del jugador)
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Mañana lo sabrás. [short pause] A las diez.
+------------------------------------------------------------------------

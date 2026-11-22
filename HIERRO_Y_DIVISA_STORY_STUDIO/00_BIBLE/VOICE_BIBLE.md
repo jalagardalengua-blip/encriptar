@@ -129,6 +129,7 @@ Cada ficha incluye la descripción para *Voice Design* (en inglés, que es el id
 | ORTEGA (50) | *"Spanish bank branch manager, 50, soft uneasy tenor, polite office voice, standard Peninsular accent."* | Stab 0.60 · Style 0.15 |
 | DANI (24) | *"Young Madrid delivery rider, 24, fast casual baritone, working-class Madrid slang, friendly."* | Stab 0.40 · Style 0.40 |
 | ALCALDE GASPAR (63) | *"Village mayor from rural Salamanca, 63, booming jovial baritone, speech-making tone."* | Stab 0.50 · Style 0.35 |
+| MARTA IBARRA (41) | *"Spanish executive woman, 41, from Bilbao, brisk confident alto, efficient corporate tone, Peninsular Spanish with a light Basque intonation."* | Stab 0.60 · Style 0.20 |
 | NOTARIO BENAVIDES (60) | *"Spanish notary, 60, monotone formal baritone, slow and precise reading voice."* | Stab 0.75 · Style 0.05 |
 | TOÑO (19) | *"Shy 19-year-old farm worker from rural Salamanca, soft low voice, few words."* | Stab 0.50 · Style 0.20 |
 

@@ -1,0 +1,174 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 16
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E001_L005
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Emoción: incredulidad dolida
+Intención: entenderlo a su manera
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Placas. [short pause] En los llanos. Donde tu abuelo sembraba trigo para los caballos.
+------------------------------------------------------------------------
+[002] C11_E001_L007
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Emoción: conocimiento amargo
+Intención: describir a Ricardo
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior, despacho
+Texto: Eso hace. Te lo dice a la cara, para que no le creas.
+------------------------------------------------------------------------
+[003] C11_E001_L010
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Emoción: autoridad antigua
+Intención: echarle sin pelea
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, llanos
+Texto: Ramiro. Recoge eso y vete. [short pause] Que hoy todavía no es domingo.
+------------------------------------------------------------------------
+[004] C11_E001_L011
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Acotación: bajo
+Emoción: advertencia
+Intención: frenarle
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, llanos, voz baja
+Texto: Eso no es tuyo.
+------------------------------------------------------------------------
+[005] C11_E001_L013
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Acotación: sin mirarle, arrancando
+Rama de elección: A
+Emoción: tristeza sin juicio
+Intención: decirle el precio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Tu padre habría hecho lo mismo. [short pause] Y luego no habría dormido.
+------------------------------------------------------------------------
+[006] C11_E001_L016
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Rama de elección: B
+Emoción: curiosidad
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior vehículo
+Texto: ¿Y qué les vas a decir?
+------------------------------------------------------------------------
+[007] C11_E001_L018
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: MANUEL
+Acotación: rama B
+Rama de elección: B
+Emoción: orgullo con guasa
+Intención: aprobar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior vehículo
+Texto: Eso, eso es ganadería. [short pause] Aunque sea de placas.
+------------------------------------------------------------------------
+[008] C11_E003_L001
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: nostalgia
+Intención: nombrar el círculo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: Como el primer día.
+------------------------------------------------------------------------
+[009] C11_E003_L003
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: guasa cariñosa
+Intención: pincharle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Abrir la sabías. [short pause] Lo que no sabías era cerrarla.
+------------------------------------------------------------------------
+[010] C11_E003_L005
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: firmeza tranquila
+Intención: no ser una razón
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Yo no voy a Los Arenales. [short pause] Eso, para que lo sepas antes de decidir.
+------------------------------------------------------------------------
+[011] C11_E003_L007
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: sabiduría práctica
+Intención: quitarle peso sin quitarle la verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Desde el porche se ven los llanos. [short pause] Pero si te sientas en el banco de la izquierda, se ve la encina. Tu padre se sentaba en el de la izquierda.
+------------------------------------------------------------------------
+[012] C11_E003_L009
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Acotación: rama C11-A
+Rama de elección: C11-A
+Emoción: advertencia triste
+Intención: decirle el coste
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: Negocia. Ese siempre negocia. [short pause] Y tú aprendes a negociar como él. Eso también tiene un precio, chaval.
+------------------------------------------------------------------------
+[013] C11_E003_L017
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: asombro de hombre de campo
+Intención: repetir la cifra para creérsela
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: Un millón cien.
+------------------------------------------------------------------------
+[014] C11_E003_L019
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: alivio inmenso contenido
+Intención: confirmar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: Da.
+------------------------------------------------------------------------
+[015] C11_E003_L021
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: la pregunta de toda la campaña
+Intención: obligarle a responderse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, anochecer
+Texto: ¿Y lo quieres?
+------------------------------------------------------------------------
+[016] C11_E003_L023
+Escena: C11_E003 · TRES CAMINOS
+Personaje: MANUEL
+Emoción: cariño
+Intención: cerrar como siempre
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, anochecer
+Texto: A las diez. [short pause] Y en punto.
+------------------------------------------------------------------------

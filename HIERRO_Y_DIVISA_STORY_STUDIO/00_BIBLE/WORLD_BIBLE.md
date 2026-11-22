@@ -66,6 +66,8 @@
 | Coste anual de mantenimiento por cabeza | 900–1.200 € |
 | Pienso, al mes (invierno) | 6.000–8.000 € |
 | Salario de Manuel (bruto anual) | 24.000 € |
+| Suelo para planta fotovoltaica (compra, zona con punto de conexión) | 6.000–7.000 €/ha |
+| Oferta de Meseta Renovables por Los Llanos (180 ha) | 1.100.000 € (C11) |
 
 ## 5. Instituciones y trámites
 

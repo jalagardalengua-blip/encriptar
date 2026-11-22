@@ -1,0 +1,66 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 6
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E001_L001
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: LUCÍA
+Emoción: concentración con rabia
+Intención: leer la prueba
+Ritmo: lento, leyendo, preciso
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Boletín Oficial de Castilla y León. Veintitrés de junio. [short pause] «Anuncio de información pública de la solicitud de autorización administrativa de la planta solar fotovoltaica Los Llanos, de noventa y ocho megavatios, en el término municipal de Peñacorva.»
+------------------------------------------------------------------------
+[002] C11_E001_L002
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: LUCÍA
+Emoción: indignación contenida
+Intención: rematar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Promotor: Arenales Solar, Sociedad Limitada. Con Meseta Renovables. [short pause] Y aquí están las parcelas. Polígono cuatro, de la doce a la diecinueve. Son tus llanos, Alejandro.
+------------------------------------------------------------------------
+[003] C11_E001_L004
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: LUCÍA
+Emoción: claridad
+Intención: explicar la jugada
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, despacho
+Texto: Contaba con que fueran suyos. [short pause] Lo tenía todo hecho. Solo le faltaba que tú no pagaras.
+------------------------------------------------------------------------
+[004] C11_E002_L002
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: LUCÍA
+Emoción: ternura con humor
+Intención: seguirle el juego
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Magdalenas. De Remedios. [short pause] Dice que con esto se cura todo menos la tontería.
+------------------------------------------------------------------------
+[005] C11_E002_L006
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: LUCÍA
+Emoción: cariño
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: ¿Y tu madre?
+------------------------------------------------------------------------
+[006] C11_E002_L015
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: LUCÍA
+Emoción: admiración con guasa
+Intención: reconocerle
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: Para no saber de papeles, hablas muy bien.
+------------------------------------------------------------------------

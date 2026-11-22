@@ -1,0 +1,107 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 10
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E002_L001
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Acotación: al verles, con voz floja pero con sonrisa
+Emoción: guasa a pesar del dolor
+Intención: quitar dramatismo
+Ritmo: normal, más lento que de costumbre
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: ¡Hombre! Las visitas. [short pause] Si traéis flores, os advierto que soy alérgico. Si traéis jamón, pasad.
+------------------------------------------------------------------------
+[002] C11_E002_L003
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: humor
+Intención: rematar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, hospital
+Texto: Pues entonces me quedo como estoy.
+------------------------------------------------------------------------
+[003] C11_E002_L005
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: miedo pasado convertido en chiste
+Intención: contarlo sin dramatizar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Veinte centímetros. Dos trayectorias. El cirujano dice que si llega a ser un dedo más a la izquierda, ahora estaríais hablando con mi madre por teléfono. [short pause] Que es peor que una cornada, te lo aseguro.
+------------------------------------------------------------------------
+[004] C11_E002_L007
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: ternura
+Intención: hablar de ella
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Viene mañana en el autobús de las seis. Ha pedido tres días en el hotel. Es la primera vez en nueve años. [short pause] Así que la cornada ha servido para algo.
+------------------------------------------------------------------------
+[005] C11_E002_L008
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: interés serio
+Intención: cambiar de tema hacia lo importante
+Ritmo: normal
+Pausas: breve tras la pregunta
+FX / procesado: interior, hospital
+Texto: ¿Y lo tuyo? Que el viernes es el viernes.
+------------------------------------------------------------------------
+[006] C11_E002_L010
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: sabiduría ligera
+Intención: invitarle
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Las salidas buenas son para los que no torean. [short pause] Cuéntamelas.
+------------------------------------------------------------------------
+[007] C11_E002_L012
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: seriedad total
+Intención: darle su verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Mira, te lo digo de verdad. [short pause] Yo no sé de papeles. Pero sé de toros, y ese hombre es un toro manso: mucho trapío y se va a tablas en cuanto le aprietas. Lo vi el sábado en sus toros. Se parecen a él.
+------------------------------------------------------------------------
+[008] C11_E002_L014
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: convicción
+Intención: el consejo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Lo que te dé la gana, illo. Pero no le vendas el miedo. [short pause] Valcárcel no te quiere comprar la finca. Te quiere comprar el miedo. Y eso se lleva puesto, no se vende.
+------------------------------------------------------------------------
+[009] C11_E002_L016
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: humor
+Intención: salir de la seriedad
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Es la morfina. [short pause] Mañana vuelvo a ser tonto, no te preocupes.
+------------------------------------------------------------------------
+[010] C11_E002_L017
+Escena: C11_E002 · VEINTE CENTÍMETROS
+Personaje: JAVIER
+Emoción: deseo
+Intención: dejar claro lo que quiere
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, hospital
+Texto: Y el año que viene, la corrida de Salamanca otra vez. Con tus toros. [short pause] Así que haz lo que tengas que hacer, pero que haya toros.
+------------------------------------------------------------------------

@@ -1,0 +1,16 @@
+HIERRO Y DIVISA · CAPÍTULO 11 · EL RUBIO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 1
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/EL_RUBIO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C11_E001_L009
+Escena: C11_E001 · INFORMACIÓN PÚBLICA
+Personaje: EL RUBIO
+Emoción: chulería
+Intención: provocar
+Ritmo: lento, bronco
+Pausas: la marcada
+FX / procesado: exterior, llanos
+Texto: Estoy en la finca que va a ser del jefe el domingo. [short pause] Es lo mismo, pero adelantado.
+------------------------------------------------------------------------
