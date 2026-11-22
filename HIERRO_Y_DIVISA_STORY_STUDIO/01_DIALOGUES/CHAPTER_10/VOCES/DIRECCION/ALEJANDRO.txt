@@ -1,0 +1,264 @@
+HIERRO Y DIVISA · CAPÍTULO 10 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 25
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C10_E001_L002
+Escena: C10_E001 · DESENCAJONAR
+Personaje: ALEJANDRO
+Emoción: nervios
+Intención: saber la opinión de los aficionados
+Ritmo: normal, bajo
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Qué dicen?
+------------------------------------------------------------------------
+[002] C10_E001_L004
+Escena: C10_E001 · DESENCAJONAR
+Personaje: ALEJANDRO
+Emoción: inquietud
+Intención: comentar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Son enormes.
+------------------------------------------------------------------------
+[003] C10_E001_L009
+Escena: C10_E001 · DESENCAJONAR
+Personaje: ALEJANDRO
+Emoción: complicidad
+Intención: responder
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Se sortea el domingo. [short pause] Pero ojalá.
+------------------------------------------------------------------------
+[004] C10_E002_L002
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Emoción: cortesía sincera, con algo de satisfacción
+Intención: no regodearse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Lo siento.
+------------------------------------------------------------------------
+[005] C10_E002_L004
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Emoción: sorpresa
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Mi padre te dijo eso?
+------------------------------------------------------------------------
+[006] C10_E002_L006
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Emoción: curiosidad estratégica
+Intención: aprovechar la grieta
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Entonces, ¿para qué quieres La Encomienda? Si los toros no te salen.
+------------------------------------------------------------------------
+[007] C10_E002_L008
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Emoción: alerta
+Intención: tirar del hilo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Qué papeles?
+------------------------------------------------------------------------
+[008] C10_E002_L011
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Acotación: rama C07-B
+Rama de elección: C07-B
+Emoción: preocupación
+Intención: contestar sin entender aún
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Hablar de papeles.
+------------------------------------------------------------------------
+[009] C10_E002_L013
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Acotación: rama C07-B
+Rama de elección: C07-B
+Emoción: complicidad
+Intención: devolverle su frase de la tienta
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: Se lleva puesto.
+------------------------------------------------------------------------
+[010] C10_E002_L014
+Escena: C10_E002 · LOS PAPELES
+Personaje: ALEJANDRO
+Acotación: rama C07-A
+Rama de elección: C07-A
+Emoción: arrepentimiento sin defensas
+Intención: pedir perdón de verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Javier. [short pause] Lo del pitón. No tengo excusa. Lo hice por ganar, y te usé. Lo siento.
+------------------------------------------------------------------------
+[011] C10_E003_L002
+Escena: C10_E003 · BARQUERO
+Personaje: ALEJANDRO
+Emoción: miedo a creérselo
+Intención: confirmación
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Manuel. [short pause] ¿Es bueno?
+------------------------------------------------------------------------
+[012] C10_E003_L004
+Escena: C10_E003 · BARQUERO
+Personaje: ALEJANDRO
+Acotación: gritando sin darse cuenta
+Emoción: terror
+Intención: ninguna, se le escapa
+Ritmo: gritado
+Pausas: ninguna
+FX / procesado: exterior, plaza, callejón, ovación
+Texto: ¡Javier! ¡Javier!
+------------------------------------------------------------------------
+[013] C10_E003_L006
+Escena: C10_E003 · BARQUERO
+Personaje: ALEJANDRO
+Emoción: incredulidad feliz
+Intención: constatarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, plaza, callejón, ovación
+Texto: El azul.
+------------------------------------------------------------------------
+[014] C10_E003_L009
+Escena: C10_E003 · BARQUERO
+Personaje: ALEJANDRO
+Emoción: gratitud total
+Intención: devolverle el lugar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Sal tú. [short pause] Es tuyo también.
+------------------------------------------------------------------------
+[015] C10_E004_L002
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: gratitud cansada
+Intención: agradecer
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: Gracias, Carmen.
+------------------------------------------------------------------------
+[016] C10_E004_L003
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: sobriedad
+Intención: hacer la cuenta en voz alta
+Ritmo: lento, enumerando
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Villaseca, la feria, el encierro, las vacas de desecho, las visitas, lo que había. [short pause] Doscientos mil. Más o menos.
+------------------------------------------------------------------------
+[017] C10_E004_L004
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: vértigo sereno
+Intención: poner la verdad delante
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Faltan novecientos cuarenta mil. [short pause] Y quedan cinco días hábiles.
+------------------------------------------------------------------------
+[018] C10_E004_L006
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: aceptación
+Intención: repetirlo, como en marzo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: No da.
+------------------------------------------------------------------------
+[019] C10_E004_L008
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: sorpresa
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: ¿Por qué harías eso?
+------------------------------------------------------------------------
+[020] C10_E004_L011
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: cansancio
+Intención: aceptarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: Lo sé.
+------------------------------------------------------------------------
+[021] C10_E004_L013
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: desesperanza
+Intención: buscar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: ¿Qué más hay?
+------------------------------------------------------------------------
+[022] C10_E004_L015
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: algo que se enciende
+Intención: pensar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: Los llanos.
+------------------------------------------------------------------------
+[023] C10_E004_L016
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: duda
+Intención: comprobar
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: ¿Quién compra ciento ochenta hectáreas de cereal malo en cinco días?
+------------------------------------------------------------------------
+[024] C10_E004_L018
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Emoción: comprensión
+Intención: decirlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: Luz.
+------------------------------------------------------------------------
+[025] C10_E004_L020
+Escena: C10_E004 · NO DA
+Personaje: ALEJANDRO
+Acotación: cerrando el portátil, levantándose
+Emoción: determinación nueva
+Intención: ponerse en marcha
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Mañana te lo cuento. [short pause] Esta noche me voy a casa. Que mañana a las siete hay que echar de comer.
+------------------------------------------------------------------------

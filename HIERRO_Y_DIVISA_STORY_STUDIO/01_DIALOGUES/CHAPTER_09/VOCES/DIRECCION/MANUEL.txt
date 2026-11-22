@@ -37,12 +37,12 @@ Texto: Porque se lo prometí. [short pause] Me hizo jurarlo en el coche, a la vu
 [004] C09_E002_L009
 Escena: C09_E002 · LE DEJÉ SOLO
 Personaje: MANUEL
-Emoción: sinceridad absoluta
-Intención: que le crea
+Emoción: sinceridad absoluta, con vergüenza
+Intención: que le crea, sin ocultar nada
 Ritmo: lento
 Pausas: la marcada
 FX / procesado: interior
-Texto: Lo de la opción no lo sabía. Te lo juro por lo mismo. [short pause] Pero sé por qué lo hizo.
+Texto: Lo de la opción no lo sabía. Esa última noche se le escapó algo de «vender», y luego dijo que nada. [short pause] Y yo quise creerme que nada. Pero sé por qué lo hizo.
 ------------------------------------------------------------------------
 [005] C09_E002_L011
 Escena: C09_E002 · LE DEJÉ SOLO

@@ -42,16 +42,16 @@ Drama contemporáneo con humor seco. Referencia de calidad: superproducción de 
 |---|---|---|
 | 01 | sábado 8 – domingo 9 de marzo | final de invierno |
 | 02 | lunes 10 – jueves 20 de marzo | primavera temprana |
-| 03 | 4 – 6 de abril | primavera |
-| 04 | 22 – 30 de abril | primavera |
-| 05 | 10 – 18 de mayo | primavera |
-| 06 | 22 – 24 de junio (San Juan) | inicio del verano |
-| 07 | 19 – 20 de julio | verano |
-| 08 | 5 – 14 de agosto | pleno verano |
-| 09 | 25 – 29 de agosto | final del verano |
-| 10 | 10 – 14 de septiembre (feria de Salamanca) | final del verano |
-| 11 | 18 – 20 de septiembre | inicio del otoño |
-| 12 | 21 de septiembre + epílogo | otoño |
+| 03 | viernes 4 – sábado 5 de abril | primavera |
+| 04 | lunes 21 – miércoles 30 de abril | primavera |
+| 05 | sábado 10 – viernes 16 de mayo | primavera |
+| 06 | domingo 22 – lunes 23 de junio (San Juan) | inicio del verano |
+| 07 | sábado 19 – domingo 20 de julio | verano |
+| 08 | martes 5 – sábado 9 de agosto | pleno verano |
+| 09 | lunes 25 – martes 26 de agosto (+ flashback del 5 de marzo) | final del verano |
+| 10 | miércoles 10 – domingo 14 de septiembre (feria de Salamanca) | final del verano |
+| 11 | lunes 15 – jueves 18 de septiembre | final del verano |
+| 12 | viernes 19 de septiembre (último día hábil antes del vencimiento del domingo 21) + epílogos | otoño |
 
 El año nunca se nombra. Los días de la semana son coherentes entre sí (el 5 de marzo es miércoles).
 

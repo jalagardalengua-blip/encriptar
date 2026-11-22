@@ -1,0 +1,109 @@
+HIERRO Y DIVISA · CAPÍTULO 10 · JAVIER
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 9
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/JAVIER.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C10_E001_L007
+Escena: C10_E001 · DESENCAJONAR
+Personaje: JAVIER
+Acotación: rama C07-A, a Carmen, sin mirar a Alejandro
+Rama de elección: C07-A
+Emoción: frialdad profesional
+Intención: no hablarle a Alejandro
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: ¿Cuál es el mío?
+------------------------------------------------------------------------
+[002] C10_E001_L008
+Escena: C10_E001 · DESENCAJONAR
+Personaje: JAVIER
+Acotación: rama C07-B, a Alejandro, con un abrazo
+Rama de elección: C07-B
+Emoción: euforia nerviosa
+Intención: compartir
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: ¡Illo! ¡Que estamos en Salamanca! ¡En la feria! [short pause] ¿Cuál es el mío? Dime que es ese negro con cara de malo.
+------------------------------------------------------------------------
+[003] C10_E001_L010
+Escena: C10_E001 · DESENCAJONAR
+Personaje: JAVIER
+Emoción: respeto con humor
+Intención: decir lo que ve
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, corrales
+Texto: Ese tiene cara de saber latín y griego.
+------------------------------------------------------------------------
+[004] C10_E002_L010
+Escena: C10_E002 · LOS PAPELES
+Personaje: JAVIER
+Acotación: rama C07-B
+Rama de elección: C07-B
+Emoción: curiosidad
+Intención: saber
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: interior, bar
+Texto: ¿Qué quería ese?
+------------------------------------------------------------------------
+[005] C10_E002_L012
+Escena: C10_E002 · LOS PAPELES
+Personaje: JAVIER
+Acotación: rama C07-B
+Rama de elección: C07-B
+Emoción: miedo sincero con humor
+Intención: compartirlo
+Ritmo: normal, baja al final
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Pues yo mañana no quiero papeles. Quiero orejas. [short pause] Y miedo tengo como para tres.
+------------------------------------------------------------------------
+[006] C10_E002_L015
+Escena: C10_E002 · LOS PAPELES
+Personaje: JAVIER
+Acotación: rama C07-A
+Rama de elección: C07-A
+Emoción: dureza que se ablanda
+Intención: aceptar a medias
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Sin excusa. [short pause] Vale. Eso por lo menos es nuevo.
+------------------------------------------------------------------------
+[007] C10_E002_L016
+Escena: C10_E002 · LOS PAPELES
+Personaje: JAVIER
+Acotación: rama C07-A
+Rama de elección: C07-A
+Emoción: dignidad
+Intención: poner las condiciones
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, bar
+Texto: Mañana toreo tus toros con la verdad. Los seis, si me dejan. [short pause] Y luego ya veremos si somos amigos. Pero mañana no me hables, que tengo que estar entero.
+------------------------------------------------------------------------
+[008] C10_E003_L008
+Escena: C10_E003 · BARQUERO
+Personaje: JAVIER
+Emoción: euforia y generosidad
+Intención: compartir el triunfo
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: exterior, plaza, ovación
+Texto: ¡Sal, ganadero! ¡Sal al ruedo, que esto es tuyo!
+------------------------------------------------------------------------
+[009] C10_E003_L011
+Escena: C10_E003 · BARQUERO
+Personaje: JAVIER
+Acotación: gritando al oído, por encima de la ovación
+Emoción: euforia y verdad
+Intención: decirle lo que piensa
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: exterior, plaza, ovación
+Texto: ¡Mira, te lo digo de verdad! ¡Esto no se vende, illo! ¡Esto no se vende!
+------------------------------------------------------------------------

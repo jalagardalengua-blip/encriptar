@@ -1,0 +1,27 @@
+HIERRO Y DIVISA · CAPÍTULO 10 · LUCÍA
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 2
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/LUCIA.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C10_E004_L010
+Escena: C10_E004 · NO DA
+Personaje: LUCÍA
+Emoción: realismo con cariño
+Intención: no dejarle engañarse
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Ciento cincuenta y doscientos son trescientos cincuenta. [short pause] Siguen faltando casi ochocientos.
+------------------------------------------------------------------------
+[002] C10_E004_L017
+Escena: C10_E004 · NO DA
+Personaje: LUCÍA
+Acotación: despacio, pensando
+Emoción: intuición
+Intención: abrir la pista
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Nadie. [short pause] A no ser que no sean de cereal. A no ser que alguien ya las quiera para otra cosa.
+------------------------------------------------------------------------

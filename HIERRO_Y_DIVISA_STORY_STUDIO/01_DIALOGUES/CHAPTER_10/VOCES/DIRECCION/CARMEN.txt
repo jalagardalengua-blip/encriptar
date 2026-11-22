@@ -1,0 +1,87 @@
+HIERRO Y DIVISA · CAPÍTULO 10 · CARMEN
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 8
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/CARMEN.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C10_E001_L001
+Escena: C10_E001 · DESENCAJONAR
+Personaje: CARMEN
+Acotación: en la pasarela, junto a Alejandro
+Emoción: concentración de negocio
+Intención: hacerle consciente del examen
+Ritmo: rápido
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Vamos a ver. Estos los vas a ver en la plaza cuatro horas y aquí cinco minutos. [short pause] Y los cinco minutos de aquí son los que te miran los que saben.
+------------------------------------------------------------------------
+[002] C10_E001_L003
+Escena: C10_E001 · DESENCAJONAR
+Personaje: CARMEN
+Emoción: satisfacción contenida
+Intención: informar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Que son serios. Que son pequeños al lado de los de Ricardo. [short pause] Y que miran. Eso lo dicen poco.
+------------------------------------------------------------------------
+[003] C10_E001_L005
+Escena: C10_E001 · DESENCAJONAR
+Personaje: CARMEN
+Emoción: juicio experto
+Intención: darle confianza
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Son enormes. [short pause] Y tienen la mirada de un buey de carreta. Ricardo cría toros para la foto, no para la plaza.
+------------------------------------------------------------------------
+[004] C10_E001_L011
+Escena: C10_E001 · DESENCAJONAR
+Personaje: CARMEN
+Emoción: complicidad combativa
+Intención: avisar y animar
+Ritmo: normal, bajo
+Pausas: la marcada
+FX / procesado: exterior, corrales
+Texto: Ricardo ha pedido que sus toros vayan el sábado y los tuyos el domingo. [short pause] Quiere que la gente compare. Pues que compare.
+------------------------------------------------------------------------
+[005] C10_E004_L001
+Escena: C10_E004 · NO DA
+Personaje: CARMEN
+Emoción: satisfacción y respeto
+Intención: cerrar y ofrecer futuro
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, terraza, walla
+Texto: Los otros treinta y cinco mil, mañana a primera hora. Y el año que viene, si quieres, dos corridas: aquí y en Valladolid. [short pause] Hoy has hecho ganadería, Alejandro.
+------------------------------------------------------------------------
+[006] C10_E004_L007
+Escena: C10_E004 · NO DA
+Personaje: CARMEN
+Emoción: generosidad medida
+Intención: ofrecer lo que puede, sin engañar
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Vamos a ver. Te voy a ser muy clara, otra vez. [short pause] Yo te puedo avalar un préstamo. Ortega me conoce; con mi firma y con lo de hoy, te da ciento cincuenta mil. Más no.
+------------------------------------------------------------------------
+[007] C10_E004_L009
+Escena: C10_E004 · NO DA
+Personaje: CARMEN
+Emoción: franqueza con humor
+Intención: no fingir altruismo
+Ritmo: normal
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Porque quiero tus toros diez años más. [short pause] Y porque a Ricardo no le soporto. Por ese orden. O por el otro, según el día.
+------------------------------------------------------------------------
+[008] C10_E004_L019
+Escena: C10_E004 · NO DA
+Personaje: CARMEN
+Emoción: desconcierto
+Intención: entender
+Ritmo: normal
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: ¿Qué luz?
+------------------------------------------------------------------------

@@ -164,8 +164,8 @@ Alejandro se levanta.
 `C09_E002_L008 · Emoción: acusación · Intención: llegar al fondo · Ritmo: rápido · Pausas: ninguna · FX: interior`
 
 **MANUEL**
-> Lo de la opción no lo sabía. Te lo juro por lo mismo. [short pause] Pero sé por qué lo hizo.
-`C09_E002_L009 · Emoción: sinceridad absoluta · Intención: que le crea · Ritmo: lento · Pausas: la marcada · FX: interior`
+> Lo de la opción no lo sabía. Esa última noche se le escapó algo de «vender», y luego dijo que nada. [short pause] Y yo quise creerme que nada. Pero sé por qué lo hizo.
+`C09_E002_L009 · Emoción: sinceridad absoluta, con vergüenza · Intención: que le crea, sin ocultar nada · Ritmo: lento · Pausas: la marcada · FX: interior`
 
 **ALEJANDRO**
 > Pues dímelo.

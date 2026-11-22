@@ -1,0 +1,109 @@
+HIERRO Y DIVISA · CAPÍTULO 10 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 10
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C10_E001_L006
+Escena: C10_E001 · DESENCAJONAR
+Personaje: MANUEL
+Acotación: desde el otro extremo, lo bastante alto para que le oiga
+Emoción: certeza de oficio
+Intención: señalarlo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, corrales, distancia media
+Texto: El nueve. [short pause] Ese es el que te va a dar de comer.
+------------------------------------------------------------------------
+[002] C10_E003_L001
+Escena: C10_E003 · BARQUERO
+Personaje: MANUEL
+Acotación: en el callejón, bajo
+Emoción: emoción solemne
+Intención: decirle lo que ve
+Ritmo: lento, bajo
+Pausas: ninguna
+FX / procesado: exterior, plaza, callejón
+Texto: Ahí está tu padre.
+------------------------------------------------------------------------
+[003] C10_E003_L003
+Escena: C10_E003 · BARQUERO
+Personaje: MANUEL
+Emoción: devoción
+Intención: eco de Villaseca
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Calla y mira. [short pause] Que esto ya lo hemos vivido y no se repite nunca igual.
+------------------------------------------------------------------------
+[004] C10_E003_L005
+Escena: C10_E003 · BARQUERO
+Personaje: MANUEL
+Acotación: agarrándole del brazo
+Emoción: calma de quien ha visto mucho
+Intención: sujetarle
+Ritmo: rápido, luego lento
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Está bien. Está entero. [short pause] Míralo. Está más entero que nunca.
+------------------------------------------------------------------------
+[005] C10_E003_L007
+Escena: C10_E003 · BARQUERO
+Personaje: MANUEL
+Emoción: llanto feliz
+Intención: hablarle al muerto
+Ritmo: lento, se quiebra
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón, ovación
+Texto: El azul. [short pause] En Salamanca. Ernesto, en Salamanca.
+------------------------------------------------------------------------
+[006] C10_E003_L010
+Escena: C10_E003 · BARQUERO
+Personaje: MANUEL
+Emoción: humildad orgullosa
+Intención: empujarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, plaza, callejón
+Texto: Los mayorales no salen, chaval. [short pause] Sal tú. Y lleva puesta la chaqueta, que la vea todo el mundo.
+------------------------------------------------------------------------
+[007] C10_E004_L005
+Escena: C10_E004 · NO DA
+Personaje: MANUEL
+Emoción: realismo dolido
+Intención: acompañarle en la verdad
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, terraza
+Texto: No da.
+------------------------------------------------------------------------
+[008] C10_E004_L012
+Escena: C10_E004 · NO DA
+Personaje: MANUEL
+Emoción: decisión práctica
+Intención: plantear la salida
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Pues algo hay que vender, chaval. Y no los toros. [short pause] Los toros ya no.
+------------------------------------------------------------------------
+[009] C10_E004_L014
+Escena: C10_E004 · NO DA
+Personaje: MANUEL
+Emoción: dolor práctico
+Intención: proponer lo que nunca habría propuesto
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: Tierra. [short pause] Seiscientas cuarenta hectáreas. Para el ganado que tenemos, sobran los llanos. Los llanos no los ha pisado un toro en diez años.
+------------------------------------------------------------------------
+[010] C10_E004_L021
+Escena: C10_E004 · NO DA
+Personaje: MANUEL
+Emoción: orgullo cariñoso
+Intención: eco de C01_E008
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, terraza
+Texto: A las siete. [short pause] Y en punto.
+------------------------------------------------------------------------
