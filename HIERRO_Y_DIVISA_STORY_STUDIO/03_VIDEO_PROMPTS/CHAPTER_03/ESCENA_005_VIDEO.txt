@@ -1,0 +1,45 @@
+ID: C03_E005_VIDEO
+ESCENA: C03_E005 · LO QUE SE LLEVA PUESTO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_03/ESCENA_005_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_005.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E005
+ 2. Imagen de referencia .... C03_E005_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Javier mete una rama en el fuego mientras habla del miedo.
+ 5. Desarrollo .............. Javier mete la rama en el fuego y habla bajo; Alejandro se incorpora y se sienta; se miran.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija a ras de arena; empuje muy lento.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Toño dormido sin moverse. Botella de vino junto al fuego.
+14. Acción final ............ Los dos sentados frente a frente con el fuego entre ellos.
+15. Transición .............. Corte a plano corto de Javier: «Se lleva puesto».
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  2.0 s – JAVIER: «Todos los días. Desde que me levanto...» (C03_E005_L005)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C03_E005_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — At night in the middle of a small bullring, two young men lie on the sand with their heads on saddles beside a small fire; the bullfighter feeds a branch into the flames while he talks; a big farmhand sleeps against a wooden barrier behind them.
+0-4s: the bullfighter pushes a branch into the fire, talking quietly, no smile. 4-7s: the other young man props himself up and sits. 7-10s: both sit facing each other across the fire in silence.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked sand-level shot with a very slow push-in
+Environment motion: sparks rising, the sleeping farmhand breathing, stars
+Lighting stays consistent with the reference frame.
+Final moment: the two sitting face to face with the fire between them.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

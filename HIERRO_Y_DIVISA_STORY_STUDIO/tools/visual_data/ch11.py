@@ -33,3 +33,22 @@ dict(id="C11_E003", title="TRES CAMINOS", loc="CERCADO LUCERO",
  animals=["LUCERO"], animals_ref=["LUCERO"], extra="Variant C08-A: the paddock is empty, only the oak (generate a second image without the bull, suffix _RAMA_C08A).",
  comp="the two men on the wall at left, the bull and the oak at right, dark blue sky with clouds", light="last blue light, pink-edged clouds", lens="85 mm anamorphic lens", dof="focus on the bull, men slightly soft", tex="lichen, wire, phone glow", mood="three roads", neg="readable phone screen"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C11_E001": dict(dur="8 s", dev_es="El Rubio habla chulo; Manuel le ordena irse; el Rubio va hacia los topógrafos dejando la puerta abierta; Alejandro mira la carpeta.",
+  cam_es="Cámara fija; empuje hacia la puerta abierta de la pick-up.", cont_es="Carpeta azul en el asiento, sin texto legible.", end_es="Plano sobre la carpeta azul; Alejandro a un paso.", trans_es="Corte a la elección.",
+  dev_en="0-3s: the burly foreman speaks cockily. 3-5s: the old foreman answers him calmly. 5-7s: the burly man walks toward the surveyors, leaving the pickup door open. 7-8s: the young man looks at the blue folder on the seat.",
+  cam_en="locked shot with a push toward the open pickup door", env_en="wind over stubble, the surveyors packing the tripod", end_en="the blue folder on the seat, the young man one step away.",
+  dialog=["0.5 s – EL RUBIO: «Estoy en la finca que va a ser del jefe el domingo...» (C11_E001_L009)", "3.5 s – MANUEL: «Ramiro. Recoge eso y vete...» (C11_E001_L010)"]),
+"C11_E002": dict(dur="8 s", dev_es="Javier bromea; Lucía deja la bolsa en la mesilla; Alejandro se sienta y mira el vendaje bajo la sábana.",
+  cam_es="Cámara fija.", cont_es="Gotero en el brazo izquierdo; sin herida visible.", end_es="Alejandro sentado, serio; Javier sonriendo.", trans_es="Corte a plano de Javier contando la cornada.",
+  dev_en="0-3s: the bullfighter jokes from the bed. 3-5s: the woman puts the paper bag on the bedside table. 5-8s: the young man sits and looks at the bandaged thigh under the sheet.",
+  cam_en="locked shot", env_en="evening light shifting, a nurse passing in the corridor", end_en="the young man seated and serious, the bullfighter smiling.",
+  dialog=["0.5 s – JAVIER: «¡Hombre! Las visitas...» (C11_E002_L001)"]),
+"C11_E003": dict(dur="10 s", dev_es="El móvil se ilumina; Alejandro contesta con el altavoz; Manuel se incorpora del muro al oír la cifra; Lucero levanta la cabeza.",
+  cam_es="Cámara fija sobre el hombro.", cont_es="Rama C08-A: sin toro.", end_es="Los dos mirándose; el toro con la cabeza alta.", trans_es="Fundido a negro.",
+  dev_en="0-2s: the phone lights up on the wall. 2-4s: the young man answers on speaker. 4-8s: as the call goes on, the old foreman straightens up from the wall. 8-10s: the two men look at each other; beyond, the bull lifts its head.",
+  cam_en="locked over-the-shoulder shot", env_en="wind in the oak, the last light fading", end_en="the two men looking at each other, the bull's head raised.",
+  dialog=["2.5 s – MARTA IBARRA (teléfono): «¿Alejandro Galván? Marta Ibarra, de Meseta Renovables...» (C11_E003_L010)"]),
+}

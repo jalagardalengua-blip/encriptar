@@ -1,0 +1,46 @@
+ID: C07_E002_VIDEO
+ESCENA: C07_E002 · EL SORTEO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_07/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_07/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C07_E002
+ 2. Imagen de referencia .... C07_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Javier abre el papel de fumar con los números de su lote.
+ 5. Desarrollo .............. Javier lee el papel; se asoma; Farolero le mira desde abajo; Javier hace un gesto de respeto con las cejas.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija; inserto final picado sobre el toro.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Toro cárdeno claro.
+14. Acción final ............ Javier apoyado en la barandilla junto a Alejandro.
+15. Transición .............. Corte a plano de Javier: «Me llamó Valcárcel».
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – JAVIER: «Catorce y treinta y nueve...» (C07_E002_L001)
+  5.0 s – JAVIER: «Illo. Ese tiene cara de saber latín.» (C07_E002_L003)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C07_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — A young bullfighter unrolls a tiny paper slip drawn from a cap during the lottery of bulls; beside him the young rancher; below, a tall pale bull lifts its head toward them.
+0-3s: the bullfighter reads the slip aloud. 3-6s: he leans over the rail; below, the tall pale bull looks up at him. 6-8s: he raises his eyebrows in respect and leans on the rail beside the rancher.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot ending on a high-angle insert of the bull
+Environment motion: midday glare, dust in the corral
+Lighting stays consistent with the reference frame.
+Final moment: the bullfighter leaning on the rail next to the rancher.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

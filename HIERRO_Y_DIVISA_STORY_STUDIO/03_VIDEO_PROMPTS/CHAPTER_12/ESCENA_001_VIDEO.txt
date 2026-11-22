@@ -1,0 +1,45 @@
+ID: C12_E001_VIDEO
+ESCENA: C12_E001 · LA FIRMA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_12/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_12/ESCENA_001.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C12_E001
+ 2. Imagen de referencia .... C12_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Alejandro deposita la grabadora plateada sobre la mesa de nogal; Ricardo la mira intrigado.
+ 5. Desarrollo .............. Alejandro deja la grabadora; Ricardo la mira y sonríe; Benavides alza la vista por encima de las gafas; Manuel mira la lluvia.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija en eje de mesa.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Chaqueta verde mojada en los hombros. La grabadora no se enciende.
+14. Acción final ............ Todos mirando la grabadora; silencio.
+15. Transición .............. Corte a la elección de campaña.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – NOTARIO BENAVIDES: «Señor Galván. ¿Tiene algo que manifestar?» (C12_E001_L004)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C12_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — In a notary's office on a rainy morning, a young man places a small silver voice recorder on the walnut table in front of him; across the table an elegant businessman and his lawyer look at it with curiosity; the bald notary presides at the head; an old foreman sits beside the young man.
+0-3s: the young man places the silver recorder on the walnut table. 3-5s: the businessman looks at it and smiles faintly, intrigued. 5-6s: the notary looks over his glasses. 6-8s: the old foreman turns his eyes to the rain on the window.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot along the table axis
+Environment motion: rain running down the window, the wall clock's pendulum
+Lighting stays consistent with the reference frame.
+Final moment: everyone looking at the recorder in silence.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

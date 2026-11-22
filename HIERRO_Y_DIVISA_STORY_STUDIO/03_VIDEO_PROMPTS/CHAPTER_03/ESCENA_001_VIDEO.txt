@@ -1,0 +1,45 @@
+ID: C03_E001_VIDEO
+ESCENA: C03_E001 · EL TRIANERO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_03/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_001.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E001
+ 2. Imagen de referencia .... C03_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Javier sale del coche rojo, que todavía humea, con los brazos abiertos y una sonrisa.
+ 5. Desarrollo .............. Javier sale del coche, saluda con los brazos abiertos y camina hacia los pintores; Manuel deja la brocha en el bote; Alejandro se limpia las manos en el pantalón.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija a la altura del pecho; ligera panorámica a la derecha siguiendo a Javier.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Manos de Manuel con pintura roja. Coche rojo con la funda de estoques en la baca.
+14. Acción final ............ Javier tiende la mano a Manuel; Manuel, con la mano manchada, se la estrecha.
+15. Transición .............. Corte a plano corto de la palma manchada de Javier.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  1.0 s – JAVIER: «¡Buenas! ¿Es aquí la ganadería de Galván...?» (C03_E001_L008)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C03_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — Two men painting the wooden barriers of a small bullring red turn toward a battered red hatchback that has just arrived in the yard with a sword case on its roof rack; a young Andalusian bullfighter climbs out with open arms and a huge smile.
+0-2s: the young man climbs out of the red car and spreads his arms. 2-6s: he walks toward the two painters talking cheerfully; the old foreman puts his brush in the can. 6-8s: the visitor offers his hand and the foreman shakes it with his red-painted hand.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked chest-height shot with a slight pan right following the visitor
+Environment motion: swallows crossing, a little smoke from the car's exhaust
+Lighting stays consistent with the reference frame.
+Final moment: the handshake, red paint passing onto the visitor's palm.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

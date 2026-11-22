@@ -46,3 +46,28 @@ dict(id="C06_E004", title="LA HOGUERA", loc="MORALEJA",
  extra="Villagers silhouetted around the bonfire; strings of bulb lights.",
  comp="the two in the foreground, the bonfire soft behind with sparks, silhouettes of people", light="orange bonfire backlight, warm bulb strings", lens="85 mm anamorphic lens", dof="shallow, bonfire bokeh", tex="stone wall, sparks, cotton blouse", mood="now, yes"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C06_E001": dict(dur="8 s", dev_es="El toro avanza por la manga y mira a Alejandro; Manuel grita «¡Ahora!»; Alejandro sube la guillotina; el toro entra en el camión.",
+  cam_es="Cámara alta fija desde la pasarela.", cont_es="Un solo toro en la manga; camión con cajones.", end_es="El toro dentro del cajón del camión; trampilla cayendo.", trans_es="Corte a plano de Javier: «¡Ole tú, ganadero!».",
+  dev_en="0-3s: the bull trots along the chute and stops, looking at the young man. 3-4s: the foreman on the wall shouts. 4-6s: the young man pulls the rope and the guillotine gate rises. 6-8s: the bull goes up the ramp into the truck crate and the hatch drops.",
+  cam_en="locked high shot from the walkway", env_en="dust, cowbells of oxen in the next pen", end_en="the bull inside the truck crate, the hatch closing.",
+  dialog=["3.0 s – MANUEL: «¡Ahora!» (C06_E001_L007)"]),
+"C06_E002": dict(dur="8 s", dev_es="Manuel se separa de la chapa satisfecho; Javier sube por la escalerilla y echa agua por las rejillas; Alejandro habla por teléfono, tenso.",
+  cam_es="Cámara fija; ligero reencuadre hacia Alejandro.", cont_es="Rueda reventada visible.", end_es="Alejandro con el móvil, mirando a Manuel.", trans_es="Corte a plano de Manuel alejándose (rama A) o asintiendo (rama B).",
+  dev_en="0-3s: the foreman steps back from the truck side, reassured. 3-6s: the bullfighter climbs the side ladder and pours water through the top grilles. 6-8s: the young man on the phone turns toward the foreman, tense.",
+  cam_en="locked shot with a slight reframe toward the young man", env_en="heat shimmer over the road, water dripping down the aluminium", end_en="the young man on the phone looking at the foreman.",
+  dialog=["0.5 s – MANUEL: «Están bien. Nerviosos, pero bien...» (C06_E002_L001)", "5.0 s – RICARDO (teléfono, fuera de plano): «...Tengo uno vacío a quince minutos...» (C06_E002_L004)"]),
+"C06_E003": dict(dur="10 s", dev_es="Se abre la portera al fondo; salen los cabestros y los toros; los caballistas arrancan al galope; Manuel y Alejandro se ponen al costado de la manada.",
+  cam_es="Cámara en dron bajo con travelling lateral acompañando a los jinetes.", cont_es="Cuatro toros, tres cabestros, doce jinetes.", end_es="Manuel y Alejandro galopando al costado de los toros.", trans_es="Corte al tramo urbano.",
+  dev_en="0-3s: in the distance a gate opens; belled oxen come out, followed by four fighting bulls. 3-6s: the twelve riders spur into a gallop. 6-10s: the old foreman on the grey and the young man on the chestnut mare ride alongside the herd, not behind it.",
+  cam_en="low drone tracking laterally with the riders", env_en="golden dust clouds, cowbells, the village tower growing nearer", end_en="the two riders galloping alongside the bulls.",
+  chars_en="realistic galloping horses and bulls, riders balanced in vaquera saddles, no collisions.",
+  dialog=["0.5 s – MANUEL: «No se corre detrás del toro. Se corre al lado...» (C06_E003_L001)"]),
+"C06_E004": dict(dur="8 s", dev_es="Lucía habla bajo; se besan; al fondo, Javier silba con los dedos; la gente se vuelve; Lucía se tapa la cara riéndose.",
+  cam_es="Cámara fija con ligero empuje.", cont_es="Hoguera detrás; Javier al fondo.", end_es="Lucía riéndose con la mano en la cara; Alejandro sonriendo.", trans_es="Corte a los dos saltando la hoguera.",
+  dev_en="0-3s: the woman says a few quiet words. 3-5s: they kiss. 5-6s: in the background the bullfighter whistles with two fingers in his mouth. 6-8s: villagers turn and applaud; she covers her face with one hand, laughing.",
+  cam_en="locked shot with a gentle push-in", env_en="sparks rising, bulb strings swaying, people dancing", end_en="the woman laughing behind her hand, the man smiling.",
+  dialog=["0.5 s – LUCÍA: «Esta vez no hay toro muerto. Ni padre.» (C06_E004_L009)", "5.5 s – JAVIER (fondo): «¡Eso! ¡Eso es un deseo bien pedido!» (C06_E004_L012)"]),
+}

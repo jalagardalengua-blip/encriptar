@@ -43,3 +43,27 @@ dict(id="C10_E004", title="NO DA", loc="PLAZA MAYOR",
         ("Arriving", "CARMEN", "C2", "putting a folder on the table", "satisfied")],
  comp="the café table in the foreground, the four around it, the golden arches behind", light="golden-lit arches, cool laptop glow", lens="40 mm spherical lens", dof="focus on the table group", tex="sandstone, glasses, laptop", mood="a triumph that is not enough", neg="readable laptop screen"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C10_E001": dict(dur="8 s", dev_es="El toro mira la pasarela; da media vuelta y trota al corral; los aficionados comentan; Carmen habla a Alejandro.",
+  cam_es="Cámara alta fija; ligero reencuadre.", cont_es="Toros negros en el corral contiguo, quietos.", end_es="El toro entrando en el corral; Alejandro respirando hondo.", trans_es="Corte al siguiente cajón.",
+  dev_en="0-3s: the cárdeno bull stares up at the walkway. 3-6s: it turns and trots into the open corral. 6-8s: the aficionados murmur and point; the impresario leans to speak quietly to the young rancher.",
+  cam_en="locked high shot with a slight reframe", env_en="pigeons on the eaves, dust from the hooves", end_en="the bull entering the corral, the young man breathing deeply.",
+  dialog=["6.0 s – CARMEN: «Estos los vas a ver en la plaza cuatro horas...» (C10_E001_L001)"]),
+"C10_E002": dict(dur="8 s", dev_es="Ricardo gira el vaso, habla; se da cuenta de lo que ha dicho; sonríe, deja un billete y se levanta.",
+  cam_es="Cámara fija.", cont_es="Javier al fondo, desenfocado.", end_es="Ricardo alejándose; Alejandro pensativo en el taburete.", trans_es="Corte a plano de Javier mirando.",
+  dev_en="0-3s: the businessman turns the glass and says a short sentence. 3-5s: a flicker crosses his face as he realises what he said. 5-8s: he smiles, puts a banknote on the counter, stands and walks away.",
+  cam_en="locked shot", env_en="bar patrons in soft focus, low piano", end_en="the businessman walking away, the young man thinking on his stool.",
+  dialog=["0.5 s – RICARDO: «A mí no me dan de comer los toros. A mí me dan de comer los papeles.» (C10_E002_L007)"]),
+"C10_E003": dict(dur="10 s", dev_es="Barquero mira los tendidos; la plaza aplaude al toro; Javier sale del burladero y le cita con el capote; el toro se arranca de largo.",
+  cam_es="Gran plano general alto, panorámica lenta acompañando la arrancada.", cont_es="Chaqueta verde en el callejón. Sin sangre.", end_es="El toro embistiendo el capote en una larga cambiada.", trans_es="Corte a la faena.",
+  dev_en="0-3s: the dark bull stands on the sun-shade line staring at the stands. 3-5s: the whole crowd applauds the bull. 5-7s: the matador steps out from the burladero and cites with the cape. 7-10s: the bull charges from a distance into a long sweeping pass.",
+  cam_en="extreme wide high shot with a slow pan following the charge", env_en="crowd standing, flags moving, dust behind the bull", end_en="the bull charging through a long cape pass.",
+  chars_en="correct bull locomotion and a believable cape pass, no contact.", audio="Sin voz. Ambiente de plaza (ovación, silencio, clarín)."),
+"C10_E004": dict(dur="8 s", dev_es="Alejandro termina la suma y dice la cifra; silencio en la mesa; Manuel deja la cerveza; Carmen se quita las gafas.",
+  cam_es="Cámara fija; empuje lento.", cont_es="Portátil sin texto legible.", end_es="Carmen limpiando las gafas con la servilleta.", trans_es="Corte a plano de Manuel: «No da».",
+  dev_en="0-3s: the young man finishes typing and says a number. 3-5s: silence at the table. 5-6s: the foreman puts his beer down. 6-8s: the impresario takes off her glasses and cleans them with a napkin.",
+  cam_en="locked shot with a slow push-in", env_en="people strolling under the arcades, golden light", end_en="the woman cleaning her glasses.",
+  dialog=["0.5 s – ALEJANDRO: «Faltan novecientos cuarenta mil...» (C10_E004_L004)"]),
+}

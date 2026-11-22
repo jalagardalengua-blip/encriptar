@@ -1,0 +1,45 @@
+ID: C04_E003_VIDEO
+ESCENA: C04_E003 · EL PORTAL
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_04/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_04/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C04_E003
+ 2. Imagen de referencia .... C04_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Alejandro se queda inmóvil con la caja en las manos al oír «Tu padre vino aquí».
+ 5. Desarrollo .............. Dani habla mirando al suelo; Alejandro deja la caja despacio y se sienta a su lado en el somier.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. La foto boca abajo dentro de la caja.
+14. Acción final ............ Los dos sentados en el somier, hombro con hombro.
+15. Transición .............. Corte a plano de la ventana del patio.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – DANI: «Tu padre vino aquí.» (C04_E003_L012)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C04_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — In a half-empty rented bedroom full of cardboard boxes, a young delivery rider sits on a bare bed frame looking at the floor; his flatmate stands frozen with a box in his hands.
+0-4s: the rider speaks to the floor. 4-8s: the young man slowly puts the box down and sits next to him on the bare bed frame.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot
+Environment motion: laundry moving in the light well, a TV flicker from another flat
+Lighting stays consistent with the reference frame.
+Final moment: the two sitting shoulder to shoulder on the bed frame.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

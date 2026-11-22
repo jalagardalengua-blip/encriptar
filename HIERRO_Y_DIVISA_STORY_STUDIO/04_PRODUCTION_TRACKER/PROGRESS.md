@@ -1,103 +1,93 @@
 # HIERRO Y DIVISA · PROGRESS
 
-Última actualización: lote 2 (capítulo 02, guion y voces).
+Última actualización: lote final (fases 1–6 completas para los 12 capítulos).
 
-> Todo lo que figura como «OK» existe como **texto** en este repositorio (guiones, archivos de voz preparados, prompts). **No se ha generado ningún audio, imagen ni vídeo.** Las columnas `imagen_generada` y `video_generado` de `SCENE_INDEX.csv` y la columna `estado` de `VOICE_RECORDING_TRACKER.csv` lo reflejan.
+> Todo lo que figura como «OK» existe como **texto** en este repositorio: guiones, archivos de voz preparados para ElevenLabs, prompts de imagen y prompts de vídeo. **No se ha generado ningún audio, imagen ni vídeo.** `SCENE_INDEX.csv` (columnas `imagen_generada`, `video_generado`) y `VOICE_RECORDING_TRACKER.csv` (columna `estado`) lo reflejan.
 
 ## Estado por fase
 
 | Paso | Contenido | Estado |
 |---|---|---|
 | 1 | Biblias (story, character, voice, visual continuity, world) | **OK** |
-| 2 | Guiones y diálogos de los 12 capítulos | **2 / 12** (C01, C02) |
-| 3 | Voces separadas para ElevenLabs | **2 / 12** (C01, C02) |
-| 4 | Prompts de imagen | Fichas maestras OK · **C01 (piloto)** |
-| 5 | Prompts de vídeo | **C01 (piloto)** |
-| 6 | Auditoría de continuidad y paquete final | Pendiente |
+| 2 | Guiones y diálogos de los 12 capítulos | **OK** · 55 escenas · 1.162 intervenciones · ~13.600 palabras de diálogo |
+| 3 | Voces separadas para ElevenLabs | **OK** · 21 voces · versión de dirección, v3 con etiquetas y v2 en texto plano |
+| 4 | Prompts de imagen | **OK** · 55 prompts de escena + 37 fichas maestras de identidad |
+| 5 | Prompts de vídeo | **OK** · 55 prompts, cada uno parte de su imagen |
+| 6 | Auditoría de continuidad y paquete final | **OK** · `AUDIT_REPORT.md` sin problemas abiertos |
 
 ## Estado por capítulo
 
-| Cap. | Título | Escenas | Guion | Voces | Imagen | Vídeo | Notas |
+| Cap. | Título | Escenas | Intervenciones | Guion | Voces | Imagen | Vídeo |
 |---|---|---|---|---|---|---|---|
-| 01 | La Encomienda | 8 | OK | OK (219 intervenciones, 8 voces) | OK · PILOTO | OK · PILOTO | Ver control de calidad |
-| 02 | Saneamiento | 7 | OK | OK (246 intervenciones, 9 voces) | bloqueado (fase 2) | bloqueado (fase 3) | Ver control de calidad |
-| 03 | La tienta | — | pendiente | pendiente | bloqueado | bloqueado | **Siguiente lote** |
-| 04 | Números rojos | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 05 | La cinta | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 06 | Encierro | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 07 | La primera | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 08 | El semental | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 09 | Lo que no se dice | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 10 | La Glorieta | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 11 | El precio | — | pendiente | pendiente | bloqueado | bloqueado | |
-| 12 | Hierro y divisa | — | pendiente | pendiente | bloqueado | bloqueado | |
+| 01 | La Encomienda | 8 | 219 | OK | OK | OK | OK |
+| 02 | Saneamiento | 7 | 246 | OK | OK | OK | OK |
+| 03 | La tienta | 5 | 98 | OK | OK | OK | OK |
+| 04 | Números rojos | 4 | 92 | OK | OK | OK | OK |
+| 05 | La cinta | 5 | 66 | OK | OK | OK | OK |
+| 06 | Encierro | 4 | 69 | OK | OK | OK | OK |
+| 07 | La primera | 4 | 58 | OK | OK | OK | OK |
+| 08 | El semental | 3 | 62 | OK | OK | OK | OK |
+| 09 | Lo que no se dice | 4 | 73 | OK | OK | OK | OK |
+| 10 | La Glorieta | 4 | 59 | OK | OK | OK | OK |
+| 11 | El precio | 3 | 58 | OK | OK | OK | OK |
+| 12 | Hierro y divisa | 4 | 62 | OK | OK | OK | OK |
 
-«Bloqueado» = no se empieza hasta cerrar los diálogos de los 12 capítulos (orden innegociable). El capítulo 01 es la excepción documentada en `00_BIBLE/STORY_BIBLE.md` §12.
+Misiones principales: 30 (M01–M30), todas cubiertas por al menos una escena. Finales: 3 (C12_E002 A, C12_E003 B, C12_E004 C).
 
-## Control de calidad · Capítulo 01
+## Orden de fases (cómo se ha respetado)
 
-| Comprobación | Resultado |
-|---|---|
-| Todas las escenas tienen guion | Sí (8/8) |
-| Diálogos completos, sin escenas resumidas | Sí. 219 intervenciones, ~2.000 palabras de diálogo, ramas A/B de E007 escritas completas |
-| Todas las intervenciones identificadas (personaje, escena, nº, emoción, intención, ritmo, pausas) | Sí. Validado por `tools/build_production.py` (0 errores) |
-| Archivos de voz separados por personaje | Sí: ALEJANDRO, MANUEL, RICARDO, LUCIA, DON_ERNESTO, CARMEN, PADRE_JULIAN, REMEDIOS |
-| Textos preparados para ElevenLabs (sin etiquetas de locutor ni acotaciones; ≤ 2 etiquetas v3 por línea) | Sí. Versión v3 con etiquetas y versión v2 en texto plano |
-| Cada escena tiene prompt de imagen | Sí (8/8) + 10 fichas maestras (7 personajes, 3 animales) |
-| Cada escena tiene prompt de vídeo | Sí (8/8) |
-| Cada vídeo parte de su imagen | Sí. El generador se niega a crear un vídeo sin su imagen; cada prompt de vídeo arranca del fotograma de referencia |
-| Continuidad narrativa | Revisada: cronología 5–9 de marzo, 196 días hasta el 21 de septiembre (= «seis meses y doce días»), llamadas del miércoles/jueves coherentes entre E001, E004 y E006 |
-| Continuidad visual | Revisada: vestuario por escena (A1 → A1B → A2 → A3; M1 → M1B → M2/M3), chaqueta de Ernesto desde E004, orientación de la luz en el cercado (oeste a la espalda, toro al este) |
-| Contradicciones | Dos detectadas en el encargo y resueltas (STORY_BIBLE §12). Ninguna interna abierta |
+1. Biblias → 2. Guiones y voces de los 12 capítulos → 3. Prompts de imagen de los 12 capítulos → 4. Prompts de vídeo de los 12 capítulos → 5. Auditoría.
+La única excepción es el **piloto del capítulo 01**, producido en las tres fases al principio por mandato expreso de la primera tarea (ver STORY_BIBLE §12). En la auditoría final se ha regenerado con la biblia visual definitiva y se ha retirado la marca de piloto pendiente de revisión.
+Los prompts de vídeo del capítulo 02, que se habían generado junto a sus imágenes, se retiraron y se volvieron a generar en la fase de vídeo.
 
-### Correcciones hechas durante la revisión del C01
-- E004 L003: tenía tres etiquetas de audio → reducida a dos.
-- E001 L015 y E007 L015 empezaban con `[short pause]` (inútil al inicio de una toma) → la pausa pasa a montaje.
-- E005 L005: Manuel usaba «Bueno», muletilla reservada a Ernesto → «Mira tú».
-- E008: el toro estaba «recortado contra el cielo naranja» mirando al este → cielo rosa-violeta, coherente con la orientación del cercado.
-- Biblia visual: añadidos `WARDROBE A1B`, `WARDROBE M1B` y `LOCATION LOCK — CAMINO ENCOMIENDA`; el sombrero y los zahones de Manuel pasan a indicarse por plano.
-
-## Control de calidad · Capítulo 02
+## Control de calidad global
 
 | Comprobación | Resultado |
 |---|---|
-| Todas las escenas tienen guion | Sí (7/7) |
-| Diálogos completos, sin escenas resumidas | Sí. 246 intervenciones. Ramas completas: QTE de E003 (quieto/salto) con eco en E004, elección A/B de E006, variante de E007 según la rama de C01 |
-| Intervenciones identificadas y validadas | Sí. `tools/build_production.py`: 0 errores (se añade la regla «ninguna toma empieza con pausa») |
-| Archivos de voz separados | Sí: ALEJANDRO, MANUEL, LUCIA, CARMEN, RICARDO, REMEDIOS, TONO, BENITEZ, ARRANZ |
-| Voces nuevas documentadas | Sargento Benítez e Inspectora Arranz añadidos a VOICE_BIBLE §4; Arranz y el Rubio a CHARACTER_BIBLE |
-| Prompts de imagen y vídeo | No procede todavía (fase 2 y 3 bloqueadas hasta cerrar los 12 guiones) |
-| Continuidad narrativa | Revisada: calendario ajustado a lunes 10 – jueves 20 de marzo (Lucía prometió volver «el lunes» en C01 E005); 42 días desde el 20 de marzo = 1 de mayo; 12 días desde la llegada de Alejandro (Remedios, E007); 3.000 visitas × 60 € = 180.000 € (E002); censo de 180 reses coherente con WORLD_BIBLE |
-| Recursos repetidos a propósito | «Esto es Peñacorva…» (Remedios en E007 L005, Ricardo en E007 L023): eco deliberado; la frase de Ricardo es la que delata que la información sale del pueblo |
-| Contradicciones | Ninguna abierta. Corregido durante la revisión: Lucero no pasa por el cajón en E005 (si lo hiciera, Lucía le habría visto la mano y se resolvería antes de tiempo el misterio n.º 1) |
+| Todas las escenas tienen guion completo (no resumido) | Sí, 55/55 |
+| Todas las intervenciones identificadas (personaje, escena, nº, emoción, intención, ritmo, pausas) | Sí. `tools/build_production.py`: 0 errores |
+| Archivos de voz separados y con tantas líneas como intervenciones | Sí. `tools/audit.py` lo comprueba archivo a archivo |
+| Textos para ElevenLabs sin etiquetas de locutor ni acotaciones, ≤ 2 etiquetas v3, ninguna toma empieza con pausa | Sí |
+| Cada personaje con voz tiene ficha en VOICE_BIBLE | Sí, 21/21 |
+| Cada escena tiene prompt de imagen y de vídeo | Sí, 55/55 y 55/55 |
+| Cada vídeo parte de su imagen | Sí (el generador no crea un vídeo sin imagen; la auditoría lo verifica) |
+| Cada referencia de identidad tiene ficha maestra | Sí, 37 fichas |
+| Continuidad visual (vestuario, animales, vehículos, localizaciones) | Bloques `LOCK` únicos en la biblia visual, copiados literalmente por el generador |
+
+## Correcciones de continuidad hechas durante la producción
+
+- **Calendario:** el 21 de septiembre cae en domingo; la firma pasa al viernes 19 (último día hábil). Fechas de todos los capítulos ajustadas en STORY_BIBLE §5.
+- **Moro:** con 12 años no pudo criarlo Pilar (murió hace 17). Ahora es hijo de la Paloma, la yegua que crio Pilar (C05_E001).
+- **Edades en las cintas:** Ernesto 41 y Manuel 38 en el herradero de hace 23 años (antes «45»).
+- **Manuel y la opción:** en el flashback (C09_E003) Ernesto deja escapar «he vendido la finca»; Manuel lo reconoce en C09_E002 («quise creerme que nada»), coherente con su «Eso no» de C01_E007.
+- **Lucero en la prueba de tuberculina:** eliminado para no resolver antes de tiempo el misterio de la cojera.
+- **Barquero:** dos manchas claras en la frente como Lucero (no «lucero blanco»).
+- **Cifras finales:** 640 − 180 = 460 ha para el FINAL B; Meseta (1,1 M€) + ingresos de campaña (~0,2 M€) cubren la deuda de 1,14 M€; el aval de Carmen queda como colchón. STORY_BIBLE §9 reescrito en consecuencia.
+- **Vestuario:** añadidos A1B, M1B, A4–A8, M4–M5, L2–L3, R3–R4, J1–J4, C1–C2, E1 y el LOCK `ALEJANDRO_FINAL_C` (afeitado, pelo corto) para no contradecir el LOCK base.
+
+## Observaciones para la siguiente etapa
+
+- Los capítulos 01 y 02 tienen escenas más largas (25–35 intervenciones) porque contienen tutoriales y presentaciones; a partir del 03 las escenas son más concentradas (12–25 intervenciones). Si dirección quiere más minutos de cinemática en los capítulos centrales, el punto natural para ampliar son C08 (3 escenas) y C11 (3 escenas).
+- Hay líneas de grabación que se reproducen dos veces (C09_E004 L007–L008 = C09_E003 L021–L022): se sintetizan una vez y se reutiliza la toma (indicado en la columna `fx`).
+- Las variantes de imagen por rama (`_RAMA_A` del pitón en C07_E003, `_RAMA_C08A` del cercado vacío en C11_E003) están indicadas en los prompts; se generan solo si se producen esas ramas.
 
 ## Imágenes de referencia aprobadas
 
 | Ficha | Imagen aprobada | Herramienta | Fecha |
 |---|---|---|---|
-| ALEJANDRO | — | — | — |
-| MANUEL | — | — | — |
-| RICARDO | — | — | — |
-| LUCIA | — | — | — |
-| JAVIER | — | — | — |
-| CARMEN | — | — | — |
-| ERNESTO | — | — | — |
-| LUCERO / MORO / CANELA | — | — | — |
+| (37 fichas en `02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/`) | — | — | — |
 
 ## Voces aprobadas (Voice ID de ElevenLabs)
 
 Se rellenan en `00_BIBLE/VOICE_BIBLE.md` §4 y en la columna `voice_id` del tracker.
 
-## Siguiente lote
-
-1. Capítulo 03 «La tienta» (guion y voces): M07 Preparativos · M08 La tienta · M09 Noche en la placita. Entra Javier Romero.
-2. Seguir con los capítulos 04–12, solo guion y voces.
-3. Con los 12 guiones cerrados: prompts de imagen C02–C12, después vídeo, después auditoría (incluida la revisión del piloto C01).
-
-## Cómo continuar desde aquí
+## Cómo regenerar el paquete
 
 ```bash
 cd HIERRO_Y_DIVISA_STORY_STUDIO
-python3 tools/build_production.py              # regenera voces, GUION_COMPLETO y trackers; valida
-python3 tools/build_visual_prompts.py 01       # regenera prompts de imagen y vídeo de un capítulo
+python3 tools/build_production.py               # voces, GUION_COMPLETO, trackers; valida
+python3 tools/build_character_sheets.py         # fichas de identidad que falten
+for c in 01 02 03 04 05 06 07 08 09 10 11 12; do python3 tools/build_visual_prompts.py $c image; done
+for c in 01 02 03 04 05 06 07 08 09 10 11 12; do python3 tools/build_visual_prompts.py $c video; done
+python3 tools/audit.py                          # informe de auditoría
 ```

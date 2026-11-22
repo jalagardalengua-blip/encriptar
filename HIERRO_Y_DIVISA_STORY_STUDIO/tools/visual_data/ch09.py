@@ -40,3 +40,27 @@ dict(id="C09_E004", title="CARPETA B", loc="CASA MAYORAL",
  animals=["MORO"], animals_ref=["MORO"], vehicles=["TODOTERRENO MANUEL"], extra="The vehicle's tailgate is open with two suitcases inside; the cottage has a green door.",
  comp="the two in profile, the vehicle with open boot behind, the grey horse on the right, pink sky", light="soft pink dawn light", lens="85 mm anamorphic lens", dof="shallow, both faces sharp", tex="dew, cardboard, suitcases, whitewash", mood="forgiveness"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C09_E001": dict(dur="8 s", dev_es="Alejandro deja el papel; coge la grabadora; pulsa el botón de carpeta; la pantallita cambia; el dedo se queda sobre «reproducir».",
+  cam_es="Cámara fija; inserto de la grabadora.", cont_es="Pantalla de la grabadora sin texto legible en vídeo.", end_es="El dedo sobre el botón; se oyen cascos fuera.", trans_es="Corte a la puerta abriéndose.",
+  dev_en="0-3s: the young man puts down the note. 3-6s: he picks up the silver recorder and presses a tiny side button; the small display changes. 6-8s: his thumb hovers over the play button and stops; he looks up toward the door.",
+  cam_en="locked shot with a close insert on the recorder", env_en="a fly against the blinds, light stripes", end_en="the thumb hovering over play.", audio="Sin voz (la lectura del informe va en off desde la pista de ElevenLabs)."),
+"C09_E002": dict(dur="8 s", dev_es="Manuel cuelga el sombrero; entra; se sienta a la mesa camilla enfrente de la silla vacía; Alejandro no se mueve.",
+  cam_es="Cámara fija.", cont_es="Sobre abierto en la mesa.", end_es="Manuel sentado mirando sus manos.", trans_es="Corte a plano corto de Alejandro: «Parkinson».",
+  dev_en="0-3s: the foreman hangs his hat on the rack by the door. 3-6s: he walks in and sits at the round table opposite the empty chair. 6-8s: he looks down at his hands; the young man stands motionless.",
+  cam_en="locked shot", env_en="dust in the doorway light", end_en="the foreman seated, looking at his hands.",
+  dialog=["6.5 s – ALEJANDRO: «Parkinson.» (C09_E002_L001)"]),
+"C09_E003": dict(dur="10 s", dev_es="Ernesto esconde la mano; Manuel habla; Ernesto le mira herido; se levanta apoyándose en la mesa y coge la chaqueta verde del respaldo.",
+  cam_es="Cámara fija (espejo de C01_E006).", cont_es="Tratamiento de flashback. Mano derecha con temblor leve.", end_es="Ernesto de pie con la chaqueta en la mano.", trans_es="Corte a Manuel cogiendo el sombrero.",
+  dev_en="0-3s: the old rancher hides his trembling hand under the table. 3-6s: the foreman speaks firmly; the rancher looks at him as if struck. 6-10s: the rancher stands up slowly, leaning on the table, and takes the olive field jacket from the back of his chair.",
+  cam_en="locked shot mirroring the earlier kitchen scene", env_en="low fire, radio dial glowing", end_en="the rancher standing with the jacket in his hand.",
+  chars_en="the old rancher moves slowly with a very slight tremor in the right hand (early Parkinson's), never exaggerated.",
+  dialog=["2.0 s – MANUEL: «Pues vete a Madrid. Y esta vez sube.» (C09_E003_L005)", "7.0 s – DON ERNESTO: «Me voy a mirarle la mano al toro.» (C09_E003_L014)"]),
+"C09_E004": dict(dur="10 s", dev_es="La grabadora suena; a Manuel se le cae el sombrero; se tapa la cara; Alejandro da un paso y le abraza.",
+  cam_es="Cámara fija de perfil; ligero empuje.", cont_es="Moro atado; maletero abierto.", end_es="El abrazo, torpe y fuerte.", trans_es="Corte a Toño dándose la vuelta en el camino.",
+  dev_en="0-4s: the recorder plays; the foreman listens, frozen. 4-5s: his hat slips from his hand onto the ground. 5-7s: he covers his face with his hand. 7-10s: the young man steps forward and hugs him awkwardly and firmly.",
+  cam_en="locked profile shot with a gentle push-in", env_en="pink dawn, the grey horse shifting, dew", end_en="the awkward strong embrace.",
+  dialog=["0.5 s – DON ERNESTO (grabación): «Y a Manuel... dile que no fue culpa suya...» (C09_E004_L007)"]),
+}

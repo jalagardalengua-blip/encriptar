@@ -46,3 +46,28 @@ dict(id="C12_E004", title="FINAL C · LA DIVISA", loc="DESPACHO RICARDO",
  extra="Signed documents on the glass desk; a mounted head of a black bull on the wall.",
  comp="the two men in symmetrical profile, the large window centred behind them with the distant panels and farmhouse", light="cool clean window light", lens="50 mm spherical lens", dof="deep focus", tex="glass, steel, wool blazers, paper", mood="winning by resemblance", neg="readable documents, olive field jacket"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C12_E001": dict(dur="8 s", dev_es="Alejandro deja la grabadora; Ricardo la mira y sonríe; Benavides alza la vista por encima de las gafas; Manuel mira la lluvia.",
+  cam_es="Cámara fija en eje de mesa.", cont_es="Chaqueta verde mojada en los hombros. La grabadora no se enciende.", end_es="Todos mirando la grabadora; silencio.", trans_es="Corte a la elección de campaña.",
+  dev_en="0-3s: the young man places the silver recorder on the walnut table. 3-5s: the businessman looks at it and smiles faintly, intrigued. 5-6s: the notary looks over his glasses. 6-8s: the old foreman turns his eyes to the rain on the window.",
+  cam_en="locked shot along the table axis", env_en="rain running down the window, the wall clock's pendulum", end_en="everyone looking at the recorder in silence.",
+  dialog=["0.5 s – NOTARIO BENAVIDES: «Señor Galván. ¿Tiene algo que manifestar?» (C12_E001_L004)"]),
+"C12_E002": dict(dur="10 s", dev_es="Alejandro mira las placas; coge el móvil y llama; sonríe al oír a Manuel; al final coge la corbata del asiento de atrás y se la pone con una mano.",
+  cam_es="Cámara fija en el habitáculo, como en C01_E001.", cont_es="Flores y grabadora en el asiento del copiloto.", end_es="Alejandro con la corbata puesta, conduciendo; Peñacorva al fondo.", trans_es="Fundido a negro y créditos.",
+  dev_en="0-3s: the driver looks at the glittering panels. 3-5s: he takes his phone from the holder and calls on speaker. 5-7s: he smiles when the voice answers. 7-10s: he reaches back for a black tie on the back seat and starts knotting it with one hand while driving.",
+  cam_en="locked car-mounted camera from the passenger side, as in the opening scene", env_en="panels sliding past, fog lifting, sun flicker", end_en="the driver wearing the tie, the village appearing ahead.",
+  dialog=["5.0 s – MANUEL (teléfono): «¿Por dónde vas?» (C12_E002_L003)", "6.5 s – ALEJANDRO: «Pasando por los llanos.» (C12_E002_L004)"]),
+"C12_E003": dict(dur="10 s", dev_es="Alejandro coge el hierro, se arrodilla y lo apoya en el anca del becerro tres segundos; humo; lo retira: el hierro queda derecho; Lucía se acerca con el espray; la gente aplaude.",
+  cam_es="Cámara fija con empuje lento; inserto del hierro.", cont_es="Hierro EG con media luna hacia arriba. Javier con bastón.", end_es="Manuel le pone la mano en el hombro.", trans_es="Corte a la comida en la placita.",
+  dev_en="0-2s: the young man takes the glowing iron by the handle. 2-6s: he kneels and presses it on the calf's right hindquarter for three seconds; a puff of smoke. 6-8s: he lifts it; the brand is straight; the vet steps in with a spray can; people on the walls clap. 8-10s: the old foreman puts a hand on his shoulder.",
+  cam_en="locked shot with a slow push-in and a short insert of the brand", env_en="wood smoke, straw dust, villagers clapping", end_en="the foreman's hand on the young man's shoulder.",
+  chars_en="the calf is held gently and is not hurt beyond the brand, no visible wound close-up.",
+  dialog=["0.5 s – MANUEL: «El primero lo pones tú. Es tu camada.» (C12_E003_L001)"]),
+"C12_E004": dict(dur="8 s", dev_es="El apretón dura un segundo; Ricardo dice «Bienvenido»; Alejandro contesta; los dos sonríen igual; Alejandro se abrocha el blazer y sale.",
+  cam_es="Cámara fija simétrica.", cont_es="Sin chaqueta verde. Pelo corto, afeitado.", end_es="Ricardo solo junto al ventanal; Alejandro saliendo de cuadro.", trans_es="Corte al espejo del pasillo.",
+  dev_en="0-2s: the one-second handshake. 2-4s: the older man says one word of welcome. 4-6s: the younger man answers; both share the same thin closed-lip smile. 6-8s: the younger man buttons his blazer and walks out of frame.",
+  cam_en="locked symmetrical shot", env_en="cool light, distant panels glittering through the window", end_en="the older man alone by the window.",
+  dialog=["2.0 s – RICARDO: «Bienvenido, Alejandro...» (C12_E004_L008)", "4.0 s – ALEJANDRO: «No me des la bienvenida, Ricardo. Dame los papeles.» (C12_E004_L009)"]),
+}

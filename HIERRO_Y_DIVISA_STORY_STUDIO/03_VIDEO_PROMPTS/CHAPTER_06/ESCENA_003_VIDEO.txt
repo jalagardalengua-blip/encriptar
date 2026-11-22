@@ -1,0 +1,45 @@
+ID: C06_E003_VIDEO
+ESCENA: C06_E003 · EL ENCIERRO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_06/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_06/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C06_E003
+ 2. Imagen de referencia .... C06_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Los caballistas esperan en la loma a que se abra la portera.
+ 5. Desarrollo .............. Se abre la portera al fondo; salen los cabestros y los toros; los caballistas arrancan al galope; Manuel y Alejandro se ponen al costado de la manada.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara en dron bajo con travelling lateral acompañando a los jinetes.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Cuatro toros, tres cabestros, doce jinetes.
+14. Acción final ............ Manuel y Alejandro galopando al costado de los toros.
+15. Transición .............. Corte al tramo urbano.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – MANUEL: «No se corre detrás del toro. Se corre al lado...» (C06_E003_L001)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C06_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — Twelve horse riders wait on a low hill in golden morning dust before a bull run; in the foreground an old foreman on a grey horse and a young man on a chestnut mare; a village with a church tower in the distance.
+0-3s: in the distance a gate opens; belled oxen come out, followed by four fighting bulls. 3-6s: the twelve riders spur into a gallop. 6-10s: the old foreman on the grey and the young man on the chestnut mare ride alongside the herd, not behind it.
+Characters: realistic galloping horses and bulls, riders balanced in vaquera saddles, no collisions.
+Camera: low drone tracking laterally with the riders
+Environment motion: golden dust clouds, cowbells, the village tower growing nearer
+Lighting stays consistent with the reference frame.
+Final moment: the two riders galloping alongside the bulls.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

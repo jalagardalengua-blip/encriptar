@@ -32,3 +32,22 @@ dict(id="C08_E003", title="EL FRÍO", loc="PISO LUCIA",
         ("Seated, frame left", "ALEJANDRO", "A5", "sitting at the small table, hands around a wine glass", "guilty")],
  comp="the woman in profile in the right foreground, the man seated left by the candle, golden towers behind", light="candlelight, city glow, illuminated towers", lens="50 mm spherical lens", dof="shallow, towers soft", tex="wrought iron, candle, wine glass", mood="the memory that changes everything"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C08_E001": dict(dur="10 s", dev_es="Lucía examina la mano; dice algo; Alejandro se vuelve hacia la puerta y grita; Manuel, tras una pausa, abre la puerta y empieza a caminar hacia ellos.",
+  cam_es="Cámara fija baja; reencuadre lento hacia la puerta.", cont_es="Dardo en el hombro del toro. Sin primer plano de la herida.", end_es="Manuel caminando por la hierba seca hacia el pilón.", trans_es="Corte a Manuel arrodillándose junto a la cabeza.",
+  dev_en="0-3s: the vet examines the swollen foreleg and speaks. 3-5s: the young man turns toward the far gate and calls out. 5-7s: the old foreman stays still at the gate. 7-10s: he opens the gate and starts walking slowly across the dry grass toward them.",
+  cam_en="locked low shot with a slow reframe toward the gate", env_en="flies, rising heat, the sedated bull's slow breathing", end_en="the foreman walking across the dry grass toward the trough.",
+  dialog=["0.5 s – LUCÍA: «Dios mío. Alejandro, trae la luz.» (C08_E001_L001)", "4.0 s – ALEJANDRO: «¡Manuel!» (C08_E001_L008)"]),
+"C08_E002": dict(dur="8 s", dev_es="El Rubio se para; Ricardo dice «Ramiro. Al coche»; el Rubio obedece y vuelve al todoterreno.",
+  cam_es="Cámara fija en contrapicado ligero.", cont_es="Mano de Ricardo levantada sin mirar.", end_es="Ricardo solo al pie del porche; la puerta del coche se cierra.", trans_es="Corte a plano de Alejandro: «¿Se lo dijiste tú?».",
+  dev_en="0-2s: the foreman freezes on the step. 2-4s: the businessman speaks two words without turning his head. 4-8s: the foreman walks back to the black SUV and gets in; the door closes softly.",
+  cam_en="locked slightly low-angle shot", env_en="heat shimmer, cicadas", end_en="the businessman alone at the foot of the porch.",
+  dialog=["2.0 s – RICARDO: «Ramiro. Al coche.» (C08_E002_L013)"]),
+"C08_E003": dict(dur="8 s", dev_es="Lucía se vuelve, habla despacio; Alejandro se queda quieto; luego se levanta.",
+  cam_es="Cámara fija; empuje lento hacia Alejandro.", cont_es="Vela encendida; torres iluminadas.", end_es="Alejandro de pie, mirando hacia el oeste; Lucía le coge la mano.", trans_es="Fundido a negro.",
+  dev_en="0-4s: the woman turns from the rail and speaks slowly. 4-6s: the man freezes. 6-8s: he stands up; she takes his hand.",
+  cam_en="locked shot with a slow push toward the man", env_en="candle flame trembling, city lights", end_en="the man standing, the woman holding his hand.",
+  dialog=["0.5 s – LUCÍA: «En la campaña de otoño... A tu padre le temblaba la mano.» (C08_E003_L016)"]),
+}

@@ -44,3 +44,27 @@ dict(id="C07_E004", title="MANDAR", loc="PATIO HOSTAL",
  extra="A black bullfighter's montera and a folded napkin on the table; celebrating people in the background.",
  comp="the table in the foreground, the seated young man left, the standing foreman right, the fig tree and people behind", light="warm lanterns, fig leaf shadows", lens="50 mm spherical lens", dof="focus on both men", tex="wrought iron, paper cheque, wine glass, fig leaves", mood="a fall not yet felt", neg="readable cheque"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C07_E001": dict(dur="8 s", dev_es="Lerma susurra la propuesta; Alejandro aparta la vista hacia el corral donde Manuel separa un toro; el toro levanta la cabeza.",
+  cam_es="Cámara fija; al final, panorámica corta hacia abajo, al corral.", cont_es="Puro apagado. Manuel no mira arriba.", end_es="El toro levanta la cabeza: pitones blancos en la cepa y negros en la punta.", trans_es="Corte a la elección (A/B).",
+  dev_en="0-4s: the old manager leans closer and whispers. 4-6s: the young rancher looks away, down toward the corral. 6-8s: below, a bull lifts its head, horns pale at the base and dark at the tips.",
+  cam_en="locked shot with a short tilt down to the corral at the end", env_en="swallows under the bullring eaves, dust", end_en="the bull's raised head and horns.",
+  dialog=["0.5 s – LERMA: «Dos centímetros, Galván...» (C07_E001_L006)"]),
+"C07_E002": dict(dur="8 s", dev_es="Javier lee el papel; se asoma; Farolero le mira desde abajo; Javier hace un gesto de respeto con las cejas.",
+  cam_es="Cámara fija; inserto final picado sobre el toro.", cont_es="Toro cárdeno claro.", end_es="Javier apoyado en la barandilla junto a Alejandro.", trans_es="Corte a plano de Javier: «Me llamó Valcárcel».",
+  dev_en="0-3s: the bullfighter reads the slip aloud. 3-6s: he leans over the rail; below, the tall pale bull looks up at him. 6-8s: he raises his eyebrows in respect and leans on the rail beside the rancher.",
+  cam_en="locked shot ending on a high-angle insert of the bull", env_en="midday glare, dust in the corral", end_en="the bullfighter leaning on the rail next to the rancher.",
+  dialog=["0.5 s – JAVIER: «Catorce y treinta y nueve...» (C07_E002_L001)", "5.0 s – JAVIER: «Illo. Ese tiene cara de saber latín.» (C07_E002_L003)"]),
+"C07_E003": dict(dur="10 s", dev_es="Javier dice el brindis y lanza la montera; Alejandro la coge contra el pecho; Javier se da la vuelta hacia el toro.",
+  cam_es="Cámara fija sobre el hombro; seguimiento corto de la montera en el aire.", cont_es="Rama C07-A: pitón romo en el toro (sin subrayar).", end_es="Alejandro con la montera contra el pecho; Javier caminando hacia el toro.", trans_es="Corte a la faena (plano general).",
+  dev_en="0-5s: the matador speaks the dedication, montera held out. 5-6s: he tosses the montera and the rancher catches it against his chest. 6-10s: the matador turns and walks toward the bull with the muleta while the crowd stays silent.",
+  cam_en="locked over-the-shoulder shot with a short follow of the montera in the air", env_en="silent crowd, banners still, golden light on the sunny stands", end_en="the rancher holding the montera against his chest, the matador walking toward the bull.",
+  dialog=["0.5 s – JAVIER: «Este toro va por tu padre, que lo crio. Y por ti, que todavía no sabes lo que tienes.» (C07_E003_L004)"]),
+"C07_E004": dict(dur="8 s", dev_es="Manuel termina de levantarse, coge el sombrero y se va del patio; Alejandro le mira irse con el cheque en la mano.",
+  cam_es="Cámara fija.", cont_es="Montera sobre la mesa.", end_es="Alejandro solo en la mesa; la puerta del patio vacía.", trans_es="Fundido a negro.",
+  dev_en="0-3s: the old foreman finishes standing up and says one line. 3-6s: he takes his hat and walks out of the patio without hurry. 6-8s: the young man stays seated with the cheque in his hand, looking at the empty doorway.",
+  cam_en="locked shot", env_en="lanterns swaying, people celebrating behind", end_en="the young man alone at the table.",
+  dialog=["0.5 s – MANUEL: «Mandar no es lo mismo que saber...» (C07_E004_L017)"]),
+}

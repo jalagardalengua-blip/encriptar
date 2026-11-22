@@ -1,0 +1,45 @@
+ID: C11_E003_VIDEO
+ESCENA: C11_E003 · TRES CAMINOS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_11/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_11/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C11_E003
+ 2. Imagen de referencia .... C11_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: El móvil de Alejandro se ilumina sobre el muro: llama Marta Ibarra.
+ 5. Desarrollo .............. El móvil se ilumina; Alejandro contesta con el altavoz; Manuel se incorpora del muro al oír la cifra; Lucero levanta la cabeza.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija sobre el hombro.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Rama C08-A: sin toro.
+14. Acción final ............ Los dos mirándose; el toro con la cabeza alta.
+15. Transición .............. Fundido a negro.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  2.5 s – MARTA IBARRA (teléfono): «¿Alejandro Galván? Marta Ibarra, de Meseta Renovables...» (C11_E003_L010)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C11_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — At late dusk, two men lean side by side on a granite paddock wall; a phone lights up on the wall between them; beyond, a huge dark bull stands under a lone holm oak.
+0-2s: the phone lights up on the wall. 2-4s: the young man answers on speaker. 4-8s: as the call goes on, the old foreman straightens up from the wall. 8-10s: the two men look at each other; beyond, the bull lifts its head.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked over-the-shoulder shot
+Environment motion: wind in the oak, the last light fading
+Lighting stays consistent with the reference frame.
+Final moment: the two men looking at each other, the bull's head raised.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

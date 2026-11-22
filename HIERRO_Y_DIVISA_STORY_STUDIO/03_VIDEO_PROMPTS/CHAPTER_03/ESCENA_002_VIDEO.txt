@@ -1,0 +1,46 @@
+ID: C03_E002_VIDEO
+ESCENA: C03_E002 · COSAS DE VETERINARIA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_03/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E002
+ 2. Imagen de referencia .... C03_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Lucía examina a la becerra con la linterna sin volverse; Javier, en el muro, se lleva la mano al pecho.
+ 5. Desarrollo .............. Javier se lleva la mano al pecho; Lucía contesta sin volverse; Alejandro se ríe hacia el suelo y baja del muro cuando Lucía se lo pide.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. La becerra 31 quieta en el rincón mirando.
+14. Acción final ............ Alejandro saltando del muro al corral.
+15. Transición .............. Corte a plano de la becerra 31 mirando.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – JAVIER: «¿Tú eres la veterinaria?...» (C03_E002_L001)
+  4.0 s – LUCÍA: «Yo veo bovinos...» (C03_E002_L002)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C03_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — A veterinarian checks a dark heifer through steel bars with a small torch, ignoring the two young men sitting on top of the stone corral wall; one of them, a bullfighter, clutches his chest in mock heartbreak.
+0-3s: the bullfighter clutches his chest theatrically while talking. 3-5s: the vet answers without turning around. 5-8s: the other young man laughs, then jumps down from the wall into the pen when she points at the gate.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot
+Environment motion: the heifer motionless in the corner, staring; dust in the low sun
+Lighting stays consistent with the reference frame.
+Final moment: the young man landing in the pen.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

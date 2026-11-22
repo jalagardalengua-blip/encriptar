@@ -41,3 +41,27 @@ dict(id="C04_E004", title="UNA FOTO CON UN CABESTRO", loc="COCINA ENCOMIENDA",
  extra="An official letter and a signed contract lie on the table.",
  comp="the two men at the table corner under the lamp, the farmhand alone at the far end", light="warm pendant lamp, black open window", lens="40 mm spherical lens", dof="focus on the two men", tex="oak, paper, plates, reading glasses", mood="giving in without saying so", neg="readable drawing labels"),
 ]
+
+# ---- FASE 3 · VÍDEO ----
+VIDEO = {
+"C04_E001": dict(dur="8 s", dev_es="Ortega cierra el dosier, se quita las gafas y se frota los ojos; Alejandro se echa hacia atrás en la silla.",
+  cam_es="Cámara fija sobre el hombro de Alejandro.", cont_es="Sin logotipos ni texto en pantallas.", end_es="Ortega sin gafas, mirando a Alejandro con culpa.", trans_es="Corte a plano corto de Alejandro: «¿En agosto?».",
+  dev_en="0-3s: the manager closes the dossier gently and speaks. 3-6s: he takes off his glasses and rubs his eyes. 6-8s: the young man leans back in his chair, jaw set.",
+  cam_en="locked over-the-shoulder shot", env_en="office staff moving softly behind the glass", end_en="the manager without glasses, guilty eyes on the young man.",
+  dialog=["0.5 s – ORTEGA: «Está muy bien hecho. De verdad...» (C04_E001_L001)"]),
+"C04_E002": dict(dur="8 s", dev_es="Carmen señala la silla; Alejandro se sienta y le pasa la carpeta; ella la abre y pasa las fotos rápido.",
+  cam_es="Cámara fija; empuje lento hacia la mesa.", cont_es="Gafas de pasta negra. Fotos sin contenido legible.", end_es="Carmen detenida en una foto, interesada.", trans_es="Corte a plano detalle de la foto (cárdeno).",
+  dev_en="0-2s: the woman gestures to the chair. 2-5s: the young man sits and hands her the folder. 5-8s: she opens it and flicks quickly through printed photos, then stops on one.",
+  cam_en="locked shot with a slow push toward the desk", env_en="a phone vibrating silently on the desk", end_en="the woman pausing on one photo, interested.",
+  dialog=["0.5 s – CARMEN: «Perdona. Un apoderado que quiere cobrar como figura...» (C04_E002_L001)"]),
+"C04_E003": dict(dur="8 s", dev_es="Dani habla mirando al suelo; Alejandro deja la caja despacio y se sienta a su lado en el somier.",
+  cam_es="Cámara fija.", cont_es="La foto boca abajo dentro de la caja.", end_es="Los dos sentados en el somier, hombro con hombro.", trans_es="Corte a plano de la ventana del patio.",
+  dev_en="0-4s: the rider speaks to the floor. 4-8s: the young man slowly puts the box down and sits next to him on the bare bed frame.",
+  cam_en="locked shot", env_en="laundry moving in the light well, a TV flicker from another flat", end_en="the two sitting shoulder to shoulder on the bed frame.",
+  dialog=["0.5 s – DANI: «Tu padre vino aquí.» (C04_E003_L012)"]),
+"C04_E004": dict(dur="8 s", dev_es="Manuel se quita las gafas y mira por la ventana hacia la nave; Alejandro espera; Manuel habla sin mirarle.",
+  cam_es="Cámara fija; panorámica lenta hacia la ventana.", cont_es="Folio del remolque en la mesa; Toño al fondo comiendo.", end_es="Manuel de perfil hacia la ventana; Alejandro sonriendo al entender que es un sí.", trans_es="Corte a plano de Toño dejando de comer.",
+  dev_en="0-3s: the foreman takes off his reading glasses. 3-6s: he looks out of the dark window toward the barn for a long moment. 6-8s: he says a short line without looking; the young man slowly smiles.",
+  cam_en="locked shot with a slow pan toward the window", env_en="crickets outside, the far-end farmhand eating", end_en="the foreman in profile toward the window, the young man smiling.",
+  dialog=["6.0 s – MANUEL: «Con Capitán...» (C04_E004_L007)"]),
+}

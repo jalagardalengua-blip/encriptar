@@ -1,0 +1,45 @@
+ID: C03_E003_VIDEO
+ESCENA: C03_E003 · LA TREINTA Y UNO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_03/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_03/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C03_E003
+ 2. Imagen de referencia .... C03_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: La becerra empuja con los riñones contra el peto del caballo; en el palco, Alejandro se pone de pie.
+ 5. Desarrollo .............. La becerra empuja al caballo con la cara abajo; se suelta y se arranca de nuevo desde lejos; Alejandro, de pie, señala; Manuel apunta en la libreta.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija detrás del palco con lento empuje hacia el ruedo.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Picador inmóvil sobre el caballo con peto. Sin sangre visible.
+14. Acción final ............ La becerra en el centro, mirando al palco.
+15. Transición .............. Corte a plano de Javier mirando arriba («¡Alejandro! ¡Baja!»).
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  7.0 s – ALEJANDRO: «Esa. Esa es la buena.» (C03_E003_L005)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C03_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — From a stone viewing box, two men watch a dark heifer below push hard into the padded armour of a picador's horse; the young man has just jumped to his feet.
+0-4s: the heifer keeps pushing against the padded horse with her head low. 4-7s: she pulls away, turns and charges again from a distance. 7-10s: in the box the young man points, thrilled; the old foreman writes in his notebook without a word.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot from behind the box with a slow push toward the ring
+Environment motion: sand kicked up, the horse leaning into the push, swallows
+Lighting stays consistent with the reference frame.
+Final moment: the heifer stopped in the centre, looking up at the box.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

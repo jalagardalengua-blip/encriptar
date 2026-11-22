@@ -2,7 +2,7 @@
 # Los LOCK de personaje, vestuario, animal, vehículo y localización se copian de la biblia visual.
 # Cada imagen es el primer fotograma de su vídeo.
 
-STATUS = "PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)"
+STATUS = "PENDIENTE DE GENERAR (piloto del capítulo 01, revisado en la auditoría final)"
 
 SCENES = [
 # ---------------------------------------------------------------- E001

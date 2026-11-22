@@ -1,0 +1,45 @@
+ID: C10_E002_VIDEO
+ESCENA: C10_E002 · LOS PAPELES
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_10/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_10/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C10_E002
+ 2. Imagen de referencia .... C10_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Ricardo, con el vaso en la mano, dice «A mí me dan de comer los papeles».
+ 5. Desarrollo .............. Ricardo gira el vaso, habla; se da cuenta de lo que ha dicho; sonríe, deja un billete y se levanta.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Javier al fondo, desenfocado.
+14. Acción final ............ Ricardo alejándose; Alejandro pensativo en el taburete.
+15. Transición .............. Corte a plano de Javier mirando.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – RICARDO: «A mí no me dan de comer los toros. A mí me dan de comer los papeles.» (C10_E002_L007)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C10_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — At the long wooden counter of a classic hotel bar, a silver-haired businessman turns his whisky glass slowly while talking to the young rancher beside him; at the far end of the bar a young bullfighter with a glass of sparkling water watches them.
+0-3s: the businessman turns the glass and says a short sentence. 3-5s: a flicker crosses his face as he realises what he said. 5-8s: he smiles, puts a banknote on the counter, stands and walks away.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot
+Environment motion: bar patrons in soft focus, low piano
+Lighting stays consistent with the reference frame.
+Final moment: the businessman walking away, the young man thinking on his stool.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

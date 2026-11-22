@@ -1,0 +1,45 @@
+ID: C09_E001_VIDEO
+ESCENA: C09_E001 · NEUROLOGÍA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_09/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_09/ESCENA_001.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C09_E001
+ 2. Imagen de referencia .... C09_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Alejandro lee la nota de su padre con la grabadora delante.
+ 5. Desarrollo .............. Alejandro deja el papel; coge la grabadora; pulsa el botón de carpeta; la pantallita cambia; el dedo se queda sobre «reproducir».
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija; inserto de la grabadora.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Pantalla de la grabadora sin texto legible en vídeo.
+14. Acción final ............ El dedo sobre el botón; se oyen cascos fuera.
+15. Transición .............. Corte a la puerta abriéndose.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  Sin diálogo en este plano.
+AUDIO: Sin voz (la lectura del informe va en off desde la pista de ElevenLabs).
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C09_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — In the dim sitting room of a small cottage, a young man sits hunched at a round table holding a hospital report and a folded handwritten note; a small silver voice recorder lies in front of him.
+0-3s: the young man puts down the note. 3-6s: he picks up the silver recorder and presses a tiny side button; the small display changes. 6-8s: his thumb hovers over the play button and stops; he looks up toward the door.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot with a close insert on the recorder
+Environment motion: a fly against the blinds, light stripes
+Lighting stays consistent with the reference frame.
+Final moment: the thumb hovering over play.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

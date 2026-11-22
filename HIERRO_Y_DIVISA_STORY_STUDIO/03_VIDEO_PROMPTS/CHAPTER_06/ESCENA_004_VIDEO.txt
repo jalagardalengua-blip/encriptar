@@ -1,0 +1,46 @@
+ID: C06_E004_VIDEO
+ESCENA: C06_E004 · LA HOGUERA
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_06/ESCENA_004_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_06/ESCENA_004.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C06_E004
+ 2. Imagen de referencia .... C06_E004_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Lucía se coloca frente a Alejandro, a punto de besarle, con la hoguera detrás.
+ 5. Desarrollo .............. Lucía habla bajo; se besan; al fondo, Javier silba con los dedos; la gente se vuelve; Lucía se tapa la cara riéndose.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija con ligero empuje.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Hoguera detrás; Javier al fondo.
+14. Acción final ............ Lucía riéndose con la mano en la cara; Alejandro sonriendo.
+15. Transición .............. Corte a los dos saltando la hoguera.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – LUCÍA: «Esta vez no hay toro muerto. Ni padre.» (C06_E004_L009)
+  5.5 s – JAVIER (fondo): «¡Eso! ¡Eso es un deseo bien pedido!» (C06_E004_L012)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C06_E004_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — At a village festival at midnight, a woman puts down her drink on a windowsill and steps in front of a young man leaning on a stone wall; behind them a huge bonfire throws sparks into the sky and a young man leaps over the flames.
+0-3s: the woman says a few quiet words. 3-5s: they kiss. 5-6s: in the background the bullfighter whistles with two fingers in his mouth. 6-8s: villagers turn and applaud; she covers her face with one hand, laughing.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot with a gentle push-in
+Environment motion: sparks rising, bulb strings swaying, people dancing
+Lighting stays consistent with the reference frame.
+Final moment: the woman laughing behind her hand, the man smiling.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

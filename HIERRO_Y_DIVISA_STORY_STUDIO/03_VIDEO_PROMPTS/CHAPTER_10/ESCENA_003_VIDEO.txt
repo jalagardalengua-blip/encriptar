@@ -1,0 +1,45 @@
+ID: C10_E003_VIDEO
+ESCENA: C10_E003 · BARQUERO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_10/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_10/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C10_E003
+ 2. Imagen de referencia .... C10_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Barquero se para en la raya del sol y mira la plaza entera.
+ 5. Desarrollo .............. Barquero mira los tendidos; la plaza aplaude al toro; Javier sale del burladero y le cita con el capote; el toro se arranca de largo.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Gran plano general alto, panorámica lenta acompañando la arrancada.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Chaqueta verde en el callejón. Sin sangre.
+14. Acción final ............ El toro embistiendo el capote en una larga cambiada.
+15. Transición .............. Corte a la faena.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  Sin diálogo en este plano.
+AUDIO: Sin voz. Ambiente de plaza (ovación, silencio, clarín).
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C10_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — In a large bullring packed with spectators at sunset, a dark cárdeno bull has just burst out of the toril and stopped exactly on the line between sun and shade, staring at the crowd; in the narrow callejón a young rancher in a green field jacket and an old foreman grip the barrier; a matador in navy and gold waits behind a burladero with his cape.
+0-3s: the dark bull stands on the sun-shade line staring at the stands. 3-5s: the whole crowd applauds the bull. 5-7s: the matador steps out from the burladero and cites with the cape. 7-10s: the bull charges from a distance into a long sweeping pass.
+Characters: correct bull locomotion and a believable cape pass, no contact.
+Camera: extreme wide high shot with a slow pan following the charge
+Environment motion: crowd standing, flags moving, dust behind the bull
+Lighting stays consistent with the reference frame.
+Final moment: the bull charging through a long cape pass.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

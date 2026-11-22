@@ -1,0 +1,46 @@
+ID: C12_E002_VIDEO
+ESCENA: C12_E002 · FINAL A · EL PRECIO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_12/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_12/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C12_E002
+ 2. Imagen de referencia .... C12_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Alejandro mira las placas solares que brillan al sol bajo mientras conduce.
+ 5. Desarrollo .............. Alejandro mira las placas; coge el móvil y llama; sonríe al oír a Manuel; al final coge la corbata del asiento de atrás y se la pone con una mano.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija en el habitáculo, como en C01_E001.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Flores y grabadora en el asiento del copiloto.
+14. Acción final ............ Alejandro con la corbata puesta, conduciendo; Peñacorva al fondo.
+15. Transición .............. Fundido a negro y créditos.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  5.0 s – MANUEL (teléfono): «¿Por dónde vas?» (C12_E002_L003)
+  6.5 s – ALEJANDRO: «Pasando por los llanos.» (C12_E002_L004)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C12_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — A young man drives alone along a foggy rural road and looks out of the passenger window at endless rows of solar panels glittering in the low sun where pasture used to be; a bunch of flowers and a small silver voice recorder lie on the passenger seat.
+0-3s: the driver looks at the glittering panels. 3-5s: he takes his phone from the holder and calls on speaker. 5-7s: he smiles when the voice answers. 7-10s: he reaches back for a black tie on the back seat and starts knotting it with one hand while driving.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked car-mounted camera from the passenger side, as in the opening scene
+Environment motion: panels sliding past, fog lifting, sun flicker
+Lighting stays consistent with the reference frame.
+Final moment: the driver wearing the tie, the village appearing ahead.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

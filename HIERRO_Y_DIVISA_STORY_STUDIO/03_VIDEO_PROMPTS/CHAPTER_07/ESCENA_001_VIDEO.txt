@@ -1,0 +1,45 @@
+ID: C07_E001_VIDEO
+ESCENA: C07_E001 · DOS CENTÍMETROS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_07/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_07/ESCENA_001.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C07_E001
+ 2. Imagen de referencia .... C07_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Lerma se acerca y baja la voz para hacer la propuesta.
+ 5. Desarrollo .............. Lerma susurra la propuesta; Alejandro aparta la vista hacia el corral donde Manuel separa un toro; el toro levanta la cabeza.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija; al final, panorámica corta hacia abajo, al corral.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Puro apagado. Manuel no mira arriba.
+14. Acción final ............ El toro levanta la cabeza: pitones blancos en la cepa y negros en la punta.
+15. Transición .............. Corte a la elección (A/B).
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – LERMA: «Dos centímetros, Galván...» (C07_E001_L006)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C07_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — On a wooden walkway above bullring corrals, an old heavy bullfighting manager with an unlit cigar leans toward a young rancher to whisper a proposal; below them six fighting bulls and an old foreman with a stick.
+0-4s: the old manager leans closer and whispers. 4-6s: the young rancher looks away, down toward the corral. 6-8s: below, a bull lifts its head, horns pale at the base and dark at the tips.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot with a short tilt down to the corral at the end
+Environment motion: swallows under the bullring eaves, dust
+Lighting stays consistent with the reference frame.
+Final moment: the bull's raised head and horns.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

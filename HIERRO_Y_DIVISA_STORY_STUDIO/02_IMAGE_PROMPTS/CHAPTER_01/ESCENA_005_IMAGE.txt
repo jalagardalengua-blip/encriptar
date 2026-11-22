@@ -2,7 +2,7 @@ ID: C01_E005_IMAGE
 ESCENA: C01_E005 · LA TÓRTOLA
 GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_005.md
 VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_01/ESCENA_005_VIDEO.txt (esta imagen es su fotograma inicial)
-ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+ESTADO: PENDIENTE DE GENERAR (piloto del capítulo 01, revisado en la auditoría final)
 MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
 
 REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):

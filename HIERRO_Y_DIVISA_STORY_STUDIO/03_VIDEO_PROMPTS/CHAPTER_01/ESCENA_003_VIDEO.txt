@@ -2,7 +2,7 @@ ID: C01_E003_VIDEO
 ESCENA: C01_E003 · LA PORTADA
 IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_01/ESCENA_003_IMAGE.txt
 GUION: 01_DIALOGUES/CHAPTER_01/ESCENA_003.md
-ESTADO: PILOTO · PENDIENTE DE GENERAR (revisar en la auditoría de continuidad tras cerrar los 12 capítulos)
+ESTADO: PENDIENTE DE GENERAR (piloto del capítulo 01, revisado en la auditoría final)
 MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
 
 ---------------------------------------------------------------------------

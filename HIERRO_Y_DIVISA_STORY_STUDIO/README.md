@@ -14,8 +14,8 @@ Estado actual: ver [`04_PRODUCTION_TRACKER/PROGRESS.md`](04_PRODUCTION_TRACKER/P
                           VOCES/ELEVENLABS_V2_TEXTO_PLANO/  igual, sin etiquetas
 02_IMAGE_PROMPTS/         00_CHARACTER_SHEETS/ (fichas maestras) · CHAPTER_XX/ESCENA_NNN_IMAGE.txt
 03_VIDEO_PROMPTS/         CHAPTER_XX/ESCENA_NNN_VIDEO.txt (cada uno parte de su imagen)
-04_PRODUCTION_TRACKER/    PROGRESS.md · SCENE_INDEX.csv · CHARACTER_APPEARANCES.csv · VOICE_RECORDING_TRACKER.csv
-tools/                    build_production.py · build_visual_prompts.py · visual_data/chXX.py
+04_PRODUCTION_TRACKER/    PROGRESS.md · AUDIT_REPORT.md · SCENE_INDEX.csv · CHARACTER_APPEARANCES.csv · VOICE_RECORDING_TRACKER.csv
+tools/                    build_production.py · build_visual_prompts.py · build_character_sheets.py · audit.py · visual_data/chXX.py
 ```
 
 ## Flujo de trabajo

@@ -1,0 +1,45 @@
+ID: C07_E003_VIDEO
+ESCENA: C07_E003 · EL CUARTO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_07/ESCENA_003_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_07/ESCENA_003.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C07_E003
+ 2. Imagen de referencia .... C07_E003_IMAGE (generada y aprobada)
+ 3. Duración ................ 10 s
+ 4. Acción inicial .......... El fotograma de referencia: Javier extiende la montera hacia Alejandro para brindarle el toro.
+ 5. Desarrollo .............. Javier dice el brindis y lanza la montera; Alejandro la coge contra el pecho; Javier se da la vuelta hacia el toro.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija sobre el hombro; seguimiento corto de la montera en el aire.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Rama C07-A: pitón romo en el toro (sin subrayar).
+14. Acción final ............ Alejandro con la montera contra el pecho; Javier caminando hacia el toro.
+15. Transición .............. Corte a la faena (plano general).
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – JAVIER: «Este toro va por tu padre, que lo crio. Y por ti, que todavía no sabes lo que tienes.» (C07_E003_L004)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C07_E003_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 10 s.
+0s: exact reference frame — In a small bullring at golden hour, a young matador in a navy-and-gold suit of lights stands before a wooden barrier holding his montera out toward the young rancher to dedicate the bull to him; an old foreman stands beside the rancher; a pale bull waits in the background.
+0-5s: the matador speaks the dedication, montera held out. 5-6s: he tosses the montera and the rancher catches it against his chest. 6-10s: the matador turns and walks toward the bull with the muleta while the crowd stays silent.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked over-the-shoulder shot with a short follow of the montera in the air
+Environment motion: silent crowd, banners still, golden light on the sunny stands
+Lighting stays consistent with the reference frame.
+Final moment: the rancher holding the montera against his chest, the matador walking toward the bull.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

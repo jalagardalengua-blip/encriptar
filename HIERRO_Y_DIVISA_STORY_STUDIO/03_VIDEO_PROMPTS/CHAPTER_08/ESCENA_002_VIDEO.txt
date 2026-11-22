@@ -1,0 +1,45 @@
+ID: C08_E002_VIDEO
+ESCENA: C08_E002 · TAMPOCO LE DIJE QUE NO
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_08/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_08/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C08_E002
+ 2. Imagen de referencia .... C08_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Ricardo levanta la mano para frenar al Rubio, que ha dado un paso hacia el escalón.
+ 5. Desarrollo .............. El Rubio se para; Ricardo dice «Ramiro. Al coche»; el Rubio obedece y vuelve al todoterreno.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija en contrapicado ligero.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Mano de Ricardo levantada sin mirar.
+14. Acción final ............ Ricardo solo al pie del porche; la puerta del coche se cierra.
+15. Transición .............. Corte a plano de Alejandro: «¿Se lo dijiste tú?».
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  2.0 s – RICARDO: «Ramiro. Al coche.» (C08_E002_L013)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C08_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — Under harsh noon sun, an elegant businessman at the foot of a stone porch raises one hand without looking to stop his burly foreman, who has stepped toward the young rancher standing at the top of the steps.
+0-2s: the foreman freezes on the step. 2-4s: the businessman speaks two words without turning his head. 4-8s: the foreman walks back to the black SUV and gets in; the door closes softly.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked slightly low-angle shot
+Environment motion: heat shimmer, cicadas
+Lighting stays consistent with the reference frame.
+Final moment: the businessman alone at the foot of the porch.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

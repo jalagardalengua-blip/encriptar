@@ -1,0 +1,45 @@
+ID: C04_E001_VIDEO
+ESCENA: C04_E001 · LA SUCURSAL
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_04/ESCENA_001_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_04/ESCENA_001.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C04_E001
+ 2. Imagen de referencia .... C04_E001_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Ortega cierra el dosier con cuidado, como si pudiera romperse.
+ 5. Desarrollo .............. Ortega cierra el dosier, se quita las gafas y se frota los ojos; Alejandro se echa hacia atrás en la silla.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija sobre el hombro de Alejandro.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Sin logotipos ni texto en pantallas.
+14. Acción final ............ Ortega sin gafas, mirando a Alejandro con culpa.
+15. Transición .............. Corte a plano corto de Alejandro: «¿En agosto?».
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – ORTEGA: «Está muy bien hecho. De verdad...» (C04_E001_L001)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C04_E001_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — A nervous bank manager carefully closes a printed business dossier across his desk from a young man in a field jacket who leans forward waiting for an answer.
+0-3s: the manager closes the dossier gently and speaks. 3-6s: he takes off his glasses and rubs his eyes. 6-8s: the young man leans back in his chair, jaw set.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked over-the-shoulder shot
+Environment motion: office staff moving softly behind the glass
+Lighting stays consistent with the reference frame.
+Final moment: the manager without glasses, guilty eyes on the young man.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion

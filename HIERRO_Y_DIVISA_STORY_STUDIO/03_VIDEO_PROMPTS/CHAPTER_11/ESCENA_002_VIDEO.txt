@@ -1,0 +1,45 @@
+ID: C11_E002_VIDEO
+ESCENA: C11_E002 · VEINTE CENTÍMETROS
+IMAGEN DE REFERENCIA (fotograma inicial obligatorio): 02_IMAGE_PROMPTS/CHAPTER_11/ESCENA_002_IMAGE.txt
+GUION: 01_DIALOGUES/CHAPTER_11/ESCENA_002.md
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma para imagen-a-vídeo
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C11_E002
+ 2. Imagen de referencia .... C11_E002_IMAGE (generada y aprobada)
+ 3. Duración ................ 8 s
+ 4. Acción inicial .......... El fotograma de referencia: Javier sonríe al verles entrar.
+ 5. Desarrollo .............. Javier bromea; Lucía deja la bolsa en la mesilla; Alejandro se sienta y mira el vendaje bajo la sábana.
+ 6. Movimiento de personajes  Ver desarrollo.
+ 7. Expresiones faciales .... Coherentes con el guion; microexpresiones naturales.
+ 8. Gestos .................. Mínimos y motivados.
+ 9. Movimiento corporal ..... Natural, a velocidad real.
+10. Movimiento de cámara .... Cámara fija.
+11. Movimiento ambiental .... Ver prompt.
+12. Iluminación ............. Igual que la imagen de referencia.
+13. Continuidad ............. Gotero en el brazo izquierdo; sin herida visible.
+14. Acción final ............ Alejandro sentado, serio; Javier sonriendo.
+15. Transición .............. Corte a plano de Javier contando la cornada.
+16. Restricciones ........... Sin texto, sin cambios de identidad ni de vestuario.
+---------------------------------------------------------------------------
+
+DIÁLOGO EN ESTE PLANO (quién habla y cuándo):
+  0.5 s – JAVIER: «¡Hombre! Las visitas...» (C11_E002_L001)
+AUDIO: Generar el vídeo SIN voz. El diálogo se monta después con las pistas de ElevenLabs. Si el modelo genera audio, desactivarlo o descartarlo.
+
+=== PROMPT (copiar completo) ===
+Image-to-video. Start exactly from the provided reference frame (C11_E002_IMAGE) with no change of identity, wardrobe, framing or lighting at frame one.
+Duration 8 s.
+0s: exact reference frame — In a hospital room at golden hour, a pale young bullfighter with an IV drip grins from his bed at two visitors: a young man sitting down beside him and a woman holding a paper bag of cakes.
+0-3s: the bullfighter jokes from the bed. 3-5s: the woman puts the paper bag on the bedside table. 5-8s: the young man sits and looks at the bandaged thigh under the sheet.
+Characters: natural real-time motion, contained gestures, discreet lip movement only when speaking.
+Camera: locked shot
+Environment motion: evening light shifting, a nurse passing in the corridor
+Lighting stays consistent with the reference frame.
+Final moment: the young man seated and serious, the bullfighter smiling.
+Natural human motion at real-time speed, subtle believable facial micro-expressions, consistent faces and clothing for the whole clip, physically correct animal motion, no text, no subtitles, no logos, no watermark.
+
+=== NEGATIVE PROMPT (copiar) ===
+identity change, face morphing, changing clothes, extra people appearing, objects appearing from nowhere, sudden camera jumps, random zooms, jitter, warped hands, extra fingers, rubbery limbs, impossible body motion, exaggerated gestures, mouthing words out of sync, animal with extra legs or horns, text, subtitles, logo, watermark, slow motion
