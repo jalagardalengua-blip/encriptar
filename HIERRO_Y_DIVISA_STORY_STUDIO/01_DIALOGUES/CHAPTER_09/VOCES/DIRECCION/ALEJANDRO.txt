@@ -1,0 +1,284 @@
+HIERRO Y DIVISA · CAPÍTULO 09 · ALEJANDRO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 27
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/ALEJANDRO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C09_E001_L001
+Escena: C09_E001 · NEUROLOGÍA
+Personaje: ALEJANDRO
+Acotación: leyendo, muy bajo
+Emoción: incredulidad que se apaga
+Intención: leer, entender
+Ritmo: muy lento, leyendo
+Pausas: suspensiones entre fragmentos
+FX / procesado: interior, voz baja
+Texto: «Servicio de Neurología… Paciente: Ernesto Galván Morán… Juicio clínico: enfermedad de Parkinson idiopática, estadio inicial…»
+------------------------------------------------------------------------
+[002] C09_E001_L002
+Escena: C09_E001 · NEUROLOGÍA
+Personaje: ALEJANDRO
+Emoción: golpe
+Intención: fijar el dato
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Agosto. [short pause] El año pasado. En agosto.
+------------------------------------------------------------------------
+[003] C09_E001_L003
+Escena: C09_E001 · NEUROLOGÍA
+Personaje: ALEJANDRO
+Acotación: leyendo
+Emoción: dolor en estado puro
+Intención: leer la voz de su padre
+Ritmo: lento, se quiebra al final
+Pausas: la marcada
+FX / procesado: interior
+Texto: «Manuel: si me pasa algo, dale al chico la grabadora. Que escuche la carpeta B. [short pause] Y no le cuentes lo demás, que ya se lo cuento yo. E.»
+------------------------------------------------------------------------
+[004] C09_E001_L004
+Escena: C09_E001 · NEUROLOGÍA
+Personaje: ALEJANDRO
+Acotación: casi sin voz
+Emoción: incredulidad desolada
+Intención: ninguna, se le escapa
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior, voz muy baja
+Texto: Seis meses en el bolsillo.
+------------------------------------------------------------------------
+[005] C09_E002_L001
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: acusación helada
+Intención: nombrarlo
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Parkinson.
+------------------------------------------------------------------------
+[006] C09_E002_L002
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Acotación: variante si Manuel le entregó el sobre — sin registro
+Rama de elección: sin registro
+Emoción: dolor contenido
+Intención: preguntar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Desde cuándo lo tienes guardado?
+------------------------------------------------------------------------
+[007] C09_E002_L004
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: sarcasmo amargo
+Intención: hacerle ver que lo sabía todo el pueblo menos él
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: «A por recambios para el tractor».
+------------------------------------------------------------------------
+[008] C09_E002_L006
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: rabia que sube
+Intención: exigir
+Ritmo: normal, se acelera
+Pausas: la marcada
+FX / procesado: interior
+Texto: ¿Por qué no me lo contaste? En marzo, en abril, cuando fuera. [short pause] Me tuviste seis meses preguntando como un idiota.
+------------------------------------------------------------------------
+[009] C09_E002_L008
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: acusación
+Intención: llegar al fondo
+Ritmo: rápido
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Y la opción? ¿También lo prometiste?
+------------------------------------------------------------------------
+[010] C09_E002_L010
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: necesidad brutal
+Intención: exigir
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: Pues dímelo.
+------------------------------------------------------------------------
+[011] C09_E002_L012
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: comprensión horrorizada
+Intención: confirmar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Fue él a Ricardo?
+------------------------------------------------------------------------
+[012] C09_E002_L014
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: calma peligrosa
+Intención: la pregunta de todo el juego
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Qué pasó el cinco de marzo?
+------------------------------------------------------------------------
+[013] C09_E002_L016
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: sorpresa dolorosa
+Intención: confirmar
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Sabías lo del portal?
+------------------------------------------------------------------------
+[014] C09_E002_L019
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: terror a la respuesta
+Intención: saberlo
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¿Y tú?
+------------------------------------------------------------------------
+[015] C09_E002_L021
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: furia que sale fría
+Intención: repetirlo para que pese
+Ritmo: lento
+Pausas: precedida de 7 s
+FX / procesado: interior
+Texto: Le dejaste solo.
+------------------------------------------------------------------------
+[016] C09_E002_L023
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Acotación: subiendo
+Emoción: rabia desbordada
+Intención: castigarle
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¡Sabías que temblaba! ¡Sabías que se caía! ¡Y le dejaste ir solo de noche a meterse con un toro de seiscientos kilos!
+------------------------------------------------------------------------
+[017] C09_E002_L025
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: dolor convertido en furia
+Intención: herir
+Ritmo: rápido, gritado
+Pausas: ninguna
+FX / procesado: interior
+Texto: ¡Y luego me lo escondes seis meses, y me miras a la cara todos los días, y me haces patatas!
+------------------------------------------------------------------------
+[018] C09_E002_L026
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Acotación: bajando la voz de golpe, peor
+Emoción: crueldad deliberada
+Intención: decir lo peor
+Ritmo: lento, bajo
+Pausas: la marcada
+FX / procesado: interior
+Texto: Tú no estabas en medio, Manuel. [short pause] Tú estabas en la cama.
+------------------------------------------------------------------------
+[019] C09_E002_L028
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: ALEJANDRO
+Emoción: decisión rota
+Intención: echarle
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior
+Texto: Vete.
+------------------------------------------------------------------------
+[020] C09_E004_L001
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: cansancio extremo
+Intención: saber
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior, amanecer
+Texto: ¿Adónde vas?
+------------------------------------------------------------------------
+[021] C09_E004_L004
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: súplica contenida
+Intención: retenerle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Escucha esto antes.
+------------------------------------------------------------------------
+[022] C09_E004_L006
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: firmeza
+Intención: obligarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: No, no lo sabes.
+------------------------------------------------------------------------
+[023] C09_E004_L010
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: ternura dolorida
+Intención: devolverle algo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Iba a ir. [short pause] Le convenciste tú. Esa noche. Antes de irte a dormir.
+------------------------------------------------------------------------
+[024] C09_E004_L011
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Acotación: sin soltarle
+Emoción: arrepentimiento
+Intención: pedir perdón
+Ritmo: lento, bajo
+Pausas: suspensión
+FX / procesado: exterior, voz baja
+Texto: Lo que te dije ayer…
+------------------------------------------------------------------------
+[025] C09_E004_L013
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: culpa compartida
+Intención: ponerse a su lado
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, voz baja
+Texto: Y yo no cogí el teléfono. [short pause] Tres veces.
+------------------------------------------------------------------------
+[026] C09_E004_L015
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: necesidad sincera
+Intención: pedírselo
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Quédate. [short pause] Hasta septiembre. Y luego, lo que tú quieras.
+------------------------------------------------------------------------
+[027] C09_E004_L017
+Escena: C09_E004 · CARPETA B
+Personaje: ALEJANDRO
+Emoción: humildad
+Intención: devolverle el lugar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: El cuarenta y cuatro no va. [short pause] Mandas tú.
+------------------------------------------------------------------------

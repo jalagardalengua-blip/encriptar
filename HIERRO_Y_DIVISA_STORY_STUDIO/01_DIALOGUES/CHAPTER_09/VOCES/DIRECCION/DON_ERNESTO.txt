@@ -1,0 +1,169 @@
+HIERRO Y DIVISA · CAPÍTULO 09 · DON ERNESTO
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 16
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/DON_ERNESTO.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C09_E003_L002
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: terquedad cansada
+Intención: no ceder
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: Me hace compañía.
+------------------------------------------------------------------------
+[002] C09_E003_L004
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: dolor seco
+Intención: defenderse con un hecho
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Le he llamado tres veces hoy. [short pause] No lo coge.
+------------------------------------------------------------------------
+[003] C09_E003_L006
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: vergüenza herida
+Intención: reprocharle que lo use
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: Eso te lo conté borracho.
+------------------------------------------------------------------------
+[004] C09_E003_L008
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: desesperación que estalla
+Intención: decir en voz alta lo que no dice nunca
+Ritmo: normal, sube, se quiebra al final
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: ¿Y qué le digo, Manuel? ¿Que tengo esto? ¿Que he vendido la finca a Valcárcel para que él tenga algo? [short pause] ¿Que su padre ya no puede ni sujetar una jeringa?
+------------------------------------------------------------------------
+[005] C09_E003_L010
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: retirada
+Intención: cerrar el tema como siempre
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Bueno. [short pause] Nada. Cosas mías.
+------------------------------------------------------------------------
+[006] C09_E003_L012
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: autoridad herida
+Intención: imponer el silencio
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: He dicho que nada.
+------------------------------------------------------------------------
+[007] C09_E003_L014
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: huida digna
+Intención: salir de ahí
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: Me voy a mirarle la mano al toro.
+------------------------------------------------------------------------
+[008] C09_E003_L016
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: orgullo final
+Intención: ganar la discusión
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: El toro es mío, Manuel. [short pause] Y la noche también.
+------------------------------------------------------------------------
+[009] C09_E003_L018
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Acotación: grabación, carpeta B
+Emoción: ternura torpe
+Intención: hablarle a su hijo por fin
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: grabadora digital, interior, despacho
+Texto: Chaval. [short pause] Si oyes esto es que Manuel ha cumplido, y que has vuelto. Y si has vuelto, ya sabrás lo que tengo y lo de Valcárcel.
+------------------------------------------------------------------------
+[010] C09_E003_L019
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: confesión
+Intención: explicarse
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: grabadora digital, interior
+Texto: Lo firmé por ti. Para que tuvieras algo limpio, sin deudas, sin esta casa encima. Porque pensé que no ibas a volver. [short pause] Y porque no supe decirte que volvieras.
+------------------------------------------------------------------------
+[011] C09_E003_L020
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: sabiduría tardía
+Intención: liberarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: grabadora digital, interior
+Texto: Si quieres el hierro, no lo guardes por mí. Guárdalo por ti. [short pause] Y si no lo quieres, véndelo y vete, y no mires atrás. Que yo miré atrás toda la vida y mira.
+------------------------------------------------------------------------
+[012] C09_E003_L021
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: cariño profundo
+Intención: proteger a su amigo
+Ritmo: lento, con una risa triste al final
+Pausas: suspensión y la marcada
+FX / procesado: grabadora digital, interior
+Texto: Y a Manuel… [short pause] Dile que no fue culpa suya. Lo que sea. Que le conozco, y se va a echar la culpa de lo que sea, hasta de que llueva.
+------------------------------------------------------------------------
+[013] C09_E003_L022
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: decisión tardía, alivio
+Intención: cerrar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: grabadora digital, interior
+Texto: Y que tenía razón. [short pause] Bueno. Ya está. Mañana voy a Madrid.
+------------------------------------------------------------------------
+[014] C09_E003_L023
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: DON ERNESTO
+Emoción: ternura con el animal
+Intención: calmarle
+Ritmo: muy lento, grave
+Pausas: la marcada
+FX / procesado: exterior, noche, helada
+Texto: Tranquilo, Lucero. Tranquilo. [short pause] Que vengo a verte la mano. Que mañana tengo que ir a Madrid y quiero dejarte bien.
+------------------------------------------------------------------------
+[015] C09_E004_L007
+Escena: C09_E004 · CARPETA B
+Personaje: DON ERNESTO
+Acotación: grabación; misma toma que C09_E003_L021, reproducida
+Emoción: cariño profundo
+Intención: proteger a su amigo
+Ritmo: lento
+Pausas: suspensión y la marcada
+FX / procesado: grabadora digital reproducida al aire libre (misma toma que C09_E003_L021)
+Texto: Y a Manuel… [short pause] Dile que no fue culpa suya. Lo que sea. Que le conozco, y se va a echar la culpa de lo que sea, hasta de que llueva.
+------------------------------------------------------------------------
+[016] C09_E004_L008
+Escena: C09_E004 · CARPETA B
+Personaje: DON ERNESTO
+Acotación: grabación; misma toma que C09_E003_L022
+Emoción: alivio
+Intención: cerrar
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: grabadora digital reproducida al aire libre (misma toma que C09_E003_L022)
+Texto: Y que tenía razón. [short pause] Bueno. Ya está. Mañana voy a Madrid.
+------------------------------------------------------------------------

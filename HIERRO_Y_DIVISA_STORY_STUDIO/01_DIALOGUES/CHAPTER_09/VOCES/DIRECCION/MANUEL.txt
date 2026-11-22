@@ -1,0 +1,309 @@
+HIERRO Y DIVISA · CAPÍTULO 09 · MANUEL
+VERSIÓN PARA DIRECCIÓN (no sintetizar este archivo)
+Intervenciones: 30
+Archivo de síntesis correspondiente: ../ELEVENLABS_V3/MANUEL.txt (la línea N de ese archivo es la intervención N de este)
+========================================================================
+
+[001] C09_E002_L003
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: cansancio sin defensa
+Intención: confesar sin rodeos
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Desde agosto del año pasado. [short pause] Le llevé yo a Salamanca. Todos los meses.
+------------------------------------------------------------------------
+[002] C09_E002_L005
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: honestidad seca
+Intención: precisar
+Ritmo: lento
+Pausas: breve entre frases
+FX / procesado: interior
+Texto: Eso lo decía él. Yo no decía nada.
+------------------------------------------------------------------------
+[003] C09_E002_L007
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: dolor y lealtad
+Intención: explicar el peso de la promesa
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Porque se lo prometí. [short pause] Me hizo jurarlo en el coche, a la vuelta del hospital. Por Agustina.
+------------------------------------------------------------------------
+[004] C09_E002_L009
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: sinceridad absoluta
+Intención: que le crea
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Lo de la opción no lo sabía. Te lo juro por lo mismo. [short pause] Pero sé por qué lo hizo.
+------------------------------------------------------------------------
+[005] C09_E002_L011
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: pena que se ordena
+Intención: explicar a Ernesto
+Ritmo: lento, frase a frase
+Pausas: la marcada y breves entre frases
+FX / procesado: interior
+Texto: El médico le dijo que en dos o tres años no iba a poder subirse a un caballo. En cinco, ni a un coche. [short pause] Tu padre hizo la cuenta, como hacía siempre: mal y deprisa. Pensó que tú no ibas a volver. Que la ganadería se iba a morir con él. Y que lo único que te podía dejar era dinero limpio.
+------------------------------------------------------------------------
+[006] C09_E002_L013
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: culpa
+Intención: admitir su parte
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: En agosto. Una semana después del hospital. Me lo dijo de pasada: «He estado hablando con Valcárcel de cosas». [short pause] Y yo no le pregunté. Porque no quería saberlo.
+------------------------------------------------------------------------
+[007] C09_E002_L015
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: recuerdo exacto, sin protección
+Intención: contarlo todo de una vez
+Ritmo: lento
+Pausas: precedida de 5 s y breves entre frases
+FX / procesado: interior
+Texto: Cenamos juntos. En la cocina grande. [short pause] Le dije que te llamara y te lo contara todo. Me dijo que ya te había llamado tres veces y que no lo cogías. Le dije que entonces fuera a Madrid. Y que esta vez subiera.
+------------------------------------------------------------------------
+[008] C09_E002_L017
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: pena honda
+Intención: darle a su padre entero
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Me lo contó en Navidad. Borracho. Que había ido y no había subido. Lloraba. [short pause] Es la única vez que le he visto llorar desde lo de tu madre.
+------------------------------------------------------------------------
+[009] C09_E002_L018
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: culpa insoportable
+Intención: llegar al final
+Ritmo: lento, más bajo
+Pausas: la marcada
+FX / procesado: interior
+Texto: Esa noche discutimos. Fuerte. Le dije cosas que no le había dicho en cuarenta años. Que era un cobarde con su hijo. [short pause] Y él dijo que se iba a mirar la mano del toro. Le dije que era de noche, que fuéramos por la mañana. Me dijo que el toro era suyo y la noche también.
+------------------------------------------------------------------------
+[010] C09_E002_L020
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: confesión total
+Intención: decir lo que lleva seis meses callando
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Yo me fui a dormir. [short pause] Enfadado. Le dejé solo.
+------------------------------------------------------------------------
+[011] C09_E002_L022
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: aceptación
+Intención: no defenderse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Sí.
+------------------------------------------------------------------------
+[012] C09_E002_L024
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: aceptación total
+Intención: no defenderse
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior
+Texto: Sí.
+------------------------------------------------------------------------
+[013] C09_E002_L027
+Escena: C09_E002 · LE DEJÉ SOLO
+Personaje: MANUEL
+Emoción: culpa absoluta
+Intención: ninguna, constatar
+Ritmo: muy lento
+Pausas: la marcada
+FX / procesado: interior
+Texto: Ya lo sé. [short pause] Cada noche lo sé.
+------------------------------------------------------------------------
+[014] C09_E003_L001
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: tensión acumulada
+Intención: forzar la conversación
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina, radio de fondo
+Texto: Apaga eso.
+------------------------------------------------------------------------
+[015] C09_E003_L003
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: reproche directo
+Intención: entrar en el tema
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Te hago compañía yo. [short pause] Y tu hijo, si le llamaras.
+------------------------------------------------------------------------
+[016] C09_E003_L005
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: dureza cariñosa
+Intención: empujarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Pues vete a Madrid. [short pause] Y esta vez sube.
+------------------------------------------------------------------------
+[017] C09_E003_L007
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: firmeza
+Intención: no soltarle
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: Por eso me lo creo.
+------------------------------------------------------------------------
+[018] C09_E003_L009
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: shock
+Intención: entender
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: ¿Has vendido qué?
+------------------------------------------------------------------------
+[019] C09_E003_L011
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: alarma
+Intención: no dejarle escapar
+Ritmo: seco
+Pausas: ninguna
+FX / procesado: interior, cocina
+Texto: Ernesto.
+------------------------------------------------------------------------
+[020] C09_E003_L013
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Acotación: levantándose
+Emoción: rabia de cuarenta años
+Intención: decirle la verdad
+Ritmo: normal, firme
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Eres un cobarde con tu hijo. [short pause] Con los toros no, con los toros eres el más valiente que he conocido. Pero con tu hijo eres un cobarde. Y lo vas a perder por cobarde.
+------------------------------------------------------------------------
+[021] C09_E003_L015
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: preocupación que se impone a la rabia
+Intención: frenarle
+Ritmo: rápido
+Pausas: breve entre frases
+FX / procesado: interior, cocina
+Texto: Es de noche. Hiela. Vamos mañana con Lucía.
+------------------------------------------------------------------------
+[022] C09_E003_L017
+Escena: C09_E003 · LA NOCHE DEL CINCO DE MARZO
+Personaje: MANUEL
+Emoción: rabia y cansancio
+Intención: castigarle
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: interior, cocina
+Texto: Pues ve tú solo. [short pause] Yo me voy a dormir.
+------------------------------------------------------------------------
+[023] C09_E004_L002
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Acotación: desde dentro
+Emoción: dignidad derrotada
+Intención: obedecer
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, desde interior
+Texto: A Bilbao. Con la chica. [short pause] Me dijiste que me fuera.
+------------------------------------------------------------------------
+[024] C09_E004_L003
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: ternura práctica
+Intención: dejarlo todo en orden
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: A Moro le dejo aquí. Para Toño. Que le conoce. [short pause] Y no le des pienso del barato, que le sienta mal.
+------------------------------------------------------------------------
+[025] C09_E004_L005
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: miedo disfrazado de orgullo
+Intención: evitar el dolor
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No me hace falta oír a tu padre. [short pause] Ya sé lo que pensaba de mí.
+------------------------------------------------------------------------
+[026] C09_E004_L009
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Acotación: casi sin voz
+Emoción: derrumbe
+Intención: ninguna, se le escapa
+Ritmo: muy lento
+Pausas: ninguna
+FX / procesado: exterior, voz muy baja
+Texto: Iba a ir.
+------------------------------------------------------------------------
+[027] C09_E004_L012
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: aceptación serena
+Intención: no dejar que se retracte de la verdad
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior, voz baja
+Texto: Era verdad. [short pause] Estaba en la cama.
+------------------------------------------------------------------------
+[028] C09_E004_L014
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: humor triste, alivio
+Intención: hacer las paces
+Ritmo: lento
+Pausas: ninguna
+FX / procesado: exterior
+Texto: Pues ya somos dos.
+------------------------------------------------------------------------
+[029] C09_E004_L016
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: cariño en forma de terquedad
+Intención: volver, y volver con su oficio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: Hasta septiembre. [short pause] Y en septiembre, el cuarenta y cuatro no va a Salamanca. Que se para.
+------------------------------------------------------------------------
+[030] C09_E004_L018
+Escena: C09_E004 · CARPETA B
+Personaje: MANUEL
+Emoción: sabiduría
+Intención: poner las cosas en su sitio
+Ritmo: lento
+Pausas: la marcada
+FX / procesado: exterior
+Texto: No. [short pause] Mandas tú. Pero escuchas.
+------------------------------------------------------------------------
