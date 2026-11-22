@@ -1,0 +1,730 @@
+<!doctype html><html lang="es"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><style>[hidden]{display:none!important}</style></head><body>
+<title>Letra a Letra</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Layout: plató de TV — rosco circular a la izquierda, atril de la definición a la derecha; en móvil se apilan */
+:root {
+  --stage: #070b1f;
+  --stage-2: #0e1538;
+  --panel: #121a42;
+  --line: #2a3672;
+  --ink: #eef1ff;
+  --muted: #9aa5d6;
+  --pending-a: #3d5cff;
+  --pending-b: #1d2fa8;
+  --ok-a: #22d36b;
+  --ok-b: #0c8a3f;
+  --bad-a: #ff4d5e;
+  --bad-b: #b3132a;
+  --gold: #ffc940;
+  --display: "Sora", "Segoe UI", system-ui, sans-serif;
+  --body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html, body { min-height: 100%; }
+body {
+  margin: 0;
+  background: radial-gradient(120% 90% at 50% 0%, var(--stage-2) 0%, var(--stage) 60%) fixed, var(--stage);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 16px;
+  line-height: 1.45;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 20px 32px;
+}
+.wrap { max-width: 1120px; margin: 0 auto; display: grid; gap: 20px; }
+header.top { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.brand { display: flex; align-items: baseline; gap: 10px; }
+.brand h1 { font-family: var(--display); font-weight: 800; font-size: clamp(1.4rem, 3.4vw, 2rem); margin: 0; letter-spacing: -0.02em; }
+.brand h1 span { color: var(--gold); }
+.brand small { color: var(--muted); font-size: .8rem; text-transform: uppercase; letter-spacing: .12em; }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.pill { font-size: .78rem; color: var(--muted); border: 1px solid var(--line); border-radius: 999px; padding: 4px 10px; display: inline-flex; gap: 6px; align-items: center; }
+.pill b { color: var(--ink); font-weight: 600; }
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--muted); }
+.dot.on { background: var(--ok-a); box-shadow: 0 0 8px var(--ok-a); }
+
+.game { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+@media (max-width: 860px) { .game { grid-template-columns: minmax(0, 1fr); gap: 18px; } }
+
+/* ---------- Rosco ---------- */
+.rosco-box { width: min(100%, 560px); margin: 0 auto; }
+.rosco { position: relative; width: 100%; aspect-ratio: 1; container-type: inline-size; max-width: 100%; }
+.rosco::before { /* foco del plató */
+  content: ""; position: absolute; inset: 14%; border-radius: 50%;
+  background: radial-gradient(circle, rgba(61,92,255,.22), transparent 70%);
+}
+.slot {
+  position: absolute; width: 9.6%; aspect-ratio: 1; transform: translate(-50%, -50%);
+  border-radius: 50%; display: grid; place-items: center;
+  font-family: var(--display); font-weight: 800; font-size: 4.6cqi; color: #fff;
+  background: radial-gradient(circle at 32% 28%, var(--pending-a), var(--pending-b) 72%);
+  box-shadow: inset 0 -0.5cqi 1cqi rgba(0,0,0,.35), 0 0.6cqi 1.4cqi rgba(0,0,0,.45);
+  border: 0.45cqi solid rgba(255,255,255,.85);
+  transition: background .35s, transform .25s, box-shadow .25s;
+  text-shadow: 0 0.3cqi 0.6cqi rgba(0,0,0,.35);
+  user-select: none;
+}
+.slot.ok { background: radial-gradient(circle at 32% 28%, var(--ok-a), var(--ok-b) 72%); }
+.slot.bad { background: radial-gradient(circle at 32% 28%, var(--bad-a), var(--bad-b) 72%); }
+.slot.passed { border-color: var(--gold); }
+.slot.active {
+  transform: translate(-50%, -50%) scale(1.22); z-index: 2;
+  box-shadow: 0 0 0 0.8cqi rgba(255,201,64,.9), 0 0 4cqi rgba(255,201,64,.55);
+  animation: pulse 1.1s ease-in-out infinite;
+}
+@keyframes pulse { 50% { box-shadow: 0 0 0 1.3cqi rgba(255,201,64,.55), 0 0 6cqi rgba(255,201,64,.35); } }
+.slot.pop { animation: pop .45s ease-out; }
+@keyframes pop { 40% { transform: translate(-50%, -50%) scale(1.4); } }
+
+.center { position: absolute; inset: 20%; border-radius: 50%; display: grid; place-items: center; text-align: center; }
+.center-in { display: grid; gap: 1.2cqi; justify-items: center; }
+.big-letter { font-family: var(--display); font-weight: 800; font-size: 19cqi; line-height: 1; color: var(--gold); text-shadow: 0 0 5cqi rgba(255,201,64,.35); }
+.mode { font-size: 3cqi; text-transform: uppercase; letter-spacing: .18em; color: var(--muted); font-weight: 600; }
+.clock { font-family: var(--display); font-weight: 700; font-size: 8.5cqi; font-variant-numeric: tabular-nums; line-height: 1; }
+.clock.low { color: var(--bad-a); }
+.scores { display: flex; gap: 3cqi; font-size: 3.6cqi; font-weight: 600; font-variant-numeric: tabular-nums; }
+.scores span { display: inline-flex; align-items: center; gap: 1cqi; }
+.scores i { width: 2.6cqi; height: 2.6cqi; border-radius: 50%; display: inline-block; }
+.i-ok { background: var(--ok-a); } .i-bad { background: var(--bad-a); } .i-left { background: var(--pending-a); }
+
+/* ---------- Atril ---------- */
+.desk { background: linear-gradient(180deg, var(--panel), #0d1433); border: 1px solid var(--line); border-radius: 18px; padding: 22px; display: grid; gap: 16px; min-width: 0; box-shadow: 0 20px 50px rgba(0,0,0,.35); }
+#vStart, #vPlay, #vEnd { grid-template-columns: minmax(0, 1fr); }
+.desk h2 { font-family: var(--display); margin: 0; font-size: 1.35rem; text-wrap: balance; }
+.eyebrow { font-size: .75rem; text-transform: uppercase; letter-spacing: .16em; color: var(--gold); font-weight: 600; }
+.clue { font-size: clamp(1.1rem, 2.3vw, 1.4rem); line-height: 1.45; min-height: 4.4em; margin: 0; text-wrap: pretty; }
+.clue-head { display: flex; justify-content: space-between; align-items: center; gap: 10px; }
+.answer-row { display: flex; gap: 10px; }
+.answer-row input {
+  flex: 1; min-width: 0; font: inherit; font-size: 1.1rem; color: var(--ink);
+  background: #0a1030; border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px;
+}
+.answer-row input:focus { outline: 2px solid var(--gold); outline-offset: 1px; }
+.answer-row input.listening { border-color: var(--bad-a); }
+.controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+button { font: inherit; cursor: pointer; border-radius: 12px; border: 1px solid transparent; padding: 12px 14px; font-weight: 600; color: var(--ink); transition: transform .1s, filter .15s; }
+button:active { transform: translateY(1px); }
+button:focus-visible { outline: 2px solid var(--gold); outline-offset: 2px; }
+button:disabled { opacity: .45; cursor: not-allowed; }
+.btn-primary { background: linear-gradient(180deg, var(--pending-a), var(--pending-b)); }
+.btn-ok { background: linear-gradient(180deg, var(--ok-a), var(--ok-b)); color: #04150b; }
+.btn-gold { background: var(--gold); color: #1d1500; }
+.btn-ghost { background: transparent; border-color: var(--line); color: var(--ink); }
+.btn-mic { background: linear-gradient(180deg, #ff6b7a, var(--bad-b)); display: inline-flex; align-items: center; justify-content: center; gap: 8px; }
+.btn-mic.on { animation: micpulse 1s infinite; }
+@keyframes micpulse { 50% { filter: brightness(1.3); box-shadow: 0 0 0 6px rgba(255,77,94,.25); } }
+.icon-btn { padding: 8px 12px; font-size: .85rem; }
+.status { min-height: 1.5em; font-size: .95rem; color: var(--muted); }
+.status.ok { color: var(--ok-a); font-weight: 600; } .status.bad { color: var(--bad-a); font-weight: 600; } .status.info { color: var(--gold); }
+.hint { font-size: .8rem; color: var(--muted); margin: 0; }
+kbd { font-family: var(--body); font-size: .75rem; border: 1px solid var(--line); border-bottom-width: 2px; border-radius: 5px; padding: 0 5px; color: var(--ink); }
+
+.settings { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; }
+.field { display: grid; gap: 6px; font-size: .82rem; color: var(--muted); }
+.field select { font: inherit; color: var(--ink); background: #0a1030; border: 1px solid var(--line); border-radius: 10px; padding: 9px 10px; }
+.rules { margin: 0; padding-left: 1.1em; display: grid; gap: 4px; color: var(--muted); font-size: .92rem; }
+.rules b { color: var(--ink); }
+
+.result-big { display: flex; gap: 18px; flex-wrap: wrap; }
+.result-big div { display: grid; }
+.result-big strong { font-family: var(--display); font-size: 2.2rem; line-height: 1; font-variant-numeric: tabular-nums; }
+.result-big span { font-size: .8rem; color: var(--muted); text-transform: uppercase; letter-spacing: .1em; }
+.review { max-height: 320px; overflow: auto; border: 1px solid var(--line); border-radius: 12px; }
+.review table { width: 100%; border-collapse: collapse; font-size: .9rem; }
+.review td { padding: 7px 10px; border-bottom: 1px solid rgba(42,54,114,.6); vertical-align: top; }
+.review td:first-child { font-family: var(--display); font-weight: 800; width: 2.4em; text-align: center; }
+.review tr.ok td:first-child { color: var(--ok-a); } .review tr.bad td:first-child { color: var(--bad-a); } .review tr.left td:first-child { color: var(--pending-a); }
+.review .you { color: var(--muted); font-size: .82rem; }
+footer { color: var(--muted); font-size: .78rem; text-align: center; }
+@media (prefers-reduced-motion: reduce) { .slot.active, .btn-mic.on { animation: none; } .slot { transition: none; } }
+@media (max-width: 480px) { .desk { padding: 16px; } .controls { grid-template-columns: 1fr 1fr; } .controls .btn-mic { grid-column: 1 / -1; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand"><h1>Letra a <span>Letra</span></h1><small>El rosco de 25 letras</small></div>
+    <div class="pills">
+      <span class="pill"><span class="dot" id="dotVoice"></span>Voz: <b id="lblVoice">comprobando…</b></span>
+      <span class="pill"><span class="dot" id="dotMic"></span>Micrófono: <b id="lblMic">comprobando…</b></span>
+    </div>
+  </header>
+
+  <main class="game">
+    <div class="rosco-box">
+      <div class="rosco" id="rosco" aria-label="Rosco de letras">
+        <div class="center"><div class="center-in">
+          <div class="mode" id="cMode">Empieza por</div>
+          <div class="big-letter" id="cLetter">A</div>
+          <div class="clock" id="cClock" aria-live="off">2:30</div>
+          <div class="scores">
+            <span title="Aciertos"><i class="i-ok"></i><b id="sOk">0</b></span>
+            <span title="Fallos"><i class="i-bad"></i><b id="sBad">0</b></span>
+            <span title="Por responder"><i class="i-left"></i><b id="sLeft">25</b></span>
+          </div>
+        </div></div>
+      </div>
+    </div>
+
+    <section class="desk" id="desk">
+      <!-- Pantalla de inicio -->
+      <div id="vStart" style="display:grid;gap:16px">
+        <div class="eyebrow">Nuevo rosco listo</div>
+        <h2>Una definición por letra. Responde hablando o escribiendo.</h2>
+        <ul class="rules">
+          <li>La definición se lee en voz alta y aparece en pantalla.</li>
+          <li><b>Empieza por</b> o <b>contiene</b>: la palabra debe cumplirlo.</li>
+          <li>Di o escribe <b>«paso»</b> para saltar la letra; volverá en la siguiente vuelta.</li>
+          <li>Cada rosco usa palabras distintas al anterior.</li>
+        </ul>
+        <div class="settings">
+          <label class="field" for="optTime">Tiempo
+            <select id="optTime"><option value="120">2:00</option><option value="150" selected>2:30</option><option value="200">3:20</option><option value="300">5:00</option></select>
+          </label>
+          <label class="field" for="optRate">Velocidad de lectura
+            <select id="optRate"><option value="1">Normal</option><option value="1.15" selected>Rápida</option><option value="1.3">Muy rápida</option></select>
+          </label>
+          <label class="field" for="optVoice">Lectura en voz alta
+            <select id="optVoice"><option value="on" selected>Activada</option><option value="off">Desactivada</option></select>
+          </label>
+        </div>
+        <button class="btn-gold" id="btnStart">Empezar rosco</button>
+        <p class="hint">Atajos: <kbd>Enter</kbd> responder · <kbd>Espacio</kbd> con la casilla vacía para hablar · <kbd>Esc</kbd> parar la voz</p>
+      </div>
+
+      <!-- Juego -->
+      <div id="vPlay" hidden style="display:grid;gap:14px">
+        <div class="clue-head">
+          <div class="eyebrow" id="clueLabel">Con la A</div>
+          <div style="display:flex;gap:8px">
+            <button class="btn-ghost icon-btn" id="btnRepeat" title="Volver a leer la definición">Repetir</button>
+            <button class="btn-ghost icon-btn" id="btnPause">Pausa</button>
+          </div>
+        </div>
+        <p class="clue" id="clue" aria-live="polite"></p>
+        <form class="answer-row" id="form" autocomplete="off">
+          <input id="answer" type="text" placeholder="Escribe tu respuesta" aria-label="Tu respuesta" autocapitalize="off" spellcheck="false">
+          <button class="btn-ok" type="submit">Responder</button>
+        </form>
+        <div class="controls">
+          <button class="btn-mic" id="btnMic" type="button"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3"/></svg><span id="micTxt">Hablar</span></button>
+          <button class="btn-primary" id="btnPass" type="button">Paso</button>
+          <button class="btn-ghost" id="btnQuit" type="button">Plantarse</button>
+        </div>
+        <div class="status" id="status" aria-live="polite"></div>
+      </div>
+
+      <!-- Resultado -->
+      <div id="vEnd" hidden style="display:grid;gap:16px">
+        <div class="eyebrow" id="endEyebrow">Rosco terminado</div>
+        <h2 id="endTitle"></h2>
+        <div class="result-big">
+          <div><strong id="rOk" style="color:var(--ok-a)">0</strong><span>Aciertos</span></div>
+          <div><strong id="rBad" style="color:var(--bad-a)">0</strong><span>Fallos</span></div>
+          <div><strong id="rLeft" style="color:var(--pending-a)">0</strong><span>Sin responder</span></div>
+          <div><strong id="rTime">0:00</strong><span>Tiempo usado</span></div>
+        </div>
+        <div class="review"><table id="reviewTbl"></table></div>
+        <button class="btn-gold" id="btnAgain">Nuevo rosco con otras palabras</button>
+      </div>
+    </section>
+  </main>
+  <footer>Banco de 150 definiciones · 6 por letra · las palabras no se repiten entre roscos seguidos</footer>
+</div>
+
+<script>
+(() => {
+"use strict";
+const LETTERS = "ABCDEFGHIJLMNÑOPQRSTUVXYZ".split("");
+const NAMES = {A:"a",B:"be",C:"ce",D:"de",E:"e",F:"efe",G:"ge",H:"hache",I:"i",J:"jota",L:"ele",M:"eme",N:"ene","Ñ":"eñe",O:"o",P:"pe",Q:"cu",R:"erre",S:"ese",T:"te",U:"u",V:"uve",X:"equis",Y:"ye",Z:"zeta"};
+// [letra, modo (e = empieza, c = contiene), respuesta, definición, alternativas]
+const BANK = [
+["A","e","abeja","Insecto que vive en colmenas y produce miel y cera."],
+["A","e","arcoíris","Arco de colores que aparece en el cielo cuando el sol ilumina las gotas de lluvia.",["arco iris"]],
+["A","e","ajedrez","Juego de estrategia para dos con rey, dama, torres, alfiles, caballos y peones."],
+["A","e","acantilado","Costa cortada en vertical, o casi, sobre el mar."],
+["A","e","almohada","Colchoncillo sobre el que se apoya la cabeza en la cama."],
+["A","e","antídoto","Sustancia que contrarresta los efectos de un veneno."],
+["B","e","brújula","Instrumento con una aguja imantada que señala el norte magnético."],
+["B","e","bombero","Persona que tiene por oficio apagar incendios.",["bombera"]],
+["B","e","bisagra","Herraje de dos piezas articuladas que permite abrir y cerrar puertas y ventanas."],
+["B","e","búho","Ave rapaz nocturna con plumas en forma de orejas sobre la cabeza."],
+["B","e","biblioteca","Lugar donde se guardan libros para leerlos o tomarlos prestados."],
+["B","e","bostezo","Apertura involuntaria de la boca, con una inspiración profunda, por sueño o aburrimiento."],
+["C","e","caracol","Molusco de concha en espiral que lleva su casa a cuestas."],
+["C","e","calendario","Hoja o cuadro con los días, semanas y meses del año."],
+["C","e","cometa","Astro con una cola luminosa; también, juguete de papel o tela que se hace volar con el viento."],
+["C","e","cicatriz","Señal que queda en la piel después de curarse una herida."],
+["C","e","camaleón","Reptil que cambia de color para camuflarse y caza con su larga lengua."],
+["C","e","croqueta","Porción de masa de bechamel, rebozada y frita, que suele llevar jamón o pollo."],
+["D","e","delfín","Mamífero marino muy inteligente que se comunica con silbidos y chasquidos."],
+["D","e","diccionario","Libro que recoge las palabras de una lengua por orden alfabético con su significado."],
+["D","e","dromedario","Mamífero rumiante del desierto con una sola joroba."],
+["D","e","desierto","Territorio arenoso o pedregoso donde casi no llueve y hay muy poca vegetación."],
+["D","e","dentista","Profesional que cuida y trata los dientes."],
+["D","e","duende","Ser fantástico y pequeño que, según la tradición, habita en casas o bosques."],
+["E","e","eclipse","Ocultación pasajera de un astro por la interposición de otro, como la Luna delante del Sol."],
+["E","e","esqueleto","Conjunto de huesos que sostiene el cuerpo de los vertebrados."],
+["E","e","escalera","Serie de peldaños que sirve para subir o bajar."],
+["E","e","estrella","Cuerpo celeste que brilla con luz propia; el Sol es una de ellas."],
+["E","e","enciclopedia","Obra que reúne conocimientos de todas las materias, normalmente en varios tomos."],
+["E","e","erizo","Pequeño mamífero cubierto de púas que se enrolla como una bola para defenderse."],
+["F","e","faro","Torre de la costa con una luz potente que orienta a los barcos por la noche."],
+["F","e","fósil","Resto de un ser vivo de épocas remotas conservado en la roca."],
+["F","e","flamenco","Ave zancuda de plumaje rosado; también, cante y baile de Andalucía."],
+["F","e","frigorífico","Electrodoméstico que conserva los alimentos en frío.",["frigo"]],
+["F","e","fantasma","Aparición de un difunto según la creencia popular, que a menudo se dibuja con una sábana."],
+["F","e","fresa","Fruto pequeño y rojo con las semillas en la superficie."],
+["G","e","girasol","Planta de flor grande y amarilla que se orienta hacia el sol y de la que salen las pipas."],
+["G","e","glaciar","Gran masa de hielo que se desliza lentamente por una montaña."],
+["G","e","guitarra","Instrumento de seis cuerdas con caja de madera en forma de ocho."],
+["G","e","gaviota","Ave marina de plumaje blanco y gris muy común en puertos y playas."],
+["G","e","granizo","Precipitación en forma de bolitas de hielo."],
+["G","e","gemelo","Cada uno de los hermanos nacidos del mismo parto y de un mismo óvulo.",["gemelos","gemela","gemelas"]],
+["H","e","huracán","Viento muy violento que gira en grandes círculos, propio de las zonas tropicales."],
+["H","e","hormiga","Insecto que vive en colonias bajo tierra y carga varias veces su propio peso."],
+["H","e","hospital","Centro donde se diagnostica y se trata a los enfermos."],
+["H","e","helicóptero","Aeronave que se sostiene en el aire gracias a unas hélices horizontales."],
+["H","e","hipopótamo","Enorme mamífero africano que pasa gran parte del día sumergido en ríos y lagos."],
+["H","e","hamaca","Red o lona que se cuelga por los extremos y sirve de cama o columpio."],
+["I","e","iglú","Vivienda semiesférica construida con bloques de nieve."],
+["I","e","imán","Mineral u objeto que atrae el hierro."],
+["I","e","isla","Porción de tierra rodeada de agua por todas partes."],
+["I","e","iguana","Reptil de América tropical con una cresta de escamas a lo largo del lomo."],
+["I","e","invierno","Estación más fría del año."],
+["I","e","impresora","Máquina conectada al ordenador que pasa textos e imágenes al papel."],
+["J","e","jirafa","Mamífero africano de cuello larguísimo; es el animal terrestre más alto."],
+["J","e","jabón","Producto que, mezclado con agua, sirve para lavar."],
+["J","e","jeroglífico","Escritura hecha con figuras y símbolos, como la del antiguo Egipto."],
+["J","e","jardín","Terreno donde se cultivan plantas y flores para adornar."],
+["J","e","jamón","Pierna trasera del cerdo, curada o cocida."],
+["J","e","juez","Persona con autoridad para juzgar y dictar sentencia.",["jueza"]],
+["L","e","linterna","Aparato portátil con pilas y bombilla que sirve para alumbrar."],
+["L","e","laberinto","Lugar formado por caminos que se cruzan, del que es muy difícil encontrar la salida."],
+["L","e","lechuza","Ave rapaz nocturna de cara blanca en forma de corazón."],
+["L","e","luna","Satélite natural de la Tierra."],
+["L","e","lápiz","Barrita de grafito envuelta en madera que sirve para escribir o dibujar."],
+["L","e","leñador","Persona que se dedica a cortar leña.",["leñadora"]],
+["M","e","mariposa","Insecto de cuatro alas de colores que antes fue oruga."],
+["M","e","murciélago","Único mamífero capaz de volar, que se orienta por el eco de sus chillidos."],
+["M","e","microscopio","Instrumento óptico que permite ver objetos diminutos."],
+["M","e","medusa","Animal marino gelatinoso con tentáculos que pican."],
+["M","e","maratón","Carrera a pie de cuarenta y dos kilómetros y ciento noventa y cinco metros."],
+["M","e","mapa","Representación de la Tierra, o de una parte de ella, sobre una superficie plana."],
+["N","e","naranja","Fruta cítrica redonda, rica en vitamina C."],
+["N","e","nube","Masa de vapor de agua condensado que flota en la atmósfera."],
+["N","e","nido","Refugio que construyen las aves para poner sus huevos."],
+["N","e","nutria","Mamífero de pelo denso que vive en los ríos y nada con gran habilidad."],
+["N","e","notario","Funcionario que da fe de contratos, testamentos y otros documentos.",["notaria"]],
+["N","e","náufrago","Persona que ha sobrevivido al hundimiento de su barco.",["náufraga"]],
+["Ñ","c","piña","Fruta tropical de pulpa amarilla y corteza rugosa coronada por hojas."],
+["Ñ","c","araña","Animal de ocho patas que teje telas para cazar insectos."],
+["Ñ","c","montaña","Gran elevación natural del terreno."],
+["Ñ","c","pestaña","Cada uno de los pelos que crecen en el borde de los párpados."],
+["Ñ","c","otoño","Estación del año entre el verano y el invierno, en la que caen las hojas."],
+["Ñ","c","uña","Lámina dura que protege la punta de los dedos."],
+["O","e","oso","Mamífero corpulento de pelo espeso que hiberna durante el invierno."],
+["O","e","orquesta","Conjunto de músicos que tocan diversos instrumentos bajo las órdenes de un director."],
+["O","e","oasis","Lugar con agua y vegetación en medio del desierto."],
+["O","e","oruga","Larva de la mariposa."],
+["O","e","ombligo","Cicatriz redonda que queda en el vientre al cortar el cordón umbilical."],
+["O","e","océano","Gran masa de agua salada que separa los continentes, como el Atlántico o el Pacífico."],
+["P","e","paraguas","Utensilio que se abre para protegerse de la lluvia."],
+["P","e","pingüino","Ave marina blanca y negra que no vuela pero nada con gran destreza."],
+["P","e","pirámide","Monumento de base cuadrada y caras triangulares, como los de Guiza en Egipto."],
+["P","e","pulpo","Molusco marino con ocho tentáculos llenos de ventosas."],
+["P","e","puzle","Juego que consiste en encajar piezas para formar una imagen.",["puzzle"]],
+["P","e","paella","Plato de arroz típico de Valencia que se cocina en una sartén ancha y plana."],
+["Q","e","queso","Alimento que se obtiene cuajando la leche."],
+["Q","e","química","Ciencia que estudia la composición de la materia y sus transformaciones."],
+["Q","e","quirófano","Sala del hospital donde se realizan las operaciones."],
+["Q","e","quiosco","Pequeña caseta en la calle donde se venden periódicos y revistas.",["kiosco"]],
+["Q","e","quince","Número que sigue al catorce."],
+["Q","c","parque","Terreno con árboles y jardines destinado al recreo dentro de una ciudad."],
+["R","e","reloj","Instrumento que sirve para medir el tiempo."],
+["R","e","rinoceronte","Gran mamífero de piel gruesa con uno o dos cuernos sobre la nariz."],
+["R","e","relámpago","Resplandor intenso y breve que produce en el cielo una descarga eléctrica."],
+["R","e","robot","Máquina programable capaz de realizar tareas por sí sola."],
+["R","e","regadera","Recipiente con un tubo acabado en una pieza agujereada que sirve para regar."],
+["R","e","rana","Anfibio de piel lisa que salta y croa, y que antes fue renacuajo."],
+["S","e","semáforo","Aparato con luces roja, ámbar y verde que regula el tráfico."],
+["S","e","serpiente","Reptil sin patas, de cuerpo alargado, que se desplaza arrastrándose."],
+["S","e","submarino","Embarcación capaz de navegar bajo el agua."],
+["S","e","sandía","Fruta grande de corteza verde y pulpa roja con pepitas negras."],
+["S","e","satélite","Cuerpo que gira alrededor de un planeta; puede ser natural o artificial."],
+["S","e","sombrero","Prenda con copa y ala que cubre la cabeza."],
+["T","e","telescopio","Instrumento óptico que permite observar objetos lejanos, como planetas y estrellas."],
+["T","e","tortuga","Reptil lento con el cuerpo protegido por un caparazón."],
+["T","e","tiburón","Pez marino de esqueleto cartilaginoso con varias filas de dientes afilados."],
+["T","e","terremoto","Sacudida violenta de la corteza terrestre."],
+["T","e","tijeras","Instrumento de dos hojas de acero cruzadas que sirve para cortar.",["tijera"]],
+["T","e","tomate","Fruto rojo y jugoso que es la base del gazpacho."],
+["U","e","unicornio","Animal fabuloso con forma de caballo y un cuerno en la frente."],
+["U","e","universo","Conjunto de todo lo que existe: la materia, la energía, el espacio y el tiempo."],
+["U","e","uva","Fruto de la vid, que crece en racimos y del que se obtiene el vino."],
+["U","e","uniforme","Traje igual que visten los miembros de un colegio, un equipo o un cuerpo."],
+["U","e","urraca","Ave de plumaje blanco y negro y cola larga, famosa por llevarse objetos brillantes."],
+["U","e","ukelele","Pequeña guitarra de cuatro cuerdas originaria de Hawái.",["ukulele"]],
+["V","e","volcán","Abertura de la Tierra por la que salen lava, ceniza y gases."],
+["V","e","violín","Instrumento de cuatro cuerdas que se toca con arco, apoyado entre el hombro y la barbilla."],
+["V","e","vacuna","Preparado que se administra para que el cuerpo cree defensas contra una enfermedad."],
+["V","e","veterinario","Profesional que cura a los animales.",["veterinaria"]],
+["V","e","ventana","Abertura en la pared que da luz y ventilación."],
+["V","e","vampiro","Ser legendario que se alimenta de la sangre de los vivos, como el conde Drácula."],
+["X","c","taxi","Automóvil de alquiler con conductor y taxímetro."],
+["X","c","examen","Prueba para comprobar los conocimientos de alguien."],
+["X","c","oxígeno","Gas que respiramos, cuyo símbolo químico es la O."],
+["X","c","boxeo","Deporte de combate en el que se golpea con los puños enguantados."],
+["X","c","saxofón","Instrumento de viento de metal con boquilla de caña, muy usado en el jazz.",["saxo","saxófono"]],
+["X","e","xilófono","Instrumento de percusión de láminas de madera que se golpean con baquetas.",["xilofón"]],
+["Y","e","yogur","Producto lácteo que se obtiene fermentando la leche.",["yogurt"]],
+["Y","e","yate","Embarcación de recreo, normalmente de lujo."],
+["Y","e","yema","Parte amarilla del huevo."],
+["Y","e","yunque","Bloque de hierro sobre el que el herrero golpea los metales."],
+["Y","e","yegua","Hembra del caballo."],
+["Y","c","playa","Orilla del mar cubierta de arena."],
+["Z","e","zanahoria","Hortaliza de raíz alargada y color naranja."],
+["Z","e","zapato","Calzado que cubre el pie sin pasar del tobillo."],
+["Z","e","zorro","Mamífero de hocico puntiagudo y cola espesa, símbolo de astucia en las fábulas."],
+["Z","e","zumo","Líquido que se obtiene al exprimir la fruta."],
+["Z","e","zigzag","Línea que forma ángulos alternos, hacia un lado y hacia el otro."],
+["Z","c","pez","Animal vertebrado acuático que respira por branquias."],
+].map(([l, m, a, d, alt]) => ({ id: l + ":" + a, l, m, a, d, alt: alt || [] }));
+
+// ---------- utilidades ----------
+const $ = (id) => document.getElementById(id);
+const store = {
+  get(k, d) { try { const v = localStorage.getItem(k); return v == null ? d : JSON.parse(v); } catch { return d; } },
+  set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch {} },
+};
+function norm(s) {
+  return String(s || "").normalize("NFC").toLowerCase().replace(/ñ/g, "\u0001")
+    .normalize("NFD").replace(/[̀-ͯ]/g, "").replace(/\u0001/g, "ñ")
+    .replace(/[^a-zñ0-9 ]+/g, " ").replace(/\s+/g, " ").trim();
+}
+const FILLER = /^(la respuesta es|mi respuesta es|creo que es|creo que|pues|es|son|el|la|los|las|un|una|unos|unas)\s+/;
+function strip(t) { let p; do { p = t; t = t.replace(FILLER, ""); } while (t !== p); return t; }
+function lev(a, b) {
+  const m = a.length, n = b.length; if (Math.abs(m - n) > 2) return 9;
+  let prev = Array.from({ length: n + 1 }, (_, j) => j);
+  for (let i = 1; i <= m; i++) { const cur = [i]; for (let j = 1; j <= n; j++) cur[j] = Math.min(prev[j] + 1, cur[j - 1] + 1, prev[j - 1] + (a[i - 1] === b[j - 1] ? 0 : 1)); prev = cur; }
+  return prev[n];
+}
+const PASS_WORDS = ["paso", "pasa", "pasapalabra", "pasa palabra", "siguiente", "salto", "no lo se", "no se"];
+function isPass(text) { const t = strip(norm(text)); return PASS_WORDS.includes(t); }
+function isCorrect(text, q, byVoice) {
+  const t = strip(norm(text)); if (!t) return false;
+  const cands = [q.a, ...q.alt].map(norm);
+  const flat = t.replace(/ /g, "");
+  for (const c of cands) {
+    if (t === c || flat === c.replace(/ /g, "")) return true;
+    if (byVoice) {
+      if (t.split(" ").includes(c)) return true;
+      if (c.length >= 5 && lev(flat, c.replace(/ /g, "")) <= 1) return true;
+      if (c.length >= 6 && t.split(" ").some((w) => lev(w, c) <= 1)) return true;
+    }
+  }
+  return false;
+}
+const fmt = (s) => { s = Math.max(0, Math.ceil(s)); return Math.floor(s / 60) + ":" + String(s % 60).padStart(2, "0"); };
+
+// ---------- sonido ----------
+let actx = null;
+function beep(kind) {
+  try {
+    actx = actx || new (window.AudioContext || window.webkitAudioContext)();
+    const notes = kind === "ok" ? [[880, 0], [1320, .09]] : kind === "bad" ? [[220, 0], [160, .12]] : kind === "pass" ? [[660, 0]] : [[523, 0], [659, .12], [784, .24], [1046, .36]];
+    for (const [f, t] of notes) {
+      const o = actx.createOscillator(), g = actx.createGain(), t0 = actx.currentTime + t;
+      o.type = kind === "bad" ? "sawtooth" : "triangle"; o.frequency.value = f;
+      g.gain.setValueAtTime(0.0001, t0); g.gain.exponentialRampToValueAtTime(0.18, t0 + .02); g.gain.exponentialRampToValueAtTime(0.0001, t0 + .22);
+      o.connect(g).connect(actx.destination); o.start(t0); o.stop(t0 + .25);
+    }
+  } catch {}
+}
+
+// ---------- voz (lectura) ----------
+const Voice = {
+  cap: null, native: "speechSynthesis" in window, enabled: true, rate: 1.15, es: null,
+  pickNative() {
+    if (!this.native) return;
+    const vs = speechSynthesis.getVoices();
+    this.es = vs.find((v) => /^es[-_]ES/i.test(v.lang) && /google|natural|neural|mónica|monica|jorge|helena|alvaro|elvira/i.test(v.name))
+      || vs.find((v) => /^es[-_]ES/i.test(v.lang)) || vs.find((v) => /^es/i.test(v.lang)) || null;
+  },
+  available() { return !!this.cap || this.native; },
+  speak(text) {
+    if (!this.enabled || !text) return;
+    if (this.cap) {
+      this.cap.speak(text, { language: "es", rate: this.rate }).catch((e) => {
+        if (e && (e.code === "not_granted" || e.code === "unavailable")) { this.cap = null; updatePills(); this.speak(text); }
+      });
+      return;
+    }
+    if (!this.native) return;
+    try {
+      speechSynthesis.cancel();
+      const u = new SpeechSynthesisUtterance(text);
+      u.lang = this.es ? this.es.lang : "es-ES"; if (this.es) u.voice = this.es; u.rate = this.rate;
+      speechSynthesis.speak(u);
+    } catch {}
+  },
+  stop() { try { this.cap && this.cap.stop(); } catch {} try { this.native && speechSynthesis.cancel(); } catch {} },
+};
+if (Voice.native) { Voice.pickNative(); try { speechSynthesis.addEventListener("voiceschanged", () => Voice.pickNative()); } catch {} }
+
+// ---------- micrófono (dictado) ----------
+const Mic = {
+  cap: null, Rec: window.SpeechRecognition || window.webkitSpeechRecognition || null, rec: null,
+  on: false, buf: "", done: null, failed: false,
+  available() { return !this.failed && (!!this.cap || !!this.Rec); },
+  bindCap(d) {
+    this.cap = d;
+    d.onPartial(({ text }) => { if (this.on) showHeard(this.buf + text, true); });
+    d.onFinal(({ text }) => { if (!this.on) return; this.buf += text; showHeard(this.buf, false); this.finish(); });
+    d.onState(({ state, reason }) => {
+      if (state === "idle") {
+        if (reason === "not_granted" || reason === "unavailable") { this.failed = true; updatePills(); setStatus("El micrófono no está disponible. Puedes seguir escribiendo.", "info"); }
+        if (this.on) this.deliver();
+      }
+    });
+  },
+  start(onDone) {
+    this.buf = ""; this.done = onDone; this.on = true; setMicUI(true);
+    if (this.cap) {
+      this.cap.start({ language: "es" }).catch((e) => {
+        const c = e && e.code;
+        if (c === "not_granted" || c === "unavailable") { this.failed = true; updatePills(); setStatus("Sin permiso de micrófono. Escribe tu respuesta.", "info"); }
+        else if (c === "dismissed") setStatus("Pulsa «Hablar» de nuevo y permite el micrófono.", "info");
+        this.on = false; setMicUI(false);
+      });
+      return;
+    }
+    if (!this.Rec) return;
+    try {
+      const r = new this.Rec(); this.rec = r;
+      r.lang = "es-ES"; r.interimResults = true; r.maxAlternatives = 3; r.continuous = false;
+      r.onresult = (ev) => {
+        let fin = "", part = "";
+        for (let i = 0; i < ev.results.length; i++) { const res = ev.results[i]; if (res.isFinal) fin += res[0].transcript; else part += res[0].transcript; }
+        if (fin) { this.buf = fin; showHeard(fin, false); this.finish(); } else showHeard(part, true);
+      };
+      r.onerror = (ev) => { if (ev.error === "not-allowed" || ev.error === "service-not-allowed") { this.failed = true; updatePills(); setStatus("Sin permiso de micrófono. Escribe tu respuesta.", "info"); } };
+      r.onend = () => { if (this.on) this.deliver(); };
+      r.start();
+    } catch { this.on = false; setMicUI(false); }
+  },
+  finish() {
+    if (this.cap) this.cap.stop().then(() => this.deliver(), () => this.deliver());
+    else { try { this.rec && this.rec.stop(); } catch {} this.deliver(); }
+  },
+  cancel() { this.done = null; this.on = false; setMicUI(false); try { this.cap ? this.cap.stop() : this.rec && this.rec.abort(); } catch {} },
+  deliver() {
+    if (!this.on) return; this.on = false; setMicUI(false);
+    const cb = this.done; this.done = null; const t = this.buf.trim();
+    if (cb) cb(t);
+  },
+};
+
+// ---------- estado del juego ----------
+const S = { phase: "start", qs: [], st: [], given: [], idx: 0, total: 150, left: 150, last: 0, timer: null, paused: false, round: 1, lock: false };
+const slots = [];
+
+function buildRosco() {
+  const r = $("rosco"); const n = LETTERS.length;
+  LETTERS.forEach((L, i) => {
+    const a = (-90 + i * 360 / n) * Math.PI / 180;
+    const el = document.createElement("div");
+    el.className = "slot"; el.textContent = L;
+    el.style.left = (50 + 44.6 * Math.cos(a)) + "%"; el.style.top = (50 + 44.6 * Math.sin(a)) + "%";
+    r.appendChild(el); slots.push(el);
+  });
+}
+
+function pickRosco() {
+  const hist = store.get("lal-hist", []);
+  const recent = new Set(hist.flat()), last = new Set(hist[hist.length - 1] || []);
+  const qs = LETTERS.map((L) => {
+    const all = BANK.filter((q) => q.l === L);
+    let pool = all.filter((q) => !recent.has(q.id));
+    if (!pool.length) pool = all.filter((q) => !last.has(q.id));
+    if (!pool.length) pool = all;
+    return pool[Math.floor(Math.random() * pool.length)];
+  });
+  hist.push(qs.map((q) => q.id)); while (hist.length > 5) hist.shift();
+  store.set("lal-hist", hist);
+  return qs;
+}
+
+function counts() {
+  let ok = 0, bad = 0; S.st.forEach((s) => { if (s === "ok") ok++; else if (s === "bad") bad++; });
+  return { ok, bad, left: LETTERS.length - ok - bad };
+}
+function renderScore() {
+  const c = counts(); $("sOk").textContent = c.ok; $("sBad").textContent = c.bad; $("sLeft").textContent = c.left;
+}
+function renderClock() { const el = $("cClock"); el.textContent = fmt(S.left); el.classList.toggle("low", S.left <= 15 && S.phase === "play"); }
+function setStatus(msg, cls) { const el = $("status"); el.textContent = msg || ""; el.className = "status" + (cls ? " " + cls : ""); }
+function showHeard(t, partial) { const inp = $("answer"); inp.value = t.trim(); if (partial) setStatus("Escuchando… «" + t.trim() + "»"); }
+function setMicUI(on) {
+  $("btnMic").classList.toggle("on", on); $("micTxt").textContent = on ? "Escuchando…" : "Hablar";
+  $("answer").classList.toggle("listening", on);
+}
+function show(view) { for (const v of ["vStart", "vPlay", "vEnd"]) $(v).hidden = v !== view; }
+
+function updatePills() {
+  const v = Voice.available() && Voice.enabled, m = Mic.available();
+  $("dotVoice").classList.toggle("on", v); $("lblVoice").textContent = !Voice.enabled ? "desactivada" : v ? "lista" : "no disponible";
+  $("dotMic").classList.toggle("on", m); $("lblMic").textContent = m ? "listo" : "solo texto";
+  $("btnMic").hidden = !m;
+}
+
+function setActive(i) {
+  slots.forEach((el, j) => el.classList.toggle("active", j === i));
+  const q = S.qs[i];
+  $("cLetter").textContent = q.l; $("cMode").textContent = q.m === "e" ? "Empieza por" : "Contiene";
+  $("clueLabel").textContent = (q.m === "e" ? "Empieza por la " : "Contiene la ") + q.l + (S.round > 1 ? " · vuelta " + S.round : "");
+  $("clue").textContent = q.d;
+}
+function spokenClue(q) { return (q.m === "e" ? "Con la " : "Contiene la ") + NAMES[q.l] + ". " + q.d; }
+
+function nextIndex(from) {
+  const n = LETTERS.length;
+  for (let k = 1; k <= n; k++) { const j = (from + k) % n; if (S.st[j] === "pending" || S.st[j] === "passed") { if (j <= from) S.round++; return j; } }
+  return -1;
+}
+
+function startGame() {
+  Voice.stop();
+  S.total = +$("optTime").value; S.left = S.total; Voice.rate = +$("optRate").value; Voice.enabled = $("optVoice").value === "on";
+  store.set("lal-opts", { t: $("optTime").value, r: $("optRate").value, v: $("optVoice").value });
+  updatePills();
+  S.qs = pickRosco(); S.st = LETTERS.map(() => "pending"); S.given = LETTERS.map(() => "");
+  S.idx = 0; S.round = 1; S.paused = false; S.phase = "play"; S.lock = false;
+  slots.forEach((el) => el.className = "slot");
+  renderScore(); renderClock(); show("vPlay"); setStatus("");
+  $("btnPause").textContent = "Pausa";
+  setActive(0); $("answer").value = ""; focusInput();
+  beep("start");
+  Voice.speak(spokenClue(S.qs[0]));
+  S.last = performance.now(); clearInterval(S.timer); S.timer = setInterval(tick, 100);
+}
+function focusInput() { if (!matchMedia("(pointer: coarse)").matches) $("answer").focus(); }
+function tick() {
+  const now = performance.now(); const dt = (now - S.last) / 1000; S.last = now;
+  if (S.phase !== "play" || S.paused) return;
+  S.left -= dt; renderClock();
+  if (S.left <= 0) { S.left = 0; endGame("time"); }
+}
+
+function resolve(kind, text) {
+  if (S.phase !== "play" || S.paused || S.lock) return;
+  const i = S.idx, q = S.qs[i], el = slots[i];
+  let say = "";
+  if (kind === "pass") {
+    S.st[i] = "passed"; el.classList.add("passed"); beep("pass"); setStatus("Paso. La " + q.l + " vuelve en la siguiente vuelta.", "info"); say = "Paso. ";
+  } else if (kind === "ok") {
+    S.st[i] = "ok"; S.given[i] = text; el.className = "slot ok pop"; beep("ok"); setStatus("¡Correcto! " + q.a.toUpperCase(), "ok"); say = "¡Correcto! ";
+  } else {
+    S.st[i] = "bad"; S.given[i] = text; el.className = "slot bad pop"; beep("bad"); setStatus("Incorrecto. Era " + q.a.toUpperCase() + ".", "bad"); say = "No. Era " + q.a + ". ";
+  }
+  renderScore(); $("answer").value = "";
+  const roundBefore = S.round;
+  const nx = nextIndex(i);
+  if (nx < 0) { S.lock = true; Voice.speak(say); setTimeout(() => endGame("done"), 700); return; }
+  S.idx = nx;
+  if (S.round !== roundBefore) say += "Nueva vuelta. ";
+  setActive(nx); focusInput();
+  Voice.speak(say + spokenClue(S.qs[nx]));
+}
+
+function submitText(text, byVoice) {
+  if (S.phase !== "play" || S.paused) return;
+  const t = (text || "").trim();
+  if (!t) { setStatus(byVoice ? "No te he oído. Pulsa «Hablar» y responde." : "Escribe una respuesta o pulsa «Paso».", "info"); return; }
+  if (isPass(t)) return resolve("pass");
+  const q = S.qs[S.idx];
+  resolve(isCorrect(t, q, byVoice) ? "ok" : "bad", t);
+}
+
+function endGame(why) {
+  if (S.phase !== "play") return;
+  S.phase = "end"; clearInterval(S.timer); Mic.cancel();
+  slots.forEach((el) => el.classList.remove("active"));
+  const c = counts();
+  const used = S.total - Math.max(0, S.left);
+  $("rOk").textContent = c.ok; $("rBad").textContent = c.bad; $("rLeft").textContent = c.left; $("rTime").textContent = fmt(used);
+  const title = c.ok === LETTERS.length ? "¡Rosco completo! Las 25 letras acertadas." :
+    why === "time" ? "Se acabó el tiempo." : why === "quit" ? "Te has plantado." : "Has llegado al final del rosco.";
+  $("endEyebrow").textContent = c.ok === LETTERS.length ? "Rosco perfecto" : "Rosco terminado";
+  $("endTitle").textContent = title + " " + c.ok + " acierto" + (c.ok === 1 ? "" : "s") + ".";
+  const tbl = $("reviewTbl"); tbl.textContent = "";
+  S.qs.forEach((q, i) => {
+    const tr = document.createElement("tr"); const st = S.st[i];
+    tr.className = st === "ok" ? "ok" : st === "bad" ? "bad" : "left";
+    const a = document.createElement("td"); a.textContent = q.l;
+    const b = document.createElement("td");
+    const w = document.createElement("strong"); w.textContent = q.a.toUpperCase();
+    const d = document.createElement("div"); d.className = "you"; d.textContent = q.d;
+    b.append(w, d);
+    if (st === "bad") { const y = document.createElement("div"); y.className = "you"; y.textContent = "Tu respuesta: " + S.given[i]; b.append(y); }
+    tr.append(a, b); tbl.append(tr);
+  });
+  show("vEnd"); beep(c.ok === LETTERS.length ? "start" : "pass");
+  Voice.speak(title + " Has conseguido " + c.ok + " acierto" + (c.ok === 1 ? "" : "s") + " y " + c.bad + " fallo" + (c.bad === 1 ? "" : "s") + ".");
+}
+
+function togglePause() {
+  if (S.phase !== "play") return;
+  S.paused = !S.paused; $("btnPause").textContent = S.paused ? "Seguir" : "Pausa";
+  if (S.paused) { Voice.stop(); Mic.cancel(); $("clue").style.filter = "blur(6px)"; setStatus("Juego en pausa. El reloj está parado.", "info"); }
+  else { $("clue").style.filter = ""; setStatus(""); S.last = performance.now(); Voice.speak(spokenClue(S.qs[S.idx])); focusInput(); }
+}
+
+function listen() {
+  if (S.phase !== "play" || S.paused || !Mic.available()) return;
+  if (Mic.on) { Mic.finish(); return; }
+  Voice.stop();
+  setStatus("Escuchando… di la palabra o «paso».");
+  Mic.start((t) => submitText(t, true));
+}
+
+// ---------- eventos ----------
+$("btnStart").addEventListener("click", startGame);
+$("btnAgain").addEventListener("click", startGame);
+$("form").addEventListener("submit", (e) => { e.preventDefault(); if (Mic.on) Mic.cancel(); submitText($("answer").value, false); });
+$("btnPass").addEventListener("click", () => { if (Mic.on) Mic.cancel(); resolve("pass"); });
+$("btnMic").addEventListener("click", listen);
+$("btnRepeat").addEventListener("click", () => { if (S.phase === "play" && !S.paused) Voice.speak(spokenClue(S.qs[S.idx])); });
+$("btnPause").addEventListener("click", togglePause);
+$("btnQuit").addEventListener("click", () => { Voice.stop(); endGame("quit"); });
+$("answer").addEventListener("keydown", (e) => {
+  if (e.key === " " && !$("answer").value && Mic.available()) { e.preventDefault(); listen(); }
+});
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && S.phase === "play") Voice.stop();
+});
+document.addEventListener("visibilitychange", () => { if (document.hidden && S.phase === "play" && !S.paused) togglePause(); });
+
+// ---------- arranque ----------
+buildRosco();
+const o = store.get("lal-opts", null);
+if (o) { if (o.t) $("optTime").value = o.t; if (o.r) $("optRate").value = o.r; if (o.v) $("optVoice").value = o.v; }
+Voice.enabled = $("optVoice").value === "on";
+$("optVoice").addEventListener("change", () => { Voice.enabled = $("optVoice").value === "on"; updatePills(); });
+S.left = +$("optTime").value; renderClock();
+$("optTime").addEventListener("change", () => { if (S.phase !== "play") { S.left = +$("optTime").value; renderClock(); } });
+slots[0].classList.add("active");
+updatePills();
+if (window.claude && typeof window.claude.use === "function") {
+  window.claude.use("tts").then((t) => { if (t) { Voice.cap = t; updatePills(); } }, () => {});
+  window.claude.use("dictation").then((d) => { if (d) { Mic.bindCap(d); updatePills(); } }, () => {});
+}
+})();
+</script>
+
+</body></html>
