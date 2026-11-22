@@ -1,0 +1,56 @@
+ID: C02_E003_IMAGE
+ESCENA: C02_E003 · RESES EN LA VÍA
+GUION: 01_DIALOGUES/CHAPTER_02/ESCENA_003.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_02/ESCENA_003_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - BENITEZ: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/BENITEZ_SHEET.txt (vestuario del LOCK)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - TONO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/TONO_SHEET.txt (vestuario del LOCK)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C02_E003
+ 2. Localización ............ Carretera comarcal, punto kilométrico 7, de noche
+ 3. Hora y meteorología ..... Miércoles 12 de marzo, 5:40. Noche cerrada, helada, 0 °C, luces azules.
+ 4. Personajes visibles ..... Sargento Benítez con linterna; coche patrulla cruzado; furgoneta blanca en la cuneta; nueve vacas en el asfalto; Manuel, Alejandro y Toño bajando del todoterreno.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ BENITEZ: vestuario del LOCK; MANUEL: WARDROBE M2; ALEJANDRO: WARDROBE A4; TONO: vestuario del LOCK
+ 7. Expresión facial ........ Benítez flemático; Alejandro recién despertado; Manuel urgente.
+ 8. Posición corporal ....... Benítez avanzando con la linterna; los tres bajando del coche.
+ 9. Acción congelada ........ Benítez se acerca con la linterna hacia los recién llegados mientras las vacas miran los faros.
+10. Composición ............. Plano general: vacas en el centro iluminadas por los faros, patrulla con luces azules a la izquierda, furgoneta en la cuneta a la derecha, figuras humanas en primer término.
+11. Tipo de plano ........... Plano general nocturno.
+12. Distancia focal ......... 35 mm anamorphic lens
+13. Iluminación ............. Faros, luces azules giratorias, linterna; vaho iluminado.
+14. Profundidad de campo .... deep focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Peligro y caos nocturno controlado.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, wide night shot on a rural road. On a frozen night road, nine fighting cows stand nervously on the asphalt lit by headlights and spinning blue lights; a Guardia Civil sergeant walks with a flashlight toward an old off-road vehicle from which three men are getting out; a white delivery van sits nose-down in the ditch.
+Walking toward the newcomers with a flashlight: a 45-year-old Spanish Guardia Civil sergeant, medium build, short black hair greying at the temples, trimmed black moustache, calm heavy-lidded eyes, wearing the green Guardia Civil field uniform with a reflective vest, no visible insignia text, walking calmly holding a torch, phlegmatic, unhurried.
+Getting out of the off-road vehicle: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing his short-brim hat, stepping out of the driver's door, urgent, focused.
+Getting out of the passenger side: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, hair messy from sleep, zipping the jacket, just woken, alarmed.
+Behind them: a 19-year-old Spanish farmhand, tall and heavy-set, broad shoulders, round boyish face, short buzzed brown hair, shy brown eyes, wearing a black padded vest over a grey t-shirt, work trousers and boots, holding a wooden herding stick, silent, ready.
+Animal: Spanish fighting cows, mostly cárdeno grey-flecked and some black, lyre-shaped thin horns, lean bodies, alert heads.
+Vehicle: a green-and-white Spanish Guardia Civil off-road patrol vehicle with blue lights on, no readable text.
+Vehicle: a boxy 1990s short-wheelbase off-road vehicle, faded olive-green paint, white steel roof, spare wheel on the rear door, mud on the lower panels, no badges.
+Setting: a narrow two-lane rural road in western Salamanca, Spain, worn asphalt with faded white edge lines, granite drystone walls on both sides, holm oak dehesa stretching to the horizon, patches of low fog between the trees, wooden electricity poles. A white delivery van with a broken headlight is nose-down in the ditch; the driver sits on the kerb wrapped in a silver thermal blanket. The road is the LOCATION described, at night.
+Time and weather: 5:40 am, pitch-dark frozen night, 0 °C, blue emergency lights, headlights.
+Composition: cows centred in the headlight beams, patrol car with blue lights on the left, van in the ditch on the right, the men in the foreground.
+Lighting: headlights, spinning blue lights, a flashlight beam, illuminated breath vapour, deep black night.
+Camera: 35 mm anamorphic lens, deep focus.
+Textures: frosted asphalt, steaming cow breath, reflective vest, silver thermal blanket.
+Mood: night danger under control.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable text on vehicles, police logos

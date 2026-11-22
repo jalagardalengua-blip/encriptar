@@ -201,3 +201,112 @@ La chaqueta verde de Ernesto es el **objeto de continuidad principal**: Alejandr
 - Alejandro y Manuel: al principio, siempre con distancia física (dos o tres metros, o un objeto entre ellos). Se acercan a lo largo de la campaña. En C09, nadie entre ellos y nadie mirando al otro.
 - Ricardo: siempre en posición de poder (de pie si el otro está sentado, en plano ligeramente contrapicado, nunca bajo la lluvia ni manchado).
 - Lucía: plano de trabajo; se la encuadra con las manos ocupadas.
+
+
+---
+
+## 9. Ampliación para los capítulos 02–12
+
+### 9.1 Vestuario adicional de los personajes principales
+
+| Código | Uso | Descripción para prompt |
+|---|---|---|
+| `WARDROBE A4` | C02–C05 (campo, primavera) | `wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots` |
+| `WARDROBE A5` | C06–C09 (verano) | `wearing faded blue jeans, a sweat-stained white linen shirt with rolled sleeves, old brown leather work boots, his late father's faded olive-green waxed cotton field jacket tied around his waist` |
+| `WARDROBE A6` | C04 E001–E002 (ciudad), C10, C11 E002, C12 E001 | `wearing dark blue jeans, a pressed white shirt open at the collar, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, clean brown leather boots` |
+| `WARDROBE A7` | C12 E004 (final C) | `wearing a tailored navy blazer, an open-collar light blue shirt, dark jeans and brown suede ankle boots, hair cut shorter and neatly styled, clean-shaven` |
+| `WARDROBE A8` | C12 E002 (final A) | `wearing a dark grey wool coat over a white shirt, a black tie, dark trousers` |
+| `WARDROBE M4` | C06–C09 (verano) | `wearing a short-sleeved brown-and-cream checked shirt, brown corduroy trousers, brown leather boots` |
+| `WARDROBE M5` | C12 E002 (final A, solo voz) / C12 E003 | `wearing a dark brown sheepskin-lined leather vest over a checked flannel shirt, brown corduroy trousers, brown leather boots` |
+| `WARDROBE L2` | C06–C09 trabajo de verano | `wearing a short-sleeved dark green technical work t-shirt, navy cargo work trousers, black rubber boots` |
+| `WARDROBE L3` | C06 E004, C08 E003, C10, C11 E002, C12 E003 (civil) | `wearing a simple light cotton blouse, dark jeans and white canvas sneakers, hair in her usual low ponytail` |
+| `WARDROBE R3` | C03 E004, C07 E004, C10 E002 (verano) | `wearing a beige linen blazer, an open-collar white shirt, light grey trousers, brown suede loafers` |
+| `WARDROBE R4` | C08 E002, C12 E001, C12 E004 | `wearing a navy blazer, an open-collar light blue shirt, beige chinos and brown suede ankle boots` |
+| `WARDROBE J1` | C03, C06, C07 E002, C10 E001–E002 | `wearing a white shirt with rolled sleeves, faded jeans, white sneakers, dark sunglasses pushed up on his head` |
+| `WARDROBE J2` | C07 E003, C10 E003 (traje de luces) | `wearing a navy blue and gold bullfighter's suit of lights (traje de luces) with gold embroidery, pink stockings, black flat slippers, a black montera hat, a coleta hairpiece` |
+| `WARDROBE J3` | C11 E002 (hospital) | `wearing a pale blue hospital gown, a white sheet over his legs, an IV drip in his left arm` |
+| `WARDROBE J4` | C12 E003 | `wearing a dark green quilted jacket, jeans, leaning on a wooden walking cane` |
+| `WARDROBE C1` | C04 E002 | `wearing a tailored camel wool coat over a black turtleneck, dark trousers and low black leather boots` |
+| `WARDROBE C2` | C07, C10 | `wearing a white silk blouse, black tailored trousers, a thin gold necklace` |
+| `WARDROBE E1` | C09 E003 (flashback, 5 de marzo) | `wearing the olive-green waxed cotton field jacket with brown corduroy collar over a blue checked shirt, brown corduroy trousers, brown leather boots, a brown tweed flat cap` |
+
+### 9.2 Personajes secundarios
+
+```
+CHARACTER LOCK — ALEJANDRO_FINAL_C: a 24-year-old Spanish man, lean athletic build, 1.80 m, light olive skin, dark brown hair cut short and neatly styled, clean-shaven, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, defined jaw, rested composed face, a thin closed-lip smile, steel dress watch on his left wrist
+CHARACTER LOCK — TONO: a 19-year-old Spanish farmhand, tall and heavy-set, broad shoulders, round boyish face, short buzzed brown hair, shy brown eyes, wearing a black padded vest over a grey t-shirt, work trousers and boots
+CHARACTER LOCK — BENITEZ: a 45-year-old Spanish Guardia Civil sergeant, medium build, short black hair greying at the temples, trimmed black moustache, calm heavy-lidded eyes, wearing the green Guardia Civil field uniform with a reflective vest, no visible insignia text
+CHARACTER LOCK — ARRANZ: a 52-year-old Spanish official veterinarian, thin, short grey bob haircut, reading glasses hanging on a cord around her neck, tired serious face, wearing a dark green field vest over a white shirt, carrying a plastic clipboard
+CHARACTER LOCK — REMEDIOS: a 66-year-old small Spanish village bar owner, plump, permed short dyed-auburn hair, lively dark eyes, wearing a black cardigan over a floral blouse and an apron
+CHARACTER LOCK — PADRE_JULIAN: a 70-year-old Spanish village priest, tall and thin, bald with a white fringe, wearing a long black coat with a purple stole
+CHARACTER LOCK — RUBIO: a 44-year-old Spanish ranch foreman, burly, sunburnt face, short sandy-blond hair going grey, thick neck, wearing a checked short-sleeved shirt, a cap and work trousers
+CHARACTER LOCK — LERMA: a 58-year-old Spanish bullfighting manager, heavy, jowly, grey stubble, wearing a wrinkled white linen shirt, an old flat cap, an unlit cigar in his hand
+CHARACTER LOCK — ORTEGA: a 50-year-old Spanish bank branch manager, soft round face, receding brown hair, thin metal glasses, wearing a grey suit with a blue tie
+CHARACTER LOCK — DANI: a 24-year-old Madrid delivery rider, skinny, messy black hair, small silver earring, wearing a faded band-less black hoodie and track pants
+CHARACTER LOCK — GASPAR: a 63-year-old Spanish village mayor, big belly, red cheeks, white hair, wearing a sweaty white shirt with a red-and-white mayor's sash across the chest
+CHARACTER LOCK — MARTA: a 41-year-old Spanish executive from Bilbao, tall and slim, short dark pixie haircut, wearing a beige trench coat over a dark suit, carrying a black document folder
+CHARACTER LOCK — SALAZAR: a 38-year-old Madrid lawyer, slim, slicked-back dark hair, clean-shaven, wearing a dark grey suit and a navy tie
+CHARACTER LOCK — BENAVIDES: a 60-year-old Spanish notary, bald, round face, small reading glasses on the tip of his nose, wearing a dark suit and a burgundy tie
+CHARACTER LOCK — PILAR: a 31-year-old Spanish woman, slim, shoulder-length wavy fair blonde hair, freckles, dark brown eyes, wide laughing smile, wearing a striped cotton shirt and jeans (seen only in old home video)
+CHARACTER LOCK — ERNESTO_41: a 41-year-old Spanish bull breeder, tall and very broad-shouldered, tanned, thick black hair, full black beard trimmed short, dark brown eyes, wearing a blue checked shirt and a brown tweed flat cap (seen only in old home video)
+CHARACTER LOCK — MANUEL_38: a 38-year-old Spanish cowhand, lean and wiry, black hair, thick black moustache, sun-tanned, wearing a white undershirt and work trousers (seen only in old home video)
+```
+
+### 9.3 Animales adicionales
+
+```
+ANIMAL LOCK — CAMPANERO: a very old Spanish fighting seed bull, light cárdeno (pale grey flecked) coat, thin and bony, long wide horns with worn tips, white muzzle hairs, tired eyes
+ANIMAL LOCK — LUCERITA: a two-year-old Spanish fighting heifer, dark cárdeno almost black coat with two small pale spots on the forehead, short sharp horns, compact athletic body, fixed stare
+ANIMAL LOCK — GITANILLA: a black-and-grey flecked (negra entrepelada) Spanish fighting cow, lean, thin lyre-shaped horns, a slightly torn left ear
+ANIMAL LOCK — FAROLERO: a four-year-old Spanish fighting bull, light cárdeno coat, tall and long-bodied, upturned horns pale at the base, noble high head
+ANIMAL LOCK — BARQUERO: a four-year-old Spanish fighting bull, dark cárdeno almost black coat with two small pale spots on the forehead like his father, forward horns ivory at the base, deep chest, explosive posture
+ANIMAL LOCK — TOROS_ARENALES: big black Spanish fighting bulls of Domecq type, heavy and glossy, wide horns, calm dull eyes
+ANIMAL LOCK — BECERROS: Spanish fighting calves around eight months old, cárdeno and black coats, small horn buds
+```
+
+### 9.4 Vehículos adicionales
+
+```
+VEHICLE LOCK — CAMION GANADO: a white livestock truck for fighting bulls with an aluminium box body divided into individual crates, small ventilation grilles near the roof, dusty, no logos
+VEHICLE LOCK — COCHE JAVIER: a 20-year-old small red three-door hatchback with a roof rack carrying a long sword case, faded paint, no badges
+VEHICLE LOCK — PICKUP RUBIO: a large white double-cab pickup, dusty, a toolbox in the bed, no badges
+VEHICLE LOCK — COCHE JUNTA: a plain white compact government car, no visible logos or text
+VEHICLE LOCK — PATRULLA: a green-and-white Spanish Guardia Civil off-road patrol vehicle with blue lights on, no readable text
+```
+
+### 9.5 Localizaciones adicionales
+
+```
+LOCATION LOCK — REGATO: a holm oak pasture crossed by a dry seasonal stream, a long granite drystone wall bordering a narrow rural road, a gap in the wall with fallen stones, wire strands above
+LOCATION LOCK — CORRALES ENCOMIENDA: old granite stone cattle pens with green guillotine gates, a narrow handling chute (manga) ending in a steel squeeze crate, a loading ramp for trucks, mud and straw
+LOCATION LOCK — PLACITA: a small private bullring 25 metres across with whitewashed walls, faded red wooden barriers (burladeros), raked sand, a stone viewing box (palco) above one side, holm oaks beyond the wall
+LOCATION LOCK — BAR REMEDIOS: a small Spanish village bar with a zinc counter, an old espresso machine, a framed photograph of a bull above it, four wooden tables, a small television in a corner, warm yellow light
+LOCATION LOCK — BANCO SALAMANCA: a glass-walled manager's office inside a bank branch, grey carpet, a desk with a computer, no logos or text visible
+LOCATION LOCK — OFICINA CARMEN: an office in an old Madrid apartment, high ceilings, wooden floor, framed vintage bullfight posters with unreadable text, a mounted bull head, a glass desk covered in papers
+LOCATION LOCK — PISO USERA: a small rented bedroom in a working-class Madrid flat, a bare bed frame, cardboard boxes, a window to a narrow light well with laundry hanging
+LOCATION LOCK — DESVAN: a farmhouse attic under chestnut beams and exposed clay tiles, old trunks, saddles, furniture under dusty sheets, light coming in thin stripes through gaps in the tiles
+LOCATION LOCK — SALON ENCOMIENDA: a farmhouse living room at night, an old fabric sofa, a bulky CRT television on a wooden cabinet with a VHS player, the only light coming from the TV screen
+LOCATION LOCK — CASA MAYORAL: a small whitewashed one-storey cottage with a green door, inside a table with a brazier cloth (mesa camilla), an old sideboard with family photos, blinds half down
+LOCATION LOCK — CARRETERA VERANO: a secondary road between harvested golden wheat fields and a line of poplars, a crash barrier, a wide gravel shoulder
+LOCATION LOCK — MORALEJA: a Castilian village main square with stone arcades, the streets closed with wooden barriers and farm carts for a bull run, bunting overhead, a church tower
+LOCATION LOCK — PLAZA VILLASECA: a small old bullring of stone and brick for 4,000 people, sun and shade sections, a narrow callejón behind red wooden barriers, a presidential box with a white cloth
+LOCATION LOCK — CORRALES PLAZA: stone holding pens behind a bullring with a high wooden walkway over them, steel gates, sunlight in narrow strips
+LOCATION LOCK — PATIO HOSTAL: an inner patio of a rural hostal with wrought-iron tables, a large fig tree, strings of small lanterns, whitewashed walls
+LOCATION LOCK — PISO LUCIA: a small wrought-iron balcony of an old flat in central Salamanca at night, golden-lit cathedral towers in the background, a little table with two plates and a candle
+LOCATION LOCK — PLAZA SALAMANCA: a large classic bullring with full stands, sun and shade, red barriers, a narrow callejón, a flag on top, no readable signs
+LOCATION LOCK — CORRALES SALAMANCA: the stone corrals behind a large bullring, unloading crates, high walkways with spectators leaning on rails
+LOCATION LOCK — BAR HOTEL: a classic hotel bar with dark wood panelling, vintage bullfight posters with unreadable text, a long counter, leather armchairs, warm low light
+LOCATION LOCK — PLAZA MAYOR: the arcaded golden sandstone Plaza Mayor of Salamanca at night, illuminated, café terraces with small tables under the arcades
+LOCATION LOCK — LLANOS: a vast flat field of harvested golden stubble without trees, a few distant holm oaks at the edges, rows of wooden survey stakes painted orange, a surveyor's tripod
+LOCATION LOCK — HOSPITAL: a double hospital room, the bed by the window occupied, the other empty, white walls, a window with the evening light of Salamanca
+LOCATION LOCK — NOTARIA: a notary's office with a long walnut table, shelves of bound protocol volumes, a wall clock, a rainy window onto a small town square
+LOCATION LOCK — DESPACHO RICARDO: a modern office inside a rich ranch house, a large window over the dehesa, a glass desk, a mounted head of a black bull, a modern abstract painting
+LOCATION LOCK — HERRADERO: the stone pens of La Encomienda during the calf branding, a wood fire with branding irons glowing red, straw on the ground, villagers watching from the walls
+LOCATION LOCK — CARRETERA PLACAS: the same narrow rural road through the holm oak dehesa, but on the right side, behind a new metal fence, endless rows of solar panels reflecting the low sun
+```
+
+### 9.6 Tratamiento especial
+
+- **Cintas VHS (C05 E002):** imagen de vídeo doméstico de principios de siglo: 4:3, colores lavados, ligera aberración cromática, líneas de exploración; el plano del salón alrededor es fotográfico normal.
+- **Flashback del 5 de marzo (C09 E003):** misma fotografía que el resto, desaturación del 20 % y temperatura de color 300 K más fría.
+- **Rama C07-A (afeitado):** en C07 E003 el pitón izquierdo del toro de Javier aparece romo; en la rama B, intacto. Se generan las dos imágenes si procede (sufijo `_RAMA_A`).

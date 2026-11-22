@@ -104,11 +104,11 @@ Total: 30 misiones principales.
 
 ## 9. Los tres finales
 
-**FINAL A — «EL PRECIO».** Alejandro vende. La deuda desaparece, cobra sus 300.000 €, Manuel acepta trabajar en Los Arenales y Lucero termina en otra casa. Seis meses después, en la autovía, Alejandro ve desde el coche las placas solares sobre los llanos de La Encomienda. *Condición:* `DEUDA` sin cubrir el 21 de septiembre o elección explícita de vender en M29.
+**FINAL A — «EL PRECIO».** Alejandro firma la venta en la notaría (C12_E001-A). La deuda desaparece, cobra sus 300.000 €, Manuel se va a Bilbao con su hija (rechaza Los Arenales). Un año después, en la carretera de Peñacorva, Alejandro ve las placas sobre Los Llanos y llama a Manuel: «¿Por dónde vas?» (C12_E002). *Condición:* siempre disponible; forzado si no hay oferta de Meseta ni carpeta.
 
-**FINAL B — «EL HIERRO».** Alejandro paga con la corrida de la feria, la venta del ganado de desecho y un préstamo avalado por Carmen. Pierde la mitad de la finca (los llanos) pero salva el hierro, la casa y la reata. Manuel se jubila. El último plano es Alejandro herrando a su primera camada como ganadero. *Condición:* `PRESTIGIO` ≥ 70, `INTEGRIDAD` ≥ 60 y M26 con al menos un toro aplaudido en el arrastre.
+**FINAL B — «EL HIERRO».** Alejandro vende Los Llanos (180 ha) directamente a Meseta Renovables por 1.100.000 € y, en el mismo acto notarial, consigna la deuda con eso y con los ingresos de la campaña; el aval de Carmen (150.000 €) queda como colchón. Ricardo rompe la opción y le invita a comer. Alejandro conserva la casa, 460 ha, el ganado y el hierro. En noviembre, en el herradero, marca su primera camada; Manuel se jubila en enero (C12_E003). *Condición:* haber llamado a Meseta en C11 + `PRESTIGIO ≥ 70` + `INTEGRIDAD ≥ 60` + vuelta al ruedo en C10.
 
-**FINAL C — «LA DIVISA».** Alejandro usa lo que sabe del parque solar y de la enfermedad de su padre para obligar a Ricardo a un acuerdo: Ricardo se queda la tierra y la planta, Alejandro conserva el hierro y la divisa y lleva su ganado a fincas arrendadas, con dinero de Ricardo. Gana, pero el último plano es él con el traje azul marino, la camisa abierta y la misma sonrisa contenida de Ricardo. *Condición:* `INTEGRIDAD` < 60 y haber obtenido la carpeta del parque solar en M27.
+**FINAL C — «LA DIVISA».** Alejandro usa la carpeta de Arenales Solar, la enfermedad de su padre y el sabotaje del Rubio para amenazar con un pleito que haría perder a la planta su punto de conexión. Ricardo negocia: deuda a cero, Ricardo se queda toda La Encomienda (casa incluida), Alejandro conserva hierro, divisa y ganado y recibe 600.000 € para arrendar pastos. Manuel se va. En marzo, en el despacho de Los Arenales, Alejandro firma con un blazer azul marino y la misma sonrisa de labios cerrados que Ricardo (C12_E004). *Condición:* carpeta en poder de Alejandro (C11_E001-A) + `INTEGRIDAD < 60`.
 
 ## 10. Misterios y calendario de revelaciones
 

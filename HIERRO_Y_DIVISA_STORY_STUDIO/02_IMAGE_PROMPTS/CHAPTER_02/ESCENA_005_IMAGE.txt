@@ -1,0 +1,52 @@
+ID: C02_E005_IMAGE
+ESCENA: C02_E005 · LA PRUEBA
+GUION: 01_DIALOGUES/CHAPTER_02/ESCENA_005.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_02/ESCENA_005_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L1)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C02_E005
+ 2. Localización ............ Corrales y cajón de curas
+ 3. Hora y meteorología ..... Lunes 17 de marzo, 8:00. Nublado, luz plana, barro.
+ 4. Personajes visibles ..... Lucía junto al cajón con una vaca dentro; Alejandro con la tablet; Manuel y Toño al fondo en la manga.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ LUCIA: WARDROBE L1; ALEJANDRO: WARDROBE A4; MANUEL: WARDROBE M2
+ 7. Expresión facial ........ Lucía concentrada; Alejandro aplicado.
+ 8. Posición corporal ....... Lucía con un pie en la barra del cajón, tijera curva en la mano; Alejandro sujetando una tablet.
+ 9. Acción congelada ........ Lucía recorta el pelo del cuello de la vaca en el cajón antes de medir.
+10. Composición ............. Plano medio: cajón en el centro con la cabeza de la vaca; Lucía a la izquierda; Alejandro a la derecha con la tablet; manga y hombres al fondo.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm spherical lens
+13. Iluminación ............. Cielo cubierto, luz suave y plana.
+14. Profundidad de campo .... focus on the vet and the cow's neck
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Rutina de trabajo con riesgo.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium shot. A veterinarian with one boot on the bar of a steel squeeze crate clips the hair on the neck of a fighting cow before measuring the skin; a young man beside her holds a tablet ready to write.
+Frame left, at the crate: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a dark navy work coverall with sleeves pushed up, a dark green softshell vest over it, black rubber knee boots, long blue disposable veterinary gloves to the shoulder when working, one boot on the crate bar, curved scissors in one hand, the other hand on the cow's neck, concentrated.
+Frame right: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, holding a rugged tablet with both hands, attentive, eager.
+Background in the chute: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing his hat, pushing a cow with a stick, focused.
+Animal: Spanish fighting cows, mostly cárdeno grey-flecked and some black, lyre-shaped thin horns, lean bodies, alert heads.
+Setting: old granite stone cattle pens with green guillotine gates, a narrow handling chute (manga) ending in a steel squeeze crate, a loading ramp for trucks, mud and straw. A folding table with a calliper, syringes and a thermos next to the crate. Mud up to the ankles.
+Time and weather: 8 am, overcast flat light, mud everywhere, 10 °C.
+Composition: the squeeze crate centred with the cow's head locked, the vet on the left, the young man on the right, the chute and men in the background.
+Lighting: soft flat overcast light.
+Camera: 50 mm spherical lens, focus on the vet and the cow's neck.
+Textures: mud, wet steel, cow hair, nitrile gloves.
+Mood: routine work with risk.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, readable tablet screen

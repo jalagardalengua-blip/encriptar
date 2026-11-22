@@ -1,0 +1,52 @@
+ID: C02_E004_IMAGE
+ESCENA: C02_E004 · EL REGATO
+GUION: 01_DIALOGUES/CHAPTER_02/ESCENA_004.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_02/ESCENA_004_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - TONO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/TONO_SHEET.txt (vestuario del LOCK)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C02_E004
+ 2. Localización ............ Pared del Regato junto a la carretera
+ 3. Hora y meteorología ..... Miércoles 12 de marzo, 11:00. Sol de media mañana, 13 °C.
+ 4. Personajes visibles ..... Manuel, Alejandro y Toño con guantes ante el hueco de la pared.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ MANUEL: WARDROBE M2; ALEJANDRO: WARDROBE A4; TONO: vestuario del LOCK
+ 7. Expresión facial ........ Manuel enseña; Alejandro atento; Toño concentrado.
+ 8. Posición corporal ....... Manuel sosteniendo una piedra grande que gira entre las manos; Alejandro y Toño agachados.
+ 9. Acción congelada ........ Manuel encaja la primera piedra grande en la base del hueco.
+10. Composición ............. Plano medio lateral de los tres frente al hueco; la carretera detrás de la pared, el arroyo seco al fondo.
+11. Tipo de plano ........... Plano medio.
+12. Distancia focal ......... 50 mm anamorphic lens
+13. Iluminación ............. Sol alto lateral, sombras definidas.
+14. Profundidad de campo .... moderate depth, wire ends in focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ Oficio, trabajo en equipo.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium side shot. Three men in work gloves rebuild a collapsed section of a granite drystone wall; the older foreman lifts a large stone and studies it before setting it in the base.
+Centre, lifting a stone: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, no hat, crouched, holding a large granite stone with both gloved hands, teaching, calm.
+Frame left, crouched: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, crouched, leather work gloves on, watching, attentive.
+Frame right: a 19-year-old Spanish farmhand, tall and heavy-set, broad shoulders, round boyish face, short buzzed brown hair, shy brown eyes, wearing a black padded vest over a grey t-shirt, work trousers and boots, kneeling, sorting stones, concentrated.
+Vehicle: a boxy 1990s short-wheelbase off-road vehicle, faded olive-green paint, white steel roof, spare wheel on the rear door, mud on the lower panels, no badges.
+Setting: a holm oak pasture crossed by a dry seasonal stream, a long granite drystone wall bordering a narrow rural road, a gap in the wall with fallen stones, wire strands above. Fallen stones lie on the outer side of the wall, toward the road; cut wire strands hang loose; a roll of new wire and wooden stakes on the vehicle's bonnet.
+Time and weather: 11 am, clear spring sunshine, 13 °C.
+Composition: the three men side by side before the gap, the road beyond the wall, the dry stream in the background.
+Lighting: high side sunlight, crisp shadows.
+Camera: 50 mm anamorphic lens, moderate depth, wire ends in focus.
+Textures: rough granite, leather gloves, shiny cut wire ends.
+Mood: craft and teamwork.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion

@@ -1,0 +1,55 @@
+ID: C02_E006_IMAGE
+ESCENA: C02_E006 · SETENTA Y DOS HORAS
+GUION: 01_DIALOGUES/CHAPTER_02/ESCENA_006.md
+VÍDEO ASOCIADO: 03_VIDEO_PROMPTS/CHAPTER_02/ESCENA_006_VIDEO.txt (esta imagen es su fotograma inicial)
+ESTADO: PENDIENTE DE GENERAR
+MODELO: prompt maestro independiente de plataforma (válido para modelos fotorrealistas de texto a imagen con referencia de personaje)
+
+REFERENCIAS DE IDENTIDAD (cargar la imagen aprobada de cada ficha como referencia de personaje):
+  - ARRANZ: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ARRANZ_SHEET.txt (vestuario del LOCK)
+  - LUCIA: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/LUCIA_SHEET.txt (vestuario L1)
+  - ALEJANDRO: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/ALEJANDRO_SHEET.txt (vestuario A4)
+  - MANUEL: 02_IMAGE_PROMPTS/00_CHARACTER_SHEETS/MANUEL_SHEET.txt (vestuario M2)
+
+
+---------------------------------------------------------------------------
+FICHA DE PLANO
+ 1. Identificador ........... C02_E006
+ 2. Localización ............ Corrales y cajón de curas
+ 3. Hora y meteorología ..... Jueves 20 de marzo, 9:00. Sol de primavera, 16 °C, barro seco.
+ 4. Personajes visibles ..... Inspectora Arranz junto al coche de la Junta con la carpeta; Lucía a su lado incómoda; Alejandro y Manuel en la puerta de los corrales.
+ 5. Apariencia física ....... según CHARACTER LOCK (copiado literal en el prompt)
+ 6. Vestuario exacto ........ ARRANZ: vestuario del LOCK; LUCIA: WARDROBE L1; ALEJANDRO: WARDROBE A4; MANUEL: WARDROBE M2
+ 7. Expresión facial ........ Arranz seca; Lucía incómoda; Alejandro desconfiado; Manuel tenso.
+ 8. Posición corporal ....... Arranz abriendo la carpeta; Manuel dejando de liar un cigarro.
+ 9. Acción congelada ........ Arranz abre la carpeta para leer la denuncia.
+10. Composición ............. Plano a cuatro: Arranz y Lucía a la izquierda junto al coche blanco; Alejandro y Manuel a la derecha ante la puerta de los corrales.
+11. Tipo de plano ........... Plano medio general.
+12. Distancia focal ......... 40 mm anamorphic lens
+13. Iluminación ............. Sol de mañana frontal, sombras cortas.
+14. Profundidad de campo .... deep focus
+15. Texturas y materiales ... Ver prompt.
+16. Ambiente ................ La ley llega a la finca.
+17. Relación de aspecto ..... 2.39:1
+18. Restricciones ........... Ver negativo estándar.
+---------------------------------------------------------------------------
+
+=== PROMPT (copiar completo) ===
+Cinematic film still from a contemporary Spanish drama feature, medium-wide four-shot. An official government vet opens a plastic clipboard in front of a white car to read a complaint aloud; the young vet stands beside her uncomfortably; facing them at the corral gate, a young man and an older foreman who has stopped rolling his cigarette.
+Frame left, reading: a 52-year-old Spanish official veterinarian, thin, short grey bob haircut, reading glasses hanging on a cord around her neck, tired serious face, wearing a dark green field vest over a white shirt, carrying a plastic clipboard, opening a plastic clipboard, reading glasses on, dry, bureaucratic.
+Beside her: a 29-year-old Spanish veterinarian, athletic build, 1.68 m, fair skin with freckles across nose and cheekbones, cheeks reddened by cold, long copper-auburn hair always tied in a low practical ponytail with loose strands, hazel-green eyes, no makeup, small silver hoop earrings, steel analog watch with green nylon strap, wearing a dark navy work coverall with sleeves pushed up, a dark green softshell vest over it, black rubber knee boots, long blue disposable veterinary gloves to the shoulder when working, arms crossed, uncomfortable.
+Frame right, at the gate: a 23-year-old Spanish man, lean athletic build, 1.80 m, light olive skin with pale winter tan, short dark brown hair faded on the sides and longer messy on top, uneven four-day stubble, dark brown eyes, thick straight eyebrows, a thin 1 cm vertical scar through his left eyebrow, straight nose, defined jaw, tired eyes with visible dark circles, black silicone digital watch on his left wrist, wearing faded blue jeans, a grey crew-neck sweater, his late father's faded olive-green waxed cotton field jacket too wide in the shoulders with a worn brown corduroy collar, and old brown leather work boots, standing square, distrustful.
+Beside him: a 61-year-old Spanish cattle foreman, stocky barrel-chested build, 1.72 m, slightly stooped, deeply weathered reddish-tan skin with deep forehead wrinkles and sun spots, short white-grey hair, thick grey moustache and no beard, small pale blue-grey eyes narrowed by the sun, large calloused hands with the tip of the left ring finger missing, gold wedding band on his right ring finger, wearing a brown-and-cream checked flannel shirt, a dark brown sheepskin-lined leather vest, brown corduroy trousers and brown leather boots, wearing his hat, half-rolled cigarette frozen in his fingers, tense.
+Vehicle: a plain white compact government car, no visible logos or text.
+Vehicle: a white double-cab pickup truck with a white aluminium veterinary storage module in the bed, mud splashes, no badges.
+Setting: old granite stone cattle pens with green guillotine gates, a narrow handling chute (manga) ending in a steel squeeze crate, a loading ramp for trucks, mud and straw.
+Time and weather: 9 am, first warm spring sunshine, dried mud, 16 °C.
+Composition: the two women on the left by the white car, the two men on the right at the stone corral gate.
+Lighting: frontal morning sun, short shadows.
+Camera: 40 mm anamorphic lens, deep focus.
+Textures: dried mud, granite, plastic clipboard, tobacco paper.
+Mood: the law arrives at the ranch.
+Photorealistic, true-to-life skin texture, natural color grade of ochres, olive greens and granite greys, subtle fine film grain. Aspect ratio 2.39:1.
+
+=== NEGATIVE PROMPT (copiar) ===
+text, letters, captions, subtitles, logo, watermark, brand names, readable license plates, cartoon, illustration, 3d render look, CGI plastic skin, oversaturated colors, HDR halos, extra fingers, deformed hands, distorted face, asymmetrical eyes, duplicated people, bull with extra horns or legs, malformed animal anatomy, modern logos on vehicles, smiling at camera, posed stock photo, beauty filter, lens flare overload, fisheye distortion, government logos, readable documents
